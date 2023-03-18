@@ -1,0 +1,199 @@
+# Project information
+site_name: Accessibility Theme Builder
+site_url: https://discoverfinancial.github.io/a11y-theme-builder/
+site_author: Discover Technology Academy
+site_description: >-
+  A system for generating machine readable asset types allowing design
+  systems to publish products that are accessibly inclusive.
+
+# Repository information
+repo_name: discoverfinancial/a11y-theme-builder
+repo_url: https://github.com/discoverfinancial/a11y-theme-builder
+
+# Content Generator Settings
+docs_dir: 'docs'
+site_dir: 'html'
+
+# Copyright information
+copyright: >-
+  Copyright &copy; 2023 Discover Financial Services.</br>
+  By accessing this website or content, you agree to these
+  <a href="https://www.discover.com/credit-cards/discover-terms-of-use/?ICMPGN=PUB_FTR_QL_TERMS">Terms of Use</a>.
+  </br>
+
+# Theme Configuration
+theme:
+  name: material
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+# Customization
+extra:
+  annotate:
+    json: [.s2]
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/squidfunk/mkdocs-material
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page Navigation Structure
+nav:
+  - Overview: 
+    - index.md
+    - Situation: motivation/situation.md
+    - Workflow Challenges: motivation/challenges.md
+    - What if: motivation/what-if.md
+    - Solution: motivation/solution.md
+    - Methodology: motivation/methodology.md
+    - Theme Builder: motivation/theme-builder.md
+    - Atomic Layers: motivation/atomic-layers.md
+    - Design Ops Toolchain: motivation/toolchain.md
+  - Under the Hood:
+    - architecture/index.md
+    - Component Model: architecture/component-model.md
+    - Why Mui: decisions/mui_adr.md
+    - Understanding SDK: architecture/sdk-intro.md
+    - Foundational Services: architecture/base-services.md
+  - Getting started:
+    - setup/index.md 
+    - Prerequisites: setup/dependencies.md
+    - Installation: setup/app-installation.md
+    - Running Theme Builder: setup/start-builder.md
+  - Contribute:
+    - contribute/index.md
+    - Reporting a bug: https://github.com/discoverfinancial/a11y-theme-builder/issues
+    - Reporting a docs issue: https://github.com/discoverfinancial/a11y-theme-builder/issues
+    - Requesting a change: https://github.com/discoverfinancial/a11y-theme-builder/issues
+    - Asking a question: https://github.com/discoverfinancial/a11y-theme-builder/discussions
+  - Designers:
+    - designers/index.md
+    - How to generate a theme: designers/how-to-generate-theme.md
+    - How to configure disability overlays: designers/how-to-configure-overlays.md
+    - How to work with Design Tokens: designers/how-to-work-with-tokens.md
+    - How to use components with Storybook: designers/how-to-work-with-storybook.md
+  - Developers:
+    - developers/index.md
+    - Code Walkthrough: developers/code-walkthrough.md
+    - Adding Atomic Elements: developers/add-atomic-elements.md
+    - Adding Accessibility Layers: developers/add-a11y-layers.md
+    - Adding output generators: developers/add-output-generators.md
+    - Adding storage: developers/add-storage.md
+    - Create desktop theme: developers/create-desktop-theme.md
+    - Create mobile theme: developers/create-mobile-theme.md
+    - Managing light and dark modes: developers/managing-modes.md
+  - Guides:
+    - guides/index.md
+    - Generate a theme: guides/create-a-theme.md
+    - Replace Sample Preview: guides/replace-sample-app.md
+    - Testing a Theme with Fable: guides/test-theme-with-fable.md
+    - Create React Components: guides/create-react-component.md
+    - Design workflow with Figma Tokens: guides/design-workflow-with-tokens.md
+    - Using alternative Javascript libraries: guides/alternative-js-libs.md
+    - Using SDK headless in CI/CD pipeline: guides/headless-sdk-for-cicd-pipeline.md
+  - Glossary:
+    - glossary/index.md
+  - References:
+    - references/index.md
+    

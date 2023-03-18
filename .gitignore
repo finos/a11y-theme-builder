@@ -1,0 +1,30 @@
+# .gitignore
+#
+#   This file specifies intentionally untracked files that Git should ignore.
+#
+#   Alternatively, see the collection of .gitignore templates
+#       https://github.com/github/gitignore
+
+# macOS-specific
+.DS_Store
+
+# Build directories
+dist
+site
+html
+
+# Virtual environments
+venv
+
+# Miscellaneous
+.idea
+.vscode
+
+# Python directories
+__pycache__
+*.pyc
+*.tmp
+.pytest_cache
+
+# MSFT Office
+~$*.*
