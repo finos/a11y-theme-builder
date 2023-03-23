@@ -1,0 +1,63 @@
+.welcome-navbar-container {
+    background-color: var(--background);
+    color: black;
+    display: flex;
+    /*position: fixed;*/
+    width: 100%;
+    opacity: 1;
+    height: 90px;
+    /*z-index: 1;*/
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tb-logo {
+    height: 48px;
+    width: 128px;
+    cursor: pointer;
+}
+
+.welcome-left-nav {
+    align-items: flex-start;
+    flex: 20% 0 0;
+    min-width: 250px;
+    padding: 20px;
+    background-color: var(--nav-color) !important;
+    /* border: 0px solid green; test */
+}
+
+.welcome-content {
+    display: flex;
+    /* border: 0px solid blue; test */
+}
+
+.welcome-right-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: var(--on-background);
+    background: var(--background);
+    vertical-align: top;
+    font-family: var(--primaryFont);
+    border: 0px solid red; /* test */
+}
+
+/*
+.welcome-right-content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--on-button);
+    color: var(--on-background);
+    border-radius: var(--button-radius);
+    text-align: center;
+    padding: var(--spacing-1) var(--button-padding);
+    border: none;
+    position: relative;
+    align-self: start;
+    font: var(--button-font);
+    letter-spacing: var(--button-character-spacing);
+    text-transform: var(--button-transform) !important;
+    cursor: pointer;
+}
+*/

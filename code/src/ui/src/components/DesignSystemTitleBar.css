@@ -1,0 +1,43 @@
+.titleBarDiv {
+    width: 100%;
+    background: var(--primary);
+    color: var(--on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.design-system-title-current-select {
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px; 
+    color: white;
+}
+
+.titleBarDiv .left-titlebar {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.titleBarDiv .center-titlebar {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 8px;
+}
+
+.titleBarDiv .right-titlebar {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.titleBarDiv .label {
+    padding-right: 30px;
+    text-transform: uppercase;
+}

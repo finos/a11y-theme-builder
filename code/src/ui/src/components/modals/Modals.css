@@ -1,0 +1,83 @@
+
+.modal {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: #fff;
+    padding: 40px;
+    z-index: 100;
+    overflow: auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-2);
+}
+
+.modal-inclusive {
+    height: 80%;
+}
+
+.modal-systemName {
+    height: 60%;
+}
+
+.modal-confirmation {
+    height: 40%;
+}
+
+.modal-atomicIntro {
+    height: 70;
+}
+
+.modal-fontHelp {
+    width: 50%;
+    height: 80%;
+}
+
+.modal-fontEdit {
+    width: 50%;
+    height: 80%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.colorBlind {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.fontImage {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/*
+.modal-footer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--on-button);
+    color: var(--on-background);
+    border-radius: var(--button-radius);
+    text-align: center;
+    padding: var(--spacing-1) var(--button-padding);
+    border: none;
+    position: relative;
+    align-self: start;
+    font: var(--button-font);
+    letter-spacing: var(--button-character-spacing);
+    text-transform: var(--button-transform) !important;
+    cursor: pointer;
+}
+*/

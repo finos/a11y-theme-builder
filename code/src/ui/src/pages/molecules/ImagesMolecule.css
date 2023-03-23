@@ -1,0 +1,59 @@
+/* images */
+.design-system-editor-right-content .image-sq {
+    width: calc(var(--spacing-1) * var(--inline-image-height));
+    height: calc(var(--spacing-1) * var(--inline-image-height));
+    background: var(--gray-200);
+    border-radius: calc(var(--radius-1) * var(--inline-image-radius));
+    flex: none;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+}
+
+.design-system-editor-right-content  .darkmode .image-sq {
+    background: var(--dm-gray-700);
+}
+
+.design-system-editor-right-content .image-lg {
+    background: var(--gray-200);
+    border-radius: calc(var(--radius-1) * var(--inline-image-radius));
+    flex: none;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: calc(var(--spacing-1) * var(--inline-image-height));
+    width: calc(var(--spacing-1) * var(--inline-image-height) * 1.4);
+}
+
+.design-system-editor-right-content .darkmode .image-sq, .darkmode .image-lg {
+    background: var(--dm-gray-700);
+}
+  
+.design-system-editor-right-content .image-lg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 105%;
+    transform: translate(-50%, -50%);
+}
+
+.design-system-editor-right-content .inline-image {
+    border-radius: calc(var(--radius-1) * var(--image-radius));
+    box-shadow: var(--image-elevation), var(--image-bevel);
+    border: calc(var(--border-1) * var(--image-border)) solid var(--border);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    box-shadow: var(--image-shadow);
+}
+
+.design-system-editor-right-content .example {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}

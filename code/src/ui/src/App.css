@@ -1,0 +1,138 @@
+
+.html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.top40 {
+    margin-top: 40px !important;
+}
+
+body {
+    color: rgba(0,0,0,.78);
+    font-family: var(--bodyFamily);
+    font-weight: var(--fontWeight-2);
+    font-size: calc(var(--zoom) * var(--baseFont));
+    line-height: calc(var(--zoom) * var(--standard-LineHeight));
+}
+
+p {
+    padding: var(--p-padding) 0;
+}
+
+p a {
+    color: #1884ffa7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+li a {
+    color: #1884ffa7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.card {
+  padding: 16px;
+  display: flex;
+  border-radius: 16px;
+  gap: 16px;
+  background: "white";
+  border: 1px solid rgba(0,0,0,.15);
+  min-height: 24px;
+}
+
+.custom-card h5 {
+    margin: 0;
+}
+.custom-card h6 {
+    margin: 0;
+}
+
+.custom-card {
+    margin: 0;
+}
+
+.quiet {
+    opacity: var(--quiet);
+}
+
+.custom-card button {
+    background: var(--background);
+    border-radius: var(--radius-1);
+    padding: var(--spacing-1);
+}
+
+.button-area {
+    justify-content: flex-start;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: var(--spacing-2);
+}
+
+.color-band {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.color-band .box {
+    background: var(--primary-500);
+    border-radius: 20%;
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+    float: left;
+}
+
+.input-1 {
+    width: 100%;
+    height: 30px;
+    font-size: var(--baseFont);
+    margin: 8px;
+}
+
+.darkmode .background, .darkmode.background {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background);
+}
+
+/* hotlinks */
+a {
+    color: var(--hotlink);
+    text-decoration: var(--hotlink-decoration)
+}
+
+a:visited {
+    opacity: .7
+}
+
+a:hover {
+    text-decoration: var(--hotlink-hover-decoration) !important;
+}
+
+a:active {
+    text-decoration: var(--hotlink-hover-decoration)
+}
+
+/* darkmode links */
+.darkmode a {
+    color: var(--dm-hotlink);
+    text-decoration: var(--dm-hotlink-decoration)
+}
+
+.darkmode a:visited {
+    opacity: .7
+}
+
+.darkmode a:hover {
+    text-decoration: var(--dm-hotlink-hover-decoration) !important;
+}
+
+.darkmode a:active {
+    text-decoration: var(--dm-hotlink-hover-decoration)
+}
+  

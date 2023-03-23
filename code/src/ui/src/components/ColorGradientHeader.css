@@ -1,0 +1,12 @@
+h2 {
+  font-family:  var(--headerFont);
+  font-weight: var(--h2-weight);
+  font-size: var(--h2) ;
+  line-height: var(--sm-LineHeight);
+  letter-spacing: -0.5%;
+}
+
+h2.gradient-title {
+  margin-top: 0px;
+  margin-bottom: 0.5rem;
+}

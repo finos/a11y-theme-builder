@@ -1,0 +1,81 @@
+.design-system-editor-right-content .statesListItem {
+    border-radius: var(--radius-half);
+    border: 1px solid rgba(0, 0, 0, .2);
+    /* padding: var(--spacing-1); */
+    box-shadow: none;
+}
+
+.design-system-editor-right-content .statesListItem .Hex {
+    margin-top: 21px;
+}
+
+.design-system-editor-right-content .statesListItem .information {
+    margin-top: 21px;
+}
+
+.design-system-editor-right-content .information {
+    background: var(--info) !important;
+    color: var(--on-info);
+    fill: rgb(var(--info));
+}
+.design-system-editor-right-content .success {
+    background: var(--success) !important;
+    color: var(--on-success );
+    fill: rgb(var(--success));
+}
+.design-system-editor-right-content .warning {
+    background: var(--warning) !important;
+    color: var(--on-warning);
+    fill: rgb(var(--warning));
+}
+.design-system-editor-right-content .danger{
+    background: var(--danger) !important;
+    color: var(--on-danger);
+    fill: rgb(var(--danger)) !important;
+}
+
+.design-system-editor-right-content .darkmode .information {
+    background: var(--dm-info) !important;
+    color: var(--dm-on-info);
+    fill: rgb(var(--dm-info));
+}
+.design-system-editor-right-content .darkmode .success {
+    background: var(--dm-success) !important;
+    color: var(--dm-on-success );
+    fill: rgb(var(--dm-success));
+}
+.design-system-editor-right-content .darkmode .warning {
+    background: var(--dm-warning) !important;
+    color: var(--dm-on-warning);
+    fill: rgb(var(--dm-warning));
+}
+.design-system-editor-right-content .darkmode .danger {
+    background: var(--dm-danger) !important;
+    color: var(--dm-on-danger);
+    fill: rgb(var(--dm-danger)) !important;
+}
+
+.design-system-editor-right-content .darkmode .statesListItem input {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background);
+    border: 1px solid var(--dm-border)
+}
+
+.design-system-editor-right-content .darkmode label {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background);
+}
+
+.design-system-editor-right-content section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    z-index: 0;
+}
+
+.design-system-editor-right-content .container {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}

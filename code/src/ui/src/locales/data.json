@@ -1,0 +1,15 @@
+{
+    "welcome.welcome1": "This tool was created to help teams quickly create a robust and accessible Unified Design System that supports light and dark mode, desktop and mobile applications.",
+    "welcome.welcome2": "In addition, for each system we will provide a dylexic theme, a non-animated theme (for folks with motion sensitivities) and a color blind theme.",
+    "_comment": "*** CSS documentation ****",
+    "--button-padding": "Multiplier for the button padding",
+    "--button-border": "Multiplier of the button border",
+    "--button-radius": "Multiplier for the button radius",
+    "--button-minwidth": "Multiplier for the button minimum width",
+    "--button-height": "Multiplier for the button height",
+    "--button-elevation": "Button elevation",
+    "--button-bevel": "Button bevel",
+    "--sm-button-height": "Multiplier for the button Height",
+    "--sm-button-padding": "Multiplier for the button padding",
+    "_end": "*** END ***"
+}

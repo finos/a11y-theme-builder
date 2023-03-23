@@ -1,0 +1,196 @@
+
+.design-system-container {
+    width: 100%;
+    border: 0px solid red; /* test */
+}
+
+.design-system-tab-bar {
+    width: 100%;
+    border: 0px solid green; /* test */
+    /*background-color: var(--leftNav) !important;*/
+    background-color: var(--background-secondary) !important;
+    /*color: var(--on-leftNav);*/
+    color: var(--on-background-secondary);
+}
+
+.design-system-editor-left-nav {
+    align-items: flex-start;
+    flex: 300px 0 0;
+    min-width: 300px;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 0px;
+    /*background-color: var(--nav-color) !important;*/
+    background-color: var(--background-secondary) !important;
+    color: var(--on-background-secondary);
+    border: 0px solid green; /* test */
+}
+
+.design-system-editor-content {
+    display: flex;
+    border: 0px solid blue; /* test */
+}
+
+.design-system-editor-right-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: var(--on-background);
+    background: var(--background);
+    vertical-align: top;
+    font-family: var(--primaryFont);
+    border: 0px solid red; /* test */
+}
+
+.design-system-editor-right-content .section-header {
+    background-color: var(--leftNav) !important;
+    color: var(--on-leftNav);
+    padding: 10px;
+}
+.design-system-editor-right-content .section-body {
+    margin-left: 20px;
+}
+
+.form-columns {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.top24 {
+    margin-top: 24px !important;
+}
+
+.top16 {
+    margin-top: 16px !important;
+}
+
+/*
+.design-system-editor-right-content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--on-button);
+    color: var(--on-background);
+    border-radius: var(--button-radius);
+    text-align: center;
+    padding: var(--spacing-1) var(--button-padding);
+    border: none;
+    position: relative;
+    align-self: start;
+    font: var(--button-font);
+    letter-spacing: var(--button-character-spacing);
+    text-transform: var(--button-transform) !important;
+    cursor: pointer;
+}
+*/
+
+.design-system-editor-right-content .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* not sure that we need this since we haven't brought over the
+     * "row>*" rule, yet
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+    */
+}
+
+.design-system-editor-right-content .col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.design-system-editor-right-content .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.inputRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inputRow .Hex {
+    margin: 8px 0
+}
+
+/* darkmode Mui Textfield */
+
+.design-system-editor-right-content .darkmode input {
+    background: var(--dm-input) !important;
+    color: var(--dm-on-input);
+    -webkit-text-fill-color: var(--dm-on-input);
+}
+
+.design-system-editor-right-content .darkmode .MuiInputBase-root fieldset.MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--dm-border)
+}
+
+.design-system-editor-right-content .darkmode label {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background);
+}
+
+.design-system-editor-right-content .darkmode input:disabled {
+    background: var(--dm-input-disabled) !important;
+    -webkit-text-fill-color: var(--dm-on-input);
+}
+
+.design-system-editor-right-content .darkmode .dropdown-toggle {
+    background: var(--dm-white) !important;
+    color: var(--dm-on-white) !important;
+}
+.design-system-editor-right-content .lightdarkmode-container {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border: 1px solid black;
+    border-radius: var(--radius-2);
+    margin-bottom: 40px;
+}
+
+.design-system-editor-right-content .buttonDemo {
+    display: flex;
+    gap: 24px;
+    margin: 16px 0;
+}
+
+.design-system-editor-right-content .theme-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-1);
+}
+
+.design-system-editor-right-content .color-swatch {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-1);
+    padding: var(--spacing-1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin:  var(--spacing-1) 0;
+    width: 98px;
+}
+
+.design-system-editor-right-content .color-box {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-1);
+    padding: var(--spacing-1);
+}
+
+.design-system-editor-right-content .color-title {
+    margin-top: 4px;
+}
+
+.design-system-editor-right-content .sample {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    margin: var(--spacing-3) 0;
+}

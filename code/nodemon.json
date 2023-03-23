@@ -1,0 +1,5 @@
+{
+  "exec": "ts-node src/app.ts",
+  "watch": ["src/api", "src/app.ts", "src/auth.ts", "src/config.ts", "src/themesEndpoint.ts"],
+  "ext": "ts,tsx,csx,css"
+}

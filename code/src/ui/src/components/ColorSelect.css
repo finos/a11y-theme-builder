@@ -1,0 +1,4 @@
+div.MuiPopover-paper > ul.MuiMenu-list > div.shade-row {
+    display: flex;
+    overflow: hidden;
+}

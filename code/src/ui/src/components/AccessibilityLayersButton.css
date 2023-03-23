@@ -1,0 +1,13 @@
+#Accessibility {
+    margin: 4px;
+}
+
+button.dropdown-toggle {
+    background: white;
+    color: black;
+    padding-right: 32px;
+    padding-left: 8px;
+    border-radius: 8px;
+    position: relative;
+    min-height: calc(8px * 5.5);
+}
