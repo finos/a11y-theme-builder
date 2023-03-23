@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import {DesignSystem} from '../sdk';
+import {DesignSystem} from 'a11y-theme-builder-sdk';
 import {Select, SelectChangeEvent, InputLabel, FormControl, FormControlLabel, Button } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import { AccessibilityLayersButton } from './AccessibilityLayersButton';

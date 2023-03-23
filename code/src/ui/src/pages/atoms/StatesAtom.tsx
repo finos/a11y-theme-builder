@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel, TextField } from '@mui/material';
 import { ColorResult } from "react-color";
-import { StateSettings } from '../../sdk';
+import { StateSettings } from 'a11y-theme-builder-sdk';
 import './StatesAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

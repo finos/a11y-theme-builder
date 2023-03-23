@@ -4,7 +4,7 @@ import { ColorSelect } from '../../components/ColorSelect';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import ModalSample from '../../components/modals/ModalSample';
-import { Modal, Shade } from '../../sdk';
+import { Modal, Shade } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';

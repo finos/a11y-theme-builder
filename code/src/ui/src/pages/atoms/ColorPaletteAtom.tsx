@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette } from '../../sdk';
+import { Color, ColorPalette } from 'a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';

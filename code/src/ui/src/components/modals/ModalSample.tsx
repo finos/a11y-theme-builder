@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react'
 import './Modals.css';
-import { Modal } from '../../sdk';
+import { Modal } from 'a11y-theme-builder-sdk';
 
 interface Props {
     isOpen: any;

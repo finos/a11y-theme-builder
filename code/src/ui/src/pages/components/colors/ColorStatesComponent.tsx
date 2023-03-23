@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DesignSystem, StateSettings } from '../../../sdk/';
+import { DesignSystem, StateSettings } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ColorSwatch } from '../../../components/ColorSwatch';
 

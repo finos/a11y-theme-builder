@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Checkbox, FormControl, FormControlLabel, InputLabel, TextField } from '@mui/material';
-import { FocusStates } from '../../sdk';
+import { FocusStates } from 'a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';

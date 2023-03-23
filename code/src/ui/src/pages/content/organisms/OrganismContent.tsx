@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
-import { DesignSystem, Event, EventType, Organism} from '../../../sdk';
+import { DesignSystem, Event, EventType, Organism} from 'a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';

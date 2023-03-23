@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { EventValueChange, GradientColors2, Shade } from '../sdk';
+import { EventValueChange, GradientColors2, Shade } from 'a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import './ColorGradientHeader.css';
 

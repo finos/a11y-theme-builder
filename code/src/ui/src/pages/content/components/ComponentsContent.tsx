@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
-import { DesignSystem} from '../../../sdk';
+import { DesignSystem} from 'a11y-theme-builder-sdk';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';

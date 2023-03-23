@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Modals.css';
 import '../../pages/WelcomePage.css'
-import { DesignSystem, TypographyStyling } from '../../sdk';
+import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
 import { Alert, Button, FormControl, Grid, InputLabel, MenuItem, Select, Slider } from '@mui/material';
 import { FontWeightsUtil } from '../../pages/atoms/typography/FontWeightsUtil'
 

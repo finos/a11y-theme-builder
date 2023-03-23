@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Box, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
-import { ColorPair, Event, EventType, PropertyColorPair } from '../sdk';
+import { ColorPair, Event, EventType, PropertyColorPair } from 'a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';
 import './ColorPairSelect.css';
 

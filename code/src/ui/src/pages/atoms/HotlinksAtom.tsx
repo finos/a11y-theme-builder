@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, FormControl, FormControlLabel, FormHelperText, FormLabel, InputLabel, Radio, RadioGroup } from '@mui/material';
-import { ColorTheme, DesignSystem, Hotlinks, HotlinkModeVariables } from '../../sdk';
+import { ColorTheme, DesignSystem, Hotlinks, HotlinkModeVariables } from 'a11y-theme-builder-sdk';
 import './BordersAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

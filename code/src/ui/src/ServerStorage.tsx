@@ -1,4 +1,4 @@
-import { Storage } from "./sdk/index";
+import { Storage } from "a11y-theme-builder-sdk";
 import { Http } from './Http';
 
 export class ServerStorage implements Storage {

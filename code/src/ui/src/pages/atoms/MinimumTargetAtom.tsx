@@ -1,5 +1,5 @@
 import React from 'react';
-import { MinimumTarget } from '../../sdk';
+import { MinimumTarget } from 'a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

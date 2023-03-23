@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
+	  "a11y-theme-builder-sdk": "git+ssh://git@github.com:discoverfinancial/a11y-theme-builder-sdk.git",
       "@emotion/react": "^11.8.2",
       "@emotion/styled": "^11.8.1",
       "@mui/icons-material": "^5.11.9",

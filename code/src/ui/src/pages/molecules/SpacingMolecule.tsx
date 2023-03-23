@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Switch } from '@mui/material';
-import { Spacing } from '../../sdk';
+import { Spacing } from 'a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';

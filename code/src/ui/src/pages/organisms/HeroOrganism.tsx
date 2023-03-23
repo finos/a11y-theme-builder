@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { InputLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
-import { Hero } from '../../sdk';
+import { Hero } from 'a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { HeroExample } from './HeroExample';

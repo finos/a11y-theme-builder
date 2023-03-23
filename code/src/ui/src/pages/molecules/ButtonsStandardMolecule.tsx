@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
-import { DesignSystem, StandardButtons } from '../../sdk';
+import { DesignSystem, StandardButtons } from 'a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';

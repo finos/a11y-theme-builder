@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MenuItem, Select, FormControl, InputLabel, TextField, Slider } from '@mui/material';
-import { BevelSettings, DesignSystem, ElevationSettings } from '../../sdk';
+import { BevelSettings, DesignSystem, ElevationSettings } from 'a11y-theme-builder-sdk';
 import { ExampleElevation } from '../../components/ExampleElevation';
 import ExampleBevel from '../../components/ExampleBevel';
 

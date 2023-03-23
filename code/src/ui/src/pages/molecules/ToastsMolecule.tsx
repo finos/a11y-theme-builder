@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert } from '@mui/material';
-import { DesignSystem, Toasts } from '../../sdk';
+import { DesignSystem, Toasts } from 'a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';

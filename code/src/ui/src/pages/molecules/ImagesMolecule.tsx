@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { DesignSystem, Images } from '../../sdk';
+import { DesignSystem, Images } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

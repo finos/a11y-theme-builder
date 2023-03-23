@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import { Checkbox, FormControl, InputLabel, 
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { DesignSystem } from '../sdk';
+import { DesignSystem } from 'a11y-theme-builder-sdk';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './AccessibilityLayersButton.css';
 

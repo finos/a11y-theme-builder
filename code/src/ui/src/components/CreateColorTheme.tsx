@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
-import { ColorTheme, ColorThemes, Event, EventType, Shade } from '../sdk';
+import { ColorTheme, ColorThemes, Event, EventType, Shade } from 'a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import { ColorPairSelect } from './ColorPairSelect';
 import { ColorGradient } from './ColorGradient';

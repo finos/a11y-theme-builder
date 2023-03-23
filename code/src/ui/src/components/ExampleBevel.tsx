@@ -1,5 +1,5 @@
 import React from "react";
-import { BevelSettings } from "../sdk";
+import { BevelSettings } from 'a11y-theme-builder-sdk';
 
 
 interface Props {

@@ -3,7 +3,7 @@ import { Button, Grid } from '@mui/material';
 import { useState } from 'react';
 import SystemCard from '../components/SystemCard';
 import ModalSystemName from '../components/modals/ModalSystemName';
-import { ThemeBuilder, DesignSystem } from '../sdk';
+import { ThemeBuilder, DesignSystem } from 'a11y-theme-builder-sdk';
 import { LocalStorage } from '../LocalStorage';
 import { useNavigate } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Atom, Molecule, Organism } from '../../sdk';
+import { Atom, Molecule, Organism } from 'a11y-theme-builder-sdk';
 
 
 interface Props {

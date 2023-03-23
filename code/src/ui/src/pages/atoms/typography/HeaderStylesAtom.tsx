@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Grid, InputLabel, Slider, TextField } from '@mui/material';
-import { DesignSystem } from '../../../sdk';
+import { DesignSystem } from 'a11y-theme-builder-sdk';
 import TextEditBox from '../../../components/TextEditBox';
 import { FontWeightsUtil } from './FontWeightsUtil';
 import { HeadingSection } from '../../content/HeadingSection';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel, TextField } from '@mui/material';
-import { InputBackground } from '../../sdk';
+import { InputBackground } from 'a11y-theme-builder-sdk';
 import { ColorSelectTitled } from '../../components/ColorSelectTitled';
 import './BordersAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

@@ -1,7 +1,7 @@
 
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Tabs, Tab, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-import { Atom, Molecule, Organism } from '../../sdk';
+import { Atom, Molecule, Organism } from 'a11y-theme-builder-sdk';
 //import { FormattedMessage } from 'react-intl';
 import { LocaleMessage } from '../../locales/LocaleMessage';
 

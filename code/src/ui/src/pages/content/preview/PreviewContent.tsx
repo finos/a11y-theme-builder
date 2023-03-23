@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
-import { DesignSystem} from '../../../sdk';
+import { DesignSystem} from 'a11y-theme-builder-sdk';
 import { PreviewDetails } from './PreviewDetails';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
-import { Property, StateSetting } from '../../sdk';
+import { Property, StateSetting } from 'a11y-theme-builder-sdk';
 import { ColorSwatch } from '../ColorSwatch';
 import { ChromePicker, ColorResult } from "react-color";
 

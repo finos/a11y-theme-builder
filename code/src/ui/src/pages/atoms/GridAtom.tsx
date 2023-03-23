@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FormControl, Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material';
-import { GridSettings } from '../../sdk';
+import { GridSettings } from 'a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';

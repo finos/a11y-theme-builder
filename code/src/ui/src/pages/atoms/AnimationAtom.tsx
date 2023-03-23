@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimationSettings } from '../../sdk';
+import { AnimationSettings } from 'a11y-theme-builder-sdk';
 import { NumberProperty } from '../../components/editors/NumberProperty';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

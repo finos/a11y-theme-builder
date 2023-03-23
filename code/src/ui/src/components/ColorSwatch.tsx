@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Shade } from '../sdk';
+import { Shade } from 'a11y-theme-builder-sdk';
 
 interface Props {
     className?: string;

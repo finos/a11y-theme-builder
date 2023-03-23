@@ -1,5 +1,5 @@
 import React from 'react';
-import { DesignSystem } from '../../../sdk';
+import { DesignSystem } from 'a11y-theme-builder-sdk';
 import TextEditBox from '../../../components/TextEditBox';
 import { HeadingSection } from '../../content/HeadingSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';

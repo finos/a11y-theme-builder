@@ -2,7 +2,7 @@ import { InputLabel, MenuItem, Select, Slider } from '@mui/material';
 import React, { useState } from 'react';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
-import { Sliders } from '../../sdk';
+import { Sliders } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';

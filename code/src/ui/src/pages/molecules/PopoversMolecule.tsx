@@ -1,6 +1,6 @@
 import { Button, Popover, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { DesignSystem, Popovers } from '../../sdk';
+import { DesignSystem, Popovers } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { ExampleSection } from '../content/ExampleSection';

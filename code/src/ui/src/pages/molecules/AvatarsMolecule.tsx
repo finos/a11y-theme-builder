@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, Stack } from '@mui/material';
-import { Avatars } from '../../sdk';
+import { Avatars } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';

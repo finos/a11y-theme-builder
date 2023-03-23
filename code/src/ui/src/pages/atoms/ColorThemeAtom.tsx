@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ColorThemes } from '../../sdk';
+import { ColorThemes } from 'a11y-theme-builder-sdk';
 import { CreateColorTheme } from '../../components/CreateColorTheme';
 import { DisplayColorTheme } from '../../components/DisplayColorTheme';
 

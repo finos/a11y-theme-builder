@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { MenuItem, Select, FormControl, InputLabel, TextField, Slider } from '@mui/material';
-import { DesignSystem, ElevationSettings } from '../../sdk';
+import { DesignSystem, ElevationSettings } from 'a11y-theme-builder-sdk';
 import { ExampleElevation } from '../../components/ExampleElevation';
 import { ChromePicker, ColorResult } from 'react-color';
 

@@ -2,7 +2,7 @@ import React, { ReactFragment, ReactNode} from 'react';
 import { useEffect } from 'react';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Button, InputLabel } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
-import { DesignSystem} from '../../../sdk';
+import { DesignSystem} from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';

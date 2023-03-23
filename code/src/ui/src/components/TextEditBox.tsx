@@ -1,6 +1,6 @@
 import { Grid, Button } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
-import { DesignSystem, TypographyStyling } from "../sdk";
+import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
 import ModalFontEdit from "./modals/ModalFontEdit";
 
 const sampleBody = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 

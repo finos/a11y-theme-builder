@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorThemes } from '../sdk';
+import { ColorThemes } from 'a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';
 import { ColorGradient } from './ColorGradient';
 import { ColorGradientHeader } from './ColorGradientHeader';
