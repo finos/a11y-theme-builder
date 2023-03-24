@@ -111,8 +111,8 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (node instanceof Atom) {
                     if (notImplemented.indexOf(key) == -1) {
                         if (_atoms[key]) {
-                           _atoms[key].disabled = false; //TODO: remove when done developing
-                            //_atoms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                           //_atoms[key].disabled = false; //TODO: remove when done developing
+                            _atoms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                         }
                     }
                 }

@@ -55,9 +55,9 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                             console.log("Node=",node);
                             const disabled = !node.isEnabled();
                             if (organisms[node.name].disabled != disabled) {
-                                const _molecules = {...organisms};
-                                _molecules[node.name].disabled = disabled;
-                                setOrganisms(_molecules);
+                                const _organisms = {...organisms};
+                                _organisms[node.name].disabled = disabled;
+                                setOrganisms(_organisms);
                             }
                         }
                     }
@@ -68,8 +68,8 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (node instanceof Organism) {
                     if (notImplemented.indexOf(key) == -1) {
                         if (_organisms[key]) {
-                            _organisms[key].disabled = false; //TODO: remove when done developing
-                            //_molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                            //_organisms[key].disabled = false; //TODO: remove when done developing
+                            _organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                         }
                     }
                 }
