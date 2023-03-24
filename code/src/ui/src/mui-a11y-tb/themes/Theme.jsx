@@ -269,6 +269,25 @@ try {
                     }
                 }
             },
+            MuiCheckbox: {
+                styleOverrides: {
+                    root: {
+                        padding: "0 calc(var(--min-target) + var(--spacing-1))",
+                        margin: "var(--spacing-half) 0",
+                        height: "var(--min-target)",
+                        "&.MuiCheckbox-root": {
+                            backgroundColor: "var(--input)",
+                            color: "var(--on-input)",
+                        },
+                        "&.Mui-checked": {
+                            color: "var(--button) !important",
+                        },
+                        "&.Mui-disabled": {
+                            color: "var(--input-disabled)"
+                        },
+                    }
+                }
+            },
             MuiOutlinedInput: {
                 styleOverrides: {
                       root: {
