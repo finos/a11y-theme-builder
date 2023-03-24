@@ -8,21 +8,31 @@ export interface NumberProps {
     children?: React.ReactNode;
     units?: string;
     style?: any;
+    customHandleChange?: any;
     description?: React.ReactNode;
+	onChange?: (event:any) => Promise<void>;
 }
 
-export const StringProperty: React.FC<NumberProps> = ({ property, defaultValue, children, units, style, description }) => {
+let timeOutId:any;
+
+export const StringProperty: React.FC<NumberProps> = ({ property, defaultValue, children, units, style, customHandleChange, description, onChange }) => {
     const [value, setValue] = useState<string>(property.getValue() || property.getDefaultValue() || defaultValue || "");
     async function handleChange(event: any): Promise<void> {
         const _value = event.target.value;
         setValue(_value);
     }
     useEffect(()=> {
-        const timeOutId = setTimeout(() => {
+		if (timeOutId) clearTimeout(timeOutId);
+        timeOutId = setTimeout(() => {
+			timeOutId = null;
             property.setValue(value);
+			if (onChange) {
+				onChange({target: {value: value}});
+			}
         }, 1000);
-        return () => clearTimeout(timeOutId);
     },[value]);
+
+    const _onChange = customHandleChange || handleChange
 
     return (
         <div>
@@ -32,7 +42,7 @@ export const StringProperty: React.FC<NumberProps> = ({ property, defaultValue, 
                 id="stringPropertyTextField"
                 InputProps={units ? {endAdornment: <InputAdornment position="end">{units}</InputAdornment>} : {}}
                 value={value }
-                onChange={handleChange}
+                onChange={_onChange}
                 sx={{width:300, ...style}}
             />
         </div>

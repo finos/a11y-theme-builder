@@ -10,9 +10,12 @@ export interface NumberProps {
     style?: any;
     customHandleChange?: any;
     description?: React.ReactNode;
+	onChange?: (event:any) => Promise<void>;
 }
 
-export const NumberProperty: React.FC<NumberProps> = ({ property, defaultValue=0, children, units, style, customHandleChange, description }) => {
+let timeOutId:any;
+
+export const NumberProperty: React.FC<NumberProps> = ({ property, defaultValue=0, children, units, style, customHandleChange, description, onChange }) => {
     let initValue = property.getValue();
     if (initValue === undefined) {
         initValue = property.getDefaultValue();
@@ -31,8 +34,18 @@ export const NumberProperty: React.FC<NumberProps> = ({ property, defaultValue=0
         }, 1000);
         return () => clearTimeout(timeOutId);
     },[value]);
+    useEffect(()=> {
+		if (timeOutId) clearTimeout(timeOutId);
+        timeOutId = setTimeout(() => {
+			timeOutId = null;
+            property.setValue(value ? value : undefined);
+			if (onChange) {
+				onChange({target: {value: value}});
+			}
+        }, 1000);
+    },[value]);
 
-    const onChange = customHandleChange || handleChange
+    const _onChange = customHandleChange || handleChange
 
     return (
         <div>
@@ -42,7 +55,7 @@ export const NumberProperty: React.FC<NumberProps> = ({ property, defaultValue=0
                 id="numberPropertyTextField"
                 InputProps={units ? {endAdornment: <InputAdornment position="end">{units}</InputAdornment>} : {}}
                 value={isNaN(value) ? "" : ""+value }
-                onChange={onChange}
+                onChange={_onChange}
                 sx={{width:300, ...style}}
             />
         </div>
