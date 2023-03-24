@@ -8,6 +8,7 @@ import { SettingsSection } from '../../content/SettingsSection';
 import { HeadingSection } from '../../content/HeadingSection';
 import { Alert, Grid, InputAdornment, InputLabel, TextField } from '@mui/material';
 import { FontWeightsUtil } from './FontWeightsUtil';
+import { StringProperty } from '../../../components/editors/StringProperty';
 
 interface Props {
     atoms: Atoms;
@@ -273,16 +274,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <h4>Font Families</h4>
                 <div>
-                    <InputLabel htmlFor="primaryFontTextField" id="primaryFontLabel">
-                        {primaryFontFamilyProperty.name}
-                        <div style={{fontWeight:"normal"}}>The primary font is used for the body and small font styles.</div>
-                    </InputLabel>
-                    <TextField 
-                        id="primaryFontTextField"
-                        value={primaryFont}
-                        onChange={handlePrimaryFontChange}
-                        sx={{width:textFieldWidth, mb: textFieldMb }}
-                    />
+					<StringProperty 
+						property={primaryFontFamilyProperty} 
+						description="The primary font is used for the body and small font styles." 
+						onChange={handlePrimaryFontChange}
+					/>
                     {!primaryFontUncommon
                     || fontNotCommonAlert}
                     {primaryFontUncommon
@@ -292,16 +288,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     </Alert>}
                 </div>
                 <div>
-                    <InputLabel htmlFor="secondaryFontTextField" id="secondaryFontLabel">
-                        {secondaryFontFamilyProperty.name}
-                        <div style={{fontWeight:"normal"}}>The secondary font is used for displays and headers.</div>
-                    </InputLabel>
-                    <TextField 
-                        id="secondaryFontTextField"
-                        value={secondaryFont}
-                        onChange={handleSecondaryFontChange}
-                        sx={{width:textFieldWidth, mb: textFieldMb }}
-                    />
+					<StringProperty 
+						property={secondaryFontFamilyProperty} 
+						description="The secondary font is used for displays and headers." 
+						onChange={handleSecondaryFontChange}
+					/>
                     {!secondaryFontUncommon
                     || fontNotCommonAlert}
                     {secondaryFontUncommon
