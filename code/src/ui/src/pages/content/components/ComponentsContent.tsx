@@ -32,6 +32,7 @@ import { SecondaryTabsComponent } from '../../components/SecondaryTabsComponent'
 import { CardsStandardComponent } from '../../components/cards/CardsStandardComponent';
 import { CardsImagesComponent } from '../../components/cards/CardsImagesComponent';
 import { CardsStatsComponent } from '../../components/cards/CardsStatsComponent';
+import { CheckboxesComponent } from '../../components/CheckboxesComponent';
 import { PaginationComponent } from '../../components/PaginationComponent';
 import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
@@ -223,6 +224,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "pagination" &&
                         <PaginationComponent />
+                    }
+                    {showComponent === "checkboxes" &&
+                        <CheckboxesComponent />
                     }
                     {showComponent === "popovers" &&
                         <PopoversComponent />
