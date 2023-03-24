@@ -45,9 +45,9 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
 
     const setDesignSystemName = async (designName: string | undefined) => {
         console.log(`${name} - setDesignSystemName(${designName})`);
-        const storage = new LocalStorage();
-        //const storage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({storage: storage});
+        const lStorage = new LocalStorage();
+        const sStorage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({storage: sStorage});
         setThemeBuilder(_themeBuilder)
         if (designName && _themeBuilder) {
             const dsn = await _themeBuilder.listDesignSystemNames();
