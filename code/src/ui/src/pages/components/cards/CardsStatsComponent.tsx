@@ -12,7 +12,7 @@ export const CardsStatsComponent: React.FC<Props> = ({ }) => {
 
     return (
         <div>
-            <HeadingSection title="" heading="Cards with Images" />
+            <HeadingSection title="" heading="Cards with Stats" />
             <FormControl>
                 <RadioGroup
                     name="cards-standard-radio-buttons-group"
