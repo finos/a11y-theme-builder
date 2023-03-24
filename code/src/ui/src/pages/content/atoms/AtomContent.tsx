@@ -18,7 +18,6 @@ import { InputBackgroundsAtom } from '../../atoms/InputBackgroundsAtom';
 import { HotlinksAtom } from '../../atoms/HotlinksAtom';
 import { FocusStateAtom } from '../../atoms/FocusStateAtom';
 import { DesignSystem, Event, EventType, Atom } from 'a11y-theme-builder-sdk';
-//import { DesignSystem, Event, EventType, Atom } from '../../../sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
