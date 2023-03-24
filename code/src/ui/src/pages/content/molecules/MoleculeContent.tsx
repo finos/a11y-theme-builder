@@ -103,8 +103,8 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (node instanceof Molecule) {
                     if (notImplemented.indexOf(key) == -1) {
                         if (_molecules[key]) {
-                            //_molecules[key].disabled = false; //TODO: remove when done developing
-                            _molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                            _molecules[key].disabled = false; //TODO: remove when done developing
+                            //_molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                         }
                     }
                 }

@@ -68,8 +68,8 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (node instanceof Organism) {
                     if (notImplemented.indexOf(key) == -1) {
                         if (_organisms[key]) {
-                            //_organisms[key].disabled = false; //TODO: remove when done developing
-                            _organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                            _organisms[key].disabled = false; //TODO: remove when done developing
+                            //_organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                         }
                     }
                 }
