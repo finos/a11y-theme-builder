@@ -78,7 +78,7 @@ export const CardsStandardComponent: React.FC<Props> = ({ }) => {
                 magna aliqua
             </CardSample>
             <CardSample 
-                label="Gradient-1 Background"
+                label="Gradient-2 Background"
                 title="Lorem ipsum dolor"
                 className="gradient-2"
                 icon={ true }
@@ -89,7 +89,7 @@ export const CardsStandardComponent: React.FC<Props> = ({ }) => {
                 magna aliqua
             </CardSample>
             <CardSample 
-                label="Gradient-1 Background"
+                label="Gradient-3 Background"
                 title="Lorem ipsum dolor"
                 className="gradient-3"
                 icon={ true }
