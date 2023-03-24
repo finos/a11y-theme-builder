@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { Avatar, Checkbox, FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material';
+import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { SettingsSection } from '../content/SettingsSection';
-import ErrorIcon from '@mui/icons-material/Error';
-import { Link } from 'react-router-dom';
+
 import { ListComponent } from './ListComponent';
 
 
@@ -17,7 +16,7 @@ export const ListsSingleComponent: React.FC<Props> = ({ }) => {
     const [isClickable, setIsClickable] = useState(false)
     async function handleChange(event: any): Promise<void> {
         const value = event.target.value;
-        if (value == "clickable") {
+        if (value === "clickable") {
             setIsClickable(true)
             return
         }

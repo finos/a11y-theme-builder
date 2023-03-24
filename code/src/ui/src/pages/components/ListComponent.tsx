@@ -20,9 +20,15 @@ interface Props {
 export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvatar,
         hasImg, hasIcon, isLarge, hasCheckbox, isClickable }) => {
 
+    const body = <div className="body2">
+        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum.
+    </div>
+
     const listTitle = <>
+        {!(type === 2) || <div className="overline">OVERLINE</div> }
         {isStyle2 || <div className="body2">List Title</div>}
         {!isStyle2 || <div className="subtitle1">List Title</div>}
+        {!(type === 3) || body }
     </>
 
     const listDecor = <>
@@ -36,17 +42,22 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
         {!hasIcon  || !isLarge 
         || <ErrorIcon color='error' fontSize='large'/>}
     </>
+
+
+    
+  
+
     return (
         <div className="sample">
             <div className="subtitle1">{title}</div>
             <div className="list">
                 {isClickable || listDecor}
-                {!isClickable || <Link to={''}>{listDecor}</Link>}
+                {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listDecor}</Link>}
                 <div className="list-body">
                     <Grid container spacing={6}>
                         <Grid item xs={6}>
                             {isClickable || listTitle}
-                            {!isClickable || <Link to={''}>{listTitle}</Link>}
+                            {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listTitle}</Link>}
                         </Grid>
                         {!hasCheckbox
                         || <Grid item xs={4}><FormControlLabel control={<Checkbox defaultChecked />} label="One" /></Grid>}
