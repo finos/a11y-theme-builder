@@ -44,6 +44,7 @@
       "test": "react-scripts test",
       "eject": "react-scripts eject",
       "storybook": "start-storybook -p 6006 -s public",
+      "update-sdk": "npm update a11y-theme-builder-sdk",
       "build-storybook": "build-storybook -s public",
       "webpack": "^5.69.1"
     },
