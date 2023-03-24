@@ -1,0 +1,225 @@
+.hero {
+    color: var(--on-hero);
+    /* min-height: calc(var(--zoom) * 200px); */
+    width: 100%;
+    padding-top: calc(var(--zoom) * var(--spacing-1) * 5);
+    padding-bottom: calc(var(--zoom) * var(--spacing-1) * 5);
+    position: relative;
+    z-index: 4;
+    background-color: var(--hero);
+}
+
+.black .hero {
+    --hero: rgba(24, 24, 24);
+    --on-hero: #ffffff;
+}
+
+.black .hero .darkmode {
+    --hero: var(--dm-background);
+    --on-hero: rgba(255, 255, 255, .6);
+}
+
+.white .hero {
+    --hero: #ffffff;
+    --on-hero: #1d1d1f;
+}
+
+.white .hero .darkmode {
+    --hero: var(--dm-background);
+    --on-hero: var(--dm-on-background);
+}
+
+.colored .hero {
+    --hero: var(--primary);
+    --on-hero: var(--on-primary);
+}
+
+.colored .hero .darkmode {
+    --hero: var(--dm-primary);
+    --on-hero: var(--dm-on-primary);
+}
+
+.darkmode .hero {
+    color: var(--dm-on-hero)
+}
+
+.hero .holder {
+    position: relative;
+    background: var(--hero) !important;
+}
+
+.darkmode .hero .holder {
+    background: var(--dm-hero) !important;
+}
+
+.hero .body {
+    display: flex;
+    gap: var(--hero-gap);
+    flex-direction: column;
+    font: var(--hero-heroBodyTypography) !important;
+    letter-spacing: var(--heroBodyCharcterSpacing);
+    text-decoration: var(--heroBodyTextDecoration);
+    text-transform: var(--hero-heroBodyTransform);
+}
+
+.hero .content {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--zoom) * var(--spacing-3));
+}
+
+.hero .title {
+    display: flex;
+    flex-direction: var(--hero-title-flex-direction);
+    gap: var(--hero-title-gap);
+    flex-direction: column;
+    font: var(--hero-heroTitleTypography) !important;
+    text-decoration: var(--Display1TextDecoration) !important;
+    letter-spacing: var(--Display1LetterSpacing) !important;
+    text-transform: var(--hero-heroTitleTransform) !important;
+}
+
+.hero .icon {
+    width: 72px;
+    height: 72px;
+    display: none;
+}
+
+.hero .icon.dark svg path {
+    fill: var(--on-white) !important;
+}
+
+.hero .icon.white svg path {
+    fill: var(--white) !important;
+}
+
+.hero .button-area {
+    justify-content: flex-start;
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.hero .actions {
+    display: flex;
+    gap: calc(var(--zoom) * var(--spacing-1));
+    align-items: center;
+}
+
+.darkmode .hero .icon.dark svg path {
+    fill: var(--dm-white) !important;
+}
+
+.darkmode .hero .icon.white svg path {
+    fill: var(--dm-white) !important;
+}
+
+.hero .line {
+    height: 4px;
+    width: 100px;
+    background: var(--primary);
+    display: none;
+}
+
+.hero .line.active {
+    display: block;
+}
+
+.hero .event {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero .event.active {
+    display: flex;
+}
+
+.hero .event .box {
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    text-align: center;
+    width: 100px;
+}
+
+.hero .event .box.dark {
+    border: 1px solid #121212;
+}
+
+.hero .event,
+.hero .button,
+.hero .button-secondary,
+.hero .image,
+.hero .video {
+    display: none;
+}
+
+/*
+  .backgroundImage {
+    background: url(../img/preview.jpeg) center center no-repeat;
+    background-size: cover;
+    background: url(../img/preview.jpeg) center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+  }
+  .backgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: var(--hero);
+    color: var(--on-hero);
+    opacity: .85;
+    display: none;
+  }
+  .backgroundMesh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background-size: 2px;
+    opacity: .75;
+    background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2 2" style="enable-background:new 0 0 2 2;" xml:space="preserve"><style type="text/css">.st0{fill:%23FFFFFF; opacity: 0} .st1{fill:%230066ef;}</style><rect class="st1" width="1" height="1"/><rect x="1" class="st0" width="1" height="1"/><rect y="1" class="st0" width="1" height="1"/><rect class="st1" x="1" y="1" width="1" height="1"/></svg>');
+    background-repeat: repeat;
+    background-size: 2px;
+    display: none;
+  }
+  .backgroundMesh .st0 {}
+  */
+
+.hero .button.active,
+.hero .button-secondary.active,
+.hero .icon.active,
+/* .backgroundImage.active,
+.backgroundOverlay.active,
+.backgroundMesh.active, */
+.hero .video.active,
+.hero .image.active {
+    display: block;
+}
+
+.hero .image img,
+.hero .video img {
+    width: 100%;
+}
+
+.hero .area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+}

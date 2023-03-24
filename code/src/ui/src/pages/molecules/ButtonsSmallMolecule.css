@@ -1,0 +1,49 @@
+.design-system-editor-right-content button.small-btn {
+    background: transparent !important;
+    padding: 0 calc(var(--spacing-1) * var(--sm-button-padding));
+    z-index: 1;
+    min-width: calc(var(--spacing-1) * var(--button-height));
+    font: var(--sm-buttonTypography);
+    text-transform: var(--sm-button-transform) !important;
+    letter-spacing: var(--sm-button-character-spacing);
+    box-shadow: none !important;
+    position: relative;
+}
+
+.design-system-editor-right-content button.MuiButton-contained.small-btn::before {
+    position: absolute;
+    top: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
+    bottom: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
+    left: 0px;
+    right: 0px;
+    content: '';
+    background: var(--button) !important;
+    border-radius: calc(var(--radius-1) * var(--button-radius));
+    z-index: -1;
+    font: var(--sm-buttonTypography);
+    box-shadow: var(--button-shadow);
+    opacity: 1;
+  }
+
+  .design-system-editor-right-content button.MuiButton-outlined::before {
+    position: absolute;
+    border: calc(var(--border-1) * var(--button-border)) solid var(--button);
+    border-radius: calc(var(--radius-1) * var(--button-radius));
+    box-shadow: var(--button-shadow);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+}
+
+.design-system-editor-right-content button.MuiButton-outlined.small-btn::before {
+    top: calc( (var(--min-target) - (var(--spacing-1) * var(--sm-button-height)) )/2);
+    bottom: calc( (var(--min-target) - (var(--spacing-1) * var(--sm-button-height)) )/2);
+    left: 0;
+    right: 0;
+    background: transparent !important;
+    box-shadow: var(--button-elevation), var(--button-bevel);
+    height: calc(var(--sm-button-height) + 2px);
+    border: calc(var(--border-1) * var(--button-border)) solid var(--button)
+}

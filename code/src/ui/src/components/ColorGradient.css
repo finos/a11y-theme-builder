@@ -1,0 +1,9 @@
+.sample-gradient {
+    height: 59px;
+    border-radius: 8px;
+    background: #000;
+    padding-bottom: 4px;
+    padding: 8px;
+    font-weight: bold;
+    max-width: 200px;
+  }
