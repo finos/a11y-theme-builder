@@ -47,14 +47,14 @@
     border: 0px solid red; /* test */
     /* overflow-y: auto; */
     overflow-y: scroll;
-    visibility: hidden;
+    /* visibility: hidden; */
 
 }
 
 .design-system-editor-right-content-scrollable,
 .design-system-editor-right-content:hover,
 .design-system-editor-right-content:focus {
-    visibility: visible;
+    /* visibility: visible; */
 }
 
 
