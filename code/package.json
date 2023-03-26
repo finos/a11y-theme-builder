@@ -1,7 +1,7 @@
 {
-	"name": "a11y-frame-builder",
+	"name": "a11y-theme-builder",
 	"version": "1.0.0",
-	"description": "Accessibility Frame Builder Application",
+	"description": "Accessibility Theme Builder Application",
 	"scripts": {
 		"test": "ts-node src/test.ts",
 		"build": "npm install && npm run build-ui && npm run build-api",
@@ -10,7 +10,12 @@
 		"debug": "nodemon --exec 'ts-node' src/app.ts",
 		"start": "node build/app.js",
 		"dev-ui": "cd src/ui && npm run start",
-		"debug-inspect": "nodemon --exec node --inspect=0.0.0.0:9229 -r ts-node/register src/app.ts"
+		"debug-inspect": "nodemon --exec node --inspect=0.0.0.0:9229 -r ts-node/register src/app.ts",
+        "docker-build": "docker build . -t a11y-theme-builder",
+        "docker-run": "docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder",
+        "docker-stop": "docker stop a11y-theme-builder",
+        "docker-start": "docker start a11y-theme-builder",
+        "docker-rm": "docker rm a11y-theme-builder"
 	},
 	"author": "",
 	"license": "MIT",
