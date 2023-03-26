@@ -18,9 +18,15 @@
     background-color: var(--background-secondary) !important;
     color: var(--on-background-secondary);
     border: 0px solid green; /* test */
-	overflow-y: auto;
-	margin-left: 10px;
-	/* border-radius: 16px; */
+    overflow-y: scroll;
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+.design-system-editor-left-nav-scrollable,
+.design-system-editor-left-nav:hover,
+.design-system-editor-left-nav:focus {
+    visibility: visible;
 }
 
 .design-system-editor-content {
@@ -39,9 +45,18 @@
     vertical-align: top;
     font-family: var(--primaryFont);
     border: 0px solid red; /* test */
-	overflow-y: auto;
-	/* border-radius: 16px; */
+    /* overflow-y: auto; */
+    overflow-y: scroll;
+    visibility: hidden;
+
 }
+
+.design-system-editor-right-content-scrollable,
+.design-system-editor-right-content:hover,
+.design-system-editor-right-content:focus {
+    visibility: visible;
+}
+
 
 .design-system-editor-right-content .section-header {
     background-color: var(--leftNav) !important;

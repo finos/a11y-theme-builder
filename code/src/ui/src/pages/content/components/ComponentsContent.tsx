@@ -72,9 +72,11 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
                 <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Styles</LeftNavHeader>
@@ -162,7 +164,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                     {showComponent === "colorsExtendedPalette" &&
                         <ExtendedPaletteComponent designSystem={designSystem} />
                     }
@@ -262,6 +266,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "chips" &&
                         <ChipsComponent />
                     }
+            </div>
             </div>
         </>
     );

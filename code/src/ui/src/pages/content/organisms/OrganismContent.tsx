@@ -104,9 +104,11 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
             <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
@@ -126,7 +128,9 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                 {showOrganism === "organisms" && (
                     <OrganismIntro />
                 )}
@@ -147,6 +151,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 {showOrganism === "footerCopyright" && (
                     <div>footerCopyright</div>
                 )}
+            </div>
             </div>
         </>
     );

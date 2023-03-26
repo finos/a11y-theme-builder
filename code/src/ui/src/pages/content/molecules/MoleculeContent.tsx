@@ -171,9 +171,11 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
                 <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
@@ -214,7 +216,9 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                 {showMolecule === "molecules" && 
                     <MoleculeIntro />
                 }
@@ -278,6 +282,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
                         <ToastsMolecule toastsMolecule={designSystem.molecules.toasts} designSystem={designSystem}/>
                     </ErrorHandler>
                 )}
+            </div>
             </div>
         </>
     );

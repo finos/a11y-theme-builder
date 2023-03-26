@@ -162,9 +162,11 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
                 <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
@@ -207,7 +209,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                 {showAtom === "atoms" && 
                     <AtomicIntro />
                 }
@@ -298,6 +302,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         <AnimationAtom atom={designSystem.atoms.animationSettings}/>
                     </ErrorHandler>
                 )}
+            </div>
             </div>
         </>
     );
