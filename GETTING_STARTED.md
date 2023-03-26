@@ -113,17 +113,40 @@ The APIs are under the `/api/` endpoint, with the following apis available:
 
 ## Build Docker Image
 
-The Theme Builder application can also be run in Podman or Docker.  To persist the embedded database, the directory `~/app/code/data` must be mapped to a local host directory.
+The Theme Builder application can also be run in Podman or Docker.  To persist the embedded database, the directory `/code/src/data` must be mapped to a local host directory.
 
 To build and run with Docker, the following commands can be used.
 
-Build image:
+**Build image:**
 ```
-$ docker build . -t themebuilder
+$ docker build . -t a11y-theme-builder
 ```
-Run image:
+
+**Run image:**
+
+To save the data of the embedded database in the docker container, use the following command.
 ```
-$ docker run -p 3001:3001 -v <host_dir>:code/data -d themebuilder
+$ docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
+```
+
+If a directory on the host will be used to save the data of the embedded database, specify a volume with the following command.
+```
+$ docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
+```
+
+**Stop container:**
+```
+$ docker stop a11y-theme-builder
+```
+
+**Start a stopped container:**
+```
+$ docker start a11y-theme-builder
+```
+
+**Remove a stopped container:**
+```
+$ docker rm a11y-theme-builder
 ```
 
 ### View Application
@@ -131,5 +154,5 @@ $ docker run -p 3001:3001 -v <host_dir>:code/data -d themebuilder
 To access the running application, load the following URL into a browser:
 
 ```
-http://localhost:3001
+http://localhost:8080
 ```
