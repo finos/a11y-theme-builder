@@ -12,6 +12,7 @@
 dist
 site
 html
+build
 
 # Virtual environments
 venv
@@ -19,6 +20,8 @@ venv
 # Miscellaneous
 .idea
 .vscode
+downloads
+env
 
 # Python directories
 __pycache__
@@ -28,3 +31,6 @@ __pycache__
 
 # MSFT Office
 ~$*.*
+
+# Node
+node_modules
