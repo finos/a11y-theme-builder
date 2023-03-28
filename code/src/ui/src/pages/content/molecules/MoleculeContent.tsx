@@ -79,37 +79,36 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-molecule-charts-selected", ""+displayCharts)
     }, [displayCharts])
 
+    function enableDisableItems() {
+        let _molecules = {...molecules};
+        for (const [key, node] of Object.entries(designSystem.molecules)) {
+            if (node instanceof Molecule) {
+                if (notImplemented.indexOf(key) == -1) {
+                    if (_molecules[key]) {
+                        console.log("Molecule enabled:"+key+" enabled="+node.isEnabled());
+                        //_molecules[key].disabled = false; //TODO: remove when done developing
+                        _molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                    }
+                }
+            }
+        }
+        setMolecules(_molecules);
+    }
+
     const [molecules, setMolecules] = useState<{[key: string]:moleculeItem}>(moleculesList);
     useEffect(() => {
         if (designSystem) {
             designSystem.setListener("MoleculeContent-isEditable", 
                 function(event: Event) {
                     if (event.type == EventType.NodeDisabled) {
-                        const node = event.node;
-                        if (node instanceof Molecule) {
-                            console.log("Node=",node);
-                            const disabled = !node.isEnabled();
-                            if (molecules[node.name].disabled != disabled) {
-                                const _molecules = {...molecules};
-                                _molecules[node.name].disabled = disabled;
-                                setMolecules(_molecules);
-                            }
-                        }
+                        enableDisableItems();
+                    }
+                    else if (event.type == EventType.NodeEnabled) {
+                        enableDisableItems();
                     }
                 }
             )
-            let _molecules = {...molecules};
-            for (const [key, node] of Object.entries(designSystem.molecules)) {
-                if (node instanceof Molecule) {
-                    if (notImplemented.indexOf(key) == -1) {
-                        if (_molecules[key]) {
-                            _molecules[key].disabled = false; //TODO: remove when done developing
-                            //_molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
-                        }
-                    }
-                }
-            }
-            setMolecules(_molecules);
+            enableDisableItems();
         }
     }, [])
     
