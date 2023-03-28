@@ -24,6 +24,7 @@ import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComp
 import { SwitchComponent } from '../../components/SwitchComponent';
 import { RadioButtonsComponent } from '../../components/RadioButtonsComponent';
 import { PopoversComponent } from '../../components/PopoversComponent';
+import { ThemeColorsComponent } from '../../components/colors/ThemeColorsComponent';
 import { ExtendedPaletteComponent } from '../../components/colors/ExtendedPaletteComponent';
 import { GradientsComponent } from '../../components/colors/GradientsComponent';
 import { ColorStatesComponent } from '../../components/colors/ColorStatesComponent';
@@ -89,7 +90,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayColors} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <LeftNavItem text={"Primary"} value="colorsPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsPrimary")}} />
+                            <LeftNavItem text={"Theme Colors"} value="colorsThemeColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsThemeColors")}} />
                             <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
                             <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
                             <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
@@ -167,6 +168,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
+                    {showComponent === "colorsThemeColors" &&
+                        <ThemeColorsComponent designSystem={designSystem} />
+                    }
                     {showComponent === "colorsExtendedPalette" &&
                         <ExtendedPaletteComponent designSystem={designSystem} />
                     }

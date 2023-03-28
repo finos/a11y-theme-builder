@@ -2734,6 +2734,246 @@ button.small-btn.MuiButton-text::before {
   color: var(--hotlinkOnBlack);
 }
 
-/* .dropdownFocus {
-  margin-bottom: 200px;
-}*/
+.primary-050-bg {
+  background: var(--primary-0) !important;
+  color: var(--on-primary-0) !important;
+  fill: var(--primary-0) !important;
+}
+.primary-050-bg path{
+    fill: var(--on-primary-050) !important;
+}
+
+.primary-100-bg {
+  background: var(--primary-100)  !important;
+  color: var(--on-primary-100) !important;
+  fill: var(--primary-100)  !important;
+}
+.primary-100-bg path{
+    fill: var(--on-primary-100) !important;
+}
+
+.primary-200-bg {
+  background: var(--primary-200)  !important;
+  color: var(--on-primary-200) !important;
+  fill:var(--primary-200)  !important;
+}
+.primary-200-bg path{
+    fill: var(--on-primary-200) !important;
+}
+.primary-300-bg {
+  background: var(--primary-300)  !important;
+  color: var(--on-primary-300) !important;
+  fill: var(--primary-300)  !important;
+}
+.primary-300-bg path{
+    fill: var(--on-primary-300) !important;
+}
+.primary-400-bg {
+  background: var(--primary-400)  !important;
+  color: var(--on-primary-400) !important;
+  fill:  var(--primary-400)  !important;
+}
+.primary-400-bg path{
+    fill: var(--on-primary-400) !important;
+}
+.primary-500-bg {
+  background: var(--primary-500)  !important;
+  color: var(--on-primary-500) !important;
+  fill: var(--on-primary-500) !important;
+}
+.primary-500-bg path{
+    fill: var(--on-primary-500) !important;
+}
+.primary-600-bg {
+  background: var(--primary-600)  !important;
+  color: var(--on-primary-600) !important;
+  fill: var(--primary-600)  !important;
+}
+.primary-600-bg path{
+    fill: var(--on-primary-600);
+}
+.primary-700-bg {
+  background: var(--primary-700)  !important;
+  color: var(--on-primary-700) !important;
+  fill: var(--primary-700)  !important;
+}
+.primary-700-bg path{
+    fill: var(--on-primary-700);
+}
+.primary-800-bg, .primary-800 {
+  background: var(--primary-800)  !important;
+  color: var(--white) !important;
+  fill: var(--primary-800)  !important;
+}
+.primary-800-bg path{
+    fill: var(--on-primary-800);
+}
+.primary-900-bg, .primary-900 {
+  background: var(--primary-900)  !important;
+  color: var(--white) !important;
+  fill: var(--primary-900)  !important;
+}
+
+.primary-900-bg path{
+    fill: var(--on-primary-900);
+}
+.secondary {
+  background: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+.secondary-bg path{
+    fill: var(--on-secondary);
+}
+
+.secondary-050-bg {
+  background: var(--secondary-0)  !important;
+  color: var(--on-secondary-0) !important;
+}
+.secondary-050-bg path{
+    fill: var(--on-secondary-050);
+}
+.secondary-100-bg {
+  background: var(--secondary-100)  !important;
+  color: var(--on-secondary-100) !important;
+}
+.secondary-100-bg path{
+    fill: var(--on-secondary-100);
+}
+.secondary-200-bg {
+  background: var(--secondary-200)  !important;
+  color: var(--on-secondary-200) !important;
+}
+.secondary-200-bg path{
+    fill: var(--on-secondary-200);
+}
+.secondary-300-bg {
+  background: var(--secondary-300)  !important;
+  color: var(--on-secondary-300) !important;
+}
+.secondary-300-bg path{
+    fill: var(--on-secondary-300);
+}
+.secondary-400-bg {
+  background: var(--secondary-400)  !important;
+  color: var(--on-secondary-400) !important;
+}
+.secondary-400-bg path{
+    fill: var(--on-secondary-400);
+}
+.secondary400-bg path{
+    fill: var(--on-secondary-400) !important;
+}
+.secondary-500-bg {
+  background: var(--secondary-500)  !important;
+  color: var(--on-secondary-500) !important;
+}
+.secondary-500-bg path{
+    fill: var(--on-secondary-500);
+}
+.secondary-600-bg {
+  background: var(--secondary-600)  !important;
+  color: var(--on-secondary-600) !important;
+}
+.secondary-600-bg path{
+    fill: var(--on-secondary-600);
+}
+.secondary-700-bg {
+  background: var(--secondary-700)  !important;
+  color: var(--on-secondary-700) !important;
+}
+.secondary-700-bg path{
+    fill: var(--on-secondary-700);
+}
+.secondary-800-bg {
+  background: var(--secondary-800)  !important;
+  color: var(--on-secondary-800) !important;
+}
+.secondary-800-bg path{
+    fill: var(--on-secondary-800);
+}
+.secondary-900-bg {
+  background: var(--secondary-900)  !important;
+  color: var(--on-secondary-900) !important;
+}
+.secondary-900-bg path{
+    fill: var(--on-secondary-900);
+}
+.tertiary {
+  background: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+.tertiary-bg path{
+    fill: var(--on-tertiary);
+}
+
+.tertiary-050-bg {
+  background: var(--tertiary-0)  !important;
+  color: var(--on-tertiary-0);
+}
+.tertiary-050-bg path{
+    fill: var(--on-tertiary-050);
+}
+
+.tertiary-100-bg {
+  background: var(--tertiary-100)  !important;
+  color: var(--on-tertiary-100);
+}
+.tertiary-100-bg path{
+    fill: var(--on-tertiary-100);
+}
+.tertiary-200-bg {
+  background: var(--tertiary-200)  !important;
+  color: var(--on-tertiary-200);
+}
+.tertiary-200-bg path{
+    fill: var(--on-tertiary-200);
+}
+.tertiary-300-bg {
+  background: var(--tertiary-300)  !important;
+  color: var(--on-tertiary-300);
+}
+.tertiary-300-bg path{
+    fill: var(--on-tertiary-300);
+}
+.tertiary-400-bg {
+  background: var(--tertiary-400)  !important;
+  color: var(--on-tertiary-400);
+}
+.tertiary-400-bg path{
+    fill: var(--on-tertiary-400);
+}
+.tertiary-500-bg {
+  background: var(--tertiary-500)  !important;
+  color: var(--on-tertiary-500);
+}
+.tertiary-500-bg path{
+    fill: var(--on-tertiary-500);
+}
+.tertiary-600-bg {
+  background: var(--tertiary-600)  !important;
+  color: var(--on-tertiary-600);
+}
+.tertiary-600-bg path{
+    fill: var(--on-tertiary-600);
+}
+.tertiary-700-bg {
+  background: var(--tertiary-700)  !important;
+  color: var(--on-tertiary-700);
+}
+.tertiary-700-bg path{
+    fill: var(--on-tertiary-700);
+}
+.tertiary-800-bg {
+  background: var(--tertiary-800)  !important;
+  color: var(--on-tertiary-800);
+}
+.tertiary-800-bg path{
+    fill: var(--on-tertiary-800);
+}
+.tertiary-900-bg {
+  background: var(--tertiary-900)  !important;
+  color: var(--on-tertiary-900);
+}
+.tertiary-900-bg path{
+  fill: var(--on-tertiary-900);
+}
