@@ -8,7 +8,7 @@ interface Props {
 
 export const ButtonsStandardComponent: React.FC<Props> = ({ }) => {
 
-    const [colorMode, setColorMode] = useState<string>("colored");
+    const [colorMode, setColorMode] = useState<string>("primary");
 
     useEffect(() => {
         console.log("ButtonsStandardComponent mounted");

@@ -132,7 +132,6 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
             <div>
                 {label && <InputLabel className="caption" htmlFor="outlined-select">{label}</InputLabel>}
                 <Select
-                    label="Primary"
                     onChange={handleColorChange}
                     displayEmpty={true}
                     defaultValue={defaultValue || ""}

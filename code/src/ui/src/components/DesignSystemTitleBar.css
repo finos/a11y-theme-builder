@@ -7,11 +7,20 @@
     justify-content: space-between;
 }
 
-.design-system-title-current-select {
+.titleBarDiv .MuiSelect-select {
     margin: auto;
     padding-left: 20px;
-    padding-right: 20px; 
-    color: white;
+    padding-right: 20px;
+    color: var(--on-primary);
+}
+
+.titleBarDiv .MuiSelect-icon {
+    fill: var(--on-primary);
+}
+
+.titleBarDiv .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--on-primary);
+    opacity: 0.5;
 }
 
 .titleBarDiv .left-titlebar {
