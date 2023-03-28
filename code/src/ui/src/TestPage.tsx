@@ -21,8 +21,8 @@ const TestPage: React.FC<Props> = ({user}) => {
 
     const paperStyle = {padding: "10px", height:"100%"}
 
-    //const storage = new ServerStorage();
-    const storage = new LocalStorage();
+    const storage = new ServerStorage();
+    //const storage = new LocalStorage();
 
     const [tabIndex, setTabIndex] = useState(0);
     const [designSystems, setDesignSystems] = useState<string[]>([]);
