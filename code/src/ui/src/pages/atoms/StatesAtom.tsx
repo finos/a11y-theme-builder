@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { InputLabel, TextField } from '@mui/material';
-import { ColorResult } from "react-color";
 import { StateSettings } from 'a11y-theme-builder-sdk';
 import './StatesAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -10,7 +9,6 @@ import { HeadingSection } from '../content/HeadingSection';
 import { LightModeSection } from '../content/LightModeSection';
 import { DarkModeSection } from '../content/DarkModeSection';
 import { ColorProperty } from '../../components/editors/ColorProperty';
-
 
 interface Props {
     atom: StateSettings;
@@ -51,7 +49,7 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
 
 
     return (
-        <div className="container color-palette-right-content">
+        <div className="color-palette-right-content">
             <HeadingSection item={atom} title="Theme">
                     <ul>
                         <li>Load <a href="#">color blind</a> states. <a href="#">Learn more.</a></li>
@@ -83,5 +81,4 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
             <GeneratedCodeSection item={atom}/>
         </div>
     )
-
 }
