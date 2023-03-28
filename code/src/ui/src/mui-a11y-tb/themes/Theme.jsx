@@ -250,7 +250,8 @@ try {
                        textDecoration: "var(--buttonTextDecoration)",
                        textTransform: "var(--buttonTextTransform)",
                         ":hover": {
-                            background: "var(--on-primary)",
+                            background: "var(--on-button)",
+                            color: "var(--button)",
                         },
                     }),
                 }
@@ -446,9 +447,9 @@ try {
                     root: {
                         fontFamily: "var(--navbarPrimary-font)",
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
-                        "&.Mui-selected": {
+                        "&.Mui-selected, &.Mui-selected:hover": {
                             backgroundColor: "var(--secondary)",
-                            color: "var(--on-background)",
+                            color: "var(--on-secondary)",
                         },
                     }
                 }

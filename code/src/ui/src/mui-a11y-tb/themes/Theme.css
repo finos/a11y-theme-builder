@@ -1909,7 +1909,7 @@ h6 {
     color: var(--on-white) !important;
 }
 
-.colored .breadcrumbs {
+.primary .breadcrumbs a {
     color: var(--on-primary) !important;
 }
 
