@@ -12,7 +12,7 @@ const header6CssPrefix = "h6"
 interface Props {
 }
 
-export const HeadersComponent: React.FC<Props> = ({ }) => {
+export const HeadersComponent: React.FC<Props> = () => {
     return (
         <div className="content">
         <HeadingSection title='Typography' heading='Headers'></HeadingSection>

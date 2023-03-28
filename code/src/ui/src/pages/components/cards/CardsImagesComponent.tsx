@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, FormControl, FormControlLabel, IconButton, Radio, RadioGroup, SvgIcon, Typography } from '@mui/material';
+import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
 import { CardSample } from './CardSample';
 
 interface Props {
 }
 
-export const CardsImagesComponent: React.FC<Props> = ({ }) => {
+export const CardsImagesComponent: React.FC<Props> = () => {
 
     const [_clickableCards, _setClickableCards] = useState<boolean>(false);
 

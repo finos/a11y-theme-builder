@@ -8,7 +8,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 interface Props {
 }
 
-export const SecondaryTabsComponent: React.FC<Props> = ({ }) => {
+export const SecondaryTabsComponent: React.FC<Props> = () => {
 
     const [color, setColor] = useState('colored')
     const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +18,7 @@ export const SecondaryTabsComponent: React.FC<Props> = ({ }) => {
     const [tabValue, setTabValue] = React.useState('1');
     const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
         setTabValue(newValue);
-      };
+    };
     const [tabIconsValue, setTabIconsValue] = React.useState('1');
     const handleTabIconsChange = (event: React.SyntheticEvent, newValue: string) => {
         setTabIconsValue(newValue);

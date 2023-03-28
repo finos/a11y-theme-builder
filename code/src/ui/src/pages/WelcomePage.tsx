@@ -1,9 +1,7 @@
 import React from 'react';
-import { } from '@mui/material';
 import { useState } from 'react';
 import { Tab, Tabs } from "@mui/material";
 import { styled } from '@mui/material';
-import { Box } from '@mui/system';
 import Welcome from './Welcome';
 import JumpStart from './JumpStart';
 import GetStarted from './GetStarted';

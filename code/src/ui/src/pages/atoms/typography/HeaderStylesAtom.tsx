@@ -69,7 +69,7 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
     }, [fontWeight])
 
     async function handleFontWeightChange(event: any): Promise<void> {
-        const value = Number(event.target.value);
+        const value = parseInt(event.target.value);
         setFontWeight(value);
         fontWeightProperty.setValue(value)
         display1TypographyStyling.fontWeight.setValue(value)
@@ -82,7 +82,7 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
         header6TypographyStyling.fontWeight.setValue(value)
     }
     async function handleTypographyChangeChange(event: any): Promise<void> {
-        const value = event.target.value;
+        const value = parseInt(event.target.value);
         setTypographyChange(value);
         typographyChangeProperty.setValue(value)
 

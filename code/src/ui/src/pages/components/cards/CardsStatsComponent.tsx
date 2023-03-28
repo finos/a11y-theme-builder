@@ -6,7 +6,7 @@ import { CardSample } from './CardSample';
 interface Props {
 }
 
-export const CardsStatsComponent: React.FC<Props> = ({ }) => {
+export const CardsStatsComponent: React.FC<Props> = () => {
 
     const [_clickableCards, _setClickableCards] = useState<boolean>(false);
 

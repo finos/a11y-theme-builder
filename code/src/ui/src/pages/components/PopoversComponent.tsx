@@ -7,7 +7,7 @@ import { ExampleSection } from '../content/ExampleSection';
 interface Props {
 }
 
-export const PopoversComponent: React.FC<Props> = ({ }) => {
+export const PopoversComponent: React.FC<Props> = () => {
     const [anchorTop, setAnchorTop]             = useState(null)
     const openPopoverTop = (event: any)         => { setAnchorTop(event.currentTarget) }
     const [anchorRight, setAnchorRight]         = useState(null)

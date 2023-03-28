@@ -6,7 +6,7 @@ import { HeadingSection } from '../content/HeadingSection';
 interface Props {
 }
 
-export const BreadcrumbsComponent: React.FC<Props> = ({ }) => {
+export const BreadcrumbsComponent: React.FC<Props> = () => {
 
     const [colorMode, setColorMode] = useState<string>("colored");
 

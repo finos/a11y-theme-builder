@@ -7,7 +7,7 @@ import { ExampleSection } from '../content/ExampleSection';
 interface Props {
 }
 
-export const PaginationComponent: React.FC<Props> = ({ }) => {
+export const PaginationComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Pagination'></HeadingSection>

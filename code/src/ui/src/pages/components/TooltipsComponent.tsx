@@ -6,7 +6,7 @@ import { HeadingSection } from '../content/HeadingSection';
 interface Props {
 }
 
-export const TooltipsComponent: React.FC<Props> = ({ }) => {
+export const TooltipsComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Tooltips'></HeadingSection>

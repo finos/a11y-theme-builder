@@ -8,7 +8,7 @@ const display2CssPrefix = "Display2"
 interface Props {
 }
 
-export const DisplayComponent: React.FC<Props> = ({ }) => {
+export const DisplayComponent: React.FC<Props> = () => {
 
     return (
         <div className="content">
