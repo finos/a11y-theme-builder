@@ -17,7 +17,7 @@ const JumpStart: React.FC<Props> = ({ user }) => {
             </HeadingSection>
             <div className="top40" />
             <ExampleSection title="Sample Design Systems">
-            <div style={{ display: "flex", gap: "20px" }}>
+            <div className="card-container">
                 <SystemCard
                     name="Sample"
                     title="Sample"

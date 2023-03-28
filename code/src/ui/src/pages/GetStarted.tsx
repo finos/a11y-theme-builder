@@ -70,7 +70,7 @@ const GetStarted: React.FC<Props> = ({ user }) => {
                 <ModalSystemName isOpen={systemNameIsOpen} onClose={() => setSystemNameIsOpen(false)} />
             </HeadingSection>
             <ExampleSection title="Your Design Systems">
-                <div style={{ display: "flex", gap: "20px" }}>
+                <div className="card-container">
                     {renderDesignSystems()}
                 </div>
             </ExampleSection>
