@@ -81,18 +81,20 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
 
     function enableDisableItems() {
         let _molecules = {...molecules};
+        const isDisabled = !designSystem.molecules.isEnabled();
         for (const [key, node] of Object.entries(designSystem.molecules)) {
             if (node instanceof Molecule) {
                 if (notImplemented.indexOf(key) == -1) {
                     if (_molecules[key]) {
-                        console.log("Molecule enabled:"+key+" enabled="+node.isEnabled());
-                        //_molecules[key].disabled = false; //TODO: remove when done developing
-                        _molecules[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                        _molecules[key].disabled = isDisabled;
                     }
                 }
             }
         }
         setMolecules(_molecules);
+        if (_molecules[showMolecule] && _molecules[showMolecule].disabled) {
+            setShowMolecule("molecules");
+        }
     }
 
     const [molecules, setMolecules] = useState<{[key: string]:moleculeItem}>(moleculesList);

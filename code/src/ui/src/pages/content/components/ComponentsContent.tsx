@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
-import { DesignSystem} from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
@@ -69,6 +69,36 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-components-content-selected", showComponent)
     }, [showComponent])
 
+
+    const [disabled, setDisabled] = useState<boolean>(false);
+    function enableDisableItems() {
+        const isDisabled = !designSystem.organisms.isEnabled();
+        setDisabled(isDisabled);
+        if (isDisabled) {
+            setShowComponent("");
+        }
+    }
+    useEffect(() => {
+        if (designSystem) {
+            designSystem.setListener("CodeContent-isEditable", 
+                function(event: Event) {
+                    if (event.type == EventType.NodeDisabled) {
+                        enableDisableItems();
+                    }
+                    else if (event.type == EventType.NodeEnabled) {
+                        enableDisableItems();
+                    }
+                }
+            )
+            enableDisableItems();
+        }
+    }, [])
+
+    useEffect(() => {
+    }, [disabled])
+
+
+
     return (
         <>
             <div className="design-system-editor-left-nav">
@@ -89,10 +119,10 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayColors} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <LeftNavItem text={"Primary"} value="colorsPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsPrimary")}} />
-                            <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
-                            <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
-                            <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
+                            <LeftNavItem text={"Primary"} value="colorsPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsPrimary")}} disabled={disabled}/>
+                            <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} disabled={disabled}/>
+                            <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} disabled={disabled}/>
+                            <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} disabled={disabled}/>
                         </List>
                     </Collapse>
                     <LeftNavItem text={"Typography"} indent={1} onClick={()=>setDisplayTypography(!displayTypography)}>
@@ -100,67 +130,67 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayTypography} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <LeftNavItem text={"Display"} value="typographyPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyPrimary")}} />
-                            <LeftNavItem text={"Headers"} value="typographyHeaders" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyHeaders")}} />
-                            <LeftNavItem text={"Body"} value="typographyBody" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyBody")}} />
-                            <LeftNavItem text={"Small Fonts Styles"} value="typographySmallFontsStyles" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographySmallFontsStyles")}} />
+                            <LeftNavItem text={"Display"} value="typographyPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyPrimary")}} disabled={disabled}/>
+                            <LeftNavItem text={"Headers"} value="typographyHeaders" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyHeaders")}} disabled={disabled}/>
+                            <LeftNavItem text={"Body"} value="typographyBody" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyBody")}} disabled={disabled}/>
+                            <LeftNavItem text={"Small Fonts Styles"} value="typographySmallFontsStyles" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographySmallFontsStyles")}} disabled={disabled}/>
                         </List>
                     </Collapse>
                     <LeftNavHeader>Desktop Components</LeftNavHeader>
-                    <LeftNavItem text={"Accordions"} value="accordions" indent={1} selected={showComponent} onClick={()=> {setShowComponent("accordions")}} />
+                    <LeftNavItem text={"Accordions"} value="accordions" indent={1} selected={showComponent} onClick={()=> {setShowComponent("accordions")}} disabled={disabled}/>
                     
-                    <LeftNavItem text={"Avatars" /* - Single */} value="avatarsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsSingle")}} />
-                    { /* <LeftNavItem text={"Avatars - Groups"} value="avatarsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsGroups")}} /> */}
+                    <LeftNavItem text={"Avatars" /* - Single */} value="avatarsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsSingle")}} disabled={disabled}/>
+                    { /* <LeftNavItem text={"Avatars - Groups"} value="avatarsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsGroups")}} disabled={disabled}/> */}
                     
-                    <LeftNavItem text={"Breadcrumbs"} value="breadcrumbs" indent={1} selected={showComponent} onClick={()=> {setShowComponent("breadcrumbs")}} />
+                    <LeftNavItem text={"Breadcrumbs"} value="breadcrumbs" indent={1} selected={showComponent} onClick={()=> {setShowComponent("breadcrumbs")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Buttons - Standard"} value="buttonsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsStandard")}} />
-                    <LeftNavItem text={"Buttons - Small"} value="buttonsSmall" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsSmall")}} />
-                    <LeftNavItem text={"Buttons - Groups"} value="buttonsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsGroups")}} />
+                    <LeftNavItem text={"Buttons - Standard"} value="buttonsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsStandard")}} disabled={disabled}/>
+                    <LeftNavItem text={"Buttons - Small"} value="buttonsSmall" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsSmall")}} disabled={disabled}/>
+                    <LeftNavItem text={"Buttons - Groups"} value="buttonsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsGroups")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Cards - Standard"} value="cardsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStandard")}} />
-                    <LeftNavItem text={"Cards - Images"} value="cardsImages" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages")}} />
-                    <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} />
-                    <LeftNavItem text={"Cards - Stats"} value="cardsStats" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStats")}} />
+                    <LeftNavItem text={"Cards - Standard"} value="cardsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStandard")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - Images"} value="cardsImages" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - Stats"} value="cardsStats" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStats")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Checkboxes"} value="checkboxes" indent={1} selected={showComponent} onClick={()=> {setShowComponent("checkboxes")}} />
+                    <LeftNavItem text={"Checkboxes"} value="checkboxes" indent={1} selected={showComponent} onClick={()=> {setShowComponent("checkboxes")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Chips"} value="chips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("chips")}} />
+                    <LeftNavItem text={"Chips"} value="chips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("chips")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Datepicker"} value="datepicker" indent={1} selected={showComponent} onClick={()=> {setShowComponent("datepicker")}} />
+                    <LeftNavItem text={"Datepicker"} value="datepicker" indent={1} selected={showComponent} onClick={()=> {setShowComponent("datepicker")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} />
+                    <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} />
+                    <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Multiselect Dropdown"} value="multiselectDropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("multiselectDropdown")}} />
+                    <LeftNavItem text={"Multiselect Dropdown"} value="multiselectDropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("multiselectDropdown")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"List - Single"} value="listsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsSingle")}} />
-                    <LeftNavItem text={"List - Double"} value="listsDouble" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsDouble")}} />
-                    <LeftNavItem text={"List - Triple"} value="listsTriple" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsTriple")}} />
+                    <LeftNavItem text={"List - Single"} value="listsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsSingle")}} disabled={disabled}/>
+                    <LeftNavItem text={"List - Double"} value="listsDouble" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsDouble")}} disabled={disabled}/>
+                    <LeftNavItem text={"List - Triple"} value="listsTriple" indent={1} selected={showComponent} onClick={()=> {setShowComponent("listsTriple")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Pagination"} value="pagination" indent={1} selected={showComponent} onClick={()=> {setShowComponent("pagination")}} />
+                    <LeftNavItem text={"Pagination"} value="pagination" indent={1} selected={showComponent} onClick={()=> {setShowComponent("pagination")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Popovers"} value="popovers" indent={1} selected={showComponent} onClick={()=> {setShowComponent("popovers")}} />
+                    <LeftNavItem text={"Popovers"} value="popovers" indent={1} selected={showComponent} onClick={()=> {setShowComponent("popovers")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Radio Buttons"} value="radioButtons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("radioButtons")}} />
+                    <LeftNavItem text={"Radio Buttons"} value="radioButtons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("radioButtons")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Switch"} value="switch" indent={1} selected={showComponent} onClick={()=> {setShowComponent("switch")}} />
+                    <LeftNavItem text={"Switch"} value="switch" indent={1} selected={showComponent} onClick={()=> {setShowComponent("switch")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Tabs - Primary"} value="tabsPrimary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsPrimary")}} />
-                    <LeftNavItem text={"Tabs - Secondary"} value="tabsSecondary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsSecondary")}} />
+                    <LeftNavItem text={"Tabs - Primary"} value="tabsPrimary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsPrimary")}} disabled={disabled}/>
+                    <LeftNavItem text={"Tabs - Secondary"} value="tabsSecondary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsSecondary")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Toasts - Single Line"} value="toastsSingleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsSingleLine")}} />
-                    <LeftNavItem text={"Toasts - Double Line"} value="toastsDoubleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsDoubleLine")}} />
-                    <LeftNavItem text={"Toasts - Triple Line"} value="toastsTripleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsTripleLine")}} />
+                    <LeftNavItem text={"Toasts - Single Line"} value="toastsSingleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsSingleLine")}} disabled={disabled}/>
+                    <LeftNavItem text={"Toasts - Double Line"} value="toastsDoubleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsDoubleLine")}} disabled={disabled}/>
+                    <LeftNavItem text={"Toasts - Triple Line"} value="toastsTripleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsTripleLine")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Tooltips"} value="tooltips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltips")}} />
+                    <LeftNavItem text={"Tooltips"} value="tooltips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltips")}} disabled={disabled}/>
 
                     <LeftNavHeader>Mobile Components</LeftNavHeader>
 
-                    <LeftNavItem text={"Navbars - Top"} value="navbarsTop" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsTop")}} />
-                    <LeftNavItem text={"Navbars - Bottom"} value="navbarsBottom" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsBottom")}} />
-                    <LeftNavItem text={"Tooltips"} value="tooltipsMobile" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltipsMobile")}} />
+                    <LeftNavItem text={"Navbars - Top"} value="navbarsTop" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsTop")}} disabled={disabled}/>
+                    <LeftNavItem text={"Navbars - Bottom"} value="navbarsBottom" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsBottom")}} disabled={disabled}/>
+                    <LeftNavItem text={"Tooltips"} value="tooltipsMobile" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltipsMobile")}} disabled={disabled}/>
 
                 </List>
             </div>

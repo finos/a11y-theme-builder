@@ -46,18 +46,20 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
 
     function enableDisableItems() {
         let _organisms = {...organisms};
-        for (const [key, node] of Object.entries(designSystem.molecules)) {
+        const isDisabled = !designSystem.organisms.isEnabled();
+        for (const [key, node] of Object.entries(designSystem.organisms)) {
             if (node instanceof Organism) {
                 if (notImplemented.indexOf(key) == -1) {
                     if (_organisms[key]) {
-                        console.log("Organism enabled:"+key+" enabled="+node.isEnabled());
-                        //_organisms[key].disabled = false; //TODO: remove when done developing
-                        _organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                        _organisms[key].disabled = isDisabled;
                     }
                 }
             }
         }
         setOrganisms(_organisms);
+        if (_organisms[showOrganism] && _organisms[showOrganism].disabled) {
+            setShowOrganism("organisms");
+        }
     }
 
     const [organisms, setOrganisms] = useState<{[key: string]:organismItem}>(organismsList);
