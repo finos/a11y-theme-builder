@@ -1,13 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SystemCard from '../components/SystemCard';
 import { ExampleSection } from './content/ExampleSection';
 import { HeadingSection } from './content/HeadingSection';
+import { ThemeBuilder } from 'a11y-theme-builder-sdk';
+import { LocalStorage } from '../LocalStorage';
+import { ServerStorage } from '../ServerStorage';
 
 interface Props {
     user: any;
 }
 
 const JumpStart: React.FC<Props> = ({ user }) => {
+    const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
+
+    const getDesignSystemNames = async () => {
+        //const storage = new LocalStorage();
+        const storage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
+        if (_themeBuilder) {
+            const dsn = await _themeBuilder.listDesignSystemNames();
+            console.log("dsn=", dsn);
+            setDesignSystemNames(dsn);
+        }
+    };
+
+    useEffect(() => {
+        getDesignSystemNames();
+    }, []);
+
+    const renderDesignSystems = () => {
+        const r = [];
+        for (var i in designSystemNames) {
+            const name = designSystemNames[i];
+            if (name.toLowerCase().indexOf("sample") > -1) {
+            r.push(
+                <SystemCard
+                    key={name}
+                    name={name}
+                    title={name}
+                    onClickHandler={async (event, name) => { window.location.href = "/designSystem/" + name }}
+                />
+            )
+            }
+        }
+        return r;
+    }
 
     return (
         <div>
@@ -18,11 +55,7 @@ const JumpStart: React.FC<Props> = ({ user }) => {
             <div className="top40" />
             <ExampleSection title="Sample Design Systems">
             <div className="card-container">
-                <SystemCard
-                    name="Sample"
-                    title="Sample"
-                    onClickHandler={async (event, name) => { window.location.href = "/designSystem/Sample" }}
-                />
+                {renderDesignSystems()}
             </div>
             </ExampleSection>
         </div>
