@@ -68,8 +68,12 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
         <ListItemButton sx={{
             pl: 2 + (props.indent ? 2*props.indent : 0),
             background: selected ? "var(--secondary)" : null,
+            color: selected ? "var(--on-secondary)" : null,
             borderRight: selected ? "2px solid black" : null,
-            ':hover': { backgroundColor: selected ? "var(--secondary)" : null},
+            ':hover': { 
+                backgroundColor: selected ? "var(--secondary)" : null,
+                color: selected ? "var(--on-secondary)" : null,
+            }
         }}
             disabled={props.disabled}
             onClick={props.onClick}

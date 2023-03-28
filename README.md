@@ -26,8 +26,16 @@ Learn how to [work with](https://github.com/discoverfinancial/a11y-theme-builder
 ## Contributing 
 
 ### Get Involved
->ToDo: Update GitHub Pages Link for Docs Contribute.
-Answer the [call for contributions](https://discoverfinancial.github.io/a11y-theme-builder/contribute/).
+>ToDo: Update GitHub Pages Link for Docs/Contribute.
+
+Strategically, Discover Financial Services intends for this repository to be promoted for maturation upstream within a *yet-to-be-identified* community  such as [FINOS](https://www.finos.org), [The A11y Project](https://www.a11yproject.com), or [OpenJS](https://openjsf.org). If and when such a transfer occurs, normal `pull request` based contributions will be possible. 
+
+For the tactical timeframe, `pull request` will not be accepted. For those willing to 
+answer our [call for contributions](https://discoverfinancial.github.io/a11y-theme-builder/contribute/), please proceed by:
+
+1. 'forking` this repository
+2. Developing a contribution within your forked repo
+3. Opening an issue against our [contributions documentation](https://discoverfinancial.github.io/a11y-theme-builder/contribute/) where a redirect to the new contribution (forked repo) is captured. 
 
 ### Code
 >ToDo: Instructions for developing, building, and testing code contributions.

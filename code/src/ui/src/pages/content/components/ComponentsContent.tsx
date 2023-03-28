@@ -32,12 +32,15 @@ import { SecondaryTabsComponent } from '../../components/SecondaryTabsComponent'
 import { CardsStandardComponent } from '../../components/cards/CardsStandardComponent';
 import { CardsImagesComponent } from '../../components/cards/CardsImagesComponent';
 import { CardsStatsComponent } from '../../components/cards/CardsStatsComponent';
+import { CheckboxesComponent } from '../../components/CheckboxesComponent';
 import { PaginationComponent } from '../../components/PaginationComponent';
 import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
 import { ListsDoubleComponent } from '../../components/ListsDoubleComponent';
 import { MultiselectDropdownComponent } from '../../components/MultiselectDropdownComponent';
 import { MenusComponent } from '../../components/MenusComponent';
+
+import { ChipsComponent } from '../../components/ChipsComponent';
 
 interface Props {
     user: any;
@@ -72,9 +75,11 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
                 <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Styles</LeftNavHeader>
@@ -162,7 +167,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                     {showComponent === "colorsExtendedPalette" &&
                         <ExtendedPaletteComponent designSystem={designSystem} />
                     }
@@ -232,6 +239,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "pagination" &&
                         <PaginationComponent />
                     }
+                    {showComponent === "checkboxes" &&
+                        <CheckboxesComponent />
+                    }
                     {showComponent === "popovers" &&
                         <PopoversComponent />
                     }
@@ -259,6 +269,13 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "tooltips" &&
                         <TooltipsComponent />
                     }
+                    {showComponent === "toastsTripleLine" &&
+                        <ToastsTripleLineComponent />
+                    }
+                    {showComponent === "chips" &&
+                        <ChipsComponent />
+                    }
+            </div>
             </div>
         </>
     );

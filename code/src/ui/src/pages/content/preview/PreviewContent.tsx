@@ -38,39 +38,6 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-preview-mobilePreview-selected", ""+displayMobilePreview)
     }, [displayMobilePreview])
 
-    // const LeftNavText = styled(ListSubheader)(( {theme }) => ({
-    //     textTransform: "uppercase",
-    //     background: "var(--leftNav)",
-    //     color: "var(--on-leftNav)",
-    // }));
-
-    // interface LeftNavItemProps { value?: string, text: string, indent?: number, disabled?:boolean, children?:ReactNode, onClick?:any}
-    // const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
-    //     let fontSize = "1em";
-    //     if (props.indent && (props.indent > 1)) {
-    //         fontSize = (1-props.indent*0.05) + "em";
-    //     }
-    //     return(
-    //         <ListItemButton sx={{
-    //             pl: 2 + (props.indent ? 2*props.indent : 0),
-    //         }}
-    //             disabled={props.disabled}
-    //             onClick={props.onClick}
-    //         >
-    //             <ListItemText 
-    //                 primary={props.text} 
-    //                 primaryTypographyProps={{
-    //                     textTransform: "uppercase", 
-    //                     fontSize: fontSize,
-    //                     fontWeight: "500",
-    //                 }}
-    //             >
-    //             </ListItemText>
-    //             {props.children}
-    //         </ListItemButton>
-    //     )
-    // }
-
     const divStyle = {
         paddingLeft: "30px"
     }
@@ -84,9 +51,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <React.Fragment>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
                 <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Settings</LeftNavHeader>
@@ -183,8 +152,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+                <div className="design-system-editor-right-content-scrollable">
                 <PreviewDetails />
+                </div>
             </div>
         </React.Fragment>
     );

@@ -41,37 +41,6 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-code-content-selected", showItem)
     }, [showItem])
     
-    // interface LeftNavItemProps { value?: string, text: string, indent?: number, disabled?:boolean, children?:ReactNode, onClick?:any}
-    // const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
-    //     const selected = (showItem == props.value);
-    //     let fontSize = "1em";
-    //     if (props.indent && (props.indent > 1)) {
-    //         fontSize = (1-props.indent*0.05) + "em";
-    //     }
-    //     return(
-    //         <ListItemButton sx={{
-    //             pl: 2 + (props.indent ? 2*props.indent : 0),
-    //             background: selected ? "var(--secondary)" : null,
-    //             borderRight: selected ? "2px solid black" : null,
-    //             ':hover': { backgroundColor: selected ? "var(--secondary)" : null},
-    //         }}
-    //             disabled={props.disabled}
-    //             onClick={props.onClick}
-    //         >
-    //             <ListItemText 
-    //                 primary={props.text} 
-    //                 primaryTypographyProps={{
-    //                     textTransform: "uppercase", 
-    //                     fontSize: fontSize,
-    //                     fontWeight: "500",
-    //                 }}
-    //             >
-    //             </ListItemText>
-    //             {props.children}
-    //         </ListItemButton>
-    //     )
-    // }
-    
     const getCssCode = () => {
         const r = [":root {"];
         const vars = designSystem.code.cssGenerator.getVars();
@@ -85,9 +54,11 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
             <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
@@ -97,7 +68,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}}/>
             </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                 {showItem === "code" && <>
                     Introduction...
                 </>}
@@ -191,6 +164,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <Button variant="contained">Copy</Button>
                 </div>
                 </>}
+            </div>
             </div>
         </>
     );

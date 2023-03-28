@@ -9,8 +9,8 @@ export interface ColorModeSelector {
 
 export const ColorModeSelector: React.FC<ColorModeSelector> = ({ colorMode, setColorMode, children }) => {
 
-    const backgroundColor:any = {colored: "var(--primary)", black: "black", white: "white"}
-    const color:any = {colored: "var(--on-primary)", black: "white", white: "black"}
+    const backgroundColor:any = {primary: "var(--primary)", black: "black", white: "white"}
+    const color:any = {primary: "var(--on-primary)", black: "white", white: "black"}
 
     const style = {
         border: "1px dotted black",
@@ -25,7 +25,7 @@ export const ColorModeSelector: React.FC<ColorModeSelector> = ({ colorMode, setC
         <InputLabel>Background Colors</InputLabel>
         <Typography variant="caption">View components on different backgrounds</Typography>
         <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
-            <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
+            <FormControlLabel value="primary" control={<Radio size="small"/>} label="Primary Color"/>
             <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
             <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
         </RadioGroup>

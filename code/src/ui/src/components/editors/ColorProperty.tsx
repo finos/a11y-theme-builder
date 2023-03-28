@@ -44,9 +44,9 @@ export const ColorProperty: React.FC<ColorProps> = ({ property, style, label="",
                 <ColorSwatch shade={value} label={label || property.name} style={{width: "150px"}}/>
             </span>
             {show && 
-            <div>
-                <div style={{position:"fixed",top:"0px",right:"0px",bottom:"0px",left:"0px"}} 
-                    onClick={handleCancel}/>
+            <div style={{position: "relative"}}>
+                { /* <div style={{position:"fixed",top:"0px",right:"0px",bottom:"0px",left:"0px"}} 
+                    onClick={handleCancel}/> */ }
                 <div style={popup}>
                     <div><b>Select a Color</b></div>
                     <ChromePicker color={value} onChange={(color:any) => setValue(color.hex)} />

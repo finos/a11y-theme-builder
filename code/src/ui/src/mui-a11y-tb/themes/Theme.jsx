@@ -250,7 +250,8 @@ try {
                        textDecoration: "var(--buttonTextDecoration)",
                        textTransform: "var(--buttonTextTransform)",
                         ":hover": {
-                            background: "var(--on-primary)",
+                            background: "var(--on-button)",
+                            color: "var(--button)",
                         },
                     }),
                 }
@@ -266,6 +267,25 @@ try {
                         boxShadow: "var(--card-shadow)",
                         background: "var(--surface)",
                         minHeight: "var(--spacing-3)",
+                    }
+                }
+            },
+            MuiCheckbox: {
+                styleOverrides: {
+                    root: {
+                        padding: "0 calc(var(--min-target) + var(--spacing-1))",
+                        margin: "var(--spacing-half) 0",
+                        height: "var(--min-target)",
+                        "&.MuiCheckbox-root": {
+                            backgroundColor: "var(--input)",
+                            color: "var(--on-input)",
+                        },
+                        "&.Mui-checked": {
+                            color: "var(--button) !important",
+                        },
+                        "&.Mui-disabled": {
+                            color: "var(--input-disabled)"
+                        },
                     }
                 }
             },
@@ -427,9 +447,9 @@ try {
                     root: {
                         fontFamily: "var(--navbarPrimary-font)",
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
-                        "&.Mui-selected": {
+                        "&.Mui-selected, &.Mui-selected:hover": {
                             backgroundColor: "var(--secondary)",
-                            color: "var(--on-background)",
+                            color: "var(--on-secondary)",
                         },
                     }
                 }

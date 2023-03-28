@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import { LocalStorage } from '../LocalStorage';
 import { ServerStorage } from '../ServerStorage';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
+import { MeasureDiv } from './MeasureDiv';
 
 const name = "DesignSystemPage"
 
@@ -39,15 +40,15 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
 
     const [tabIndex, setTabIndex] = useState<string>(localStorage.getItem("themebuilder-content-selected") ||"atoms");
     const handleTabChange = (event:any, newTabIndex:string) => {
-       setTabIndex(newTabIndex);
-       localStorage.setItem("themebuilder-content-selected", newTabIndex)
+        setTabIndex(newTabIndex);
+        localStorage.setItem("themebuilder-content-selected", newTabIndex)
     };
 
     const setDesignSystemName = async (designName: string | undefined) => {
         console.log(`${name} - setDesignSystemName(${designName})`);
-        const storage = new LocalStorage();
-        //const storage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({storage: storage});
+        const lStorage = new LocalStorage();
+        const sStorage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({storage: sStorage});
         setThemeBuilder(_themeBuilder)
         if (designName && _themeBuilder) {
             const dsn = await _themeBuilder.listDesignSystemNames();
@@ -81,7 +82,7 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
         if (!initComplete) {
             initComplete = true;
             setDesignSystemName(designSystemName);
-            
+
             // Test theme change from light to dark to light
             // setTimeout(function() {
             //     setThemeName("dark")
@@ -103,58 +104,67 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
             backgroundColor: "rgba(0, 0, 0, 0.04)",
         },
     }));
-    
+
+    const [size, setSize] = useState<number>(window.innerHeight);
+    window.addEventListener("resize", (event) => {
+        setSize(window.innerHeight);
+    });
+    const [divHeight, setDivHeight] = useState<number>(0);
+    const divStyle = {
+        height: (size - divHeight - 4) + "px",
+    }
+
     if (designSystem && themeBuilder)
-    return (
-        <ThemeProvider theme={(themes as any)[themeName]}>
-        <div>
-            <DesignSystemTitleBar designSystemNames={designSystemNames} designSystem={designSystem} />
-            <div className="design-system-container">
-                <div className="design-system-tab-bar">
-                    <Tabs
-                        value={tabIndex}
-                        onChange={handleTabChange}
-                        orientation="horizontal"
-                        centered
-                        sx={{
-                            '.MuiTabs-indicator': {
-                                left: 0,
-                                backgroundColor: "#000"
-                            },
-                        }}
-                    >
-                        <TopNavTab label="Atoms" value="atoms"/>
-                        <TopNavTab label="Molecules" value="molecules"/>
-                        <TopNavTab label="Organisms" value="organisms"/>
-                        <TopNavTab label="Components" value="components"/>
-                        <TopNavTab label="Preview" value="preview"/>
-                        <TopNavTab label="Code" value="code"/>
-                    </Tabs>
-                </div>
-                <div className="design-system-editor-content">
-                    {tabIndex === "atoms" && (
-                        <AtomContent user={user} designSystem={designSystem}/>
-                    )}
-                    {tabIndex === "molecules" && (
-                        <MoleculeContent user={user} designSystem={designSystem}/>
+        return (
+            <ThemeProvider theme={(themes as any)[themeName]}>
+                <div className="design-system-container">
+                    <MeasureDiv setHeight={setDivHeight}>
+                        <DesignSystemTitleBar designSystemNames={designSystemNames} designSystem={designSystem} />
+                        <div className="design-system-tab-bar">
+                            <Tabs
+                                value={tabIndex}
+                                onChange={handleTabChange}
+                                orientation="horizontal"
+                                centered
+                                sx={{
+                                    '.MuiTabs-indicator': {
+                                        left: 0,
+                                        backgroundColor: "#000"
+                                    },
+                                }}
+                            >
+                                <TopNavTab label="Atoms" value="atoms"/>
+                                <TopNavTab label="Molecules" value="molecules"/>
+                                <TopNavTab label="Organisms" value="organisms"/>
+                                <TopNavTab label="Components" value="components"/>
+                                <TopNavTab label="Preview" value="preview"/>
+                                <TopNavTab label="Code" value="code"/>
+                            </Tabs>
+                        </div>
+                    </MeasureDiv>
+                    <div className="design-system-editor-content" style={divStyle}>
+                        {tabIndex === "atoms" && (
+                            <AtomContent user={user} designSystem={designSystem}/>
                         )}
-                    {tabIndex === "organisms" && (
-                        <OrganismContent user={user} designSystem={designSystem}/>
-                    )}
-                    {tabIndex === "preview" && (
-                        <PreviewContent user={user} designSystem={designSystem}/>
-                    )}
-                    {tabIndex === "components" && (
-                        <ComponentsContent user={user} designSystem={designSystem}/>
-                    )}
-                    {tabIndex === "code" && (
-                        <CodeContent user={user} designSystem={designSystem}/>
+                        {tabIndex === "molecules" && (
+                            <MoleculeContent user={user} designSystem={designSystem}/>
                         )}
+                        {tabIndex === "organisms" && (
+                            <OrganismContent user={user} designSystem={designSystem}/>
+                        )}
+                        {tabIndex === "preview" && (
+                            <PreviewContent user={user} designSystem={designSystem}/>
+                        )}
+                        {tabIndex === "components" && (
+                            <ComponentsContent user={user} designSystem={designSystem}/>
+                        )}
+                        {tabIndex === "code" && (
+                            <CodeContent user={user} designSystem={designSystem}/>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </div>
-        </ThemeProvider>
-    );
+            </ThemeProvider>
+        );
 
     return(<div>No design system loaded</div>)
 }

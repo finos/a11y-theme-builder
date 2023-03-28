@@ -46,7 +46,7 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
             borderRight: `1px solid ${_color}`,
         }
     
-        return(<div style={style}></div>)
+        return(<div style={{position:"relative"}}><div style={style}></div></div>)
     }
 
     const renderSelectables = () => {

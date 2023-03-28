@@ -8,14 +8,14 @@ interface Props {
 
 export const BreadcrumbsComponent: React.FC<Props> = () => {
 
-    const [colorMode, setColorMode] = useState<string>("colored");
+    const [colorMode, setColorMode] = useState<string>("primary");
 
     return (
         <div>
             <HeadingSection title="Breadcrumbs" heading="Breadcrumbs" />
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <h4>Standard Breadcrumbs</h4>
-                <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs ${colorMode}`}>
+                <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs`}>
                     <Link>Home</Link>
                     <Link>Page</Link>
                     <Typography>Page</Typography>

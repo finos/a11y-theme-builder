@@ -68,8 +68,8 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (node instanceof Organism) {
                     if (notImplemented.indexOf(key) == -1) {
                         if (_organisms[key]) {
-                            //_organisms[key].disabled = false; //TODO: remove when done developing
-                            _organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                            _organisms[key].disabled = false; //TODO: remove when done developing
+                            //_organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                         }
                     }
                 }
@@ -104,9 +104,11 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav-scrollable">
             <List 
                     sx={{
-                        '& ul': {padding:0}
+                        '& ul': {padding:0},
+                        paddingTop: "0px",
                     }}
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
@@ -126,7 +128,9 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                 </List>
             </div>
+            </div>
             <div className="design-system-editor-right-content">
+            <div className="design-system-editor-right-content-scrollable">
                 {showOrganism === "organisms" && (
                     <OrganismIntro />
                 )}
@@ -147,6 +151,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 {showOrganism === "footerCopyright" && (
                     <div>footerCopyright</div>
                 )}
+            </div>
             </div>
         </>
     );

@@ -26,6 +26,9 @@
     background-color: var(--nav-color) !important;
     /* border: 0px solid green; test */
 }
+.welcome-left-nav button::after {
+    border: 0;
+}
 
 .welcome-content {
     display: flex;
