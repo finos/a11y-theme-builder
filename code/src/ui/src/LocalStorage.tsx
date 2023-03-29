@@ -1,4 +1,4 @@
-import { Storage } from "a11y-theme-builder-sdk";
+import { Storage, StorageElement } from "a11y-theme-builder-sdk";
 
 const path = "themebuilder-storage-";
 
@@ -15,15 +15,19 @@ export class LocalStorage implements Storage {
 // }
 
 
-    public async get(key: string): Promise<string> {
+    public async get(key: string): Promise<StorageElement> {
         const response = window.localStorage.getItem(path+key);
         //console.log(`LocalStorage.get(${key}) => ${response} type=${typeof response}`);
-        return response || "";
+        let r = {metadata:{}};
+        if (response) {
+            r = JSON.parse(response);
+        }
+        return r;
     }
 
-    public async set(key: string, value: string) {
+    public async set(key: string, data: StorageElement) {
         //console.log(`LocalStorage.set(${key}, ${value})`);
-        const data = JSON.parse(value);
+        //const data = JSON.parse(value);
         //console.log(`data = ${JSON.stringify(data)}`)
         const keys = await this.listKeys();
         if (keys.indexOf(key) > -1) {
@@ -33,7 +37,7 @@ export class LocalStorage implements Storage {
             //console.log(`set(${key}) PATCH`);               
         }
         else {
-            window.localStorage.setItem(path+key, value);
+            window.localStorage.setItem(path+key, JSON.stringify(data));
             //console.log(`set(${key}) POST`);               
         }
     }
@@ -56,4 +60,10 @@ export class LocalStorage implements Storage {
         }
         return data;
     }
+
+    public async listMetadata(key?: string): Promise<StorageElement[]> {
+        //@TODO:
+        return [{metadata:{}}];
+    }
+
 }

@@ -37,21 +37,24 @@ const TestPage: React.FC<Props> = ({user}) => {
         console.log(`getDesignSystems()`);
         const list = await storage.listKeys();
         setDesignSystems(list);
+
+        const metadata = await storage.listMetadata();
+        console.log("Metadata=",metadata);
     }
 
     const addDesignSystem = async () => { 
         console.log(`addDesignSystem()`);
         const num = Math.floor(Math.random() * 1000)
-        const data = {id:"DS_"+num, data:"This is data for design system " + num}
-        const r = await storage.set(data.id, JSON.stringify(data));
+        const data = {id:"DS_"+num, metadata: {}, data:"This is data for design system " + num}
+        const r = await storage.set(data.id, data);
         await getDesignSystems();
         await showDesignSystem({target:{name:data.id}});
     }
 
     const showDesignSystem = async (event: any) => {
         console.log(`showDesignSystem(${event.target.name})`);
-        const ds = await storage.get(event.target.name);
-        const dso = JSON.parse(ds)
+        const dso = await storage.get(event.target.name);
+        //const dso = JSON.parse(ds)
         setDesignSystemData(dso);
     }
 
@@ -65,12 +68,13 @@ const TestPage: React.FC<Props> = ({user}) => {
         console.log(`updateDesignSystem(${event.target.name})`);
         const id = event.target.name;
         let cnt = 1;
-        const c = await storage.get(id);
-        const co = JSON.parse(c);
+        const co = await storage.get(id) as any;
+        //const co = JSON.parse(c);
         if (co.updated) {
             cnt = co.updated + 1;
         }
-        const ds = await storage.set(id, JSON.stringify({data: "Updated data for design system " + id, updated:cnt}));
+        const data = {metadata: {}, data: "Updated data for design system " + id, updated:cnt};
+        const ds = await storage.set(id, data);
         await getDesignSystems();
         await showDesignSystem(event);
     }

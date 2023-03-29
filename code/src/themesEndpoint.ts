@@ -32,7 +32,29 @@ async function getDocs(match?: any): Promise<any[]> {
     return new Promise((success:any, fail:any) => {
         collection.find(match).toArray(function(err:any, items:any) {
             if (items) {
-                console.log("  items=",items);
+                //console.log("  items=",items);
+                const rtn: any = [];
+                for (let doc of items) {
+                    delete doc["_id"];
+                    rtn.push(doc);
+                }
+                return success(rtn);
+            }
+            if (err) {
+                return fail(new DocError(500, err.message));
+            }
+            return fail(new DocError(404, `no documents were found`));
+        })
+    });
+}
+
+// Get metadata for all theme objects
+async function getMetadata(match?: any): Promise<any[]> {
+    console.log(`getMetadata()`);
+    const fields = { id:1, metadata:1};
+    return new Promise((success:any, fail:any) => {
+        collection.find(match, fields).toArray(function(err:any, items:any) {
+            if (items) {
                 const rtn: any = [];
                 for (let doc of items) {
                     delete doc["_id"];
@@ -52,7 +74,7 @@ async function getDocs(match?: any): Promise<any[]> {
 async function getDocNames(match?: any): Promise<any[]> {
     console.log(`getDocNames()`);
     return new Promise((success:any, fail:any) => {
-        collection.find(match).toArray(function(err:any, items:any) {
+        collection.find(match, { id: 1 }).toArray(function(err:any, items:any) {
             if (items) {
                 console.log("  items=",items);
                 const rtn: any = [];
@@ -202,8 +224,15 @@ export function registerThemesEndpoint(app: express.Application) {
 
             // Get list of themes
             if (method == "GET") {
-                const r = await getDocNames();
-                return res.send(r);
+                const metadata = req.query.metadata;
+                if (metadata === undefined) {
+                    const r = await getDocNames();
+                    return res.send(r);
+                }
+                else {
+                    const r = await getMetadata();
+                    return res.send(r);
+                }
             }
 
             // Create new theme

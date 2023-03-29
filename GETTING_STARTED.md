@@ -64,11 +64,12 @@ The Theme Builder server serves the React application at the `/` endpoint.
 
 The APIs are under the `/api/` endpoint, with the following apis available:
 
-### /api/themes - Get list of all themes 
+### /api/themes?metadata - Get list of all themes or metadata for all themes
 - **Method**: GET
 - **Returns**: Array of theme names
 - **Return Errors**: None
 - **Example**: GET /api/themes => [ "theme1", "theme2" ]
+- **Example**: GET /api/themes?metadata => [ {id:"theme1", metadata:{..}}, {id:"theme2", metadata: {..}} ]
 
 ### /api/themes - Create a new theme
 - **Method**: POST
