@@ -13,48 +13,6 @@
     margin-top: 21px;
 }
 
-.design-system-editor-right-content .information {
-    background: var(--info) !important;
-    color: var(--on-info);
-    fill: rgb(var(--info));
-}
-.design-system-editor-right-content .success {
-    background: var(--success) !important;
-    color: var(--on-success );
-    fill: rgb(var(--success));
-}
-.design-system-editor-right-content .warning {
-    background: var(--warning) !important;
-    color: var(--on-warning);
-    fill: rgb(var(--warning));
-}
-.design-system-editor-right-content .danger{
-    background: var(--danger) !important;
-    color: var(--on-danger);
-    fill: rgb(var(--danger)) !important;
-}
-
-.design-system-editor-right-content .darkmode .information {
-    background: var(--dm-info) !important;
-    color: var(--dm-on-info);
-    fill: rgb(var(--dm-info));
-}
-.design-system-editor-right-content .darkmode .success {
-    background: var(--dm-success) !important;
-    color: var(--dm-on-success );
-    fill: rgb(var(--dm-success));
-}
-.design-system-editor-right-content .darkmode .warning {
-    background: var(--dm-warning) !important;
-    color: var(--dm-on-warning);
-    fill: rgb(var(--dm-warning));
-}
-.design-system-editor-right-content .darkmode .danger {
-    background: var(--dm-danger) !important;
-    color: var(--dm-on-danger);
-    fill: rgb(var(--dm-danger)) !important;
-}
-
 .design-system-editor-right-content .darkmode .statesListItem input {
     background: var(--dm-background) !important;
     color: var(--dm-on-background);

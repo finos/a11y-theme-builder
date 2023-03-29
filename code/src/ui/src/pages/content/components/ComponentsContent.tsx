@@ -24,7 +24,10 @@ import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComp
 import { SwitchComponent } from '../../components/SwitchComponent';
 import { RadioButtonsComponent } from '../../components/RadioButtonsComponent';
 import { PopoversComponent } from '../../components/PopoversComponent';
+import { CoreColorsComponent } from '../../components/colors/CoreColorsComponent';
+import { ThemeColorsComponent } from '../../components/colors/ThemeColorsComponent';
 import { ExtendedPaletteComponent } from '../../components/colors/ExtendedPaletteComponent';
+import { BackgroundColorsComponent } from '../../components/colors/BackgroundColorsComponent';
 import { GradientsComponent } from '../../components/colors/GradientsComponent';
 import { ColorStatesComponent } from '../../components/colors/ColorStatesComponent';
 import { PrimaryTabsComponent } from '../../components/PrimaryTabsComponent';
@@ -119,10 +122,12 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayColors} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <LeftNavItem text={"Primary"} value="colorsPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsPrimary")}} disabled={disabled}/>
-                            <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} disabled={disabled}/>
-                            <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} disabled={disabled}/>
-                            <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} disabled={disabled}/>
+                            <LeftNavItem text={"Core Colors"} value="colorsCoreColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsCoreColors")}} />
+                            <LeftNavItem text={"Theme Colors"} value="colorsThemeColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsThemeColors")}} />
+                            <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
+                            <LeftNavItem text={"Backgrounds"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
+                            <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
+                            <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
                         </List>
                     </Collapse>
                     <LeftNavItem text={"Typography"} indent={1} onClick={()=>setDisplayTypography(!displayTypography)}>
@@ -197,8 +202,17 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
+                    {showComponent === "colorsCoreColors" &&
+                        <CoreColorsComponent />
+                    }
+                    {showComponent === "colorsThemeColors" &&
+                        <ThemeColorsComponent />
+                    }
                     {showComponent === "colorsExtendedPalette" &&
                         <ExtendedPaletteComponent designSystem={designSystem} />
+                    }
+                    {showComponent === "colorsBackgroundColors" &&
+                        <BackgroundColorsComponent />
                     }
                     {showComponent === "colorsGradients" &&
                         <GradientsComponent />

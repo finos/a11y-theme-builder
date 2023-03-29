@@ -22,6 +22,7 @@
       "@types/uuid": "^8.3.4",
       "axios": "^0.26.1",
       "buffer": "^6.0.3",
+      "colord": "^2.9.3",
       "html-react-parser": "^1.4.8",
       "react": "18.2.0",
       "react-color": "^2.19.3",
