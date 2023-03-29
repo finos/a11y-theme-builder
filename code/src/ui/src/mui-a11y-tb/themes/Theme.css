@@ -2734,6 +2734,29 @@ button.small-btn.MuiButton-text::before {
   color: var(--hotlinkOnBlack);
 }
 
+/*  WHITE  */
+.white , .white-bg {
+  background: var(--white) !important;
+  color: var(--black) !important;
+}
+.white button , .white-bg  button  {
+  background: var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite) !important;
+}
+.white button::after, .white-bg  button::after  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
+}
+.white button .inline-icon path, .white-bg button .inline-icon path {
+  fill: var(--onbuttonOnWhite) !important;
+}
+.white .inline-icon path , .white-bg .inline-icon path {
+  fill: var(--iconOnWhite) !important;
+}
+.white a , .white-bg a {
+  text-decoration: var(--linkDecorationOnWhite);
+  color: var(--linkOnWhite);
+}
+
 .primary-050-bg {
   background: var(--primary-0) !important;
   color: var(--on-primary-0) !important;
@@ -2976,4 +2999,34 @@ button.small-btn.MuiButton-text::before {
 }
 .tertiary-900-bg path{
   fill: var(--on-tertiary-900);
+}
+
+.background {
+  background: var(--background) !important;
+  color: var(--on-background);
+}
+/*.background:nth-of-type(even), .background-secondary  {*/
+.background-secondary  {
+  background: var(--background-secondary) !important;
+  color: var(--on-background-secondary);
+}
+
+.background-tertiary  {
+  background: var(--background-tertiary) !important;
+  color: var(--on-background-tertiary);
+}
+
+.darkmode .background, .darkmode.background {
+  background: var(--dm-background) !important;
+  color: var(--dm-on-background);
+}
+
+.darkmode .background:nth-of-type(even), .darkmode .background-secondary{
+  background: var(--dm-background-secondary) !important;
+  color: var(--dm-on-background-secondary);
+}
+
+.darkmode .background-tertiary {
+  background: var(--dm-background-tertiary) !important;
+  color: var(--dm-on-background-tertiary);
 }

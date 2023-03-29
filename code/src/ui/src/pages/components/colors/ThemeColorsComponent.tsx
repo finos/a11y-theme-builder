@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Color, ColorPalette, DesignSystem } from 'a11y-theme-builder-sdk';
+import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
 
 interface Props {
-    designSystem: DesignSystem;
 }
 
 const swatchesObj = {
@@ -13,7 +11,7 @@ const swatchesObj = {
     classNameSuffix: "bg",
 }
 
-export const ThemeColorsComponent: React.FC<Props> = ({designSystem}) => {
+export const ThemeColorsComponent: React.FC<Props> = ({}) => {
 
     return (
         <div>

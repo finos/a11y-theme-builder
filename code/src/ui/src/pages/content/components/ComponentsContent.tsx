@@ -26,6 +26,7 @@ import { RadioButtonsComponent } from '../../components/RadioButtonsComponent';
 import { PopoversComponent } from '../../components/PopoversComponent';
 import { ThemeColorsComponent } from '../../components/colors/ThemeColorsComponent';
 import { ExtendedPaletteComponent } from '../../components/colors/ExtendedPaletteComponent';
+import { BackgroundColorsComponent } from '../../components/colors/BackgroundColorsComponent';
 import { GradientsComponent } from '../../components/colors/GradientsComponent';
 import { ColorStatesComponent } from '../../components/colors/ColorStatesComponent';
 import { PrimaryTabsComponent } from '../../components/PrimaryTabsComponent';
@@ -92,6 +93,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavItem text={"Theme Colors"} value="colorsThemeColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsThemeColors")}} />
                             <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
+                            <LeftNavItem text={"Background Colors"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
                             <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
                             <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
                         </List>
@@ -169,10 +171,13 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
                     {showComponent === "colorsThemeColors" &&
-                        <ThemeColorsComponent designSystem={designSystem} />
+                        <ThemeColorsComponent />
                     }
                     {showComponent === "colorsExtendedPalette" &&
                         <ExtendedPaletteComponent designSystem={designSystem} />
+                    }
+                    {showComponent === "colorsBackgroundColors" &&
+                        <BackgroundColorsComponent />
                     }
                     {showComponent === "colorsGradients" &&
                         <GradientsComponent />
