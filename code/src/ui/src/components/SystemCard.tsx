@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem } from "@mui/material";
+import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider } from "@mui/material";
 import React, { useState, MouseEvent } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
@@ -24,8 +24,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
     const handleClick = (event: MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = async (event:any) => {
-        const value = event.currentTarget.dataset.value;
+    const handleClose = async (value: string) => {
         setAnchorEl(null);
         if (value) {
             if (value == "load") {
@@ -74,6 +73,10 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
         tertiary = metadata.colors.tertiary;
         background = metadata.colors.background;
     } 
+    let isSample = false;
+    if (metadata && metadata.sample) {
+        isSample = true;
+    }
 
     return (
         <div className="system-card">
@@ -92,7 +95,10 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                         </IconButton>
                     }
                     title={
-                        <h5>{designSystem.id}</h5>
+                        <h5 
+                            onClick={() => handleClose("load")}
+                            style={{cursor: "pointer"}}
+                        >{designSystem.id}</h5>
                     }
                     subheader={
                         <div className="date caption quiet">
@@ -118,11 +124,11 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                 open={open}
                 onClose={handleClose}
             >
-                {options.map((option) => (
-                <MenuItem key={option.value} data-value={option.value} onClick={handleClose}>
-                    {option.label}
-                </MenuItem>
-                ))}
+                <MenuItem onClick={() => handleClose("load")}>Load Design System</MenuItem>
+                {!isSample && <MenuItem onClick={() => handleClose("add")}>Add to Samples Page</MenuItem>}
+                {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}                
+                <Divider/>
+                <MenuItem onClick={() => handleClose("delete")}>Delete Design System</MenuItem>
             </Menu>            
         </div>
     );
