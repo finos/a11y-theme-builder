@@ -1,11 +1,11 @@
 import React, {ReactDOM} from 'react';
 import { Tab, Tabs, Box, Button, Grid, Paper } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { ServerStorage } from './ServerStorage';
-import { LocalStorage } from './LocalStorage';
+import { Storage } from 'a11y-theme-builder-sdk';
 
 interface Props {
     user: any;
+    storage: Storage;
 }
 
     // var v = window.localStorage.getItem("buttons");
@@ -17,11 +17,11 @@ interface Props {
 //     console.log(keys[i]+"="+localStorage.getItem(keys[i]))
 // }
 
-const TestPage: React.FC<Props> = ({user}) => {
+const TestPage: React.FC<Props> = ({user, storage}) => {
 
     const paperStyle = {padding: "10px", height:"100%"}
 
-    const storage = new ServerStorage();
+    //const storage = new ServerStorage();
     //const storage = new LocalStorage();
 
     const [tabIndex, setTabIndex] = useState(0);

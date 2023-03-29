@@ -16,6 +16,8 @@ import { BrowserRouter , Routes, Route } from 'react-router-dom';
 
 import { Http } from './Http'
 import { ThemeProvider, Theme } from '@mui/material';
+import { LocalStorage } from './LocalStorage';
+import { ServerStorage } from './ServerStorage';
 
 if (window.location.hostname == "localhost" && window.location.port == "3000") {
     Http.init(window.location.origin.replace("3000", "3001"));
@@ -52,6 +54,9 @@ const App: React.FC<Props> = ({user}) => {
         }
     }
 
+    //const storage = new LocalStorage();
+    const storage = new ServerStorage();
+
     /**
      * Render content
      */
@@ -60,9 +65,9 @@ const App: React.FC<Props> = ({user}) => {
             { /* <ThemeProvider theme={customTheme}> */ }
                 <div className="App">
                     <Routes>
-                        <Route path="/" element={<WelcomePage user={user} themeName={themeName} />} />
-                        <Route path="designSystem/:designSystemName" element={<DesignSystemPage user={user} themeName={themeName} setThemeName={changeThemeName} />} />
-                        <Route path="test" element={<TestPage user={user} />} />
+                        <Route path="/" element={<WelcomePage user={user} themeName={themeName} storage={storage} />} />
+                        <Route path="designSystem/:designSystemName" element={<DesignSystemPage user={user} themeName={themeName} setThemeName={changeThemeName} storage={storage} />} />
+                        <Route path="test" element={<TestPage user={user} storage={storage} />} />
                         <Route path="*" element={<ErrorPage user={user} />} />
                     </Routes>
                 </div>

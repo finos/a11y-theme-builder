@@ -10,13 +10,15 @@ import { themes } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../components/LeftNavTabs';
 import { MeasureDiv } from './MeasureDiv';
+import { Storage } from 'a11y-theme-builder-sdk';
 
 interface Props {
     user: any;
+    storage: Storage;
     themeName: string;
 }
 
-const WelcomePage: React.FC<Props> = ({ user, themeName }) => {
+const WelcomePage: React.FC<Props> = ({ user, storage, themeName }) => {
 
     const [showItem, setShowItem] = useState<string>(localStorage.getItem("themebuilder-welcome-selected") || "welcome");
     useEffect(() => {
@@ -63,10 +65,10 @@ const WelcomePage: React.FC<Props> = ({ user, themeName }) => {
                             <Welcome user={user} changeTab={handleTabChange} />
                         )}
                         {showItem === "jumpStart" && (
-                            <JumpStart user={user} />
+                            <JumpStart user={user} storage={storage}/>
                         )}
                         {showItem === "getStarted" && (
-                            <GetStarted user={user} />
+                            <GetStarted user={user} storage={storage}/>
                         )}
                     </div>
                     </div>

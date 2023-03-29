@@ -2,7 +2,7 @@ import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { ThemeBuilder, DesignSystem } from 'a11y-theme-builder-sdk';
+import { ThemeBuilder, DesignSystem, Storage } from 'a11y-theme-builder-sdk';
 import { DesignSystemTitleBar } from '../components/DesignSystemTitleBar';
 import { AtomContent } from './content/atoms/AtomContent';
 import { MoleculeContent } from './content/molecules/MoleculeContent';
@@ -11,8 +11,6 @@ import { PreviewContent } from './content/preview/PreviewContent';
 import { ComponentsContent } from './content/components/ComponentsContent';
 import { CodeContent } from './content/code/CodeContent';
 import './DesignSystemPage.css';
-import { LocalStorage } from '../LocalStorage';
-import { ServerStorage } from '../ServerStorage';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
 import { MeasureDiv } from './MeasureDiv';
@@ -21,13 +19,14 @@ const name = "DesignSystemPage"
 
 interface Props {
     user: any;
+    storage: Storage;
     themeName: string;
     setThemeName(name: string): void;
 }
 
 let initComplete = false;
 
-const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
+const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeName}) => {
 
     // designSystemName comes into the component from the path
     //  of the Route
@@ -46,9 +45,7 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
 
     const setDesignSystemName = async (designName: string | undefined) => {
         console.log(`${name} - setDesignSystemName(${designName})`);
-        const lStorage = new LocalStorage();
-        const sStorage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({storage: sStorage});
+        let _themeBuilder = await ThemeBuilder.create({storage: storage});
         setThemeBuilder(_themeBuilder)
         if (designName && _themeBuilder) {
             const dsn = await _themeBuilder.listDesignSystemNames();

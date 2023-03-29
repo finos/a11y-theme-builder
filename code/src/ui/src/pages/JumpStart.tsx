@@ -2,22 +2,19 @@ import React, { useEffect, useState } from 'react';
 import SystemCard from '../components/SystemCard';
 import { ExampleSection } from './content/ExampleSection';
 import { HeadingSection } from './content/HeadingSection';
-import { ThemeBuilder } from 'a11y-theme-builder-sdk';
-import { LocalStorage } from '../LocalStorage';
-import { ServerStorage } from '../ServerStorage';
+import { Storage, ThemeBuilder } from 'a11y-theme-builder-sdk';
 
 interface Props {
     user: any;
+    storage: Storage;
 }
 
-const JumpStart: React.FC<Props> = ({ user }) => {
+const JumpStart: React.FC<Props> = ({ user, storage }) => {
     const [designSystems, setDesignSystems] = useState<any>([]);
     const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
 
     const getDesignSystemNames = async () => {
-        const lStorage = new LocalStorage();
-        const sStorage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({ storage: sStorage });
+        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
         setThemeBuilder(_themeBuilder);
     };
 
