@@ -96,7 +96,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                     }
                     subheader={
                         <div className="date caption quiet">
-                            {renderDate(metadata ? metadata.time.lastUpdateInMs : null)} &nbsp;
+                            {renderDate((metadata && metadata.time) ? metadata.time.lastUpdateInMs : null)} &nbsp;
                         </div>
                     }
                 >
