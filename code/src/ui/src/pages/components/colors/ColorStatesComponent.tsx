@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DesignSystem, StateSettings } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
-import { ColorSwatch } from '../../../components/ColorSwatch';
+import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
 
 interface Props {
     designSystem: DesignSystem;
@@ -16,10 +16,22 @@ export const ColorStatesComponent: React.FC<Props> = ({designSystem}) => {
             <div>
                 <HeadingSection title="Colors" heading="State Colors" />
                 <div className="theme-colors">
-                    <ColorSwatch shade={_stateSettings.info.lmShade}></ColorSwatch>
-                    <ColorSwatch shade={_stateSettings.success.lmShade}></ColorSwatch>
-                    <ColorSwatch shade={_stateSettings.warning.lmShade}></ColorSwatch>
-                    <ColorSwatch shade={_stateSettings.danger.lmShade}></ColorSwatch>
+                    <ComputedColorSwatch
+                        className="info"
+                        label="Info"
+                    />
+                    <ComputedColorSwatch
+                        className="success"
+                        label="Success"
+                    />
+                    <ComputedColorSwatch
+                        className="warning"
+                        label="Warning"
+                    />
+                    <ComputedColorSwatch
+                        className="danger"
+                        label="Danger"
+                    />
                 </div>
             </div>
         );

@@ -95,7 +95,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         <LeftNavItem text={"Core Colors"} value="colorsCoreColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsCoreColors")}} />
                             <LeftNavItem text={"Theme Colors"} value="colorsThemeColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsThemeColors")}} />
                             <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
-                            <LeftNavItem text={"Background Colors"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
+                            <LeftNavItem text={"Backgrounds"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
                             <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
                             <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
                         </List>

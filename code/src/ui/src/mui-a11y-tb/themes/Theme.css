@@ -3050,6 +3050,50 @@ button.small-btn.MuiButton-text::before {
   background: var(--gray-900) !important;
   color: var(--on-gray-900);
 }
+
+/* States */
+.info {
+  background: var(--info) !important;
+  color: var(--on-info);
+  fill: rgb(var(--info));
+}
+.success {
+  background: var(--success) !important;
+  color: var(--on-success );
+  fill: rgb(var(--success));
+}
+.warning {
+  background: var(--warning) !important;
+  color: var(--on-warning);
+  fill: rgb(var(--warning));
+}
+.danger {
+  background: var(--danger) !important;
+  color: var(--on-danger);
+  fill: rgb(var(--danger)) !important;
+}
+
+.darkmode .info {
+  background: var(--dm-info) !important;
+  color: var(--dm-on-info);
+  fill: rgb(var(--dm-info));
+}
+.darkmode .success {
+  background: var(--dm-success) !important;
+  color: var(--dm-on-success );
+  fill: rgb(var(--dm-success));
+}
+.darkmode .warning {
+  background: var(--dm-warning) !important;
+  color: var(--dm-on-warning);
+  fill: rgb(var(--dm-warning));
+}
+.darkmode .danger {
+  background: var(--dm-danger) !important;
+  color: var(--dm-on-danger);
+  fill: rgb(var(--dm-danger)) !important;
+}
+
 .nearblack-bg {
   background: var(--nearblack) !important;
   color: var(--on-nearblack);
