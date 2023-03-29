@@ -62,8 +62,13 @@ export class LocalStorage implements Storage {
     }
 
     public async listMetadata(key?: string): Promise<StorageElement[]> {
-        //@TODO:
-        return [{metadata:{}}];
+        const metadata = [];
+        const keys = await this.listKeys();
+        for (var i=0; i<keys.length; i++) {
+            const item = await this.get(keys[i]) as any;
+            metadata.push({id: keys[i], metadata: item.metadata});
+        }
+        return metadata;
     }
 
 }
