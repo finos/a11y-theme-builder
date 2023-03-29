@@ -24,6 +24,7 @@ import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComp
 import { SwitchComponent } from '../../components/SwitchComponent';
 import { RadioButtonsComponent } from '../../components/RadioButtonsComponent';
 import { PopoversComponent } from '../../components/PopoversComponent';
+import { CoreColorsComponent } from '../../components/colors/CoreColorsComponent';
 import { ThemeColorsComponent } from '../../components/colors/ThemeColorsComponent';
 import { ExtendedPaletteComponent } from '../../components/colors/ExtendedPaletteComponent';
 import { BackgroundColorsComponent } from '../../components/colors/BackgroundColorsComponent';
@@ -91,6 +92,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayColors} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
+                        <LeftNavItem text={"Core Colors"} value="colorsCoreColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsCoreColors")}} />
                             <LeftNavItem text={"Theme Colors"} value="colorsThemeColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsThemeColors")}} />
                             <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
                             <LeftNavItem text={"Background Colors"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
@@ -170,6 +172,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
+                    {showComponent === "colorsCoreColors" &&
+                        <CoreColorsComponent />
+                    }
                     {showComponent === "colorsThemeColors" &&
                         <ThemeColorsComponent />
                     }

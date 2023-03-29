@@ -2739,6 +2739,9 @@ button.small-btn.MuiButton-text::before {
   background: var(--white) !important;
   color: var(--black) !important;
 }
+.white-half {
+  background: var(--white-half) !important;
+}
 .white button , .white-bg  button  {
   background: var(--buttonOnWhite) !important;
   color: var(--onbuttonOnWhite) !important;
@@ -2999,6 +3002,62 @@ button.small-btn.MuiButton-text::before {
 }
 .tertiary-900-bg path{
   fill: var(--on-tertiary-900);
+}
+
+.gray {
+  background: var(--gray) !important;
+  color: var(--on-gray) !important;
+}
+
+.gray-050-bg {
+  background: var(--gray-0) !important;
+  color: var(--on-gray-0);
+}
+.gray-100-bg {
+  background: var(--gray-100) !important;
+  color: var(--on-gray-100);
+}
+
+.gray-200-bg {
+  background: var(--gray-200) !important;
+  color: var(--on-gray-200);
+}
+.gray-300-bg {
+  background: var(--gray-300) !important;
+  color: var(--on-gray-300);
+}
+.gray-400-bg {
+  background: var(--gray-400) !important;
+  color: var(--on-gray-400);
+}
+.gray-500-bg {
+  background: var(--gray-500) !important;
+  color: var(--on-gray-500);
+}
+.gray-600-bg {
+  background: var(--gray-600) !important;
+  color: var(--on-gray-600);
+}
+.gray-700-bg {
+  background: var(--gray-700) !important;
+  color: var(--on-gray-700);
+}
+.gray-800-bg {
+  background: var(--gray-800) !important;
+  color: var(--on-gray-800);
+}
+.gray-900-bg {
+  background: var(--gray-900) !important;
+  color: var(--on-gray-900);
+}
+.nearblack-bg {
+  background: var(--nearblack) !important;
+  color: var(--on-nearblack);
+}
+
+.darkmode .nearblack-bg {
+  background: var(--nearblack) !important;
+  color: var(--dm-on-nearblack);
 }
 
 .background {
