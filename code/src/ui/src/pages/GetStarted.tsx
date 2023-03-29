@@ -14,34 +14,39 @@ interface Props {
 
 const GetStarted: React.FC<Props> = ({ user }) => {
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
-
-    const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
+    const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
+    const [designSystems, setDesignSystems] = useState<any>([]);
 
     const getDesignSystemNames = async () => {
-        //const storage = new LocalStorage();
-        const storage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
-        if (_themeBuilder) {
-            const dsn = await _themeBuilder.listDesignSystemNames();
-            console.log("dsn=", dsn);
-            setDesignSystemNames(dsn);
+        const lStorage = new LocalStorage();
+        const sStorage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({ storage: sStorage });
+        setThemeBuilder(_themeBuilder);
+    }
+
+    useEffect(() => {
+        if (themeBuilder) {
+            themeBuilder.listMetadata().then(function(_designSystems:any) {
+                setDesignSystems(_designSystems);
+            });
         }
-    };
+    }, [themeBuilder]);
 
     useEffect(() => {
         getDesignSystemNames();
     }, []);
 
     const renderDesignSystems = () => {
+        if (!designSystems) { return (null) }
         const r = [];
-        for (var i in designSystemNames) {
-            const name = designSystemNames[i];
+        for (var i=0; i<designSystems.length; i++) {
+            const ds = designSystems[i];
             r.push(
                 <SystemCard
-                    key={name}
-                    name={name}
-                    title={name}
-                    onClickHandler={async (event, name) => { window.location.href = "/designSystem/" + name }}
+                    themeBuilder={themeBuilder}
+                    designSystem={ds}
+                    key={ds.id}
+                    refresh={getDesignSystemNames}
                 />
             )
         }

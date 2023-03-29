@@ -52,22 +52,18 @@ p a:hover {
   min-height: 24px;
 }
 
-.custom-card h5 {
+.system-card h5 {
     margin: 0;
 }
-.custom-card h6 {
-    margin: 0;
-}
-
-.custom-card {
+.system-card h6 {
     margin: 0;
 }
 
-.quiet {
-    opacity: var(--quiet);
+.system-card {
+    margin: 0;
 }
 
-.custom-card button {
+.system-card button {
     background: var(--background);
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
@@ -86,12 +82,12 @@ p a:hover {
     margin-bottom: 20px;
 }
 .color-band .box {
-    background: var(--primary-500);
     border-radius: 20%;
     width: 24px;
     height: 24px;
     margin: 10px;
     float: left;
+    border: 1px solid gray;
 }
 
 .input-1 {

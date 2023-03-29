@@ -11,36 +11,43 @@ interface Props {
 }
 
 const JumpStart: React.FC<Props> = ({ user }) => {
-    const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
+    const [designSystems, setDesignSystems] = useState<any>([]);
+    const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
 
     const getDesignSystemNames = async () => {
-        //const storage = new LocalStorage();
-        const storage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
-        if (_themeBuilder) {
-            const dsn = await _themeBuilder.listDesignSystemNames();
-            console.log("dsn=", dsn);
-            setDesignSystemNames(dsn);
-        }
+        const lStorage = new LocalStorage();
+        const sStorage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({ storage: sStorage });
+        setThemeBuilder(_themeBuilder);
     };
+
+    useEffect(() => {
+        if (themeBuilder) {
+            themeBuilder.listMetadata().then(function(_designSystems:any) {
+                console.log("_designSystems=", _designSystems);
+                setDesignSystems(_designSystems);
+            });
+        }
+    }, [themeBuilder]);
 
     useEffect(() => {
         getDesignSystemNames();
     }, []);
 
     const renderDesignSystems = () => {
+        if (!designSystems) { return (null) }
         const r = [];
-        for (var i in designSystemNames) {
-            const name = designSystemNames[i];
-            if (name.toLowerCase().indexOf("sample") > -1) {
-            r.push(
-                <SystemCard
-                    key={name}
-                    name={name}
-                    title={name}
-                    onClickHandler={async (event, name) => { window.location.href = "/designSystem/" + name }}
-                />
-            )
+        for (var i=0; i<designSystems.length; i++) {
+            const ds = designSystems[i];
+            if (ds.metadata && ds.metadata.sample) {
+                r.push(
+                    <SystemCard
+                        key={ds.id}
+                        themeBuilder={themeBuilder}
+                        designSystem={ds}
+                        refresh={getDesignSystemNames}
+                    />
+                )
             }
         }
         return r;
