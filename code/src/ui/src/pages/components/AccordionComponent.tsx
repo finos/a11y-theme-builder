@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 interface Props {
 }
 
-export const AccordionComponent: React.FC<Props> = ({ }) => {
+export const AccordionComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <section>

@@ -8,9 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 interface Props {
 }
 
-export const ToastsSingleLineComponent: React.FC<Props> = ({ }) => {
-
-    const toastWidth = "250px"
+export const ToastsSingleLineComponent: React.FC<Props> = () => {
 
     return (
         <div className="content">

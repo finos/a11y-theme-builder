@@ -40,6 +40,9 @@ import { PaginationComponent } from '../../components/PaginationComponent';
 import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
 import { ListsDoubleComponent } from '../../components/ListsDoubleComponent';
+import { MultiselectDropdownComponent } from '../../components/MultiselectDropdownComponent';
+import { MenusComponent } from '../../components/MenusComponent';
+
 import { ChipsComponent } from '../../components/ChipsComponent';
 
 interface Props {
@@ -270,6 +273,12 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "listsTriple" &&
                         <ListsTripleComponent/>
+                    }
+                    {showComponent === "menus" &&
+                        <MenusComponent/>
+                    }
+                    {showComponent === "multiselectDropdown" &&
+                        <MultiselectDropdownComponent/>
                     }
                     {showComponent === "pagination" &&
                         <PaginationComponent />

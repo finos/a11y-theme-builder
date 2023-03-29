@@ -8,10 +8,8 @@ import CloseIcon from '@mui/icons-material/Close';
 interface Props {
 }
 
-export const ToastsDoubleLineComponent: React.FC<Props> = ({ }) => {
+export const ToastsDoubleLineComponent: React.FC<Props> = () => {
     
-    const toastWidth = "250px"
-
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Toasts - Double Line'></HeadingSection>

@@ -10,7 +10,7 @@ import { ListComponent } from './ListComponent';
 interface Props {
 }
 
-export const ListsSingleComponent: React.FC<Props> = ({ }) => {
+export const ListsSingleComponent: React.FC<Props> = () => {
 
 
     const [isClickable, setIsClickable] = useState(false)

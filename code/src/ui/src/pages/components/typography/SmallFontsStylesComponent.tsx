@@ -1,5 +1,4 @@
 import React from 'react';
-import { } from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
 import TypographyBox from '../../../components/TypographyBox';
 
@@ -24,7 +23,7 @@ const statCssPrefix = "stat"
 interface Props {
 }
 
-export const SmallFontsStylesComponent: React.FC<Props> = ({ }) => {
+export const SmallFontsStylesComponent: React.FC<Props> = () => {
     return (
         <div className="content">
         <HeadingSection title='Typography' heading='Small Text Styles'></HeadingSection>

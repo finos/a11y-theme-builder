@@ -1,5 +1,4 @@
 import React from 'react';
-import { } from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
 import TypographyBox from '../../../components/TypographyBox';
 
@@ -10,7 +9,7 @@ const body3CssPrefix = "Body3"
 interface Props {
 }
 
-export const BodyComponent: React.FC<Props> = ({ }) => {
+export const BodyComponent: React.FC<Props> = () => {
     return (
         <div className="content">
         <HeadingSection title='Typography' heading='Body'></HeadingSection>

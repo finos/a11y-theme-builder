@@ -7,7 +7,7 @@ import { ExampleSection } from '../content/ExampleSection';
 interface Props {
 }
 
-export const RadioButtonsComponent: React.FC<Props> = ({ }) => {
+export const RadioButtonsComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Radio Buttons'></HeadingSection>

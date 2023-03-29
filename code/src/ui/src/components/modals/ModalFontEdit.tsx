@@ -97,7 +97,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
         setFontWeight(value);
     }
     async function handleCharSpacingChange(event: any): Promise<void> {
-        const value = event.target.value;
+        const value = parseInt(event.target.value);
         setCharSpacing(value);
     }
 

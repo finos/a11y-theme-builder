@@ -6,7 +6,7 @@ import { HeadingSection } from '../content/HeadingSection';
 interface Props {
 }
 
-export const AvatarSingleComponent: React.FC<Props> = ({ }) => {
+export const AvatarSingleComponent: React.FC<Props> = () => {
 
     const [colorMode, setColorMode] = useState<string>("colored");
 

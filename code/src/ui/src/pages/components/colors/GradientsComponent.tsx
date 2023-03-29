@@ -4,7 +4,7 @@ import { HeadingSection } from '../../content/HeadingSection';
 interface Props {
 }
 
-export const GradientsComponent: React.FC<Props> = ({ }) => {
+export const GradientsComponent: React.FC<Props> = () => {
 
         return (
             <div>
