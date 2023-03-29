@@ -88,51 +88,36 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-atom-other-selected", ""+displayOther)
     }, [displayOther])
 
-    const [atoms, setAtoms] = useState<{[key: string]:atomItem}>(atomsList);
-    useEffect(() => {
-        if (designSystem) {
-			console.log("@BC - setting callback");
-            designSystem.setListener("AtomContent-isEditable", 
-                function(event: Event) {
-					console.log("@BC - node event received =", event);
-                    if (event.type == EventType.NodeDisabled) {
-                        const node = event.node;
-                        if (node instanceof Atom) {
-							console.log("@BC - node disabled = ",node.isEnabled()," for ",node.name);
-                            const disabled = !node.isEnabled();
-                            if (atoms[node.name].disabled != disabled) {
-                                const _atoms = {...atoms};
-                                _atoms[node.name].disabled = disabled;
-                                setAtoms(_atoms);
-                            }
-                        }
-                    }
-                    else if (event.type == EventType.NodeEnabled) {
-                        const node = event.node;
-                        if (node instanceof Atom) {
-							console.log("@BC - node enabled = ",node.isEnabled()," for ",node.name);
-                            const disabled = !node.isEnabled();
-                            if (atoms[node.name].disabled != disabled) {
-                                const _atoms = {...atoms};
-                                _atoms[node.name].disabled = disabled;
-                                setAtoms(_atoms);
-                            }
-                        }
-                    }
-                }
-            )
-            let _atoms = {...atoms};
-            for (const [key, node] of Object.entries(designSystem.atoms)) {
-                if (node instanceof Atom) {
-                    if (notImplemented.indexOf(key) == -1) {
-                        if (_atoms[key]) {
-                           _atoms[key].disabled = false; //TODO: remove when done developing
-                           //_atoms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
-                        }
+    function enableDisableItems() {
+        let _atoms = {...atoms};
+        for (const [key, node] of Object.entries(designSystem.atoms)) {
+            if (node instanceof Atom) {
+                if (notImplemented.indexOf(key) == -1) {
+                    if (_atoms[key]) {
+                        console.log("Atom enabled:"+key+" enabled="+node.isEnabled());
+                        //_atoms[key].disabled = false; //TODO: remove when done developing
+                        _atoms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
                     }
                 }
             }
-            setAtoms(_atoms);
+        }
+        setAtoms(_atoms);
+    }
+
+    const [atoms, setAtoms] = useState<{[key: string]:atomItem}>(atomsList);
+    useEffect(() => {
+        if (designSystem) {
+            designSystem.setListener("AtomContent-isEditable", 
+                function(event: Event) {
+                    if (event.type == EventType.NodeDisabled) {
+                        enableDisableItems();
+                    }
+                    else if (event.type == EventType.NodeEnabled) {
+                        enableDisableItems();
+                    }
+                }
+            )
+            enableDisableItems();
         }
     }, [])
 

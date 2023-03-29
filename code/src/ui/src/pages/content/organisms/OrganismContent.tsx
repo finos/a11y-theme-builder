@@ -44,42 +44,43 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
         localStorage.setItem("themebuilder-organism-navigation-selected", ""+displayNavigation)
     }, [displayNavigation])
 
+    function enableDisableItems() {
+        let _organisms = {...organisms};
+        const isDisabled = !designSystem.organisms.isEnabled();
+        for (const [key, node] of Object.entries(designSystem.organisms)) {
+            if (node instanceof Organism) {
+                if (notImplemented.indexOf(key) == -1) {
+                    if (_organisms[key]) {
+                        _organisms[key].disabled = isDisabled;
+                    }
+                }
+            }
+        }
+        setOrganisms(_organisms);
+        if (_organisms[showOrganism] && _organisms[showOrganism].disabled) {
+            setShowOrganism("organisms");
+        }
+    }
+
     const [organisms, setOrganisms] = useState<{[key: string]:organismItem}>(organismsList);
     useEffect(() => {
         if (designSystem) {
             designSystem.setListener("OrganismContent-isEditable", 
                 function(event: Event) {
                     if (event.type == EventType.NodeDisabled) {
-                        const node = event.node;
-                        if (node instanceof Organism) {
-                            console.log("Node=",node);
-                            const disabled = !node.isEnabled();
-                            if (organisms[node.name].disabled != disabled) {
-                                const _organisms = {...organisms};
-                                _organisms[node.name].disabled = disabled;
-                                setOrganisms(_organisms);
-                            }
-                        }
+                        enableDisableItems();
+                    }
+                    else if (event.type == EventType.NodeEnabled) {
+                        enableDisableItems();
                     }
                 }
             )
-            let _organisms = {...organisms};
-            for (const [key, node] of Object.entries(designSystem.molecules)) {
-                if (node instanceof Organism) {
-                    if (notImplemented.indexOf(key) == -1) {
-                        if (_organisms[key]) {
-                            _organisms[key].disabled = false; //TODO: remove when done developing
-                            //_organisms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
-                        }
-                    }
-                }
-            }
-            setOrganisms(_organisms);
+            enableDisableItems();
         }
     }, [])
     
     useEffect(() => {
-        //console.log("Molecules updated =",molecules)
+        //console.log("Organisms updated =",organisms)
     }, [organisms])
 
     const [showOrganism, setShowOrganism] = React.useState(localStorage.getItem("themebuilder-organism-content-selected") || "organisms");

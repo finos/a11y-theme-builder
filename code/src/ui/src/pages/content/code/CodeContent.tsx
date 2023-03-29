@@ -1,8 +1,8 @@
 import React, { ReactFragment, ReactNode} from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Button, InputLabel } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
-import { DesignSystem} from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -36,10 +36,37 @@ const codeStyle = {
 
 export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
 
-    const [showItem, setShowItem] = React.useState(localStorage.getItem("themebuilder-code-content-selected") || "atoms");
+    const [showItem, setShowItem] = React.useState(localStorage.getItem("themebuilder-code-content-selected") || "code");
     useEffect(() => {
         localStorage.setItem("themebuilder-code-content-selected", showItem)
     }, [showItem])
+
+    const [disabled, setDisabled] = useState<boolean>(false);
+    function enableDisableItems() {
+        const isDisabled = !designSystem.code.isEnabled();
+        setDisabled(isDisabled);
+        if (isDisabled) {
+            setShowItem("code");
+        }
+    }
+    useEffect(() => {
+        if (designSystem) {
+            designSystem.setListener("CodeContent-isEditable", 
+                function(event: Event) {
+                    if (event.type == EventType.NodeDisabled) {
+                        enableDisableItems();
+                    }
+                    else if (event.type == EventType.NodeEnabled) {
+                        enableDisableItems();
+                    }
+                }
+            )
+            enableDisableItems();
+        }
+    }, [])
+
+    useEffect(() => {
+    }, [disabled])
     
     const getCssCode = () => {
         const r = [":root {"];
@@ -64,8 +91,8 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavHeader>Introduction</LeftNavHeader>
                     <LeftNavItem text={"Code"} value="code" indent={1} selected={showItem} onClick={()=> {setShowItem("code")}}/>
                     <LeftNavHeader>Code Generators</LeftNavHeader>
-                    <LeftNavItem text={"CSS"} value="css" indent={1} selected={showItem} onClick={()=> {setShowItem("css")}}/>
-                    <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}}/>
+                    <LeftNavItem text={"CSS"} value="css" indent={1} selected={showItem} onClick={()=> {setShowItem("css")}} disabled={disabled}/>
+                    <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}} disabled={disabled}/>
             </List>
             </div>
             </div>

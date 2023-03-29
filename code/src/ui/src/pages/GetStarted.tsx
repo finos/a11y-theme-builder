@@ -1,43 +1,35 @@
-import React, { useEffect } from 'react';
-import { Button, Grid } from '@mui/material';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
 import SystemCard from '../components/SystemCard';
 import ModalSystemName from '../components/modals/ModalSystemName';
-import { ThemeBuilder, DesignSystem } from 'a11y-theme-builder-sdk';
+import { ThemeBuilder } from 'a11y-theme-builder-sdk';
 import { LocalStorage } from '../LocalStorage';
-import { useNavigate } from "react-router-dom";
-
-const name = "GetStarted";
-
-let initComplete = false;
-
+import { ServerStorage } from '../ServerStorage';
+import { HeadingSection } from './content/HeadingSection';
+import { ExampleSection } from './content/ExampleSection';
 
 interface Props {
     user: any;
 }
 
-const GetStarted: React.FC<Props> = ({user}) => {
-    const navigate = useNavigate();
-
+const GetStarted: React.FC<Props> = ({ user }) => {
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
 
     const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
 
     const getDesignSystemNames = async () => {
-        const storage = new LocalStorage();
-        //const storage = new ServerStorage();
-        let _themeBuilder = await ThemeBuilder.create({storage: storage});
+        //const storage = new LocalStorage();
+        const storage = new ServerStorage();
+        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
         if (_themeBuilder) {
             const dsn = await _themeBuilder.listDesignSystemNames();
+            console.log("dsn=", dsn);
             setDesignSystemNames(dsn);
         }
     };
 
     useEffect(() => {
-        if (!initComplete) {
-            initComplete = true;
-            getDesignSystemNames();
-        }
+        getDesignSystemNames();
     }, []);
 
     const renderDesignSystems = () => {
@@ -45,70 +37,45 @@ const GetStarted: React.FC<Props> = ({user}) => {
         for (var i in designSystemNames) {
             const name = designSystemNames[i];
             r.push(
-                <Grid key={name} item xs={9} sm={7} md={5}>
-                    <SystemCard 
-                        name={name}
-                        title={name}
-                        onClickHandler={async (event, name)=>{window.location.href="/designSystem/"+name}}
-                    />
-                </Grid>
+                <SystemCard
+                    key={name}
+                    name={name}
+                    title={name}
+                    onClickHandler={async (event, name) => { window.location.href = "/designSystem/" + name }}
+                />
             )
         }
         return r;
     }
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="overline-large">
-                        Design Systems
-                    </div>
-                    <h1>Get Started</h1>
-                    <div className="subtitle1">
-                        Design Systems
-                    </div>
-                    <p>
-                        A design system is created by building your atomic elements
-                        and then assigning them to core components.
-                    </p>
-                    <div className="subtitle1">
-                        Themes
-                    </div>
-                    <p>
-                        Themes use the atomic styles and components defined in the
-                        Design Systems and skin the components in the defined Theme colors.
-                        Themes are children to Design Systems and every Design Systems must
-                        have at least one theme.
-                    </p>
-                </div>
-            </div>
-            <div className="row top40">
+        <div>
+            <HeadingSection title="Design Systems" heading="Getting Started">
+                <h6 style={{ margin: "0px" }}>Design Systems</h6>
+                <p>
+                    A design system is created by building your atomic elements
+                    and then assigning them to core components.
+                </p>
+                <h6 style={{ margin: "0px" }}>Themes</h6>
+                <p>
+                    Themes use the atomic styles and components defined in the
+                    Design Systems and skin the components in the defined Theme colors.
+                    Themes are children to Design Systems and every Design Systems must
+                    have at least one theme.
+                </p>
+                <div className="row top40" />
                 <Button onClick={() => setSystemNameIsOpen(true)}>
                     Create a New Design System
-
                 </Button>
-            </div>
-            <ModalSystemName isOpen={systemNameIsOpen} onClose={ () => setSystemNameIsOpen(false)}/>
-            <div className="row top40">
-                <div className="col-12">
-                    <h5>Your Design Systems</h5>
+                <ModalSystemName isOpen={systemNameIsOpen} onClose={() => setSystemNameIsOpen(false)} />
+            </HeadingSection>
+            <ExampleSection title="Your Design Systems">
+                <div className="card-container">
+                    {renderDesignSystems()}
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
-                    <div className="card-area">
-                        <Grid
-                            container
-                            spacing={3}
-                        >
-                            {renderDesignSystems()}
-                        </Grid>
-                    </div>
-                </div>
-            </div>
+            </ExampleSection>
         </div>
-    );
+    )
 }
 
 export default GetStarted;

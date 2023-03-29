@@ -15,37 +15,7 @@ import { LocalStorage } from '../LocalStorage';
 import { ServerStorage } from '../ServerStorage';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
-
-interface MeasureDivProps {
-    children?: ReactNode;
-    style?: any;
-    className?: string;
-    setHeight: (height: number) => void;
-}
-
-class MeasureDiv extends React.Component {
-    children: ReactNode;
-    props: MeasureDivProps;
-    divElement: any;
-
-    constructor(props: MeasureDivProps) {
-        super(props);
-        this.props = props;
-    }
-
-    componentDidMount(): void {
-        const h = this.divElement.clientHeight;
-        this.props.setHeight(h);
-    }
-
-    public render(): JSX.Element {
-        return (
-            <div className={this.props.className} style={this.props.style} ref={(divElement) => { this.divElement = divElement }}>
-                {this.props.children}
-            </div>
-        )
-    }
-}
+import { MeasureDiv } from './MeasureDiv';
 
 const name = "DesignSystemPage"
 
@@ -135,9 +105,13 @@ const DesignSystemPage: React.FC<Props> = ({user, themeName, setThemeName}) => {
         },
     }));
 
+    const [size, setSize] = useState<number>(window.innerHeight);
+    window.addEventListener("resize", (event) => {
+        setSize(window.innerHeight);
+    });
     const [divHeight, setDivHeight] = useState<number>(0);
     const divStyle = {
-        height: (window.innerHeight - divHeight - 4) + "px",
+        height: (size - divHeight - 4) + "px",
     }
 
     if (designSystem && themeBuilder)

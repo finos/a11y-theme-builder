@@ -8,12 +8,17 @@ interface Props {
 export const WelcomeNavbar: React.FC<Props> = ({styles, setStyles}) => {
 
     return (
-        <nav className="welcome-navbar-container">
-            <figure className="logoContainer container-flex">
+        <div className='titleBarDiv'>
+            <div className="left-titlebar">
                 <img src="/tb-logo.svg" alt="ThemeBuilder Logo" className="tb-logo" />
-            </figure>
-        </nav>
-    );
+            </div>
+            <div className="center-titlebar">
+                <h6 style={{margin:"0px"}}>ThemeBuilder Application</h6>
+            </div>
+            <div className="right-titlebar">
+            </div>
+        </div>
+    )
 }
 
 export default WelcomeNavbar;
