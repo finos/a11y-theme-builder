@@ -58,6 +58,52 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
+## Build Docker Image
+
+The Theme Builder application can also be run in Podman or Docker.  To persist the embedded database, the directory `/code/src/data` must be mapped to a local host directory.
+
+To build and run with Docker, the following commands can be used.
+
+**Build image:**
+```
+$ docker build . -t a11y-theme-builder
+```
+
+**Run image:**
+
+To save the data of the embedded database in the docker container, use the following command.
+```
+$ docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
+```
+
+If a directory on the host will be used to save the data of the embedded database, specify a volume with the following command.
+```
+$ docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
+```
+
+**Stop container:**
+```
+$ docker stop a11y-theme-builder
+```
+
+**Start a stopped container:**
+```
+$ docker start a11y-theme-builder
+```
+
+**Remove a stopped container:**
+```
+$ docker rm a11y-theme-builder
+```
+
+### View Application
+
+To access the running application, load the following URL into a browser:
+
+```
+http://localhost:8080
+```
+
 ## Server APIs
 
 The Theme Builder server serves the React application at the `/` endpoint.
@@ -112,48 +158,3 @@ The APIs are under the `/api/` endpoint, with the following apis available:
 - **Example**: DELETE /api/themes/theme5 => { id:"theme5", key1:themeData}
 
 
-## Build Docker Image
-
-The Theme Builder application can also be run in Podman or Docker.  To persist the embedded database, the directory `/code/src/data` must be mapped to a local host directory.
-
-To build and run with Docker, the following commands can be used.
-
-**Build image:**
-```
-$ docker build . -t a11y-theme-builder
-```
-
-**Run image:**
-
-To save the data of the embedded database in the docker container, use the following command.
-```
-$ docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
-```
-
-If a directory on the host will be used to save the data of the embedded database, specify a volume with the following command.
-```
-$ docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
-```
-
-**Stop container:**
-```
-$ docker stop a11y-theme-builder
-```
-
-**Start a stopped container:**
-```
-$ docker start a11y-theme-builder
-```
-
-**Remove a stopped container:**
-```
-$ docker rm a11y-theme-builder
-```
-
-### View Application
-
-To access the running application, load the following URL into a browser:
-
-```
-http://localhost:8080
-```
