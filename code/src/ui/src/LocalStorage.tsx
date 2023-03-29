@@ -4,17 +4,6 @@ const path = "themebuilder-storage-";
 
 export class LocalStorage implements Storage {
 
-
-    // var v = window.localStorage.getItem("buttons");
-    // window.localStorage.setItem("buttons", buttons);
-    // window.localStorage.removeItem("uploadAttachments")
-// let keys = Object.keys(localStorage);
-// console.log("Local storage keys=",keys);
-// for (var i in keys) {
-//     console.log(keys[i]+"="+localStorage.getItem(keys[i]))
-// }
-
-
     public async get(key: string): Promise<StorageElement> {
         const response = window.localStorage.getItem(path+key);
         //console.log(`LocalStorage.get(${key}) => ${response} type=${typeof response}`);
@@ -27,8 +16,6 @@ export class LocalStorage implements Storage {
 
     public async set(key: string, data: StorageElement) {
         //console.log(`LocalStorage.set(${key}, ${value})`);
-        //const data = JSON.parse(value);
-        //console.log(`data = ${JSON.stringify(data)}`)
         const keys = await this.listKeys();
         if (keys.indexOf(key) > -1) {
             const response = window.localStorage.getItem(path+key);
