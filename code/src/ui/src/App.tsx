@@ -18,6 +18,7 @@ import { Http } from './Http'
 import { ThemeProvider, Theme } from '@mui/material';
 import { LocalStorage } from './LocalStorage';
 import { ServerStorage } from './ServerStorage';
+import WebFont from "webfontloader";
 
 if (window.location.hostname == "localhost" && window.location.port == "3000") {
     Http.init(window.location.origin.replace("3000", "3001"));
@@ -56,6 +57,14 @@ const App: React.FC<Props> = ({user}) => {
 
     //const storage = new LocalStorage();
     const storage = new ServerStorage();
+
+    useEffect(() => {
+        WebFont.load({
+            google: {
+            families: ["Open Sans", "Montserrat"],
+            }
+        });
+    }, []);
 
     /**
      * Render content

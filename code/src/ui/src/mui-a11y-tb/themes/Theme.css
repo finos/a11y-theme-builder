@@ -1004,8 +1004,8 @@
   --text-uppercase: uppercase;
   --text-decoration-none: none;
   --min-letter-spacing: .12;
-  --primaryFont: sans-serif;
-  --secondaryFont: sans-serif;
+  --primaryFont: "Open Sans";
+  --secondaryFont: "Montserrat";
   --baseFont: 16px;
   --headerChange: .42;
   --headerWeight: 400;
