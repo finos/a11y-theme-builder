@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import WelcomePage from './pages/WelcomePage';
 import ErrorPage from './pages/ErrorPage';
-// import TestPage from "./TestPage";
 import DesignSystemPage from "./pages/DesignSystemPage";
 import { themes } from "./mui-a11y-tb/themes/Theme";
 
@@ -76,7 +75,6 @@ const App: React.FC<Props> = ({user}) => {
                     <Routes>
                         <Route path="/" element={<WelcomePage user={user} themeName={themeName} storage={storage} />} />
                         <Route path="designSystem/:designSystemName" element={<DesignSystemPage user={user} themeName={themeName} setThemeName={changeThemeName} storage={storage} />} />
-                        {/* <Route path="test" element={<TestPage user={user} storage={storage} />} /> */}
                         <Route path="*" element={<ErrorPage user={user} />} />
                     </Routes>
                 </div>
