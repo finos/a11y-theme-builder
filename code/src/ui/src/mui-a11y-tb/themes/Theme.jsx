@@ -379,7 +379,7 @@ try {
                         //fontFamily: "Ariel", //"var(--fontFamily)",
                         color: "var(--on-input)",
                         background: "var(--input)",
-                        borderRadius: "20px", //"var(--radius-half)",
+                        borderRadius: "var(--radius-1)",
                         padding: "var(spacing-1)",
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
