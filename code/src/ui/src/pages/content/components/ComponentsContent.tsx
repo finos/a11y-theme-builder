@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
-import { ErrorHandler } from '../../../ErrorHandler';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse } from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -158,14 +157,14 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                     <LeftNavItem text={"Cards - Standard"} value="cardsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStandard")}} disabled={disabled}/>
                     <LeftNavItem text={"Cards - Images"} value="cardsImages" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages")}} disabled={disabled}/>
-                    <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} disabled={disabled}/>
+                    {/* <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} disabled={disabled}/> */}
                     <LeftNavItem text={"Cards - Stats"} value="cardsStats" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStats")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Checkboxes"} value="checkboxes" indent={1} selected={showComponent} onClick={()=> {setShowComponent("checkboxes")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Chips"} value="chips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("chips")}} disabled={disabled}/>
 
-                    <LeftNavItem text={"Datepicker"} value="datepicker" indent={1} selected={showComponent} onClick={()=> {setShowComponent("datepicker")}} disabled={disabled}/>
+                    {/* <LeftNavItem text={"Datepicker"} value="datepicker" indent={1} selected={showComponent} onClick={()=> {setShowComponent("datepicker")}} disabled={disabled}/> */}
 
                     <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} disabled={disabled}/>
 
@@ -194,11 +193,11 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                     <LeftNavItem text={"Tooltips"} value="tooltips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltips")}} disabled={disabled}/>
 
-                    <LeftNavHeader>Mobile Components</LeftNavHeader>
+                    {/* <LeftNavHeader>Mobile Components</LeftNavHeader>
 
                     <LeftNavItem text={"Navbars - Top"} value="navbarsTop" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsTop")}} disabled={disabled}/>
                     <LeftNavItem text={"Navbars - Bottom"} value="navbarsBottom" indent={1} selected={showComponent} onClick={()=> {setShowComponent("navbarsBottom")}} disabled={disabled}/>
-                    <LeftNavItem text={"Tooltips"} value="tooltipsMobile" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltipsMobile")}} disabled={disabled}/>
+                    <LeftNavItem text={"Tooltips"} value="tooltipsMobile" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tooltipsMobile")}} disabled={disabled}/> */}
 
                 </List>
             </div>
@@ -262,9 +261,12 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "cardsStats" &&
                         <CardsStatsComponent />
                     }
-
-                    {/* MIDPOINT */}
-
+                    {showComponent === "checkboxes" &&
+                        <CheckboxesComponent />
+                    }
+                    {showComponent === "chips" &&
+                        <ChipsComponent />
+                    }
                     {showComponent === "listsSingle" &&
                         <ListsSingleComponent/>
                     }
@@ -282,9 +284,6 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "pagination" &&
                         <PaginationComponent />
-                    }
-                    {showComponent === "checkboxes" &&
-                        <CheckboxesComponent />
                     }
                     {showComponent === "popovers" &&
                         <PopoversComponent />
@@ -315,9 +314,6 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "toastsTripleLine" &&
                         <ToastsTripleLineComponent />
-                    }
-                    {showComponent === "chips" &&
-                        <ChipsComponent />
                     }
             </div>
             </div>
