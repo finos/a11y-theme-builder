@@ -58,6 +58,13 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
+## Windows Specific Steps
+
+At the current state there are a few extra steps to use the app on a Windows machine:
+- delete both `package-lock.json` files before build
+- replace `'` chars in the debug script in the package.json with `\"`, so t reads `"debug": "nodemon --exec \"ts-node\" src/app.ts",`
+- delete the `data/themes` file, before running both the server(s) 
+
 ## Build Docker Image
 
 The Theme Builder application can also be run in Podman or Docker.  To persist the embedded database, the directory `/code/src/data` must be mapped to a local host directory.
