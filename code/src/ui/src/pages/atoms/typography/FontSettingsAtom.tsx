@@ -251,7 +251,25 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     return (
         <>
             <HeadingSection item={fontSettingsAtom} title="Typography" />
-            <ExampleSection>None</ExampleSection>
+            <ExampleSection>
+                <div style={{fontFamily: primaryFontFamilyProperty.getValue()}}>
+                    <b>The Primary Font is {primaryFontFamilyProperty.getValue()}.</b>
+                    <div style={{padding:"10px"}}>
+                        abcdefghijklmnopqrstuvwxyz<br/>
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                        0123456789
+                    </div>
+                </div>
+                <div className="top40" />
+                <div style={{fontFamily: secondaryFontFamilyProperty.getValue()}}>
+                    <b>The Secondary Font is {secondaryFontFamilyProperty.getValue()}.</b>
+                    <div style={{padding:"10px"}}>
+                        abcdefghijklmnopqrstuvwxyz<br/>
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                        0123456789
+                    </div>
+                </div>
+            </ExampleSection>
             <SettingsSection>
                 <div style={{ float: "right", marginTop: "40px" }}>
                     <div className="subtitle1">Not seeing your font in Figma?</div>
