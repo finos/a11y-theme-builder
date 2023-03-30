@@ -1,5 +1,4 @@
-[![DFS - Incubating](./_images/discover-incubating.svg)](https://technology.discover.com/technologies/open_source)
-
+[![DFS - Incubating](./_images/discover-incubating.svg)](https://technology.discover.com/technologies/open_source) [![Maintainers-Invited](https://img.shields.io/badge/Maintainers-Wanted-blueviolet)](./CONTRIBUTE.md) [![Contributors-Invited](https://img.shields.io/badge/Contributors-Wanted-blue)](./CONTRIBUTE.md)
 # Accessibility Theme Builder
 ![logo](./_images/tb-logo-sm.png) A system for generating machine readable asset types allowing design systems to publish products that are accessibly inclusive.
 
@@ -19,28 +18,12 @@ Adhering to an [Atomic Accessibility Design Methodology](./docs/atomic-a11y-desi
 Visit the [project docs](https://discoverfinancial.github.io/a11y-theme-builder). 
 
 ### Using the Application
-Learn how to [install and use](./GETTING_STARTED.md) the Accessibility Theme Builder Application.
+Learn how to [install and use](./DEV-GUIDE.md) the Accessibility Theme Builder Application.
 ### Using the SDK
 Learn how to [work with](https://github.com/discoverfinancial/a11y-theme-builder-sdk) the Accessibility Theme Builder SDK.
 
 ## Contributing 
-
-### Get Involved
->ToDo: Update GitHub Pages Link for Docs/Contribute.
-
-Strategically, Discover Financial Services intends for this repository to be promoted for maturation upstream within a *yet-to-be-identified* community  such as [FINOS](https://www.finos.org), [The A11y Project](https://www.a11yproject.com), or [OpenJS](https://openjsf.org). If and when such a transfer occurs, normal `pull request` based contributions will be possible. 
-
-For the tactical timeframe, `pull request` will not be accepted. For those willing to 
-answer our [call for contributions](https://discoverfinancial.github.io/a11y-theme-builder/contribute/), please proceed by:
-
-1. 'forking` this repository
-2. Developing a contribution within your forked repo
-3. Opening an issue against our [contributions documentation](https://discoverfinancial.github.io/a11y-theme-builder/contribute/) where a redirect to the new contribution (forked repo) is captured. 
-
-### Code
->ToDo: Instructions for developing, building, and testing code contributions.
-### Documentation
-[Learn](./DEVELOP_DOCS.md) how to develop, build, test, and contribute to the online docs.
+[Get involved](./CONTRIBUTE.md)! Our project welcomes passionate contributors.  
 
 ## License
 
