@@ -1,7 +1,6 @@
 // Key is the font family converted to lower case
 // Value is an array of numbers representing font weights that the font supports
 const CommonFontsSupportedWeights = new Map<string, number[]>([
-    // ["discover sans",                  [                        400                                                 ]],
     ["roboto",                         [100,            300,            500,            700,            900         ]],
     ["open sans",                      [                300,    400,    500,    600,    700,    800                 ]],
     ["noto sans japanese",             [100,            300,    400,    500,            700,            900         ]],

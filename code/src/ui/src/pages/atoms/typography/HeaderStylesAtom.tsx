@@ -48,8 +48,8 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
     const keyHeader5    = header5TypographyStyling.key
     const keyHeader6    = header6TypographyStyling.key
 
-    const primaryFont          = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Discover Sans"
-    const secondaryFont        = designSystem.atoms.fontsSettings.secondaryFont.getValue() || "Discover Sans"
+    const primaryFont          = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Open Sans"
+    const secondaryFont        = designSystem.atoms.fontsSettings.secondaryFont.getValue() || "Open Sans"
     const isOneOfFontsUncommon = !FontWeightsUtil.isFontCommon(primaryFont) || !FontWeightsUtil.isFontCommon(secondaryFont)
 
     const [fontWeight, setFontWeight] = useState<number>(fontWeightProperty.getValue() || 400);

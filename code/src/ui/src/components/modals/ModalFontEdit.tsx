@@ -35,7 +35,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     const fontWeightProperty    = typographyStyling.fontWeight
     const charSpacingProperty   = typographyStyling.characterSpacing
 
-    const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || "Discover Sans"));
+    const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || "Open Sans"));
     const [fontSize,    setFontSize   ] = useState<number>(fontSizeProperty.getValue()       || 16);
     const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue()     || 400);
     const [charSpacing, setCharSpacing] = useState<number>(charSpacingProperty.getValue()    || 0);

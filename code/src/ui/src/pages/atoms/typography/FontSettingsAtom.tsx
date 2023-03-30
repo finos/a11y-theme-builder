@@ -46,8 +46,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const headerLineHeightProperty      = fontSettingsAtom.headerLineHeight
     const smallLineHeightProperty       = fontSettingsAtom.smallLineHeight
 
-    const [primaryFont,        setPrimaryFont       ] = useState<string>((primaryFontFamilyProperty.getValue()   || "Discover Sans"));
-    const [secondaryFont,      setSecondaryFont     ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Discover Sans"));
+    const [primaryFont,        setPrimaryFont       ] = useState<string>((primaryFontFamilyProperty.getValue()   || "Open Sans"));
+    const [secondaryFont,      setSecondaryFont     ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Open Sans"));
     const [fontWeight0,        setFontWeight0       ] = useState<number>((fontWeight0Property.getValue()         || 100));
     const [fontWeight1,        setFontWeight1       ] = useState<number>((fontWeight1Property.getValue()         || 300));
     const [fontWeight2,        setFontWeight2       ] = useState<number>((fontWeight2Property.getValue()         || 500));
