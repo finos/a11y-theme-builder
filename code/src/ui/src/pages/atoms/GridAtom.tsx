@@ -63,7 +63,10 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
         <div>
             <HeadingSection item={atom} title="Spacing" />
             <ExampleSection>
-                None
+                This is the size of the grid spacing.
+                <div className="top24" style={{height: "304px"}}>
+                    {renderGridLines()}
+                </div>
             </ExampleSection>
             <SettingsSection>
                 <FormControl>
@@ -79,9 +82,6 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
                         }
                     </RadioGroup>
                 </FormControl>
-                <div className="top24" style={{height: "304px"}}>
-                    {renderGridLines()}
-                </div>
             </SettingsSection>
             <GeneratedCodeSection item={atom}/>
         </div>
