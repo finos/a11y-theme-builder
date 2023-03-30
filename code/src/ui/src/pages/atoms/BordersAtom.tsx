@@ -15,7 +15,16 @@ export const BordersAtom: React.FC<Props> = ({ atom }) => {
         <div>
             <HeadingSection item={atom} title="Borders" />
             <ExampleSection>
-                None
+                <div style={{
+                    borderWidth: "var(--border-1)", 
+                    borderColor: "red", 
+                    borderStyle: "solid", 
+                    borderRadius: "var(--radius-1)",
+                    width: "25%",
+                    padding: "10px",
+                }}>
+                    This shows the border radius and border width specified in the Settings section.
+                </div>
             </ExampleSection>
             <SettingsSection>
                 <div className="top40">
