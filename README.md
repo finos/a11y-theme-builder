@@ -18,7 +18,7 @@ Adhering to an [Atomic Accessibility Design Methodology](./docs/atomic-a11y-desi
 Visit the [project docs](https://discoverfinancial.github.io/a11y-theme-builder). 
 
 ### Using the Application
-Learn how to [install and use](./DEV-GUIDE.md) the Accessibility Theme Builder Application.
+Learn how to [install and use](./DEV_GUIDE.md) the Accessibility Theme Builder Application.
 ### Using the SDK
 Learn how to [work with](https://github.com/discoverfinancial/a11y-theme-builder-sdk) the Accessibility Theme Builder SDK.
 
