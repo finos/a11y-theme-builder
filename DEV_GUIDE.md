@@ -11,9 +11,9 @@ The prerequisites are NodeJS 16+ and npm 8+. Visit [nodejs downloads](https://no
 The following commands will build and run the application:
 
 ```
-$ cd code
-$ npm run build
-$ npm run debug
+cd code
+npm run build
+npm run debug
 ```
 
 To access the application, load the following URL into a browser:
@@ -34,19 +34,19 @@ The Theme Builder is a web application that uses Node for the server and React f
 The command `npm run build` builds both the server and UI.  To build just the server, run
 
 ```
-$ npm run build-api
+npm run build-api
 ```
 
 or to build the UI, run
 
 ```
-$ npm run build-ui
+npm run build-ui
 ```
 
 To simplify developing of the UI, the React Development Server can be run
 
 ```
-$ npm run dev-ui
+npm run dev-ui
 ```
 
 To access the application through the React Development Server, load the following URL into a browser:
@@ -66,34 +66,34 @@ To build and run with Docker, the following commands can be used.
 
 **Build image:**
 ```
-$ docker build . -t a11y-theme-builder
+docker build . -t a11y-theme-builder
 ```
 
 **Run image:**
 
 To save the data of the embedded database in the docker container, use the following command.
 ```
-$ docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
+docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
 ```
 
 If a directory on the host will be used to save the data of the embedded database, specify a volume with the following command.
 ```
-$ docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
+docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
 ```
 
 **Stop container:**
 ```
-$ docker stop a11y-theme-builder
+docker stop a11y-theme-builder
 ```
 
 **Start a stopped container:**
 ```
-$ docker start a11y-theme-builder
+docker start a11y-theme-builder
 ```
 
 **Remove a stopped container:**
 ```
-$ docker rm a11y-theme-builder
+docker rm a11y-theme-builder
 ```
 
 ### View Application
