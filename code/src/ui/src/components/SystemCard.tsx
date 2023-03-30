@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider } from "@mui/material";
-import React, { useState, MouseEvent } from "react";
+import React, { useState, MouseEvent, ReactNode } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
 import { ThemeBuilder } from "a11y-theme-builder-sdk";
@@ -9,13 +9,6 @@ interface Props {
     designSystem: any;
     refresh: Function;
 }
-
-const options = [
-    {label: "Load Design System", value: "load"},
-    {label: "Add to Samples Page", value: "add"},
-    {label: "Remove from Samples Page", value: "remove"},
-    {label: "Delete Design System", value: "delete"},
-];
 
 export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh}) => {
 
@@ -46,7 +39,28 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                 await themeBuilder?.deleteDesignSystem(designSystem.id);
                 refresh();
             }
+            else if (value == "view") {
+                const s = await themeBuilder?.storage.get(designSystem.id);
+                setView(JSON.stringify(s,null,4));
+            }
         }
+    }
+    const [view, setView] = useState<string | null>();
+    const renderView = () => {
+        if (view) {
+            return (
+            <>
+                <div className="overlay" onClick={() => setView(null)} ></div>
+                <div className="modal" style={{width: "50%", height:"80%", overflow:"auto"}}>
+                    <h5>Data for {designSystem.id}</h5>
+                    <div>
+                        <pre>{view}</pre>
+                    </div>
+                </div>
+            </>
+            )
+        }
+        return null;
     }
 
     const renderDate = (d:number) => {
@@ -128,8 +142,11 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                 {!isSample && <MenuItem onClick={() => handleClose("add")}>Add to Samples Page</MenuItem>}
                 {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}                
                 <Divider/>
+                <MenuItem onClick={() => handleClose("view")}>View Design System Data</MenuItem>
+                <Divider/>
                 <MenuItem onClick={() => handleClose("delete")}>Delete Design System</MenuItem>
-            </Menu>            
+            </Menu>
+            {renderView()}  
         </div>
     );
 }
