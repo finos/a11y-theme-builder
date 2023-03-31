@@ -57,6 +57,12 @@
     /* visibility: visible; */
 }
 
+.darkmode.design-system-editor-right-content {
+    background-color: var(--dm-background);
+    color: var(--dm-on-background);
+    min-height: 80vh;
+}
+
 
 .design-system-editor-right-content .section-header {
     background-color: var(--leftNav) !important;
