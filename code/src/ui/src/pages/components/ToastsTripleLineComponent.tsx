@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 import { Alert, Button, IconButton } from '@mui/material';
 import { Stack } from '@mui/system';
 import CloseIcon from '@mui/icons-material/Close';
@@ -15,10 +16,11 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Toasts - Triple Line'></HeadingSection>
+            <ExampleSection>
             <section>
                 <div className="row">
                     <div className="col-lg-6">
-                        <div className="subtitle1">Standard Single Line</div>
+                        <h6>Standard Single Line</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error">
                                 <div className="overline">OVERLINE</div> Toast Title {bodyText}
@@ -36,7 +38,7 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
             <section>
                 <div className="row">
                     <div className="col-lg-6">
-                        <div className="subtitle1">Single Line with Close</div>
+                        <h6>Single Line with Close</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error" 
                                 action={<IconButton><CloseIcon/></IconButton>}>
@@ -54,7 +56,7 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
             <section>
                 <div className="row">
                     <div className="col-lg-6">
-                        <div className="subtitle1">Single Line with Button</div>
+                        <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error" 
                                 action={<IconButton><CloseIcon/></IconButton>}>
@@ -73,6 +75,7 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
                     </div>
                 </div>
             </section>
+            </ExampleSection>
         </div>
     )
 }

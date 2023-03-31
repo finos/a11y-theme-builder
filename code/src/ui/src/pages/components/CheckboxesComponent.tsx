@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel } from '@mui/material';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
 }
@@ -10,14 +11,14 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
 
     return (
         <div>
-            <HeadingSection title="" heading="Checkboxes">
+            <HeadingSection title="Desktop" heading="Checkboxes">
                 Checkboxes and all form elements should only ever be placed on the
                 primary or secondary background, on a standard card or modal. Therefore
                 they are only available on one color.
             </HeadingSection>
-            <div className="top40"></div>
+            <ExampleSection>
             <FormControl component="fieldset">
-                <FormLabel component="legend">Small Checkboxes</FormLabel>
+                <h6>Small Checkboxes</h6>
                 <FormGroup aria-label="sample small checkbox group">
                     <FormControlLabel
                         value="One"
@@ -43,7 +44,7 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
             </FormControl>
             <div className="top40"></div>
             <FormControl component="fieldset">
-                <FormLabel component="legend">Standard Checkboxes</FormLabel>
+                <h6>Standard Checkboxes</h6>
                 <FormGroup aria-label="sample standard checkbox group">
                     <FormControlLabel
                         value="One"
@@ -66,6 +67,7 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                     />
                 </FormGroup>
             </FormControl>
+            </ExampleSection>
         </div>
     )
 }

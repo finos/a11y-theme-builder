@@ -29,7 +29,8 @@ export const PopoversComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Popovers'></HeadingSection>
-            <ExampleSection title='Popover'>
+            <ExampleSection>
+                <h6>Popover</h6>
                 <Grid container rowSpacing={1} columnSpacing={3}>
                     <Grid item>
                         <Button variant="contained" onClick={openPopoverTop}>
@@ -87,8 +88,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                     </Grid>
                 </Grid>
                 
-            </ExampleSection>
-            <ExampleSection title='Popover with Title'>
+            <h6>Popover with Title</h6>
                 <Grid container rowSpacing={1} columnSpacing={3}>
                     <Grid item>
                         <Button variant="contained" onClick={openPopoverTopTitle}>

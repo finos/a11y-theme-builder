@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, IconButton, SvgIcon } from '@mui/material';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
 }
@@ -24,7 +25,8 @@ export const ButtonsStandardComponent: React.FC<Props> = () => {
 
     return (
         <div>
-            <HeadingSection heading="Standard Buttons" title="Buttons" />
+            <HeadingSection heading="Standard Buttons" title="Desktop" />
+            <ExampleSection>
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <div className="subtitle1">Primary</div>
                 <div className="buttonDemo">
@@ -72,6 +74,7 @@ export const ButtonsStandardComponent: React.FC<Props> = () => {
                     <Button variant="text" className="CTA">{barGraphIcon()}</Button>
                 </div>
             </ColorModeSelector>
+            </ExampleSection>
         </div>
     )
 }

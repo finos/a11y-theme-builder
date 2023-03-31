@@ -35,7 +35,7 @@ export const MenusComponent: React.FC<Props> = () => {
             <HeadingSection title='Desktop' heading='Menus'></HeadingSection>
             <ExampleSection>
                 <div>
-                    <div className="subtitle1">Menu with No Icons</div>
+                    <h6>Menu with No Icons</h6>
                     <Button
                         id="basic-button"
                         aria-controls={open ? 'basic-menu' : undefined}
@@ -60,7 +60,7 @@ export const MenusComponent: React.FC<Props> = () => {
                     </Menu>
                 </div>
                 <div>
-                    <div className="subtitle1 top40">Menu with Icons</div>
+                    <h6>Menu with Icons</h6>
                     <Button
                         id="icon-button"
                         aria-controls={openIcon ? 'icon-menu' : undefined}

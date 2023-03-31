@@ -312,9 +312,6 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "tooltips" &&
                         <TooltipsComponent />
                     }
-                    {showComponent === "toastsTripleLine" &&
-                        <ToastsTripleLineComponent />
-                    }
             </div>
             </div>
         </>
