@@ -102,7 +102,10 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     useEffect(() => {
     }, [disabled])
 
-
+    const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem("themebuilder-components-mode-selected") == "true" || false);
+    useEffect(() => {
+        localStorage.setItem("themebuilder-components-mode-selected", ""+darkMode);
+    }, [darkMode]);
 
     return (
         <>
@@ -117,7 +120,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavHeader>Styles</LeftNavHeader>
                     <LeftNavItem text="Mode" indent={1} />
                     <div style={{paddingLeft: "50px"}}>
-                        <NavSwitch defaultChecked leftLabel="Light" rightLabel="Dark" />
+                        <NavSwitch defaultChecked leftLabel="Light" rightLabel="Dark" checked={darkMode} onChange={()=>setDarkMode(!darkMode)}/>
                     </div>
                     <LeftNavItem text={"Colors"} indent={1} onClick={()=>setDisplayColors(!displayColors)}>
                         {displayColors ? <ExpandLess /> : <ExpandMore />}
@@ -202,7 +205,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                 </List>
             </div>
             </div>
-            <div className="design-system-editor-right-content">
+            <div className={"design-system-editor-right-content " + (darkMode ? "darkmode" : "")}>
             <div className="design-system-editor-right-content-scrollable">
                     {showComponent === "colorsCoreColors" &&
                         <CoreColorsComponent />
@@ -311,9 +314,6 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "tooltips" &&
                         <TooltipsComponent />
-                    }
-                    {showComponent === "toastsTripleLine" &&
-                        <ToastsTripleLineComponent />
                     }
             </div>
             </div>

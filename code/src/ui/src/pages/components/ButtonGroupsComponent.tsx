@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, ButtonGroup, SvgIcon } from '@mui/material';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
 }
 
-export const ButtonGroupsComponent: React.FC<Props> = ({}) => {
+export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
 
     const [colorMode, setColorMode] = useState<string>("primary");
 
@@ -22,7 +23,7 @@ export const ButtonGroupsComponent: React.FC<Props> = ({}) => {
         )
     }
 
-    const renderButtonGroup = (title: string, orientation: "horizontal"|"vertical", variant: "contained"|"outlined"|"text") => {
+    const renderButtonGroup = (title: string, orientation: "horizontal" | "vertical", variant: "contained" | "outlined" | "text") => {
         return (
             <div className="row">
                 <div className="col-12">
@@ -41,27 +42,21 @@ export const ButtonGroupsComponent: React.FC<Props> = ({}) => {
     }
 
     return (
-        <div className="content">
-            <section>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <HeadingSection heading="Button Groups" title="Buttons" />
-                            <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                                <div className="caption" style={{margin: "16px 0px"}}>Horizontal Groups</div>
-                                {renderButtonGroup("primary", "horizontal", "contained")}
-                                {renderButtonGroup("secondary", "horizontal", "outlined")}
-                                {renderButtonGroup("tertiary", "horizontal", "text")}
+        <div>
+            <HeadingSection heading="Button Groups" title="Desktop" />
+            <ExampleSection>
+                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                    <h6>Horizontal Groups</h6>
+                    {renderButtonGroup("primary", "horizontal", "contained")}
+                    {renderButtonGroup("secondary", "horizontal", "outlined")}
+                    {renderButtonGroup("tertiary", "horizontal", "text")}
 
-                                <div className="caption" style={{margin: "16px 0px"}}>Vertical Groups</div>
-                                {renderButtonGroup("primary", "vertical", "contained")}
-                                {renderButtonGroup("secondary", "vertical", "outlined")}
-                                {renderButtonGroup("tertiary", "vertical", "text")}
-                            </ColorModeSelector>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    <h6>Vertical Groups</h6>
+                    {renderButtonGroup("primary", "vertical", "contained")}
+                    {renderButtonGroup("secondary", "vertical", "outlined")}
+                    {renderButtonGroup("tertiary", "vertical", "text")}
+                </ColorModeSelector>
+            </ExampleSection>
         </div>
     )
 }

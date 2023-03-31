@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, IconButton, SvgIcon } from '@mui/material';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
 }
@@ -24,10 +25,10 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
 
     return (
         <div>
-            <HeadingSection heading="Small Buttons" title="Buttons">
+            <HeadingSection heading="Small Buttons" title="Desktop">
                 This button still has a minimum click area of 44x44 but looks smaller and uses non-uppercased type.
             </HeadingSection>
-            <div className="top40"></div>
+            <ExampleSection>
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <div className="subtitle1">Primary</div>
                 <div className="buttonDemo">
@@ -74,7 +75,8 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
                     >Right Icon</Button>
                     <Button variant="text" className="small-btn CTA-Small">{barGraphIcon()}</Button>
                 </div>
-            </ColorModeSelector >
+            </ColorModeSelector>
+            </ExampleSection>
         </div >
     )
 }

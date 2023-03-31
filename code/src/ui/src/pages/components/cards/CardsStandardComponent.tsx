@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
+import { ExampleSection } from '../../content/ExampleSection';
+import { SettingsSection } from '../../content/SettingsSection';
 import { CardSample } from './CardSample';
 
 interface Props {
@@ -12,7 +14,8 @@ export const CardsStandardComponent: React.FC<Props> = () => {
 
     return (
         <div>
-            <HeadingSection title="" heading="Standard Cards" />
+            <HeadingSection title="Desktop" heading="Standard Cards" />
+            <SettingsSection>
             <FormControl>
                 <RadioGroup
                     name="cards-standard-radio-buttons-group"
@@ -23,6 +26,8 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                     <FormControlLabel value="true" control={<Radio />} label="Clickable Cards" />
                 </RadioGroup>
             </FormControl>
+            </SettingsSection>
+            <ExampleSection>
             <CardSample label="Left Aligned" title="Title" clickable={_clickableCards}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore
@@ -99,6 +104,7 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
                 magna aliqua
             </CardSample>
+            </ExampleSection>
         </div>
     )
 }

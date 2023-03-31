@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
 }
@@ -12,15 +13,16 @@ export const BreadcrumbsComponent: React.FC<Props> = () => {
 
     return (
         <div>
-            <HeadingSection title="Breadcrumbs" heading="Breadcrumbs" />
-            <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                <h4>Standard Breadcrumbs</h4>
-                <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs`}>
-                    <Link>Home</Link>
-                    <Link>Page</Link>
-                    <Typography>Page</Typography>
-                </Breadcrumbs>
-            </ColorModeSelector>
+            <HeadingSection title="Desktop" heading="Breadcrumbs" />
+            <ExampleSection>
+                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                    <Breadcrumbs aria-label="breadcrumb" className={"breadcrumbs"} style={{margin:"40px"}}>
+                        <Link>Home</Link>
+                        <Link>Page</Link>
+                        <Typography>Page</Typography>
+                    </Breadcrumbs>
+                </ColorModeSelector>
+            </ExampleSection>
         </div>
     )
 }

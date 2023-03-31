@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 
 interface Props {
@@ -13,7 +14,8 @@ export const AccordionComponent: React.FC<Props> = () => {
 
     return (
         <div>
-            <HeadingSection title="Desktop Components" heading="Accordions" />
+            <HeadingSection title="Desktop" heading="Accordions" />
+            <ExampleSection>
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <Accordion style={{ margin: "40px" }}>
                     <AccordionSummary
@@ -43,6 +45,7 @@ export const AccordionComponent: React.FC<Props> = () => {
                     </AccordionDetails>
                 </Accordion>
             </ColorModeSelector>
+            </ExampleSection>
         </div>
     )
 }

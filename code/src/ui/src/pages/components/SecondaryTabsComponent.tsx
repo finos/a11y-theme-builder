@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
+import { ExampleSection } from '../content/ExampleSection';
 import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Tab, Tabs } from '@mui/material';
 import BarChartIcon from '@mui/icons-material/BarChart';
 
@@ -32,7 +33,7 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Horizontal Primary Tabs'></HeadingSection>
-            <SettingsSection>
+            <ExampleSection>
                 <FormControl>
                     <FormLabel id="available-color-radio-buttons-label">Available Colors:</FormLabel>
                     <RadioGroup
@@ -46,11 +47,8 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                         <FormControlLabel value="white"   control={<Radio />} label="White" />
                     </RadioGroup>
                 </FormControl>
-            </SettingsSection>
             <section>
-                <h4>Standard Tabs</h4>
-                <div style={{marginBottom: "32px"}}>
-                    <div className="caption">Tab Bar</div>
+                    <h6>Tab Bar</h6>
                     <Box sx={{ bgcolor: actualColor }}>
                         <Tabs centered
                             value={tabValue}
@@ -68,8 +66,7 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                             <Tab label="Tab 4" value="4" />
                         </Tabs>
                     </Box>
-                </div>
-                <div className="caption">Tab Bar - with Icons</div>
+                <h6>Tab Bar - with Icons</h6>
                 <Box sx={{ bgcolor: actualColor }}>
                     <Tabs centered
                         value={tabIconsValue}
@@ -88,6 +85,7 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                     </Tabs>
                 </Box>
             </section>
+            </ExampleSection>
         </div>
     )
 }
