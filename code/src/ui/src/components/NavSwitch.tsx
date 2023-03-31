@@ -12,9 +12,17 @@ interface Props {
     size?: number;
     defaultChecked?: boolean;
     inputProps?: any;
+    checked?: boolean;
+    onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size}) => {
+export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
+    const handleOnChange = (event:any) => {
+        const value = event.target.value;
+        if (onChange) {
+            onChange();
+        }
+    }
 
     const sz = size || 1.5;
     const MySwitch = styled(Switch)(({ theme }) => ({
@@ -61,7 +69,12 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
     return (
         <Stack direction="row" spacing={1} alignItems="center">
             {leftLabel && <Typography>{leftLabel}</Typography>}
-            <MySwitch defaultChecked inputProps={{ 'aria-label': '' }} />
+            <MySwitch 
+                defaultChecked 
+                checked={checked} 
+                onChange={handleOnChange} 
+                inputProps={{ 'aria-label': '' }} 
+            />
             {rightLabel && <Typography>{rightLabel}</Typography>}
          </Stack>                        
     )
