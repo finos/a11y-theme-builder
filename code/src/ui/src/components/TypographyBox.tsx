@@ -27,14 +27,14 @@ export const TextEditBox: React.FC<Props> = ({ cssPrefix, sampleTitle, isBody=fa
     const fontSize = "var(--" + cssPrefix + "FontSize)";
     const fontWeight = "var(--" + cssPrefix + "FontWeight)";
     const lineHeight = "var(--" + cssPrefix + "LineHeight)";
-    const characterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
+    const letterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
 
     const sampleStyle = {
         fontFamily: fontFamily,
         fontSize: fontSize,
         fontWeight: fontWeight,
         lineHeight: lineHeight,
-        letterSpacing: characterSpacing,
+        letterSpacing: letterSpacing,
     }
 
     return (
