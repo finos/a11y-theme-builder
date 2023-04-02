@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useState, useEffect } from 'react';
 import { Switch } from '@mui/material';
 import { Spacing } from 'a11y-theme-builder-sdk';

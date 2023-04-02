@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Tabs, Tab, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';

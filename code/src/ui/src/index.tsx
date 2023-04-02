@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import './index.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';

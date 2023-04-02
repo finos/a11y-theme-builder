@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

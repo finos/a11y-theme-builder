@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, InputAdornment, InputLabel, TextField, Typography } from '@mui/material';
 import { DesignSystem, Cards } from 'a11y-theme-builder-sdk';
