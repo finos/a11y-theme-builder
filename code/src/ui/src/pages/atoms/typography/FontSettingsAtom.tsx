@@ -228,7 +228,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     async function handleSmallLineHeightChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setSmallLineHeight(value)
-        fontSettingsAtom.headerLineHeight.setValue                  (value ? value : undefined)
+        fontSettingsAtom.smallLineHeight.setValue                  (value ? value : undefined)
         atoms.smallTextStyles.subtitle1.lineHeight.setValue         (value ? value : undefined)
         atoms.smallTextStyles.subtitle2.lineHeight.setValue         (value ? value : undefined)
         atoms.smallTextStyles.caption.lineHeight.setValue           (value ? value : undefined)

@@ -466,7 +466,7 @@ try {
                         gap: "var(--spacing-1)",
                         alignItems: "center",
                         font: "var(--chipTypography)",
-                        letterSpacing: "var(--chipCharacterSpacing)",
+                        letterSpacing: "var(--chipLetterSpacing)",
                         textDecoration: "var(--chipTextDecoration)",
                         textTransform: "var(--chipTextTransform)",
                         minWidth: "var(--chip-minwidth)",
