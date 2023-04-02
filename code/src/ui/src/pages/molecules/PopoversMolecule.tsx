@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import { Button, Popover, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DesignSystem, Popovers } from 'a11y-theme-builder-sdk';

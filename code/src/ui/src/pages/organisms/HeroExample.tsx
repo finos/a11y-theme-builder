@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React from 'react';
 import { Breadcrumbs, Button, Link, Typography } from '@mui/material';
 import { Hero } from "../../mui-a11y-tb/components/Hero";
