@@ -12,7 +12,7 @@ import './Theme.css'
 export const getCssValue = (prop) => {
     //console.log(`ENTER - getCssValue(${prop})`);
     let v = document.documentElement.style.getPropertyValue(prop);
-    if (!v) { 
+    if (!v) {
         if (!rootStyleSheet) {
             rootStyleSheet = getStyleSheet(":root");
         }
@@ -104,7 +104,7 @@ try {
     //     value: "calc("+r1+" * 2)",
     // })
     // console.log(" radius t=",t);
-    
+
 
     const lightTheme = createTheme({
         // Can't change these, since css doesn't seem to be defined at this point
@@ -141,7 +141,7 @@ try {
             },
             action: {
                 // active: "",
-                // hover: "", 
+                // hover: "",
                 // hoverOpacity: "",
                 // selected: "",
                 // selectedOpacity: "",
@@ -201,11 +201,11 @@ try {
             //     fontSize: "calc(var(--baseFont) * .875)",
             //     lineHeight: "var(--standard-LineHeight)",
             //     letterSpacing: "1.5%",
-            //     textTransform: "uppercase",    
+            //     textTransform: "uppercase",
             // },
         },
         shape: {
-            //borderRadius:  parseInt(getCssValue("--radius-2")), // must be a number 
+            //borderRadius:  parseInt(getCssValue("--radius-2")), // must be a number
             //borderRadius:  "var(--radius-2)",
         },
         components: {
@@ -253,10 +253,10 @@ try {
                        padding: "0 calc(var(--spacing-1) * var(--button-padding))",
                        textDecoration: "var(--buttonTextDecoration)",
                        textTransform: "var(--buttonTextTransform)",
-                        ":hover": {
-                            background: "var(--on-button)",
-                            color: "var(--button)",
-                        },
+                        //":hover": {
+                        //    background: "var(--on-button)",
+                        //    color: "var(--button)",
+                      //  },
                     }),
                 }
             },
@@ -413,7 +413,7 @@ try {
                         letterSpacing: "1.25%",
                         textTransform: "none",
                         marginBottom: "10px",
-                    
+
                     }
                 }
             },
@@ -438,7 +438,7 @@ try {
             MuiBreadcrumbs: {
                 styleOverrides: {
                     root: {
-                        
+
                     }
                 }
             },
@@ -528,8 +528,8 @@ try {
                         ".darkmode & .MuiAvatar-root": {
                             border: "1px solid calc(var(--border-1) * var(--dm-on-chip)) var(--accent)",
                         },
-                          
-                          
+
+
 
                     },
                 },
@@ -645,7 +645,7 @@ try {
                         "&.Mui-selected": {
                             backgroundColor: "var(--dm-secondary)", //theme.palette.secondary.main,
                             color: "var(--on-dm-background)", //theme.palette.secondary.contrastText,
-                        },                    
+                        },
                     }
                 }
             },
@@ -655,7 +655,7 @@ try {
             //             fontSize: "3em",
             //         }
             //     }
-            // }        
+            // }
         }
     });
 
@@ -664,4 +664,3 @@ try {
 } catch (e) {
     console.error("Error in Theme.jsx: ", e);
 }
-
