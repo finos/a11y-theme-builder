@@ -29,9 +29,9 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
 
     useEffect(() => {
         try {
-            _setUnderlineHotlinksLightmode(hotlinks.getHotlinkVariables().lm.underlineRequired || hotlinks.underlineHotlinksInLightMode.getValue() || false);
-            _setUnderlineHotlinksLightmodeRequired(hotlinks.getHotlinkVariables().lm.underlineRequired);
-            _setUnderlineHotlinksDarkmodeRequired(hotlinks.getHotlinkVariables().dm.underlineRequired);
+            _setUnderlineHotlinksLightmode(hotlinks.getHotlinkVariables()?.lm.underlineRequired || hotlinks.underlineHotlinksInLightMode.getValue() || false);
+            _setUnderlineHotlinksLightmodeRequired(hotlinks.getHotlinkVariables()?.lm.underlineRequired || false);
+            _setUnderlineHotlinksDarkmodeRequired(hotlinks.getHotlinkVariables()?.dm.underlineRequired || false);
         } catch (error) {
             // It is possible that getHotlinkVariables may throw an error
             //  if it runs into shades without "on" colors.
