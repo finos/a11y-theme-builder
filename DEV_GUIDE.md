@@ -8,7 +8,7 @@ This document serves as a getting started guide for working with the Accessibili
 - [Understanding Server APIs](#understanding-server-apis)
 
 ## Install Dependencies
-The Theme Builder application can be built and run locally using two variations that differ on complexity of setup (devops).
+The Theme Builder application can be built and run locally using two variations (Quick and Easy, Javascript Runtime Environment) that differ on complexity of setup (devops).
 
 ### Basic Requirements
 
@@ -26,9 +26,9 @@ Perform the following steps to run a local version of the application.
 These instructions assume you have a local copy of a forked instance of [discoverfinancial/a11y-theme-builder](https://github.com/discoverfinancial/a11y-theme-builder).
 
 ```
-$ cd <WORKSPACE>
-$ git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
-$ cd a11y-theme-builder
+cd <WORKSPACE>
+git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
+cd a11y-theme-builder
 ```
 
 where:
@@ -37,7 +37,11 @@ where:
 * `<YOUR-ORG>` is the name of your GitHub account or personal GitHub organization.
 
 ### Quick and Easy
-Building and running the application using `Docker` can be achieved in a few simple steps.
+Building and running the application using `Docker` can be achieved in a few simple steps, which all assume a `/code` as the working directory.
+
+```
+cd <WORKSPACE>/a11y-theme-builder/code
+```
 
 #### Embedded Database
 The Theme Builder application requires the use of a  persisted embedded database. This requirement is satisfied by attaching a local host directory, `/code/src/data`, to the running docker container. 
@@ -45,13 +49,13 @@ The Theme Builder application requires the use of a  persisted embedded database
 #### Build image
 
 ```
-$ docker build . -t a11y-theme-builder
+docker build . -t a11y-theme-builder
 ```
 
 #### Start new container
 
 ```
-docker run -p 8080:3001 -v <host_dir>:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
+docker run -p 8080:3001 -v ${pwd}:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
 ```
 ### View Application
 
@@ -82,9 +86,9 @@ docker rm a11y-theme-builder
 The following commands will build and run the application using a local Node.js environment running on a Linux distribution such as MacOS:
 
 ```
-$ cd a11y-theme-builder/code
-$ npm run build
-$ npm run debug
+cd a11y-theme-builder/code
+npm run build
+npm run debug
 ```
 
 To access the application, load the following URL into a browser:
@@ -104,19 +108,19 @@ The Theme Builder is a web application that uses Node for the server and React f
 The command `npm run build` builds both the server and UI.  To build just the server, run
 
 ```
-$ npm run build-api
+npm run build-api
 ```
 
 or to build the UI, run
 
 ```
-$ npm run build-ui
+npm run build-ui
 ```
 
 To simplify developing of the UI, the React Development Server can be run
 
 ```
-$ npm run dev-ui
+npm run dev-ui
 ```
 
 To access the application through the React Development Server, load the following URL into a browser:
