@@ -47,7 +47,7 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
                         variant="contained"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="contained" className="small-btn CTA-Small">{barGraphIcon()}</Button>
+                    <Button variant="contained" className="small-btn icon">{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Secondary</div>
                 <div className="buttonDemo">
@@ -62,7 +62,7 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
                         variant="outlined"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="outlined" className="small-btn CTA-Small" >{barGraphIcon()}</Button>
+                    <Button variant="outlined" className="small-btn icon" >{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Tertiary</div>
                 <div className="buttonDemo">
@@ -77,7 +77,7 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
                         variant="text"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="text" className="small-btn CTA-Small">{barGraphIcon()}</Button>
+                    <Button variant="text" className="small-btn icon">{barGraphIcon()}</Button>
                 </div>
             </ColorModeSelector>
             </ExampleSection>

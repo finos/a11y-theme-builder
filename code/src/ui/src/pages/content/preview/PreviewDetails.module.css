@@ -2594,6 +2594,7 @@ font-family: var(--primaryFont);
   display: flex;
   gap: 24px;
   margin: 16px 0;
+  flex-wrap: wrap;
 }
 
 .css button {
@@ -5829,7 +5830,7 @@ button.tab .inline-icon path {
   position: relative;
 }
 
-/* @bc 
+/* @bc
 .ui-widget-header .ui-icon {
     background-image: url(images/ui-icons_444444_256x240.png);
 }

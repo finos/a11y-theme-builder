@@ -998,8 +998,8 @@
   /* TYPOGRAPHY */
   /* Font settings */
   --standard-LineHeight: 160%;
-  --header-LineHeight: 130%;
-  --sm-LineHeight: 110%;
+  --header-LineHeight: 110%;
+  --sm-LineHeight: 130%;
   --fontWeight-0:  100;
   --fontWeight-1:  300;
   --fontWeight-2:  500;
@@ -1913,6 +1913,7 @@ h6 {
 /* Buttons */
 
 button {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2029,11 +2030,12 @@ button.dropdown-toggle::after {
 }
 
 button svg {
-  width: 24px;
-  height: 24px;
+  width: 24px !important;
+  height: 24px !important;
 }
 
 button.small-btn {
+  flex-shrink: 0;
   background: transparent !important;
   padding: 0 calc(var(--spacing-1) * var(--sm-button-padding));
   z-index: 1;
@@ -2055,24 +2057,32 @@ button.small-btn.icon::before {
 
 .black button.small-btn {
   background: transparent !important;
-  color: var(--on-white)
+  color: var(--on-white) !important;
 }
 
 .white button.small-btn {
   background: transparent !important;
-  color: var(--white)
+  color: var(--white) !important;
 }
 
 button.small-btn::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   min-height: calc(var(--sm-button-height) + 4px + calc(var(--animation-focus-distance) * 2));
+  height: calc(var(--sm-button-height) + 4px);
+  opacity: 0;
+  left: calc(0px - 2px - var(--animation-focus-distance));
+  right: calc(0px - 2px - var(--animation-focus-distance));
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 
 button.small-btn:hover::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: -4px;
+  right: -4px;
 }
 
 button.small-btn:focus::after {
@@ -2196,6 +2206,9 @@ button.small-btn.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--button)
 }
 
+/* dark buttons */
+
+
 /* begin - MuiButtonGroup
  *         Adding rules to keep interior outlined buttons from having
  *         rounded corners in vertical button groups.
@@ -2290,6 +2303,19 @@ button.small-btn.MuiButton-text::before {
   content: '';
   background: transparent !important;
   box-shadow: var(--button-shadow) !important;
+}
+
+button.small-btn.icon::before {
+  left: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
+  right: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
+}
+button.small-btn.icon:hover::after {
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
+  right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
 
 /* darkmode buttons */

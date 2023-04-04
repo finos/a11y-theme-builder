@@ -281,9 +281,13 @@ try {
                         padding: "0 calc(var(--min-target) + var(--spacing-1))",
                         margin: "var(--spacing-half) 0",
                         height: "var(--min-target)",
+                        width: "var(--min-target)",
+                        height:  "var(--min-target)",
+                        padding: 0,
                         "&.MuiCheckbox-root": {
                             backgroundColor: "var(--input)",
                             color: "var(--on-input)",
+
                         },
                         "&.Mui-checked": {
                             color: "var(--button) !important",
@@ -347,6 +351,13 @@ try {
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
                                     minHeight: "var(--min-target)",
+                                    display: "flex",
+                                    gap: "var(--spacing-1)",
+                                    '& .MuiButtonBase': {
+                                      padding: "0px",
+                                      width: "var(--min-target)",
+                                    },
+
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
@@ -482,7 +493,90 @@ try {
                     }
                 }
             },
+            MuiList: {
+                styleOverrides: {
+                    root: {
+                        "& .MuiListSubheader-root": {
+                          background: "var(--background-secondary)",
+                          fontWeight: "500",
+                        },
+                    }
+                }
+            },
+            MuiListSubheader: {
+                styleOverrides: {
+                    root: {
+                        background: "transparent",
+                        fontWeight: "font-weight: 500",
+                        "& .MuiListItemText-root": {
+                          "& .MuiTypography-root": {
+                            textTransform: "none",
+                          },
+                        },
+                    }
+                }
+            },
+            MuiAlert: {
+                styleOverrides: {
+                    root: {
+                        background: "var(--surface)",
+                        color: "var(--on-surface)",
+                        border: "1px solid var(--border)",
+                        padding: "calc(2 * var(--spacing-1)) !important",
+                        paddingLeft: "calc(calc(2 * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
+                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                        boxShadow: "var(--toast-boxshadow)",
+                        position: "relative",
+                        "&.MuiAlert-icon": {
+                          marginLeft: "var(--spacing-2)",
+                        },
+                        "&::after": {
+                            position: "absolute",
+                            top:   "var(--spacing-1)",
+                            left: "var(--spacing-1)",
+                            width: "var(--spacing-half)",
+                            bottom: "var(--spacing-1)",
+                            borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                            content: '""',
+                            background: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError .overline": {
+                          color: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError::after": {
+                            background: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError .MuiAlert-icon": {
+                            color: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardWarning::after": {
+                            background: "var(--warning)",
+                            "& .MuiAlert-icon ": {
+                                color: "var(--warning) !important",
+                            },
+                        },
+                        "&.MuiAlert-standardWarning .overline": {
+                          color: "var(--warning)",
+                        },
+                        "&.MuiAlert-standardWarning .MuiAlert-icon": {
+                          color: "var(--warning) !important",
+                        },
 
+                        "&.MuiAlert-standardSuccess .overline": {
+                          color: "var(--success)",
+                        },
+                        "&.MuiAlert-standardSuccess::after": {
+                            background: "var(--success)",
+                        },
+                        "&.MuiAlert-standardInfo .overline": {
+                          color: "var(--info)",
+                        },
+                        "&.MuiAlert-standardInfo::after": {
+                            background: "var(--info)",
+                        },
+                      },
+                }
+            },
             MuiChip: {
                 styleOverrides: {
                     root: {

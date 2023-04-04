@@ -46,19 +46,19 @@ export const LeftNavHeader = styled(ListSubheader)(( {theme }) => ({
 }));
 
 export const LeftNavText = styled(ListSubheader)(( {theme }) => ({
-    textTransform: "uppercase",
+    // textTransform: "uppercase",
     background: "var(--leftNav)",
     //color: "var(--on-leftNav)",
     fontSize: "1em",
 }));
 
-export interface LeftNavItemProps { 
-    selected?:string, 
-    value?: string, 
-    text: string, 
-    indent?: number, 
-    disabled?:boolean, 
-    children?:ReactNode, 
+export interface LeftNavItemProps {
+    selected?:string,
+    value?: string,
+    text: string,
+    indent?: number,
+    disabled?:boolean,
+    children?:ReactNode,
     onClick?:any
 }
 
@@ -74,7 +74,7 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
             background: selected ? "var(--secondary)" : null,
             color: selected ? "var(--on-secondary)" : null,
             borderRight: selected ? "2px solid black" : null,
-            ':hover': { 
+            ':hover': {
                 backgroundColor: selected ? "var(--secondary)" : null,
                 color: selected ? "var(--on-secondary)" : null,
             }
@@ -82,10 +82,10 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
             disabled={props.disabled}
             onClick={props.onClick}
         >
-            <ListItemText 
-                primary={props.text} 
+            <ListItemText
+                primary={props.text}
                 primaryTypographyProps={{
-                    textTransform: "uppercase", 
+                    textTransform: "uppercase",
                     fontSize: fontSize,
                     fontWeight: "500",
                 }}
