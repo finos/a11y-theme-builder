@@ -206,7 +206,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 }
                 {showAtom === atoms.colorPalette.value && (
                     <ErrorHandler>
-                        <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" />
+                        <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
                     </ErrorHandler>
                 )}
                 {showAtom === atoms.colorThemes.value && (
