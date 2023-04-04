@@ -63,24 +63,26 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                 </div>
 
                 <div className="center-titlebar">
-                    <div id="design-system-title-current-select-label" className="label">Current Design System:</div>
-                    <Select
-                        labelId="design-system-title-current-select-label"
-                        onChange={handleDSChange}
-                        value={designSystem.name}
-                        size="small"
-                        sx={{
-                            width: "fit-content", 
-                            minWidth: "200px",
-                        }}
-                    >
-                        {designSystemNames.map((item) => {
-                            return <MenuItem key={"key" + item} value={item}>{item}</MenuItem>
-                        })}
-                        <Divider />
-                        <MenuItem value={createNewDesignSystem}>{createNewDesignSystem}</MenuItem>
-                    </Select>
-                    <Button style={{ marginLeft:20 }} size="small" onClick={saveDesignSystem}>Save</Button>
+                    <div className="input-titlebar">
+                      <div id="design-system-title-current-select-label" className="label">Current Design System:</div>
+                      <Select
+                          labelId="design-system-title-current-select-label"
+                          onChange={handleDSChange}
+                          value={designSystem.name}
+                          size="small"
+                          sx={{
+                              width: "fit-content",
+                              minWidth: "200px",
+                          }}
+                      >
+                          {designSystemNames.map((item) => {
+                              return <MenuItem key={"key" + item} value={item}>{item}</MenuItem>
+                          })}
+                          <Divider />
+                          <MenuItem value={createNewDesignSystem}>{createNewDesignSystem}</MenuItem>
+                      </Select>
+                    </div>
+                    <Button size="small" onClick={saveDesignSystem}>Save</Button>
                 </div>
 
                 <div className="right-titlebar">

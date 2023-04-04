@@ -181,6 +181,7 @@
     display: flex;
     gap: 24px;
     margin: 16px 0;
+    flex-wrap: 
 }
 
 .design-system-editor-right-content .theme-colors {

@@ -257,6 +257,7 @@ try {
                         //    background: "var(--on-button)",
                         //    color: "var(--button)",
                       //  },
+                      // test
                     }),
                 }
             },
@@ -341,15 +342,17 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
+                                    borderRadius: "var(--spacing-half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
+                                    minHeight: "var(--min-target)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
                                 },
-                                borderRadius: "calc(var(--radius-1) * var(--dropdown-radius))",
+                                borderRadius: "var(--spacing-half)",
                             },
                         },
                     },
@@ -383,7 +386,7 @@ try {
                         //fontFamily: "Ariel", //"var(--fontFamily)",
                         color: "var(--on-input)",
                         background: "var(--input)",
-                        borderRadius: "var(--radius-1)",
+                        borderRadius: "var(--spacing-half)",
                         padding: "var(spacing-1)",
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
@@ -444,7 +447,8 @@ try {
             },
             "& .MuiTab-wrapper": {
                 flexDirection: "row",
-                justifyContent: "flex-start"
+                justifyContent: "flex-start",
+                background: "var(--button)",
             },
             MuiTab: {
                 styleOverrides: {
