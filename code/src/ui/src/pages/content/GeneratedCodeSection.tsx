@@ -90,7 +90,7 @@ export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
                             }}
                         >
                             <Tab label="CSS" value="css" />
-                            <Tab label="JSON" value="json" />
+                            {/* <Tab label="JSON" value="json" disabled/> */}
                         </Tabs>
                     </div>
                     <div style={codeStyle}>
