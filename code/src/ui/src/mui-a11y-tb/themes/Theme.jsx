@@ -352,6 +352,10 @@ try {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
                                 },
+                                '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:focus': {
+                                    color: "var(--on-dropdown-focus-bg)",
+                                    background: "var(--dropdown-focus-bg)",
+                                },
                                 borderRadius: "var(--spacing-half)",
                             },
                         },
@@ -388,6 +392,9 @@ try {
                         background: "var(--input)",
                         borderRadius: "var(--spacing-half)",
                         padding: "var(spacing-1)",
+                        "& .MuiInputBase-root": {
+                            borderRadius: "var(--spacing-half)",
+                        },
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
                             color: "var(--on-input-disabled)",
@@ -454,6 +461,11 @@ try {
                 styleOverrides: {
                     root: {
                         background: "var(--button)",
+                        "& .MuiTabs-indicator": {
+                            background: "var(--on-button) !important" ,
+                            height: "var(--spacing-half)",
+                            marginBottom: "2px",
+                        },
                     }
                 }
             },
@@ -470,6 +482,7 @@ try {
                     }
                 }
             },
+
             MuiChip: {
                 styleOverrides: {
                     root: {

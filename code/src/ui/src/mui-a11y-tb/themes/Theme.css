@@ -695,12 +695,13 @@
     /* dropdown */
     --dropdown-focus-theme: var(--spacing-half);
     --dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
-    --on-dropdown-focus-bg: #ffffff;
+    --on-dropdown-focus-bg: var(--on-surface);
     --dm-dropdown-focus-bg: linear-gradient(90deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
     --dm-on-dropdown-focus-bg: rgba(255,255,255,.6);
     --dropdown-elevation: 2;
     --dropdown-hover-style: 100%;
     --dropdown-hover-bg:    linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent)    var(--dropdown-focus-theme)) !important;
+    --on-dropdown-hover-bg: var(--on-surface);
     --dm-dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
     --dm-on-dropdown-hover-bg: rgba(255,255,255,.6);
     --dropdown-radius: 1;
