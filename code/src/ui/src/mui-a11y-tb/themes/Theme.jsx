@@ -450,11 +450,19 @@ try {
                 justifyContent: "flex-start",
                 background: "var(--button)",
             },
+            MuiTabs: {
+                styleOverrides: {
+                    root: {
+                        background: "var(--button)",
+                    }
+                }
+            },
             MuiTab: {
                 styleOverrides: {
                     root: {
                         fontFamily: "var(--navbarPrimary-font)",
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
+                        background: "var(--button)",
                         "&.Mui-selected, &.Mui-selected:hover": {
                             backgroundColor: "var(--secondary)",
                             color: "var(--on-secondary)",
@@ -482,17 +490,17 @@ try {
                         boxShadow: "var(--chip-elevation)",
                         "&::after": {
                             position: "absolute",
-                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px)",
-                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance))",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px - var(--animation-focus-distance))",
                             padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
-                            height: "calc((var(--spacing-1) * var(--chip-height)) + (var(--border-1) * 4) + 2px)",
-                            left: "calc(-2px - (var(--border-1) * 2))",
-                            right: "calc(-2px - (var(--border-1) * 2))",
-                            borderRadius: "calc(var(--radius-1) * var(--chip-radius))",
+                            left: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
+                            right: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
+                            borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             border: "calc(var(--border-1) * var(--button-border)) solid var(--button)",
                             background: "transparent !important",
                             opacity: 0,
                             content: '""',
+                            transition: "var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all"
                         },
                         "&::before": {
                             position: "absolute",
@@ -504,7 +512,7 @@ try {
                             content: '""',
                             background: "var(--chip)",
                             color: "var(--onchip)",
-                            borderRadius: "calc(var(--radius-1) * var(--chip-radius))",
+                            borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             zIndex: -1,
                             border: "none",
                             boxShadow: "var(--chip-shadow) !important",
@@ -512,12 +520,20 @@ try {
                         },
                         "&:hover::after": {
                             opacity: "var(--hover)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            left: "calc(-2px - calc(var(--border-1) * 2))",
+                            right: "calc(-2px - calc(var(--border-1) * 2))",
                         },
                         "&:active::after": {
                             opacity: 1,
                         },
                         "&:hover .closeIt, &:focus .closeIt, &:active .closeIt": {
                             opacity: 1,
+                        },
+                        "& .MuiChip-label": {
+                            paddingLeft: "var(--spacing-half)",
+                            paddingLeft: "var(--spacing-half)",
                         },
                         "&.inline-icon path": {
                             fill: "var(--on-chip)",
@@ -538,6 +554,7 @@ try {
                     },
                 },
             },
+
             // MuiListItemButton: {
             //     styleOverrides: {
             //         root: {

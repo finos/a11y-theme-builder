@@ -1956,10 +1956,10 @@ button.icon {
 
 button::after {
   position: absolute;
-  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
+  top: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
   border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
   background: transparent !important;
