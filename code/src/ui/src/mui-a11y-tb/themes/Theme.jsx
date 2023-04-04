@@ -253,10 +253,10 @@ try {
                        padding: "0 calc(var(--spacing-1) * var(--button-padding))",
                        textDecoration: "var(--buttonTextDecoration)",
                        textTransform: "var(--buttonTextTransform)",
-                        ":hover": {
-                            background: "var(--on-button)",
-                            color: "var(--button)",
-                        },
+                        // ":hover": {
+                        //     background: "var(--on-button)",
+                        //     color: "var(--button)",
+                        // },
                     }),
                 }
             },
