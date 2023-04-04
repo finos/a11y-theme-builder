@@ -1743,109 +1743,106 @@ h6 {
 }
 
 .avatar .darkmode {
-    /* background: rgba(255,255,255,.2) url('../img/avatar.svg') center center; */
     background-size: 100%;
 }
 
 .avatar.xxs {
     width: var(--spacing-3);
     height: var(--spacing-3);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.xs {
     width: var(--spacing-4);
     height: var(--spacing-4);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.sm {
     width: var(--min-target);
     height: var(--min-target);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.md {
     width: var(--spacing-7);
     height: var(--spacing-7);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .white .avatar.xxs,
 .white .avatar.xs,
 .white .avatar.sm,
 .white .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
-    background-size: 100%;
+    border: solid var(--avatar-border) var(--black) !important;
+    /* background-size: 100%; */
 }
 
 .black .avatar.xxs,
 .black .avatar.xs,
 .black .avatar.sm,
 .black .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important;
+    border: solid var(--avatar-border) var(--white) !important;
 }
 
 .avatar.lg {
     width: var(--spacing-10);
     height: var(--spacing-10);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .avatar.xl {
     width: calc(var(--spacing-10) * 2);
     height: calc(var(--spacing-10) * 2);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .avatar.xxl {
     width: calc(var(--spacing-10) * 2.6);
     height: calc(var(--spacing-10) * 2.6);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .white .avatar.lg,
 .white .avatar.xl,
 .white .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border-lg) var(--black) !important;
     background-size: 100% !important;
 }
 
 .black .avatar.lg,
 .black .avatar.xl,
 .black .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--white) !important;
+    border: solid var(--avatar-border-lg) var(--white) !important;
 }
   
 /* dark mode avatars */
 .darkmode .avatar.xxs {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.xs {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.sm {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.lg {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .darkmode .avatar.xl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .darkmode .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .avatar.centered {
@@ -1856,16 +1853,14 @@ h6 {
 .darkmode .white .avatar.xs,
 .darkmode .white .avatar.sm,
 .darkmode .white .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(---dm-black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border) var(---dm-black) !important;
     background-size: 100%;
 }
 
 .darkmode .white .avatar.lg,
 .darkmode .white .avatar.xl,
 .darkmode .white .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border-lg) var(--dm-black) !important;
     background-size: 100% !important;
 }
 
