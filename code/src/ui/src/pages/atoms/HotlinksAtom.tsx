@@ -59,10 +59,10 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
     return (
         <div>
             <HeadingSection item={hotlinks} title="Focus States & Hotlinks">
-                Hotlinks need to have a contrast against the background of 3.1:1 or higher, and a contrast to the surrounding text of 3.1:1 or higher or they must be underlined.<br />
-                Users can choose to underline the text in light mode or not. In dark mode it is required to meet the contrast guidelines.<br />
-                Note: Hotlinks that appear on anything other that selected primary and secondary background, black or white will have either black or white underlined hotlinks in order to meet the accessibility requirements.<br />
-                <a href="https://webaim.org/blog/wcag-2-0-and-link-colors/">Helpful Link</a>
+                <p>Hotlinks need to have a contrast against the background of 3.1:1 or higher, and a contrast to the surrounding text of 3.1:1 or higher or they must be underlined.</p>
+                <p>Users can choose to underline the text in light mode or not. In dark mode it is required to meet the contrast guidelines.</p>
+                <p>Note: Hotlinks that appear on anything other that selected primary and secondary background, black or white will have either black or white underlined hotlinks in order to meet the accessibility requirements.</p>
+                <p><a href="https://webaim.org/blog/wcag-2-0-and-link-colors/">Helpful Link</a></p>
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>

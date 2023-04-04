@@ -55,10 +55,6 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
     return (
         <div className="color-palette-right-content">
             <HeadingSection item={atom} title="Theme">
-                    <ul>
-                        <li>Load <a href="#">color blind</a> states. <a href="#">Learn more.</a></li>
-                        <li><a href="#">Reset to Default</a></li>
-                    </ul>
             </HeadingSection>
             <ExampleSection>
                 The color values are calculated from the input colors under Settings.  They will not necessarily be the same value that was selected.
