@@ -74,12 +74,17 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     
     const getCssCode = () => {
         const r = [":root {"];
-        const vars = designSystem.code.cssGenerator.getVars();
+        const vars = designSystem.code.getCSSVars();
         Object.keys(vars).forEach(name => {
             r.push(`  ${name}: ${vars[name]};`)
         })
         r.push("}")
         return r.join("\n");
+    }
+
+    const getJsonCode = (lm: boolean) => {
+        const code = designSystem.code.getJSON(lm);
+        return JSON.stringify(code,null,2);
     }
 
     return (
@@ -156,10 +161,19 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                 <div className="top40">
                     <h5>Base Code</h5>
                 </div>
+
                 <div className="top40">
-                    <InputLabel>JSON for both Light and Dark Modes</InputLabel>
+                    <InputLabel>Core Theme</InputLabel>
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        Code goes here
+                        {getJsonCode(true)}
+                    </SyntaxHighlighter>
+                    <Button variant="contained">Copy</Button>
+                </div>
+
+                <div className="top40">
+                    <InputLabel>Dark Mode Theme Layer</InputLabel>
+                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
+                        {getJsonCode(false)}
                     </SyntaxHighlighter>
                     <Button variant="contained">Copy</Button>
                 </div>
