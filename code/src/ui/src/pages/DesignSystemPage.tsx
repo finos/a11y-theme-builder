@@ -104,6 +104,9 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
         ":hover": {
             backgroundColor: "rgba(0, 0, 0, 0.04)",
         },
+        ":hover::after": {
+            opacity: 0,
+        },
     }));
 
     const [size, setSize] = useState<number>(window.innerHeight);
