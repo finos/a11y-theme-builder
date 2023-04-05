@@ -374,6 +374,7 @@
 
     /* focus */
     --focusBlur: var(--spacing-half);
+    --focusBorder: 2px;
     /* opacity */
     --quiet: 68%;
     --disabled: 38%;
@@ -761,7 +762,7 @@
     --chipLetterSpacing:  var(--captionLetterSpacing);
     --chip-bevel: var(--bevel-0);
     --chip-elevation: var(--elevation-0);
-    
+
     /* switch */
     --switch-height: var(--spacing-3);
     --switch-radius: 3;
@@ -831,6 +832,7 @@
     --sliderbarHeight: 1;
     --sliderhandleHeight: 3;
     --sliderhandleRadius : 1;
+    --sliderhandleElevation : 1;
     --barInBevel : 1;
     /* popover */
     --popoverBevel: var(--bevel-0);
@@ -1014,7 +1016,7 @@
   --headerWeight: 400;
   --headerFamily: var(--secondaryFont);
   --bodyFamily: var(--primaryFont);
- 
+
   /* Dislay 1*/
   --Display1FontSize:  calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/ 100 * 9)));
   --Display1FontFamily: var(--headerFamily);
@@ -1909,8 +1911,8 @@ button {
   align-items: center;
   gap: 8px;
   justify-content: center;
-  background: var(--button);
-  color: var(--on-button);
+  background: var(--button); /* !important; */
+  color: var(--on-button); /* !important; */
   border-radius: calc(var(--radius-1) * var(--button-radius));
   min-height: calc(var(--spacing-1) * var(--button-height));
   min-width: calc(var(--spacing-1) * var(--button-minwidth));
@@ -1924,6 +1926,7 @@ button {
   text-decoration: var(--buttonTextDecoration);
   text-transform: var(--buttonTextTransform);
   box-shadow: var(--button-shadow);
+  border: 0px !important;
 }
 
 button.wide {
@@ -1952,10 +1955,9 @@ button::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--radius-1) * var(--button-radius));
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
   background: transparent !important;
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px + calc(var(--animation-focus-distance) * 2));
   opacity: 0;
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
@@ -1975,7 +1977,7 @@ button:hover::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px);
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 
 button:focus::after {
@@ -1984,7 +1986,7 @@ button:focus::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px);
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 
 button.dropdown-toggle {
@@ -2018,6 +2020,11 @@ button.dropdown-toggle::after {
   border-right: 0.3em solid transparent !important;
   border-bottom: 0 !important;
   border-left: 0.3em solid transparent !important;
+}
+
+button svg {
+  width: 24px;
+  height: 24px;
 }
 
 button.small-btn {

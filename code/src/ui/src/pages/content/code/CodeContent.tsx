@@ -163,7 +163,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                 </div>
 
                 <div className="top40">
-                    <InputLabel>Core Theme</InputLabel>
+                    <InputLabel>JSON for both Light and Dark Modes</InputLabel>
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         {getJsonCode(true)}
                     </SyntaxHighlighter>
