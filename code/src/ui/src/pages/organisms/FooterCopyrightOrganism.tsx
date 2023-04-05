@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FooterAndCopyright } from 'a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
+import { FooterCopyrightExample } from './FooterCopyrightExample';
 interface Props {
     organism: FooterAndCopyright;
 }
@@ -15,7 +16,7 @@ export const FooterCopyrightOrganism: React.FC<Props> = ({ organism }) => {
         <div>
             <HeadingSection item={organism} title="Apply Styles" />
             <ExampleSection>
-                FOOTER COPYRIGHT EXAMPLE
+                <FooterCopyrightExample/>
             </ExampleSection>
             <SettingsSection>
             <div className="top40">

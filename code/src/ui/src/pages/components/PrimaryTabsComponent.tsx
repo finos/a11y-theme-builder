@@ -58,10 +58,10 @@ export const PrimaryTabsComponent: React.FC<Props> = () => {
                                 "& button:focus": {backgroundColor: actualColor, color: textColor},
                             }}
                         >
-                            <Tab label="Tab 1" value="1" />
-                            <Tab label="Tab 2" value="2" />
-                            <Tab label="Tab 3" value="3" />
-                            <Tab label="Tab 4" value="4" />
+                            <Tab className='secondaryTab' label="Tab 1" value="1" />
+                            <Tab className='secondaryTab' label="Tab 2" value="2" />
+                            <Tab className='secondaryTab' label="Tab 3" value="3" />
+                            <Tab className='secondaryTab' label="Tab 4" value="4" />
                         </Tabs>
                     </Box>
                 <h6>Tab Bar - with Icons</h6>
@@ -76,10 +76,10 @@ export const PrimaryTabsComponent: React.FC<Props> = () => {
                             "& button:focus": {backgroundColor: actualColor, color: textColor},
                         }}
                     >
-                        <Tab label="Tab 1" value="1" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
+                        <Tab className='secondaryTab' label={"Tab 1"} value="1" icon={<BarChartIcon />} iconPosition="start"/>
+                        <Tab className='secondaryTab' label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
+                        <Tab className='secondaryTab' label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
+                        <Tab className='secondaryTab' label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
                     </Tabs>
                 </Box>
             </section>
