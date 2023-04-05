@@ -49,7 +49,7 @@ export const ComputedColorSwatch: React.FC<Props> = ({className, label, style}) 
 
     if (className) {
     return (
-        <div className="color-swatch" style={style}>
+        <div className="color-swatch white" style={style}>
             {label && <div className="small-semibold">{label}</div>}
             <div ref={colorDisplayRef} className={`color-box ${className}`}>Aa</div>
             <div>

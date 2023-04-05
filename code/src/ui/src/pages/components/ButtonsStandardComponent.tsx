@@ -45,37 +45,33 @@ export const ButtonsStandardComponent: React.FC<Props> = () => {
                         variant="contained"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="contained" className="CTA">{barGraphIcon()}</Button>
+                    <Button variant="contained" className="icon">{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Secondary</div>
                 <div className="buttonDemo">
-                    <Button className="CTA" variant="outlined">No Icon</Button>
+                    <Button variant="outlined">No Icon</Button>
                     <Button
-                        className="CTA"
                         variant="outlined"
                         startIcon={barGraphIcon()}
                     >Left Icon</Button>
                     <Button
-                        className="CTA"
                         variant="outlined"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="outlined" className="CTA" >{barGraphIcon()}</Button>
+                    <Button variant="outlined" className="icon" >{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Tertiary</div>
                 <div className="buttonDemo">
                     <Button className="CTA" variant="text">No Icon</Button>
                     <Button
-                        className="CTA"
                         variant="text"
                         startIcon={barGraphIcon()}
                     >Left Icon</Button>
                     <Button
-                        className="CTA"
                         variant="text"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="text" className="CTA">{barGraphIcon()}</Button>
+                    <Button variant="text" className="icon">{barGraphIcon()}</Button>
                 </div>
             </ColorModeSelector>
             </ExampleSection>

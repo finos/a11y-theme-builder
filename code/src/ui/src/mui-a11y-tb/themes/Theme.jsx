@@ -280,6 +280,9 @@ try {
                         padding: "0 calc(var(--min-target) + var(--spacing-1))",
                         margin: "var(--spacing-half) 0",
                         height: "var(--min-target)",
+                        width: "var(--min-target)",
+                        height:  "var(--min-target)",
+                        padding: 0,
                         "&.MuiCheckbox-root": {
                             backgroundColor: "var(--input)",
                             color: "var(--on-input)",
@@ -296,7 +299,13 @@ try {
             MuiOutlinedInput: {
                 styleOverrides: {
                       root: {
-                        borderRadius: "var(--radius-1)",
+                        borderRadius: "var(--spacing-1)",
+                        height: "calc(var(--spacing-1) * var(--button-height))",
+                        padding: "0",
+                        border: "1px solid var(--borrder)",
+                        "& input": {
+                            padding: "0 var(--spacing-2)",
+                        },
                         ".info &": {
                             color: "var(--on-info)",
                             backgroundColor: "var(--info)",
@@ -341,15 +350,29 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-half)",
+                                    borderRadius: "var(--spacing-1)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
                                     minHeight: "var(--min-target)",
+                                    display: "flex",
+                                    gap: "var(--spacing-1)",
+                                    opacity: "var(--quiet)",
+                                    '& .MuiButtonBase': {
+                                      padding: "0px",
+                                      width: "var(--min-target)",
+                                    },
+
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
+                                    opacity: "1",
+                                },
+                                '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:focus': {
+                                    color: "var(--on-dropdown-focus-bg)",
+                                    background: "var(--dropdown-focus-bg)",
+                                    opacity: "1",
                                 },
                                 borderRadius: "var(--spacing-half)",
                             },
@@ -365,6 +388,33 @@ try {
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
                     },
                 }
+            },
+            MuiRadio: {
+                styleOverrides: {
+                    root: {
+                        "&.Mui-checked":{
+                            color: "var(--button)",
+                        },
+                        "&.Mui-disabled":{
+                            opacity: "var(--disable)",
+                        },
+                    },
+                },
+            },
+            MuiSwitch: {
+                styleOverrides: {
+                    root: {
+                        height: "var(--min-target)",
+                    },
+                    "& .MuiSwitch-switchBase": {
+                        height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
+                        borderRadius: "calc(  var(--sliderhandleRadius) * var(--radius-1))",
+                        padding: "calc( var(--min-target) - var(--sliderhandleHeight))",
+                        "&.MuiSwitch-colorPrimary .MuiSwitch-thumb": {
+                            backgroundColor: "var(--button)",
+                        }
+                    },
+                },
             },
             MuiAlert: {
                 styleOverrides: {
@@ -387,6 +437,9 @@ try {
                         background: "var(--input)",
                         borderRadius: "var(--spacing-half)",
                         padding: "var(spacing-1)",
+                        "& .MuiInputBase-root": {
+                            borderRadius: "var(--spacing-half)",
+                        },
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
                             color: "var(--on-input-disabled)",
@@ -437,6 +490,13 @@ try {
                     },
                 },
             },
+            MuiInputAdornment: {
+                styleOverrides: {
+                    root: {
+                        marginRight: "var(--spacing-2)",
+                    }
+                }
+            },
             MuiBreadcrumbs: {
                 styleOverrides: {
                     root: {
@@ -449,16 +509,153 @@ try {
                 justifyContent: "flex-start",
                 background: "var(--button)",
             },
+            MuiTabs: {
+                styleOverrides: {
+                    root: {
+                        background: "var(--button)",
+                        "& .MuiTabs-indicator": {
+                            background: "var(--on-button) !important" ,
+                            height: "var(--spacing-half)",
+                            marginBottom: "2px",
+                        },
+
+                    }
+                }
+            },
             MuiTab: {
                 styleOverrides: {
                     root: {
                         fontFamily: "var(--navbarPrimary-font)",
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
+                        background: "var(--button)",
+                        opacity: "var(--quiet)",
+                        "&:hover": {
+                            opacity: "1"
+                        },
+                        "&:focus": {
+                            opacity: "1"
+                        },
                         "&.Mui-selected, &.Mui-selected:hover": {
-                            backgroundColor: "var(--secondary)",
-                            color: "var(--on-secondary)",
+                            opacity: "1"
+                        },
+                        "&::after": {
+                          height: "var(--spacing-half)",
+                          left: "0",
+                          right: "0",
+                          bottom: "2px",
+                          opacity: "0.5",
+                          content: "''",
+                          position: "absolute",
+                          border: "none",
+                          top: "unset",
+                          borderBottom: "var(--spacing-half) solid transparent",
+                          borderRadius: "0px",
+                        },
+                        "&:hover::after": {
+                          height: "var(--spacing-half)",
+                          left: "0",
+                          right: "0",
+                          bottom: "2px",
+                          opacity: "0.5",
+                          content: "''",
+                          position: "absolute",
+                          border: "none",
+                          top: "unset",
+                          borderBottom: "var(--spacing-half) solid var(--on-button)",
+                          borderRadius: "0px",
+                        },
+                        "&:focus::after": {
+                          opacity: "0 !important",
+
+                        },
+                        "&.Mui-selected, &.Mui-selected:focus": {
+                            opacity: "1"
                         },
                     }
+                }
+            },
+            MuiList: {
+                styleOverrides: {
+                    root: {
+                        "& .MuiListSubheader-root": {
+                          background: "var(--background-secondary)",
+                          fontWeight: "500",
+                        },
+                    }
+                }
+            },
+            MuiListSubheader: {
+                styleOverrides: {
+                    root: {
+                        background: "transparent",
+                        fontWeight: "font-weight: 500",
+                        "& .MuiListItemText-root": {
+                          "& .MuiTypography-root": {
+                            textTransform: "none",
+                          },
+                        },
+                    }
+                }
+            },
+            MuiAlert: {
+                styleOverrides: {
+                    root: {
+                        background: "var(--surface)",
+                        color: "var(--on-surface)",
+                        border: "1px solid var(--border)",
+                        padding: "calc(2 * var(--spacing-1)) !important",
+                        paddingLeft: "calc(calc(2 * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
+                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                        boxShadow: "var(--toast-boxshadow)",
+                        position: "relative",
+                        "&.MuiAlert-icon": {
+                          marginLeft: "var(--spacing-2)",
+                        },
+                        "&::after": {
+                            position: "absolute",
+                            top:   "var(--spacing-1)",
+                            left: "var(--spacing-1)",
+                            width: "var(--spacing-half)",
+                            bottom: "var(--spacing-1)",
+                            borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                            content: '""',
+                            background: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError .overline": {
+                          color: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError::after": {
+                            background: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardError .MuiAlert-icon": {
+                            color: "var(--danger)",
+                        },
+                        "&.MuiAlert-standardWarning::after": {
+                            background: "var(--warning)",
+                            "& .MuiAlert-icon ": {
+                                color: "var(--warning) !important",
+                            },
+                        },
+                        "&.MuiAlert-standardWarning .overline": {
+                          color: "var(--warning)",
+                        },
+                        "&.MuiAlert-standardWarning .MuiAlert-icon": {
+                          color: "var(--warning) !important",
+                        },
+
+                        "&.MuiAlert-standardSuccess .overline": {
+                          color: "var(--success)",
+                        },
+                        "&.MuiAlert-standardSuccess::after": {
+                            background: "var(--success)",
+                        },
+                        "&.MuiAlert-standardInfo .overline": {
+                          color: "var(--info)",
+                        },
+                        "&.MuiAlert-standardInfo::after": {
+                            background: "var(--info)",
+                        },
+                      },
                 }
             },
             MuiChip: {
@@ -481,17 +678,17 @@ try {
                         boxShadow: "var(--chip-elevation)",
                         "&::after": {
                             position: "absolute",
-                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px)",
-                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance))",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px - var(--animation-focus-distance))",
                             padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
-                            height: "calc((var(--spacing-1) * var(--chip-height)) + (var(--border-1) * 4) + 2px)",
-                            left: "calc(-2px - (var(--border-1) * 2))",
-                            right: "calc(-2px - (var(--border-1) * 2))",
-                            borderRadius: "calc(var(--radius-1) * var(--chip-radius))",
+                            left: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
+                            right: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
+                            borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             border: "calc(var(--border-1) * var(--button-border)) solid var(--button)",
                             background: "transparent !important",
                             opacity: 0,
                             content: '""',
+                            transition: "var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all"
                         },
                         "&::before": {
                             position: "absolute",
@@ -503,7 +700,7 @@ try {
                             content: '""',
                             background: "var(--chip)",
                             color: "var(--onchip)",
-                            borderRadius: "calc(var(--radius-1) * var(--chip-radius))",
+                            borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             zIndex: -1,
                             border: "none",
                             boxShadow: "var(--chip-shadow) !important",
@@ -511,12 +708,20 @@ try {
                         },
                         "&:hover::after": {
                             opacity: "var(--hover)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            left: "calc(-2px - calc(var(--border-1) * 2))",
+                            right: "calc(-2px - calc(var(--border-1) * 2))",
                         },
                         "&:active::after": {
                             opacity: 1,
                         },
                         "&:hover .closeIt, &:focus .closeIt, &:active .closeIt": {
                             opacity: 1,
+                        },
+                        "& .MuiChip-label": {
+                            paddingLeft: "var(--spacing-half)",
+                            paddingLeft: "var(--spacing-half)",
                         },
                         "&.inline-icon path": {
                             fill: "var(--on-chip)",

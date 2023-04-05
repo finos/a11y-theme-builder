@@ -34,7 +34,7 @@ export const ColorSwatch: React.FC<Props> = ({shade, label, style}) => {
 
     if (_shade) {
     return (
-        <div className="color-swatch" style={style}>
+        <div className="color-swatch white" style={style}>
             {label && <div className="small-semibold">{label}</div>}
             <div className="color-box" style={{ background: _shade.getHexOrRGBA(), color: _shade.getOnShade().getHexOrRGBA() }}>Aa</div>
             <div>
