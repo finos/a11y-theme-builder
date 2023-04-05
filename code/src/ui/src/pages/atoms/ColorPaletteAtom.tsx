@@ -53,8 +53,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor}) => {
         //  to handle changes to the color palette rather than the
         //  _colors state.
         try {
-            const newColor = new Color(_colorName, _blockPickerColor, atom);
-            atom.addColor(_colorName, _blockPickerColor);
+            const newColor = atom.addColor(_colorName, _blockPickerColor);
             _setAddColorError(false);
             console.log(`created new color: `, newColor); //${JSON.stringify(newColor)}`);
             console.log(`resulting color palette:`, atom.getColors()); // ${JSON.stringify(designSystem.atoms.colorPalette.getColors())}`);
