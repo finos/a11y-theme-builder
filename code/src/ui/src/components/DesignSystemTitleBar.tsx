@@ -24,7 +24,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
     const [_designSystemsList, _setDesignSystemsList] = useState<string[]>([]);
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
 
-    const createNewDesignSystem = "Create new design system";
+    const createNewDesignSystem = "New design system";
 
     useEffect(() => {
     }, []);

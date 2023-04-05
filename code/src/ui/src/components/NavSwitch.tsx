@@ -48,8 +48,8 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
                 transform: 'translateX(' + 12 * sz + 'px)',
                 color: '#fff',
                 '& + .MuiSwitch-track': {
-                    opacity: 1,
-                    backgroundColor: "var(--info)",
+                    opacity: "var(--quiet)",
+                    backgroundColor: "var(--on-background)",
                 },
             },
         },
@@ -65,7 +65,7 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
         '& .MuiSwitch-track': {
             borderRadius: 8 * sz,
             opacity: 1,
-            backgroundColor: "var(--success)",
+            backgroundColor: "var(--button)",
             boxSizing: 'border-box',
         },
     }))

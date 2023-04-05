@@ -44,7 +44,7 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Single Line with Close</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error" 
+                            <Alert severity="error"
                                 action={<IconButton><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div> Toast Title {bodyText}</Alert>
                             <Alert severity="warning" action={<IconButton><CloseIcon/></IconButton>}>
@@ -62,19 +62,19 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error" 
+                            <Alert severity="error"
                                 action={<IconButton><CloseIcon/></IconButton>}>
-                                <div className="overline">OVERLINE</div> 
-                                Toast Title {bodyText} <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
+                                <div className="overline">OVERLINE</div>
+                                Toast Title {bodyText}<Button className="small-btn">Button</Button></Alert>
                             <Alert severity="warning" action={<IconButton><CloseIcon/></IconButton>}>
-                                <div className="overline">OVERLINE</div> 
-                                Toast Title {bodyText} <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
+                                <div className="overline">OVERLINE</div>
+                                Toast Title {bodyText}<Button className="small-btn">Button</Button></Alert>
                             <Alert severity="success" action={<IconButton><CloseIcon/></IconButton>}>
-                                <div className="overline">OVERLINE</div> 
-                                Toast Title {bodyText} <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
+                                <div className="overline">OVERLINE</div>
+                                Toast Title {bodyText} <Button className="small-btn">Button</Button></Alert>
                             <Alert severity="info" action={<IconButton><CloseIcon/></IconButton>}>
-                                <div className="overline">OVERLINE</div> 
-                                Toast Title {bodyText} <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
+                                <div className="overline">OVERLINE</div>
+                                Toast Title {bodyText} <Button className="small-btn">Button</Button></Alert>
                         </Stack>
                     </div>
                 </div>

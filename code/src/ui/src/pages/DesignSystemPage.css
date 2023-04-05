@@ -19,7 +19,7 @@
     color: var(--on-background-secondary);
     border: 0px solid green; /* test */
     overflow-y: scroll;
-    margin-left: 10px;
+    margin-left: 0px;
     visibility: hidden;
 }
 
@@ -65,12 +65,12 @@
 
 
 .design-system-editor-right-content .section-header {
-    background-color: var(--leftNav) !important;
     color: var(--on-leftNav);
-    padding: 10px;
+    padding: var(--spacing-1);
+    border-bottom: 1px solid var(--on-background)
 }
 .design-system-editor-right-content .section-body {
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .form-columns {
@@ -181,6 +181,7 @@
     display: flex;
     gap: 24px;
     margin: 16px 0;
+   flex-wrap: wrap;
 }
 
 .design-system-editor-right-content .theme-colors {

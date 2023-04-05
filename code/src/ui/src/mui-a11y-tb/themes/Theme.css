@@ -695,12 +695,13 @@
     /* dropdown */
     --dropdown-focus-theme: var(--spacing-half);
     --dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
-    --on-dropdown-focus-bg: #ffffff;
+    --on-dropdown-focus-bg: var(--on-surface);
     --dm-dropdown-focus-bg: linear-gradient(90deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
     --dm-on-dropdown-focus-bg: rgba(255,255,255,.6);
     --dropdown-elevation: 2;
     --dropdown-hover-style: 100%;
     --dropdown-hover-bg:    linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent)    var(--dropdown-focus-theme)) !important;
+    --on-dropdown-hover-bg: var(--on-surface);
     --dm-dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
     --dm-on-dropdown-hover-bg: rgba(255,255,255,.6);
     --dropdown-radius: 1;
@@ -1907,12 +1908,13 @@ h6 {
 /* Buttons */
 
 button {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 8px;
   justify-content: center;
-  background: var(--button); /* !important; */
-  color: var(--on-button); /* !important; */
+  background: var(--button) !important;
+  color: var(--on-button) !important;
   border-radius: calc(var(--radius-1) * var(--button-radius));
   min-height: calc(var(--spacing-1) * var(--button-height));
   min-width: calc(var(--spacing-1) * var(--button-minwidth));
@@ -1951,10 +1953,10 @@ button.icon {
 
 button::after {
   position: absolute;
-  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
+  top: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
   border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
   background: transparent !important;
@@ -2023,11 +2025,12 @@ button.dropdown-toggle::after {
 }
 
 button svg {
-  width: 24px;
-  height: 24px;
+  width: 24px !important;
+  height: 24px !important;
 }
 
 button.small-btn {
+  flex-shrink: 0;
   background: transparent !important;
   padding: 0 calc(var(--spacing-1) * var(--sm-button-padding));
   z-index: 1;
@@ -2049,24 +2052,32 @@ button.small-btn.icon::before {
 
 .black button.small-btn {
   background: transparent !important;
-  color: var(--on-white)
+  color: var(--on-white) !important;
 }
 
 .white button.small-btn {
   background: transparent !important;
-  color: var(--white)
+  color: var(--white) !important;
 }
 
 button.small-btn::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   min-height: calc(var(--sm-button-height) + 4px + calc(var(--animation-focus-distance) * 2));
+  height: calc(var(--sm-button-height) + 4px);
+  opacity: 0;
+  left: calc(0px - 2px - var(--animation-focus-distance));
+  right: calc(0px - 2px - var(--animation-focus-distance));
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 
 button.small-btn:hover::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: -4px;
+  right: -4px;
 }
 
 button.small-btn:focus::after {
@@ -2190,6 +2201,9 @@ button.small-btn.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--button)
 }
 
+/* dark buttons */
+
+
 /* begin - MuiButtonGroup
  *         Adding rules to keep interior outlined buttons from having
  *         rounded corners in vertical button groups.
@@ -2286,6 +2300,19 @@ button.small-btn.MuiButton-text::before {
   box-shadow: var(--button-shadow) !important;
 }
 
+button.small-btn.icon::before {
+  left: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
+  right: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
+}
+button.small-btn.icon:hover::after {
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
+  right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
+}
+
 /* darkmode buttons */
 .darkmode button {
   background: var(--dm-button) !important;
@@ -2312,6 +2339,14 @@ button.small-btn.MuiButton-text::before {
 
 .darkmode button::after {
   background: none !important;
+}
+
+.darkmode button.MuiTab-root {
+  background: none !important;
+}
+
+.darkmode button.MuiTab-root::after {
+  background: unset !important;
 }
 
 .darkmode button.dropdown-toggle {
