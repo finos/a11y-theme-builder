@@ -63,7 +63,7 @@ export const ToastsTripleLineComponent: React.FC<Props> = () => {
                         <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error"
-                                action={<IconButton  className="small-btn"><CloseIcon/></IconButton>}>
+                                action={<IconButton><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div>
                                 Toast Title {bodyText}<Button className="small-btn">Button</Button></Alert>
                             <Alert severity="warning" action={<IconButton><CloseIcon/></IconButton>}>

@@ -21,6 +21,11 @@
 .titleBarDiv .MuiOutlinedInput-notchedOutline {
     border: 1px solid var(--on-primary);
     opacity: 0.5;
+    background: var(--surface);
+    border-radius: var(--spacing-half);
+    padding: 0 var(--spacing-1);
+    font-size: var(--body1FontSize);
+    font-weight: var(--body1FontWeight);
 }
 
 .titleBarDiv .left-titlebar {

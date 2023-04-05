@@ -4,8 +4,8 @@
  */
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, 
-    Button, InputLabel, TextField, InputAdornment, Switch, SwitchProps, Stack, Typography, 
+import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse,
+    Button, InputLabel, TextField, InputAdornment, Switch, SwitchProps, Stack, Typography,
     RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, useTheme } from '@mui/material';
 
 interface Props {
@@ -48,8 +48,8 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
                 transform: 'translateX(' + 12 * sz + 'px)',
                 color: '#fff',
                 '& + .MuiSwitch-track': {
-                    opacity: 1,
-                    backgroundColor: "var(--info)",
+                    opacity: "var(--quiet)",
+                    backgroundColor: "var(--on-background)",
                 },
             },
         },
@@ -65,7 +65,7 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
         '& .MuiSwitch-track': {
             borderRadius: 8 * sz,
             opacity: 1,
-            backgroundColor: "var(--success)",
+            backgroundColor: "var(--button)",
             boxSizing: 'border-box',
         },
     }))
@@ -73,14 +73,14 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
     return (
         <Stack direction="row" spacing={1} alignItems="center">
             {leftLabel && <Typography>{leftLabel}</Typography>}
-            <MySwitch 
-                defaultChecked 
-                checked={checked} 
-                onChange={handleOnChange} 
-                inputProps={{ 'aria-label': '' }} 
+            <MySwitch
+                defaultChecked
+                checked={checked}
+                onChange={handleOnChange}
+                inputProps={{ 'aria-label': '' }}
             />
             {rightLabel && <Typography>{rightLabel}</Typography>}
-         </Stack>                        
+         </Stack>
     )
 
 }

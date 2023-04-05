@@ -301,7 +301,13 @@ try {
             MuiOutlinedInput: {
                 styleOverrides: {
                       root: {
-                        borderRadius: "var(--radius-1)",
+                        borderRadius: "var(--spacing-1)",
+                        height: "calc(var(--spacing-1) * var(--button-height))",
+                        padding: "0",
+                        border: "1px solid var(--borrder)",
+                        "& input": {
+                            padding: "0 var(--spacing-2)",
+                        },
                         ".info &": {
                             color: "var(--on-info)",
                             backgroundColor: "var(--info)",
@@ -346,13 +352,14 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-half)",
+                                    borderRadius: "var(--spacing-1)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
                                     minHeight: "var(--min-target)",
                                     display: "flex",
                                     gap: "var(--spacing-1)",
+                                    opacity: "var(--quiet)",
                                     '& .MuiButtonBase': {
                                       padding: "0px",
                                       width: "var(--min-target)",
@@ -362,10 +369,12 @@ try {
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
+                                    opacity: "1",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:focus': {
                                     color: "var(--on-dropdown-focus-bg)",
                                     background: "var(--dropdown-focus-bg)",
+                                    opacity: "1",
                                 },
                                 borderRadius: "var(--spacing-half)",
                             },
@@ -381,6 +390,33 @@ try {
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
                     },
                 }
+            },
+            MuiRadio: {
+                styleOverrides: {
+                    root: {
+                        "&.Mui-checked":{
+                            color: "var(--button)",
+                        },
+                        "&.Mui-disabled":{
+                            opacity: "var(--disable)",
+                        },
+                    },
+                },
+            },
+            MuiSwitch: {
+                styleOverrides: {
+                    root: {
+                        height: "var(--min-target)",
+                    },
+                    "& .MuiSwitch-switchBase": {
+                        height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
+                        borderRadius: "calc(  var(--sliderhandleRadius) * var(--radius-1))",
+                        padding: "calc( var(--min-target) - var(--sliderhandleHeight))",
+                        "&.MuiSwitch-colorPrimary .MuiSwitch-thumb": {
+                            backgroundColor: "var(--button)",
+                        }
+                    },
+                },
             },
             MuiAlert: {
                 styleOverrides: {
@@ -456,6 +492,13 @@ try {
                     },
                 },
             },
+            MuiInputAdornment: {
+                styleOverrides: {
+                    root: {
+                        marginRight: "var(--spacing-2)",
+                    }
+                }
+            },
             MuiBreadcrumbs: {
                 styleOverrides: {
                     root: {
@@ -477,6 +520,7 @@ try {
                             height: "var(--spacing-half)",
                             marginBottom: "2px",
                         },
+
                     }
                 }
             },
@@ -486,9 +530,48 @@ try {
                         fontFamily: "var(--navbarPrimary-font)",
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
                         background: "var(--button)",
+                        opacity: "var(--quiet)",
+                        "&:hover": {
+                            opacity: "1"
+                        },
+                        "&:focus": {
+                            opacity: "1"
+                        },
                         "&.Mui-selected, &.Mui-selected:hover": {
-                            backgroundColor: "var(--secondary)",
-                            color: "var(--on-secondary)",
+                            opacity: "1"
+                        },
+                        "&::after": {
+                          height: "var(--spacing-half)",
+                          left: "0",
+                          right: "0",
+                          bottom: "2px",
+                          opacity: "0.5",
+                          content: "''",
+                          position: "absolute",
+                          border: "none",
+                          top: "unset",
+                          borderBottom: "var(--spacing-half) solid transparent",
+                          borderRadius: "0px",
+                        },
+                        "&:hover::after": {
+                          height: "var(--spacing-half)",
+                          left: "0",
+                          right: "0",
+                          bottom: "2px",
+                          opacity: "0.5",
+                          content: "''",
+                          position: "absolute",
+                          border: "none",
+                          top: "unset",
+                          borderBottom: "var(--spacing-half) solid var(--on-button)",
+                          borderRadius: "0px",
+                        },
+                        "&:focus::after": {
+                          opacity: "0 !important",
+
+                        },
+                        "&.Mui-selected, &.Mui-selected:focus": {
+                            opacity: "1"
                         },
                     }
                 }

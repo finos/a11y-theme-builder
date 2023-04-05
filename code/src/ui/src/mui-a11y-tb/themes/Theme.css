@@ -2346,6 +2346,14 @@ button.small-btn.icon:hover::after {
   background: none !important;
 }
 
+.darkmode button.MuiTab-root {
+  background: none !important;
+}
+
+.darkmode button.MuiTab-root::after {
+  background: unset !important;
+}
+
 .darkmode button.dropdown-toggle {
   background: var(--dm-white) !important;
   color: var(--dm-on-white) !important;

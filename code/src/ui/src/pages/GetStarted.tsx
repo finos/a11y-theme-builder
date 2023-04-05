@@ -71,7 +71,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
                 </p>
                 <div className="row top40" />
                 <Button onClick={() => setSystemNameIsOpen(true)}>
-                    Create a New Design System
+                    New Design System
                 </Button>
                 <ModalSystemName isOpen={systemNameIsOpen} onClose={() => setSystemNameIsOpen(false)} />
             </HeadingSection>
