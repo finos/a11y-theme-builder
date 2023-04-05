@@ -43,5 +43,4 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
             <GeneratedCodeSection item={organism}/>
         </div>
     )
-
 }

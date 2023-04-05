@@ -24,7 +24,7 @@ export const HeadingSection: React.FC<Props> = ({item, children, title, heading}
             return "Molecule"
         }
         if (item instanceof Organism) {
-            return "Origanism"
+            return "Organism"
         }
         return "";
     }

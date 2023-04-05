@@ -12,6 +12,9 @@ import { HeroOrganism } from '../../organisms/HeroOrganism';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { PrimaryNavOrganism } from '../../organisms/PrimaryNavOrganism';
+import { SecondaryNavOrganism } from '../../organisms/SecondaryNavOrganism';
+import { FooterCopyrightOrganism } from '../../organisms/FooterCopyrightOrganism';
 
 interface organismItem {
     value: string;
@@ -109,54 +112,54 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
-            <div className="design-system-editor-left-nav-scrollable">
-            <List 
-                    sx={{
-                        '& ul': {padding:0},
-                        paddingTop: "0px",
-                    }}
-                >
-                    <LeftNavHeader>Introduction</LeftNavHeader>
-                    <LeftNavItem text="Organisms" value="organisms" selected={showOrganism} indent={1} onClick={()=> {setShowOrganism("organisms")}}/>
-                    <LeftNavHeader>Assign Desktop Style</LeftNavHeader>
-                    <LeftNavOrganism item={organisms.dataTables} indent={2} />
-                    <LeftNavOrganism item={organisms.hero} indent={2} />
-                    <LeftNavItem text={"Navigation"} indent={1} onClick={()=>setDisplayNavigation(!displayNavigation)}>
-                        {displayNavigation ? <ExpandLess /> : <ExpandMore />}
-                    </LeftNavItem>
-                    <Collapse in={displayNavigation} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <LeftNavOrganism item={organisms.primaryNav} indent={2} />
-                            <LeftNavOrganism item={organisms.secondaryNav} indent={2} />
-                            <LeftNavOrganism item={organisms.footerAndCopyright} indent={2} />
-                        </List>
-                    </Collapse>
-                </List>
-            </div>
+                <div className="design-system-editor-left-nav-scrollable">
+                    <List 
+                        sx={{
+                            '& ul': {padding:0},
+                            paddingTop: "0px",
+                        }}
+                    >
+                        <LeftNavHeader>Introduction</LeftNavHeader>
+                        <LeftNavItem text="Organisms" value="organisms" selected={showOrganism} indent={1} onClick={()=> {setShowOrganism("organisms")}}/>
+                        <LeftNavHeader>Assign Desktop Style</LeftNavHeader>
+                        <LeftNavOrganism item={organisms.dataTables} indent={2} />
+                        <LeftNavOrganism item={organisms.hero} indent={2} />
+                        <LeftNavItem text={"Navigation"} indent={1} onClick={()=>setDisplayNavigation(!displayNavigation)}>
+                            {displayNavigation ? <ExpandLess /> : <ExpandMore />}
+                        </LeftNavItem>
+                        <Collapse in={displayNavigation} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <LeftNavOrganism item={organisms.primaryNav} indent={2} />
+                                <LeftNavOrganism item={organisms.secondaryNav} indent={2} />
+                                <LeftNavOrganism item={organisms.footerAndCopyright} indent={2} />
+                            </List>
+                        </Collapse>
+                    </List>
+                </div>
             </div>
             <div className="design-system-editor-right-content">
-            <div className="design-system-editor-right-content-scrollable">
-                {showOrganism === "organisms" && (
-                    <OrganismIntro />
-                )}
-                {showOrganism === "dataTables" && (
-                    <div>dataTables</div>
-                )}
-                {showOrganism === "hero" && (
-                    <ErrorHandler>
-                        <HeroOrganism organism={designSystem.organisms.hero}/>
-                    </ErrorHandler>
-                )}
-                {showOrganism === "primaryNav" && (
-                    <div>primaryNav</div>
-                )}
-                {showOrganism === "secondaryNav" && (
-                    <div>secondaryNav</div>
-                )}
-                {showOrganism === "footerCopyright" && (
-                    <div>footerCopyright</div>
-                )}
-            </div>
+                <div className="design-system-editor-right-content-scrollable">
+                    {showOrganism === "organisms" && (
+                        <OrganismIntro />
+                    )}
+                    {showOrganism === "dataTables" && (
+                        <div>dataTables</div>
+                    )}
+                    {showOrganism === "hero" && (
+                        <ErrorHandler>
+                            <HeroOrganism organism={designSystem.organisms.hero}/>
+                        </ErrorHandler>
+                    )}
+                    {showOrganism === "primaryNav" && (
+                        <PrimaryNavOrganism organism={designSystem.organisms.primaryNav}/>
+                    )}
+                    {showOrganism === "secondaryNav" && (
+                        <SecondaryNavOrganism organism={designSystem.organisms.secondaryNav}/>
+                    )}
+                    {showOrganism === "footerAndCopyright" && (
+                        <FooterCopyrightOrganism organism={designSystem.organisms.footerAndCopyright}/>
+                    )}
+                </div>
             </div>
         </>
     );
