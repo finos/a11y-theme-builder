@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import { createTheme,  darken, lighten } from "@mui/material/styles";
 import { formLabelClasses } from "@mui/material";
 import './Theme.css'
@@ -249,10 +253,10 @@ try {
                        padding: "0 calc(var(--spacing-1) * var(--button-padding))",
                        textDecoration: "var(--buttonTextDecoration)",
                        textTransform: "var(--buttonTextTransform)",
-                        ":hover": {
-                            background: "var(--on-button)",
-                            color: "var(--button)",
-                        },
+                        // ":hover": {
+                        //     background: "var(--on-button)",
+                        //     color: "var(--button)",
+                        // },
                     }),
                 }
             },
@@ -337,15 +341,17 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
+                                    borderRadius: "var(--spacing-half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
+                                    minHeight: "var(--min-target)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
                                 },
-                                borderRadius: "calc(var(--radius-1) * var(--dropdown-radius))",
+                                borderRadius: "var(--spacing-half)",
                             },
                         },
                     },
@@ -379,7 +385,7 @@ try {
                         //fontFamily: "Ariel", //"var(--fontFamily)",
                         color: "var(--on-input)",
                         background: "var(--input)",
-                        borderRadius: "var(--radius-1)",
+                        borderRadius: "var(--spacing-half)",
                         padding: "var(spacing-1)",
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
@@ -440,7 +446,8 @@ try {
             },
             "& .MuiTab-wrapper": {
                 flexDirection: "row",
-                justifyContent: "flex-start"
+                justifyContent: "flex-start",
+                background: "var(--button)",
             },
             MuiTab: {
                 styleOverrides: {
@@ -466,7 +473,7 @@ try {
                         gap: "var(--spacing-1)",
                         alignItems: "center",
                         font: "var(--chipTypography)",
-                        letterSpacing: "var(--chipCharacterSpacing)",
+                        letterSpacing: "var(--chipLetterSpacing)",
                         textDecoration: "var(--chipTextDecoration)",
                         textTransform: "var(--chipTextTransform)",
                         minWidth: "var(--chip-minwidth)",

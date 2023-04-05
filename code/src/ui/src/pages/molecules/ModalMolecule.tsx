@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import { Button, InputLabel, MenuItem, Select } from '@mui/material';
 import React, { useState } from 'react';
 import { ColorSelect } from '../../components/ColorSelect';

@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useState, useEffect } from 'react';
 import { Button, IconButton, SvgIcon } from '@mui/material';
 import { ColorModeSelector } from '../content/ColorModeSelector';

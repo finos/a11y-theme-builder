@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useEffect, useState } from "react";
 import {Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { Event, EventType, PropertyColorShade, Shade } from 'a11y-theme-builder-sdk';

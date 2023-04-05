@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import { Grid, Button } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
@@ -32,15 +36,14 @@ export const TextEditBox: React.FC<Props> = ({ designSystem, cssPrefix, textKey,
     const fontSize = "var(--" + cssPrefix + "FontSize)";
     const fontWeight = "var(--" + cssPrefix + "FontWeight)";
     const lineHeight = "var(--" + cssPrefix + "LineHeight)";
-    const characterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
-
+    const letterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
 
     const sampleStyle = {
         fontFamily: fontFamily,
         fontSize: fontSize,
         fontWeight: fontWeight,
         lineHeight: lineHeight,
-        letterSpacing: characterSpacing,
+        letterSpacing: letterSpacing,
     }
 
     if (!typographyStyling) return null;

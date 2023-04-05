@@ -27,23 +27,39 @@
     display: flex;
     align-items: center;
     margin: 8px;
+    flex-direction: column;
 }
 
 .titleBarDiv .center-titlebar {
     display: flex;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 8px;
+    align-items: left;
+    margin: var(--spacing-1);
+    gap: var(--spacing-2);
+}
+.titleBarDiv .center-titlebar button{
+   align-self: end;
+}
+
+.titleBarDiv .center-titlebar .input-titlebar {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: var(--spacing-Half);
 }
 
 .titleBarDiv .right-titlebar {
     display: flex;
-    align-items: center;
+    align-items: left;
     margin: 8px;
+    flex-direction: column;
+    gap: var(--spacing-Half);
 }
 
 .titleBarDiv .label {
     padding-right: 30px;
-    text-transform: uppercase;
+    font-size: var(--label-smallFontSize);
+    font-family: var(--bodyFamily);
+    font-weight: var(--label-smallFontWeight);
+    line-height: var(--label-smallLineHeight);
+    letter-spacing: var(--label-smallCharcterSpacing);
 }

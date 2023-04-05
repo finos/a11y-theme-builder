@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { MouseEvent, useEffect, useState } from "react";
 import { Alert, Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { Event, EventType, PropertyColorShade, PropertyTitledShade, Shade, TitledShade } from 'a11y-theme-builder-sdk';

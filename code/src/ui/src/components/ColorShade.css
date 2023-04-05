@@ -14,7 +14,9 @@
     border-radius:8px;
     text-align: center;
     font-weight: bold;
-    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     background: rgba(0,0,0,0);
 }

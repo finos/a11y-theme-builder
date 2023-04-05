@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
 //import ModalAtomicIntro from './modals/ModalAtomicIntro';
@@ -202,7 +206,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 }
                 {showAtom === atoms.colorPalette.value && (
                     <ErrorHandler>
-                        <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" />
+                        <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
                     </ErrorHandler>
                 )}
                 {showAtom === atoms.colorThemes.value && (

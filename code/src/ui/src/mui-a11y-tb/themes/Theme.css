@@ -374,6 +374,7 @@
 
     /* focus */
     --focusBlur: var(--spacing-half);
+    --focusBorder: 2px;
     /* opacity */
     --quiet: 68%;
     --disabled: 38%;
@@ -729,7 +730,7 @@
     --buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --buttonTextDecoration: var(--CTATextDecoration);
     --buttonTextTransform: var(--CTATextTransform);
-    --buttonCharcterSpacing: var(--CTACharacterSpacing);
+    --buttonCharcterSpacing: var(--CTALetterSpacing);
     --button-elevation: var(--elevation-1);
     --button-bevel: var(--bevel-1);
     --button-shadow: var(--button-elevation), var(--button-bevel);
@@ -739,7 +740,7 @@
     --sm-buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --sm-buttonTextDecoration: var(--CTATextDecoration);
     --sm-buttonTextTransform: none;
-    --sm-buttonCharcterSpacing: var(--CTACharacterSpacing);
+    --sm-buttonCharcterSpacing: var(--CTALetterSpacing);
 
     --groupButton-radius: calc(var(--radius-1) * var(--button-radius) * 1.6);
     --groupButtonBG: '#ffffff';
@@ -758,10 +759,10 @@
     --chip-height: 4;
     --chipTopography: var(--captionFontWeight) var(--captionFontSize) / var(--captionLineHeight) var(--captionFontFamily);
     --chipTextTransform: var(--captionTextTransform);
-    --chipLetterSpacing:  var(--captionCharacterSpacing);
+    --chipLetterSpacing:  var(--captionLetterSpacing);
     --chip-bevel: var(--bevel-0);
     --chip-elevation: var(--elevation-0);
-    
+
     /* switch */
     --switch-height: var(--spacing-3);
     --switch-radius: 3;
@@ -831,6 +832,7 @@
     --sliderbarHeight: 1;
     --sliderhandleHeight: 3;
     --sliderhandleRadius : 1;
+    --sliderhandleElevation : 1;
     --barInBevel : 1;
     /* popover */
     --popoverBevel: var(--bevel-0);
@@ -867,19 +869,19 @@
     --hero-padding: var(--spacing-3);
     --hero-heroTitleTypography: var(--Display1FontWeight) var(--Display1FontSize) / var(--Display1LineHeight) var(--Display1FontFamily);
     --hero-heroTitleTransform: var(--Display1TextTransform);
-    --hero-heroTitleSpacing: var(--Dislay1CharacterSpacing);
+    --hero-heroTitleSpacing: var(--Display1LetterSpacing);
     --hero-heroBodyTypography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
     --hero-heroBodyTransform: var(--body1TextTransform);
-    --hero-heroBodySpacing: var(--body1CharacterSpacing);
+    --hero-heroBodySpacing: var(--body1LetterSpacing);
     --hero-title-gap: 16px;
     --hero-justify-content: flex-start;
 
     /* tables */
     --tableheaderTopography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
-    --tableheaderSpacing: var(--label-1CharacterSpacing);
+    --tableheaderSpacing: var(--label-1LetterSpacing);
     --tableheaderTransform: var(--label-1TextTransform);
     --tablebodyTopography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
-    --tablebodySpacing: var(--body1CharacterSpacing);
+    --tablebodySpacing: var(--body1LetterSpacing);
     --tablebodyTransform: var(--body1TextTransform);
     --tableheaderPadding: 1;
     --tablebodyPadding: 1;
@@ -993,9 +995,10 @@
   --progress-chart-elevation: var(--elevation-0);
   --progress-chart-start: 0deg;
   /* TYPOGRAPHY */
-  /* typography settings */
+  /* Font settings */
   --standard-LineHeight: 160%;
-  --sm-LineHeight: 130%;
+  --header-LineHeight: 130%;
+  --sm-LineHeight: 110%;
   --fontWeight-0:  100;
   --fontWeight-1:  300;
   --fontWeight-2:  500;
@@ -1007,72 +1010,74 @@
   --primaryFont: "Open Sans";
   --secondaryFont: "Montserrat";
   --baseFont: 16px;
-  --headerChange: .42;
+
+  /* Display & Header styles */
+  --headerChange: 42;
   --headerWeight: 400;
   --headerFamily: var(--secondaryFont);
   --bodyFamily: var(--primaryFont);
-  /* Headers */
+
   /* Dislay 1*/
-  --Display1FontSize:  calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 9)));
+  --Display1FontSize:  calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/ 100 * 9)));
   --Display1FontFamily: var(--headerFamily);
   --Display1FontWeight: var(--headerWeight);
-  --Display1LineHeight: var(--sm-LineHeight);;
+  --Display1LineHeight: var(--header-LineHeight);;
   --Display1TextDecoration: none;
   --Display1TextTransform: none;
   --Display1LetterSpacing: -1.5%;
   /* Dislay 2*/
-  --Display2FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 8)));
+  --Display2FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 8)));
   --Display2FontFamily: var(--headerFamily);
   --Display2FontWeight: var(--headerWeight);
-  --Display2LineHeight: var(--sm-LineHeight);;
+  --Display2LineHeight: var(--header-LineHeight);;
   --Display2TextDecoration: none;
   --Display2TextTransform: none;
   --Display2LetterSpacing: -1.5%;
   /* h1 */
-  --h1FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 6)));
+  --h1FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 6)));
   --h1FontFamily: var(--headerFamily);
   --h1FontWeight: var(--headerWeight);
-  --h1LineHeight: var(--sm-LineHeight);;
+  --h1LineHeight: var(--header-LineHeight);;
   --h1TextDecoration: none;
   --h1TextTransform: none;
   --h1LetterSpacing: -1.5%;
   /* h2 */
-  --h2FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 5)));
+  --h2FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 5)));
   --h2FontFamily: var(--headerFamily);
   --h2FontWeight: var(--headerWeight);
-  --h2LineHeight: var(--sm-LineHeight);;
+  --h2LineHeight: var(--header-LineHeight);;
   --h2TextDecoration: none;
   --h2TextTransform: none;
   --h2LetterSpacing: -0.5%;
   /* h3 */
-  --h3FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 4)));
+  --h3FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 4)));
   --h3FontFamily: var(--headerFamily);
   --h3FontWeight: var(--headerWeight);
-  --h3LineHeight: var(--sm-LineHeight);;
+  --h3LineHeight: var(--header-LineHeight);;
   --h3TextDecoration: none;
   --h3TextTransform: none;
   --h3LetterSpacing: 0%;
   /* h4 */
-  --h4FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 3)));
+  --h4FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 3)));
   --h4FontFamily: var(--headerFamily);
   --h4FontWeight: var(--headerWeight);
-  --h4LineHeight: var(--sm-LineHeight);;
+  --h4LineHeight: var(--header-LineHeight);;
   --h4TextDecoration: none;
   --h4TextTransform: none;
   --h4LetterSpacing: -0.25%;
   /* h5 */
-  --h5FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 2)));
+  --h5FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 2)));
   --h5FontFamily: var(--headerFamily);
   --h5FontWeight: var(--headerWeight);
-  --h5LineHeight: var(--sm-LineHeight);;
+  --h5LineHeight: var(--header-LineHeight);;
   --h5TextDecoration: none;
   --h5TextTransform: none;
   --h5LetterSpacing: 0%;
   /* h5 */
-  --h6FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange) * 1)));
+  --h6FontSize: calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/100 * 1)));
   --h6FontFamily: var(--headerFamily);
   --h6FontWeight: var(--headerWeight);
-  --h6LineHeight: var(--sm-LineHeight);;
+  --h6LineHeight: var(--header-LineHeight);;
   --h6TextDecoration: none;
   --h6TextTransform: none;
   --h6LetterSpacing: .15%;
@@ -1126,21 +1131,21 @@
   --body3-boldLetterSpacing: .5%;
   /* Small Text */
   /* subtitle 1 */
-  --subtitle1boldFontSize:  var(--baseFont);
-  --subtitle1boldFontFamily:  var(--bodyFamily);
-  --subtitle1boldFontWeight: var(--fontWeight-3);
-  --subtitle1boldLineHeight: var(--standard-LineHeight);
-  --subtitle1boldTextDecoration: none;
-  --subtitle1boldTextTransform: none;
-  --subtitle1boldLetterSpacing: .15%;
+  --subtitle1FontSize:  var(--baseFont);
+  --subtitle1FontFamily:  var(--bodyFamily);
+  --subtitle1FontWeight: var(--fontWeight-3);
+  --subtitle1LineHeight: var(--standard-LineHeight);
+  --subtitle1TextDecoration: none;
+  --subtitle1TextTransform: none;
+  --subtitle1LetterSpacing: .15%;
   /* subtitle 2 */
-  --subtitle2boldFontSize:  calc(var(--baseFont) * .875);
-  --subtitle2boldFontFamily:   var(--bodyFamily);
-  --subtitle2boldFontWeight: var(--fontWeight-4);
-  --subtitle2boldLineHeight: var(--standard-LineHeight);
-  --subtitle2boldTextDecoration: none;
-  --subtitle2boldTextTransform: none;
-  --subtitle2boldLetterSpacing: 0.15%;
+  --subtitle2FontSize:  calc(var(--baseFont) * .875);
+  --subtitle2FontFamily:   var(--bodyFamily);
+  --subtitle2FontWeight: var(--fontWeight-4);
+  --subtitle2LineHeight: var(--standard-LineHeight);
+  --subtitle2TextDecoration: none;
+  --subtitle2TextTransform: none;
+  --subtitle2LetterSpacing: 0.15%;
   /* CTA */
   --CTAFontSize: var(--baseFont);
   --CTAFontFamily:  var(--bodyFamily);
@@ -1213,14 +1218,6 @@
   --small-semiboldTextDecoration: none;
   --small-semiboldTextTransform: none;
   --small-semiboldCharcterSpacing: 1.25%;
-  /* small semibold */
-  --small-semiboldFontSize: calc(var(--baseFont) * .875);
-  --small-semiboldFontFamily:  var(--bodyFamily);
-  --small-semiboldFontWeight:  var(--fontWeight-4);
-  --small-semiboldLineHeight: var(--standard-LineHeight);
-  --small-semiboldTextDecoration: none;
-  --small-semiboldTextTransform: none;
-  --small-semiboldCharcterSpacing: 1.25%;
   /* label 1*/
   --label-1FontSize: calc(var(--baseFont) * .875);
   --label-1FontFamily:  var(--bodyFamily);
@@ -1273,22 +1270,6 @@
 
 
 
-  /* TYPOGRAPHY */
-  --ctaFontSize: 100%;
-  --ctaFontFamily: sans-serif;
-  --ctaFontWeight: 600;
-  --ctaLineHeight: 160%;
-  --ctaTextDecoration: none;
-  --ctaTextTransform: uppercase;
-  --ctaLetterSpacing: calc(var(--baseFont) * var(--ctaFontSize));
-
-  --ctaSmallFontSize: 87.5%;
-  --ctaSmallFontFamily: sans-serif;
-  --ctaSmallFontWeight: 600;
-  --ctaSmallLineHeight: 160%;
-  --ctaSmallTextDecoration: 'none';
-  --ctaSmallTextTransform: 'uppercase';
-  --ctaSmallCharcterSpacing: 'auto';
 
   /* BC Added */
   --cobalt-0: rgb(228, 235, 245);
@@ -1438,8 +1419,8 @@
 /* Headers */
 h1 {
   font-family:  var(--h1FontFamily);
-  font-weight: var(--h1FontWeight) !important;
-  font-size: var(--h1FontSize) !important;
+  font-weight: var(--h1FontWeight);
+  font-size: var(--h1FontSize);
   line-height: var(--h1LineHeight) !important;
   letter-spacing: var(--h1LetterSpacing) !important;
   text-transform: var(--h1TextTransform) !important;
@@ -1447,8 +1428,8 @@ h1 {
 }
 h1.display1 {
   font-family:  var(--Display1FontFamily);
-  font-weight: var(--Display1FontWeight) !important;
-  font-size: var(--Display1FontSize) !important;
+  font-weight: var(--Display1FontWeight);
+  font-size: var(--Display1FontSize);
   line-height: var(--Display1LineHeight) !important;
   letter-spacing: var(--Display1LetterSpacing) !important;
   text-transform: var(--Display1TextTransform) !important;
@@ -1456,8 +1437,8 @@ h1.display1 {
 }
 h1.display2 {
   font-family:  var(--Display2FontFamily);
-  font-weight: var(--Display2FontWeight) !important;
-  font-size: var(--Display2FontSize) !important;
+  font-weight: var(--Display2FontWeight);
+  font-size: var(--Display2FontSize);
   line-height: var(--Display2LineHeight) !important;
   letter-spacing: var(--Display2LetterSpacing) !important;
   text-transform: var(--Display2TextTransform) !important;
@@ -1465,8 +1446,8 @@ h1.display2 {
 }
 h2 {
   font-family:  var(--h2FontFamily);
-  font-weight: var(--h2FontWeight) !important;
-  font-size: var(--h2FontSize) !important;
+  font-weight: var(--h2FontWeight);
+  font-size: var(--h2FontSize);
   line-height: var(--h2LineHeight) !important;
   letter-spacing: var(--h2LetterSpacing) !important;
   text-transform: var(--h2TextTransform) !important;
@@ -1474,8 +1455,8 @@ h2 {
 }
 h3 {
   font-family:  var(--h3FontFamily);
-  font-weight: var(--h3FontWeight) !important;
-  font-size: var(--h3FontSize) !important;
+  font-weight: var(--h3FontWeight);
+  font-size: var(--h3FontSize);
   line-height: var(--h3LineHeight) !important;
   letter-spacing: var(--h3LetterSpacing) !important;
   text-transform: var(--h3TextTransform) !important;
@@ -1483,8 +1464,8 @@ h3 {
 }
 h4 {
   font-family:  var(--h4FontFamily);
-  font-weight: var(--h4FontWeight) !important;
-  font-size: var(--h4FontSize) !important;
+  font-weight: var(--h4FontWeight);
+  font-size: var(--h4FontSize);
   line-height: var(--h4LineHeight) !important;
   letter-spacing: var(--h4LetterSpacing) !important;
   text-transform: var(--h4TextTransform) !important;
@@ -1492,8 +1473,8 @@ h4 {
 }
 h5 {
   font-family:  var(--h5FontFamily);
-  font-weight: var(--h5FontWeight) !important;
-  font-size: var(--h5FontSize) !important;
+  font-weight: var(--h5FontWeight);
+  font-size: var(--h5FontSize);
   line-height: var(--h5LineHeight) !important;
   letter-spacing: var(--h5LetterSpacing) !important;
   text-transform: var(--h5TextTransform) !important;
@@ -1501,8 +1482,8 @@ h5 {
 }
 h6 {
   font-family:  var(--h6FontFamily);
-  font-weight: var(--h6FontWeight) !important;
-  font-size: var(--h6FontSize) !important;
+  font-weight: var(--h6FontWeight);
+  font-size: var(--h6FontSize);
   line-height: var(--h6LineHeight) !important;
   letter-spacing: var(--h6LetterSpacing) !important;
   text-transform: var(--h6TextTransform) !important;
@@ -1764,109 +1745,106 @@ h6 {
 }
 
 .avatar .darkmode {
-    /* background: rgba(255,255,255,.2) url('../img/avatar.svg') center center; */
     background-size: 100%;
 }
 
 .avatar.xxs {
     width: var(--spacing-3);
     height: var(--spacing-3);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.xs {
     width: var(--spacing-4);
     height: var(--spacing-4);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.sm {
     width: var(--min-target);
     height: var(--min-target);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .avatar.md {
     width: var(--spacing-7);
     height: var(--spacing-7);
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--accent);
+    border: solid var(--avatar-border) var(--accent);
 }
 
 .white .avatar.xxs,
 .white .avatar.xs,
 .white .avatar.sm,
 .white .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
-    background-size: 100%;
+    border: solid var(--avatar-border) var(--black) !important;
+    /* background-size: 100%; */
 }
 
 .black .avatar.xxs,
 .black .avatar.xs,
 .black .avatar.sm,
 .black .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important;
+    border: solid var(--avatar-border) var(--white) !important;
 }
 
 .avatar.lg {
     width: var(--spacing-10);
     height: var(--spacing-10);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .avatar.xl {
     width: calc(var(--spacing-10) * 2);
     height: calc(var(--spacing-10) * 2);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .avatar.xxl {
     width: calc(var(--spacing-10) * 2.6);
     height: calc(var(--spacing-10) * 2.6);
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--accent);
+    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .white .avatar.lg,
 .white .avatar.xl,
 .white .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border-lg) var(--black) !important;
     background-size: 100% !important;
 }
 
 .black .avatar.lg,
 .black .avatar.xl,
 .black .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--white) !important;
+    border: solid var(--avatar-border-lg) var(--white) !important;
 }
   
 /* dark mode avatars */
 .darkmode .avatar.xxs {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.xs {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.sm {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-accent);
+    border: solid var(--avatar-border) var(--dm-accent);
 }
 
 .darkmode .avatar.lg {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .darkmode .avatar.xl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .darkmode .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-accent);
+    border: solid var(--avatar-border-lg) var(--dm-accent);
 }
 
 .avatar.centered {
@@ -1877,16 +1855,14 @@ h6 {
 .darkmode .white .avatar.xs,
 .darkmode .white .avatar.sm,
 .darkmode .white .avatar.md {
-    border: solid calc(var(--border-1) * var(--avatar-border)) var(---dm-black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border) var(---dm-black) !important;
     background-size: 100%;
 }
 
 .darkmode .white .avatar.lg,
 .darkmode .white .avatar.xl,
 .darkmode .white .avatar.xxl {
-    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-black) !important;
-    /* background: rgba(0,0,0,.2) url(../img/avatar.svg) no-repeat center center !important; */
+    border: solid var(--avatar-border-lg) var(--dm-black) !important;
     background-size: 100% !important;
 }
 
@@ -1935,8 +1911,8 @@ button {
   align-items: center;
   gap: 8px;
   justify-content: center;
-  background: var(--button);
-  color: var(--on-button);
+  background: var(--button); /* !important; */
+  color: var(--on-button); /* !important; */
   border-radius: calc(var(--radius-1) * var(--button-radius));
   min-height: calc(var(--spacing-1) * var(--button-height));
   min-width: calc(var(--spacing-1) * var(--button-minwidth));
@@ -1950,6 +1926,7 @@ button {
   text-decoration: var(--buttonTextDecoration);
   text-transform: var(--buttonTextTransform);
   box-shadow: var(--button-shadow);
+  border: 0px !important;
 }
 
 button.wide {
@@ -1978,10 +1955,9 @@ button::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--radius-1) * var(--button-radius));
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
   background: transparent !important;
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px + calc(var(--animation-focus-distance) * 2));
   opacity: 0;
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
@@ -2001,7 +1977,7 @@ button:hover::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px);
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 
 button:focus::after {
@@ -2010,7 +1986,7 @@ button:focus::after {
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(calc(var(--button-height) * var(--spacing-1)) + calc(var(--border-1) * var(--button-border) * 2) + 4px);
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 
 button.dropdown-toggle {
@@ -2044,6 +2020,11 @@ button.dropdown-toggle::after {
   border-right: 0.3em solid transparent !important;
   border-bottom: 0 !important;
   border-left: 0.3em solid transparent !important;
+}
+
+button svg {
+  width: 24px;
+  height: 24px;
 }
 
 button.small-btn {

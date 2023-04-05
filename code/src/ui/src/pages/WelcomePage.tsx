@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, List } from "@mui/material";
 import { styled } from '@mui/material';

@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useState, useEffect } from 'react';
 import { Alert, FormControl, FormControlLabel, FormHelperText, FormLabel, InputLabel, Radio, RadioGroup } from '@mui/material';
 import { ColorTheme, DesignSystem, Hotlinks, HotlinkModeVariables } from 'a11y-theme-builder-sdk';
@@ -25,9 +29,9 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
 
     useEffect(() => {
         try {
-            _setUnderlineHotlinksLightmode(hotlinks.getHotlinkVariables().lm.underlineRequired || hotlinks.underlineHotlinksInLightMode.getValue() || false);
-            _setUnderlineHotlinksLightmodeRequired(hotlinks.getHotlinkVariables().lm.underlineRequired);
-            _setUnderlineHotlinksDarkmodeRequired(hotlinks.getHotlinkVariables().dm.underlineRequired);
+            _setUnderlineHotlinksLightmode(hotlinks.getHotlinkVariables()?.lm.underlineRequired || hotlinks.underlineHotlinksInLightMode.getValue() || false);
+            _setUnderlineHotlinksLightmodeRequired(hotlinks.getHotlinkVariables()?.lm.underlineRequired || false);
+            _setUnderlineHotlinksDarkmodeRequired(hotlinks.getHotlinkVariables()?.dm.underlineRequired || false);
         } catch (error) {
             // It is possible that getHotlinkVariables may throw an error
             //  if it runs into shades without "on" colors.
@@ -55,10 +59,10 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
     return (
         <div>
             <HeadingSection item={hotlinks} title="Focus States & Hotlinks">
-                Hotlinks need to have a contrast against the background of 3.1:1 or higher, and a contrast to the surrounding text of 3.1:1 or higher or they must be underlined.<br />
-                Users can choose to underline the text in light mode or not. In dark mode it is required to meet the contrast guidelines.<br />
-                Note: Hotlinks that appear on anything other that selected primary and secondary background, black or white will have either black or white underlined hotlinks in order to meet the accessibility requirements.<br />
-                <a href="https://webaim.org/blog/wcag-2-0-and-link-colors/">Helpful Link</a>
+                <p>Hotlinks need to have a contrast against the background of 3.1:1 or higher, and a contrast to the surrounding text of 3.1:1 or higher or they must be underlined.</p>
+                <p>Users can choose to underline the text in light mode or not. In dark mode it is required to meet the contrast guidelines.</p>
+                <p>Note: Hotlinks that appear on anything other that selected primary and secondary background, black or white will have either black or white underlined hotlinks in order to meet the accessibility requirements.</p>
+                <p><a href="https://webaim.org/blog/wcag-2-0-and-link-colors/">Helpful Link</a></p>
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>

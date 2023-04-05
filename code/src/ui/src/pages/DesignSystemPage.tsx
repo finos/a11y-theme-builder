@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
@@ -99,6 +103,9 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     const TopNavTab = styled(Tab)(({ theme }) => ({
         ":hover": {
             backgroundColor: "rgba(0, 0, 0, 0.04)",
+        },
+        ":hover::after": {
+            opacity: 0,
         },
     }));
 

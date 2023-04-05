@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider } from "@mui/material";
 import React, { useState, MouseEvent, ReactNode } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';

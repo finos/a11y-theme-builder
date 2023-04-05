@@ -1,7 +1,10 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
 import { DesignSystem} from 'a11y-theme-builder-sdk';
-import { PreviewDetails } from './PreviewDetails';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, 
     Button, InputLabel, TextField, InputAdornment, Switch, SwitchProps, Stack, Typography, 
@@ -155,7 +158,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
-                <PreviewDetails />
+                TODO
                 </div>
             </div>
         </React.Fragment>

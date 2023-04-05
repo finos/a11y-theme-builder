@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 // Key is the font family converted to lower case
 // Value is an array of numbers representing font weights that the font supports
 const CommonFontsSupportedWeights = new Map<string, number[]>([

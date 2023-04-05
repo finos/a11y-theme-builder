@@ -1,3 +1,7 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React from 'react';
 import { DesignSystem } from 'a11y-theme-builder-sdk';
 import TextEditBox from '../../../components/TextEditBox';
@@ -8,12 +12,12 @@ import { SettingsSection } from '../../content/SettingsSection';
 
 const name = "BodyStylesAtom";
 
-const body1CssPrefix = "Body1"
-const body1BoldCssPrefix = "Body1-bold"
-const body2CssPrefix = "Body2"
-const body2BoldCssPrefix = "Body2-bold"
-const body3CssPrefix = "Body3"
-const body3BoldCssPrefix = "Body3-bold"
+const body1CssPrefix = "body1"
+const body1BoldCssPrefix = "body1-bold"
+const body2CssPrefix = "body2"
+const body2BoldCssPrefix = "body2-bold"
+const body3CssPrefix = "body3"
+const body3BoldCssPrefix = "body3-bold"
 
 interface Props {
     designSystem: DesignSystem;

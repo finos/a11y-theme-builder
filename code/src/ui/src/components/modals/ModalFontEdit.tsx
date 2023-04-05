@@ -1,9 +1,16 @@
+﻿/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under MIT License. See License.txt in the project root for license information
+ */
 import React, { useEffect, useState } from 'react'
 import './Modals.css';
 import '../../pages/WelcomePage.css'
 import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
 import { Alert, Button, FormControl, Grid, InputLabel, MenuItem, Select, Slider } from '@mui/material';
 import { FontWeightsUtil } from '../../pages/atoms/typography/FontWeightsUtil'
+import { HeadingSection } from '../../pages/content/HeadingSection';
+import { ExampleSection } from '../../pages/content/ExampleSection';
+import { SettingsSection } from '../../pages/content/SettingsSection';
 
 const name = "ModalFontEdit";
 
@@ -29,15 +36,18 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     // console.log(`${name} - >>> enter()`);
 
     const typographyStyling = designSystem.getNode(textKey) as TypographyStyling;
+    const atom = designSystem.atoms.displayAndHeaderStyles;
+    const defaultWeight = atom.headingDisplayFontWeight.getValue() || 400;
+    console.log("@bc defaultWeight=",defaultWeight);
 
     const fontFamilyProperty    = typographyStyling.fontFamily
     const fontSizeProperty      = typographyStyling.fontSize
     const fontWeightProperty    = typographyStyling.fontWeight
-    const charSpacingProperty   = typographyStyling.characterSpacing
+    const charSpacingProperty   = typographyStyling.letterSpacing
 
     const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || "Open Sans"));
     const [fontSize,    setFontSize   ] = useState<number>(fontSizeProperty.getValue()       || 16);
-    const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue()     || 400);
+    const [fontWeight,  setFontWeight ] = useState<number>((fontWeightProperty as any).value || defaultWeight);
     const [charSpacing, setCharSpacing] = useState<number>(charSpacingProperty.getValue()    || 0);
 
     const [fontUncommon, setFontUncommon] = useState<boolean>(!FontWeightsUtil.isFontCommon(fontFamily))
@@ -73,16 +83,16 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     const cssFontSize         = "var(--" + cssPrefix + "FontSize)";
     const cssFontWeight       = "var(--" + cssPrefix + "FontWeight)";
     const cssLineHeight       = "var(--" + cssPrefix + "LineHeight)";
-    const cssCharacterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
+    const cssLetterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
 
-    const sampleStyle = {
+    const [sampleStyle, setSampleStyle] = useState<any>({
         fontFamily: cssFontFamily,
         fontSize: cssFontSize,
         fontWeight: cssFontWeight,
         lineHeight: cssLineHeight,
-        letterSpacing: cssCharacterSpacing,
-        padding: "32px",
-    }
+        letterSpacing: cssLetterSpacing,
+        //padding: "32px",
+    })
 
     async function handleFontFamilyChanged(event: any): Promise<void> {
         const value = event.target.value;
@@ -91,10 +101,12 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     async function handleFontSizeChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setFontSize(value);
+        setSampleStyle({...sampleStyle, ...{fontSize: value+"px"}});
     }
     async function handleFontWeightChanged(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setFontWeight(value);
+        setSampleStyle({...sampleStyle, ...{fontWeight: value}});
     }
     async function handleCharSpacingChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
@@ -122,7 +134,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                     {fontFamilyProperty.name}
                 </InputLabel>
                 <Select
-                    label={fontFamilyProperty.name}
+                    //label={fontFamilyProperty.name}
                     labelId='fontFamilyLabel'
                     value={fontFamily}
                     onChange={handleFontFamilyChanged}
@@ -162,21 +174,11 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
             <div className="overlay"></div>
             <div className='modal modal-fontEdit'>
                 <div className="modal-content">
-                    <div className="modal-header">
-                        <h3 className="modal-title" >
-                            Edit Typography Styling
-                        </h3>
-                    </div>
-                    <div className="modal-body">
-                        <div>
-                            <div className="caption quiet">
-                                Sample
-                            </div>
-                            <div style={sampleStyle}>
-                                {typographyStyling.name}
-                            </div>
-                        </div>
-                        <br/>
+                    <HeadingSection title="Typography Styling" heading={"Editing "+typographyStyling.name} />
+                    <ExampleSection>
+                        <div style={sampleStyle}>{typographyStyling.name}</div>
+                    </ExampleSection>
+                    <SettingsSection>
                         <form>
                             {renderFontFamilySelectables()}
                             {!fontUncommon
@@ -191,9 +193,6 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                                 <label className="label-1">
                                     Font Size:
                                 </label>
-                                <div className="caption">
-                                    Percent of Base Font:&nbsp;<span>?</span>
-                                </div>
                                 <div className="caption">
                                     Size:&nbsp;<span>{fontSize}px</span>
                                 </div>
@@ -236,7 +235,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                                         </Alert> }
                             </FormControl>
                         </form>
-                    </div>
+                    </SettingsSection>
                     <div className="modal-footer">
                         <div className="button-area">
                             <Button onClick={onCancel}>Cancel</Button>
