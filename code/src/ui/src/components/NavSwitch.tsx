@@ -3,10 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, 
-    Button, InputLabel, TextField, InputAdornment, Switch, SwitchProps, Stack, Typography, 
-    RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, useTheme } from '@mui/material';
+import { styled, Switch, Stack, Typography } from '@mui/material';
 
 interface Props {
     leftLabel?: string;
@@ -20,7 +17,7 @@ interface Props {
     onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
+export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, defaultChecked, onChange}) => {
     const handleOnChange = (event:any) => {
         const value = event.target.value;
         if (onChange) {
@@ -73,14 +70,20 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
     return (
         <Stack direction="row" spacing={1} alignItems="center">
             {leftLabel && <Typography>{leftLabel}</Typography>}
+            {defaultChecked ||
             <MySwitch 
                 defaultChecked 
+                onChange={handleOnChange} 
+                inputProps={{ 'aria-label': '' }} 
+            />}
+            {!defaultChecked ||
+            <MySwitch
                 checked={checked} 
                 onChange={handleOnChange} 
                 inputProps={{ 'aria-label': '' }} 
-            />
+            />}
             {rightLabel && <Typography>{rightLabel}</Typography>}
-         </Stack>                        
+        </Stack>                        
     )
 
 }

@@ -3,12 +3,9 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { DesignSystem} from 'a11y-theme-builder-sdk';
-import { ErrorHandler } from '../../../ErrorHandler';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, 
-    Button, InputLabel, TextField, InputAdornment, Switch, SwitchProps, Stack, Typography, 
-    RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, CssBaseline } from '@mui/material';
+import { List, Collapse, RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup } from '@mui/material';
 import { LeftNavHeader, LeftNavItem, LeftNavText } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -50,7 +47,6 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
         fontWeight: "bold",
     }
 
-
     return (
         <React.Fragment>
             <div className="design-system-editor-left-nav">
@@ -72,7 +68,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     </div>
                     <LeftNavText>Mode</LeftNavText>
                     <div style={divStyle}>
-                        <NavSwitch leftLabel="Light" rightLabel="Dark" defaultChecked inputProps={{ 'aria-label': '' }} />
+                        <NavSwitch defaultChecked leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
                     </div>
                     <LeftNavItem text={"Desktop Preview Settings"} value="desktopPreview" indent={0} onClick={()=> {setDisplayDesktopPreview(!displayDesktopPreview)}}>
                         {displayDesktopPreview ? <ExpandLess /> : <ExpandMore />}
