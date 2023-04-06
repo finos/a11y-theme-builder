@@ -33,12 +33,6 @@ export const NumberProperty: React.FC<NumberProps> = ({ property, defaultValue=0
         setValue(_value);
     }
     useEffect(()=> {
-        const timeOutId = setTimeout(() => {
-            property.setValue(value ? value : undefined);
-        }, 1000);
-        return () => clearTimeout(timeOutId);
-    },[value]);
-    useEffect(()=> {
 		if (timeOutId) clearTimeout(timeOutId);
         timeOutId = setTimeout(() => {
 			timeOutId = null;
