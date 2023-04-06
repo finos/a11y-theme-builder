@@ -63,12 +63,18 @@
     min-height: 80vh;
 }
 
-
 .design-system-editor-right-content .section-header {
     color: var(--on-leftNav);
     padding: var(--spacing-1);
     border-bottom: 1px solid var(--on-background)
 }
+
+.darkmode.design-system-editor-right-content .section-header {
+    color: var(--dm-on-leftNav);
+    padding: var(--spacing-1);
+    border-bottom: 1px solid var(--dm-on-background)
+}
+
 .design-system-editor-right-content .section-body {
     margin-left: 0px;
 }
