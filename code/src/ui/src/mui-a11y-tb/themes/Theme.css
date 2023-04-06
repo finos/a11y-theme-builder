@@ -1898,7 +1898,7 @@ h6 {
     background: transparent !important;
 }
 
-.primary .breadcrumbs a {
+.default .breadcrumbs a {
     color: var(--on-primary) !important;
     background: transparent !important;
 }
@@ -3025,6 +3025,9 @@ button.small-btn.icon:hover::after {
 .MuiTabs-root.white .MuiTabs-indicator {
   background: var(--black) !important;
 }
+.MuiTabs-root .MuiTabs-indicator {
+  background: var(--on-button) !important;
+}
 /* darkmode tabs */
 .darkmode .MuiTabs-root {
   background: var(--dm-button);
@@ -3183,12 +3186,48 @@ button.small-btn.icon:hover::after {
 .darkmode .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {
   background-color: var(--dm-button) !important;
 }
+/* sliders */
+.MuiSlider-root {
+  height: var(--min-target);
+}
+.MuiSlider-root .MuiSlider-track{
+  height: var(--min-target);
+  background-color: var(--button);
+  height: calc(var(--sliderbarHeight) * var(--spacing-1));
+  margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2);
+}
+.MuiSlider-root .MuiSlider-thumb: {
+  /* need to update once the coorect value is being passed
+  height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
+   width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
+   width: var(--spacing-3);
+   width: var(--spacing-3);
+   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
+   background-color: var(--button);
+   position: relative;
+ }
+ .MuiSlider-root .MuiSwitch-thumb::after {
+   position: absolute;
+   pointer-events: none;
+   top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+   border: var(--focusBorder) solid var(--button);
+   background: transparent !important;
+   opacity: 1;
+   content: '';
+   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+   z-index: -1;
+ }
 /* popovers */
 .MuiPopover-paper {
   background: var(--white) !important;
   border-radius: var(--popoverRadius);
   box-shadow: var(--popoverShadow);
   color: var(--black) !important;
+  transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
 }
 /* darkmode popovers */
 .darkmode .MuiPopover-paper {
@@ -3208,7 +3247,10 @@ button.small-btn.icon:hover::after {
   border: 1px auto var(--dm-button);
   box-shadow: 0 0 var(--focusBlur) 1px var(--dm-button-half);
 }
+/* gradient header */
+.gradient-title {
 
+}
 /* icons */
 .icon-body {
   display: flex;
@@ -3231,6 +3273,65 @@ button.small-btn.icon:hover::after {
   fill: var(--dm-icon);
 }
 
+/* images */
+.inline-image, .image-lg, .image-sq{
+  position: relative;
+  z-index: 1;
+}
+.inline-image img{
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  border-radius: var(--inline-image-image-radius);
+  box-shadow: var(--imageElevation);
+}
+.image-lg img{
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  border-radius: var(--image-radius);
+  box-shadow: var(--image-shadow);
+  position: relative;
+  z-index: 1;
+}
+.image-sq img{
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  border-radius: var(--image-radius);
+  box-shadow: var(--image-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+/* dark mode images */
+.inline-image::after {
+ position: absolute;
+ content: '';
+ top:0;
+ left: 0;
+ right:0;
+ bottom:0;
+ border-radius: var(--inline-image-image-radius);
+ background: rgba(0,0,0,.25);
+ z-index: 2;
+ pointer-events: none;
+}
+.image-lg img::after, .image-sq img::after{
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  border-radius: var(--image-radius);
+  background: rgba(0,0,0,.25);
+  z-index: 2;
+  pointer-events: none;
+}
 
 /* varying backgrounds  */
 
@@ -3713,4 +3814,8 @@ button.small-btn.icon:hover::after {
 .darkmode .background-tertiary {
   background: var(--dm-background-tertiary) !important;
   color: var(--dm-on-background-tertiary);
+}
+/* Modal */
+.modal-content {
+  padding: var(--spacing-3);
 }

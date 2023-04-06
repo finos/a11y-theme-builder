@@ -81,7 +81,3 @@
     cursor: pointer;
 }
 */
-
-.modal-content h1 {
-    font-size: calc(var(--h1FontSize) * 0.7);
-}

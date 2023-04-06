@@ -332,7 +332,7 @@ try {
                           borderColor: "var(--border)",
                           boxShadow: "none",
                         //   background: "var(--surface)",
-                          color: "var(--on-surface)",
+                        //  color: "var(--on-surface)",
                         },
                         ".info &": {
                             color: "var(--on-info)",
@@ -785,12 +785,72 @@ try {
                       },
                 }
             },
-            MuiPopover: {
+            MuiListItemButton: {
               styleOverrides: {
                   root: {
-                    ".darkmode": {
-                        background: "var(--dm-chip)",
-                        color: "var(--dm-onchip)",
+                    "& .MuiListItemText-primary": {
+                       textDecoration: "none",
+                       textTransform: "none",
+                    },
+                },
+              },
+            },
+            MuiSlider: {
+              styleOverrides: {
+                  root: {
+                    height: "var(--min-target)",
+                    "& .MuiSlider-rail": {
+                       height: "calc(var(--sliderbarHeight) * var(--spacing-1))",
+                       borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
+                       boxShadow: "var(--barInBevel)",
+                       marginTop: "  margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2)",
+                       background: "var(--on-background)",
+                       opacity: "var(--disabled)",
+                    },
+                    "& .MuiSlider-track": {
+                       backgroundColor: "var(--button)",
+                       height: "calc(var(--sliderbarHeight) * var(--spacing-1))",
+                       marginTop: "  margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2)",
+                    },
+                    "& .MuiSlider-thumb": {
+                       height: "var(--spacing-3)",
+                       width: "var(--spacing-3)",
+                       borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
+                       boxShadow: "var(--sliderhandleElevation)",
+                       backgroundColor: "var(--button)",
+                       position: "absolute",
+                       "&::after": {
+                         position: "absolute",
+                         height: "var(--min-target)",
+                         width: "var(--min-target)",
+                         right: "calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)))",
+                         bottom: "calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)))",
+                         content: "''",
+                         background: '#000000',
+                         pointerEvents: "none",
+                         borderRadius: "calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px)",
+                         border: "var(--focusBorder) solid var(--button)",
+                         background: "transparent !important",
+                         opacity: "0",
+                         transition: "var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all",
+                         zIndex: "-1",
+                       },
+                       "&:hover::after": {
+                         position: "absolute",
+                         height: "calc(var(--spacing-3) + 3px)",
+                         width: "calc(var(--spacing-3) + 3px)",
+                         right: "calc(0px - calc(var(--focusBorder) + 2px))",
+                         bottom: "calc(0px - calc(var(--focusBorder) + 2px))",
+                         opacity: ".5",
+                       },
+                       "&:focus::after": {
+                         position: "absolute",
+                         height: "calc(var(--spacing-3) + 3px)",
+                         width: "calc(var(--spacing-3) + 3px)",
+                         right: "calc(0px - calc(var(--focusBorder) + 2px))",
+                         bottom: "calc(0px - calc(var(--focusBorder) + 2px))",
+                         opacity: "1",
+                       },
                     },
                 },
               },
@@ -812,7 +872,6 @@ try {
                         textTransform: "var(--chipTextTransform)",
                         minWidth: "var(--chip-minwidth)",
                         minHeight: "var(--min-target)",
-                        boxShadow: "var(--chip-elevation)",
                         "&::after": {
                             position: "absolute",
                             top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance))",
@@ -836,6 +895,7 @@ try {
                             right: "0px",
                             content: '""',
                             background: "var(--chip)",
+                            boxShadow: "var(--chip-elevation)",
                             color: "var(--onchip)",
                             borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             zIndex: -1,

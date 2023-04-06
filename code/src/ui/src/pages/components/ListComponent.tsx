@@ -34,13 +34,14 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
         {!isStyle2 || <div className="subtitle1">List Title</div>}
         {!(type === 3) || body }
     </>
-
-    const listDecor = <>
+    const listImage = <>
         {!hasAvatar || <Avatar/>}
         {!hasImg || isLarge
         || <img alt='list-style-1' src="/sample.jpg" style={{objectFit: "cover",width: "60px", height: "60px"}}/>}
         {!hasImg || !isLarge
         || <img alt='list-style-1' src="/image-1.jpeg" style={{objectFit: "cover",width: "100px", height: "60px"}}/>}
+    </>
+    const listDecor = <>
         {!hasIcon  || isLarge
         || <ErrorIcon color='error'/>}
         {!hasIcon  || !isLarge
@@ -58,13 +59,16 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
                 {isClickable || listDecor}
                 {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listDecor}</Link>}
                 <div className="list-body">
-                    <Grid container spacing={6}>
-                        <Grid item xs={6}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={2}>
+                          { listImage }
+                        </Grid>
+                        <Grid item xs={9}>
                             {isClickable || listTitle}
                             {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listTitle}</Link>}
                         </Grid>
                         {!hasCheckbox
-                        || <Grid item xs={4}><FormControlLabel control={<Checkbox defaultChecked />} label="One" /></Grid>}
+                        || <Grid item xs={1}><FormControlLabel control={<Checkbox defaultChecked />} label="" /></Grid>}
                     </Grid>
                 </div>
             </div>
