@@ -74,7 +74,6 @@
     --primary-700: #2B3DDD;
     --primary-800: #1B2CC2;
     --primary-900: #1020AC;
-    --primary-1000: #1020AC;
     --secondary: #E2F3FF;
     --secondary-0: #E2F5FD;
     --secondary-100: #B5E6F9;
@@ -210,7 +209,7 @@
     --dm-on-secondary-700:  #121212;
     --dm-on-secondary-800:  #121212;
     --dm-on-secondary-900:  #121212;
-    --dm-on-tertiar:  #121212;
+    --dm-on-tertiary:  #121212;
     --dm-on-tertiary-0:  #121212;
     --dm-on-tertiary-100:  #121212;
     --dm-on-tertiary-200: #121212;
@@ -223,7 +222,6 @@
     --dm-on-tertiary-900:  #121212;
     /* accent */
     --accent: #E0F2F1;
-    --dmaccent: #E0F2F1;
     /* backgrounds */
     --white-bg: #ffffff;
     --buttonOnWhite:'';
@@ -273,7 +271,7 @@
     --background: var(--white);
     --on-background:  var(--on-white);
     --dm-background: var(--nearblack);
-    --dm-on-background: var(--on-nearblack);
+    --dm-on-background: var(--dm-white);
     /* background secondary */
     --background-secondary: var(--gray-0);
     --on-background-secondary:  var(--on-gray-0);
@@ -358,7 +356,7 @@
     --surface: var(--white);
     --on-surface:  var(--on-white);
     --dm-surface: var(--dm-background);
-    --dm-on-surface:  var(--dm-on-background);
+    --dm-on-surface:  var(--dm-white);
     /* borders */
     --border: rgba(0,0,0,.15);
     --dm-border: rgba(255,255,255,.15);
@@ -709,9 +707,9 @@
     --dm-dropdown-bottom-hover-bg:  linear-gradient(0deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent)    var(--dropdown-focus-theme)) !important;
     /* icon */
     --icon: var(--accent);
-    --on-icon: var(--on-accent);
+    /* --on-icon: var(--on-accent); */
     --dm-icon: var(--accent);
-    --dm-on-icon: var(--on-accent);
+    /* --dm-on-icon: var(--on-accent); */
 
     /* button */
     --on-button: var(--on-cobalt-500);
@@ -731,7 +729,7 @@
     --buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --buttonTextDecoration: var(--CTATextDecoration);
     --buttonTextTransform: var(--CTATextTransform);
-    --buttonCharcterSpacing: var(--CTALetterSpacing);
+    --buttonCharacterSpacing: var(--CTALetterSpacing);
     --button-elevation: var(--elevation-1);
     --button-bevel: var(--bevel-1);
     --button-shadow: var(--button-elevation), var(--button-bevel);
@@ -741,7 +739,7 @@
     --sm-buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --sm-buttonTextDecoration: var(--CTATextDecoration);
     --sm-buttonTextTransform: none;
-    --sm-buttonCharcterSpacing: var(--CTALetterSpacing);
+    --sm-buttonCharacterSpacing: var(--CTALetterSpacing);
 
     --groupButton-radius: calc(var(--radius-1) * var(--button-radius) * 1.6);
     --groupButtonBG: '#ffffff';
@@ -832,7 +830,7 @@
     /* sliders */
     --sliderbarHeight: 1;
     --sliderhandleHeight: 3;
-    --sliderhandleRadius : 1;
+    --sliderhandleRadius : 3;
     --sliderhandleElevation : 1;
     --barInBevel : 1;
     /* popover */
@@ -1162,7 +1160,7 @@
   --CTA-SmallLineHeight: var(--standard-LineHeight);
   --CTA-SmallTextDecoration: none;
   --CTA-SmallTextTransform: none;
-  --CTA-SmallCharcterSpacing: 1.25%;
+  --CTA-SmallCharacterSpacing: 1.25%;
   /* caption */
   --captionFontSize: calc(var(--baseFont) * .75);
   --captionFontFamily:  var(--bodyFamily);
@@ -1170,7 +1168,7 @@
   --captionLineHeight: var(--standard-LineHeight);
   --captionTextDecoration: none;
   --captionTextTransform: none;
-  --captionCharcterSpacing: .5;
+  --captionCharacterSpacing: .5;
   /* caption bold*/
   --caption-boldFontSize: calc(var(--baseFont) * .75);
   --caption-boldFontFamily:  var(--bodyFamily);
@@ -1178,7 +1176,7 @@
   --caption-boldLineHeight: var(--standard-LineHeight);
   --caption-boldTextDecoration: none;
   --caption-boldTextTransform: none;
-  --caption-boldharcterSpacing: .5%;
+  --caption-boldCharacterSpacing: .5%;
   /* overline */
   --overlineFontSize: calc(var(--baseFont) * .625);
   --overlineFontFamily:  var(--bodyFamily);
@@ -1186,7 +1184,7 @@
   --overlineLineHeight: var(--standard-LineHeight);
   --overlineTextDecoration: none;
   --overlineTextTransform: uppercase;
-  --overlineCharcterSpacing: 1.5%;
+  --overlineCharacterSpacing: 1.5%;
   /* overline large */
   --overline-largeFontSize: calc(var(--baseFont) * .875);
   --overline-largeFontFamily:  var(--bodyFamily);
@@ -1194,7 +1192,7 @@
   --overline-largeLineHeight: var(--standard-LineHeight);
   --overline-largeTextDecoration: none;
   --overline-largeTextTransform: uppercase;
-  --overline-largeCharcterSpacing: 1.5%;
+  --overline-largeCharacterSpacing: 1.5%;
   /* overline X large */
   --overline-XLFontSize: var(--baseFont);
   --overline-XLFontFamily:  var(--bodyFamily);
@@ -1202,7 +1200,7 @@
   --overline-XLLineHeight: var(--standard-LineHeight);
   --overline-XLTextDecoration: none;
   --overline-XLTextTransform: uppercase;
-  --overline-XLCharcterSpacing: 1.5%;
+  --overline-XLCharacterSpacing: 1.5%;
   /* small */
   --smallFontSize: calc(var(--baseFont) * .675);
   --smallFontFamily:  var(--bodyFamily);
@@ -1210,7 +1208,7 @@
   --smallLineHeight: var(--standard-LineHeight);
   --smallTextDecoration: none;
   --smallTextTransform: none;
-  --smallCharcterSpacing: 0.4%;
+  --smallCharacterSpacing: 0.4%;
   /* small semibold */
   --small-semiboldFontSize: calc(var(--baseFont) * .875);
   --small-semiboldFontFamily:  var(--bodyFamily);
@@ -1218,7 +1216,7 @@
   --small-semiboldLineHeight: var(--standard-LineHeight);
   --small-semiboldTextDecoration: none;
   --small-semiboldTextTransform: none;
-  --small-semiboldCharcterSpacing: 1.25%;
+  --small-semiboldCharacterSpacing: 1.25%;
   /* label 1*/
   --label-1FontSize: calc(var(--baseFont) * .875);
   --label-1FontFamily:  var(--bodyFamily);
@@ -1226,7 +1224,7 @@
   --label-1LineHeight: var(--standard-LineHeight);
   --label-1TextDecoration: none;
   --label-1TextTransform: none;
-  --label-1CharcterSpacing: 1.25%;
+  --label-1CharacterSpacing: 1.25%;
   /* label 1 All Caps */
   --label-1-allCapsFontSize: calc(var(--baseFont) * .875);
   --label-1-allCapsFontFamily:  var(--bodyFamily);
@@ -1234,7 +1232,7 @@
   --label-1-allCapsLineHeight: var(--standard-LineHeight);
   --label-1-allCapsTextDecoration: none;
   --label-1-allCapsTextTransform: 'uppercase;';
-  --label-1-allCapsCharcterSpacing: 1.25%;
+  --label-1-allCapsCharacterSpacing: 1.25%;
   /* label 2*/
   --label-2FontSize: calc(var(--baseFont) * .75);
   --label-2FontFamily:  var(--bodyFamily);
@@ -1242,7 +1240,7 @@
   --label-2LineHeight: var(--standard-LineHeight);
   --label-2TextDecoration: none;
   --label-2TextTransform: none;
-  --label-2CharcterSpacing: 1.25%;
+  --label-2CharacterSpacing: 1.25%;
   /* label 2 All Caps */
   --label-2-allCapsFontSize: calc(var(--baseFont) * .75);
   --label-2-allCapsFontFamily:  var(--bodyFamily);
@@ -1250,7 +1248,7 @@
   --label-2-allCapsLineHeight: var(--standard-LineHeight);
   --label-2-allCapsTextDecoration: none;
   --label-2-allCapsTextTransform: 'uppercase;';
-  --label-2-allCapsCharcterSpacing: 1.25%;
+  --label-2-allCapsCharacterSpacing: 1.25%;
   /* label 2 small*/
   --label-smallFontSize: calc(var(--baseFont) * .625);
   --label-smallFontFamily:  var(--bodyFamily);
@@ -1258,7 +1256,7 @@
   --label-smallLineHeight: var(--standard-LineHeight);
   --label-smallTextDecoration: none;
   --label-smallTextTransform: uppercase;
-  --label-smallCharcterSpacing: .18px;
+  --label-smallCharacterSpacing: .18px;
   /* stat */
   --statFontSize: calc(var(--baseFont) * 3);
   --statFontFamily:  var(--bodyFamily);
@@ -1266,7 +1264,7 @@
   --statLineHeight: 100%;
   --statTextDecoration: none;
   --statTextTransform: uppercase;
-  --statCharcterSpacing: 1.5%;
+  --statCharacterSpacing: 1.5%;
 
 
 
@@ -1924,7 +1922,7 @@ button {
   position: relative;
   align-self: start;
   font: var(--buttonTypography);
-  letter-spacing: var(--buttonCharcterSpacing);
+  letter-spacing: var(--buttonCharacterSpacing);
   text-decoration: var(--buttonTextDecoration);
   text-transform: var(--buttonTextTransform);
   box-shadow: var(--button-shadow);
@@ -2025,8 +2023,13 @@ button.dropdown-toggle::after {
 }
 
 button svg {
-  width: 24px !important;
-  height: 24px !important;
+  width: var(--spacing-3) !important;
+  height: var(--spacing-3)!important;
+}
+
+button.small-btn  svg {
+  width: var(--spacing-2) !important;
+  height: var(--spacing-2) !important;
 }
 
 button.small-btn {
@@ -2037,7 +2040,7 @@ button.small-btn {
   min-height: calc(var(--spacing-1) * var(--button-height));
   font: var(--sm-buttonTypography);
   text-transform: var(--sm-buttonTextTransform) !important;
-  letter-spacing: var(--sm-buttonCharcterSpacing);
+  letter-spacing: var(--sm-buttonCharacterSpacing);
   box-shadow: none !important;
   position: relative;
   border: none;  /* border for small button specified inside component, not at root */
@@ -2314,34 +2317,34 @@ button.small-btn.icon:hover::after {
 }
 
 /* darkmode buttons */
-.darkmode button {
+.darkmode > button {
   background: var(--dm-button) !important;
-  color: var(--dm-on-button);
+  color: var(--dm-on-button) !important;
 }
 
-.darkmode button .inline-icon svg path {
+.darkmode > button .inline-icon svg path {
   fill: var(--dm-on-button);
 }
 
-.darkmode .white button {
+.darkmode .white > button {
   color: var(--dm-on-white) !important;
   background: var(--dm-white) !important;
 }
 
-.darkmode .white button {
+.darkmode .white > button {
   color: var(--dm-white);
   background: var(--dm-nearblack) !important;
 }
 
-.darkmode .white button.tab {
+.darkmode .white > button.tab {
   background: none !important;
 }
 
-.darkmode button::after {
+.darkmode > button::after {
   background: none !important;
 }
 
-.darkmode button.MuiTab-root {
+.darkmode > button.MuiTab-root {
   background: none !important;
 }
 
@@ -2440,7 +2443,7 @@ button.small-btn.icon:hover::after {
 .darkmode .black button.MuiButton-outlined,
 .darkmode .black button.MuiButton-text {
   background: none !important;
-  color: var(--dm-white) !important;
+  color: var(--dm-button) !important;
 }
 
 .darkmode .black button.MuiButton-outlined {
@@ -2502,7 +2505,7 @@ button.small-btn.icon:hover::after {
 .darkmode .black button.MuiButton-outlined::after,
 .darkmode .black button.MuiButton-text::after {
   background: transparent !important;
-  border: var(--border-1) solid var(--dm-white) !important;
+  border: var(--border-1) solid var(--dm-button) !important;
 }
 
 .darkmode .white button.MuiButton-outlined::after,
@@ -2523,20 +2526,20 @@ button.small-btn.icon:hover::after {
 }
 
 .darkmode .button {
-  background: var(--dm-button);
-  color: var(--dm-on-button);
-}
-
-.darkmode button.small-btn {
-  background: transparent !important
-}
-
-.darkmode button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text):not(.white):not(.black)::before {
   background: var(--dm-button) !important;
   color: var(--dm-on-button) !important;
 }
 
-.darkmode .black button::after {
+.darkmode > button.small-btn {
+  background: transparent !important
+}
+
+.darkmode > button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text):not(.white):not(.black)::before {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
+}
+
+.darkmode .black > button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-white));
 }
 
@@ -2619,6 +2622,139 @@ button.small-btn.icon:hover::after {
   color: var(--linkOnGradient3) !important;
 }
 
+/*  Darkmode BLACK  */
+.darkmode .black , .darkmode .black-bg {
+  background: var(--black) !important;
+  color: var(--dm-white) !important;
+}
+.darkmode .black button:not(.tab), .darkmode .black-bg  button:not(.tab)  {
+  background: var(--dmbuttonOnBlack) !important;
+  color: var(--dmonbuttonOnBlack) !important;
+}
+.darkmode .black button::after, .darkmode .black-bg button::after  {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnBlack));
+}
+.darkmode .black button .inline-icon path, .darkmode .black-bg button .inline-icon path {
+  fill: var(--dmonbuttonOnBlack) !important;
+}
+.darkmode .black .inline-icon path , .darkmode .black-bg .inline-icon path {
+  fill: var(--dmiconOnBlack) !important;
+}
+.darkmode .black a , .darkmode .black-bg a {
+  text-decoration: var(--dmhotlinkDecorationOnBlack);
+  color: var(--dmhotlinkOnBlack);
+}
+/*  WHITE  */
+.darkmode .white , .darkmode .white-bg {
+  background: var(--dm-white) !important;
+  color: var(--black) !important;
+}
+.darkmode .white button:not(.tab) , .darkmode .white-bg  button:not(.tab)  {
+  background: var(--dmbuttonOnWhite) !important;
+  color: var(--dmonbuttonOnWhite) !important;
+}
+.darkmode .white button::after, .darkmode .white-bg  button::after  {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnWhite));
+}
+.darkmode .white button .inline-icon path, .darkmode .white-bg button .inline-icon path {
+  fill: var(--dmonbuttonOnWhite) !important;
+}
+.darkmode .white .inline-icon path , .darkmode .white-bg .inline-icon path {
+  fill: var(--dmiconOnWhite) !important;
+}
+.darkmode .white a , .darkmode .white-bg a {
+  text-decoration: var(--dmhotlinkDecorationOnWhite);
+  color: var(--dmhotlinkOnWhite);
+}
+/*  COLORED, PRIMARY, TERTIARY_BG */
+.darkmode .colored ,.darkmode .primary, .darkmode .backgroundTertiary {
+  background: var(--dm-background-tertiary) !important;
+  color: var(--dm-on-background-tertiary) !important;
+}
+.darkmode .colored button:not(.tab) ,.darkmode .primary  button:not(.tab) , .darkmode .backgroundTertiary button:not(.tab) {
+  background: var(--dmbuttonOnTertiary) !important;
+  color: var(--dmonbuttonOnTertiary) !important;
+}
+.darkmode .colored button::after ,.darkmode .primary  button::after , .darkmode .backgroundTertiary button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnTertiary));
+}
+.darkmode .colored button .inline-icon path,.darkmode .primary button .inline-icon path, .darkmode .backgroundTertiary button .inline-icon path {
+  fill: var(--dmonbuttonOnTertiary) !important;
+}
+.darkmode .colored .inline-icon path , .darkmode .primary .inline-icon path, .darkmode .backgroundTertiary .inline-icon path{
+  fill: var(--dmiconOnTertiary) !important;
+}
+.darkmode .colored a , .darkmode .primary a, .darkmode .backgroundTertiary a  {
+  text-decoration:  var(--dmhotlinkDecorationOnTertiary );
+  color: var(--dmhotlinkOnTertiary );
+}
+/*  GRADIENT 1 */
+.darkmode .gradient-1 {
+  background: var(--dm-gradient-1) !important;
+  color: var(--dm-on-gradient-1) !important;
+}
+.darkmode .gradient-1 button {
+  background: var(--dmbuttonOnGradient1) !important;
+  color: var(--dmonbuttonOnGradient1) !important;
+}
+.darkmode .gradient-1 button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-1));
+}
+.darkmode .gradient-1 button .inline-icon path {
+  fill: var(--dmonbuttonOnGradient1) !important;
+}
+.darkmode .gradient-1 .inline-icon path {
+  fill: var(--dm-on-gradient-1) !important;
+}
+.darkmode .gradient-1 a {
+  text-decoration: 'underline';
+  color: var(--dm-on-gradient-1);
+}
+/*  GRADIENT 2 */
+.darkmode .gradient-2 {
+  background: var(--dm-gradient-2) !important;
+  color: var(--dm-on-gradient-2) !important;
+}
+.darkmode .gradient-2 button {
+  background: var(--dmbuttonOnGradient2) !important;
+  color: var(--dmonbuttonOnGradient2) !important;
+}
+.darkmode .gradient-2 button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-2));
+}
+.darkmode .gradient-2 button .inline-icon path {
+  fill: var(--dmonbuttonOnGradient2) !important;
+}
+.darkmode .gradient-2 .inline-icon path {
+  fill: var(--dm-on-gradient-2) !important;
+}
+.darkmode .gradient-2 a {
+  text-decoration: 'underline';
+  color: var(--dm-on-gradient-2) !important;
+}
+/*  GRADIENT 3 */
+.darkmode .gradient-3 {
+  background: var(--dm-gradient-3) !important;
+  color: var(--dm-on-gradient-3) !important;
+}
+.darkmode .gradient-3 button {
+  background: var(--dmbuttonOnGradient3) !important;
+  color: var(--dmonbuttonOnGradient3) !important;
+}
+.darkmode .gradient-3 button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnGradient3));
+}
+.darkmode .gradient-3 button .inline-icon path {
+  fill: var(--dmonbuttonOnGradient3) !important;
+}
+.darkmode .gradient-3 .inline-icon path {
+  fill: var(--dm-on-gradient-3) !important;
+}
+.darkmode .gradient-3 a {
+  text-decoration: 'underline';
+  color: var(--dmhotlinkOnGradient3) !important;
+}
+
 .gradient-swatch {
   width: 400px;
   height: var(--spacing-6);
@@ -2699,6 +2835,379 @@ button.small-btn.icon:hover::after {
   gap: var(--spacing-1);
   align-items: start;
 }
+.MuiCardMedia-root {
+  background-color: var(--on-background);
+  opacity: var(--disabled);
+}
+/* darkmode card */
+.darkmode .MuiCard-root {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+  color: var(--dm-on-surface);
+}
+.darkmode .MuiCardMedia-root {
+  background-color: var(--dm-on-background);
+  opacity: var(--disabled);
+}
+/* dark mode chips */
+.darkmode .MuiChip-root {
+  color: var(--dm-white);
+}
+.darkmode .MuiChip-root::after {
+  border: var(--focusBorder) solid var(--dm-white);
+}
+.darkmode .MuiChip-root svg path {
+  fill: var(--dm-white);
+}
+
+
+/* toast */
+.MuiAlert-root .MuiAlert-message {
+  overflow: visible;
+  padding: 0;
+  font-size: var(--subtitle1FontSize);
+  font-family: var(--subtitle1FontFamily);
+  font-weight: var(--subtitle1FontWeight);
+  line-height: var(--subtitle1LineHeight);
+  letter-spacing: var(--subtitle1LetterSpacing);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.MuiAlert-root button.small-btn {
+  color: var(--white) !important;
+}
+.MuiAlert-root button.small-btn::before {
+  background: var(--black) !important;
+}
+.MuiAlert-root button.small-btn.text {
+  color: var(--black) !important;
+}
+.MuiAlert-root button.small-btn.text::before {
+  background: var(--transparent) !important;
+}
+.MuiAlert-root button.small-btn::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--black);
+}
+/* darmode toast */
+.darkmode .MuiAlert-root {
+  background: var(--elevation-bg-1);
+  border: 1px solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardError::after {
+  background: var(--dm-danger);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardError .MuiAlert-icon {
+  color: var(--dm-danger);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardError .overline {
+  color: var(--dm-danger);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardWarning::after {
+  background: var(--dm-warning);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardWarning .MuiAlert-icon {
+  color: var(--dm-warning);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardWarning .overline {
+  color: var(--dm-warning);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardSuccess::after {
+  background: var(--dm-success);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardSuccess .MuiAlert-icon {
+  color: var(--dm-success);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardSuccess .overline {
+  color: var(--dm-success);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardInfo::after {
+  background: var(--dm-info);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardInfo .MuiAlert-icon {
+  color: var(--dm-info);
+}
+.darkmode .MuiAlert-root.MuiAlert-standardInfo .overline {
+  color: var(--dm-info);
+}
+.darkmode .MuiAlert-root .MuiButton-root {
+  color: var(--black) !important;
+}
+.darkmode .MuiAlert-root button.small-btn.text {
+  color: var(--dm-white) !important;
+}
+.darkmode .MuiAlert-root .MuiButton-root::before {
+  background: var(--dm-white) !important;
+}
+.darkmode .MuiAlert-root .MuiButton-root::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dm-white) !important;
+}
+/* dark mode radio buttons */
+.darkmode .MuiRadio-root svg path {
+  fill: var(--dm-white)
+}
+.darkmode .MuiRadio-root.Mui-checked svg path {
+  fill: var(--dm-button)
+}
+.darkmode .MuiRadio-root.Mui-disabled ~ .MuiFormControlLabel-label {
+  color: var(--dm-white);
+  opacity: var(--disabled)
+}
+.darkmode .MuiRadio-root.Mui-disabled  svg path {
+  opacity: var(--disabled)
+}
+.darkmode .MuiRadio-root.Mui-disabled  svg path {
+  opacity: var(--disabled)
+}
+/* darkmode checkboxes */
+.darkmode .MuiCheckbox-root svg path {
+  fill: var(--dm-white)
+}
+.darkmode .MuiCheckbox-root.Mui-checked svg path {
+  fill: var(--dm-button)
+}
+.darkmode .MuiCheckbox-root.Mui-disabled ~ .MuiFormControlLabel-label {
+  color: var(--dm-white);
+  opacity: var(--disabled)
+}
+/* dark mode helper text */
+.darkmode .MuiFormHelperText-root {
+  color: var(--dm-white);
+  opacity: var(--quiet);
+}
+/* dark mode avatar */
+.darkmode .MuiAvatar-root svg path {
+  fill: var(--dm-white);
+}
+/* dark mode form labels */
+.darkmode .MuiFormLabel-root {
+  color: var(--dm-on-background)
+}
+/* secodary tabs */
+.secondaryTabs .MuiTab-root {
+  font-size: var(----CTA-SmallFontSize);
+  font-family: var(--CTA-SmallFontFamily);
+  font-weight: var(--CTA-SmallFontWeight);
+  line-height: var(--CTA-SmallLineHeight);
+  text-transform: var(--CTA-SmallTextTransform);
+  letter-spacing: var(--CTA-SmallCharcterSpacing);
+  min-height: var(--min-target);
+}
+/* tab variations */
+.MuiTabs-root.black .MuiTab-root {
+  background: var(--black) !important;
+  color: var(--white) !important;
+}
+.MuiTabs-root.black .MuiTab-root::after {
+  border: none !important;
+  opacity: 0;
+}
+.MuiTabs-root.black .MuiTab-root:hover::after {
+  border-bottom: var(--spacing-half) solid var(--white) !important;
+  opacity: .5;
+}
+.MuiTabs-root.black .MuiTabs-indicator {
+  background: var(--white) !important;
+}
+.MuiTabs-root.white .MuiTab-root {
+  background: var(--white) !important;
+  color: var(--black) !important;
+}
+.MuiTabs-root.white .MuiTab-root::after {
+  border: none !important;
+  opacity: 0;
+}
+.MuiTabs-root.white .MuiTab-root:hover::after {
+  border-bottom: var(--spacing-half) solid var(--black) !important;
+  opacity: .5;
+}
+.MuiTabs-root.white .MuiTabs-indicator {
+  background: var(--black) !important;
+}
+/* darkmode tabs */
+.darkmode .MuiTabs-root {
+  background: var(--dm-button);
+}
+.darkmode .MuiTab-root {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
+}
+.darkmode .MuiTab-root:hover::after {
+  border-bottom: var(--spacing-half) solid var(--dm-on-button);
+}
+.darkmode .MuiTabs-root .MuiTabs-indicator {
+  background: var(--dm-on-button) !important;
+}
+.darkmode .MuiTabs-root.black .MuiTab-root {
+  background: var(--black) !important;
+  color: var(--dm-white) !important;
+}
+.darkmode .MuiTabs-root.black .MuiTab-root::after {
+  border: none !important;
+  opacity: 0;
+}
+.darkmode .MuiTabs-root.black .MuiTab-root:hover::after {
+  border-bottom: var(--spacing-half) solid var(--dm-white) !important;
+  opacity: .5;
+}
+.darkmode .MuiTabs-root.black .MuiTabs-indicator {
+  background: var(--dm-white) !important;
+}
+.darkmode .MuiTabs-root.white .MuiTab-root {
+  background: var(--transparent) !important;
+  color: var(--black) !important;
+}
+.darkmode .MuiTabs-root.white .MuiTab-root::after {
+  border: none !important;
+  opacity: 0;
+}
+.darkmode .MuiTabs-root.white .MuiTab-root:hover::after {
+  border-bottom: var(--spacing-half) solid var(--black) !important;
+  opacity: .5;
+}
+.darkmode .MuiTabs-root.white .MuiTabs-indicator {
+  background: var(--black) !important;
+}
+/* accordian */
+.MuiAccordion-root::after {
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ border-radius: calc(var(--spacing-1) + 1.6px);
+ border: var(--focusBorder) solid var(--button);
+ background: transparent !important;
+ opacity: 0;
+ content: '';
+ transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+ z-index: -1;
+}
+.MuiAccordion-root:hover::after {
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: .5;
+}
+.MuiAccordion-root:focus::after {
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: 1;
+}
+/* darkmode accordian */
+.darkmode .MuiAccordion-root {
+  background: var(--dm-surface) !important;
+  color: var(--dm-on-surface) !important;
+  border: 1px solid var(--dm-border);
+}
+.darkmode .MuiAccordion-root svg path{
+  fill: var(--dm-on-surface) !important;
+}
+.darkmode .MuiAccordion-root::after {
+  border: var(--focusBorder) solid var(--dm-button);
+}
+/* swicth */
+.MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
+  background: var(--button);
+  padding: 0;
+  padding-top:  calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sliderhandleHeight)))/2) !important;
+  left: 0;
+  width: var(--spacing-3);
+  height: var(--spacing-3);
+  border-radius: calc(var(--sliderhandleRadius) * var(--radius-1)) !important;
+  position: relative;
+  box-shadow: var(--sliderhandleElevation);
+}
+.MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb::after {
+  position: absolute;
+  pointer-events: none;
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 0;
+  content: '';
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
+}
+.MuiSwitch-root:hover .MuiSwitch-switchBase .MuiSwitch-thumb::after {
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: .5;
+}
+.MuiSwitch-root:focus .MuiSwitch-switchBase .MuiSwitch-thumb::after {
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: 1;
+}
+.MuiSwitch-root .MuiSwitch-track {
+  position: absolute;
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sliderbarHeight)))/2) !important;
+  left: calc(var(--spacing-1) + 1px) ;
+  right: calc(var(--spacing-1) + 1px) ;
+  height: calc(var(--spacing-1) * var(--sliderbarHeight)) ;
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  background-color: var(--on-background);
+  opacity: var(--disabled);
+  width: calc(100% - var(--spacing-2));
+  box-shadow: var(--barInBevel);
+}
+.MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {
+  background-color: var(--button) !important;
+}
+/* darm mode swicth */
+.darkmode .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
+  background: var(--dm-button);
+}
+.darkmode .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb::after {
+  border: var(--focusBorder) solid var(--button);
+}
+.darkmode .MuiSwitch-root .MuiSwitch-track {
+  background-color: var(--dm-on-background);
+}
+.darkmode .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {
+  background-color: var(--dm-button) !important;
+}
+/* popovers */
+.MuiPopover-paper {
+  background: var(--white) !important;
+  border-radius: var(--popoverRadius);
+  box-shadow: var(--popoverShadow);
+  color: var(--black) !important;
+}
+/* darkmode popovers */
+.darkmode .MuiPopover-paper {
+  background: var(--dm-white)  !important;
+  color: var(--black)  !important;
+}
+/* dark mode input fields */
+.darkmode .MuiOutlinedInput-notchedOutline fieldset {
+  border: 1px solid var(--dm-border);
+  border-radius: var(--spacing-1);
+  border-color: var(--dm-border);
+  box-shadow: none;
+  background: var(--dm-surface);
+  color: var(--dm-on-surface);
+}
+.darkmode .MuiOutlinedInput-notchedOutline fieldset::focus {
+  border: 1px auto var(--dm-button);
+  box-shadow: 0 0 var(--focusBlur) 1px var(--dm-button-half);
+}
 
 /* icons */
 .icon-body {
@@ -2715,8 +3224,13 @@ button.small-btn.icon:hover::after {
   height: 24px;
 }
 .inline-icon path {
-  fill: var(--button);
+  fill: var(--icon);
 }
+/* dark mode icon */
+.inline-icon path {
+  fill: var(--dm-icon);
+}
+
 
 /* varying backgrounds  */
 
@@ -2750,6 +3264,34 @@ button.small-btn.icon:hover::after {
   color: var(--hotlinkOnBlack);
 }
 
+/* dark mode black */
+
+.darkmode .black a {
+  color: var(--dm-hotlink-decoration);
+  text-decoration: var(--dm-hotlink-decoration)
+}
+.darkmode .black, .black-bg {
+    background: var(--black) !important;
+    color: var(--dm-white) !important;
+}
+.darkmode .black button, .black-bg  button  {
+  background: var(--buttonOnBlack) !important;
+  color: var(--dm-white) !important;
+}
+.darkmode .black button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
+}
+.darkmode .black button .inline-icon path, .black-bg button .inline-icon path {
+  fill: var(--onbuttonOnBlack) !important;
+}
+.darkmode .black .inline-icon path , .black-bg .inline-icon path {
+  fill: var(--dmiconOnBlack) !important;
+}
+.darkmode .black a , .black-bg a {
+  text-decoration: underline;
+  color: var(--hotlinkOnBlack);
+}
+
 /*  WHITE  */
 .white , .white-bg {
   background: var(--white) !important;
@@ -2774,6 +3316,29 @@ button.small-btn.icon:hover::after {
 .white a , .white-bg a {
   text-decoration: var(--linkDecorationOnWhite);
   color: var(--linkOnWhite);
+}
+/* darkmode white */
+
+.darkmode .white {
+  background: var(--dm-white) !important;
+  color: var(--black) !important;
+}
+.darkmode .white button  {
+  background: var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite) !important;
+}
+.darkmode .white button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
+}
+.darkmode .white button .inline-icon path {
+  fill: var(--onbuttonOnWhite) !important;
+}
+.darkmode .white .inline-icon path  {
+  fill: var(--dmiconOnWhite) !important;
+}
+.darkmode .white a {
+  text-decoration: underline;
+  color: var(--black);
 }
 
 .primary-050-bg {

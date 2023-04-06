@@ -64,9 +64,12 @@
 }
 
 .design-system-editor-right-content .section-header {
-    color: var(--on-leftNav);
     padding: var(--spacing-1);
-    border-bottom: 1px solid var(--on-background)
+    border-bottom: 1px solid var(--border)
+}
+.design-system-editor-right-content.darkmode .section-header {
+    padding: var(--spacing-1);
+    border-bottom: 1px solid var(--dm-border)
 }
 
 .darkmode.design-system-editor-right-content .section-header {
@@ -169,10 +172,20 @@
     -webkit-text-fill-color: var(--dm-on-input);
 }
 
+/* dark mode dropdown */
+
 .design-system-editor-right-content .darkmode .dropdown-toggle {
-    background: var(--dm-white) !important;
-    color: var(--dm-on-white) !important;
+    background: var(--dm-surface) !important;
+    color: var(--dm-on-surface) !important;
 }
+.design-system-editor-right-content .darkmode .dropdown-toggle svg path{
+  fill:  var(--dm-on-surface) !important;
+}
+.darkmode .MuiMenu-list .Mui-selected {
+  color: var(--dm-on-dropdown-focus-bg);
+  background: var(--dm-dropdown-focus-bg);
+}
+
 .design-system-editor-right-content .lightdarkmode-container {
     padding-top: 20px;
     padding-left: 20px;

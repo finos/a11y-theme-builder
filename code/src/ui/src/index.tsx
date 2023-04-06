@@ -3,6 +3,10 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import './index.css';
+import './fontawesome.css';
+import './solid.css';
+import './brands.css';
+
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ErrorHandler } from './ErrorHandler';
@@ -57,4 +61,3 @@ loadLocale().then(function(messages:any) {
         )
     }
 });
-

@@ -52,6 +52,7 @@ export const setCssValues = (props) => {
 
 export const setCssValue = (prop, value) => {
     console.log(`setCssValue(${prop}, ${value})`);
+    //if (prop == "--on-dropdown-focus-bg") { console.log(">>>@bc --on-dropdown-focus-bg"); return; }
     if (value == "TODO") return;
     if (!rootStyleSheet) {
         rootStyleSheet = getStyleSheet(":root");
@@ -246,6 +247,7 @@ try {
                         letterSpacing: "var(--buttonCharcterSpacing)",
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
+                        marginTop: "var(--spacing-half)",
                         /*
                         paddingLeft: "var(--spacing-3)", // var(--button-padding) // this is too small & not in px
                         paddingRight: "var(--spacing-3)",
@@ -296,15 +298,41 @@ try {
                     }
                 }
             },
+            MuiPaper: {
+                styleOverrides: {
+                    root: {
+                        marginTop: "2px",
+                    }
+                }
+            },
             MuiOutlinedInput: {
                 styleOverrides: {
                       root: {
                         borderRadius: "var(--spacing-1)",
-                        height: "calc(var(--spacing-1) * var(--button-height))",
+                        minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         padding: "0",
                         border: "1px solid var(--borrder)",
                         "& input": {
                             padding: "0 var(--spacing-2)",
+                        },
+                        "&.dropdownFocus": {
+                          borderRadius: "var(--spacing-1)",
+                          "&.Mui-focused fieldset": {
+                            border: '1px auto var(--button)',
+                            boxShadow: '0 0 var(--focusBlur) 1px var(--button-half)',
+                          },
+                        },
+                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            border: '1px auto var(--button)',
+                            boxShadow: '0 0 var(--focusBlur) 1px var(--button-half)',
+                        },
+                        "& fieldset": {
+                          border: '1px solid var(--border)',
+                          borderRadius: "var(--spacing-1)",
+                          borderColor: "var(--border)",
+                          boxShadow: "none",
+                        //   background: "var(--surface)",
+                          color: "var(--on-surface)",
                         },
                         ".info &": {
                             color: "var(--on-info)",
@@ -374,6 +402,11 @@ try {
                                     background: "var(--dropdown-focus-bg)",
                                     opacity: "1",
                                 },
+                                '& .MuiList-root.MuiMenu-list .MuiMenuItem-root.Mui-selected': {
+                                    color: "var(--on-dropdown-focus-bg)",
+                                    background: "var(--dropdown-focus-bg)",
+                                    opacity: "1",
+                                },
                                 borderRadius: "var(--spacing-half)",
                             },
                         },
@@ -398,6 +431,33 @@ try {
                         "&.Mui-disabled":{
                             opacity: "var(--disable)",
                         },
+                        "&.Mui-checked.Mui-disabled":{
+                            color: "var(--button)",
+                            opacity: "var(--disabled)",
+                        },
+                    },
+                },
+            },
+            MuiCheckbox: {
+                styleOverrides: {
+                    root: {
+                        "&.Mui-checked":{
+                            color: "var(--button)",
+                        },
+                        "&.Mui-disabled":{
+                            opacity: "var(--disable)",
+                        },
+                        "&.Mui-checked.Mui-disabled":{
+                            color: "var(--button)",
+                            opacity: "var(--disabled)",
+                        },
+                    },
+                },
+            },
+            MuiGrid: {
+                styleOverrides: {
+                    root: {
+                        flexWrap: "wrap",
                     },
                 },
             },
@@ -405,24 +465,33 @@ try {
                 styleOverrides: {
                     root: {
                         height: "var(--min-target)",
+                        padding: "0",
+                        position: "relative",
+                        overflow: "visible !important",
                     },
                     "& .MuiSwitch-switchBase": {
-                        height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
-                        borderRadius: "calc(  var(--sliderhandleRadius) * var(--radius-1))",
-                        padding: "calc( var(--min-target) - var(--sliderhandleHeight))",
-                        "&.MuiSwitch-colorPrimary .MuiSwitch-thumb": {
+                        backgroundColor: "var(--button)",
+                        color: "var(--button)",
+                        "&.Mui-checked": {
                             backgroundColor: "var(--button)",
-                        }
+                            color: "var(--button)",
+                        },
                     },
                 },
             },
             MuiAlert: {
                 styleOverrides: {
                     root: {
+                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                        alignItems: "center",
                         "& .MuiAlert-icon":{
                             marginRight: "var(--toast-padding)",
+                            alignSelf: "center",
+                            padding: "0",
                         },
-                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                        "& .MuiAlert-message": {
+                          overflow: "visible !important",
+                        }
                     },
                 },
             },
@@ -447,12 +516,6 @@ try {
                         "& .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: '1px auto var(--button)',
                             boxShadow: '0 0 var(--focusBlur) 1px var(--button-half)',
-                        },
-                        "& .MuiInputBase-root fieldset.MuiOutlinedInput-notchedOutline": {
-                            /* without this, a 0px --focusBlur will erase the border
-                             * of a Mui Textfield
-                             */
-                            boxShadow: '0 0 0 1px',
                         },
                     }
                 }
@@ -509,12 +572,36 @@ try {
                 justifyContent: "flex-start",
                 background: "var(--button)",
             },
+            MuiAccordion: {
+                styleOverrides: {
+                    root: {
+                        margin: "0",
+                        marginBottom: "var(--spacing-1)",
+                        border: "1px solid var(--border)",
+                        background: "var(--surface)",
+                        color: "var(--on-surface)",
+                        borderRadius: "var(--spacing-1) !important",
+                        position: "relative",
+                        zIndex: "1",
+                        "& svg path": {
+                            fill: "var(--on-surface)" ,
+                        },
+                        "& .MuiAccordionSummary-root": {
+                          minHeight: "var(--min-target)",
+                          padding: "0 var(--spacing-2)",
+                        },
+                        "& .MuiAccordionDetails-root": {
+                          padding: "var(--spacing-1) var(--spacing-2) var(--spacing-2)",
+                        }
+                    }
+                }
+            },
             MuiTabs: {
                 styleOverrides: {
                     root: {
                         background: "var(--button)",
                         "& .MuiTabs-indicator": {
-                            background: "var(--on-button) !important" ,
+                            background: "var(--on-button)" ,
                             height: "var(--spacing-half)",
                             marginBottom: "2px",
                         },
@@ -574,6 +661,38 @@ try {
                     }
                 }
             },
+            MuiPagination: {
+                styleOverrides: {
+                    root: {
+                      "& .MuiPagination-ul": {
+                        gap: "var(--spacing-half)",
+                      }
+                    }
+                }
+            },
+            MuiPaginationItem: {
+                styleOverrides: {
+                    root: {
+                      padding: "0",
+                      minWidth: "var(--min-target)",
+                      height: "var(--min-target) !important",
+                      borderRadius: "calc( var(--radius-1) * var(--button-radius))",
+                      background: "var(--transparent) !important",
+                      color: "var(--button) !important",
+                      border: "calc(var(--border-1) * var(--button-border)) solid var(--button)",
+                      "&.Mui-selected": {
+                        background: "var(--button) !important",
+                        color: "var(--on-button) !important",
+                      },
+                      "& span": {
+                        padding: "0 var(--spacing-half)",
+                      },
+                      "& .MuiPagination-ul": {
+                        gap: "var(--spacing-half)",
+                      }
+                    }
+                }
+            },
             MuiList: {
                 styleOverrides: {
                     root: {
@@ -603,13 +722,21 @@ try {
                         background: "var(--surface)",
                         color: "var(--on-surface)",
                         border: "1px solid var(--border)",
-                        padding: "calc(2 * var(--spacing-1)) !important",
+                        padding: "var(--spacing-1) calc(2 * var(--spacing-1)) !important",
                         paddingLeft: "calc(calc(2 * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         boxShadow: "var(--toast-boxshadow)",
                         position: "relative",
-                        "&.MuiAlert-icon": {
-                          marginLeft: "var(--spacing-2)",
+                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
+                        alignItems: "center",
+                        "& .MuiAlert-icon":{
+                            marginRight: "var(--spacing-1)",
+                            alignSelf: "center",
+                            padding: "0",
+
+                        },
+                        "& .MuiAlert-message": {
+                          overflow: "visible !important",
                         },
                         "&::after": {
                             position: "absolute",
@@ -657,6 +784,16 @@ try {
                         },
                       },
                 }
+            },
+            MuiPopover: {
+              styleOverrides: {
+                  root: {
+                    ".darkmode": {
+                        background: "var(--dm-chip)",
+                        color: "var(--dm-onchip)",
+                    },
+                },
+              },
             },
             MuiChip: {
                 styleOverrides: {
@@ -801,11 +938,13 @@ try {
             MuiButton: {
                 styleOverrides: {
                     root: {
+                        marginTop: "var(--spacing-half)",
                         color: "var(--textDark)",
                         background: "var(--dm-primary)",
                         ":hover": {
                             background: "var(--dm-on-primary)",
-                        }
+                        },
+
                     }
                 }
             },
@@ -853,7 +992,7 @@ try {
                         "&.Mui-selected": {
                             backgroundColor: "var(--dm-secondary)", //theme.palette.secondary.main,
                             color: "var(--on-dm-background)", //theme.palette.secondary.contrastText,
-                        },                    
+                        },
                     }
                 }
             },

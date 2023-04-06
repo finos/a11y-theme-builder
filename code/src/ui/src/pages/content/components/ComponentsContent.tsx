@@ -125,7 +125,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavHeader>Styles</LeftNavHeader>
                     <LeftNavItem text="Mode" indent={1} />
                     <div style={{paddingLeft: "50px"}}>
-                        <NavSwitch defaultChecked leftLabel="Light" rightLabel="Dark" checked={darkMode} onChange={()=>setDarkMode(!darkMode)}/>
+                        <NavSwitch leftLabel="Light" rightLabel="Dark" checked={darkMode} onChange={()=>setDarkMode(!darkMode)}/>
                     </div>
                     <LeftNavItem text={"Colors"} indent={1} onClick={()=>setDisplayColors(!displayColors)}>
                         {displayColors ? <ExpandLess /> : <ExpandMore />}
