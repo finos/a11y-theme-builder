@@ -13,7 +13,7 @@ interface Props {
 
 export const AvatarSingleComponent: React.FC<Props> = () => {
 
-    const [colorMode, setColorMode] = useState<string>("primary");
+    const [colorMode, setColorMode] = useState<string>("default");
 
     return (
         <div>
@@ -21,13 +21,13 @@ export const AvatarSingleComponent: React.FC<Props> = () => {
             <ExampleSection>
                 <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                     <Stack direction="row" spacing={1} alignItems="center">
-                        <Avatar className={`avatar xxs`} />
-                        <Avatar className={`avatar xs`} />
-                        <Avatar className={`avatar sm`} />
-                        <Avatar className={`avatar md`} />
-                        <Avatar className={`avatar lg`} />
-                        <Avatar className={`avatar xl`} />
-                        <Avatar className={`avatar xxl`} />
+                        <Avatar className={`avatar xxs ${colorMode}`} />
+                        <Avatar className={`avatar xs ${colorMode}`} />
+                        <Avatar className={`avatar sm ${colorMode}`} />
+                        <Avatar className={`avatar md ${colorMode}`} />
+                        <Avatar className={`avatar lg ${colorMode}`} />
+                        <Avatar className={`avatar xl ${colorMode}`} />
+                        <Avatar className={`avatar xxl ${colorMode}`} />
                     </Stack>
                 </ColorModeSelector>
             </ExampleSection>
