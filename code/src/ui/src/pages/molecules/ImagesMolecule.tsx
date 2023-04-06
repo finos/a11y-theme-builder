@@ -36,20 +36,20 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         <div className="example">
                             <div className="caption">Sample Square List Image</div>
                             <div className="image-sq">
-                                <img src="/image-1.jpeg" />
+                                <img src="/sample.jpg" />
                             </div>
                         </div>
                         <div className="example">
                             <div className="caption">Sample Wide List Image</div>
                             <div className="image-lg">
-                                <img src="/image-1.jpeg" />
+                                <img src="/sample.jpg" />
                             </div>
                         </div>
                         <h4>General Images</h4>
                         <div className="example">
                             <div className="caption">Sample Square Image</div>
                             <div className="inline-image" style={{ width: '300px', height: '200px' }}>
-                                <img src="/image-1.jpeg" />
+                                <img src="/sample.jpg" />
                             </div>
                         </div>
                     </div>

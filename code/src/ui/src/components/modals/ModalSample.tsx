@@ -22,8 +22,8 @@ const ModalSample: React.FC<Props> = ({isOpen, onClose, modalMolecule}) => {
             <div className='modal modal-sample' style={{borderRadius: modalMolecule.borderRadius.getValue() + "px"}}>
                 <div className="modal-content">
                     <div className="modal-header">
-                    <h1 className="modal-title fs-5">Modal title</h1>
-                        
+                    <h5 className="modal-title fs-5">Modal title</h5>
+
                     </div>
                     <div className="modal-body">
                         ...
@@ -37,7 +37,7 @@ const ModalSample: React.FC<Props> = ({isOpen, onClose, modalMolecule}) => {
                 </div>
             </div>
         </>
-    ) 
+    )
 }
 
 export default ModalSample;
