@@ -42,7 +42,7 @@
     gap: var(--spacing-2);
 }
 .titleBarDiv .center-titlebar button{
-   align-self: end;
+    align-self: end;
 }
 
 .titleBarDiv .center-titlebar .input-titlebar {

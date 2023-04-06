@@ -6,7 +6,6 @@ import React, {useState, useEffect } from 'react';
 import { Checkbox, FormControl, InputLabel, 
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { DesignSystem } from 'a11y-theme-builder-sdk';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './AccessibilityLayersButton.css';
 
 const name = "AccessibilityLayersButton";
@@ -31,7 +30,7 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
         }
         return r;
     }
-    const [a11yLayers, setA11yLayers] = useState<string[]>(["None", ...getValueFromLayersProperty()]);
+    const [a11yLayers, setA11yLayers] = useState<string[]>(getValueFromLayersProperty());
 
     const handleChange = async (event: SelectChangeEvent<string[]>) => {
         const value = event.target.value as string[];
@@ -47,36 +46,45 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
         }
         setA11yLayers(value);
     }
- 
+
     return (
         <>
             <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
             <div>
-                <Select
-                    labelId="a11y-layers-multiple-checkbox-label"
-                    id="a11y-layers-multiple-checkbox"
-                    size="small"
-                    multiple
-                    value={a11yLayers}
-                    onChange={handleChange}
-                    renderValue={(selected:string[]) => {
-                        var s = selected.join(', ');
-                        if (selected.length > 1) {
-                            s = s.replace("None, ", "");
-                        }
-                        return (<div style={{paddingTop:"0px"}}>{s}</div>)
-                    }}
-                    sx={{
-                        width: "300px",
-                    }}
-                >
-                    {layersProperty.map((prop:any) => (
-                        <MenuItem key={prop.name} value={prop.name}>
-                            <Checkbox checked={a11yLayers.indexOf(prop.name) > -1} />
-                            <ListItemText primary={prop.name} />
-                        </MenuItem>
-                    ))}
-                </Select>
+                <FormControl sx={{ width: 400 }}>
+                    <Select
+                        labelId="a11y-layers-multiple-checkbox-label"
+                        id="a11y-layers-multiple-checkbox"
+                        size="small"
+                        multiple
+                        value={a11yLayers}
+                        onChange={handleChange}
+                        displayEmpty
+                        renderValue={(selected) => {
+                            if (selected.length === 0) {
+                                return <em>None</em>;
+                            }
+                            return selected.join(', ');
+                        }}
+                    >
+                        {layersProperty.map((prop:any) => (
+                            <MenuItem key={prop.name} value={prop.name}>
+                                <Checkbox
+                                    checked={a11yLayers.indexOf(prop.name) > -1} 
+                                    disableRipple
+                                    sx={{
+                                        marginLeft: "-12px",
+                                        padding: 0,
+                                        '&:hover': {
+                                            backgroundColor: 'transparent !important'
+                                        }
+                                    }}
+                                />
+                                <ListItemText primary={prop.name} />
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
             </div>
         </>
     )
