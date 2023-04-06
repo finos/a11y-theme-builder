@@ -38,18 +38,18 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
     const listDecor = <>
         {!hasAvatar || <Avatar/>}
         {!hasImg || isLarge
-        || <img alt='list-style-1' src="/image-1.jpeg" style={{objectFit: "cover",width: "60px", height: "60px"}}/>}
+        || <img alt='list-style-1' src="/sample.jpg" style={{objectFit: "cover",width: "60px", height: "60px"}}/>}
         {!hasImg || !isLarge
         || <img alt='list-style-1' src="/image-1.jpeg" style={{objectFit: "cover",width: "100px", height: "60px"}}/>}
-        {!hasIcon  || isLarge 
+        {!hasIcon  || isLarge
         || <ErrorIcon color='error'/>}
-        {!hasIcon  || !isLarge 
+        {!hasIcon  || !isLarge
         || <ErrorIcon color='error' fontSize='large'/>}
     </>
 
 
-    
-  
+
+
 
     return (
         <div className="sample">

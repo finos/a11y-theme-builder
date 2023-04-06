@@ -75,6 +75,7 @@ p a:hover {
     padding-top: 20px;
     padding-bottom: 20px;
     gap: var(--spacing-2);
+    flex-wrap: wrap;
 }
 
 .color-band {

@@ -58,6 +58,7 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                             value={tabValue}
                             onChange={handleTabChange}
                             aria-label="tab bar"
+                            className="secondaryTabs"
                             sx={{
                                 "& button": {backgroundColor: actualColor, color: textColor},
                                 "& button:hover": {backgroundColor: actualColor, color: textColor},
@@ -76,6 +77,7 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                         value={tabIconsValue}
                         onChange={handleTabIconsChange}
                         aria-label="tab bar with icons"
+                        className="secondaryTabs"
                         sx={{
                             "& button": {backgroundColor: actualColor, color: textColor},
                             "& button:hover": {backgroundColor: actualColor, color: textColor},
