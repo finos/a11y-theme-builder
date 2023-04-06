@@ -50,21 +50,22 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: white
+      accent: green
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: grey
+      accent: yellow
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
+  favicon: theme/images/favicon.png
+  logo: theme/images/logo.png
   icon:
     logo: logo
 
@@ -142,12 +143,8 @@ nav:
     - index.md
     - Situation: motivation/situation.md
     - Workflow Challenges: motivation/challenges.md
-    - What if: motivation/what-if.md
+    - Imagine: motivation/imagine.md
     - Solution: motivation/solution.md
-    - Methodology: motivation/methodology.md
-    - Theme Builder: motivation/theme-builder.md
-    - Atomic Layers: motivation/atomic-layers.md
-    - Design Ops Toolchain: motivation/toolchain.md
   - Under the Hood:
     - architecture/index.md
     - Component Model: architecture/component-model.md
