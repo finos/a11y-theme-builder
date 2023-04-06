@@ -1771,18 +1771,18 @@ h6 {
     border: solid var(--avatar-border) var(--accent);
 }
 
-.white .avatar.xxs,
-.white .avatar.xs,
-.white .avatar.sm,
-.white .avatar.md {
+.black.avatar.xxs,
+.black.avatar.xs,
+.black.avatar.sm,
+.black.avatar.md {
     border: solid var(--avatar-border) var(--black) !important;
     /* background-size: 100%; */
 }
 
-.black .avatar.xxs,
-.black .avatar.xs,
-.black .avatar.sm,
-.black .avatar.md {
+.white.avatar.xxs,
+.white.avatar.xs,
+.white.avatar.sm,
+.white.avatar.md {
     border: solid var(--avatar-border) var(--white) !important;
 }
 
@@ -1804,16 +1804,16 @@ h6 {
     border: solid var(--avatar-border-lg) var(--accent);
 }
 
-.white .avatar.lg,
-.white .avatar.xl,
-.white .avatar.xxl {
+.black.avatar.lg,
+.black.avatar.xl,
+.black.avatar.xxl {
     border: solid var(--avatar-border-lg) var(--black) !important;
     background-size: 100% !important;
 }
 
-.black .avatar.lg,
-.black .avatar.xl,
-.black .avatar.xxl {
+.white.avatar.lg,
+.white.avatar.xl,
+.white.avatar.xxl {
     border: solid var(--avatar-border-lg) var(--white) !important;
 }
   
@@ -1850,37 +1850,37 @@ h6 {
     margin: auto !important
 }
 
-.darkmode .white .avatar.xxs,
-.darkmode .white .avatar.xs,
-.darkmode .white .avatar.sm,
-.darkmode .white .avatar.md {
+.darkmode .black.avatar.xxs,
+.darkmode .black.avatar.xs,
+.darkmode .black.avatar.sm,
+.darkmode .black.avatar.md {
     border: solid var(--avatar-border) var(---dm-black) !important;
     background-size: 100%;
 }
 
-.darkmode .white .avatar.lg,
-.darkmode .white .avatar.xl,
-.darkmode .white .avatar.xxl {
+.darkmode .black.avatar.lg,
+.darkmode .black.avatar.xl,
+.darkmode .black.avatar.xxl {
     border: solid var(--avatar-border-lg) var(--dm-black) !important;
     background-size: 100% !important;
 }
 
 /* Breadcrumbs  */
 .breadcrumbs,
-.black .breadcrumbs,
-.white .breadcrumbs,
+.white.breadcrumbs,
+.black.breadcrumbs,
 .darkmode .breadcrumbs,
-.darkmode .white .breadcrumbs,
-.darkmode .black .breadcrumbs {
+.darkmode .black.breadcrumbs,
+.darkmode .white.breadcrumbs {
     gap: var(--spacing-1);
     background: transparent !important;
 }
 
-.black .breadcrumbs {
+.white.breadcrumbs {
     color: var(--on-black) !important;
 }
 
-.white .breadcrumbs {
+.black.breadcrumbs {
     color: var(--on-white) !important;
 }
 
@@ -1888,17 +1888,17 @@ h6 {
     color: var(--on-primary) !important;
 }
 
-.black .breadcrumbs a {
+.white.breadcrumbs a {
     color: var(--on-black) !important;
     background: transparent !important;
 }
 
-.white .breadcrumbs a {
+.black.breadcrumbs a {
     color: var(--on-white) !important;
     background: transparent !important;
 }
 
-.colored .breadcrumbs a {
+.primary .breadcrumbs a {
     color: var(--on-primary) !important;
     background: transparent !important;
 }
@@ -2544,11 +2544,11 @@ button.small-btn.icon:hover::after {
 }
 
 /*  COLORED, PRIMARY, TERTIARY_BG */
-.colored {
-  background: var(--button) !important;
-  color: var(--on-button) !important;
+.default {
+  /* background: var(--button) !important;
+  color: var(--on-button) !important; */
 }
-.colored .inline-icon path {
+.default.inline-icon path {
   fill: var(--on-button) !important;
 }
 
@@ -3240,11 +3240,11 @@ button.small-btn.icon:hover::after {
   text-decoration: var(--hotlink-decoration)
 }
 .black, .black-bg {
-    background: var(--black) !important;
-    color: var(--white) !important;
+    /* background: var(--black) !important;
+    color: var(--white) !important; */
 }
 .black-half {
-  background: var(--black-half) !important;
+  /* background: var(--black-half) !important; */
 }
 .black button, .black-bg  button  {
   background: var(--buttonOnBlack) !important;
@@ -3294,11 +3294,11 @@ button.small-btn.icon:hover::after {
 
 /*  WHITE  */
 .white , .white-bg {
-  background: var(--white) !important;
-  color: var(--black) !important;
+  /* background: var(--white) !important;
+  color: var(--black) !important; */
 }
 .white-half {
-  background: var(--white-half) !important;
+  /* background: var(--white-half) !important; */
 }
 .white button , .white-bg  button  {
   background: var(--buttonOnWhite) !important;
