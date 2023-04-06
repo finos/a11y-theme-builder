@@ -13,14 +13,14 @@ interface Props {
 
 export const BreadcrumbsComponent: React.FC<Props> = () => {
 
-    const [colorMode, setColorMode] = useState<string>("primary");
+    const [colorMode, setColorMode] = useState<string>("default");
 
     return (
         <div>
             <HeadingSection title="Desktop" heading="Breadcrumbs" />
             <ExampleSection>
                 <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <Breadcrumbs aria-label="breadcrumb" className={"breadcrumbs"} style={{margin:"40px"}}>
+                    <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs ${colorMode}`} style={{margin:"40px"}}>
                         <Link>Home</Link>
                         <Link>Page</Link>
                         <Typography>Page</Typography>
