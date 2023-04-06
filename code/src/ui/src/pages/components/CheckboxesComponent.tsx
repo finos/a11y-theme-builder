@@ -43,6 +43,13 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                         labelPlacement="end"
                         disabled
                     />
+                    <FormControlLabel
+                        value="Four"
+                        control={<Checkbox size="small" defaultChecked/>}
+                        label="Three"
+                        labelPlacement="end"
+                        disabled
+                    />
                 </FormGroup>
                 <FormHelperText>Note: the small checkboxes DO have a target area that meets your selected minimum target area.</FormHelperText>
             </FormControl>
@@ -65,6 +72,13 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                     <FormControlLabel
                         value="Three"
                         control={<Checkbox />}
+                        label="Three"
+                        labelPlacement="end"
+                        disabled
+                    />
+                    <FormControlLabel
+                        value="Four"
+                        control={<Checkbox defaultChecked/>}
                         label="Three"
                         labelPlacement="end"
                         disabled

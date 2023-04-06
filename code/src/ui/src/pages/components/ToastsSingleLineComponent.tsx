@@ -37,11 +37,11 @@ export const ToastsSingleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Single Line with Close</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error" 
-                                action={<IconButton><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="warning" action={<IconButton><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="success" action={<IconButton><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="info" action={<IconButton><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert severity="error"
+                                action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert severity="warning" action={<IconButton className="small-btn outline icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert severity="success" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert severity="info" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
                         </Stack>
                     </div>
                 </div>
@@ -52,14 +52,14 @@ export const ToastsSingleLineComponent: React.FC<Props> = () => {
                         <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error"
-                                action={<IconButton><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
-                            <Alert severity="warning" action={<IconButton><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
-                            <Alert severity="success" action={<IconButton><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
-                            <Alert severity="info" action={<IconButton><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button sx={{margin: "12px"}}>Button</Button></Alert>
+                                action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
+                            <Alert severity="warning" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
+                            <Alert severity="success" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
+                            <Alert severity="info" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
                         </Stack>
                     </div>
                 </div>
