@@ -13,7 +13,7 @@ export interface ColorModeSelector {
 
 export const ColorModeSelector: React.FC<ColorModeSelector> = ({ colorMode, setColorMode, children }) => {
 
-    const backgroundColor:any = {default: "var(--background)", black: "white", white: "black"}
+    const backgroundColor:any = {default: "rgba(255,255,255,0)", black: "rgba(255,255,255,.5)", white: "rgba(0,0,0,.5)"}
     // const color:any = {default: "var(--on-primary)", black: "black", white: "white"}
 
     const style = {
@@ -35,8 +35,8 @@ export const ColorModeSelector: React.FC<ColorModeSelector> = ({ colorMode, setC
             <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
             <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
         </RadioGroup>
-        {children && 
-            <div className={colorMode} style={style}>
+        {children &&
+            <div style={style}>
                 {children}
             </div>
         }

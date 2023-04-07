@@ -615,7 +615,7 @@ try {
                         "& .MuiTabs-indicator": {
                             background: "var(--on-button)" ,
                             height: "var(--spacing-half)",
-                            bottom:  "calc(var(--spacing-half) + 2px)",
+                            marginBottom: "2px",
                         },
 
                     }
@@ -628,7 +628,6 @@ try {
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
                         background: "var(--button)",
                         opacity: "var(--quiet)",
-                        padding: "0 var(--spacing-2)",
                         "&:hover": {
                             opacity: "1"
                         },

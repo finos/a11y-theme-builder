@@ -21,9 +21,7 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
 
     function barGraphIcon(props?: any) {
         return (
-            <SvgIcon {...props}>
-                <path d="M2 13H8V21H2V13ZM16 8H22V21H16V8ZM9 3H15V21H9V3ZM4 15V19H6V15H4ZM11 5V19H13V5H11ZM18 10V19H20V10H18Z" />
-            </SvgIcon>
+            <i className="fa-solid fa-chart-simple"></i>
         )
     }
 
@@ -36,48 +34,48 @@ export const ButtonsSmallComponent: React.FC<Props> = () => {
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <div className="subtitle1">Primary</div>
                 <div className="buttonDemo">
-                    <Button className="small-btn CTA-Small" variant="contained">No Icon</Button>
+                    <Button className={"small-btn " + colorMode}  variant="contained">No Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="contained"
                         startIcon={barGraphIcon()}
                     >Left Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="contained"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="contained" className="small-btn icon">{barGraphIcon()}</Button>
+                    <Button variant="contained" className={"small-btn icon " + colorMode} >{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Secondary</div>
                 <div className="buttonDemo">
-                    <Button className="small-btn CTA-Small" variant="outlined">No Icon</Button>
+                    <Button className={"small-btn " + colorMode}  variant="outlined">No Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="outlined"
                         startIcon={barGraphIcon()}
                     >Left Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="outlined"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="outlined" className="small-btn icon" >{barGraphIcon()}</Button>
+                    <Button variant="outlined" className={"small-btn icon " + colorMode}  >{barGraphIcon()}</Button>
                 </div>
                 <div className="subtitle1">Tertiary</div>
                 <div className="buttonDemo">
-                    <Button className="small-btn CTA-Small" variant="text">No Icon</Button>
+                    <Button className={"small-btn " + colorMode} variant="text">No Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="text"
                         startIcon={barGraphIcon()}
                     >Left Icon</Button>
                     <Button
-                        className="small-btn CTA-Small"
+                        className={"small-btn " + colorMode}
                         variant="text"
                         endIcon={barGraphIcon()}
                     >Right Icon</Button>
-                    <Button variant="text" className="small-btn icon">{barGraphIcon()}</Button>
+                    <Button variant="text" className={"small-btn icon " + colorMode} >{barGraphIcon()}</Button>
                 </div>
             </ColorModeSelector>
             </ExampleSection>

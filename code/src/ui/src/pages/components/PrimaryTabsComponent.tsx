@@ -4,6 +4,7 @@
  */
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
+import { ColorModeSelector } from '../content/ColorModeSelector';
 import { ExampleSection } from '../content/ExampleSection';
 import { Box, FormControl, FormControlLabel, InputLabel, Typography, FormLabel, Radio, RadioGroup, Tab, Tabs } from '@mui/material';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -14,10 +15,7 @@ interface Props {
 
 export const PrimaryTabsComponent: React.FC<Props> = () => {
 
-    const [color, setColor] = useState('primary')
-    const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setColor((event.target as HTMLInputElement).value)
-    }
+    const [colorMode, setColorMode] = useState<string>("default");
 
     const [tabValue, setTabValue] = React.useState('1');
     const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -28,66 +26,45 @@ export const PrimaryTabsComponent: React.FC<Props> = () => {
         setTabIconsValue(newValue);
     };
 
-    const actualColor = (color == "primary") ? "primary" : color
-    const textColor = (color == "black") ? "white" : "black"
-
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Horizontal Primary Tabs'></HeadingSection>
             <ExampleSection>
-                <FormControl>
-                    <FormLabel id="available-color-radio-buttons-label">Available Colors:</FormLabel>
-                    <RadioGroup
-                        aria-labelledby="available-color-radio-buttons-label"
-                        value={color}
-                        name="available-color-radio-buttons"
-                        onChange={handleColorChange}
-                    >
-                        <FormControlLabel value="primary" control={<Radio />} label="Primary Color" />
-                        <FormControlLabel value="black"   control={<Radio />} label="Black" />
-                        <FormControlLabel value="white"   control={<Radio />} label="White" />
-                    </RadioGroup>
-                </FormControl>
-            <section>
-                <div className="top40" />
-                    <h6>Tab Bar</h6>
-                    <Box sx={{ bgcolor: actualColor }}>
-                        <Tabs centered
-                            value={tabValue}
-                            onChange={handleTabChange}
-                            aria-label="tab bar"
-                            sx={{
-                                "& button": {backgroundColor: actualColor, color: textColor},
-                                "& button:hover": {backgroundColor: actualColor, color: textColor},
-                                "& button:focus": {backgroundColor: actualColor, color: textColor},
-                            }}
-                        >
-                            <Tab className='secondaryTab' label="Tab 1" value="1" />
-                            <Tab className='secondaryTab' label="Tab 2" value="2" />
-                            <Tab className='secondaryTab' label="Tab 3" value="3" />
-                            <Tab className='secondaryTab' label="Tab 4" value="4" />
-                        </Tabs>
-                    </Box>
-                <h6>Tab Bar - with Icons</h6>
-                <Box sx={{ bgcolor: actualColor }}>
-                    <Tabs centered
-                        value={tabIconsValue}
-                        onChange={handleTabIconsChange}
-                        aria-label="tab bar with icons"
-                        sx={{
-                            "& button": {backgroundColor: actualColor, color: textColor},
-                            "& button:hover": {backgroundColor: actualColor, color: textColor},
-                            "& button:focus": {backgroundColor: actualColor, color: textColor},
-                        }}
-                    >
-                        <Tab className='secondaryTab' label={"Tab 1"} value="1" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab className='secondaryTab' label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab className='secondaryTab' label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
-                        <Tab className='secondaryTab' label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
-                    </Tabs>
-                </Box>
-            </section>
+              <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              <section>
+                  <div className="top40" />
+                      <h6>Tab Bar</h6>
+                      <Box>
+                          <Tabs centered
+                              className={colorMode}
+                              value={tabValue}
+                              onChange={handleTabChange}
+                              aria-label="tab bar"
+                          >
+                              <Tab className={colorMode} label="Tab 1" value="1" />
+                              <Tab className={colorMode} label="Tab 2" value="2" />
+                              <Tab className={colorMode} label="Tab 3" value="3" />
+                              <Tab className={colorMode} label="Tab 4" value="4" />
+                          </Tabs>
+                      </Box>
+                  <h6>Tab Bar - with Icons</h6>
+                  <Box>
+                      <Tabs centered
+                          className={colorMode}
+                          value={tabIconsValue}
+                          onChange={handleTabIconsChange}
+                          aria-label="tab bar with icons"
+                      >
+                          <Tab className={"left-icon " + colorMode}  label={"Tab 1"} value="1" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className={"left-icon " + colorMode}  label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className={"left-icon " + colorMode} label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className={"left-icon " + colorMode}  label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
+                      </Tabs>
+                  </Box>
+              </section>
+              </ColorModeSelector>
             </ExampleSection>
+
         </div>
     )
 }

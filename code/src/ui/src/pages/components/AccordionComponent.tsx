@@ -20,7 +20,6 @@ export const AccordionComponent: React.FC<Props> = () => {
         <div>
             <HeadingSection title="Desktop" heading="Accordions" />
             <ExampleSection>
-            <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <Accordion style={{ margin: "40px" }}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -48,7 +47,6 @@ export const AccordionComponent: React.FC<Props> = () => {
                         </p>
                     </AccordionDetails>
                 </Accordion>
-            </ColorModeSelector>
             </ExampleSection>
         </div>
     )
