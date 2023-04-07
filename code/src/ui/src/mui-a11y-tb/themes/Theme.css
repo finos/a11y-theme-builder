@@ -1714,9 +1714,11 @@ h6 {
     text-transform: var(--captionTextTransform) !important;
     text-decoration:  var(--captionTextDecoration) !important;
 }
+
 .breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
   margin-right: var(--spacing-1);
 }
+
 .breadcrumbs .MuiBreadcrumbs-li a, .breadcrumbs .MuiBreadcrumbs-li:focus a, .breadcrumbs .MuiBreadcrumbs-li:active a {
     color: var(--hotlink) !important;
     text-decoration: var(--hotlink-decoration);
@@ -1745,6 +1747,7 @@ h6 {
 .breadcrumbs.white .MuiBreadcrumbs-separator {
   color: var(--white) !important;
 }
+
 .black.breadcrumbs  .MuiBreadcrumbs-li a {
   color: var(--black) !important;
   text-decoration-color: var(--black);
@@ -1807,6 +1810,7 @@ h6 {
 .darkmode .breadcrumbs.white .MuiBreadcrumbs-separator {
   color: var(--dm-white) !important;
 }
+
 .darkmode .breadcrumbs:not(.back-breadcrumb).white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--dm-white) !important;
 }

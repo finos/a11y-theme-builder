@@ -48,6 +48,7 @@ import { MenusComponent } from '../../components/MenusComponent';
 
 import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
+import { SlidersComponent } from '../../components/SlidersComponent';
 
 interface Props {
     user: any;
@@ -192,6 +193,8 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                     <LeftNavItem text={"Radio Buttons"} value="radioButtons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("radioButtons")}} disabled={disabled}/>
 
+                    <LeftNavItem text={"Sliders"} value="sliders" indent={1} selected={showComponent} onClick={()=> {setShowComponent("sliders")}} disabled={disabled}/>
+                    
                     <LeftNavItem text={"Switch"} value="switch" indent={1} selected={showComponent} onClick={()=> {setShowComponent("switch")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Tabs - Primary"} value="tabsPrimary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsPrimary")}} disabled={disabled}/>
@@ -303,6 +306,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "radioButtons" &&
                         <RadioButtonsComponent />
+                    }
+                    {showComponent === "sliders" &&
+                        <SlidersComponent />
                     }
                     {showComponent === "switch" &&
                         <SwitchComponent />

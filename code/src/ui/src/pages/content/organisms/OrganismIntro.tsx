@@ -14,8 +14,8 @@ const OrganismIntro: React.FC = () => {
                 <h5>Getting Started with Organisms</h5>
                 <div>
                     <p>Next, you will assign atoms and molecules to create more complex components.</p>
-                    <p>There are both desktop and mobile component.</p>
-                    <p>You can at any point preview your designs, the components created and the outputted code.</p>
+                    <p>There are both desktop and mobile components.</p>
+                    <p>At any point you can preview your designs, the components created and the outputted code.</p>
                 </div>
             </div>
         </>

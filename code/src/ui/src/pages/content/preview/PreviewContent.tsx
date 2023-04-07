@@ -64,11 +64,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     </div>
                     <LeftNavText>Device</LeftNavText>
                     <div style={divStyle}>
-                        <NavSwitch defaultChecked leftLabel="Desktop" rightLabel="Mobile" inputProps={{ 'aria-label': '' }} />
+                        <NavSwitch leftLabel="Desktop" rightLabel="Mobile" inputProps={{ 'aria-label': '' }} />
                     </div>
                     <LeftNavText>Mode</LeftNavText>
                     <div style={divStyle}>
-                        <NavSwitch defaultChecked leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
+                        <NavSwitch leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
                     </div>
                     <LeftNavItem text={"Desktop Preview Settings"} value="desktopPreview" indent={0} onClick={()=> {setDisplayDesktopPreview(!displayDesktopPreview)}}>
                         {displayDesktopPreview ? <ExpandLess /> : <ExpandMore />}
