@@ -304,9 +304,6 @@ try {
                         "&.Mui-checked": {
                             color: "var(--button) !important",
                         },
-                        "&.Mui-disabled": {
-                            color: "var(--input-disabled)"
-                        },
                     }
                 }
             },
@@ -440,12 +437,8 @@ try {
                         "&.Mui-checked":{
                             color: "var(--button)",
                         },
-                        "&.Mui-disabled":{
-                            opacity: "var(--disable)",
-                        },
                         "&.Mui-checked.Mui-disabled":{
                             color: "var(--button)",
-                            opacity: "var(--disabled)",
                         },
                     },
                 },
@@ -455,13 +448,6 @@ try {
                     root: {
                         "&.Mui-checked":{
                             color: "var(--button)",
-                        },
-                        "&.Mui-disabled":{
-                            opacity: "var(--disable)",
-                        },
-                        "&.Mui-checked.Mui-disabled":{
-                            color: "var(--button)",
-                            opacity: "var(--disabled)",
                         },
                     },
                 },
@@ -671,6 +657,40 @@ try {
                         "&.Mui-selected, &.Mui-selected:focus": {
                             opacity: "1"
                         },
+                    }
+                }
+            },
+            MuiFormControlLabel: {
+                styleOverrides: {
+                    root: {
+                      background: "transparent !important",
+                      color: "var(--on-background)",
+                      "& .MuiTypography-root": {
+                        color: "var(--on-background)",
+                      },
+                      "&.black": {
+                        background: "transparent !important",
+                        color: "var(--black) !important",
+                        "& svg path": {
+                          fill: "var(--black) !important",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "var(--black) !important",
+                        },
+                      },
+                      "&.white": {
+                        background: "transparent !important",
+                        color: "var(--white) !important",
+                        "& svg path": {
+                          fill: "var(--white) !important",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "var(--white) !important",
+                        },
+                      },
+                      "&.Mui-disabled": {
+                        opacity: "var(--disabled)",
+                      },
                     }
                 }
             },
@@ -937,14 +957,15 @@ try {
                             fill: "var(--on-chip)",
                         },
                         "& .MuiAvatar-root": {
-                            border: "solid calc(var(--border-1) * var(--on-chip)) var(--accent)",
+                            border: "solid calc(var(--border-1) * var(--avatar-border)) var(--on-chip) !important",
+                            magin: "0px !important",
                         },
                         ".darkmode &::before": {
                             background: "var(--dm-chip)",
                             color: "var(--dm-onchip)",
                         },
                         ".darkmode & .MuiAvatar-root": {
-                            border: "1px solid calc(var(--border-1) * var(--dm-on-chip)) var(--accent)",
+                            border: "1px solid calc(var(--border-1) * var(--avatar-border)) var(--dm-white) !important",
                         },
 
 
