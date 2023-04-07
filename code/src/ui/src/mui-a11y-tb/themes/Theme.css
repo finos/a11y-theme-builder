@@ -227,8 +227,8 @@
     --buttonOnWhite:'';
     --buttonHalfOnWhite:'';
     --onbuttonOnWhite:'';
-    --linkOnWhite:'';
-    --linkDecorationOnWhite: '';
+    --hotlinkOnWhite:'';
+    --hotlinkDecorationOnWhite: '';
     --iconOnWhite:'';
     --dmbuttonOnWhite: '';
     --dmbuttonHalfOnWhite: '';
@@ -236,8 +236,8 @@
     --buttonOnBlack:'';
     --buttonHalfOnBlack:'';
     --onbuttonOnBlack:'';
-    --linkOnBlack:'';
-    --linkDecorationOnBlack: '';
+    --hotlinkOnBlack:'';
+    --hotlinkDecorationOnBlack: '';
     --iconOnBlack: '';
     --dmiconOnBlack: '';
     --dm-on-accent:  #121212;
@@ -285,7 +285,7 @@
     --buttonOnTertiary: '';
     --buttonHalfOnTertiary: '';
     --onbuttonOnTertiary: '';
-    --linkOnTertiary: '';
+    --hotlinkOnTertiary: '';
     --iconOnTertiary: '';
     --dmbuttonOnTertiary: '';
     --dmbuttonHalfOnTertiary: '';
@@ -326,7 +326,7 @@
     --dmbuttonOnGradient3: '';
     --dmbuttonHalfOnGradient3: '';
     --dmonbuttonOnGradient3: '';
-    --linkOnGradient3: '';
+    --hotlinkOnGradient3: '';
     --dmlinkOnGradient3: '';
     /* text gradient */
     --text-gradient-a: var(--cobalt-300);
@@ -369,7 +369,6 @@
     --dm-on-input: var(--dm-white);
     --dm-input-disabled: rgba(0,0,0,.3);
     --dm-input-hover: rgba(255,255,255,.12);
-
     /* focus */
     --focusBlur: var(--spacing-half);
     --focusBorder: 2px;
@@ -398,7 +397,7 @@
     --dm-on-success:  var(--black);
     --dm-on-info: var(--black);
     /* Hotlinks */
-    --hotlink: #0000ff;
+    --hotlink: blue;
     --hotlink-visited: #800080;
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
@@ -715,15 +714,12 @@
     --on-button: var(--on-cobalt-500);
     --button: var(--cobalt-500);
     --button-half: var(--cobalt-300);
-
-    --dm-on-button: var(--dm-on-cobalt-300);
+    --dm-on-button: var(--dm-white);
     --dm-button: var(--dm-cobalt-300);
     --dm-button-half: var(--dm-cobalt-300);
-
     --button-border: 2;
     --button-radius: 4;
     --button-minwidth: 10;
-
     --button-padding: 3;
     --button-height: 5.5;
     --buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
@@ -740,13 +736,11 @@
     --sm-buttonTextDecoration: var(--CTATextDecoration);
     --sm-buttonTextTransform: none;
     --sm-buttonCharacterSpacing: var(--CTALetterSpacing);
-
     --groupButton-radius: calc(var(--radius-1) * var(--button-radius) * 1.6);
     --groupButtonBG: '#ffffff';
     --on-groupButtonBG: var(--textDark);
     --dm-groupButtonBG: rgba(0,0,0,.6);
     --dm-on-groupButtonBG: var(--dm-dmwhite);
-
     /* chip */
     --chip: var(--primary-100);
     --on-chip: var(--textDark);
@@ -761,7 +755,6 @@
     --chipLetterSpacing:  var(--captionLetterSpacing);
     --chip-bevel: var(--bevel-0);
     --chip-elevation: var(--elevation-0);
-
     /* switch */
     --switch-height: var(--spacing-3);
     --switch-radius: 3;
@@ -838,9 +831,7 @@
     --popoverElvation:  var(--elevation-0);
     --popoverShadow: var(--popoverElvation), var(--popoverBevel);
     --popoverRadius : 2;
-
     /* ORGANISMS */
-
     /* navbar Primary */
     --navbarPrimary-font: 16px/16px sans-serif;
     --navbarPrimary-character-spacing: 1.25%;
@@ -862,7 +853,6 @@
     --navbarSecondary-stickyTop: 48px;
     --dm-navbarSecondary: var(--dm-primary);
     --dm-on-navbarSecondary: var(--dm-on-primary);
-
     /* hero */
     --hero-gap: var(--spacing-3);
     --hero-padding: var(--spacing-3);
@@ -874,7 +864,6 @@
     --hero-heroBodySpacing: var(--body1LetterSpacing);
     --hero-title-gap: 16px;
     --hero-justify-content: flex-start;
-
     /* tables */
     --tableheaderTopography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
     --tableheaderSpacing: var(--label-1LetterSpacing);
@@ -904,11 +893,8 @@
     --mobile-card-gap: var(--spacing-1);
     --mobile-primaryPanel:  var(--white);
     --on-mobile-primaryPanel: var(--on-white);
-
     /* images */
     /* --dm-image: rgba(0,0,0,.4); */
-
-
     /* Charts Colors */
     --chart-bg: #ffffff;
     --chart-bg-border: var(--primary-100);
@@ -1009,13 +995,11 @@
   --primaryFont: "Open Sans";
   --secondaryFont: "Montserrat";
   --baseFont: 16px;
-
   /* Display & Header styles */
   --headerChange: 42;
   --headerWeight: 400;
   --headerFamily: var(--secondaryFont);
   --bodyFamily: var(--primaryFont);
-
   /* Dislay 1*/
   --Display1FontSize:  calc(var(--baseFont) * calc(1 + calc(var(--headerChange)/ 100 * 9)));
   --Display1FontFamily: var(--headerFamily);
@@ -1265,155 +1249,7 @@
   --statTextDecoration: none;
   --statTextTransform: uppercase;
   --statCharacterSpacing: 1.5%;
-
-
-
-
-
-  /* BC Added */
-  --cobalt-0: rgb(228, 235, 245);
-  --on-cobalt-0: var(--textDark);
-  --cobalt-100: rgb(197, 211, 233);
-  --on-cobalt-100: var(--textDark);
-  --cobalt-200: rgb(166, 187, 221);
-  --on-cobalt-200: var(--textDark);
-  --cobalt-300: rgb(135, 164, 209);
-  --on-cobalt-300: var(--textDark);
-  --cobalt-400: rgb(105, 141, 197);
-  --on-cobalt-400: var(--textDark);
-  --cobalt-500: rgb(75, 118, 185);
-  --on-cobalt-500: var(--textLight);
-  --cobalt-600: rgb(55, 89, 153);
-  --on-cobalt-600: var(--textLight);
-  --cobalt-700: rgb(36, 62, 122);
-  --on-cobalt-700: var(--textLight);
-  --cobalt-800: rgb(18, 35, 93);
-  --on-cobalt-800: var(--textLight);
-  --cobalt-900: rgb(0, 9, 64);
-  --on-cobalt-900: var(--textLight);
-  --dm-cobalt-0: rgb(218, 227, 241);
-  --dm-on-cobalt-0: var(--dm-textDark);
-  --dm-cobalt-100: rgb(189, 205, 230);
-  --dm-on-cobalt-100: var(--dm-textDark);
-  --dm-cobalt-200: rgb(160, 183, 218);
-  --dm-on-cobalt-200: var(--dm-textDark);
-  --dm-cobalt-300: rgb(131, 161, 207);
-  --dm-on-cobalt-300: var(--dm-textDark);
-  --dm-cobalt-400: rgb(103, 139, 196);
-  --dm-on-cobalt-400: var(--dm-textDark);
-  --dm-cobalt-500: rgb(75, 118, 185);
-  --dm-on-cobalt-500: var(--dm-textDark);
-  --dm-cobalt-600: rgb(55, 89, 153);
-  --dm-on-cobalt-600: var(--dm-textDark);
-  --dm-cobalt-700: rgb(36, 62, 122);
-  --dm-on-cobalt-700: var(--dm-textDark);
-  --dm-cobalt-800: rgb(18, 35, 93);
-  --dm-on-cobalt-800: var(--dm-textDark);
-  --dm-cobalt-900: rgb(0, 9, 64);
-  --dm-on-cobalt-900: var(--dm-textDark);
-
 }
-
-.cobalt-050-bg {
-    background: var(--cobalt-050) !important;
-    color: var(--on-cobalt-050) !important;
-}
-
-.cobalt-100-bg {
-    background: var(--cobalt-100) !important;
-    color: var(--on-cobalt-100) !important;
-}
-
-.cobalt-200-bg {
-    background: var(--cobalt-200) !important;
-    color: var(--on-cobalt-200) !important;
-}
-
-.cobalt-300-bg {
-    background: var(--cobalt-300) !important;
-    color: var(--on-cobalt-300) !important;
-}
-
-.cobalt-400-bg {
-    background: var(--cobalt-400) !important;
-    color: var(--on-cobalt-400) !important;
-}
-
-.cobalt-500-bg {
-    background: var(--cobalt-500) !important;
-    color: var(--on-cobalt-500) !important;
-}
-
-.cobalt-600-bg {
-    background: var(--cobalt-600) !important;
-    color: var(--on-cobalt-600) !important;
-}
-
-.cobalt-700-bg {
-    background: var(--cobalt-700) !important;
-    color: var(--on-cobalt-700) !important;
-}
-
-.cobalt-800-bg {
-    background: var(--cobalt-800) !important;
-    color: var(--on-cobalt-800) !important;
-}
-
-.cobalt-900-bg {
-    background: var(--cobalt-900) !important;
-    color: var(--on-cobalt-900) !important;
-}
-
-.darkmode-cobalt-050-bg {
-    background: var(--cobalt-050) !important;
-    color: var(--on-cobalt-050) !important;
-}
-
-.darkmode-cobalt-100-bg {
-    background: var(--cobalt-100) !important;
-    color: var(--on-cobalt-100) !important;
-}
-
-.darkmode-cobalt-200-bg {
-    background: var(--cobalt-200) !important;
-    color: var(--on-cobalt-200) !important;
-}
-
-.darkmode-cobalt-300-bg {
-    background: var(--cobalt-300) !important;
-    color: var(--on-cobalt-300) !important;
-}
-
-.darkmode-cobalt-400-bg {
-    background: var(--cobalt-400) !important;
-    color: var(--on-cobalt-400) !important;
-}
-
-.darkmode-cobalt-500-bg {
-    background: var(--cobalt-500) !important;
-    color: var(--on-cobalt-500) !important;
-}
-
-.darkmode-cobalt-600-bg {
-    background: var(--cobalt-600) !important;
-    color: var(--on-cobalt-600) !important;
-}
-
-.darkmode-cobalt-700-bg {
-    background: var(--cobalt-700) !important;
-    color: var(--on-cobalt-700) !important;
-}
-
-.darkmode-cobalt-800-bg {
-    background: var(--cobalt-800) !important;
-    color: var(--on-cobalt-800) !important;
-}
-
-.darkmode-cobalt-900-bg {
-    background: var(--cobalt-900) !important;
-    color: var(--on-cobalt-900) !important;
-}
-
 /* Typography */
 /* Headers */
 h1 {
@@ -1742,129 +1578,117 @@ h6 {
     flex: none;
     box-shadow: var(--avatar-shadow);
 }
-
 .avatar .darkmode {
     background-size: 100%;
 }
-
 .avatar.xxs {
     width: var(--spacing-3);
     height: var(--spacing-3);
-    border: solid var(--avatar-border) var(--accent);
 }
-
 .avatar.xs {
     width: var(--spacing-4);
     height: var(--spacing-4);
-    border: solid var(--avatar-border) var(--accent);
 }
-
 .avatar.sm {
     width: var(--min-target);
     height: var(--min-target);
-    border: solid var(--avatar-border) var(--accent);
 }
-
 .avatar.md {
     width: var(--spacing-7);
     height: var(--spacing-7);
-    border: solid var(--avatar-border) var(--accent);
 }
-
-.black.avatar.xxs,
-.black.avatar.xs,
-.black.avatar.sm,
-.black.avatar.md {
-    border: solid var(--avatar-border) var(--black) !important;
-    /* background-size: 100%; */
+.darkmode .MuiAvatar-root.xxs,
+.darkmode .MuiAvatar-root.xs,
+.darkmode .MuiAvatar-root.sm,
+.darkmode .MuiAvatar-root.md {
+  background: var(--dm-button) !important;
+  border: solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important;
+  /* background-size: 100%; */
 }
-
-.white.avatar.xxs,
-.white.avatar.xs,
-.white.avatar.sm,
-.white.avatar.md {
-    border: solid var(--avatar-border) var(--white) !important;
+.darkmode .MuiAvatar-root.xxs svg path,
+.darkmode .MuiAvatar-root.xs svg path,
+.darkmode .MuiAvatar-root.sm svg path,
+.darkmode .MuiAvatar-root.md svg path {
+  fill: var(--dm-on-button)
+  /* background-size: 100%; */
 }
-
+.darkmode .black.MuiAvatar-root.xxs,
+.darkmode .black.MuiAvatar-root.xs,
+.darkmode .black.MuiAvatar-root.sm,
+.darkmode .black.MuiAvatar-root.md {
+  background: var(--black) !important;
+  border: solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important;
+  /* background-size: 100%; */
+}
+.darkmode .black.MuiAvatar-root.xxs svg path,
+.darkmode .black.MuiAvatar-root.xs svg path,
+.darkmode .black.MuiAvatar-root.sm svg path,
+.darkmode .black.MuiAvatar-root.md svg path {
+  fill: var(--dm-white)
+  /* background-size: 100%; */
+}
+.darkmode .white.MuiAvatar-root.xxs,
+.darkmode .white.MuiAvatar-root.xs,
+.darkmode .white.MuiAvatar-root.sm,
+.darkmode .white.MuiAvatar-root.md {
+    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-white) !important;
+    background: var(--dm-white) !important;
+}
+.darkmode .white.MuiAvatar-root.xxs svg path,
+.darkmode .white.MuiAvatar-root.xs svg path,
+.darkmode .white.MuiAvatar-root.sm svg path,
+.darkmode .white.MuiAvatar-root.md svg path {
+   fill: var(--black)
+}
 .avatar.lg {
     width: var(--spacing-10);
     height: var(--spacing-10);
-    border: solid var(--avatar-border-lg) var(--accent);
 }
-
 .avatar.xl {
     width: calc(var(--spacing-10) * 2);
     height: calc(var(--spacing-10) * 2);
-    border: solid var(--avatar-border-lg) var(--accent);
 }
 
 .avatar.xxl {
     width: calc(var(--spacing-10) * 2.6);
     height: calc(var(--spacing-10) * 2.6);
-    border: solid var(--avatar-border-lg) var(--accent);
 }
-
-.black.avatar.lg,
-.black.avatar.xl,
-.black.avatar.xxl {
-    border: solid var(--avatar-border-lg) var(--black) !important;
-    background-size: 100% !important;
+.darkmode .MuiAvatar-root.lg,
+.darkmode .MuiAvatar-root.xl,
+.darkmode .MuiAvatar-root.xxl {
+    background: var(--dm-button) !important;
+    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-button) !important;
 }
-
-.white.avatar.lg,
-.white.avatar.xl,
-.white.avatar.xxl {
-    border: solid var(--avatar-border-lg) var(--white) !important;
+.darkmode .MuiAvatar-root.lg svg path,
+.darkmode .MuiAvatar-root.xl svg path,
+.darkmode .MuiAvatar-root.xxl svg path {
+    fill: var(--dm-on-button) !important;
 }
-  
-/* dark mode avatars */
-.darkmode .avatar.xxs {
-    border: solid var(--avatar-border) var(--dm-accent);
+.darkmode .black.MuiAvatar-root.lg,
+.darkmode .black.MuiAvatar-root.xl,
+.darkmode .black.MuiAvatar-root.xxl {
+    background: var(--black) !important;
+    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--black) !important;
 }
-
-.darkmode .avatar.xs {
-    border: solid var(--avatar-border) var(--dm-accent);
+.darkmode .black.MuiAvatar-root.lg svg path,
+.darkmode .black.MuiAvatar-root.xl svg path,
+.darkmode .black.MuiAvatar-root.xxl svg path {
+    fill: var(--dm-white) !important;
 }
-
-.darkmode .avatar.sm {
-    border: solid var(--avatar-border) var(--dm-accent);
+.darkmode .white.MuiAvatar-root.lg,
+.darkmode .white.MuiAvatar-root.xl,
+.darkmode .white.MuiAvatar-root.xxl {
+    border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--dm-white) !important;
+    background: var(--dm-white) !important;
 }
-
-.darkmode .avatar.md {
-    border: solid var(--avatar-border) var(--dm-accent);
+.darkmode .white.MuiAvatar-root.lg svg path,
+.darkmode .white.MuiAvatar-root.xl svg path,,
+.darkmode .white.MuiAvatar-root.xxl svg path, {
+    fill: var(--black);
 }
-
-.darkmode .avatar.lg {
-    border: solid var(--avatar-border-lg) var(--dm-accent);
-}
-
-.darkmode .avatar.xl {
-    border: solid var(--avatar-border-lg) var(--dm-accent);
-}
-
-.darkmode .avatar.xxl {
-    border: solid var(--avatar-border-lg) var(--dm-accent);
-}
-
 .avatar.centered {
     margin: auto !important
 }
-
-.darkmode .black.avatar.xxs,
-.darkmode .black.avatar.xs,
-.darkmode .black.avatar.sm,
-.darkmode .black.avatar.md {
-    border: solid var(--avatar-border) var(---dm-black) !important;
-    background-size: 100%;
-}
-
-.darkmode .black.avatar.lg,
-.darkmode .black.avatar.xl,
-.darkmode .black.avatar.xxl {
-    border: solid var(--avatar-border-lg) var(--dm-black) !important;
-    background-size: 100% !important;
-}
-
 /* Breadcrumbs  */
 .breadcrumbs,
 .white.breadcrumbs,
@@ -1874,33 +1698,118 @@ h6 {
 .darkmode .white.breadcrumbs {
     gap: var(--spacing-1);
     background: transparent !important;
+    font-family: var(--captionFontFamily) !important;
+    font-weight: var(--captionFontWeight) !important;
+    font-size: var(--captionFontSize) !important;
+    line-height: var(--captionLineHeight) !important;
+    letter-spacing: var(--captionLetterSpacing) !important;
+    text-transform: var(--captionTextTransform) !important;
+    text-decoration:  var(--captionTextDecoration) !important;
 }
-
-.white.breadcrumbs {
-    color: var(--on-black) !important;
+.breadcrumbs .MuiBreadcrumbs-li a, .breadcrumbs .MuiBreadcrumbs-li:focus a, .breadcrumbs .MuiBreadcrumbs-li:active a {
+    color: var(--hotlink) !important;
+    text-decoration: var(--hotlink-decoration);
+    text-decoration-color: var(--hotlink);
 }
-
-.black.breadcrumbs {
-    color: var(--on-white) !important;
+.breadcrumb .MuiBreadcrumbs-separator {
+  color: var(--on-background);
+  opacity: var(--quiet);
 }
-
-.primary .breadcrumbs a {
-    color: var(--on-primary) !important;
+.breadcrumbs .MuiBreadcrumbs-li:hover a{
+    text-decoration: var(--hotlink-hover-decoration);
+    text-decoration-color: var(--hotlink);
 }
-
-.white.breadcrumbs a {
-    color: var(--on-black) !important;
-    background: transparent !important;
+.breadcrumbs .MuiBreadcrumbs-li:visited a{
+  color: var(--hotlink) !important;
+  text-decoration: var(--hotlink-decoration);
+  text-decoration-color: var(--hotlink);
+  opacity: .7
 }
-
-.black.breadcrumbs a {
-    color: var(--on-white) !important;
-    background: transparent !important;
+.breadcrumbs.white .MuiBreadcrumbs-li a, .breadcrumbs.white .MuiBreadcrumbs-li:focus a, .breadcrumbs.white .MuiBreadcrumbs-li:active a{
+  color: var(--white) !important;
+  text-decoration: underline !important;
+  background: transparent !important;
+  text-decoration-color: var(--white);
 }
-
-.default .breadcrumbs a {
-    color: var(--on-primary) !important;
-    background: transparent !important;
+.breadcrumbs.white .MuiBreadcrumbs-separator {
+  color: var(--white) !important;
+}
+.black.breadcrumbs  .MuiBreadcrumbs-li a{
+  color: var(--black) !important;
+  text-decoration-color: var(--black);
+  text-decoration: underline !important;
+  background: transparent !important;
+}
+.breadcrumbs.black .MuiBreadcrumbs-separator {
+  color: var(--black) !important;
+}
+.white.breadcrumbs .MuiBreadcrumbs-li:hover a, .black.breadcrumbs .MuiBreadcrumbs-li:hover a {
+  text-decoration: none !important;
+}
+.white.breadcrumbs:visited, .black.breadcrumbs:visited a{
+  text-decoration: underline !important;
+  opacity: .7
+}
+.breadcrumbs .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  text-decoration: none !important;
+  font-style: italic !important;
+  font-family: var(--captionFontFamily);
+  font-weight: var(--captionFontWeight) !important;
+  font-size: var(--captionFontSize) !important;
+  line-height: var(--captionLineHeight) !important;
+  letter-spacing: var(--captionLetterSpacing) !important;
+  text-transform: var(--captionTextTransform) !important;
+  text-decoration:  var(--captionTextDecoration) !important;
+}
+.breadcrumbs.black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  color: var(--black) !important;
+}
+.breadcrumbs.white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  color: var(--white) !important;
+}
+/* dark mode bread crumbs */
+.darkmode .breadcrumbs .MuiBreadcrumbs-li a, .darkmode .breadcrumbs .MuiBreadcrumbs-li:focus a, .darkmode .breadcrumbs .MuiBreadcrumbs-li:active a {
+    color: var(--dm-hotlink) !important;
+    text-decoration: var(--dm-hotlink-decoration);
+    text-decoration-color: var(--dm-hotlink);
+}
+.darkmode .breadcrumb .MuiBreadcrumbs-separator {
+  color: var(--dm-on-background);
+  opacity: var(--quiet);
+}
+.darkmode .breadcrumbs .MuiBreadcrumbs-li:hover a{
+    text-decoration: var(--dm-hotlink-hover-decoration);
+    text-decoration-color: var(--dm-hotlink);
+}
+.darkmode .breadcrumbs .MuiBreadcrumbs-li:visited a{
+  color: var(--dm-hotlink) !important;
+  text-decoration: var(--dm-hotlink-decoration);
+  text-decoration-color: var(--dm-hotlink);
+  opacity: .7
+}
+.darkmode .breadcrumbs.white .MuiBreadcrumbs-li a, .breadcrumbs.white .MuiBreadcrumbs-li:focus a, .breadcrumbs.white .MuiBreadcrumbs-li:active a{
+  color: var(--dm-white) !important;
+  text-decoration: underline !important;
+  background: transparent !important;
+  text-decoration-color: var(--dm-white);
+}
+.darkmode .breadcrumbs.white .MuiBreadcrumbs-separator {
+  color: var(--dm-white) !important;
+}
+.darkmode .breadcrumbs.white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  color: var(--dm-white) !important;
+}
+.darkmode .breadcrumbs.black .MuiBreadcrumbs-li a, .breadcrumbs.black .MuiBreadcrumbs-li:focus a, .breadcrumbs.black .MuiBreadcrumbs-li:active a{
+  color: var(--black) !important;
+  text-decoration: underline !important;
+  background: transparent !important;
+  text-decoration-color: var(--black);
+}
+.darkmode .breadcrumbs.black .MuiBreadcrumbs-separator {
+  color: var(--black) !important;
+}
+.darkmode .breadcrumbs.black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  color: var(--black) !important;
 }
 
 /* Buttons */
@@ -1928,27 +1837,17 @@ button {
   box-shadow: var(--button-shadow);
   border: 0px !important;
 }
-
+button .fa-solid, button .fa-regular {
+  font-size: 20px !important
+}
 button.wide {
   width: 100%;
 }
-
 button.icon {
   padding: 0 !important;
   min-width: calc(var(--spacing-1) * var(--button-height));
   flex: none;
 }
-
-.black button {
-  background: var(--white) !important;
-  color: var(--on-white) !important;
-}
-
-.white button {
-  background: var(--on-white) !important;
-  color: var(--white);
-}
-
 button::after {
   position: absolute;
   top: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
@@ -1962,15 +1861,12 @@ button::after {
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
-
 .black button::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--white) !important;
 }
-
 .white button::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--black) !important;
 }
-
 button:hover::after {
   opacity: .5;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -1979,7 +1875,6 @@ button:hover::after {
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-
 button:focus::after {
   opacity: 1;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -1988,7 +1883,6 @@ button:focus::after {
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-
 button.dropdown-toggle {
   background: var(--surface) !important;
   color: var(--on-background) !important;
@@ -2001,11 +1895,9 @@ button.dropdown-toggle {
   text-transform: none !important;
   box-shadow: none !important;
 }
-
 .more button.dropdown-toggle {
   padding-right: var(--spacing-1) !important;
 }
-
 button.dropdown-toggle::after {
   position: absolute;
   right: 16px;
@@ -2021,17 +1913,6 @@ button.dropdown-toggle::after {
   border-bottom: 0 !important;
   border-left: 0.3em solid transparent !important;
 }
-
-button svg {
-  width: var(--spacing-3) !important;
-  height: var(--spacing-3)!important;
-}
-
-button.small-btn  svg {
-  width: var(--spacing-2) !important;
-  height: var(--spacing-2) !important;
-}
-
 button.small-btn {
   flex-shrink: 0;
   background: transparent !important;
@@ -2047,22 +1928,18 @@ button.small-btn {
   white-space: nowrap;
   flex-wrap: nowrap;
 }
-
 button.small-btn.icon::before {
   padding: 0 !important;
   min-width: calc(var(--sm-button-height) + 2px);
 }
-
 .black button.small-btn {
   background: transparent !important;
   color: var(--on-white) !important;
 }
-
 .white button.small-btn {
   background: transparent !important;
   color: var(--white) !important;
 }
-
 button.small-btn::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
@@ -2073,22 +1950,19 @@ button.small-btn::after {
   right: calc(0px - 2px - var(--animation-focus-distance));
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
-
 button.small-btn:hover::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
-  opacity: 1;
+  opacity: var(--hover);
   left: -4px;
   right: -4px;
 }
-
 button.small-btn:focus::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
 }
-
 button.small-btn::before {
   position: absolute;
   top: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
@@ -2103,15 +1977,12 @@ button.small-btn::before {
   box-shadow: var(--button-shadow);
   opacity: 1;
 }
-
 .white button.small-btn::before {
   background: var(--on-white) !important;
 }
-
 .black button.small-btn::before {
   background: var(--white) !important;
 }
-
 button.dropdown-toggle::before {
   position: absolute;
   top: 0px;
@@ -2123,7 +1994,6 @@ button.dropdown-toggle::before {
   border-radius: calc(var(--radius-1) * var(--button-radius));
   opacity: 0;
 }
-
 button.left-icon {
   padding-left: calc(var(--spacing-1) * var(--button-padding) - var(--spacing-half));
 }
@@ -2131,56 +2001,21 @@ button.left-icon {
 button.right-icon {
   padding-left: calc(var(--spacing-1) * var(--button-padding) - var(--spacing-half));
 }
-
-button .inline-icon path {
-  fill: var(--on-button) !important;
-}
-
-button.MuiButton-outlined .inline-icon path,
-button.MuiButton-text .inline-icon path {
-  fill: var(--button) !important;
-}
-
-.black button .inline-icon {
-  fill: var(--white);
-}
-
-.black button .inline-icon path {
-  fill: var(--on-white) !important;
-}
-
-.white button .inline-icon path {
-  fill: var(--white) !important;
-}
-
-.white button.MuiButton-outlined .inline-icon path,
-.white button.MuiButton-text .inline-icon path {
-  fill: var(--on-white) !important;
-}
-
-.black button.MuiButton-outlined .inline-icon path,
-.black button.MuiButton-text .inline-icon path {
-  fill: var(--white) !important;
-}
-
 button.MuiButton-outlined,
 button.MuiButton-text {
   background: none !important;
   color: var(--button) !important;
 }
-
 .black button.MuiButton-outlined,
 .black button.MuiButton-text {
   background: none !important;
   color: var(--white) !important;
 }
-
 .white button.MuiButton-outlined,
 .white button.MuiButton-text {
   background: none !important;
   color: var(--on-white) !important;
 }
-
 button.MuiButton-outlined::before {
   position: absolute;
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
@@ -2233,7 +2068,6 @@ button.MuiButtonGroup-groupedOutlinedVertical:not(:first-of-type)::before {
    */
   box-shadow: none;
 }
-
 button.MuiButtonGroup-groupedVertical {
   /* overrides align-self for buttons in a vertical button group
    * so that they'll have the same size and stretch the width of
@@ -2242,56 +2076,24 @@ button.MuiButtonGroup-groupedVertical {
   align-self: normal;
 }
 /* end - MuiButtonGroup */
-
-
 .black button.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--white);
 }
-
 .white button.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--on-white);
 }
-
-button.MuiButton-outlined .inline-icon,
-button.MuiButton-text .inline-icon {
-  fill: var(--button);
-}
-
-.black button .inline-icon,
-.black button.MuiButton-text .inline-icon {
-  fill: var(--on-white);
-}
-
-.black button.MuiButton-outlined .inline-icon,
-.black button.MuiButton-text .inline-icon {
-  fill: var(--white);
-}
-
-.white button .inline-icon,
-.white button.MuiButton-text .inline-icon {
-  fill: var(--white);
-}
-
-.white button.MuiButton-outlined .inline-icon,
-.white button.MuiButton-text .inline-icon {
-  fill: var(--on-white);
-}
-
 button.MuiButton-outlined::after,
 button.MuiButton-text::after {
   background: var(--button);
 }
-
 .black button.MuiButton-outlined::after,
 .black button.MuiButton-text::after {
   background: var(--white);
 }
-
 .white button.MuiButton-outlined::after,
 .white button.MuiButton-text::after {
   background: var(--on-white);
 }
-
 button.small-btn.MuiButton-text::before {
   position: absolute;
   top: calc(var(--sm-button-space)/2);
@@ -2302,7 +2104,9 @@ button.small-btn.MuiButton-text::before {
   background: transparent !important;
   box-shadow: var(--button-shadow) !important;
 }
-
+.small-btn .fa-solid, .small-btn .fa-regular {
+  font-size: 14px !important
+}
 button.small-btn.icon::before {
   left: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   right: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
@@ -2311,246 +2115,206 @@ button.small-btn.icon:hover::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
-  opacity: 1;
+  opacity: var(--hover);
   left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
   right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
-
-/* darkmode buttons */
-.darkmode > button {
-  background: var(--dm-button) !important;
-  color: var(--dm-on-button) !important;
-}
-
-.darkmode > button .inline-icon svg path {
-  fill: var(--dm-on-button);
-}
-
-.darkmode .white > button {
-  color: var(--dm-on-white) !important;
-  background: var(--dm-white) !important;
-}
-
-.darkmode .white > button {
-  color: var(--dm-white);
-  background: var(--dm-nearblack) !important;
-}
-
-.darkmode .white > button.tab {
-  background: none !important;
-}
-
-.darkmode > button::after {
-  background: none !important;
-}
-
-.darkmode > button.MuiTab-root {
-  background: none !important;
-}
-
-.darkmode button.MuiTab-root::after {
-  background: unset !important;
-}
-
-.darkmode button.dropdown-toggle {
-  background: var(--dm-white) !important;
-  color: var(--dm-on-white) !important;
-}
-
-.darkmode button.small-btn::after {
-  border: var(--border-1) solid var(--dm-button) !important;
-  background: none !important;
-}
-
-.darkmode .black button.small-btn::after {
-  border: var(--border-1) solid var(--dm-white) !important;
-  background: none !important;
-}
-
-.darkmode button.small-btn::before {
-  background: var(--dm-button) !important;
-  box-shadow: var(--button-boxshadow) !important;
-}
-
-.darkmode .white button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+/* COMPOENTNS and COLOR VARIENTS */
+/* black buttons */
+button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   background: var(--black) !important;
+  color: var(--white) !important;
 }
-
-.darkmode .black button.small-btn.MuiButton-outlined {
-  border: none !important;
+button.MuiButtonBase-root.black::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--black) !important;
 }
-
-.darkmode .black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
-  background: var(--dm-white) !important;
+button.MuiButtonBase-root.black .inline-icon, .MuiButtonBase-root.black.MuiButton-text .inline-icon {
+  fill: var(--white);
 }
-
-.darkmode .white button::after {
-  border: var(--border-1) solid var(--black) !important;
+button.MuiButtonBase-root.black.MuiButton-outlined .inline-icon, .MuiButtonBase-root.black.MuiButton-text .inline-icon {
+  fill: var(--black);
+}
+button.MuiButtonBase-root.black.MuiButton-outlined::after, .MuiButtonBase-root.black.MuiButton-text::after {
+  background: var(--black);
+}
+button.MuiButtonBase-root.black.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1)) solid var(--black);
+}
+button.MuiButtonBase-root.black.MuiButton-outlined, button.MuiButtonBase-root.black.MuiButton-text {
   background: none !important;
+  color: var(--black) !important;
 }
-
-.darkmode button .inline-icon {
-  fill: var(--dm-on-button) !important;
+button.MuiButtonBase-root.black.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1))  solid var(--black);
 }
-
-.darkmode button .inline-icon path {
-  fill: var(--dm-on-button) !important;
-}
-
-.darkmode button.MuiButton-outlined .inline-icon path,
-.darkmode button.MuiButton-text .inline-icon path {
-  fill: var(--dm-button) !important;
-}
-
-.darkmode .white button.MuiButton-outlined .inline-icon path,
-.darkmode .white button.MuiButton-text .inline-icon path {
+button.MuiButtonBase-root.black.MuiButton-outlined .inline-icon, button.MuiButtonBase-root.black.MuiButton-text .inline-icon {
   fill: var(--black) !important;
 }
-
-.darkmode .black button .inline-icon path {
-  fill: var(--dm-on-white) !important;
-}
-
-.darkmode .black button.MuiButton-outlined .inline-icon path,
-.darkmode .black button.MuiButton-text .inline-icon path {
-  fill: var(--dm-white) !important;
-}
-
-.darkmode .white button .inline-icon {
-  fill: var(--dm-on-white);
-}
-
-.darkmode .white button .inline-icon path {
-  fill: var(--dm-white);
-}
-
-.darkmode .white button.MuiButton-outlined .inline-icon path,
-.darkmode .white button.MuiButton-text .inline-icon path {
-  fill: var(--dm-on-white);
-}
-
-.darkmode .black button.MuiButton-outlined .inline-icon path,
-.darkmode .black button.MuiButton-text .inline-icon path {
-  fill: var(--white);
-}
-
-.darkmode button.MuiButton-outlined,
-.darkmode button.MuiButton-text {
-  background: none !important;
-  color: var(--dm-button) !important;
-}
-
-.darkmode .black button.MuiButton-outlined,
-.darkmode .black button.MuiButton-text {
-  background: none !important;
-  color: var(--dm-button) !important;
-}
-
-.darkmode .black button.MuiButton-outlined {
-  border: var(--border-1) solid var(--dm-white) !important;
-}
-
-.darkmode .white button.MuiButton-outlined,
-.darkmode .white button.MuiButton-text {
-  background: none !important;
-  color: var(--dm-on-white) !important;
-}
-
-.darkmode button.MuiButton-outlined::before {
-  border: var(--button-border) solid var(--dm-button);
-  box-shadow: var(--dm-button-boxshadow);
-  background: none !important;
-}
-
-.darkmode .black button.MuiButton-outlined::before {
-  border: var(--button-border) solid var(--dm-white);
-}
-
-.darkmode .white button.MuiButton-outlined::before {
-  border: var(--button-border) solid var(--dm-on-white);
-}
-
-.darkmode button.MuiButton-outlined .inline-icon,
-.darkmode button.MuiButton-text .inline-icon {
-  fill: var(--d-button);
-}
-
-.darkmode .black button .inline-icon,
-.darkmode .black button.MuiButton-text .inline-icon {
-  fill: var(--dm-on-white);
-}
-
-.darkmode .black button.MuiButton-outlined .inline-icon,
-.darkmode .black button.MuiButton-text .inline-icon {
-  fill: var(--white);
-  opacity: .6;
-}
-
-.darkmode .white button .inline-icon,
-.darkmode .white button.MuiButton-text .inline-icon {
-  fill: var(--white);
-  opacity: .6;
-}
-
-.darkmode .white button.MuiButton-outlined .inline-icon,
-.darkmode .white button.MuiButton-text .inline-icon {
-  fill: var(--dm-on-white);
-}
-
-.darkmode button.MuiButton-outlined::after,
-.darkmode button.MuiButton-text::after {
-  background: var(--dm-button);
-}
-
-.darkmode .black button.MuiButton-outlined::after,
-.darkmode .black button.MuiButton-text::after {
+button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-root.black.MuiButton-txet::after {
   background: transparent !important;
-  border: var(--border-1) solid var(--dm-button) !important;
+  border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
 }
-
-.darkmode .white button.MuiButton-outlined::after,
-.darkmode .white button.MuiButton-text::after {
-  background: transparent !important;
-  border: var(--border-1) solid var(--black) !important;
+.darkmode button.MuiButtonBase-root.black {
+  color: var(--dm-white)  !important;
+  background: var(--black) !important;
 }
-
-.darkmode button.small-btn.MuiButton-text::before {
+.darkmode button.MuiButtonBase-root.black.MuiTab-root {
   background: none !important;
-  box-shadow: var(--dm-button-boxshadow);
 }
-
-.darkmode .black button.small-btn.MuiButton-outlined::after,
-.darkmode .black button.small-btn.MuiButton-text::after {
+.darkmode button.MuiButtonBase-root.black::after, button.MuiButtonBase-root.black.small-btn.MuiButton-outlined::after, button.MuiButtonBase-root.black.small-btn.MuiButton-text::after {
+  border: calc(var(--button-border) * var(--border-1))  solid  var(--black) !important;
+  background: none !important;
+}
+.darkmode button.MuiButtonBase-root.black.MuiButton-outlined, .darkmode button.MuiButtonBase-root.black.MuiButton-text, button.MuiButtonBase-root.black.small-btn.MuiButton-outlined, button.MuiButtonBase-root.black.small-btn.MuiButton-text {
+  background: none !important;
+  color: var(--black) !important;
+}
+.darkmode button.MuiButtonBase-root.black.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1))  solid var(--black);
+}
+.darkmode button.MuiButtonBase-root.black.MuiButton-outlined::after, .darkmode button.MuiButtonBase-root.black.MuiButton-txet::after {
   background: transparent !important;
-  border: var(--border-1) solid var(--dm-white);
+  border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
 }
-
-.darkmode .button {
-  background: var(--dm-button) !important;
-  color: var(--dm-on-button) !important;
+button.MuiButtonBase-root.black.small-btn:not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: transparent !important;
+  color: var(--white)
 }
-
-.darkmode > button.small-btn {
-  background: transparent !important
+button.MuiButtonBase-root.small-btn.black:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  background: var(--black) !important;
 }
-
-.darkmode > button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text):not(.white):not(.black)::before {
-  background: var(--dm-button) !important;
-  color: var(--dm-on-button) !important;
+/* white buttons */
+button.MuiButtonBase-root.white:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn):not(.MuiTab-root) {
+  background: var(--white) !important;
+  color: var(--black) !important;
 }
-
-.darkmode .black > button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-white));
+button.MuiButtonBase-root.white.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  background: var(--white) !important;
+  color: var(--black) !important;
 }
-
+button.MuiButtonBase-root.white::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--white) !important;
+}
+button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-root.white.MuiButton-text::after {
+  background: var(--white);
+}
+button.MuiButtonBase-root.white.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1)) solid var(--white);
+}
+button.MuiButtonBase-root.white.MuiButton-outlined, button.MuiButtonBase-root.white.MuiButton-text {
+  background: none !important;
+  color: var(--white) !important;
+}
+button.MuiButtonBase-root.white.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1))  solid var(--white);
+}
+button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-root.white.MuiButton-txet::after {
+  background: transparent !important;
+  border: calc(var(--button-border) * var(--border-1))  solid var(--white) !important;
+}
+.darkmode button.MuiButtonBase-root.white {
+  color: var(--black)  !important;
+  background: var(--dm-white) !important;
+}
+.darkmode button.MuiButtonBase-root.white.MuiTab-root {
+  background: none !important;
+}
+.darkmode button.MuiButtonBase-root.white::after {
+  border: calc(var(--button-border) * var(--border-1))  solid  var(--dm-white) !important;
+  background: none !important;
+}
+.darkmode button.MuiButtonBase-root.white.MuiButton-outlined, .darkmode button.MuiButtonBase-root.white.MuiButton-text {
+  background: none !important;
+  color: var(--dm-white) !important;
+}
+.darkmode button.MuiButtonBase-root.white.MuiButton-outlined::before {
+  border: calc(var(--button-border) * var(--border-1))  solid var(--dm-white);
+}
+.darkmode button.MuiButtonBase-root.white.MuiButton-outlined::after, .darkmode button.MuiButtonBase-root.white.MuiButton-txet::after {
+  background: transparent !important;
+  border: calc(var(--button-border) * var(--border-1))  solid var(--dm-white) !important;
+}
+.darkmode button.MuiButtonBase-root.white.small-btn{
+  background: none !important;
+}
+.darkmode button.MuiButtonBase-root.white.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  background: var(--dm-white) !important;
+  color: var(--black) !important;
+}
+/* ON BACKGROUNDS */
+/*  BLACK  */
+.black {
+    background: var(--black) !important;
+    color: var(--white) !important;
+}
+.black-half {
+  background: var(--black-half) !important;
+}
+.black button {
+  background: var(--buttonOnBlack) !important;
+  color: var(--onbuttonOnBlack) !important;
+}
+.black button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
+}
+.black .fa-regular:not(button *), .black .fa-solid:not(button *) {
+  color: var(--iconOnBlack) !important;
+}
+.black button {
+  background: var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite) !important;
+}
+/* on black */
+.black a {
+  text-decoration:  var(--hotlinkOnBlack-decoration);
+  color: var(--hotlinkOnBlack);
+}
+.black a:visited {
+  text-decoration:  var(--hotlinkOnBlack-decoration) !important;
+  color: var(--hotlinkOnBlack);
+  opacity: .7
+}
+.black a:hover {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration) !important;
+}
+.black a:active {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration)
+}
+/*  WHITE  */
+.white {
+    background: var(--white) !important;
+    color: var(--black) !important;
+}
+.white-half {
+  background: var(--white-half) !important;
+}
+.white button  {
+  background: var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite) !important;
+}
+.white button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
+}
+.white .fa-regular:not(button *), .white .fa-solid:not(button *) {
+  color: var(--dmiconOnWhite) !important;
+}
+/* on white hotlinks */
+.white a {
+  text-decoration:  var(--hotlinkOnWhite-decoration);
+  color: var(--hotlinkOnWhite);
+}
+.white a:visited{
+  text-decoration:  var(--hotlinkOnWhite-decoration) !important;
+  color: var(--hotlinkOnWhite);
+  opacity: .5
+}
+.white a:hover {
+  text-decoration: var(--hotlinkOnWhite-hover-decoration) !important;
+}
+.white a:active {
+  text-decoration: var(--hotlinkOnWhite-hover-decoration)
+}
 /*  COLORED, PRIMARY, TERTIARY_BG */
-.default {
-  /* background: var(--button) !important;
-  color: var(--on-button) !important; */
-}
-.default.inline-icon path {
-  fill: var(--on-button) !important;
-}
 
 /*  GRADIENT 1 */
 .gradient-1 {
@@ -2564,17 +2328,13 @@ button.small-btn.icon:hover::after {
 .gradient-1 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--on-gradient-1));
 }
-.gradient-1 button .inline-icon path {
-  fill: var(--onbuttonOnGradient1) !important;
-}
-.gradient-1 .inline-icon path {
-  fill: var(--on-gradient-1) !important;
+.gradient-1 .fa-regular:not(button *), .gradient-1 .fa-solid:not(button *) {
+  color: var(--on-gradient-1) !important;
 }
 .gradient-1 a {
   text-decoration: underline;
   color: var(--on-gradient-1);
 }
-
 /*  GRADIENT 2 */
 .gradient-2 {
   background: var(--gradient-2) !important;
@@ -2588,17 +2348,13 @@ button.small-btn.icon:hover::after {
 .gradient-2 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--on-gradient-2));
 }
-.gradient-2 button .inline-icon path {
-  fill: var(--onbuttonOnGradient2) !important;
-}
-.gradient-2 .inline-icon path {
-  fill: var(--on-gradient-2) !important;
+.gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
+  color: var(--on-gradient-2) !important;
 }
 .gradient-2 a {
   text-decoration: underline;
   color: var(--on-gradient-2) !important;
 }
-
 /*  GRADIENT 3 */
 .gradient-3 {
   background: var(--gradient-3) !important;
@@ -2611,23 +2367,19 @@ button.small-btn.icon:hover::after {
 .gradient-3 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient3);
 }
-.gradient-3 button .inline-icon path {
-  fill: var(--onbuttonOnGradient3) !important;
-}
-.gradient-3 .inline-icon path {
-  fill: var(--on-gradient-3) !important;
+.gradient-3 .fa-regular:not(button *), .gradient-3 .fa-solid:not(button *) {
+  color: var(--on-gradient-3) !important;
 }
 .gradient-3 a {
   text-decoration: underline;
-  color: var(--linkOnGradient3) !important;
+  color: var(--hotlinkOnGradient3) !important;
 }
-
 /*  Darkmode BLACK  */
 .darkmode .black , .darkmode .black-bg {
   background: var(--black) !important;
   color: var(--dm-white) !important;
 }
-.darkmode .black button:not(.tab), .darkmode .black-bg  button:not(.tab)  {
+.darkmode .black button:not(.MuiTab-root), .darkmode .black-bg  button:not(.MuiTab-root)  {
   background: var(--dmbuttonOnBlack) !important;
   color: var(--dmonbuttonOnBlack) !important;
 }
@@ -2637,58 +2389,68 @@ button.small-btn.icon:hover::after {
 .darkmode .black button .inline-icon path, .darkmode .black-bg button .inline-icon path {
   fill: var(--dmonbuttonOnBlack) !important;
 }
-.darkmode .black .inline-icon path , .darkmode .black-bg .inline-icon path {
-  fill: var(--dmiconOnBlack) !important;
+.darkmode .black .fa-regular:not(button *), .darkmode .black  .fa-solid:not(button *) {
+  color: var(--dmiconOnBlack) !important;
 }
 .darkmode .black a , .darkmode .black-bg a {
   text-decoration: var(--dmhotlinkDecorationOnBlack);
   color: var(--dmhotlinkOnBlack);
 }
-/*  WHITE  */
+/*  DARK MODE WHITE  */
 .darkmode .white , .darkmode .white-bg {
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
-.darkmode .white button:not(.tab) , .darkmode .white-bg  button:not(.tab)  {
+.darkmode .white button:not(.MuiTab-root) , .darkmode .white-bg  button:not(.MuiTab-root)  {
   background: var(--dmbuttonOnWhite) !important;
   color: var(--dmonbuttonOnWhite) !important;
 }
 .darkmode .white button::after, .darkmode .white-bg  button::after  {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnWhite));
 }
-.darkmode .white button .inline-icon path, .darkmode .white-bg button .inline-icon path {
-  fill: var(--dmonbuttonOnWhite) !important;
-}
-.darkmode .white .inline-icon path , .darkmode .white-bg .inline-icon path {
-  fill: var(--dmiconOnWhite) !important;
+.darkmode .white .fa-regular:not(button *), .darkmode .white  .fa-solid:not(button *) {
+  color: var(--dmiconOnWhite) !important;
 }
 .darkmode .white a , .darkmode .white-bg a {
   text-decoration: var(--dmhotlinkDecorationOnWhite);
   color: var(--dmhotlinkOnWhite);
 }
 /*  COLORED, PRIMARY, TERTIARY_BG */
-.darkmode .colored ,.darkmode .primary, .darkmode .backgroundTertiary {
+.darkmode .default{
+  background: none !important;
+  color: var(--dm-on-background-tertiary) !important;
+}
+.darkmode .primary, .darkmode .backgroundTertiary {
   background: var(--dm-background-tertiary) !important;
   color: var(--dm-on-background-tertiary) !important;
 }
-.darkmode .colored button:not(.tab) ,.darkmode .primary  button:not(.tab) , .darkmode .backgroundTertiary button:not(.tab) {
+.darkmode .default button:not(.MuiTab-root), .darkmode .primary button:not(.MuiTab-root) , .darkmode .backgroundTertiary button:not(.MuiTab-root) {
   background: var(--dmbuttonOnTertiary) !important;
   color: var(--dmonbuttonOnTertiary) !important;
 }
-.darkmode .colored button::after ,.darkmode .primary  button::after , .darkmode .backgroundTertiary button::after {
+.darkmode .default button::after, .darkmode .primary button::after, .darkmode .backgroundTertiary button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnTertiary));
 }
-.darkmode .colored button .inline-icon path,.darkmode .primary button .inline-icon path, .darkmode .backgroundTertiary button .inline-icon path {
-  fill: var(--dmonbuttonOnTertiary) !important;
+.darkmode .default .fa-regular:not(button *), .darkmode .primary .fa-regular:not(button *), .darkmode .default   .fa-solid:not(button *) {
+  color: var(--dmiconOnTertiary) !important;
 }
-.darkmode .colored .inline-icon path , .darkmode .primary .inline-icon path, .darkmode .backgroundTertiary .inline-icon path{
-  fill: var(--dmiconOnTertiary) !important;
-}
-.darkmode .colored a , .darkmode .primary a, .darkmode .backgroundTertiary a  {
+.darkmode .default a, .backgroundTertiary a, .darkmode .primary a, .backgroundTertiary a  {
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-/*  GRADIENT 1 */
+
+.darkmode .fa-regular:not(button *), .darkmode .fa-solid:not(button *) {
+  color: var(--dm-icon) !important;
+}
+.darkmode a {
+  text-decoration:  var(--dmhotlinkDecorationOnTertiary );
+  color: var(--dmhotlinkOnTertiary );
+}
+.darkmode button.MuiButtonBase-root {
+  color: var(--dm-on-button) !important;
+  background: var(--dm-button) !important;
+}
+/*  DARK MODE GRADIENT 1 */
 .darkmode .gradient-1 {
   background: var(--dm-gradient-1) !important;
   color: var(--dm-on-gradient-1) !important;
@@ -2700,17 +2462,14 @@ button.small-btn.icon:hover::after {
 .darkmode .gradient-1 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-1));
 }
-.darkmode .gradient-1 button .inline-icon path {
-  fill: var(--dmonbuttonOnGradient1) !important;
-}
-.darkmode .gradient-1 .inline-icon path {
-  fill: var(--dm-on-gradient-1) !important;
+.darkmode .gradient-1 .fa-regular:not(button *), .darkmode .gradient-1 .fa-solid:not(button *) {
+  color: var(--dm-on-gradient-1) !important;
 }
 .darkmode .gradient-1 a {
   text-decoration: 'underline';
   color: var(--dm-on-gradient-1);
 }
-/*  GRADIENT 2 */
+/*  DARK MODE GRADIENT 2 */
 .darkmode .gradient-2 {
   background: var(--dm-gradient-2) !important;
   color: var(--dm-on-gradient-2) !important;
@@ -2722,17 +2481,14 @@ button.small-btn.icon:hover::after {
 .darkmode .gradient-2 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-2));
 }
-.darkmode .gradient-2 button .inline-icon path {
-  fill: var(--dmonbuttonOnGradient2) !important;
-}
-.darkmode .gradient-2 .inline-icon path {
-  fill: var(--dm-on-gradient-2) !important;
+.darkmode .gradient-2 .fa-regular:not(button *), .darkmode .gradient-2 .fa-solid:not(button *) {
+  color: var(--dm-on-gradient-2) !important;
 }
 .darkmode .gradient-2 a {
   text-decoration: 'underline';
   color: var(--dm-on-gradient-2) !important;
 }
-/*  GRADIENT 3 */
+/*  DARK MODE GRADIENT 3 */
 .darkmode .gradient-3 {
   background: var(--dm-gradient-3) !important;
   color: var(--dm-on-gradient-3) !important;
@@ -2744,17 +2500,193 @@ button.small-btn.icon:hover::after {
 .darkmode .gradient-3 button::after {
   border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnGradient3));
 }
-.darkmode .gradient-3 button .inline-icon path {
-  fill: var(--dmonbuttonOnGradient3) !important;
-}
-.darkmode .gradient-3 .inline-icon path {
-  fill: var(--dm-on-gradient-3) !important;
+.darkmode .gradient-3 .fa-regular:not(button *), .darkmode .gradient-3 .fa-solid:not(button *) {
+  color: var(--dm-on-gradient-3) !important;
 }
 .darkmode .gradient-3 a {
   text-decoration: 'underline';
   color: var(--dmhotlinkOnGradient3) !important;
 }
-
+/* darkmode buttons */
+.darkmode > button {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
+}
+.darkmode > button .inline-icon svg path {
+  fill: var(--dm-on-button);
+}
+.darkmode .white > button {
+  color: var(--dm-on-white) !important;
+  background: var(--dm-white) !important;
+}
+.darkmode .white > button {
+  color: var(--dm-white);
+  background: var(--dm-nearblack) !important;
+}
+.darkmode .white > button.MuiTab-root {
+  background: none !important;
+}
+.darkmode > button::after {
+  background: none !important;
+}
+.darkmode > button.MuiTab-root {
+  background: none !important;
+}
+.darkmode button.MuiTab-root::after {
+  background: unset !important;
+}
+.darkmode button.dropdown-toggle {
+  background: var(--dm-white) !important;
+  color: var(--dm-on-white) !important;
+}
+.darkmode button.small-btn::after {
+  border: var(--border-1) solid var(--dm-button) !important;
+  background: none !important;
+}
+.darkmode .black button.small-btn::after {
+  border: var(--border-1) solid var(--dm-white) !important;
+  background: none !important;
+}
+.darkmode button.small-btn::before {
+  background: var(--dm-button) !important;
+  box-shadow: var(--button-boxshadow) !important;
+}
+.darkmode .white button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  background: var(--black) !important;
+}
+.darkmode .black button.small-btn.MuiButton-outlined {
+  border: none !important;
+}
+.darkmode .black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  background: var(--dm-white) !important;
+}
+.darkmode .white button::after {
+  border: var(--border-1) solid var(--black) !important;
+  background: none !important;
+}
+.darkmode button .inline-icon {
+  fill: var(--dm-on-button) !important;
+}
+.darkmode button .inline-icon path {
+  fill: var(--dm-on-button) !important;
+}
+.darkmode button.MuiButton-outlined .inline-icon path,
+.darkmode button.MuiButton-text .inline-icon path {
+  fill: var(--dm-button) !important;
+}
+.darkmode .white button.MuiButton-outlined .inline-icon path,
+.darkmode .white button.MuiButton-text .inline-icon path {
+  fill: var(--black) !important;
+}
+.darkmode .black button .inline-icon path {
+  fill: var(--dm-on-white) !important;
+}
+.darkmode .black button.MuiButton-outlined .inline-icon path,
+.darkmode .black button.MuiButton-text .inline-icon path {
+  fill: var(--dm-white) !important;
+}
+.darkmode .white button .inline-icon {
+  fill: var(--dm-on-white);
+}
+.darkmode .white button .inline-icon path {
+  fill: var(--dm-white);
+}
+.darkmode .white button.MuiButton-outlined .inline-icon path,
+.darkmode .white button.MuiButton-text .inline-icon path {
+  fill: var(--dm-on-white);
+}
+.darkmode .black button.MuiButton-outlined .inline-icon path,
+.darkmode .black button.MuiButton-text .inline-icon path {
+  fill: var(--white);
+}
+.darkmode button.MuiButton-outlined,
+.darkmode button.MuiButton-text {
+  background: none !important;
+  color: var(--dm-button) !important;
+}
+.darkmode .black button.MuiButton-outlined,
+.darkmode .black button.MuiButton-text {
+  background: none !important;
+  color: var(--dm-button) !important;
+}
+.darkmode .black button.MuiButton-outlined {
+  border: var(--border-1) solid var(--dm-white) !important;
+}
+.darkmode .white button.MuiButton-outlined,
+.darkmode .white button.MuiButton-text {
+  background: none !important;
+  color: var(--dm-on-white) !important;
+}
+.darkmode button.MuiButton-outlined::before {
+  border: var(--button-border) solid var(--dm-button);
+  box-shadow: var(--dm-button-boxshadow);
+  background: none !important;
+}
+.darkmode .black button.MuiButton-outlined::before {
+  border: var(--button-border) solid var(--dm-white);
+}
+.darkmode .white button.MuiButton-outlined::before {
+  border: var(--button-border) solid var(--dm-on-white);
+}
+.darkmode button.MuiButton-outlined .inline-icon,
+.darkmode button.MuiButton-text .inline-icon {
+  fill: var(--d-button);
+}
+.darkmode .black button .inline-icon,
+.darkmode .black button.MuiButton-text .inline-icon {
+  fill: var(--dm-on-white);
+}
+.darkmode .black button.MuiButton-outlined .inline-icon,
+.darkmode .black button.MuiButton-text .inline-icon {
+  fill: var(--white);
+  opacity: .6;
+}
+.darkmode .white button .inline-icon,
+.darkmode .white button.MuiButton-text .inline-icon {
+  fill: var(--white);
+  opacity: .6;
+}
+.darkmode .white button.MuiButton-outlined .inline-icon,
+.darkmode .white button.MuiButton-text .inline-icon {
+  fill: var(--dm-on-white);
+}
+.darkmode button.MuiButton-outlined::after,
+.darkmode button.MuiButton-text::after {
+  background: var(--dm-button);
+}
+.darkmode .black button.MuiButton-outlined::after,
+.darkmode .black button.MuiButton-text::after {
+  background: transparent !important;
+  border: var(--border-1) solid var(--dm-button) !important;
+}
+.darkmode .white button.MuiButton-outlined::after,
+.darkmode .white button.MuiButton-text::after {
+  background: transparent !important;
+  border: var(--border-1) solid var(--black) !important;
+}
+.darkmode button.small-btn.MuiButton-text::before {
+  background: none !important;
+  box-shadow: var(--dm-button-boxshadow);
+}
+.darkmode .black button.small-btn.MuiButton-outlined::after,
+.darkmode .black button.small-btn.MuiButton-text::after {
+  background: transparent !important;
+  border: var(--border-1) solid var(--dm-white);
+}
+.darkmode .button {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
+}
+.darkmode > button.small-btn {
+  background: transparent !important
+}
+.darkmode > button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text):not(.white):not(.black)::before {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
+}
+.darkmode .black > button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-white));
+}
 .gradient-swatch {
   width: 400px;
   height: var(--spacing-6);
@@ -2765,6 +2697,15 @@ button.small-btn.icon:hover::after {
 
 .clickable {
   cursor: pointer;
+}
+.MuiCard-root .fa-solid, .MuiCard-root .fa-regular {
+  padding-bottom: 10px;
+  margin-right: 8px;
+  font-size: 1.25em;
+  color: var(--icon);
+}
+.darkmode .MuiCard-root .fa-solid, .darkmode .MuiCard-root .fa-regular {
+  color: var(--dm-icon);
 }
 .MuiCard-root.clickable::after{
  position: absolute;
@@ -2804,7 +2745,12 @@ button.small-btn.icon:hover::after {
   align-items: center;
   justify-content: center
 }
-
+.MuiCard-root. .client-title-area .inline-icon{
+  height: var(--spacing-5);
+  width: var(--spacing-5);
+  justify-content: center;
+  display: flex;
+}
 .MuiCardMedia-root {
   width: 100%;
   height: 0;
@@ -2976,23 +2922,27 @@ button.small-btn.icon:hover::after {
   color: var(--dm-white);
   opacity: var(--quiet);
 }
-/* dark mode avatar */
-.darkmode .MuiAvatar-root svg path {
-  fill: var(--dm-white);
-}
 /* dark mode form labels */
 .darkmode .MuiFormLabel-root {
   color: var(--dm-on-background)
 }
 /* secodary tabs */
-.secondaryTabs .MuiTab-root {
-  font-size: var(----CTA-SmallFontSize);
+.secondaryTab.MuiTab-root {
+  font-size: var(--CTA-SmallFontSize);
   font-family: var(--CTA-SmallFontFamily);
   font-weight: var(--CTA-SmallFontWeight);
   line-height: var(--CTA-SmallLineHeight);
   text-transform: var(--CTA-SmallTextTransform);
   letter-spacing: var(--CTA-SmallCharcterSpacing);
   min-height: var(--min-target);
+}
+/* darkmode tabs */
+.darkmode .MuiTabs-root {
+  background: var(--dm-button) !important;
+}
+.darkmode .MuiTab-root {
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button)  !important;
 }
 /* tab variations */
 .MuiTabs-root.black .MuiTab-root {
@@ -3230,7 +3180,7 @@ button.small-btn.icon:hover::after {
   transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
 }
 /* darkmode popovers */
-.darkmode .MuiPopover-paper {
+.darkmode .MuiPopover-paper, .darkmode .MuiPopover-paper {
   background: var(--dm-white)  !important;
   color: var(--black)  !important;
 }
@@ -3336,17 +3286,6 @@ button.small-btn.icon:hover::after {
 /* varying backgrounds  */
 
 /*  BLACK  */
-.black a {
-  color: var(--hotlink-decoration);
-  text-decoration: var(--hotlink-decoration)
-}
-.black, .black-bg {
-    /* background: var(--black) !important;
-    color: var(--white) !important; */
-}
-.black-half {
-  /* background: var(--black-half) !important; */
-}
 .black button, .black-bg  button  {
   background: var(--buttonOnBlack) !important;
   color: var(--onbuttonOnBlack) !important;
@@ -3366,7 +3305,6 @@ button.small-btn.icon:hover::after {
 }
 
 /* dark mode black */
-
 .darkmode .black a {
   color: var(--dm-hotlink-decoration);
   text-decoration: var(--dm-hotlink-decoration)
@@ -3415,8 +3353,8 @@ button.small-btn.icon:hover::after {
   fill: var(--iconOnWhite) !important;
 }
 .white a , .white-bg a {
-  text-decoration: var(--linkDecorationOnWhite);
-  color: var(--linkOnWhite);
+  text-decoration: var(--hotlinkDecorationOnWhite);
+  color: var(--hotlinkOnWhite);
 }
 /* darkmode white */
 

@@ -52,7 +52,7 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua
             </CardSample>
-             <CardSample 
+             <CardSample
                 label="Black Background"
                 title="Lorem ipsum dolor"
                 className="black centerAligned"
@@ -64,8 +64,8 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
                 magna aliqua
             </CardSample>
-            <CardSample 
-                label="Button Color Background"
+            <CardSample
+                label="Tertiary Background"
                 title="Lorem ipsum dolor"
                 className="colored"
                 icon={ true }
@@ -75,7 +75,7 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
                 magna aliqua
             </CardSample>
-            <CardSample 
+            <CardSample
                 label="Gradient-1 Background"
                 title="Lorem ipsum dolor"
                 className="gradient-1"
@@ -86,7 +86,7 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
                 magna aliqua
             </CardSample>
-            <CardSample 
+            <CardSample
                 label="Gradient-2 Background"
                 title="Lorem ipsum dolor"
                 className="gradient-2"
@@ -97,7 +97,7 @@ export const CardsStandardComponent: React.FC<Props> = () => {
                 sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
                 magna aliqua
             </CardSample>
-            <CardSample 
+            <CardSample
                 label="Gradient-3 Background"
                 title="Lorem ipsum dolor"
                 className="gradient-3"
