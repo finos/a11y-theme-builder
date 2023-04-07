@@ -1,0 +1,16 @@
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.list-img {
+    object-fit: cover;
+    width: 100px;
+    height: 60px;
+}
+
+.list-link {
+    color: inherit;
+    text-decoration: none
+}
