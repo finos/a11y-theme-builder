@@ -8,15 +8,18 @@ import { Avatars } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
+import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { HeadingSection } from '../content/HeadingSection';
+import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 interface Props {
     molecule: Avatars;
 }
 
 export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
+
+    const scale = parseInt(getCssValue("--border-1"));
 
     return (
         <div>
@@ -34,10 +37,10 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
             </ExampleSection>
             <SettingsSection>
                 <div className="top40">
-                    <NumberSelectable property={molecule.mediumBorder} defaultValue={0} units="px" />
+                    <NumberScaledSelectable property={molecule.mediumBorder} defaultValue={0} scale={scale} units="px" />
                 </div>
                 <div className="top40">
-                    <NumberSelectable property={molecule.extraLargeBorder} defaultValue={0} units="px" />
+                    <NumberScaledSelectable property={molecule.extraLargeBorder} defaultValue={0} scale={scale} units="px" />
                     </div>
                 <div className="top40">
                     <StringSelectable property={molecule.elevation} defaultValue={"No Elevation"} />
