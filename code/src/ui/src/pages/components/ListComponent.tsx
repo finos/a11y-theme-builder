@@ -3,10 +3,10 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Avatar, Checkbox, FormControlLabel, Grid } from '@mui/material';
-
+import { Avatar, Checkbox, FormControlLabel } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
 import { Link } from 'react-router-dom';
+import './ListComponent.css';
 
 
 interface Props {
@@ -34,14 +34,13 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
         {!isStyle2 || <div className="subtitle1">List Title</div>}
         {!(type === 3) || body }
     </>
-    const listImage = <>
+
+    const listIcon = <>
         {!hasAvatar || <Avatar/>}
         {!hasImg || isLarge
-        || <img alt='list-style-1' src="/sample.jpg" style={{objectFit: "cover",width: "60px", height: "60px"}}/>}
+        || <img alt='list-style-1' src="/sample.jpg" className='list-img'/>}
         {!hasImg || !isLarge
-        || <img alt='list-style-1' src="/image-1.jpeg" style={{objectFit: "cover",width: "100px", height: "60px"}}/>}
-    </>
-    const listDecor = <>
+        || <img alt='list-style-1' src="/image-1.jpeg" className='list-img'/>}
         {!hasIcon  || isLarge
         || <ErrorIcon color='error'/>}
         {!hasIcon  || !isLarge
@@ -49,27 +48,24 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
     </>
 
 
-
-
-
     return (
         <div className="sample">
             <div className="subtitle1">{title}</div>
             <div className="list">
-                {isClickable || listDecor}
-                {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listDecor}</Link>}
                 <div className="list-body">
-                    <Grid container spacing={2}>
-                        <Grid item xs={2}>
-                          { listImage }
-                        </Grid>
-                        <Grid item xs={9}>
+                    <div className="container-flex">
+                        { (!hasAvatar && !hasImg && !hasIcon )
+                        || <div className="list-icon">
+                            {isClickable || listIcon}
+                            {!isClickable || <Link to={''} className='list-link'>{listIcon}</Link>}
+                        </div>}
+                        <div className="list-content">
                             {isClickable || listTitle}
-                            {!isClickable || <Link to={''} style={{ color: "inherit", textDecoration: 'none' }}>{listTitle}</Link>}
-                        </Grid>
+                            {!isClickable || <Link to={''} className='list-link'>{listTitle}</Link>}
+                            </div>
                         {!hasCheckbox
-                        || <Grid item xs={1}><FormControlLabel control={<Checkbox defaultChecked />} label="" /></Grid>}
-                    </Grid>
+                        || <div className="list-checkbox"><FormControlLabel control={<Checkbox defaultChecked />} label="" /></div>}
+                    </div>
                 </div>
             </div>
         </div>
