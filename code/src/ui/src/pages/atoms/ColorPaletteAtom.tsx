@@ -97,7 +97,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
         <div className="container color-palette-right-content">
             <HeadingSection title="Palette" heading="Add Colors to Palette">
                 <p>Build your extended color palette.  Add as many colors as you want.</p>
-                <p>Next, you will create themes under the <a onClick={(event) => changeTab("colorThemes")}>COLOR THEME</a> settings.</p>
+                <p>Next, you will create themes under the <a onClick={(event) => changeTab("colorThemes")}>Color Theme</a> settings.</p>
             </HeadingSection>
             <ExampleSection>
                 <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />

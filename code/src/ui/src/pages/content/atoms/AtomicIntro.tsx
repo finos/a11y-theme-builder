@@ -4,8 +4,12 @@
  */
 import React from 'react'
 
+interface Props {
+    changeTab(newTabIndex: string): void;
+}
 
-const AtomicIntro: React.FC = () => {
+
+const AtomicIntro: React.FC<Props> = ({changeTab}) => {
 
     return (
         <>
@@ -13,15 +17,15 @@ const AtomicIntro: React.FC = () => {
             <div>
                 <h5>Getting Started with Atoms</h5>
                 <p>
-                    To get started you will start defining your atoms, the very basic building blocks of your design language.
+                    To get started you will define your atoms, which are the very basic building blocks of your design language.
                 </p>
                 <p>
-                    You must add at least two elements to unlock the rest of the tool:
+                    Complete the following two steps to unlock the rest of the tool:
                 </p>
-                <ul>
-                    <li>Your Pallette</li>
-                    <li>Your Default Theme</li>
-                </ul>
+                <ol>
+                    <li>Define your <a onClick={(event) => changeTab("colorPalette")}>Color Palette</a></li>
+                    <li>Define your <a onClick={(event) => changeTab("colorThemes")}>Color Theme</a></li>
+                </ol>
                 <p></p>
                 <h6>Have Fun!</h6>
             </div>
