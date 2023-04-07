@@ -1260,6 +1260,7 @@ h1 {
   letter-spacing: var(--h1LetterSpacing) !important;
   text-transform: var(--h1TextTransform) !important;
   text-decoration: var(--h1TextDecoration) !important;
+  margin: .5em 0;
 }
 h1.display1 {
   font-family:  var(--Display1FontFamily);
@@ -1269,6 +1270,7 @@ h1.display1 {
   letter-spacing: var(--Display1LetterSpacing) !important;
   text-transform: var(--Display1TextTransform) !important;
   text-decoration: var(--Display1TextDecoration) !important;
+  margin: .5em 0;
 }
 h1.display2 {
   font-family:  var(--Display2FontFamily);
@@ -1278,6 +1280,7 @@ h1.display2 {
   letter-spacing: var(--Display2LetterSpacing) !important;
   text-transform: var(--Display2TextTransform) !important;
   text-decoration: var(--Display2TextDecoration) !important;
+  margin: .5em 0;
 }
 h2 {
   font-family:  var(--h2FontFamily);
@@ -1287,6 +1290,7 @@ h2 {
   letter-spacing: var(--h2LetterSpacing) !important;
   text-transform: var(--h2TextTransform) !important;
   text-decoration: var(--h2TextDecoration) !important;
+  margin: .5em 0;
 }
 h3 {
   font-family:  var(--h3FontFamily);
@@ -1296,6 +1300,7 @@ h3 {
   letter-spacing: var(--h3LetterSpacing) !important;
   text-transform: var(--h3TextTransform) !important;
   text-decoration:  var(--h3TextDecoration) !important;
+  margin: .5em 0;
 }
 h4 {
   font-family:  var(--h4FontFamily);
@@ -1305,6 +1310,7 @@ h4 {
   letter-spacing: var(--h4LetterSpacing) !important;
   text-transform: var(--h4TextTransform) !important;
   text-decoration:  var(--h4TextDecoration) !important;
+  margin: .5em 0;
 }
 h5 {
   font-family:  var(--h5FontFamily);
@@ -1314,6 +1320,7 @@ h5 {
   letter-spacing: var(--h5LetterSpacing) !important;
   text-transform: var(--h5TextTransform) !important;
   text-decoration:  var(--h5TextDecoration) !important;
+  margin: .5em 0;
 }
 h6 {
   font-family:  var(--h6FontFamily);
@@ -1323,6 +1330,7 @@ h6 {
   letter-spacing: var(--h6LetterSpacing) !important;
   text-transform: var(--h6TextTransform) !important;
   text-decoration:  var(--h6TextDecoration) !important;
+  margin: .5em 0;
 }
 /* Body */
 .styling {
@@ -2800,6 +2808,9 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   opacity: var(--disabled);
 }
 /* dark mode chips */
+.MuiChip-avatar {
+  margin: 0 !important;
+}
 .darkmode .MuiChip-root {
   color: var(--dm-white);
 }
@@ -2900,26 +2911,28 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode .MuiRadio-root.Mui-checked svg path {
   fill: var(--dm-button)
 }
-.darkmode .MuiRadio-root.Mui-disabled ~ .MuiFormControlLabel-label {
-  color: var(--dm-white);
-  opacity: var(--disabled)
-}
-.darkmode .MuiRadio-root.Mui-disabled  svg path {
-  opacity: var(--disabled)
-}
-.darkmode .MuiRadio-root.Mui-disabled  svg path {
-  opacity: var(--disabled)
-}
+
 /* darkmode checkboxes */
+.darkmode .MuiFormControlLabel-root {
+  color: var(--dm-on-background)
+}
 .darkmode .MuiCheckbox-root svg path {
   fill: var(--dm-white)
 }
 .darkmode .MuiCheckbox-root.Mui-checked svg path {
   fill: var(--dm-button)
 }
-.darkmode .MuiCheckbox-root.Mui-disabled ~ .MuiFormControlLabel-label {
-  color: var(--dm-white);
-  opacity: var(--disabled)
+.darkmode .MuiCheckbox-root.black svg path {
+  fill: var(--black)
+}
+.darkmode .MuiCheckbox-root.black.Mui-checked svg path {
+  fill: var(--black)
+}
+.darkmode .MuiCheckbox-root.white svg path {
+  fill: var(--dm-white)
+}
+.darkmode .MuiCheckbox-root.white.Mui-checked svg path {
+  fill: var(--dm-white)
 }
 /* dark mode helper text */
 .darkmode .MuiFormHelperText-root {
