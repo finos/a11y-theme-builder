@@ -1706,6 +1706,9 @@ h6 {
     text-transform: var(--captionTextTransform) !important;
     text-decoration:  var(--captionTextDecoration) !important;
 }
+.breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
+  margin-right: var(--spacing-1);
+}
 .breadcrumbs .MuiBreadcrumbs-li a, .breadcrumbs .MuiBreadcrumbs-li:focus a, .breadcrumbs .MuiBreadcrumbs-li:active a {
     color: var(--hotlink) !important;
     text-decoration: var(--hotlink-decoration);
@@ -1734,7 +1737,7 @@ h6 {
 .breadcrumbs.white .MuiBreadcrumbs-separator {
   color: var(--white) !important;
 }
-.black.breadcrumbs  .MuiBreadcrumbs-li a{
+.black.breadcrumbs  .MuiBreadcrumbs-li a {
   color: var(--black) !important;
   text-decoration-color: var(--black);
   text-decoration: underline !important;
@@ -1750,7 +1753,7 @@ h6 {
   text-decoration: underline !important;
   opacity: .7
 }
-.breadcrumbs .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+.breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   text-decoration: none !important;
   font-style: italic !important;
   font-family: var(--captionFontFamily);
@@ -1761,10 +1764,10 @@ h6 {
   text-transform: var(--captionTextTransform) !important;
   text-decoration:  var(--captionTextDecoration) !important;
 }
-.breadcrumbs.black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+.breadcrumbs:not(.back-breadcrumbs).black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--black) !important;
 }
-.breadcrumbs.white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+.breadcrumbs:not(.back-breadcrumbs).white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--white) !important;
 }
 /* dark mode bread crumbs */
@@ -1796,7 +1799,7 @@ h6 {
 .darkmode .breadcrumbs.white .MuiBreadcrumbs-separator {
   color: var(--dm-white) !important;
 }
-.darkmode .breadcrumbs.white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+.darkmode .breadcrumbs:not(.back-breadcrumb).white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--dm-white) !important;
 }
 .darkmode .breadcrumbs.black .MuiBreadcrumbs-li a, .breadcrumbs.black .MuiBreadcrumbs-li:focus a, .breadcrumbs.black .MuiBreadcrumbs-li:active a{
@@ -1808,9 +1811,10 @@ h6 {
 .darkmode .breadcrumbs.black .MuiBreadcrumbs-separator {
   color: var(--black) !important;
 }
-.darkmode .breadcrumbs.black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+.darkmode .breadcrumbs:not(.back-breadcrumb).black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--black) !important;
 }
+
 
 /* Buttons */
 
