@@ -11,13 +11,12 @@ interface Props {
     leftColor?: string;
     rightColor?: string;
     size?: number;
-    defaultChecked?: boolean;
     inputProps?: any;
     checked?: boolean;
     onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, defaultChecked, onChange}) => {
+export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
     const handleOnChange = (event:any) => {
         const value = event.target.value;
         if (onChange) {
@@ -70,20 +69,13 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
     return (
         <Stack direction="row" spacing={1} alignItems="center">
             {leftLabel && <Typography>{leftLabel}</Typography>}
-            {defaultChecked ||
             <MySwitch 
-                defaultChecked 
-                onChange={handleOnChange} 
-                inputProps={{ 'aria-label': '' }} 
-            />}
-            {!defaultChecked ||
-            <MySwitch
                 checked={checked} 
                 onChange={handleOnChange} 
                 inputProps={{ 'aria-label': '' }} 
-            />}
+            />
             {rightLabel && <Typography>{rightLabel}</Typography>}
-        </Stack>                        
+         </Stack>                        
     )
 
 }
