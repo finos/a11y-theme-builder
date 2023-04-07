@@ -202,7 +202,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
                 {showAtom === "atoms" && 
-                    <AtomicIntro />
+                    <AtomicIntro changeTab={setShowAtom}/>
                 }
                 {showAtom === atoms.colorPalette.value && (
                     <ErrorHandler>
