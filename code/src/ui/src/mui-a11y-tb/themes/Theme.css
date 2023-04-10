@@ -1690,8 +1690,8 @@ h6 {
     background: var(--dm-white) !important;
 }
 .darkmode .white.MuiAvatar-root.lg svg path,
-.darkmode .white.MuiAvatar-root.xl svg path,,
-.darkmode .white.MuiAvatar-root.xxl svg path, {
+.darkmode .white.MuiAvatar-root.xl svg path,
+.darkmode .white.MuiAvatar-root.xxl svg path {
     fill: var(--black);
 }
 .avatar.centered {
@@ -2800,7 +2800,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   align-items: center;
   justify-content: center
 }
-.MuiCard-root. .client-title-area .inline-icon{
+.MuiCard-root .client-title-area .inline-icon{
   height: var(--spacing-5);
   width: var(--spacing-5);
   justify-content: center;
@@ -3210,7 +3210,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   height: calc(var(--sliderbarHeight) * var(--spacing-1));
   margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2);
 }
-.MuiSlider-root .MuiSlider-thumb: {
+.MuiSlider-root .MuiSlider-thumb {
   /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
    width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
