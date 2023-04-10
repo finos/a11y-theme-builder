@@ -34,10 +34,10 @@ export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
                     <div className="subtitle1">{title}</div>
                     <div className="buttonDemo">
                         <ButtonGroup orientation={orientation} variant={variant}>
-                            <Button className="CTA">No Icon</Button>
-                            <Button className="CTA" startIcon={barGraphIcon()}>Left Icon</Button>
-                            <Button className="CTA" endIcon={barGraphIcon()}>Right Icon</Button>
-                            <Button className="CTA">{barGraphIcon()}</Button>
+                            <Button className={"CTA " + colorMode}>No Icon</Button>
+                            <Button className={"CTA " + colorMode} startIcon={barGraphIcon()}>Left Icon</Button>
+                            <Button className={"CTA " + colorMode} endIcon={barGraphIcon()}>Right Icon</Button>
+                            <Button className={"CTA " + colorMode}>{barGraphIcon()}</Button>
                         </ButtonGroup>
                     </div>
                 </div>
