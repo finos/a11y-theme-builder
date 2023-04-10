@@ -7,7 +7,6 @@ import { HeadingSection } from '../content/HeadingSection';
 import { Button, Grid, Popover, Typography } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 
-
 interface Props {
 }
 
@@ -30,6 +29,8 @@ export const PopoversComponent: React.FC<Props> = () => {
     const [anchorLeftTitle, setAnchorLeftTitle]     = useState(null)
     const openPopoverLeftTitle = (event: any)       => { setAnchorLeftTitle(event.currentTarget) }
 
+    const refContainer = React.useRef(null);
+
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Popovers'></HeadingSection>
@@ -46,6 +47,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             anchorEl={anchorTop}
                             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                             transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}>Top Popover</Typography>
                         </Popover>
@@ -59,6 +61,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             onClose={() => setAnchorRight(null)}
                             anchorEl={anchorRight}
                             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}>Right Popover</Typography>
                         </Popover>
@@ -72,6 +75,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             onClose={() => setAnchorBottom(null)}
                             anchorEl={anchorBottom}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}>Bottom Popover</Typography>
                         </Popover>
@@ -86,13 +90,14 @@ export const PopoversComponent: React.FC<Props> = () => {
                             anchorEl={anchorLeft}
                             anchorOrigin={{ vertical: 'center', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'center', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}>Left Popover</Typography>
                         </Popover>
                     </Grid>
                 </Grid>
                 
-            <h6>Popover with Title</h6>
+                <h6>Popover with Title</h6>
                 <Grid container rowSpacing={1} columnSpacing={3}>
                     <Grid item>
                         <Button variant="contained" onClick={openPopoverTopTitle}>
@@ -104,6 +109,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             anchorEl={anchorTopTitle}
                             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                             transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}><h4>Popover Title</h4>Top Popover</Typography>
                         </Popover>
@@ -117,6 +123,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             onClose={() => setAnchorRightTitle(null)}
                             anchorEl={anchorRightTitle}
                             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}><h4>Popover Title</h4>Right Popover</Typography>
                         </Popover>
@@ -130,6 +137,7 @@ export const PopoversComponent: React.FC<Props> = () => {
                             onClose={() => setAnchorBottomTitle(null)}
                             anchorEl={anchorBottomTitle}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}><h4>Popover Title</h4>Bottom Popover</Typography>
                         </Popover>
@@ -144,14 +152,14 @@ export const PopoversComponent: React.FC<Props> = () => {
                             anchorEl={anchorLeftTitle}
                             anchorOrigin={{ vertical: 'center', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'center', horizontal: 'right' }}
+                            container={refContainer.current}
                         >
                             <Typography sx={{ p: 2 }}><h4>Popover Title</h4>Left Popover</Typography>
                         </Popover>
                     </Grid>
                 </Grid>
-                
+                <Typography ref={refContainer} component="span"></Typography>
             </ExampleSection>
-
         </div>
     )
 }
