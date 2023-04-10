@@ -967,9 +967,6 @@ try {
                         ".darkmode & .MuiAvatar-root": {
                             border: "1px solid calc(var(--border-1) * var(--avatar-border)) var(--dm-white) !important",
                         },
-
-
-
                     },
                 },
             },
@@ -999,6 +996,7 @@ try {
                     },
                 },
             },
+
             // MuiListItemButton: {
             //     styleOverrides: {
             //         root: {
