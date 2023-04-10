@@ -31,7 +31,7 @@ export const ListsSingleComponent: React.FC<Props> = () => {
         <div className="content">
             <HeadingSection title='Desktop' heading='Lists - Single Line'></HeadingSection>
             <SettingsSection>
-                <RadioGroup 
+                <RadioGroup
                     aria-labelledby="isClickable-button-group-label"
                     name="isClickable-buttons-group"
                     defaultValue="non-clickable"

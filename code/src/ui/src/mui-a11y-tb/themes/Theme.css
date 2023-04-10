@@ -3086,6 +3086,10 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode .MuiAccordion-root::after {
   border: var(--focusBorder) solid var(--dm-button);
 }
+/* lists */
+.list-content {
+  flex-grow: 1;
+}
 /* swicth */
 .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
   background: var(--button);
@@ -3195,16 +3199,32 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 /* popovers */
 .MuiPopover-paper {
   background: var(--white) !important;
-  border-radius: var(--popoverRadius);
+  border-radius: calc(var(--popoverRadius) * var(--radius-1));
   box-shadow: var(--popoverShadow);
   color: var(--black) !important;
   transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
 }
 /* darkmode popovers */
-.darkmode .MuiPopover-paper, .darkmode .MuiPopover-paper {
-  background: var(--dm-white)  !important;
+ .MuiPopover-paper {
+   border-radius: calc(var(--popoverRadius) * var(--radius-1)) !important;
+   background: var(--surface) !important;
+   z-index: 1;
+ }
+.darkmode .MuiPopover-paper {
+  background: var(--dm-background)   !important;
   color: var(--black)  !important;
 }
+.darkmode .MuiPopover-paper::before {
+  background: var(--dm-white)  !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: calc(var(--popoverRadius) * var(--radius-1));
+  z-index: -1;
+  content: "";
+}
+
 /* dark mode input fields */
 .darkmode .MuiOutlinedInput-notchedOutline fieldset {
   border: 1px solid var(--dm-border);

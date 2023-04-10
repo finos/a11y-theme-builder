@@ -1,16 +1,13 @@
 .container-flex {
     display: flex;
     justify-content: space-between;
-    gap: 32px;
-}
-
-.list-img {
-    object-fit: cover;
-    width: 100px;
-    height: 60px;
+    gap: 16px;
 }
 
 .list-link {
     color: inherit;
     text-decoration: none
+}
+.list-link ~ .list-content {
+  padding-left: var(--spacing-1);
 }
