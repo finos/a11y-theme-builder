@@ -57,10 +57,10 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
                               aria-label="tab bar with icons"
                               className={colorMode}
                           >
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 1" value="1" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab " + colorMode} label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
+                              <Tab className={"secondaryTab left-icon " + colorMode}  label="Tab 1" value="1" icon={<BarChartIcon />} iconPosition="start"/>
+                              <Tab className={"secondaryTab left-icon  " + colorMode}  label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
+                              <Tab className={"secondaryTab left-icon  " + colorMode}  label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
+                              <Tab className={"secondaryTab left-icon  " + colorMode} label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
                           </Tabs>
                       </Box>
                     </section>

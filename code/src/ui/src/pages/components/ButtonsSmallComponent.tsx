@@ -13,7 +13,7 @@ interface Props {
 
 export const ButtonsSmallComponent: React.FC<Props> = () => {
 
-    const [colorMode, setColorMode] = useState<string>("primary");
+    const [colorMode, setColorMode] = useState<string>("default");
 
     useEffect(() => {
         console.log("ButtonsSmallComponent mounted");

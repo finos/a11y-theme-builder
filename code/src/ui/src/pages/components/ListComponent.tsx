@@ -38,9 +38,9 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
     const listIcon = <>
         {!hasAvatar || <Avatar/>}
         {!hasImg || isLarge
-        || <div className='image-sq'><img alt='list-style-1' src="/sample.jpg" className='list-img'/></div>}
+        || <img alt='list-style-1' src="/sample.jpg" className='image-sq'/>}
         {!hasImg || !isLarge
-        || <div className='image-lg'><img alt='list-style-1' src="/sample.jpg" className='list-img'/></div>}
+        || <img alt='list-style-1' src="/sample.jpg" className='image-lg'/>}
         {!hasIcon  || isLarge
         || <ErrorIcon color='error'/>}
         {!hasIcon  || !isLarge
