@@ -2392,8 +2392,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 /*  Darkmode BLACK  */
 .darkmode .black , .darkmode .black-bg {
-  background: var(--black) !important;
-  color: var(--dm-white) !important;
+  background: var(--black) /* !important */;
+  color: var(--dm-white) /* !important */;
 }
 .darkmode .black button:not(.MuiTab-root), .darkmode .black-bg  button:not(.MuiTab-root)  {
   background: var(--dmbuttonOnBlack) !important;
@@ -3194,17 +3194,33 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
  }
 /* popovers */
 .MuiPopover-paper {
-  background: var(--white) !important;
-  border-radius: var(--popoverRadius);
-  box-shadow: var(--popoverShadow);
-  color: var(--black) !important;
-  transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
-}
-/* darkmode popovers */
-.darkmode .MuiPopover-paper, .darkmode .MuiPopover-paper {
-  background: var(--dm-white)  !important;
+   border-radius: calc(var(--popoverRadius) * var(--radius-1)) !important;
+   background: var(--surface) !important;
+   z-index: 1;
+   transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
+   box-shadow: var(--popoverShadow);
+   color: var(--black) !important;
+ }
+.darkmode .MuiPopover-paper {
+  background: var(--dm-background)   !important;
   color: var(--black)  !important;
+   z-index: 1;
 }
+.darkmode .MuiPopover-paper::before {
+  background: var(--dm-white)  !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: calc(var(--popoverRadius) * var(--radius-1));
+  z-index: -1;
+  content: "";
+}
+
+/* tooltip */
+/* - so same as for popover */
+
 /* dark mode input fields */
 .darkmode .MuiOutlinedInput-notchedOutline fieldset {
   border: 1px solid var(--dm-border);
@@ -3331,8 +3347,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration: var(--dm-hotlink-decoration)
 }
 .darkmode .black, .black-bg {
-    background: var(--black) !important;
-    color: var(--dm-white) !important;
+    background: var(--black) /* !important */;
+    color: var(--dm-white) /* !important */;
 }
 .darkmode .black button, .black-bg  button  {
   background: var(--buttonOnBlack) !important;
