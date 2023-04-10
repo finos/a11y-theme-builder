@@ -750,7 +750,7 @@
     --chip-radius: 5;
     --chip-minwidth: 80px; /*8;*/
     --chip-height: 4;
-    --chipTopography: var(--captionFontWeight) var(--captionFontSize) / var(--captionLineHeight) var(--captionFontFamily);
+    --chipTypography: var(--captionFontWeight) var(--captionFontSize) / var(--captionLineHeight) var(--captionFontFamily);
     --chipTextTransform: var(--captionTextTransform);
     --chipLetterSpacing:  var(--captionLetterSpacing);
     --chip-bevel: var(--bevel-0);
@@ -828,8 +828,8 @@
     --barInBevel : 1;
     /* popover */
     --popoverBevel: var(--bevel-0);
-    --popoverElvation:  var(--elevation-0);
-    --popoverShadow: var(--popoverElvation), var(--popoverBevel);
+    --popoverElevation:  var(--elevation-0);
+    --popoverShadow: var(--popoverElevation), var(--popoverBevel);
     --popoverRadius : 2;
     /* ORGANISMS */
     /* navbar Primary */
@@ -865,10 +865,10 @@
     --hero-title-gap: 16px;
     --hero-justify-content: flex-start;
     /* tables */
-    --tableheaderTopography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
+    --tableheaderTypography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
     --tableheaderSpacing: var(--label-1LetterSpacing);
     --tableheaderTransform: var(--label-1TextTransform);
-    --tablebodyTopography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
+    --tablebodyTypography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
     --tablebodySpacing: var(--body1LetterSpacing);
     --tablebodyTransform: var(--body1TextTransform);
     --tableheaderPadding: 1;
