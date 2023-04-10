@@ -1864,18 +1864,57 @@ button.icon {
   min-width: calc(var(--spacing-1) * var(--button-height));
   flex: none;
 }
-button::after {
+button::after  {
   position: absolute;
-  top: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(calc(var(--border-1) * var(--focusBorder)) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  top: calc(0px - 3px - var(--animation-focus-distance));
+  bottom: calc(0px - 3px - var(--animation-focus-distance));
+  right: calc(0px - 3px - var(--animation-focus-distance));
+  left: calc(0px - 3px - var(--animation-focus-distance));
   border: calc(var(--border-1) * var(--button-border)) solid var(--button);
   background: transparent !important;
   opacity: 0;
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+button:not(.MuiButtonGroup-grouped)::after  {
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+}
+button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):first-of-type::after  {
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  right: 0;
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):last-of-type::after  {
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  left: 0;
+}
+button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:first-of-type::after  {
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  bottom: 0;
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:last-of-type::after  {
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  top: 0;
+}
+button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):not(:first-of-type):not(:last-of-type)::after  {
+  left: 0 !important;
+  right: 0 !important;
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:not(:first-of-type):not(:last-of-type)::after  {
+  top: 0 !important;
+  bottom: 0 !important;
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 .black button::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--white) !important;
@@ -3352,7 +3391,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--buttonOnBlack) !important;
   color: var(--onbuttonOnBlack) !important;
 }
-.black button::after {
+.black button::after:not(.MuiButtonGroup-grouped) {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
 }
 .black button .inline-icon path, .black-bg button .inline-icon path {
