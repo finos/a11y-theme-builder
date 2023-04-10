@@ -2392,8 +2392,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 /*  Darkmode BLACK  */
 .darkmode .black , .darkmode .black-bg {
-  background: var(--black) !important;
-  color: var(--dm-white) !important;
+  background: var(--black) /* !important */;
+  color: var(--dm-white) /* !important */;
 }
 .darkmode .black button:not(.MuiTab-root), .darkmode .black-bg  button:not(.MuiTab-root)  {
   background: var(--dmbuttonOnBlack) !important;
@@ -3351,8 +3351,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration: var(--dm-hotlink-decoration)
 }
 .darkmode .black, .black-bg {
-    background: var(--black) !important;
-    color: var(--dm-white) !important;
+    background: var(--black) /* !important */;
+    color: var(--dm-white) /* !important */;
 }
 .darkmode .black button, .black-bg  button  {
   background: var(--buttonOnBlack) !important;
