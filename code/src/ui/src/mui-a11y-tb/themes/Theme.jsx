@@ -676,6 +676,9 @@ try {
                       "& .MuiTypography-root": {
                         color: "var(--on-background)",
                       },
+                      ".darkmode & .MuiTypography-root": {
+                        color: "var(--dm-on-background)",
+                      },
                       "&.black": {
                         background: "transparent !important",
                         color: "var(--black) !important",
