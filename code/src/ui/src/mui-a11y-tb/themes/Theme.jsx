@@ -307,6 +307,14 @@ try {
                     }
                 }
             },
+            MuiDivider: {
+                styleOverrides: {
+                    root: {
+                        borderColor: "var(--on-background)",
+                        opacity: ".6",
+                    }
+                }
+            },
             MuiPaper: {
                 styleOverrides: {
                     root: {

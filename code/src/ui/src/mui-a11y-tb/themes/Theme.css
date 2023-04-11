@@ -2296,6 +2296,16 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
+
+/* black divider */
+.MuiList-root.black .MuiDivider-root {
+  border-color: var(--white);
+}
+/* white divider */
+.MuiList-root.white .MuiDivider-root {
+  border-color: var(--black);
+}
+
 /* ON BACKGROUNDS */
 /*  BLACK  */
 .black {

@@ -49,6 +49,7 @@ import { MenusComponent } from '../../components/MenusComponent';
 import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
+import { DividerComponent } from '../../components/DividerComponent';
 
 interface Props {
     user: any;
@@ -279,6 +280,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "chips" &&
                         <ChipsComponent />
+                    }
+                    {showComponent === "divider" &&
+                        <DividerComponent />
                     }
                     {showComponent === "listsSingle" &&
                         <ListsSingleComponent/>
