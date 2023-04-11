@@ -13,7 +13,7 @@ interface Props {
 
 export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
 
-    const [colorMode, setColorMode] = useState<string>("primary");
+    const [colorMode, setColorMode] = useState<string>("default");
 
     useEffect(() => {
         console.log("ButtonsStandardComponent mounted");
