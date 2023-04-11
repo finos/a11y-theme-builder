@@ -7,48 +7,104 @@ import React, { useState, MouseEvent, ReactNode } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
 import { ThemeBuilder } from "a11y-theme-builder-sdk";
+import ModalSystemName from '../components/modals/ModalSystemName';
 
 interface Props {
     themeBuilder?: ThemeBuilder;
+    designSystems: any;
     designSystem: any;
     refresh: Function;
 }
 
-export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh}) => {
-
+export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, designSystem, refresh}) => {
+    const name = designSystem.id;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
+    const [doCopy, setDoCopy] = useState(false);
+    const [doRename, setDoRename] = useState(false);
     const handleClose = async (value: string) => {
         setAnchorEl(null);
         if (value) {
             if (value == "load") {
-                window.location.href = "/designSystem/" + designSystem.id;
+                window.location.href = "/designSystem/" + name;
+            }
+            else if (value == "copy") {
+                setDoCopy(true);
+            }
+            else if (value == "rename") {
+                setDoRename(true);
             }
             else if (value == "add") {
-                const ds = await themeBuilder?.getDesignSystem(designSystem.id);
+                const ds = await themeBuilder?.getDesignSystem(name);
                 ds?.setIsSample(true);
                 await ds?.store();
                 refresh();
             }
             else if (value == "remove") {
-                const ds = await themeBuilder?.getDesignSystem(designSystem.id);
+                const ds = await themeBuilder?.getDesignSystem(name);
                 ds?.setIsSample(false);
                 await ds?.store();
                 refresh();
             }
             else if (value == "delete") {
-                await themeBuilder?.deleteDesignSystem(designSystem.id);
+                await themeBuilder?.deleteDesignSystem(name);
                 refresh();
             }
             else if (value == "view") {
-                const s = await themeBuilder?.storage.get(designSystem.id);
+                const s = await themeBuilder?.storage.get(name);
                 setView(JSON.stringify(s,null,4));
             }
         }
     }
+    const isDesignSystem = (name: string) => {
+        for (var i in designSystems) {
+            if (designSystems[i].id == name) {
+                return true;
+            }
+        }
+        return false;
+    }
+    const onClose = async (cmd: string, dest: string) => {
+        if (cmd == "copy") {
+            setDoCopy(false);
+            if (dest) {
+                console.log("Copying Design System " + name + " to " + dest);
+                if (isDesignSystem(dest)) {
+                    console.log("Design system already exists");
+                }
+                else {
+                    if (themeBuilder) {
+                        const ds = await themeBuilder.getDesignSystem(name);
+                        const nds = await ds.copy(dest);
+                    }
+                    setTimeout(function() { refresh() }, 500);
+                }
+            }
+        }
+        else if (cmd == "rename") {
+            setDoRename(false);
+            if (dest) {
+                console.log("Rename Design System " + name + " to " + dest);
+                if (isDesignSystem(dest)) {
+                    console.log("Design system already exists");
+                }
+                else {
+                    if (themeBuilder) {
+                        const ds = await themeBuilder.getDesignSystem(name);
+                        const nds = await ds.copy(dest);
+                        if (nds) {
+                            await themeBuilder.deleteDesignSystem(name);
+                        }
+                    }
+                    setTimeout(function() { refresh() }, 500);
+                }
+            }
+        }
+    }
+
     const [view, setView] = useState<string | null>();
     const renderView = () => {
         if (view) {
@@ -56,7 +112,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
             <>
                 <div className="overlay" onClick={() => setView(null)} ></div>
                 <div className="modal" style={{width: "50%", height:"80%", overflow:"auto"}}>
-                    <h5>Data for {designSystem.id}</h5>
+                    <h5>Data for {name}</h5>
                     <div>
                         <pre>{view}</pre>
                     </div>
@@ -116,7 +172,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                         <h5 
                             onClick={() => handleClose("load")}
                             style={{cursor: "pointer"}}
-                        >{designSystem.id}</h5>
+                        >{name}</h5>
                     }
                     subheader={
                         <div className="date caption quiet">
@@ -143,6 +199,8 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                 onClose={handleClose}
             >
                 <MenuItem onClick={() => handleClose("load")}>Load Design System</MenuItem>
+                <MenuItem onClick={() => handleClose("copy")}>Copy Design System</MenuItem>
+                <MenuItem onClick={() => handleClose("rename")}>Rename Design System</MenuItem>
                 {!isSample && <MenuItem onClick={() => handleClose("add")}>Add to Samples Page</MenuItem>}
                 {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}                
                 <Divider/>
@@ -150,7 +208,9 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystem, refresh
                 <Divider/>
                 <MenuItem onClick={() => handleClose("delete")}>Delete Design System</MenuItem>
             </Menu>
-            {renderView()}  
+            {renderView()}
+            <ModalSystemName isOpen={doCopy} onClose={onClose} cmd="copy" source={name} title="Copy Design System" message={`Enter the new Design System name to copy from "${name}".`} />
+            <ModalSystemName isOpen={doRename} onClose={onClose} cmd="rename" source={name} title="Rename Design System" message={`Enter the new Design System name to rename "${name}".`} />
         </div>
     );
 }

@@ -9,52 +9,61 @@ import './Modals.css';
 interface Props {
     isOpen: any;
     onClose: any;
+    cmd?: string;       // copy or rename.  If not set, then create a new design system
+    source?: string;    // name of design system
+    title?: string;     // optional title to display
+    message?: string;   // optional message to display
 }
 
-const ModalSystemName: React.FC<Props> = ({isOpen, onClose}) => {
+const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title, message }) => {
 
     const [systemName, setSystemName] = useState('');
 
-    const handleSubmit = () => {
-        onClose();
-        console.log("Creating new Design System:", systemName);
-        // TODO: Check for name already exist
-        window.location.href = `/designSystem/${systemName}`;
+    const handleSubmit = async () => {
+        if (cmd) {
+            console.log(cmd + " Design System " + source + " to " + systemName);
+            await onClose(cmd, systemName);
+        }
+        else {
+            onClose();
+            console.log("Creating new Design System:", systemName);
+            // TODO: Check for name already exist
+            window.location.href = `/designSystem/${systemName}`;
+        }
     }
 
     const handleCancel = () => {
-        onClose();
+        if (cmd) {
+            onClose(cmd);
+        }
+        else {
+            onClose();
+        }
     }
 
     if (!isOpen) return null
     return (
         <>
             <div className="overlay" onClick={onClose}></div>
-            <div className='modal modal-systemName'> 
+            <div className='modal modal-systemName'>
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5">
-                            Design System Name
-                        </h1>
+                        <h1 className="modal-title fs-5">{title || "Design System Name"}</h1>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="modal-body">
-                            <p>
-                                Let's get started by naming your Design Systems.
-                            </p>
-                                <label className='label-1' htmlFor="name">
-                                    Name
-                                </label>
-                                <br />
-                                <input
-                                    type="text"
-                                    id='new-name'
-                                    placeholder='System Name'
-                                    className='input-1'
-                                    required
-                                    value={systemName}
-                                    onChange={(e) => setSystemName(e.target.value)}
-                                />
+                            <p>{message || "Let's get started by naming your Design Systems."}</p>
+                            <label className='label-1' htmlFor="name">Name</label>
+                            <br />
+                            <input
+                                type="text"
+                                id='new-name'
+                                placeholder='Enter design system name'
+                                className='input-1'
+                                required
+                                value={systemName}
+                                onChange={(e) => setSystemName(e.target.value)}
+                            />
                         </div>
                         <div className="modal-footer">
                             <Button onClick={handleCancel}>Cancel</Button>
@@ -64,7 +73,7 @@ const ModalSystemName: React.FC<Props> = ({isOpen, onClose}) => {
                 </div>
             </div>
         </>
-    ) 
+    )
 }
 
 export default ModalSystemName;
