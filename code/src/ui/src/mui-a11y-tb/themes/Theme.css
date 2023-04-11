@@ -3871,3 +3871,206 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .modal-content {
   padding: var(--spacing-3);
 }
+/* elevations */
+.elevation-1 {
+  box-shadow: var(--elevation-1) !important;
+  -webkit-box-shadow: var(--elevation-1) !important;
+  -moz-box-shadow: var(--elevation-1) !important;
+}
+.elevation-2 {
+  box-shadow: var(--elevation-2) !important;
+  -webkit-box-shadow: var(--elevation-2) !important;
+  -moz-box-shadow: var(--elevation-2) !important;
+}
+.elevation-3 {
+  box-shadow: var(--elevation-3) !important;
+  -webkit-box-shadow: var(--elevation-3) !important;
+  -moz-box-shadow: var(--elevation-3) !important;
+}
+.elevation-4 {
+  box-shadow: var(--elevation-4) !important;
+  -webkit-box-shadow: var(--elevation-4) !important;
+  -moz-box-shadow: var(--elevation-4) !important;
+}
+.elevation-5 {
+  box-shadow: var(--elevation-5) !important;
+  -webkit-box-shadow: var(--elevation-5) !important;
+  -moz-box-shadow: var(--elevation-5) !important;
+}
+.elevation-6 {
+  box-shadow: var(--elevation-6) !important;
+  -webkit-box-shadow: var(--elevation-6) !important;
+  -moz-box-shadow: var(--elevation-6) !important;
+}
+.elevation-7 {
+  box-shadow: var(--elevation-7) !important;
+  -webkit-box-shadow: var(--elevation-7) !important;
+  -moz-box-shadow: var(--elevation-7) !important;
+}
+.elevation-8 {
+  box-shadow: var(--elevation-8) !important;
+  -webkit-box-shadow: var(--elevation-8) !important;
+  -moz-box-shadow: var(--elevation-8) !important;
+}
+.elevation-9 {
+  box-shadow: var(--elevation-9) !important;
+  -webkit-box-shadow: var(--elevation-9) !important;
+  -moz-box-shadow: var(--elevation-9) !important;
+}
+.darkmode .elevation-0 {
+  background: var(--elevation-bg-0) !important;
+  box-shadow: none  !important;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-1 {
+  background: var(--elevation-bg-1) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+}
+.darkmode .elevation-2 {
+  background: var(--elevation-bg-2) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-3 {
+  background: var(--elevation-bg-3) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-4 {
+  background: var(--elevation-bg-4) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-5 {
+  background: var(--elevation-bg-5) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-6 {
+  background: var(--elevation-bg-5) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-7 {
+  background: var(--elevation-bg-7) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-8 {
+  background: var(--elevation-bg-8) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+.darkmode .elevation-9 {
+  background: var(--elevation-bg-9) !important;
+  box-shadow: none;
+  border: var(--border-1) solid var(--dm-border);
+  color: var(--dm-white);
+}
+/* bevels */
+.bevel {
+  border: none !important;
+}
+.bevel-0 {
+  box-shadow: 0 0 0 0 rgb(0,0,0)
+}
+.bevel-1 {
+  box-shadow: var(--bevel-1) !important;
+  -webkit-box-shadow:var(--bevel-1) !important;
+  -moz-box-shadow: var(--bevel-1) !important;
+}
+.bevel-2 {
+  box-shadow: var(--bevel-2) !important;
+  -webkit-box-shadow:var(--bevel-2) !important;
+  -moz-box-shadow: var(--bevel-2) !important;
+}
+.bevel-3 {
+  box-shadow: var(--bevel-3) !important;
+  -webkit-box-shadow:var(--bevel-3) !important;
+  -moz-box-shadow: var(--bevel-3) !important;
+}
+.bevel-4 {
+  box-shadow: var(--bevel-4) !important;
+  -webkit-box-shadow:var(--bevel-4) !important;
+  -moz-box-shadow: var(--bevel-4) !important;
+}
+.bevel-5 {
+  box-shadow: var(--bevel-5) !important;
+  -webkit-box-shadow:var(--bevel-5) !important;
+  -moz-box-shadow: var(--bevel-5) !important;
+}
+.bevel-6 {
+  box-shadow: var(--bevel-6) !important;
+  -webkit-box-shadow:var(--bevel-6) !important;
+  -moz-box-shadow: var(--bevel-6) !important;
+}
+.bevel-7 {
+  box-shadow: var(--bevel-7) !important;
+  -webkit-box-shadow:var(--bevel-7) !important;
+  -moz-box-shadow: var(--bevel-7) !important;
+}
+.bevel-8 {
+  box-shadow: var(--bevel-8) !important;
+  -webkit-box-shadow:var(--bevel-8) !important;
+  -moz-box-shadow: var(--bevel-8) !important;
+}
+.bevel-9 {
+  box-shadow: var(--bevel-9) !important;
+  -webkit-box-shadow:var(--bevel-9) !important;
+  -moz-box-shadow: var(--bevel-9) !important;
+}
+/* inverse bevels */
+.bevel-1-inverse {
+  box-shadow: var(--reverse-bevel-1) !important;
+  -webkit-box-shadow:var(--reverse-bevel-1) !important;
+  -moz-box-shadow: var(--reverse-bevel-1) !important;
+}
+.bevel-2-inverse {
+  box-shadow: var(--reverse-bevel-2) !important;
+  -webkit-box-shadow:var(--reverse-bevel-2) !important;
+  -moz-box-shadow: var(--reverse-bevel-2) !important;
+}
+.bevel-3-inverse {
+  box-shadow: var(--reverse-bevel-3) !important;
+  -webkit-box-shadow:var(--reverse-bevel-3) !important;
+  -moz-box-shadow: var(--reverse-bevel-3) !important;
+}
+.bevel-4-inverse {
+  box-shadow: var(--reverse-bevel-4) !important;
+  -webkit-box-shadow:var(--reverse-bevel-4) !important;
+  -moz-box-shadow: var(--reverse-bevel-4) !important;
+}
+.bevel-5-inverse {
+  box-shadow: var(--reverse-bevel-5) !important;
+  -webkit-box-shadow:var(--reverse-bevel-5) !important;
+  -moz-box-shadow: var(--reverse-bevel-5) !important;
+}
+.bevel-6-inverse {
+  box-shadow: var(--reverse-bevel-6) !important;
+  -webkit-box-shadow:var(--reverse-bevel-6) !important;
+  -moz-box-shadow: var(--reverse-bevel-6) !important;
+}
+.bevel-7-inverse {
+  box-shadow: var(--reverse-bevel-7) !important;
+  -webkit-box-shadow:var(--reverse-bevel-7) !important;
+  -moz-box-shadow: var(--reverse-bevel-7) !important;
+}
+.bevel-8-inverse {
+  box-shadow: var(--reverse-bevel-8) !important;
+  -webkit-box-shadow:var(--reverse-bevel-8) !important;
+  -moz-box-shadow: var(--reverse-bevel-8) !important;
+}
+.bevel-9-inverse {
+  box-shadow: var(--reverse-bevel-9) !important;
+  -webkit-box-shadow:var(--reverse-bevel-9) !important;
+  -moz-box-shadow: var(--reverse-bevel-9) !important;
+}
