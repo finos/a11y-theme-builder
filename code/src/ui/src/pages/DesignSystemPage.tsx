@@ -130,6 +130,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                                 onChange={handleTabChange}
                                 orientation="horizontal"
                                 centered
+                                className="white"
                                 sx={{
                                     '.MuiTabs-indicator': {
                                         left: 0,
