@@ -24,7 +24,7 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
     const [_underlineHotlinksLightmode, _setUnderlineHotlinksLightmode] = useState<boolean>(true);
     const [_underlineHotlinksLightmodeRequired, _setUnderlineHotlinksLightmodeRequired] = useState<boolean>(true);
     const [_underlineHotlinksDarkmodeRequired, _setUnderlineHotlinksDarkmodeRequired] = useState<boolean>(true);
-    const [_hotlinksError, _setHotlinksError] = useState<boolean>(true);
+    const [_hotlinksError, _setHotlinksError] = useState<boolean>(false);
     const [_hotlinksErrorMessage, _setHotlinksErrorMessage] = useState<string>("");
 
     useEffect(() => {
