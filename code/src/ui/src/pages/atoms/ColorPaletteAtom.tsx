@@ -5,7 +5,7 @@
 import React from 'react';
 import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette } from 'a11y-theme-builder-sdk';
+import { Color, ColorPalette, Shade } from 'a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';
@@ -24,6 +24,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
 
     const [_defaultColor, _setDefaultColor] =  useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
+    const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
     const [_colorName, _setColorName] = useState("");
     const [_colors, _setColors] = useState<Color[]>([]);
     const [_addColorErrorTriggered, _setAddColorErrorTriggered] = useState<boolean>(false)
@@ -34,7 +35,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
             _setDefaultColor(defaultColor);
-            _setBlockPickerColor(defaultColor); 
+            reflectColorPickerChangeInUI(defaultColor);
         }
         _setColors(atom.getColors());
     }, [])
@@ -42,6 +43,21 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
     const resetUI = () => {
         _setColorName("");
         _setBlockPickerColor(_defaultColor);
+    }
+
+    // update color picker states to which other UI
+    //  on the page is bound to, include "on" color
+    //  in updates
+    const reflectColorPickerChangeInUI = (color: string) => {
+        // update the _blockPickerColor in case user is manually
+        //  entering a new value, we need the field to update
+        //  as the user types.  Even in an error condition.
+        _setBlockPickerColor(color);
+        if (!_addColorInputErrorTriggered) {
+            const shadeForColor = Shade.fromHex(color);
+            const shadeForOnColor = shadeForColor.getOnShade()
+            _setBlockPickerOnColor(shadeForOnColor.hex);
+        }
     }
 
     const handleAddColor = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -81,16 +97,19 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
     const handleColorValueInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
             _setAddColorInputErrorTriggered(true);
+            // need to set _blockPickerColor since UI is tied to
+            //  it, so it needs to update so value in field can
+            //  update as user types
             _setBlockPickerColor(event.target.value);
             return;
         }
         _setAddColorInputErrorTriggered(false);
-        _setBlockPickerColor(event.target.value);
+        reflectColorPickerChangeInUI(event.target.value);
     }
 
     const handleColorSelected = (color: ColorResult) => {
         console.log(`color selected, event: ${JSON.stringify(color)}`);
-        _setBlockPickerColor(color.hex)
+        reflectColorPickerChangeInUI(color.hex)
     }
 
     return (
@@ -124,6 +143,12 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                             onChange={handleColorValueInputChange}
                             helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
                             value={_blockPickerColor}
+                            sx={{
+                                backgroundColor: `${_blockPickerColor}`,
+                                input: {
+                                    color: `${_blockPickerOnColor}`
+                                }
+                            }}
                         />
                         <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
                     </div>
