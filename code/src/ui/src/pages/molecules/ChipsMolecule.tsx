@@ -58,9 +58,9 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                 <div className="formRow">
                     <NumberScaledSelectable property={molecule.horizontalPadding} defaultValue={2} units="px" scale={grid}/>
                 </div>
-                <div className="formRow">
+                {/* <div className="formRow">
                     <StringSelectable property={molecule.text} defaultValue="Caption" />
-                </div>
+                </div> */}
                 <div className="formRow">
                     <StringSelectable property={molecule.elevation} defaultValue="No Elevation" />
                 </div>

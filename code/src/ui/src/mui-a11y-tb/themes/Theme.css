@@ -2209,7 +2209,7 @@ button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-
   background: transparent !important;
   border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
 }
-.darkmode button.MuiButtonBase-root.black {
+.darkmode button:not(.small-btn).MuiButtonBase-root.black {
   color: var(--dm-white)  !important;
   background: var(--black) !important;
 }
@@ -2511,7 +2511,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-.darkmode button.MuiButtonBase-root {
+.darkmode button:not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
@@ -2605,11 +2605,11 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   color: var(--dm-on-white) !important;
 }
 .darkmode button.small-btn::after {
-  border: var(--border-1) solid var(--dm-button) !important;
+  border: var(--focusBorder) solid var(--dm-button) !important;
   background: none !important;
 }
 .darkmode .black button.small-btn::after {
-  border: var(--border-1) solid var(--dm-white) !important;
+  border: var(--focusBorder) solid var(--dm-white) !important;
   background: none !important;
 }
 .darkmode button.small-btn::before {
@@ -2683,7 +2683,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   color: var(--dm-on-white) !important;
 }
 .darkmode button.MuiButton-outlined::before {
-  border: var(--button-border) solid var(--dm-button);
+  border: calc(var(--button-border) * var(--border-1)) solid var(--dm-button);
   box-shadow: var(--dm-button-boxshadow);
   background: none !important;
 }
@@ -2717,7 +2717,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 .darkmode button.MuiButton-outlined::after,
 .darkmode button.MuiButton-text::after {
-  background: var(--dm-button);
+  background: var(--transparent);
 }
 .darkmode .black button.MuiButton-outlined::after,
 .darkmode .black button.MuiButton-text::after {
@@ -3190,6 +3190,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   height: calc(var(--spacing-1) * var(--sliderbarHeight)) ;
   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
   background-color: var(--on-background);
+  border: none;
   opacity: var(--disabled);
   width: calc(100% - var(--spacing-2));
   box-shadow: var(--barInBevel);
@@ -3206,6 +3207,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 .darkmode .MuiSwitch-root .MuiSwitch-track {
   background-color: var(--dm-on-background);
+  border: none;
 }
 .darkmode .MuiSwitch-root .MuiButtonBase-root.Mui-checked ~ .MuiSwitch-track {
   background-color: var(--dm-button) !important;
@@ -3215,6 +3217,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   height: var(--min-target);
 }
 .MuiSlider-root .MuiSlider-track{
+  border: none;
   height: var(--min-target);
   background-color: var(--button);
   height: calc(var(--sliderbarHeight) * var(--spacing-1));
