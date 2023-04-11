@@ -2511,7 +2511,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-.darkmode button:not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
