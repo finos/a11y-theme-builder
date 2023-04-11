@@ -46,6 +46,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
                 <SystemCard
                     themeBuilder={themeBuilder}
                     designSystem={ds}
+                    designSystems={designSystems}
                     key={ds.id}
                     refresh={getDesignSystemNames}
                 />

@@ -45,6 +45,7 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
                     <SystemCard
                         key={ds.id}
                         themeBuilder={themeBuilder}
+                        designSystems={designSystems}
                         designSystem={ds}
                         refresh={getDesignSystemNames}
                     />
