@@ -750,7 +750,7 @@
     --chip-radius: 5;
     --chip-minwidth: 80px; /*8;*/
     --chip-height: 4;
-    --chipTypography: var(--captionFontWeight) var(--captionFontSize) / var(--captionLineHeight) var(--captionFontFamily);
+    --chipTopography: var(--captionFontWeight) var(--captionFontSize) / var(--captionLineHeight) var(--captionFontFamily);
     --chipTextTransform: var(--captionTextTransform);
     --chipLetterSpacing:  var(--captionLetterSpacing);
     --chip-bevel: var(--bevel-0);
@@ -828,8 +828,8 @@
     --barInBevel : 1;
     /* popover */
     --popoverBevel: var(--bevel-0);
-    --popoverElevation:  var(--elevation-0);
-    --popoverShadow: var(--popoverElevation), var(--popoverBevel);
+    --popoverElvation:  var(--elevation-0);
+    --popoverShadow: var(--popoverElvation), var(--popoverBevel);
     --popoverRadius : 2;
     /* ORGANISMS */
     /* navbar Primary */
@@ -865,10 +865,10 @@
     --hero-title-gap: 16px;
     --hero-justify-content: flex-start;
     /* tables */
-    --tableheaderTypography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
+    --tableheaderTopography:  var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
     --tableheaderSpacing: var(--label-1LetterSpacing);
     --tableheaderTransform: var(--label-1TextTransform);
-    --tablebodyTypography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
+    --tablebodyTopography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
     --tablebodySpacing: var(--body1LetterSpacing);
     --tablebodyTransform: var(--body1TextTransform);
     --tableheaderPadding: 1;
@@ -1690,8 +1690,8 @@ h6 {
     background: var(--dm-white) !important;
 }
 .darkmode .white.MuiAvatar-root.lg svg path,
-.darkmode .white.MuiAvatar-root.xl svg path,
-.darkmode .white.MuiAvatar-root.xxl svg path {
+.darkmode .white.MuiAvatar-root.xl svg path,,
+.darkmode .white.MuiAvatar-root.xxl svg path, {
     fill: var(--black);
 }
 .avatar.centered {
@@ -2296,16 +2296,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
-
-/* black divider */
-.MuiList-root.black .MuiDivider-root {
-  border-color: var(--white);
-}
-/* white divider */
-.MuiList-root.white .MuiDivider-root {
-  border-color: var(--black);
-}
-
 /* ON BACKGROUNDS */
 /*  BLACK  */
 .black {
@@ -2511,7 +2501,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-.darkmode button:not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
@@ -2810,7 +2800,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   align-items: center;
   justify-content: center
 }
-.MuiCard-root .client-title-area .inline-icon{
+.MuiCard-root. .client-title-area .inline-icon{
   height: var(--spacing-5);
   width: var(--spacing-5);
   justify-content: center;
@@ -3223,7 +3213,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   height: calc(var(--sliderbarHeight) * var(--spacing-1));
   margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2);
 }
-.MuiSlider-root .MuiSlider-thumb {
+.MuiSlider-root .MuiSlider-thumb: {
   /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
    width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
@@ -3870,4 +3860,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 /* Modal */
 .modal-content {
   padding: var(--spacing-3);
+}
+/* Left Nav */
+.MuiList-root .MuiStack-root {
+
 }

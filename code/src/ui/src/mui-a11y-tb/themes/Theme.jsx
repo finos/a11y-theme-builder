@@ -307,14 +307,6 @@ try {
                     }
                 }
             },
-            MuiDivider: {
-                styleOverrides: {
-                    root: {
-                        borderColor: "var(--on-background)",
-                        opacity: ".6",
-                    }
-                }
-            },
             MuiPaper: {
                 styleOverrides: {
                     root: {
@@ -609,7 +601,7 @@ try {
                         "& .MuiTabs-indicator": {
                             background: "var(--on-button)" ,
                             height: "var(--spacing-half)",
-                            bottom:  "calc(var(--spacing-half) + 2px)",
+                            bottom:  "2px",
                         },
 
                     }
