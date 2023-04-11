@@ -2301,9 +2301,23 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   border-color: var(--white);
 }
 /* white divider */
-.MuiList-root.white .MuiDivider-root {
+.MuiList-root.white .MuiDivider-root,
+.darkmode .MuiList-root.white .MuiDivider-root {
   border-color: var(--black);
 }
+/* darkmode list and divider */
+.darkmode .MuiList-root {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+  color: var(--dm-on-surface);
+}
+.darkmode .MuiList-root .MuiDivider-root {
+  border-color: var(--dm-on-background);
+}
+.darkmode .MuiList-root.black .MuiDivider-root {
+  border-color: var(--dm-white);
+}
+
 
 /* ON BACKGROUNDS */
 /*  BLACK  */
