@@ -635,8 +635,7 @@
     --bevel-dark-opacity: 0.1;
     --bevel-change: .2;
     /* bevels */
-    --bevel-0: rgba(0,0,0,0);
-
+    --bevel-0: 0 0 0 0 rgba(0,0,0,0);
     --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - var(--bevel-horizontal)) calc(0px - var(--bevel-vertical)) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,var(--bevel-dark-opacity));
     --bevel-2: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread)

@@ -2,21 +2,32 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
-import { MenuItem, Select, FormControl, InputLabel, TextField, Slider } from '@mui/material';
-import { BevelSettings, DesignSystem, ElevationSettings } from 'a11y-theme-builder-sdk';
-import { ExampleElevation } from '../../components/ExampleElevation';
-import ExampleBevel from '../../components/ExampleBevel';
+import React, { useState } from 'react';
+import { Slider } from '@mui/material';
+import { BevelSettings } from 'a11y-theme-builder-sdk';
+import { HeadingSection } from '../content/HeadingSection';
+import { ExampleSection } from '../content/ExampleSection';
+import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 
+interface SampleProps {
+    className: string;
+    label: string;
+}
 
-const name = "BevelsAtom";
+const ExampleBevel: React.FC<SampleProps> = ({ className, label }) => {
+    return (
+        <div className="example">
+            <div className="caption">{label}</div>
+            <div className={"card " + className} style={{backgroundColor: "var(--button)"}}></div>
+        </div>
+    );
+}
 
 interface Props {
     bevelSettings: BevelSettings;
 }
 
 export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
-    // console.log(`${name} - >>> enter()`)
 
     const horizontalShadowLengthProperty    = bevelSettings.standard.horizontalShadowLength
     const verticalShadowLengthProperty      = bevelSettings.standard.verticalShadowLength
@@ -123,12 +134,12 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     }
 
     return (
-        <div className="content">
-            <div className="container">
+        <div>
+            <HeadingSection item={bevelSettings} title="Bevels & Inverse Bevels">
+            </HeadingSection>
+            <ExampleSection title="Bevel Shadow Settings">
                 <div className="row">
                     <div className="col-6">
-                        <div className="overline-large">Bevels &amp; Inverse Bevels</div>
-                        <h1>Bevel Shadow Settings</h1>
                         <div className="form-row">
                             <label className="label-1">
                                 Horizontal Shadow Length
@@ -230,21 +241,22 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                     </div>
                     <div className="col-6">
                         <div className="subtitle1">Sample Bevels</div>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={0} preText={"Non "}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={1}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={2}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={3}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={4}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={5}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={6}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={7}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={8}/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={9}/>
+                        <ExampleBevel className="bevel-0" label="Bevel 0"/>
+                        <ExampleBevel className="bevel-1" label="Bevel 1"/>
+                        <ExampleBevel className="bevel-2" label="Bevel 2"/>
+                        <ExampleBevel className="bevel-3" label="Bevel 3"/>
+                        <ExampleBevel className="bevel-4" label="Bevel 4"/>
+                        <ExampleBevel className="bevel-5" label="Bevel 5"/>
+                        <ExampleBevel className="bevel-6" label="Bevel 6"/>
+                        <ExampleBevel className="bevel-7" label="Bevel 7"/>
+                        <ExampleBevel className="bevel-8" label="Bevel 8"/>
+                        <ExampleBevel className="bevel-9" label="Bevel 9"/>
                     </div>
                 </div>
+                </ExampleSection>
+                <ExampleSection title="Inverse Bevel Shadow Settings">
                 <div className="row">
                     <div className="col-6">
-                        <h1>Inverse Bevel Shadow Settings</h1>
                         <div className="form-row">
                             <label className="label-1">
                                 Horizontal Shadow Length
@@ -346,19 +358,20 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                     </div>
                     <div className="col-6">
                         <div className="subtitle1">Sample Inverse Bevels</div>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={1} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={2} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={3} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={4} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={5} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={6} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={7} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={8} isInverse/>
-                        <ExampleBevel bevelSettings={bevelSettings} bevelNumber={9} isInverse/>
+                        <ExampleBevel className="bevel-0-inverse" label="Bevel 0"/>
+                        <ExampleBevel className="bevel-1-inverse" label="Bevel 1"/>
+                        <ExampleBevel className="bevel-2-inverse" label="Bevel 2"/>
+                        <ExampleBevel className="bevel-3-inverse" label="Bevel 3"/>
+                        <ExampleBevel className="bevel-4-inverse" label="Bevel 4"/>
+                        <ExampleBevel className="bevel-5-inverse" label="Bevel 5"/>
+                        <ExampleBevel className="bevel-6-inverse" label="Bevel 6"/>
+                        <ExampleBevel className="bevel-7-inverse" label="Bevel 7"/>
+                        <ExampleBevel className="bevel-8-inverse" label="Bevel 8"/>
+                        <ExampleBevel className="bevel-9-inverse" label="Bevel 9"/>
                     </div>
                 </div>
-            </div>
+            </ExampleSection>
+            <GeneratedCodeSection item={bevelSettings}/>
         </div>
     )
-
 }
