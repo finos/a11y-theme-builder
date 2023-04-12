@@ -234,6 +234,7 @@
     --iconOnWhite:'';
     --dmbuttonOnWhite: '';
     --dmbuttonHalfOnWhite: '';
+    --dmonbuttonOnWhite: '';
     --dmiconOnWhite: '';
     --buttonOnBlack:'';
     --buttonHalfOnBlack:'';
@@ -1613,7 +1614,7 @@ h6 {
 .darkmode .MuiAvatar-root.sm,
 .darkmode .MuiAvatar-root.md {
   background: var(--dm-button) !important;
-  border: solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important;
+  border: solid calc(var(--border-1) * var(--avatar-border)) var(--dm-button) !important;
   /* background-size: 100%; */
 }
 .darkmode .MuiAvatar-root.xxs svg path,
@@ -1699,6 +1700,12 @@ h6 {
 }
 .avatar.centered {
     margin: auto !important
+}
+.darkmode .MuiAvatar-root {
+  background-color: var(--dm-button)
+}
+.darkmode .MuiAvatar-root svg path {
+    fill: var(--dm-white);
 }
 /* Breadcrumbs  */
 .breadcrumbs,
@@ -2903,7 +2910,10 @@ a:active {
   background-color: var(--button);
   height: calc(var(--sliderbarHeight) * var(--spacing-1));
   margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2);
+  opacity: var(--quiet);
+
 }
+
 .MuiSlider-root .MuiSlider-thumb {
   /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
@@ -2928,6 +2938,17 @@ a:active {
    content: '';
    transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
    z-index: -1;
+ }
+
+ .darkmode .MuiSlider-root .MuiSwitch-thumb{
+   background-color: var(--dm-button);
+ }
+ .darkmode .MuiSlider-root .MuiSwitch-thumb::after {
+   border: var(--focusBorder) solid var(--dm-button);
+ }
+  .darkmode .MuiSlider-root .MuiSlider-track{
+   background-color: var(--dm-button);
+   opacity: var(--quiet);
  }
 /* popovers */
 .MuiPopover-paper {
@@ -3016,6 +3037,14 @@ a:active {
 /* dark mode icon */
 .inline-icon path {
   fill: var(--dm-icon);
+}
+
+/* dark mode states */
+.darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
+ color: var(--dm-danger);
+}
+.darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
+ color: var(--dm-danger);
 }
 
 /* images */
@@ -3737,6 +3766,12 @@ a:active {
 .black button:not(.MuiTab-root):not(.black)::after {
   border: var(--focusBorder) solid var(--buttonOnBlack);
 }
+.black .MuiAvatar-root:not(.black) {
+  background-color: var(--buttonOnBlack)
+}
+.black .MuiAvatar-root:not(.black) svg path {
+    fill: var(--on-buttonOnBlack);
+}
 
 /* black group buttons */
 .black button.MuiButton-outlined::before {
@@ -3804,6 +3839,12 @@ a:active {
 .white button.MuiButton-text::after {
   background: var(--black);
 }
+.white .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnBlack)
+}
+.white .MuiAvatar-root:not(.white) svg path {
+    fill: var(--on-buttonOnBlack);
+}
 
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .colored, .backgroundTertiary {
@@ -3838,6 +3879,12 @@ a:active {
   text-decoration:  var(--hotlinkDecorationOnTertiary );
   color: var(--hotlinkOnTertiary );
 }
+.colored .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnTertiary)
+}
+.colored .MuiAvatar-root:not(.white) svg path {
+    fill: var(--on-buttonOnTertiary);
+}
 
 /*  GRADIENT 1 */
 .gradient-1 {
@@ -3862,6 +3909,12 @@ a:active {
 }
 .gradient-1 a:active {
   text-decoration: underline;
+}
+.gradient-1 .MuiAvatar-root {
+  background-color: var(--buttonOnGradient1)
+}
+.gradient-1  .MuiAvatar-root svg path {
+    fill: var(--onbuttonOnGradient1);
 }
 /* on white buttons */
 .gradient-1 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
@@ -3892,6 +3945,12 @@ a:active {
 }
 .gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
   color: var(--on-gradient-2) !important;
+}
+.gradient-2 .MuiAvatar-root {
+  background-color: var(--buttonOnGradient2)
+}
+.gradient-2  .MuiAvatar-root svg path {
+    fill: var(--onbuttonOnGradient2);
 }
 /* on white hotlinks */
 .gradient-2 a {
@@ -3977,6 +4036,12 @@ a:active {
 .gradient-3 button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient3);
 }
+.gradient-3 .MuiAvatar-root {
+  background-color: var(--buttonOnGradient3)
+}
+.gradient-3  .MuiAvatar-root svg path {
+    fill: var(--onbuttonOnGradient3);
+}
 /*  Darkmode BLACK  */
 .darkmode .black, .black-bg {
     background: var(--black) !important;
@@ -4030,4 +4095,73 @@ a:active {
 .darkmode .black button.MuiButton-outlined::after,
 .darkmode .black button.MuiButton-text::after {
   background: var(--dm-white);
+}
+.darkmode .black .MuiAvatar-root:not(.black) {
+  background-color: var(--dmbuttonOnBlack)
+}
+.darkmode .black .MuiAvatar-root:not(.black) svg path {
+    fill: var(--dmonbuttonOnBlack);
+}
+/* dark mode white */
+.darkmode .white, .white-bg {
+    background: var(--dm-white) !important;
+    color: var(--black) !important;
+}
+.darkmode .white-half {
+  background: var(--dm-white-half) !important;
+}
+.darkmode .white .fa-regular:not(button *), .white .fa-solid:not(button *) {
+  color: var(--dmiconOnWhite) !important;
+}
+/* on white hotlinks */
+.darkmode .white a {
+  text-decoration:  underline;
+  color: var(--dmhotlinkOnWhite);
+}
+.darkmode .white a:visited{
+  text-decoration:  underline !important;
+  color: var(--dmhotlinkOnWhite);
+  opacity: .5
+}
+.darkmode .white a:hover {
+  text-decoration: none !important;
+}
+.darkmode .white a:active {
+  text-decoration: underline;
+}
+/* on white buttons */
+.darkmode .white button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: var(--dmbuttonOnWhite) !important;
+  color: var(--dmonbuttonOnWhite) !important;
+}
+.darkmode .white button::not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dmbuttonOnWhite) !important;
+}
+.darkmode .white button.small-btn.MuiButton-outlined  {
+  color: var(--dmonbuttonOnWhite) !important;
+  background: none !important
+}
+.darkmode .white button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--dmonbuttonOnWhite) !important;
+  background: var(--dmbuttonOnWhite) !important;
+}
+.darkmode .white button:not(.white).MuiButton-outlined, .white button:not(.white).MuiButton-text {
+  color: var(--dmbuttonOnWhite) !important;
+}
+.darkmode .white button:not(.MuiTab-root):not(.white)::after{
+  border: var(--focusBorder) solid var(--dmbuttonOnWhite);
+}
+/* white group buttons */
+.darkmode .white button.MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--black);
+}
+.darkmode .white button.MuiButton-outlined::after,
+.darkmode .white button.MuiButton-text::after {
+  background: var(--black);
+}
+.darkmode .white .MuiAvatar-root:not(.white) {
+  background-color: var(--dmbuttonOnBlack)
+}
+.darkmode .white .MuiAvatar-root:not(.white) svg path {
+    fill: var(--dmbonuttonOnBlack)
 }
