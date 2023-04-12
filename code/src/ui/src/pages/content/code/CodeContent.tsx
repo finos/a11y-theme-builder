@@ -120,7 +120,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="css" customStyle={codeStyle}>
                         {getCssCode()}
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
                 </div>
 
                 <div className="top40">
@@ -167,7 +167,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         {getJsonCode(true)}
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
                 </div>
 
                 <div className="top40">
@@ -175,7 +175,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         {getJsonCode(false)}
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
                 </div>
 
                 <div className="top40">
