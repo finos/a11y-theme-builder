@@ -47,22 +47,17 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
         || <ErrorIcon color='error' fontSize='large'/>}
     </>
 
+    const listClass = isClickable ? "list list-clickable" : "list"
 
     return (
         <div className="sample">
             <div className="subtitle1">{title}</div>
-            <div className="list">
+            <div className={listClass}>
                 <div className="list-body">
                     <div className="container-flex">
                         { (!hasAvatar && !hasImg && !hasIcon )
-                        || <div className="list-icon">
-                            {isClickable || listIcon}
-                            {!isClickable || <Link to={''} className='list-link'>{listIcon}</Link>}
-                        </div>}
-                        <div className="list-content">
-                            {isClickable || listTitle}
-                            {!isClickable || <Link to={''} className='list-link'>{listTitle}</Link>}
-                            </div>
+                        || <div className="list-icon">{listIcon}</div>}
+                        <div className="list-content">{listTitle}</div>
                         {!hasCheckbox
                         || <div className="list-checkbox"><FormControlLabel control={<Checkbox defaultChecked />} label="" /></div>}
                     </div>
