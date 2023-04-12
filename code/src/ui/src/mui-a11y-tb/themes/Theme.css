@@ -728,7 +728,7 @@
     --buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --buttonTextDecoration: var(--CTATextDecoration);
     --buttonTextTransform: var(--CTATextTransform);
-    --buttonCharacterSpacing: var(--CTALetterSpacing);
+    --buttonLetterSpacing: var(--CTALetterSpacing);
     --button-elevation: var(--elevation-1);
     --button-bevel: var(--bevel-1);
     --button-shadow: var(--button-elevation), var(--button-bevel);
@@ -738,7 +738,7 @@
     --sm-buttonTypography: var(--CTAFontWeight) var(--CTAFontSize) / var(--CTALineHeight) var(--CTAFontFamily);
     --sm-buttonTextDecoration: var(--CTATextDecoration);
     --sm-buttonTextTransform: none;
-    --sm-buttonCharacterSpacing: var(--CTALetterSpacing);
+    --sm-buttonLetterSpacing: var(--CTALetterSpacing);
     --groupButton-radius: calc(var(--radius-1) * var(--button-radius) * 1.6);
     --groupButtonBG: '#ffffff';
     --on-groupButtonBG: var(--textDark);
@@ -817,7 +817,7 @@
     --image-shadow: var(--image-elevation);
     /* List Images */
     --inline-image-height: 8;
-    --inline-image-image-radius: 1;
+    --inline-image-radius: 1;
     /* Avatar Images */
     --avatar-border: 2;
     --avatar-border-lg: 4;
@@ -1147,7 +1147,7 @@
   --CTA-SmallLineHeight: var(--standard-LineHeight);
   --CTA-SmallTextDecoration: none;
   --CTA-SmallTextTransform: none;
-  --CTA-SmallCharacterSpacing: 1.25%;
+  --CTA-SmallLetterSpacing: 1.25%;
   /* caption */
   --captionFontSize: calc(var(--baseFont) * .75);
   --captionFontFamily:  var(--bodyFamily);
@@ -1155,7 +1155,7 @@
   --captionLineHeight: var(--standard-LineHeight);
   --captionTextDecoration: none;
   --captionTextTransform: none;
-  --captionCharacterSpacing: .5;
+  --captionLetterSpacing: .5;
   /* caption bold*/
   --caption-boldFontSize: calc(var(--baseFont) * .75);
   --caption-boldFontFamily:  var(--bodyFamily);
@@ -1163,7 +1163,7 @@
   --caption-boldLineHeight: var(--standard-LineHeight);
   --caption-boldTextDecoration: none;
   --caption-boldTextTransform: none;
-  --caption-boldCharacterSpacing: .5%;
+  --caption-boldLetterSpacing: .5%;
   /* overline */
   --overlineFontSize: calc(var(--baseFont) * .625);
   --overlineFontFamily:  var(--bodyFamily);
@@ -1171,7 +1171,7 @@
   --overlineLineHeight: var(--standard-LineHeight);
   --overlineTextDecoration: none;
   --overlineTextTransform: uppercase;
-  --overlineCharacterSpacing: 1.5%;
+  --overlineLetterSpacing: 1.5%;
   /* overline large */
   --overline-largeFontSize: calc(var(--baseFont) * .875);
   --overline-largeFontFamily:  var(--bodyFamily);
@@ -1179,7 +1179,7 @@
   --overline-largeLineHeight: var(--standard-LineHeight);
   --overline-largeTextDecoration: none;
   --overline-largeTextTransform: uppercase;
-  --overline-largeCharacterSpacing: 1.5%;
+  --overline-largeLetterSpacing: 1.5%;
   /* overline X large */
   --overline-XLFontSize: var(--baseFont);
   --overline-XLFontFamily:  var(--bodyFamily);
@@ -1187,7 +1187,7 @@
   --overline-XLLineHeight: var(--standard-LineHeight);
   --overline-XLTextDecoration: none;
   --overline-XLTextTransform: uppercase;
-  --overline-XLCharacterSpacing: 1.5%;
+  --overline-XLLetterSpacing: 1.5%;
   /* small */
   --smallFontSize: calc(var(--baseFont) * .675);
   --smallFontFamily:  var(--bodyFamily);
@@ -1195,7 +1195,7 @@
   --smallLineHeight: var(--standard-LineHeight);
   --smallTextDecoration: none;
   --smallTextTransform: none;
-  --smallCharacterSpacing: 0.4%;
+  --smallLetterSpacing: 0.4%;
   /* small semibold */
   --small-semiboldFontSize: calc(var(--baseFont) * .875);
   --small-semiboldFontFamily:  var(--bodyFamily);
@@ -1203,7 +1203,7 @@
   --small-semiboldLineHeight: var(--standard-LineHeight);
   --small-semiboldTextDecoration: none;
   --small-semiboldTextTransform: none;
-  --small-semiboldCharacterSpacing: 1.25%;
+  --small-semiboldLetterSpacing: 1.25%;
   /* label 1*/
   --label-1FontSize: calc(var(--baseFont) * .875);
   --label-1FontFamily:  var(--bodyFamily);
@@ -1211,7 +1211,7 @@
   --label-1LineHeight: var(--standard-LineHeight);
   --label-1TextDecoration: none;
   --label-1TextTransform: none;
-  --label-1CharacterSpacing: 1.25%;
+  --label-1LetterSpacing: 1.25%;
   /* label 1 All Caps */
   --label-1-allCapsFontSize: calc(var(--baseFont) * .875);
   --label-1-allCapsFontFamily:  var(--bodyFamily);
@@ -1219,7 +1219,7 @@
   --label-1-allCapsLineHeight: var(--standard-LineHeight);
   --label-1-allCapsTextDecoration: none;
   --label-1-allCapsTextTransform: 'uppercase;';
-  --label-1-allCapsCharacterSpacing: 1.25%;
+  --label-1-allCapsLetterSpacing: 1.25%;
   /* label 2*/
   --label-2FontSize: calc(var(--baseFont) * .75);
   --label-2FontFamily:  var(--bodyFamily);
@@ -1227,7 +1227,7 @@
   --label-2LineHeight: var(--standard-LineHeight);
   --label-2TextDecoration: none;
   --label-2TextTransform: none;
-  --label-2CharacterSpacing: 1.25%;
+  --label-2LetterSpacing: 1.25%;
   /* label 2 All Caps */
   --label-2-allCapsFontSize: calc(var(--baseFont) * .75);
   --label-2-allCapsFontFamily:  var(--bodyFamily);
@@ -1235,7 +1235,7 @@
   --label-2-allCapsLineHeight: var(--standard-LineHeight);
   --label-2-allCapsTextDecoration: none;
   --label-2-allCapsTextTransform: 'uppercase;';
-  --label-2-allCapsCharacterSpacing: 1.25%;
+  --label-2-allCapsLetterSpacing: 1.25%;
   /* label 2 small*/
   --label-smallFontSize: calc(var(--baseFont) * .625);
   --label-smallFontFamily:  var(--bodyFamily);
@@ -1243,7 +1243,7 @@
   --label-smallLineHeight: var(--standard-LineHeight);
   --label-smallTextDecoration: none;
   --label-smallTextTransform: uppercase;
-  --label-smallCharacterSpacing: .18px;
+  --label-smallLetterSpacing: .18px;
   /* stat */
   --statFontSize: calc(var(--baseFont) * 3);
   --statFontFamily:  var(--bodyFamily);
@@ -1251,7 +1251,7 @@
   --statLineHeight: 100%;
   --statTextDecoration: none;
   --statTextTransform: uppercase;
-  --statCharacterSpacing: 1.5%;
+  --statLetterSpacing: 1.5%;
 }
 /* Typography */
 /* Headers */
@@ -1850,7 +1850,7 @@ button {
   position: relative;
   align-self: start;
   font: var(--buttonTypography);
-  letter-spacing: var(--buttonCharacterSpacing);
+  letter-spacing: var(--buttonLetterSpacing);
   text-decoration: var(--buttonTextDecoration);
   text-transform: var(--buttonTextTransform);
   box-shadow: var(--button-shadow);
@@ -1973,7 +1973,7 @@ button.small-btn {
   min-height: calc(var(--spacing-1) * var(--button-height));
   font: var(--sm-buttonTypography);
   text-transform: var(--sm-buttonTextTransform) !important;
-  letter-spacing: var(--sm-buttonCharacterSpacing);
+  letter-spacing: var(--sm-buttonLetterSpacing);
   box-shadow: none !important;
   position: relative;
   border: none;  /* border for small button specified inside component, not at root */
