@@ -12,7 +12,7 @@ interface Props {
 export const WelcomeNavbar: React.FC<Props> = ({styles, setStyles}) => {
 
     return (
-        <div className='titleBarDiv'>
+        <div className='titleBarDiv colored'>
             <div className="left-titlebar">
                 <img src="/tb-logo.svg" alt="ThemeBuilder Logo" className="tb-logo" />
             </div>
@@ -26,6 +26,3 @@ export const WelcomeNavbar: React.FC<Props> = ({styles, setStyles}) => {
 }
 
 export default WelcomeNavbar;
-
-
-

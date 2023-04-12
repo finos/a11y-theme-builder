@@ -224,20 +224,24 @@
     --accent: #E0F2F1;
     /* backgrounds */
     --white-bg: #ffffff;
-    --buttonOnWhite:'';
+    --buttonOnWhite: '#121212';
     --buttonHalfOnWhite:'';
-    --onbuttonOnWhite:'';
+    --onbuttonOnWhite: '#ffffff';
     --hotlinkOnWhite:'';
     --hotlinkDecorationOnWhite: '';
+    --dmhotlinkOnWhite:'';
+    --dmhotlinkDecorationOnWhite: '';
     --iconOnWhite:'';
     --dmbuttonOnWhite: '';
     --dmbuttonHalfOnWhite: '';
     --dmiconOnWhite: '';
     --buttonOnBlack:'';
     --buttonHalfOnBlack:'';
-    --onbuttonOnBlack:'';
+    --onbuttonOnBlack: '#121212';
     --hotlinkOnBlack:'';
     --hotlinkDecorationOnBlack: '';
+    --dmhotlinkOnBlack:'';
+    --dmhotlinkDecorationOnBlack: '';
     --iconOnBlack: '';
     --dmiconOnBlack: '';
     --dm-on-accent:  #121212;
@@ -319,7 +323,7 @@
     --dmonbuttonOnGradient2: '';
     /* gradient 3 */
     --gradient-3: linear-gradient(45deg, #ffffff 0%, var(--gray-100) 100%);
-    --on-gradient-3: var(--on-gray-0);
+    --on-gradient-3: #121212;
     --buttonOnGradient3: '';
     --buttonHalfOnGradient3: '';
     --onbuttonOnGradient3: '';
@@ -1915,12 +1919,6 @@ button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:not(:first-of-type)
   bottom: 0 !important;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-.black button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--white) !important;
-}
-.white button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--black) !important;
-}
 button:hover::after {
   opacity: .5;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -1986,14 +1984,6 @@ button.small-btn.icon::before {
   padding: 0 !important;
   min-width: calc(var(--sm-button-height) + 2px);
 }
-.black button.small-btn {
-  background: transparent !important;
-  color: var(--on-white) !important;
-}
-.white button.small-btn {
-  background: transparent !important;
-  color: var(--white) !important;
-}
 button.small-btn::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
@@ -2031,12 +2021,6 @@ button.small-btn::before {
   box-shadow: var(--button-shadow);
   opacity: 1;
 }
-.white button.small-btn::before {
-  background: var(--on-white) !important;
-}
-.black button.small-btn::before {
-  background: var(--white) !important;
-}
 button.dropdown-toggle::before {
   position: absolute;
   top: 0px;
@@ -2059,16 +2043,6 @@ button.MuiButton-outlined,
 button.MuiButton-text {
   background: none !important;
   color: var(--button) !important;
-}
-.black button.MuiButton-outlined,
-.black button.MuiButton-text {
-  background: none !important;
-  color: var(--white) !important;
-}
-.white button.MuiButton-outlined,
-.white button.MuiButton-text {
-  background: none !important;
-  color: var(--on-white) !important;
 }
 button.MuiButton-outlined::before {
   position: absolute;
@@ -2130,24 +2104,12 @@ button.MuiButtonGroup-groupedVertical {
   align-self: normal;
 }
 /* end - MuiButtonGroup */
-.black button.MuiButton-outlined::before {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--white);
-}
-.white button.MuiButton-outlined::before {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--on-white);
-}
+
 button.MuiButton-outlined::after,
 button.MuiButton-text::after {
   background: var(--button);
 }
-.black button.MuiButton-outlined::after,
-.black button.MuiButton-text::after {
-  background: var(--white);
-}
-.white button.MuiButton-outlined::after,
-.white button.MuiButton-text::after {
-  background: var(--on-white);
-}
+
 button.small-btn.MuiButton-text::before {
   position: absolute;
   top: calc(var(--sm-button-space)/2);
@@ -2182,12 +2144,6 @@ button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):no
 button.MuiButtonBase-root.black::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--black) !important;
 }
-button.MuiButtonBase-root.black .inline-icon, .MuiButtonBase-root.black.MuiButton-text .inline-icon {
-  fill: var(--white);
-}
-button.MuiButtonBase-root.black.MuiButton-outlined .inline-icon, .MuiButtonBase-root.black.MuiButton-text .inline-icon {
-  fill: var(--black);
-}
 button.MuiButtonBase-root.black.MuiButton-outlined::after, .MuiButtonBase-root.black.MuiButton-text::after {
   background: var(--black);
 }
@@ -2208,7 +2164,7 @@ button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-
   background: transparent !important;
   border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
 }
-.darkmode button:not(.small-btn).MuiButtonBase-root.black {
+.darkmode button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   color: var(--dm-white)  !important;
   background: var(--black) !important;
 }
@@ -2266,7 +2222,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: transparent !important;
   border: calc(var(--button-border) * var(--border-1))  solid var(--white) !important;
 }
-.darkmode button.MuiButtonBase-root.white {
+.darkmode button.MuiButtonBase-root.white:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn):not(.MuiTab-root){
   color: var(--black)  !important;
   background: var(--dm-white) !important;
 }
@@ -2319,180 +2275,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 
 
-/* ON BACKGROUNDS */
-/*  BLACK  */
-.black {
-    background: var(--black) !important;
-    color: var(--white) !important;
-}
-.black-half {
-  background: var(--black-half) !important;
-}
-.black button {
-  background: var(--buttonOnBlack) !important;
-  color: var(--onbuttonOnBlack) !important;
-}
-.black button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
-}
-.black .fa-regular:not(button *), .black .fa-solid:not(button *) {
-  color: var(--iconOnBlack) !important;
-}
-.black button {
-  background: var(--buttonOnWhite) !important;
-  color: var(--onbuttonOnWhite) !important;
-}
-/* on black */
-.black a {
-  text-decoration:  var(--hotlinkOnBlack-decoration);
-  color: var(--hotlinkOnBlack);
-}
-.black a:visited {
-  text-decoration:  var(--hotlinkOnBlack-decoration) !important;
-  color: var(--hotlinkOnBlack);
-  opacity: .7
-}
-.black a:hover {
-  text-decoration: var(--hotlinkOnBlack-hover-decoration) !important;
-}
-.black a:active {
-  text-decoration: var(--hotlinkOnBlack-hover-decoration)
-}
-/*  WHITE  */
-.white {
-    background: var(--white) !important;
-    color: var(--black) !important;
-}
-.white-half {
-  background: var(--white-half) !important;
-}
-.white button  {
-  background: var(--buttonOnWhite) !important;
-  color: var(--onbuttonOnWhite) !important;
-}
-.white button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
-}
-.white .fa-regular:not(button *), .white .fa-solid:not(button *) {
-  color: var(--dmiconOnWhite) !important;
-}
-/* on white hotlinks */
-.white a {
-  text-decoration:  var(--hotlinkOnWhite-decoration);
-  color: var(--hotlinkOnWhite);
-}
-.white a:visited{
-  text-decoration:  var(--hotlinkOnWhite-decoration) !important;
-  color: var(--hotlinkOnWhite);
-  opacity: .5
-}
-.white a:hover {
-  text-decoration: var(--hotlinkOnWhite-hover-decoration) !important;
-}
-.white a:active {
-  text-decoration: var(--hotlinkOnWhite-hover-decoration)
-}
-/*  COLORED, PRIMARY, TERTIARY_BG */
-
-/*  GRADIENT 1 */
-.gradient-1 {
-  background: var(--gradient-1) !important;
-  color: var(--on-gradient-1) !important;
-}
-.gradient-1 button {
-  background: var(--buttonOnGradient1) !important;
-  color: var(--onbuttonOnGradient1) !important;
-}
-.gradient-1 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--on-gradient-1));
-}
-.gradient-1 .fa-regular:not(button *), .gradient-1 .fa-solid:not(button *) {
-  color: var(--on-gradient-1) !important;
-}
-.gradient-1 a {
-  text-decoration: underline;
-  color: var(--on-gradient-1);
-}
-/*  GRADIENT 2 */
-.gradient-2 {
-  background: var(--gradient-2) !important;
-  color: var(--on-gradient-2) !important;
-  padding: var(--spacing-1) !important;
-}
-.gradient-2 button {
-  background: var(--buttonOnGradient2) !important;
-  color: var(--onbuttonOnGradient2) !important;
-}
-.gradient-2 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--on-gradient-2));
-}
-.gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
-  color: var(--on-gradient-2) !important;
-}
-.gradient-2 a {
-  text-decoration: underline;
-  color: var(--on-gradient-2) !important;
-}
-/*  GRADIENT 3 */
-.gradient-3 {
-  background: var(--gradient-3) !important;
-  color: var(--on-gradient-3) !important;
-}
-.gradient-3 button {
-  background: var(--buttonOnGradient3) !important;
-  color: var(--onbuttonOnGradient3) !important;
-}
-.gradient-3 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient3);
-}
-.gradient-3 .fa-regular:not(button *), .gradient-3 .fa-solid:not(button *) {
-  color: var(--on-gradient-3) !important;
-}
-.gradient-3 a {
-  text-decoration: underline;
-  color: var(--hotlinkOnGradient3) !important;
-}
-/*  Darkmode BLACK  */
-.darkmode .black , .darkmode .black-bg {
-  background: var(--black) /* !important */;
-  color: var(--dm-white) /* !important */;
-}
-.darkmode .black button:not(.MuiTab-root), .darkmode .black-bg  button:not(.MuiTab-root)  {
-  background: var(--dmbuttonOnBlack) !important;
-  color: var(--dmonbuttonOnBlack) !important;
-}
-.darkmode .black button::after, .darkmode .black-bg button::after  {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnBlack));
-}
-.darkmode .black button .inline-icon path, .darkmode .black-bg button .inline-icon path {
-  fill: var(--dmonbuttonOnBlack) !important;
-}
-.darkmode .black .fa-regular:not(button *), .darkmode .black  .fa-solid:not(button *) {
-  color: var(--dmiconOnBlack) !important;
-}
-.darkmode .black a , .darkmode .black-bg a {
-  text-decoration: var(--dmhotlinkDecorationOnBlack);
-  color: var(--dmhotlinkOnBlack);
-}
-/*  DARK MODE WHITE  */
-.darkmode .white , .darkmode .white-bg {
-  background: var(--dm-white) !important;
-  color: var(--black) !important;
-}
-.darkmode .white button:not(.MuiTab-root) , .darkmode .white-bg  button:not(.MuiTab-root)  {
-  background: var(--dmbuttonOnWhite) !important;
-  color: var(--dmonbuttonOnWhite) !important;
-}
-.darkmode .white button::after, .darkmode .white-bg  button::after  {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnWhite));
-}
-.darkmode .white .fa-regular:not(button *), .darkmode .white  .fa-solid:not(button *) {
-  color: var(--dmiconOnWhite) !important;
-}
-.darkmode .white a , .darkmode .white-bg a {
-  text-decoration: var(--dmhotlinkDecorationOnWhite);
-  color: var(--dmhotlinkOnWhite);
-}
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .darkmode .default{
   background: none !important;
@@ -2516,7 +2298,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-
 .darkmode .fa-regular:not(button *), .darkmode .fa-solid:not(button *) {
   color: var(--dm-icon) !important;
 }
@@ -2524,74 +2305,18 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-.darkmode button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
-/*  DARK MODE GRADIENT 1 */
-.darkmode .gradient-1 {
-  background: var(--dm-gradient-1) !important;
-  color: var(--dm-on-gradient-1) !important;
+.darkmode button.small-btn:not(.black):not(.white):not(.MuiTab-root):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+  color: var(--dm-on-button) !important;
 }
-.darkmode .gradient-1 button {
-  background: var(--dmbuttonOnGradient1) !important;
-  color: var(--dmonbuttonOnGradient1) !important;
-}
-.darkmode .gradient-1 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-1));
-}
-.darkmode .gradient-1 .fa-regular:not(button *), .darkmode .gradient-1 .fa-solid:not(button *) {
-  color: var(--dm-on-gradient-1) !important;
-}
-.darkmode .gradient-1 a {
-  text-decoration: 'underline';
-  color: var(--dm-on-gradient-1);
-}
-/*  DARK MODE GRADIENT 2 */
-.darkmode .gradient-2 {
-  background: var(--dm-gradient-2) !important;
-  color: var(--dm-on-gradient-2) !important;
-}
-.darkmode .gradient-2 button {
-  background: var(--dmbuttonOnGradient2) !important;
-  color: var(--dmonbuttonOnGradient2) !important;
-}
-.darkmode .gradient-2 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-on-gradient-2));
-}
-.darkmode .gradient-2 .fa-regular:not(button *), .darkmode .gradient-2 .fa-solid:not(button *) {
-  color: var(--dm-on-gradient-2) !important;
-}
-.darkmode .gradient-2 a {
-  text-decoration: 'underline';
-  color: var(--dm-on-gradient-2) !important;
-}
-/*  DARK MODE GRADIENT 3 */
-.darkmode .gradient-3 {
-  background: var(--dm-gradient-3) !important;
-  color: var(--dm-on-gradient-3) !important;
-}
-.darkmode .gradient-3 button {
-  background: var(--dmbuttonOnGradient3) !important;
-  color: var(--dmonbuttonOnGradient3) !important;
-}
-.darkmode .gradient-3 button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnGradient3));
-}
-.darkmode .gradient-3 .fa-regular:not(button *), .darkmode .gradient-3 .fa-solid:not(button *) {
-  color: var(--dm-on-gradient-3) !important;
-}
-.darkmode .gradient-3 a {
-  text-decoration: 'underline';
-  color: var(--dmhotlinkOnGradient3) !important;
-}
+
 /* darkmode buttons */
 .darkmode > button {
   background: var(--dm-button) !important;
   color: var(--dm-on-button) !important;
-}
-.darkmode > button .inline-icon svg path {
-  fill: var(--dm-on-button);
 }
 .darkmode .white > button {
   color: var(--dm-on-white) !important;
@@ -2621,10 +2346,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   border: var(--focusBorder) solid var(--dm-button) !important;
   background: none !important;
 }
-.darkmode .black button.small-btn::after {
-  border: var(--focusBorder) solid var(--dm-white) !important;
-  background: none !important;
-}
 .darkmode button.small-btn::before {
   background: var(--dm-button) !important;
   box-shadow: var(--button-boxshadow) !important;
@@ -2632,63 +2353,14 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode .white button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   background: var(--black) !important;
 }
-.darkmode .black button.small-btn.MuiButton-outlined {
-  border: none !important;
-}
-.darkmode .black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
-  background: var(--dm-white) !important;
-}
 .darkmode .white button::after {
   border: var(--border-1) solid var(--black) !important;
   background: none !important;
-}
-.darkmode button .inline-icon {
-  fill: var(--dm-on-button) !important;
-}
-.darkmode button .inline-icon path {
-  fill: var(--dm-on-button) !important;
-}
-.darkmode button.MuiButton-outlined .inline-icon path,
-.darkmode button.MuiButton-text .inline-icon path {
-  fill: var(--dm-button) !important;
-}
-.darkmode .white button.MuiButton-outlined .inline-icon path,
-.darkmode .white button.MuiButton-text .inline-icon path {
-  fill: var(--black) !important;
-}
-.darkmode .black button .inline-icon path {
-  fill: var(--dm-on-white) !important;
-}
-.darkmode .black button.MuiButton-outlined .inline-icon path,
-.darkmode .black button.MuiButton-text .inline-icon path {
-  fill: var(--dm-white) !important;
-}
-.darkmode .white button .inline-icon {
-  fill: var(--dm-on-white);
-}
-.darkmode .white button .inline-icon path {
-  fill: var(--dm-white);
-}
-.darkmode .white button.MuiButton-outlined .inline-icon path,
-.darkmode .white button.MuiButton-text .inline-icon path {
-  fill: var(--dm-on-white);
-}
-.darkmode .black button.MuiButton-outlined .inline-icon path,
-.darkmode .black button.MuiButton-text .inline-icon path {
-  fill: var(--white);
 }
 .darkmode button.MuiButton-outlined,
 .darkmode button.MuiButton-text {
   background: none !important;
   color: var(--dm-button) !important;
-}
-.darkmode .black button.MuiButton-outlined,
-.darkmode .black button.MuiButton-text {
-  background: none !important;
-  color: var(--dm-button) !important;
-}
-.darkmode .black button.MuiButton-outlined {
-  border: var(--border-1) solid var(--dm-white) !important;
 }
 .darkmode .white button.MuiButton-outlined,
 .darkmode .white button.MuiButton-text {
@@ -2700,24 +2372,12 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   box-shadow: var(--dm-button-boxshadow);
   background: none !important;
 }
-.darkmode .black button.MuiButton-outlined::before {
-  border: var(--button-border) solid var(--dm-white);
-}
 .darkmode .white button.MuiButton-outlined::before {
   border: var(--button-border) solid var(--dm-on-white);
 }
 .darkmode button.MuiButton-outlined .inline-icon,
 .darkmode button.MuiButton-text .inline-icon {
   fill: var(--d-button);
-}
-.darkmode .black button .inline-icon,
-.darkmode .black button.MuiButton-text .inline-icon {
-  fill: var(--dm-on-white);
-}
-.darkmode .black button.MuiButton-outlined .inline-icon,
-.darkmode .black button.MuiButton-text .inline-icon {
-  fill: var(--white);
-  opacity: .6;
 }
 .darkmode .white button .inline-icon,
 .darkmode .white button.MuiButton-text .inline-icon {
@@ -2732,11 +2392,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode button.MuiButton-text::after {
   background: var(--transparent);
 }
-.darkmode .black button.MuiButton-outlined::after,
-.darkmode .black button.MuiButton-text::after {
-  background: transparent !important;
-  border: var(--border-1) solid var(--dm-button) !important;
-}
 .darkmode .white button.MuiButton-outlined::after,
 .darkmode .white button.MuiButton-text::after {
   background: transparent !important;
@@ -2745,11 +2400,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode button.small-btn.MuiButton-text::before {
   background: none !important;
   box-shadow: var(--dm-button-boxshadow);
-}
-.darkmode .black button.small-btn.MuiButton-outlined::after,
-.darkmode .black button.small-btn.MuiButton-text::after {
-  background: transparent !important;
-  border: var(--border-1) solid var(--dm-white);
 }
 .darkmode .button {
   background: var(--dm-button) !important;
@@ -2762,9 +2412,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-button) !important;
   color: var(--dm-on-button) !important;
 }
-.darkmode .black > button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dm-white));
-}
 .gradient-swatch {
   width: 400px;
   height: var(--spacing-6);
@@ -2776,13 +2423,16 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .clickable {
   cursor: pointer;
 }
-.MuiCard-root .fa-solid, .MuiCard-root .fa-regular {
+.MuiCard-root > .fa-solid, .MuiCard-root > .fa-regular {
   padding-bottom: 10px;
   margin-right: 8px;
   font-size: 1.25em;
   color: var(--icon);
 }
-.darkmode .MuiCard-root .fa-solid, .darkmode .MuiCard-root .fa-regular {
+.MuiAlert-root button.small-btn svg {
+  height: var(--spacing-2);
+}
+.darkmode > .MuiCard-root .fa-solid, .darkmode > .MuiCard-root .fa-regular {
   color: var(--dm-icon);
 }
 .MuiCard-root.clickable::after{
@@ -2969,6 +2619,9 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 .darkmode .MuiAlert-root .MuiButton-root::after {
   border: calc(var(--border-1) * var(--button-border)) solid var(--dm-white) !important;
+}
+.darkmode .MuiAlert-root button svg path {
+  fill: var(--dm-white) !important
 }
 /* dark mode radio buttons */
 .darkmode .MuiRadio-root svg path {
@@ -3410,81 +3063,8 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   pointer-events: none;
 }
 
-/* varying backgrounds  */
 
-/*  BLACK  */
-.black button, .black-bg  button  {
-  background: var(--buttonOnBlack) !important;
-  color: var(--onbuttonOnBlack) !important;
-}
-.black button::after:not(.MuiButtonGroup-grouped) {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
-}
-.black button .inline-icon path, .black-bg button .inline-icon path {
-  fill: var(--onbuttonOnBlack) !important;
-}
-.black .inline-icon path , .black-bg .inline-icon path {
-  fill: var(--iconOnBlack) !important;
-}
-.black a , .black-bg a {
-  text-decoration: var(--hotlinkDecorationOnBlack);
-  color: var(--hotlinkOnBlack);
-}
-
-/* dark mode black */
-.darkmode .black a {
-  color: var(--dm-hotlink-decoration);
-  text-decoration: var(--dm-hotlink-decoration)
-}
-.darkmode .black, .black-bg {
-    background: var(--black) /* !important */;
-    color: var(--dm-white) /* !important */;
-}
-.darkmode .black button, .black-bg  button  {
-  background: var(--buttonOnBlack) !important;
-  color: var(--dm-white) !important;
-}
-.darkmode .black button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
-}
-.darkmode .black button .inline-icon path, .black-bg button .inline-icon path {
-  fill: var(--onbuttonOnBlack) !important;
-}
-.darkmode .black .inline-icon path , .black-bg .inline-icon path {
-  fill: var(--dmiconOnBlack) !important;
-}
-.darkmode .black a , .black-bg a {
-  text-decoration: underline;
-  color: var(--hotlinkOnBlack);
-}
-
-/*  WHITE  */
-.white , .white-bg {
-  /* background: var(--white) !important;
-  color: var(--black) !important; */
-}
-.white-half {
-  /* background: var(--white-half) !important; */
-}
-.white button , .white-bg  button  {
-  background: var(--buttonOnWhite) !important;
-  color: var(--onbuttonOnWhite) !important;
-}
-.white button::after, .white-bg  button::after  {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
-}
-.white button .inline-icon path, .white-bg button .inline-icon path {
-  fill: var(--onbuttonOnWhite) !important;
-}
-.white .inline-icon path , .white-bg .inline-icon path {
-  fill: var(--iconOnWhite) !important;
-}
-.white a , .white-bg a {
-  text-decoration: var(--hotlinkDecorationOnWhite);
-  color: var(--hotlinkOnWhite);
-}
 /* darkmode white */
-
 .darkmode .white {
   background: var(--dm-white) !important;
   color: var(--black) !important;
@@ -3884,6 +3464,11 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .modal-content {
   padding: var(--spacing-3);
 }
+.modal-footer {
+  padding: var(--spacing-3);
+  gap: var(--spacing-2);
+  justify-content: start;
+}
 /* elevations */
 .elevation-1 {
   box-shadow: var(--elevation-1) !important;
@@ -4086,4 +3671,348 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   box-shadow: var(--reverse-bevel-9) !important;
   -webkit-box-shadow:var(--reverse-bevel-9) !important;
   -moz-box-shadow: var(--reverse-bevel-9) !important;
+}
+/* VARYING BACKGROUND COLORS */
+/*  BLACK  */
+.black, .black-bg {
+    background: var(--black) !important;
+    color: var(--white) !important;
+}
+.black-half {
+  background: var(--black-half) !important;
+}
+.black .fa-regular:not(button *), .black .fa-solid:not(button *) {
+  color: var(--iconOnBlack) !important;
+}
+/* on black hotlinks */
+.black a {
+  text-decoration:  var(--hotlinkOnBlack-decoration);
+  color: var(--hotlinkOnBlack);
+}
+.black a:visited {
+  text-decoration:  var(--hotlinkOnBlack-decoration) !important;
+  color: var(--hotlinkOnBlack);
+  opacity: .7
+}
+.black a:hover {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration) !important;
+}
+.black a:active {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration)
+}
+/* on black buttons */
+.black button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: var(--buttonOnBlack) !important;
+  color: var(--onbuttonOnBlack) !important;
+}
+.black button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack) !important;
+}
+.black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnBlack) !important;
+  background: var(--buttonOnBlack) !important;
+}
+.black button.small-btn.MuiButton-outlined {
+  color: var(--onbuttonOnBlack) !important;
+  background: none !important
+}
+.black button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
+  color: var(--buttonOnBlack) !important;
+}
+.black button:not(.MuiTab-root):not(.black)::after {
+  border: var(--focusBorder) solid var(--buttonOnBlack);
+}
+
+/* black group buttons */
+.black button.MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--white);
+}
+.black button.MuiButton-outlined::after,
+.black button.MuiButton-text::after {
+  background: var(--white);
+}
+
+/*  WHITE  */
+.white, .white-bg {
+    background: var(--white) !important;
+    color: var(--black) !important;
+}
+.white-half {
+  background: var(--white-half) !important;
+}
+.white .fa-regular:not(button *), .white .fa-solid:not(button *) {
+  color: var(--iconOnWhite) !important;
+}
+/* on white hotlinks */
+.white a {
+  text-decoration:  var(--hotlinkOnWhite-decoration);
+  color: var(--hotlinkOnWhite);
+}
+.white a:visited{
+  text-decoration:  var(--hotlinkOnWhite-decoration) !important;
+  color: var(--hotlinkOnWhite);
+  opacity: .5
+}
+.white a:hover {
+  text-decoration: var(--hotlinkOnWhite-hover-decoration) !important;
+}
+.white a:active {
+  text-decoration: var(--hotlinkOnWhite-hover-decoration)
+}
+/* on white buttons */
+.white button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite) !important;
+}
+.white button::not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite) !important;
+}
+.white button.small-btn.MuiButton-outlined  {
+  color: var(--onbuttonOnWhite) !important;
+  background: none !important
+}
+.white button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnWhite) !important;
+  background: var(--buttonOnWhite) !important;
+}
+.white button:not(.white).MuiButton-outlined, .white button:not(.white).MuiButton-text {
+  color: var(--buttonOnWhite) !important;
+}
+.white button:not(.MuiTab-root):not(.white)::after{
+  border: var(--focusBorder) solid var(--buttonOnWhite);
+}
+/* white group buttons */
+.white button.MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--black);
+}
+.white button.MuiButton-outlined::after,
+.white button.MuiButton-text::after {
+  background: var(--black);
+}
+
+/*  COLORED, PRIMARY, TERTIARY_BG */
+.colored, .backgroundTertiary {
+  background: var(--background-tertiary) !important;
+  color: var(--on-background-tertiary) !important;
+}
+.colored button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+  background: var(--buttonOnTertiary) !important;
+  color: var(--onbuttonOnTertiary) !important;
+}
+.colored button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
+}
+.colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
+  color: var(--onbuttonOnTertiary) !important;
+}
+.colored button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
+  color: var(--buttonOnTertiary) !important;
+  background: none !important
+}
+.colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnTertiary) !important;
+  background: var(--buttonOnTertiary) !important;
+}
+.colored button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
+  color: var(--buttonOnTertiary) !important;
+}
+.colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
+  border: var(--focusBorder) solid var(--buttonOnTertiary);
+}
+.colored a, .colored .backgroundTertiary a  {
+  text-decoration:  var(--hotlinkDecorationOnTertiary );
+  color: var(--hotlinkOnTertiary );
+}
+
+/*  GRADIENT 1 */
+.gradient-1 {
+  background: var(--gradient-1) !important;
+  color: var(--on-gradient-1) !important;
+}
+.gradient-1 .fa-regular:not(button *), .gradient-1 .fa-solid:not(button *) {
+  color: var(--on-gradient-1) !important;
+}
+/* on white hotlinks */
+.gradient-1 a {
+  text-decoration: underline;
+  color: var(--on-gradient-1);
+}
+.gradient-1 a:visited{
+  text-decoration:  underline !important;
+  color: var(--on-gradient-1);
+  opacity: .5
+}
+.gradient-1 a:hover {
+  text-decoration: none !important;
+}
+.gradient-1 a:active {
+  text-decoration: underline;
+}
+/* on white buttons */
+.gradient-1 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: var(--buttonOnGradient1) !important;
+  color: var(--onbuttonOnGradient1) !important;
+}
+.gradient-1 button::not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient1) !important;
+}
+.gradient-1 button.small-btn.MuiButton-outlined {
+  color: var(--onbuttonOnGradient1) !important;
+  background: none !important
+}
+.gradient-1 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnGradient1) !important;
+  background: var(--buttonOnGradient1) !important;
+}
+.gradient-1 button:not(.white).MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text,   {
+  color: var(--buttonOnGradient1) !important;
+}
+.gradient-1 button:not(.MuiTab-root):not(.white)::after{
+  border: var(--focusBorder) solid var(--buttonOnGradient1);
+}
+/*  GRADIENT 2 */
+.gradient-2 {
+  background: var(--gradient-2) !important;
+  color: var(--on-gradient-2) !important;
+}
+.gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
+  color: var(--on-gradient-2) !important;
+}
+/* on white hotlinks */
+.gradient-2 a {
+  text-decoration: underline;
+  color: var(--on-gradient-2);
+}
+.gradient-2 a:visited{
+  text-decoration:  underline !important;
+  color: var(--on-gradient-2);
+  opacity: .5
+}
+.gradient-2 a:hover {
+  text-decoration: none !important;
+}
+.gradient-2 a:active {
+  text-decoration: underline;
+}
+/* on white buttons */
+.gradient-2 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+  background: var(--buttonOnGradient2) !important;
+  color: var(--onbuttonOnGradient2) !important;
+}
+.gradient-2 button::not(.MuiTab-root):not(.white).MuiButton-outlined::before  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient2) !important;
+}
+.gradient-2 button.small-btn.MuiButton-outlined {
+  color: var(--onbuttonOnGradient2) !important;
+  background: none !important
+}
+.gradient-2 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnGradient2) !important;
+  background: var(--buttonOnGradient2) !important;
+}
+.gradient-2 button:not(.white).MuiButton-outlined, .gradient-2 button:not(.white).MuiButton-text  {
+  color: var(--buttonOnGradient2) !important;
+}
+.gradient-2 button:not(.MuiTab-root):not(.white)::after {
+  border: var(--focusBorder) solid var(--buttonOnGradient2);
+}
+/*  GRADIENT 3 */
+.gradient-3 {
+  background: var(--gradient-3) !important;
+  color: var(--on-gradient-3) !important;
+}
+.gradient-3 .fa-regular:not(button *), .gradient-3 .fa-solid:not(button *) {
+  color: var(--on-gradient-3) !important;
+}
+/* on white hotlinks */
+.gradient-3 a {
+  text-decoration: underline;
+  color: var(--on-gradient-3);
+}
+.gradient-3 a:visited{
+  text-decoration:  underline !important;
+  color: var(--on-gradient-3);
+  opacity: .5
+}
+.gradient-3 a:hover {
+  text-decoration: none !important;
+}
+.gradient-3 a:active {
+  text-decoration: underline;
+}
+/* on white buttons */
+.gradient-3 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+  background: var(--buttonOnGradient3) !important;
+  color: var(--onbuttonOnGradient3) !important;
+}
+.gradient-3 button::not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient3) !important;
+}
+.gradient-3 button.small-btn.MuiButton-outlined, .white .backgroundTertiary button.small-btn.MuiButton-outlined  {
+  color: var(--onbuttonOnGradient3) !important;
+  background: none !important
+}
+.gradient-3 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnGradient3) !important;
+  background: var(--buttonOnGradient3) !important;
+}
+.gradient-3 button:not(.white).MuiButton-outlined, .gradient-3 button:not(.white).MuiButton-text {
+  color: var(--buttonOnGradient3) !important;
+}
+.gradient-3 button:not(.MuiTab-root):not(.white)::after {
+  border: var(--focusBorder) solid var(--buttonOnGradient3);
+}
+/*  Darkmode BLACK  */
+.darkmode .black, .black-bg {
+    background: var(--black) !important;
+    color: var(--dm-white) !important;
+}
+.darkmode .black .fa-regular:not(button *), .black .fa-solid:not(button *) {
+  color: var(--dmiconOnBlack) !important;
+}
+/* on black hotlinks */
+.darkmode .black a {
+  text-decoration:  var(--hotlinkOnBlack-decoration);
+  color: var(--hotlinkOnBlack);
+}
+.darkmode .black a:visited {
+  text-decoration:  var(--hotlinkOnBlack-decoration) !important;
+  color: var(--hotlinkOnBlack);
+  opacity: .7
+}
+.darkmode .black a:hover {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration) !important;
+}
+.darkmode .black a:active {
+  text-decoration: var(--hotlinkOnBlack-hover-decoration)
+}
+/* on black buttons */
+.darkmode .black button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+  background: var(--dmbuttonOnBlack) !important;
+  color: var(--dmonbuttonOnBlack) !important;
+}
+.darkmode .black button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dmbuttonOnBlack) !important;
+}
+.darkmode .black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--dmonbuttonOnBlack) !important;
+  background: var(--dmbuttonOnBlack) !important;
+}
+.darkmode .black button.small-btn.MuiButton-outlined {
+  color: var(--dmonbuttonOnBlack) !important;
+  background: none !important
+}
+.darkmode .black button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
+  color: var(--dmbuttonOnBlack) !important;
+}
+.darkmode .black button:not(.MuiTab-root):not(.black)::after {
+  border: var(--focusBorder) solid var(--dmbuttonOnBlack);
+}
+/* black group buttons */
+.darkmode .black button.MuiButton-outlined::before {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dm-white);
+}
+.darkmode .black button.MuiButton-outlined::after,
+.darkmode .black button.MuiButton-text::after {
+  background: var(--dm-white);
 }
