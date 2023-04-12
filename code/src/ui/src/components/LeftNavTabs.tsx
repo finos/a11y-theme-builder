@@ -43,6 +43,7 @@ export const LeftNavHeader = styled(ListSubheader)(( {theme }) => ({
     textTransform: "uppercase",
     background: "var(--leftNav)",
     fontSize: "1em",
+    position: "unset",
 }));
 
 export const LeftNavText = styled(ListSubheader)(( {theme }) => ({
