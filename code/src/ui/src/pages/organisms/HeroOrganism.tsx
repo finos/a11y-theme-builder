@@ -19,7 +19,7 @@ interface Props {
 
 export const HeroOrganism: React.FC<Props> = ({ organism }) => {
     
-    const [colorMode, setColorMode] = useState<string>("primary");
+    const [colorMode, setColorMode] = useState<string>("default");
 
     return (
         <div>
