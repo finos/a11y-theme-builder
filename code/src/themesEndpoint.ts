@@ -17,6 +17,9 @@ const DB_NAME = "themes";
 var Engine = require('tingodb')();
 var db = new Engine.Db(__dirname + '/data', {});
 var collection = db.collection(DB_NAME);
+collection.compactCollection(function(a:any, b:any) {
+    console.log(`compactCollection a=${a} b=${b}`);
+});
 
 // Delete database
 async function deleteDocs(): Promise<any> {
@@ -340,5 +343,7 @@ export function registerThemesEndpoint(app: express.Application) {
             next(e);
         }
     }
+
+    // endpoint /api/db/compact
 
 }
