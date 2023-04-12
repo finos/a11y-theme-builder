@@ -179,6 +179,7 @@ nav:
     - Why Mui: decisions/mui_adr.md
     - Understanding SDK: architecture/sdk-intro.md
     - Foundational Services: architecture/base-services.md
+    - Understanding Application APIs: architecture/app-api.md
   - Guides:
     - guides/index.md
     - Generate a theme: guides/create-a-theme.md
