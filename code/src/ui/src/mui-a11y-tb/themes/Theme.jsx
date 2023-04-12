@@ -750,8 +750,8 @@ try {
                 styleOverrides: {
                     root: {
                         "& .MuiListSubheader-root": {
-                          background: "var(--backgroundSecondary)",
-                          color: "var(--on-backgroundSecondary)",
+                          background: "var(--background-secondary)",
+                          color: "var(--on-background-secondary)",
                           fontWeight: "500",
                         },
                     }
@@ -784,7 +784,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         "& .MuiAlert-icon":{
-                            marginRight: "var(--spacing-1)",
+                            marginRight: "var(--spacing-2)",
                             alignSelf: "center",
                             padding: "0",
 
