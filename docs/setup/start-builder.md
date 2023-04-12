@@ -15,7 +15,7 @@ docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder
 ```
 ### View the Theme Builder application in your browser
 
-To access the running application, load the following URL into a browser:
+To access the running Theme Builder application, load the following URL into a browser:
 
 ```
 http://localhost:8080
@@ -25,21 +25,21 @@ http://localhost:8080
 The following commands can be used to manage the Theme Builder application built and running with `Docker`.
 
 #### Stop Theme Builder application
-This stops the application, but does not delete it.  All saved theme data is preserved.
+This stops the Theme Builder application, but does not delete it.  All saved theme data is preserved.
 
 ```
 docker stop a11y-theme-builder
 ```
 
 #### Start a stopped Theme Builder application
-This starts a stopped application.  Any saved theme data will be retained.
+This starts a stopped Theme Builder application.  Any saved theme data will be retained.
 
 ```
 docker start a11y-theme-builder
 ```
 
 #### Remove a stopped Theme Builder application
-This removes a stopped application and any saved theme data will be deleted.
+This removes a stopped Theme Builder application and any saved theme data will be deleted.
 
 ```
 docker rm a11y-theme-builder
@@ -51,13 +51,13 @@ The theme data is stored in an embedded database.  As a result, when the Docker 
 To prevent theme data from being deleted, you can specify a local directory on your system for where to save it.  This is done by using the -v option when starting Docker and passing in a local directory. 
 
 #### Start the Theme Builder application to keep theme data
-
+The following command uses your current directory to save the theme data.  If you want to use a different directory, replace `${pwd}` with the new directory name.  Note that this directory name can't be a relative directory, but must be an absolute directory path.
 ```
 docker run -p 8080:3001 -v ${pwd}:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
 ```
 
 ## Javascript Runtime Environment
-The following commands will build and run the application using a local Node.js environment running on a Linux distribution such as MacOS:
+The following commands will build and run the Theme Builder application using a local Node.js environment running on a Linux distribution such as MacOS:
 
 ```
 cd a11y-theme-builder/code
@@ -65,7 +65,7 @@ npm run build
 npm run debug
 ```
 
-To access the application, load the following URL into a browser:
+To access the Theme Builder application, load the following URL into a browser:
 
 ```
 http://localhost:3001
@@ -98,7 +98,7 @@ To simplify developing of the UI, the React Development Server can be run
 npm run dev-ui
 ```
 
-To access the application through the React Development Server, load the following URL into a browser:
+To access the Theme Builder application through the React Development Server, load the following URL into a browser:
 
 ```
 http://localhost:3000

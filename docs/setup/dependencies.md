@@ -1,4 +1,4 @@
-# ThemeBuilder Dependencies
+# Prerequisites
 
 The Theme Builder application can be built and run locally using two variations ([Quick and Easy](#quick-and-easy), [Javascript Runtime Environment](#javascript-runtime-environment)) that differ on complexity of setup.
 
