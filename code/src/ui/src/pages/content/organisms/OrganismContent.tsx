@@ -3,13 +3,13 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { DesignSystem, Event, EventType, Organism} from 'a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { HeroOrganism } from '../../organisms/HeroOrganism';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { PrimaryNavOrganism } from '../../organisms/PrimaryNavOrganism';
@@ -24,15 +24,15 @@ interface organismItem {
 }
 
 const organismsList: {[key: string]:organismItem} = {
-    dataTables: {value: "dataTables", label: "Data Tables", organism: "Data Tables", disabled: false},
-    hero: {value: "hero", label: "Hero", organism: "Hero", disabled: false},
-    primaryNav: {value: "primaryNav", label: "Primary Nav", organism: "Primary Nav", disabled: false},
-    secondaryNav: {value: "secondaryNav", label: "Secondary Nav", organism: "Secondary Nav", disabled: false},
-    footerAndCopyright: {value: "footerAndCopyright", label: "Footer and Copyright", organism: "Footer and Copyright", disabled: false},
+    dataTables: {value: "dataTables", label: "Data Tables", organism: "Data Tables", disabled: true},
+    hero: {value: "hero", label: "Hero", organism: "Hero", disabled: true},
+    primaryNav: {value: "primaryNav", label: "Primary Nav", organism: "Primary Nav", disabled: true},
+    secondaryNav: {value: "secondaryNav", label: "Secondary Nav", organism: "Secondary Nav", disabled: true},
+    footerAndCopyright: {value: "footerAndCopyright", label: "Footer and Copyright", organism: "Footer and Copyright", disabled: true},
 }
 
 // Organisms that are not going to be implemented for MVP
-const notImplemented = [""]
+const notImplemented = ["dataTables", "primaryNav", "secondaryNav", "footerAndCopyright"]
 
 interface Props {
     user: any;
