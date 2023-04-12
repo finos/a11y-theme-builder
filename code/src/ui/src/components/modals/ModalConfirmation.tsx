@@ -35,8 +35,8 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose, children }
                     <div className="modal-body">
                         {children}
                     </div>
-                    <div className="modal-footer" style={{ display: "flex", justifyContent:"space-between" }}>
-                        <Button onClick={handleCancel}>Cancel</Button>
+                    <div className="modal-footer" style={{ display: "flex", gap:"var(--spacing-2)" }}>
+                        <Button className="MuiButton-outlined" onClick={handleCancel}>Cancel</Button>
                         <Button onClick={handleSubmit}>OK</Button>
                     </div>
                 </div>

@@ -409,6 +409,9 @@ try {
                                     },
 
                                 },
+                                '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:has(.Hex)': {
+                                    opacity: "1",
+                                },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
                                     background: "var(--dropdown-hover-bg)",
@@ -719,7 +722,7 @@ try {
                     root: {
                       padding: "0",
                       minWidth: "var(--min-target)",
-                      height: "var(--min-target) !important",
+                      height: "var(--min-target)",
                       borderRadius: "calc( var(--radius-1) * var(--button-radius))",
                       background: "var(--transparent) !important",
                       color: "var(--button) !important",
@@ -733,6 +736,12 @@ try {
                       },
                       "& .MuiPagination-ul": {
                         gap: "var(--spacing-half)",
+                      },
+                      "&.MuiPaginationItem-ellipsis": {
+                        alignItems: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        paddingBottom: "20%",
                       }
                     }
                 }
@@ -741,7 +750,8 @@ try {
                 styleOverrides: {
                     root: {
                         "& .MuiListSubheader-root": {
-                          background: "var(--background-secondary)",
+                          background: "var(--backgroundSecondary)",
+                          color: "var(--on-backgroundSecondary)",
                           fontWeight: "500",
                         },
                     }
