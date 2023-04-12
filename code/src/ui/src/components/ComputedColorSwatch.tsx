@@ -15,6 +15,11 @@ interface Props {
     style?: any;
 }
 
+// This component displays a color sample, and color
+//  information in a ColorSwatch.  It pulls this information
+//  from the computed styling of the reference HTML element.  In
+//  this specific component, that is a HTMLDivElement that
+//  acts as the color sample.
 export const ComputedColorSwatch: React.FC<Props> = ({className, label, style}) => {
 
     const colorDisplayRef = useRef<HTMLDivElement>(null);
@@ -31,11 +36,15 @@ export const ComputedColorSwatch: React.FC<Props> = ({className, label, style}) 
         }
         const cssObj = window.getComputedStyle(displayDiv, null);
         const colorObj = processColorIntoHexRGB(cssObj.backgroundColor);
+        // store off the background hex and RGB color values, as well
+        //  as the forground color information, so that they can be
+        //  used to display these details in the color swatch
         _setBackgroundColorHex(colorObj.hex);
         _setBackgroundColorRGB(colorObj.RGB);
         _setOnColor(cssObj.color);
     }, [className])
 
+    // returns the hex and rgb value strings from the given color
     const processColorIntoHexRGB = (color: string) : {hex: string, RGB: string} => {
         let retArray = {hex: "", RGB: ""};
         if (!color) return retArray;
