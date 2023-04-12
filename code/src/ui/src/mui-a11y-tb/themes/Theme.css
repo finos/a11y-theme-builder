@@ -2274,6 +2274,21 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   border-color: var(--dm-white);
 }
 
+/* hotlinks */
+a {
+  color: var(--hotlink);
+  text-decoration: var(--hotlink-decoration)
+}
+a:visited {
+  opacity: .7
+}
+a:hover {
+  text-decoration: var(--hotlink-hover-decoration) !important;
+}
+a:active {
+  text-decoration: var(--hotlink-hover-decoration)
+}
+
 
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .darkmode .default{

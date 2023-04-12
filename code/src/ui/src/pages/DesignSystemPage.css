@@ -242,6 +242,9 @@
 .design-system-editor-right-content .hotlink.visited {
     opacity: .7;
 }
+.design-system-editor-right-content .hotlink.active {
+    text-decoration: var(--hotlink-hover-decoration);
+}
 /* dark mode */
 .design-system-editor-right-content .darkmode .color-box.hotlink {
     background: var(--dm-hotlink);
