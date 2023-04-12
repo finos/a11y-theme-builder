@@ -221,6 +221,49 @@
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
 }
+.design-system-editor-right-content .color-box.hotlink {
+    background: var(--hotlink);
+}
+.design-system-editor-right-content .hotlink {
+    color: var(--hotlink);
+}
+.design-system-editor-right-content .black .color-box {
+    background: var(--white);
+}
+.design-system-editor-right-content .black .hotlink {
+    color: var(--white);
+}
+.design-system-editor-right-content .white .color-box {
+    background: var(--black);
+}
+.design-system-editor-right-content .white .hotlink {
+    color: var(--black);
+}
+.design-system-editor-right-content .hotlink.visited {
+    opacity: .7;
+}
+/* dark mode */
+.design-system-editor-right-content .darkmode .color-box.hotlink {
+    background: var(--dm-hotlink);
+}
+.design-system-editor-right-content .darkmode .hotlink {
+    color: var(--dm-hotlink);
+}
+.design-system-editor-right-content .darkmode .black .color-box {
+    background: var(--dm-white);
+}
+.design-system-editor-right-content .darkmode .black .hotlink {
+    color: var(--dm-white);
+}
+.design-system-editor-right-content .darkmode .white .color-box {
+    background: var(--black);
+}
+.design-system-editor-right-content .darkmode .white .hotlink {
+    color: var(--black);
+}
+.design-system-editor-right-content .darkmode .hotlink.visited {
+    opacity: .7;
+}
 
 .design-system-editor-right-content .color-title {
     margin-top: 4px;

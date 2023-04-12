@@ -32,6 +32,7 @@ import { ThemeColorsComponent } from '../../components/colors/ThemeColorsCompone
 import { ExtendedPaletteComponent } from '../../components/colors/ExtendedPaletteComponent';
 import { BackgroundColorsComponent } from '../../components/colors/BackgroundColorsComponent';
 import { GradientsComponent } from '../../components/colors/GradientsComponent';
+import { HotlinksComponent } from '../../components/colors/HotlinksComponent';
 import { ColorStatesComponent } from '../../components/colors/ColorStatesComponent';
 import { PrimaryTabsComponent } from '../../components/PrimaryTabsComponent';
 import { SecondaryTabsComponent } from '../../components/SecondaryTabsComponent';
@@ -139,6 +140,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                             <LeftNavItem text={"Extended Palette"} value="colorsExtendedPalette" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsExtendedPalette")}} />
                             <LeftNavItem text={"Backgrounds"} value="colorsBackgroundColors" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsBackgroundColors")}} />
                             <LeftNavItem text={"Gradients"} value="colorsGradients" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsGradients")}} />
+                            <LeftNavItem text={"Hotlinks"} value="colorsHotlinks" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsHotlinks")}} />
                             <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
                         </List>
                     </Collapse>
@@ -232,6 +234,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "colorsGradients" &&
                         <GradientsComponent />
+                    }
+                    {showComponent === "colorsHotlinks" &&
+                        <HotlinksComponent />
                     }
                     {showComponent === "colorsStates" &&
                         <ColorStatesComponent designSystem={designSystem} />
