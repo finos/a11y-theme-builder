@@ -43,14 +43,14 @@ An **Atomic Accessibility Design Methodology** is applicable to a range of disab
 
 The list of such impairments include but is not limited to:
 
-* Learning - difficulty in one or more areas of learning
-* Motion - sensitivity to surroundings with visual motion or repetitive patterns
-* Mobility - difficulty walking or climbing stairs
-* Cognition - difficulty concentrating, remembering, or making decisions
-* Independent Living - difficulty doing errands alone
-* Hearing - difficulty hearing
-* Vision - difficulty seeing
-* Self-care - difficulty dressing or bathing
+* Learning: Difficulty in one or more areas of learning
+* Motion: Sensitivity to surroundings with visual motion or repetitive patterns
+* Mobility: Difficulty walking or climbing stairs
+* Cognition: Difficulty concentrating, remembering, or making decisions
+* Independent Living: Difficulty doing errands alone
+* Hearing: Difficulty hearing
+* Vision: Difficulty seeing
+* Self-care: Difficulty dressing or bathing
 
 ## Theme Builder
 ![tb](./../../_images/theme-builder.png)
@@ -66,14 +66,14 @@ For each of the following steps, a theme builder *User* may be a *Designer* or *
 1. *User* opens Theme Building Tool.
 2. *User* creates a new design system project within the Theme Building Tool.
 3. *User* configures project to produce themes that are either Business (AA) or Government (AAA) [WCAG Compatible][WCAG].
-3. *User* adds 10 shades of a color in light and dark mode with corresponding "on color" to the project.
-4. *User* defines the base atoms for the theme. This lays the foundation for all light and dark mode calculations. The Theme Building Tool guides the *User* through the following steps that **must** occur in sequential order:
+4. *User* adds 10 shades of a color in light and dark mode with corresponding "on color" to the project.
+5. *User* defines the base atoms for the theme. This lays the foundation for all light and dark mode calculations. The Theme Building Tool guides the *User* through the following steps that **must** occur in sequential order:
 
    1. Select Primary, Secondary, and Tertiary Colors
    2. Define Light mode background and dark mode background.
    3. Define Gradient backgrounds, Buttons and Icons colors, and Gradient Text.
 
-5. *User* defines other atomic elements (atoms, molecules) that will be used by the theme. The Theme Building Tool guides the *User* through the following steps:
+6. *User* defines other atomic elements (atoms, molecules) that will be used by the theme. The Theme Building Tool guides the *User* through the following steps:
 
    1. Data independent preferences
       1. Specify minimum desktop target area
@@ -87,8 +87,8 @@ For each of the following steps, a theme builder *User* may be a *Designer* or *
       5. Bevels
       6. Chart colors
 
-6. *User* applies atomic settings to molecules associated with the theme project.
-7. *User* uses the Theme Building Tool to generate theme asset types (JSON, CSS, design tokens).
+7. *User* applies atomic settings to molecules associated with the theme project.
+8. *User* uses the Theme Building Tool to generate theme asset types (JSON, CSS, design tokens).
 
 ## Systems and Themes
 Theme builder distinguishes between system and theme atoms.  
@@ -102,16 +102,19 @@ Each theme is layered on top of the core design system.The default theme rendere
 Additional theme layers can be applied by the user to generate themes that are effectively a combination of atomic layers. Initially layering support is provided for the following accessibility preferences:
 
 * Dyslexic preferences
-  * This updates all the fonts to Open Dyslexic 
-  * Increases line heights for improved readability for dyslexic end users
-  * (*Future*) Color contrast options
+  
+     * This updates all the fonts to Open Dyslexic 
+     * Increases line heights for improved readability for dyslexic end users
+     * (*Future*) Color contrast options
 
 * Motion sensitivity preferences
-  * Removes animations from all components
+  
+    * Removes animations from all components
 
 * Color blind preferences
-  * Users can choose to adjust the colors of the branded components to colors that best accommodate their specific color perception deficiency Protanopia, Deuteranopia, and Tritanopia
-  * The updated colors meet the WCAG contrast guidelines and are non-jarring and visually pleasing
+  
+    * Users can choose to adjust the colors of the branded components to colors that best accommodate their specific color perception deficiency Protanopia, Deuteranopia, and Tritanopia
+    * The updated colors meet the WCAG contrast guidelines and are non-jarring and visually pleasing
 
 Themes can also be organization into different sub themes. For example rendering experiences with different system color palette combinations.  
 
