@@ -639,8 +639,7 @@
     --bevel-dark-opacity: 0.1;
     --bevel-change: .2;
     /* bevels */
-    --bevel-0: rgba(0,0,0,0);
-
+    --bevel-0: 0 0 0 0 rgba(0,0,0,0);
     --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - var(--bevel-horizontal)) calc(0px - var(--bevel-vertical)) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,var(--bevel-dark-opacity));
     --bevel-2: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread)
@@ -2258,9 +2257,23 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   border-color: var(--white);
 }
 /* white divider */
-.MuiList-root.white .MuiDivider-root {
+.MuiList-root.white .MuiDivider-root,
+.darkmode .MuiList-root.white .MuiDivider-root {
   border-color: var(--black);
 }
+/* darkmode list and divider */
+.darkmode .MuiList-root {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+  color: var(--dm-on-surface);
+}
+.darkmode .MuiList-root .MuiDivider-root {
+  border-color: var(--dm-on-background);
+}
+.darkmode .MuiList-root.black .MuiDivider-root {
+  border-color: var(--dm-white);
+}
+
 
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .darkmode .default{

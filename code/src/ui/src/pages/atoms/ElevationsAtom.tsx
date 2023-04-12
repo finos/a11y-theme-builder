@@ -5,18 +5,33 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { MenuItem, Select, FormControl, InputLabel, TextField, Slider } from '@mui/material';
 import { DesignSystem, ElevationSettings } from 'a11y-theme-builder-sdk';
-import { ExampleElevation } from '../../components/ExampleElevation';
+//import { ExampleElevation } from '../../components/ExampleElevation';
 import { ChromePicker, ColorResult } from 'react-color';
+import { HeadingSection } from '../content/HeadingSection';
+import { SettingsSection } from '../content/SettingsSection';
+import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
+import { DarkModeSection } from '../content/DarkModeSection';
+import { LightModeSection } from '../content/LightModeSection';
 
+interface SampleProps {
+    className: string;
+    label: string;
+}
 
-const name = "ElevationsAtom";
+const ExampleElevation: React.FC<SampleProps> = ({ className, label }) => {
+    return (
+        <div className="example">
+            <div className="caption">{label}</div>
+            <div className={"card " + className}></div>
+        </div>
+    );
+}
 
 interface Props {
     elevationSettings: ElevationSettings;
 }
 
 export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
-    // console.log(`${name} - >>> enter()`)
 
     const shadowColorProperty               = elevationSettings.shadowColor
     const baseBlurRadiusProperty            = elevationSettings.baseBlurRadius
@@ -103,30 +118,14 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
     }
 
     return (
-        <div className="content">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="overline-large">
-                            Elevations
-                        </div>
-                        <h1>Elevation Settings</h1>
-                        <p>
-                            Elevations create a senses of depth and replicated items 
-                            places along the z-axis farther and father away from the surface.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <section>
+        <div>
+            <HeadingSection item={elevationSettings} title="Elevations">
+                Elevations create a senses of depth and replicated items places along the z-axis farther and father away from the surface.
+            </HeadingSection>
+            <SettingsSection>
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            <h4>Light Mode</h4>
-                            <p>
-                                Light mode elvations are created by layering an angled shadow over a base shadowthat 
-                                becomes increasingly heavy as the elevation rises.
-                            </p>
                             <div className="subtitle1">Shadow Color</div>
                             <div className="form-row">
                             <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
@@ -272,50 +271,47 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="subtitle1">
-                                Sample Elevations
+                            <div style={{display:"flex", gap:"20px"}}>
+                                <div style={{flex:"1 1 0", width:"0"}}>
+                                    <LightModeSection>
+                                        Light mode elvations are created by layering an angled shadow over a base shadow that becomes increasingly heavy as the elevation rises.
+                                        <div className="subtitle1 top24">Sample Elevations</div>
+                                        <div className="top24"/>
+                                        <ExampleElevation className="elevation-0" label="Elevation 0" />
+                                        <ExampleElevation className="elevation-1" label="Elevation 1" />
+                                        <ExampleElevation className="elevation-2" label="Elevation 2" />
+                                        <ExampleElevation className="elevation-3" label="Elevation 3" />
+                                        <ExampleElevation className="elevation-4" label="Elevation 4" />
+                                        <ExampleElevation className="elevation-5" label="Elevation 5" />
+                                        <ExampleElevation className="elevation-6" label="Elevation 6" />
+                                        <ExampleElevation className="elevation-7" label="Elevation 7" />
+                                        <ExampleElevation className="elevation-8" label="Elevation 8" />
+                                        <ExampleElevation className="elevation-9" label="Elevation 9" />
+                                    </LightModeSection>
+                                </div>
+                                <div style={{flex:"1 1 0", width:"0"}}>
+                                    <DarkModeSection>
+                                        In darkmode elevations are represented by a backgrounds with increasingly brightness. Drop shadows are hard to see in darkmode.  All shadows in darkmode are converted to black.
+                                        <div className="subtitle1 top24">Sample Elevations</div>
+                                        <div className="top24"/>
+                                        <ExampleElevation className="elevation-0" label="Elevation 0" />
+                                        <ExampleElevation className="elevation-1" label="Elevation 1" />
+                                        <ExampleElevation className="elevation-2" label="Elevation 2" />
+                                        <ExampleElevation className="elevation-3" label="Elevation 3" />
+                                        <ExampleElevation className="elevation-4" label="Elevation 4" />
+                                        <ExampleElevation className="elevation-5" label="Elevation 5" />
+                                        <ExampleElevation className="elevation-6" label="Elevation 6" />
+                                        <ExampleElevation className="elevation-7" label="Elevation 7" />
+                                        <ExampleElevation className="elevation-8" label="Elevation 8" />
+                                        <ExampleElevation className="elevation-9" label="Elevation 9" />
+                                    </DarkModeSection>
+                                </div>
                             </div>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={0}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={1}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={2}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={3}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={4}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={5}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={6}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={7}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={8}/>
-                            <ExampleElevation elevationSettings={elevationSettings} elevationNumber={9}/>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="darkmode background">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-6">
-                            <h4>Dark Mode</h4>
-                            <p>
-                                In darkmode elevations are represented by a backgrounds with 
-                                increasingly brightness. Drop shadows are hard to see in darkmode. 
-                                All shadows in darkmode are converted to black.
-                            </p>
-                            </div>
-                            <div className="col-6">
-                            <div className="subtitle1">Sample Elevations</div>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={0}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={1}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={2}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={3}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={4}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={5}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={6}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={7}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={8}/>
-                                <ExampleElevation elevationSettings={elevationSettings} elevationNumber={9}/>
-                            </div>
-                        </div>
-                    </div>
-            </section>
+            </SettingsSection>
+            <GeneratedCodeSection item={elevationSettings}/>
         </div>
     )
 
