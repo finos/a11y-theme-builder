@@ -18,17 +18,17 @@ interface Props {
 }
 
 export const HeroOrganism: React.FC<Props> = ({ organism }) => {
-    
+
     const [colorMode, setColorMode] = useState<string>("default");
 
     return (
         <div>
             <HeadingSection item={organism} title="Apply Styles" />
-            <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <HeroExample/>
-                </ColorModeSelector>
-            </ExampleSection>
+
+
+              <HeroExample/>
+
+
             <SettingsSection>
                 <div className="top40">
                     <NumberSelectable property={organism.verticalGap} defaultValue={24} units="px" />
