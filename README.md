@@ -7,7 +7,7 @@ Accessibility compliance is difficult. All too often accessibility is addressed 
 
 ![workflow](./_images/gaad-a11y-e2e.png)
 
-Adhering to an [Atomic Accessibility Design Methodology](./docs/atomic-a11y-design.md), the *Accessibility Theme Builder* enables designers to systematically achieve consistent standards compliance. The system collects atomic design system variables, allowing a *Designer* to incrementally create asset types (JSON, CSS files) that can be used to:
+Adhering to an [Atomic Accessibility Design Methodology](https://discoverfinancial.github.io/a11y-theme-builder/motivation/solution/), the *Accessibility Theme Builder* enables designers to systematically achieve consistent standards compliance. The system collects atomic design system variables, allowing a *Designer* to incrementally create asset types (JSON, CSS files) that can be used to:
 
 1. publish physical and digital solutions
 2. generate reusable design components that are leveraged to build physical and digital solutions
