@@ -1,4 +1,4 @@
-> Content for has been deferred for a future milestone.
+> Content herein has been deferred for a future milestone.
 
 ![wip](../../_images/work-in-progress.jpeg)
 
