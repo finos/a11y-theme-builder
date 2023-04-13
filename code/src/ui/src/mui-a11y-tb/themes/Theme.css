@@ -323,7 +323,7 @@
     --dmbuttonHalfOnGradient2: '';
     --dmonbuttonOnGradient2: '';
     /* gradient 3 */
-    --gradient-3: linear-gradient(45deg, #ffffff 0%, var(--gray-100) 100%);
+    --gradient-3: linear-gradient(45deg, #ffffff 0%, var(--gray-200) 100%);
     --on-gradient-3: #121212;
     --buttonOnGradient3: '';
     --buttonHalfOnGradient3: '';
@@ -489,6 +489,7 @@
     /* END - gone */
     /* elevation settings */
     --elevation-change: .2;
+    --change-1: calc(1 + calc(var(--elevation-change) * 1));
     --change-2: calc(1 + calc(var(--elevation-change) * 2));
     --change-3: calc(1 + calc(var(--elevation-change) * 3));
     --change-4: calc(1 + calc(var(--elevation-change) * 4));
@@ -507,7 +508,7 @@
     --elevation-opacity: 0.04;
     --base-elevation-opacity: 0.04;
     /* elevations */
-    --elevation-0: rgba(0,0,0,0);
+    --elevation-0: 0 0 0 0 rgba(0,0,0,0);
     --elevation-1: calc(var(--elevation-horizontal) * var(--change-1)) calc(var(--elevation-vertical)* var(--change-1)) calc(var(--elevation-blur) * var(--change-1)) calc(var(--elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-1)) ),
      0 0 calc(var(--base-elevation-blur) * var(--change-1)) calc(var(--base-elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-1)));
     --elevation-2: calc(var(--elevation-horizontal) * var(--change-2)) calc(var(--elevation-vertical)* var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-2)) ),
@@ -527,90 +528,6 @@
     --elevation-9: calc(var(--elevation-horizontal) * var(--change-9)) calc(var(--elevation-vertical)* var(--change-9)) calc(var(--elevation-blur) * var(--change-9)) calc(var(--elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-9)) ),
       0 0 calc(var(--base-elevation-blur) * var(--change-9)) calc(var(--base-elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-9)));
     /* elevation backgrounds */
-    /* BEGIN - gone */
-    --elevation-horizontal-2: calc(var(--elevation-horizontal) * var(--change-2));
-    --elevation-horizontal-3: calc(var(--elevation-horizontal) * var(--change-3));
-    --elevation-horizontal-4: calc(var(--elevation-horizontal) * var(--change-4));
-    --elevation-horizontal-5: calc(var(--elevation-horizontal) * var(--change-5));
-    --elevation-horizontal-6: calc(var(--elevation-horizontal) * var(--change-6));
-    --elevation-horizontal-7: calc(var(--elevation-horizontal) * var(--change-7));
-    --elevation-horizontal-8: calc(var(--elevation-horizontal) * var(--change-8));
-    --elevation-horizontal-9: calc(var(--elevation-horizontal) * var(--change-9));
-    --elevation-vertical-2: calc(var(--elevation-vertical) * var(--change-2));
-    --elevation-vertical-3: calc(var(--elevation-vertical) * var(--change-3));
-    --elevation-vertical-4: calc(var(--elevation-vertical) * var(--change-4));
-    --elevation-vertical-5: calc(var(--elevation-vertical) * var(--change-5));
-    --elevation-vertical-6: calc(var(--elevation-vertical) * var(--change-6));
-    --elevation-vertical-7: calc(var(--elevation-vertical) * var(--change-7));
-    --elevation-vertical-8: calc(var(--elevation-vertical) * var(--change-8));
-    --elevation-vertical-9: calc(var(--elevation-vertical) * var(--change-9));
-    --elevation-blur-2: calc(var(--elevation-blur) * var(--change-2));
-    --elevation-blur-3: calc(var(--elevation-blur) * var(--change-3));
-    --elevation-blur-4: calc(var(--elevation-blur) * var(--change-4));
-    --elevation-blur-5: calc(var(--elevation-blur) * var(--change-5));
-    --elevation-blur-6: calc(var(--elevation-blur) * var(--change-6));
-    --elevation-blur-7: calc(var(--elevation-blur) * var(--change-7));
-    --elevation-blur-8: calc(var(--elevation-blur) * var(--change-8));
-    --elevation-blur-9: calc(var(--elevation-blur) * var(--change-9));
-    --elevation-spread-2: calc(var(--elevation-spread) * var(--change-2));
-    --elevation-spread-3: calc(var(--elevation-spread) * var(--change-3));
-    --elevation-spread-4: calc(var(--elevation-spread) * var(--change-4));
-    --elevation-spread-5: calc(var(--elevation-spread) * var(--change-5));
-    --elevation-spread-6: calc(var(--elevation-spread) * var(--change-6));
-    --elevation-spread-7: calc(var(--elevation-spread) * var(--change-7));
-    --elevation-spread-8: calc(var(--elevation-spread) * var(--change-8));
-    --elevation-spread-9: calc(var(--elevation-spread) * var(--change-9));
-
-    --reverse-elevation-horizontal: -2px;
-    --reverse-elevation-horizontal-2: calc(var(--reverse-elevation-horizontal) * var(--change-2));
-    --reverse-elevation-horizontal-3: calc(var(--reverse-elevation-horizontal) * var(--change-3));
-    --reverse-elevation-horizontal-4: calc(var(--reverse-elevation-horizontal) * var(--change-4));
-    --reverse-elevation-horizontal-5: calc(var(--reverse-elevation-horizontal) * var(--change-5));
-    --reverse-elevation-horizontal-6: calc(var(--reverse-elevation-horizontal) * var(--change-6));
-    --reverse-elevation-horizontal-7: calc(var(--reverse-elevation-horizontal) * var(--change-7));
-    --reverse-elevation-horizontal-8: calc(var(--reverse-elevation-horizontal) * var(--change-8));
-    --reverse-elevation-horizontal-9: calc(var(--reverse-elevation-horizontal) * var(--change-9));
-    --reverse-elevation-vertical: -2px;
-    --reverse-elevation-vertical-2: calc(var(--reverse-elevation-vertical) * var(--change-2));
-    --reverse-elevation-vertical-3: calc(var(--reverse-elevation-vertical) * var(--change-3));
-    --reverse-elevation-vertical-4: calc(var(--reverse-elevation-vertical) * var(--change-4));
-    --reverse-elevation-vertical-5: calc(var(--reverse-elevation-vertical) * var(--change-5));
-    --reverse-elevation-vertical-6: calc(var(--reverse-elevation-vertical) * var(--change-6));
-    --reverse-elevation-vertical-7: calc(var(--reverse-elevation-vertical) * var(--change-7));
-    --reverse-elevation-vertical-8: calc(var(--reverse-elevation-vertical) * var(--change-8));
-    --reverse-elevation-vertical-9: calc(var(--reverse-elevation-vertical) * var(--change-9));
-
-    --base-elevation-blur-2: calc(var(--base-elevation-blur) * var(--change-2));
-    --base-elevation-blur-3: calc(var(--base-elevation-blur) * var(--change-3));
-    --base-elevation-blur-4: calc(var(--base-elevation-blur) * var(--change-4));
-    --base-elevation-blur-5: calc(var(--base-elevation-blur) * var(--change-5));
-    --base-elevation-blur-6: calc(var(--base-elevation-blur) * var(--change-6));
-    --base-elevation-blur-7: calc(var(--base-elevation-blur) * var(--change-7));
-    --base-elevation-blur-8: calc(var(--base-elevation-blur) * var(--change-8));
-    --base-elevation-blur-9: calc(var(--base-elevation-blur) * var(--change-9));
-    --base-elevation-spread-2: calc(var(--base-elevation-spread) * var(--change-2));
-    --base-elevation-spread-3: calc(var(--base-elevation-spread) * var(--change-3));
-    --base-elevation-spread-4: calc(var(--base-elevation-spread) * var(--change-4));
-    --base-elevation-spread-5: calc(var(--base-elevation-spread) * var(--change-5));
-    --base-elevation-spread-6: calc(var(--base-elevation-spread) * var(--change-6));
-    --base-elevation-spread-7: calc(var(--base-elevation-spread) * var(--change-7));
-    --base-elevation-spread-8: calc(var(--base-elevation-spread) * var(--change-8));
-    --base-elevation-spread-9: calc(var(--base-elevation-spread) * var(--change-9));
-
-
-
-    /* elevations */
-    --base-elevation-1: 0 0 var(--base-elevation-blur) var(--base-elevation-spread);
-    --base-elevation-2: 0 0 var(--base-elevation-blur-2) var(--base-elevation-spread-2);
-    --base-elevation-3: 0 0 var(--base-elevation-blur-3) var(--base-elevation-spread-3);
-    --base-elevation-4: 0 0 var(--base-elevation-blur-4) var(--base-elevation-spread-4);
-    --base-elevation-5: 0 0 var(--base-elevation-blur-5) var(--base-elevation-spread-5);
-    --base-elevation-6: 0 0 var(--base-elevation-blur-6) var(--base-elevation-spread-6);
-    --base-elevation-7: 0 0 var(--base-elevation-blur-7) var(--base-elevation-spread-7);
-    --base-elevation-8: 0 0 var(--base-elevation-blur-8) var(--base-elevation-spread-8);
-    --base-elevation-9: 0 0 var(--base-elevation-blur-9) var(--base-elevation-spread-9);
-    /* END - gone */
-
     --elevation-bg-0: #121212;
     --on-elevation-bg-0: rgba(255,255,255,.6);
     --elevation-bg-1: #2E2E47;
@@ -641,10 +558,10 @@
     --bevel-change: .2;
     /* bevels */
     --bevel-0: 0 0 0 0 rgba(0,0,0,0);
-    --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - var(--bevel-horizontal)) calc(0px - var(--bevel-vertical)) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,var(--bevel-dark-opacity));
+    --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255,var(--bevel-light-opacity)) , inset calc(0px - var(--bevel-horizontal)) calc(0px - var(--bevel-vertical)) var(--bevel-blur) 1px rgba(0,0,0,var(--bevel-dark-opacity));
     --bevel-2: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread)
-    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread)
+     rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
      --bevel-3: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
      inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3))));
@@ -660,6 +577,9 @@
     --bevel-6: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
      inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7))));
+     --bevel-7: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
+     rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
      --bevel-8: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
      inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
@@ -667,31 +587,33 @@
      inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9))));
      /* inverse bevel settings */
-     --inbevel-horizontal: 6px;
-     --inbevel-vertical: 6px;
-     --inbevel-spread: 1px;
-     --inbevel-blur: 6px;
-     --inbevel-light-opacity: 0.3;
-     --inbevel-dark-opacity: 0.1;
-     --inbevel-change: .2;
+      --inbevel-horizontal: 6px;
+      --inbevel-vertical: 6px;
+      --inbevel-spread: 1px;
+      --inbevel-blur: 6px;
+      --inbevel-light-opacity: 0.3;
+      --inbevel-dark-opacity: 0.1;
+      --inbevel-change: .2;
     /* inverse bevels */
-    --reverse-bevel-1: inset calc(var(--inbevel-horizontal) * 1) calc(var(--inbevel-vertical) * 1) var(--inbevel-blur) var(--inbevel-spread) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * (1 +  var(--inbevel-change))  ));
-    --reverse-bevel-2: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-blur) * .9) calc(var(--inbevel-spread) * .9)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 1))  ));
-    --reverse-bevel-3: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-blur) * .8)  calc(var(--inbevel-spread) * .8)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 2))  ));
-    --reverse-bevel-4: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-blur) * .7)  calc(var(--inbevel-spread) * .7)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 3))  ));
-    --reverse-bevel-5: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-blur) * .6)  calc(var(--inbevel-spread) * .6)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 4))  ));
-    --reverse-bevel-6: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-blur) * .5)  calc(var(--inbevel-spread) * .5)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 5))  ));
-    --reverse-bevel-7: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-blur) * .4)  calc(var(--inbevel-spread) * .4)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 6))  ));
-    --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-blur) * .3)  calc(var(--inbevel-spread) * .3)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 7))  ));
-    --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-blur) * .2)  calc(var(--inbevel-spread) * .2)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 8))  ));
+    --reverse-bevel-1: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .1))) calc(var(--inbevel-blur) * .9) calc(var(--inbevel-spread) * .9)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .1))  ));
+    --reverse-bevel-2: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .2))) calc(var(--inbevel-blur) * .8) calc(var(--inbevel-spread) * .8)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .2))  ));
+    --reverse-bevel-3: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .3))) calc(var(--inbevel-blur) * .7)  calc(var(--inbevel-spread) * .7)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .3))  ));
+    --reverse-bevel-4: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .4))) calc(var(--inbevel-blur) * .6)  calc(var(--inbevel-spread) * .6)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .4))  ));
+    --reverse-bevel-5: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .5))) calc(var(--inbevel-blur) * .4)  calc(var(--inbevel-spread) * .5)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .5))  ));
+    --reverse-bevel-6: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .6))) calc(var(--inbevel-blur) * .4)  calc(var(--inbevel-spread) * .4)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .6))  ));
+    --reverse-bevel-7: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .7))) calc(var(--inbevel-blur) * .3)  calc(var(--inbevel-spread) * .3)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .7))  ));
+    --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .8))) calc(var(--inbevel-blur) * .2)  calc(var(--inbevel-spread) * .2)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .8))  ));
+    --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .9))) calc(var(--inbevel-blur) * .1)  calc(var(--inbevel-spread) * .1)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .9))  ));
+
     /* MOLECULES */
     /* dropdown */
     --dropdown-focus-theme: var(--spacing-half);
@@ -858,8 +780,8 @@
     --dm-navbarSecondary: var(--dm-primary);
     --dm-on-navbarSecondary: var(--dm-on-primary);
     /* hero */
-    --hero-gap: var(--spacing-3);
-    --hero-padding: var(--spacing-3);
+    --hero-gap: 2;
+    --hero-padding: 4;
     --hero-heroTitleTypography: var(--Display1FontWeight) var(--Display1FontSize) / var(--Display1LineHeight) var(--Display1FontFamily);
     --hero-heroTitleTransform: var(--Display1TextTransform);
     --hero-heroTitleSpacing: var(--Display1LetterSpacing);
@@ -1708,21 +1630,19 @@ h6 {
     fill: var(--dm-white);
 }
 /* Breadcrumbs  */
-.breadcrumbs,
-.white.breadcrumbs,
-.black.breadcrumbs,
-.darkmode .breadcrumbs,
-.darkmode .black.breadcrumbs,
-.darkmode .white.breadcrumbs {
+.breadcrumbs .MuiBreadcrumbs-li {
     gap: var(--spacing-1);
     background: transparent !important;
-    font-family: var(--captionFontFamily) !important;
-    font-weight: var(--captionFontWeight) !important;
-    font-size: var(--captionFontSize) !important;
-    line-height: var(--captionLineHeight) !important;
-    letter-spacing: var(--captionLetterSpacing) !important;
-    text-transform: var(--captionTextTransform) !important;
-    text-decoration:  var(--captionTextDecoration) !important;
+}
+
+.breadcrumbs .MuiBreadcrumbs-li .MuiTypography-root {
+  font-family: var(--caption-boldFontFamily) !important;
+  font-weight: var(--caption-boldFontWeight) !important;
+  font-size: var(--caption-boldFontSize) !important;
+  line-height: var(--caption-boldLineHeight) !important;
+  letter-spacing: var(--caption-boldLetterSpacing) !important;
+  text-transform: var(--caption-boldTextTransform) !important;
+  text-decoration:  var(--caption-boldTextDecoration) !important;
 }
 
 .breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
@@ -1730,7 +1650,7 @@ h6 {
 }
 
 .breadcrumbs .MuiBreadcrumbs-li a, .breadcrumbs .MuiBreadcrumbs-li:focus a, .breadcrumbs .MuiBreadcrumbs-li:active a {
-    color: var(--hotlink) !important;
+    color: var(--hotlink);
     text-decoration: var(--hotlink-decoration);
     text-decoration-color: var(--hotlink);
 }
@@ -1743,7 +1663,7 @@ h6 {
     text-decoration-color: var(--hotlink);
 }
 .breadcrumbs .MuiBreadcrumbs-li:visited a{
-  color: var(--hotlink) !important;
+  color: var(--hotlink);
   text-decoration: var(--hotlink-decoration);
   text-decoration-color: var(--hotlink);
   opacity: .7
@@ -1777,13 +1697,13 @@ h6 {
 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   text-decoration: none !important;
   font-style: italic !important;
-  font-family: var(--captionFontFamily);
-  font-weight: var(--captionFontWeight) !important;
-  font-size: var(--captionFontSize) !important;
-  line-height: var(--captionLineHeight) !important;
-  letter-spacing: var(--captionLetterSpacing) !important;
-  text-transform: var(--captionTextTransform) !important;
-  text-decoration:  var(--captionTextDecoration) !important;
+  font-family: var(--caption-boldFontFamily);
+  font-weight: var(--caption-boldFontWeight) !important;
+  font-size: var(--caption-boldFontSize) !important;
+  line-height: var(--caption-boldLineHeight) !important;
+  letter-spacing: var(--caption-boldLetterSpacing) !important;
+  text-transform: var(--caption-boldTextTransform) !important;
+  text-decoration:  var(--caption-boldTextDecoration) !important;
 }
 .breadcrumbs:not(.back-breadcrumbs).black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--black) !important;
@@ -2356,6 +2276,7 @@ a:active {
 }
 .darkmode > button.MuiTab-root {
   background: none !important;
+  box-shadow: none !important
 }
 .darkmode button.MuiTab-root::after {
   background: unset !important;
@@ -2558,7 +2479,14 @@ a:active {
 .darkmode .MuiChip-root svg path {
   fill: var(--dm-white);
 }
-
+/* hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-1) * var(--hero-gap));
+  padding:  calc(var(--hero-padding) * var(--spacing-1));
+  margin: 0;
+}
 
 /* toast */
 .MuiAlert-root .MuiAlert-message {
@@ -2693,14 +2621,16 @@ a:active {
   text-transform: var(--CTA-SmallTextTransform);
   letter-spacing: var(--CTA-SmallCharcterSpacing);
   min-height: var(--min-target);
+  box-shadow: none !important;
 }
 /* darkmode tabs */
 .darkmode .MuiTabs-root {
   background: var(--dm-button) !important;
-}
-.darkmode .MuiTab-root {
-  background: var(--dm-button) !important;
   color: var(--dm-on-button)  !important;
+  box-shadow: none !important;
+}
+.MuiTabs-root .MuiTab-root {
+    box-shadow: none !important;
 }
 /* tab variations */
 .MuiTabs-root.black .MuiTab-root {
@@ -3579,54 +3509,54 @@ a:active {
 }
 .darkmode .elevation-1 {
   background: var(--elevation-bg-1) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
 }
 .darkmode .elevation-2 {
   background: var(--elevation-bg-2) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-3 {
   background: var(--elevation-bg-3) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-4 {
   background: var(--elevation-bg-4) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-5 {
   background: var(--elevation-bg-5) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-6 {
   background: var(--elevation-bg-5) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-7 {
   background: var(--elevation-bg-7) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-8 {
   background: var(--elevation-bg-8) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
 .darkmode .elevation-9 {
   background: var(--elevation-bg-9) !important;
-  box-shadow: none;
+    box-shadow: none  !important;
   border: var(--border-1) solid var(--dm-border);
   color: var(--dm-white);
 }
@@ -3740,21 +3670,32 @@ a:active {
 .black .fa-regular:not(button *), .black .fa-solid:not(button *) {
   color: var(--iconOnBlack) !important;
 }
-/* on black hotlinks */
-.black a {
+/* hotlinks &  breadcrumbs */
+.black a,
+.black .breadcrumbs .MuiBreadcrumbs-li a,
+.black .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.black .breadcrumbs .MuiBreadcrumbs-li:active a {
   text-decoration:  var(--hotlinkOnBlack-decoration);
   color: var(--hotlinkOnBlack);
 }
-.black a:visited {
+.black a:visited,
+.black.breadcrumbs .MuiBreadcrumbs-li a:visited {
   text-decoration:  var(--hotlinkOnBlack-decoration) !important;
   color: var(--hotlinkOnBlack);
   opacity: .7
 }
-.black a:hover {
+.black a:hover,
+.black .breadcrumbs .MuiBreadcrumbs-li a:hover {
   text-decoration: var(--hotlinkOnBlack-hover-decoration) !important;
 }
-.black a:active {
+.black a:active,
+.black .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: var(--hotlinkOnBlack-hover-decoration)
+}
+.black .MuiBreadcrumbs-root,
+.black .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(--white);
+  opacity: var(--quiet);
 }
 /* on black buttons */
 .black button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
@@ -3794,6 +3735,7 @@ a:active {
   background: var(--white);
 }
 
+
 /*  WHITE  */
 .white, .white-bg {
     background: var(--white) !important;
@@ -3805,21 +3747,32 @@ a:active {
 .white .fa-regular:not(button *), .white .fa-solid:not(button *) {
   color: var(--iconOnWhite) !important;
 }
-/* on white hotlinks */
-.white a {
+/* hotlinks &  breadcrumbs */
+.white a,
+.white .breadcrumbs .MuiBreadcrumbs-li a,
+.white .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.white .breadcrumbs .MuiBreadcrumbs-li:active a {
   text-decoration:  var(--hotlinkOnWhite-decoration);
   color: var(--hotlinkOnWhite);
 }
-.white a:visited{
+.white a:visited,
+.white .breadcrumbs .MuiBreadcrumbs-li a:visited {
   text-decoration:  var(--hotlinkOnWhite-decoration) !important;
   color: var(--hotlinkOnWhite);
   opacity: .5
 }
-.white a:hover {
+.white a:hover,
+.white .breadcrumbs .MuiBreadcrumbs-li a:hover {
   text-decoration: var(--hotlinkOnWhite-hover-decoration) !important;
 }
-.white a:active {
+.white a:active,
+.white .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: var(--hotlinkOnWhite-hover-decoration)
+}
+.white .MuiBreadcrumbs-root,
+.white .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(--black);
+  opacity: var(--quiet);
 }
 /* on white buttons */
 .white button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
@@ -3863,6 +3816,34 @@ a:active {
   background: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
 }
+/* hotlinks &  breadcrumbs */
+.colored a,
+.colored.breadcrumbs .MuiBreadcrumbs-li a,
+.colored .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.colored .breadcrumbs .MuiBreadcrumbs-li:active a {
+  text-decoration:  underline !important;
+  color: var(--hotlinkOnTertiary) !important;
+}
+.colored a:visited,
+.colored .breadcrumbs .MuiBreadcrumbs-li a:visited {
+  text-decoration: underline !important;
+  color: var(--hotlinkOnTertiary) !important;
+  opacity: .7
+}
+.colored a:hover,
+.colored .breadcrumbs .MuiBreadcrumbs-li a:hover {
+  text-decoration: none !important;
+}
+.colored a:active,
+.colored .breadcrumbs .MuiBreadcrumbs-li a:active  {
+  text-decoration: none!important;
+}
+.colored .MuiBreadcrumbs-root,
+.colored .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(--on-background-tertiary);
+  opacity: var(--quiet);
+}
+/* buttons */
 .colored button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnTertiary) !important;
   color: var(--onbuttonOnTertiary) !important;
@@ -3887,10 +3868,7 @@ a:active {
 .colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
-.colored a, .colored .backgroundTertiary a  {
-  text-decoration:  var(--hotlinkDecorationOnTertiary );
-  color: var(--hotlinkOnTertiary );
-}
+/* avatars */
 .colored .MuiAvatar-root:not(.white) {
   background-color: var(--buttonOnTertiary)
 }
@@ -3907,21 +3885,32 @@ a:active {
   color: var(--on-gradient-1) !important;
 }
 /* on white hotlinks */
-.gradient-1 a {
-  text-decoration: underline;
-  color: var(--on-gradient-1);
+.gradient-1 a,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li a,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li:active a {
+  text-decoration: underline !important;
+  color: var(--on-gradient-1) !important;
 }
-.gradient-1 a:visited{
-  text-decoration:  underline !important;
-  color: var(--on-gradient-1);
-  opacity: .5
+.gradient-1 a:visited,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li a:visited {
+  text-decoration: underline !important;
+  color: var(--on-gradient-1) !important;
 }
-.gradient-1 a:hover {
+.gradient-1 a:hover,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li a:hover {
   text-decoration: none !important;
 }
-.gradient-1 a:active {
+.gradient-1 a:active,
+.gradient-1 .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: underline;
 }
+.gradient-1  .MuiBreadcrumbs-root,
+.gradient-1 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(---on-gradient-1));
+  opacity: var(--quiet);
+}
+/* avatars */
 .gradient-1 .MuiAvatar-root {
   background-color: var(--buttonOnGradient1)
 }
@@ -3958,29 +3947,40 @@ a:active {
 .gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
   color: var(--on-gradient-2) !important;
 }
+/* hotlinks &  breadcrumbs */
+.gradient-2 a,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li a,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li:active a {
+  text-decoration: underline !important;
+  color: var(--on-gradient-2) !important;
+}
+.gradient-2 a:visited,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li a:visited {
+  text-decoration: underline !important;
+  color: var(--on-gradient-2) !important;
+}
+.gradient-2 a:hover,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li a:hover {
+  text-decoration: none !important;
+}
+.gradient-2 a:active,
+.gradient-2 .breadcrumbs .MuiBreadcrumbs-li a:active  {
+  text-decoration: underline;
+}
+.gradient-2  .MuiBreadcrumbs-root,
+.gradient-2 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(---on-gradient-2));
+  opacity: var(--quiet);
+}
+/* avatars */
 .gradient-2 .MuiAvatar-root {
   background-color: var(--buttonOnGradient2)
 }
 .gradient-2  .MuiAvatar-root svg path {
     fill: var(--onbuttonOnGradient2);
 }
-/* on white hotlinks */
-.gradient-2 a {
-  text-decoration: underline;
-  color: var(--on-gradient-2);
-}
-.gradient-2 a:visited{
-  text-decoration:  underline !important;
-  color: var(--on-gradient-2);
-  opacity: .5
-}
-.gradient-2 a:hover {
-  text-decoration: none !important;
-}
-.gradient-2 a:active {
-  text-decoration: underline;
-}
-/* on white buttons */
+/*  buttons */
 .gradient-2 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient2) !important;
   color: var(--onbuttonOnGradient2) !important;
@@ -4010,23 +4010,40 @@ a:active {
 .gradient-3 .fa-regular:not(button *), .gradient-3 .fa-solid:not(button *) {
   color: var(--on-gradient-3) !important;
 }
-/* on white hotlinks */
-.gradient-3 a {
-  text-decoration: underline;
-  color: var(--on-gradient-3);
+/* hotlinks &  breadcrumbs */
+.gradient-3 a,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li a,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li:active a {
+  text-decoration: underline !important;
+  color: var(--on-gradient-3) !important;
 }
-.gradient-3 a:visited{
-  text-decoration:  underline !important;
-  color: var(--on-gradient-3);
-  opacity: .5
+.gradient-3 a:visited,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li a:visited {
+  text-decoration: underline !important;
+  color: var(--on-gradient-3) !important;
 }
-.gradient-3 a:hover {
+.gradient-3 a:hover,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li a:hover {
   text-decoration: none !important;
 }
-.gradient-3 a:active {
+.gradient-3 a:active,
+.gradient-3 .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: underline;
 }
-/* on white buttons */
+.gradient-3  .MuiBreadcrumbs-root,
+.gradient-3 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(---on-gradient-3));
+  opacity: var(--quiet);
+}
+/* avatars */
+.gradient-3 .MuiAvatar-root {
+  background-color: var(--buttonOnGradient3)
+}
+.gradient-3  .MuiAvatar-root svg path {
+    fill: var(--onbuttonOnGradient3);
+}
+/* buttons */
 .gradient-3 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient3) !important;
   color: var(--onbuttonOnGradient3) !important;
