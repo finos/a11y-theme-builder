@@ -19,4 +19,13 @@ See [Extending the SDK](https://github.com/discoverfinancial/a11y-theme-builder-
 
 ## Extending the User Interface
 
-> TODO: Add UI description here
+* Ensure that the SDK is extended first with your new additions, and that this newest SDK version is present in your build.
+* Create the React component for the new addition you are planning to make. Ensure it is in the correct directory depending on whether it is a atom, molecule, organism or component.  Be sure to import the SDK extension you made, and pass it as a prop.
+* Complete the new React component, by completing a HeadingSection, ExampleSection and Settings Section.
+* Add your new component to the correct content page depending on whether it is a atom, molecule, organism or component.
+
+### Walkthrough: Creating a new Atom
+
+We have included an [Example Atom](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/atoms/ExampleAtom.tsx) as a DEMO.
+
+Follow the comments labeled with `DEMO` in the above file and the [Atom Content Page](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/atoms/AtomContent.tsx).
