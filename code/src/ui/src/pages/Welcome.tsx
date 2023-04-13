@@ -41,7 +41,15 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                 The Theme Builder give you the power to customize the Design System and the foundational JSON.
             </p>
             <p>
-                Using GitHub the JSON that feeds these core systems keeps everythiung synchronized.
+                Using GitHub the JSON that feeds these core systems keeps everything synchronized.
+            </p>
+            <p>
+                More information on the Theme Builder and its usage 
+                can be found in the &nbsp;
+                <a href="https://discoverfinancial.github.io/a11y-theme-builder/" 
+                    target="_blank" rel="noreferrer noopener">
+                    Docs
+                </a>.
             </p>
 
             <h5>Get started with 3 simple steps</h5>

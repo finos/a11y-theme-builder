@@ -611,7 +611,6 @@
     rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.8))  ));
     --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.9))) calc(var(--inbevel-blur) * 0.1)  calc(var(--inbevel-spread) * 0.1)
     rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.9))  ));
-
     /* MOLECULES */
     /* dropdown */
     --dropdown-focus-theme: var(--spacing-half);
@@ -3392,20 +3391,32 @@ a:active {
   color: var(--on-info);
   fill: rgb(var(--info));
 }
+.info-text {
+  color: var(--info);
+}
 .success {
   background: var(--success) !important;
-  color: var(--on-success );
+  color: var(--on-success);
   fill: rgb(var(--success));
+}
+.success-text {
+  color: var(--success);
 }
 .warning {
   background: var(--warning) !important;
   color: var(--on-warning);
   fill: rgb(var(--warning));
 }
+.warning-text {
+  color: var(--warning);
+}
 .danger {
   background: var(--danger) !important;
   color: var(--on-danger);
   fill: rgb(var(--danger)) !important;
+}
+.danger-text {
+  color: var(--danger);
 }
 
 .darkmode .info {

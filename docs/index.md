@@ -1,5 +1,9 @@
 # Accessibility Theme Builder
 
+<video style="width:90% centered" controls autoplay muted>
+   <source src="./_videos/tb-getting-started.mp4" type="video/mp4">
+</video>
+
 A system for generating machine readable asset types allowing design systems to publish products that are accessibly inclusive. The system is based on a *Atomic Accessibility Design Methodology* that allows designers and developers to:
 
 * Improve Developer Experience
