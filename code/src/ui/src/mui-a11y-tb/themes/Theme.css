@@ -323,8 +323,12 @@
     --dmbuttonHalfOnGradient2: '';
     --dmonbuttonOnGradient2: '';
     /* gradient 3 */
-    --gradient-3: linear-gradient(45deg, #ffffff 0%, var(--gray-200) 100%);
+    --gradient-3: '';
     --on-gradient-3: #121212;
+    --gradient3-a: var(--gray-0);;
+    --on-gradient3-a: '#121212';
+    --gradient3-b: var(--gray-200);
+    --on-gradient3-b: '#121212';
     --buttonOnGradient3: '';
     --buttonHalfOnGradient3: '';
     --onbuttonOnGradient3: '';
@@ -551,7 +555,7 @@
     /* bevel settings */
     --bevel-horizontal: 6px;
     --bevel-vertical: 6px;
-    --bevel-spread: 1px;
+    --bevel-spread:2px;
     --bevel-blur: 6px;
     --bevel-light-opacity: 0.3;
     --bevel-dark-opacity: 0.1;
@@ -559,60 +563,54 @@
     /* bevels */
     --bevel-0: 0 0 0 0 rgba(0,0,0,0);
     --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255,var(--bevel-light-opacity)) , inset calc(0px - var(--bevel-horizontal)) calc(0px - var(--bevel-vertical)) var(--bevel-blur) 1px rgba(0,0,0,var(--bevel-dark-opacity));
-    --bevel-2: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread)
-     rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
-     --bevel-3: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3)))) var(--bevel-blur) var(--bevel-spread)
+    --bevel-2: inset 6px 6px 2px 2px rgba(0,0,0,.4);
+     --bevel-3: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.3))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.3))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.3)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3))));
-     --bevel-4: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-4: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.4))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.4))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.4)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.4)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 4))));
-     --bevel-5: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-5: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.5))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.5))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.5)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.5)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 5))));
-     --bevel-6: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-6: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.6))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.6))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.6)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.6)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 6))));
-    --bevel-6: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
-     rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7))));
-     --bevel-7: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-7: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.7)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
-     --bevel-8: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-8: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.8))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.8))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.8)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
-     --bevel-9: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
-     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9)))) var(--bevel-blur) var(--bevel-spread)
+     --bevel-9: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.9))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.9))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)),
+     inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1.9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1.9)))) var(--bevel-blur) var(--bevel-spread)
      rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9))));
      /* inverse bevel settings */
       --inbevel-horizontal: 6px;
       --inbevel-vertical: 6px;
-      --inbevel-spread: 1px;
+      --inbevel-spread: 7px;
       --inbevel-blur: 6px;
-      --inbevel-light-opacity: 0.3;
-      --inbevel-dark-opacity: 0.1;
-      --inbevel-change: .2;
+      --inbevel-dark-opacity: 0.5;
+      --inbevel-change: 0.3;
     /* inverse bevels */
-    --reverse-bevel-1: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .1))) calc(var(--inbevel-blur) * .9) calc(var(--inbevel-spread) * .9)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .1))  ));
-    --reverse-bevel-2: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .2))) calc(var(--inbevel-blur) * .8) calc(var(--inbevel-spread) * .8)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .2))  ));
-    --reverse-bevel-3: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .3))) calc(var(--inbevel-blur) * .7)  calc(var(--inbevel-spread) * .7)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .3))  ));
-    --reverse-bevel-4: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .4))) calc(var(--inbevel-blur) * .6)  calc(var(--inbevel-spread) * .6)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .4))  ));
-    --reverse-bevel-5: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .5))) calc(var(--inbevel-blur) * .4)  calc(var(--inbevel-spread) * .5)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .5))  ));
-    --reverse-bevel-6: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .6))) calc(var(--inbevel-blur) * .4)  calc(var(--inbevel-spread) * .4)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .6))  ));
-    --reverse-bevel-7: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .7))) calc(var(--inbevel-blur) * .3)  calc(var(--inbevel-spread) * .3)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .7))  ));
-    --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .8))) calc(var(--inbevel-blur) * .2)  calc(var(--inbevel-spread) * .2)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .8))  ));
-    --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .9))) calc(var(--inbevel-blur) * .1)  calc(var(--inbevel-spread) * .1)
-    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .9))  ));
+    --reverse-bevel-1: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.1))) calc(var(--inbevel-blur) * 0.9) calc(var(--inbevel-spread) * 0.9)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.1))  ));
+    --reverse-bevel-2: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.2))) calc(var(--inbevel-blur) * 0.8) calc(var(--inbevel-spread) * 0.8)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.2))  ));
+    --reverse-bevel-3: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.3))) calc(var(--inbevel-blur) * 0.7)  calc(var(--inbevel-spread) * 0.7)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.3))  ));
+    --reverse-bevel-4: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.4))) calc(var(--inbevel-blur) * 0.6)  calc(var(--inbevel-spread) * 0.6)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.4))  ));
+    --reverse-bevel-5: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.5))) calc(var(--inbevel-blur) * 0.4)  calc(var(--inbevel-spread) * 0.5)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.5))  ));
+    --reverse-bevel-6: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.6))) calc(var(--inbevel-blur) * 0.4)  calc(var(--inbevel-spread) * 0.4)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.6))  ));
+    --reverse-bevel-7: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.7))) calc(var(--inbevel-blur) * 0.3)  calc(var(--inbevel-spread) * 0.3)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.7))  ));
+    --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.8))) calc(var(--inbevel-blur) * 0.2)  calc(var(--inbevel-spread) * 0.2)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.8))  ));
+    --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * 0.9))) calc(var(--inbevel-blur) * 0.1)  calc(var(--inbevel-spread) * 0.1)
+    rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * 0.9))  ));
 
     /* MOLECULES */
     /* dropdown */
@@ -2069,7 +2067,7 @@ button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):no
   color: var(--white) !important;
 }
 button.MuiButtonBase-root.black::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--black) !important;
+  border: var(--focusBorder) solid var(--black) !important;
 }
 button.MuiButtonBase-root.black.MuiButton-outlined::after, .MuiButtonBase-root.black.MuiButton-text::after {
   background: var(--black);
@@ -2089,7 +2087,7 @@ button.MuiButtonBase-root.black.MuiButton-outlined .inline-icon, button.MuiButto
 }
 button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-root.black.MuiButton-txet::after {
   background: transparent !important;
-  border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
+  border: var(--focusBorder) solid var(--black) !important;
 }
 .darkmode button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   color: var(--dm-white)  !important;
@@ -2099,7 +2097,7 @@ button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-
   background: none !important;
 }
 .darkmode button.MuiButtonBase-root.black::after, button.MuiButtonBase-root.black.small-btn.MuiButton-outlined::after, button.MuiButtonBase-root.black.small-btn.MuiButton-text::after {
-  border: calc(var(--button-border) * var(--border-1))  solid  var(--black) !important;
+  border: var(--focusBorder) solid  var(--black) !important;
   background: none !important;
 }
 .darkmode button.MuiButtonBase-root.black.MuiButton-outlined, .darkmode button.MuiButtonBase-root.black.MuiButton-text, button.MuiButtonBase-root.black.small-btn.MuiButton-outlined, button.MuiButtonBase-root.black.small-btn.MuiButton-text {
@@ -2111,7 +2109,7 @@ button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-
 }
 .darkmode button.MuiButtonBase-root.black.MuiButton-outlined::after, .darkmode button.MuiButtonBase-root.black.MuiButton-txet::after {
   background: transparent !important;
-  border: calc(var(--button-border) * var(--border-1))  solid var(--black) !important;
+  border: var(--focusBorder)  solid var(--black) !important;
 }
 button.MuiButtonBase-root.black.small-btn:not(.MuiButton-outlined):not(.MuiButton-text) {
   background: transparent !important;
@@ -2130,7 +2128,7 @@ button.MuiButtonBase-root.white.small-btn:not(.MuiButton-outlined):not(.MuiButto
   color: var(--black) !important;
 }
 button.MuiButtonBase-root.white::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--white) !important;
+  border: var(--focusBorder) solid var(--white) !important;
 }
 button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-root.white.MuiButton-text::after {
   background: var(--white);
@@ -2147,7 +2145,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::before {
 }
 button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-root.white.MuiButton-txet::after {
   background: transparent !important;
-  border: calc(var(--button-border) * var(--border-1))  solid var(--white) !important;
+  border: var(--focusBorder) solid var(--white) !important;
 }
 .darkmode button.MuiButtonBase-root.white:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn):not(.MuiTab-root){
   color: var(--black)  !important;
@@ -2157,7 +2155,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: none !important;
 }
 .darkmode button.MuiButtonBase-root.white::after {
-  border: calc(var(--button-border) * var(--border-1))  solid  var(--dm-white) !important;
+  border: var(--focusBorder)  solid  var(--dm-white) !important;
   background: none !important;
 }
 .darkmode button.MuiButtonBase-root.white.MuiButton-outlined, .darkmode button.MuiButtonBase-root.white.MuiButton-text {
@@ -2169,7 +2167,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 .darkmode button.MuiButtonBase-root.white.MuiButton-outlined::after, .darkmode button.MuiButtonBase-root.white.MuiButton-txet::after {
   background: transparent !important;
-  border: calc(var(--button-border) * var(--border-1))  solid var(--dm-white) !important;
+  border: var(--focusBorder) solid var(--dm-white) !important;
 }
 .darkmode button.MuiButtonBase-root.white.small-btn{
   background: none !important;
@@ -2231,7 +2229,7 @@ a:active {
   color: var(--dmonbuttonOnTertiary) !important;
 }
 .darkmode .default button::after, .darkmode .primary button::after, .darkmode .backgroundTertiary button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid rgb(var(--dmfocusOnTertiary));
+  border: var(--focusBorder) solid rgb(var(--dmfocusOnTertiary));
 }
 .darkmode .default .fa-regular:not(button *), .darkmode .primary .fa-regular:not(button *), .darkmode .default   .fa-solid:not(button *) {
   color: var(--dmiconOnTertiary) !important;
@@ -2297,7 +2295,7 @@ a:active {
   background: var(--black) !important;
 }
 .darkmode .white button::after {
-  border: var(--border-1) solid var(--black) !important;
+  border: var(--focusBorder)  solid var(--black) !important;
   background: none !important;
 }
 .darkmode button.MuiButton-outlined,
@@ -2338,7 +2336,7 @@ a:active {
 .darkmode .white button.MuiButton-outlined::after,
 .darkmode .white button.MuiButton-text::after {
   background: transparent !important;
-  border: var(--border-1) solid var(--black) !important;
+  border: var(--focusBorder)  solid var(--black) !important;
 }
 .darkmode button.small-btn.MuiButton-text::before {
   background: none !important;
@@ -2386,7 +2384,7 @@ a:active {
  left:   calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
  right:  calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
  opacity: 0;
- border: var(--border-1) solid var(--button);
+ border: var(--focusBorder)  solid var(--button);
  border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
  box-shadow: 0 0 var(--focusBlur) 0px var(--button);
  transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
@@ -2514,7 +2512,7 @@ a:active {
   background: var(--transparent) !important;
 }
 .MuiAlert-root button.small-btn::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--black);
+  border: var(--focusBorder) solid var(--black);
 }
 /* darmode toast */
 .darkmode .MuiAlert-root {
@@ -2568,7 +2566,7 @@ a:active {
   background: var(--dm-white) !important;
 }
 .darkmode .MuiAlert-root .MuiButton-root::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--dm-white) !important;
+  border: var(--focusBorder)  solid var(--dm-white) !important;
 }
 .darkmode .MuiAlert-root button svg path {
   fill: var(--dm-white) !important
@@ -2929,6 +2927,42 @@ a:active {
   z-index: -1;
   content: "";
 } */
+.MuiOutlinedInput-root {
+  position: relative;
+}
+.MuiOutlinedInput-root::after {
+  position: absolute;
+  height: var(--min-target);
+  width: var(--min-target);
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 0;
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
+  background: transparent;
+  pointer-events: none;
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px)
+},
+.MuiOutlinedInput-root:hover::after {
+  position: absolute;
+  height: calc(var(--spacing-3) + 3px);
+  width: calc(var(--spacing-3) + 3px);
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: .5;
+}
+.MuiOutlinedInput-root:focus::after {
+  position: absolute;
+  height: calc(var(--spacing-3) + 3px);
+  width: calc(var(--spacing-3) + 3px);
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: 1;
+},
+
+
 
 /* dark mode input fields */
 .darkmode .MuiOutlinedInput-notchedOutline fieldset {
@@ -3048,7 +3082,7 @@ a:active {
   color: var(--onbuttonOnWhite) !important;
 }
 .darkmode .white button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
+  border: var(--focusBorder)  solid var(--buttonOnWhite);
 }
 .darkmode .white button .inline-icon path {
   fill: var(--onbuttonOnWhite) !important;

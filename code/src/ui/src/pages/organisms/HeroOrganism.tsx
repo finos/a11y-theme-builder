@@ -26,7 +26,7 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
             <HeadingSection item={organism} title="Apply Styles" />
 
 
-              <HeroExample/>
+                <HeroExample/>
 
 
             <SettingsSection>
