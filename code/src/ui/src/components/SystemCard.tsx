@@ -8,6 +8,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
 import { ThemeBuilder } from "a11y-theme-builder-sdk";
 import ModalSystemName from '../components/modals/ModalSystemName';
+import FileSaver from 'file-saver';
 
 interface Props {
     themeBuilder?: ThemeBuilder;
@@ -56,6 +57,13 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
             else if (value == "view") {
                 const s = await themeBuilder?.storage.get(name);
                 setView(JSON.stringify(s,null,4));
+            }
+            else if (value == "download") {
+                const s = await themeBuilder?.storage.get(name);
+                const data = JSON.stringify(s,null,4);
+                var file = new File([data], name + "-design-system.json", {type: "text/plain;charset=utf-8"});
+                FileSaver.saveAs(file);
+
             }
         }
     }
@@ -205,6 +213,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                 {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}                
                 <Divider/>
                 <MenuItem onClick={() => handleClose("view")}>View Design System Data</MenuItem>
+                <MenuItem onClick={() => handleClose("download")}>Download Design System Data</MenuItem>
                 <Divider/>
                 <MenuItem onClick={() => handleClose("delete")}>Delete Design System</MenuItem>
             </Menu>

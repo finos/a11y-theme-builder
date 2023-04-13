@@ -8,6 +8,7 @@ import { List, ListItemButton, ListItemText, ListSubheader, styled, Button, Inpu
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
+import FileSaver from 'file-saver';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 //import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -87,6 +88,11 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         return JSON.stringify(code,null,2);
     }
 
+    const saveFile = (data: string, fileName: string) => {
+        var file = new File([data], fileName, {type: "text/plain;charset=utf-8"});
+        FileSaver.saveAs(file);
+    }
+
     return (
         <>
             <div className="design-system-editor-left-nav">
@@ -121,6 +127,8 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         {getCssCode()}
                     </SyntaxHighlighter>
                     <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -131,7 +139,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="css" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -143,7 +153,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="css" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -151,7 +163,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="css" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
                 </div>
                 </>}
 
@@ -168,6 +182,8 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         {getJsonCode(true)}
                     </SyntaxHighlighter>
                     <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -176,6 +192,8 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         {getJsonCode(false)}
                     </SyntaxHighlighter>
                     <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -186,7 +204,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -198,7 +218,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
                 </div>
 
                 <div className="top40">
@@ -206,7 +228,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
                         Code goes here
                     </SyntaxHighlighter>
-                    <Button variant="contained">Copy</Button>
+                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
                 </div>
                 </>}
             </div>
