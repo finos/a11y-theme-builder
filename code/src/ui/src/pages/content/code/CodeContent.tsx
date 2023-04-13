@@ -2,28 +2,17 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { ReactFragment, ReactNode} from 'react';
+import React from 'react';
 import { useEffect, useState } from 'react';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Button, InputLabel } from '@mui/material';
+import { List, Button, InputLabel } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 import FileSaver from 'file-saver';
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-//import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
 interface Props {
     user: any;
     designSystem: DesignSystem;
-}
-
-const style = {
-    background: "var(--surface)",
-    padding: "var(--spacing-4)",
-    border: "1px solid var(--border)",
-    borderRadius: "var(--radius-1)",
-    margin: "var(--spacing-3) 0",
 }
 
 const codeStyle = {
@@ -37,7 +26,6 @@ const codeStyle = {
     borderRadius: "var(--radius-1)",
     margin: "var(--spacing-3) 0",
 }
-
 
 export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
 
@@ -96,144 +84,143 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav">
-            <div className="design-system-editor-left-nav-scrollable">
-            <List 
-                    sx={{
-                        '& ul': {padding:0},
-                        paddingTop: "0px",
-                    }}
-                >
-                    <LeftNavHeader>Introduction</LeftNavHeader>
-                    <LeftNavItem text={"Code"} value="code" indent={1} selected={showItem} onClick={()=> {setShowItem("code")}}/>
-                    <LeftNavHeader>Code Generators</LeftNavHeader>
-                    <LeftNavItem text={"CSS"} value="css" indent={1} selected={showItem} onClick={()=> {setShowItem("css")}} disabled={disabled}/>
-                    <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}} disabled={disabled}/>
-            </List>
-            </div>
+                <div className="design-system-editor-left-nav-scrollable">
+                <List 
+                        sx={{
+                            '& ul': {padding:0},
+                            paddingTop: "0px",
+                        }}
+                    >
+                        <LeftNavHeader>Introduction</LeftNavHeader>
+                        <LeftNavItem text={"Code"} value="code" indent={1} selected={showItem} onClick={()=> {setShowItem("code")}}/>
+                        <LeftNavHeader>Code Generators</LeftNavHeader>
+                        <LeftNavItem text={"CSS"} value="css" indent={1} selected={showItem} onClick={()=> {setShowItem("css")}} disabled={disabled}/>
+                        <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}} disabled={disabled}/>
+                </List>
+                </div>
             </div>
             <div className="design-system-editor-right-content">
-            <div className="design-system-editor-right-content-scrollable">
-                {showItem === "code" && <>
-                    Introduction...
-                </>}
-                {showItem === "css" && <>
-                <HeadingSection title="Code Generators" heading="CSS Code" />
-                <div className="top40">
-                    <h5>Base Code</h5>
-                </div>
-                <div className="top40">
-                    <InputLabel>CSS for both Light and Dark Modes</InputLabel>
-                    <SyntaxHighlighter language="css" customStyle={codeStyle}>
-                        {getCssCode()}
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
-                </div>
+                <div className="design-system-editor-right-content-scrollable">
+                    {showItem === "code" && <>
+                        Introduction...
+                    </>}
+                    {showItem === "css" && <>
+                        <HeadingSection title="Code Generators" heading="CSS Code" />
+                        <div className="top40">
+                            <h5>Base Code</h5>
+                        </div>
+                        <div className="top40">
+                            <InputLabel>CSS for both Light and Dark Modes</InputLabel>
+                            <pre style={codeStyle}>
+                                {getCssCode()}
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <InputLabel>Mobile and Tablet CSS</InputLabel>
-                </div>
+                        <div className="top40">
+                            <InputLabel>Mobile and Tablet CSS</InputLabel>
+                        </div>
 
-                <div className="top40">
-                    <SyntaxHighlighter language="css" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
-                </div>
+                        <div className="top40">
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <h5>Accessibility CSS</h5>
-                </div>
-    
-                <div className="top40">
-                    <InputLabel>Motion Sensitive</InputLabel>
-                    <SyntaxHighlighter language="css" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
-                </div>
+                        <div className="top40">
+                            <h5>Accessibility CSS</h5>
+                        </div>
+            
+                        <div className="top40">
+                            <InputLabel>Motion Sensitive</InputLabel>
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <InputLabel>Dyslexic</InputLabel>
-                    <SyntaxHighlighter language="css" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
-                </div>
-                </>}
+                        <div className="top40">
+                            <InputLabel>Dyslexic</InputLabel>
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
+                        </div>
+                    </>}
 
+                    {showItem === "json" && <>
+                        <HeadingSection title="Code Generators" heading="JSON Code" />
+                        <div className="top40">
+                            <h5>Base Code</h5>
+                        </div>
 
-                {showItem === "json" && <>
-                <HeadingSection title="Code Generators" heading="JSON Code" />
-                <div className="top40">
-                    <h5>Base Code</h5>
-                </div>
+                        <div className="top40">
+                            <InputLabel>JSON for both Light and Dark Modes</InputLabel>
+                            <pre style={codeStyle}>
+                                {getJsonCode(true)}
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <InputLabel>JSON for both Light and Dark Modes</InputLabel>
-                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        {getJsonCode(true)}
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
-                </div>
+                        <div className="top40">
+                            <InputLabel>Dark Mode Theme Layer</InputLabel>
+                            <pre style={codeStyle}>
+                                {getJsonCode(false)}
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <InputLabel>Dark Mode Theme Layer</InputLabel>
-                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        {getJsonCode(false)}
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
-                </div>
+                        <div className="top40">
+                            <InputLabel>Mobile and Tablet JSON</InputLabel>
+                        </div>
 
-                <div className="top40">
-                    <InputLabel>Mobile and Tablet JSON</InputLabel>
-                </div>
+                        <div className="top40">
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
-                </div>
+                        <div className="top40">
+                            <h5>Accessibility JSON</h5>
+                        </div>
+            
+                        <div className="top40">
+                            <InputLabel>Motion Sensitive</InputLabel>
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
+                        </div>
 
-                <div className="top40">
-                    <h5>Accessibility JSON</h5>
+                        <div className="top40">
+                            <InputLabel>Dyslexic</InputLabel>
+                            <pre style={codeStyle}>
+                                Code goes here
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
+                        </div>
+                    </>}
                 </div>
-    
-                <div className="top40">
-                    <InputLabel>Motion Sensitive</InputLabel>
-                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
-                </div>
-
-                <div className="top40">
-                    <InputLabel>Dyslexic</InputLabel>
-                    <SyntaxHighlighter language="javascript" customStyle={codeStyle}>
-                        Code goes here
-                    </SyntaxHighlighter>
-                    <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                    <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                    <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
-                </div>
-                </>}
-            </div>
             </div>
         </>
     );
