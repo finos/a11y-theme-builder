@@ -29,6 +29,7 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
               <HeroExample/>
 
 
+
             <SettingsSection>
                 <div className="top40">
                     <NumberSelectable property={organism.verticalGap} defaultValue={24} units="px" />

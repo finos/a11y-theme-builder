@@ -25,6 +25,7 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
         <div>
             <HeadingSection item={molecule} title="Apply Styles" />
             <ExampleSection>
+                <div className="subtitle1">Avatars is icons</div>
                 <Stack direction="row" spacing={1} alignItems="center">
                     <Avatar className="avatar xxs"/>
                     <Avatar className="avatar xs"/>
@@ -33,6 +34,16 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
                     <Avatar className="avatar lg"/>
                     <Avatar className="avatar xl"/>
                     <Avatar className="avatar xxl"/>
+                </Stack>
+                <div className="subtitle1">Avatars is images</div>
+                <Stack direction="row" spacing={1} alignItems="center">
+                    <Avatar className="avatar xxs" src="/profile.png" />
+                    <Avatar className="avatar xs" src="/profile.png"/>
+                    <Avatar className="avatar sm" src="/profile.png"/>
+                    <Avatar className="avatar md" src="/profile.png"/>
+                    <Avatar className="avatar lg" src="/profile.png"/>
+                    <Avatar className="avatar xl" src="/profile.png"/>
+                    <Avatar className="avatar xxl" src="/profile.png"/>
                 </Stack>
             </ExampleSection>
             <SettingsSection>

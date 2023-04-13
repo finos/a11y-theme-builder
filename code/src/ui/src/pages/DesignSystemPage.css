@@ -132,7 +132,8 @@
 .design-system-editor-right-content .form-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-2);
+    margin-right: var(--spacing-2);
 }
 
 .inputRow {

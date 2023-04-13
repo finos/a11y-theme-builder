@@ -20,6 +20,7 @@ export const AvatarSingleComponent: React.FC<Props> = () => {
             <HeadingSection title="Desktop" heading="Avatars" />
             <ExampleSection>
                 <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                    <div className="subtitle1">Avatars with Icons</div>
                     <Stack direction="row" spacing={1} alignItems="center">
                         <Avatar className={`avatar xxs ${colorMode}`} />
                         <Avatar className={`avatar xs ${colorMode}`} />
@@ -28,6 +29,17 @@ export const AvatarSingleComponent: React.FC<Props> = () => {
                         <Avatar className={`avatar lg ${colorMode}`} />
                         <Avatar className={`avatar xl ${colorMode}`} />
                         <Avatar className={`avatar xxl ${colorMode}`} />
+                    </Stack>
+
+                    <div className="subtitle1">Avatars with Images</div>
+                    <Stack direction="row" spacing={1} alignItems="center">
+                        <Avatar className={`avatar xxs ${colorMode}`} src="/profile.png" />
+                        <Avatar className={`avatar xs ${colorMode}`}  src="/profile.png"/>
+                        <Avatar className={`avatar sm ${colorMode}`}  src="/profile.png"/>
+                        <Avatar className={`avatar md ${colorMode}`}  src="/profile.png"/>
+                        <Avatar className={`avatar lg ${colorMode}`}  src="/profile.png"/>
+                        <Avatar className={`avatar xl ${colorMode}`}  src="/profile.png"/>
+                        <Avatar className={`avatar xxl ${colorMode}`}  src="/profile.png"/>
                     </Stack>
                 </ColorModeSelector>
             </ExampleSection>

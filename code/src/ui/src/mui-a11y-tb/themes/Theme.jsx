@@ -395,7 +395,7 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-1)",
+                                    borderRadius: "var(--spacing-Half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
@@ -434,11 +434,16 @@ try {
                 },
                 styleOverrides: {
                     root: {
-                        borderRadius: "calc(var(--radius-1) * var(--button-radius))",
-                        boxShadow: "var(--button-shadow)",
-                        letterSpacing: "var(--buttonCharcterSpacing)",
+                        borderRadius: "var(--spacing-half)",
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
+                        background: "var(--surface)",
+                        border: "1px solid var(--border)",
+                        position: "relative",
+                        "& .MuiOutlinedInput-input": {
+                          padding: "0 var(--spacing-6) 0 var(--spacing-2) !important",
+
+                        },
                     },
                 }
             },
@@ -506,7 +511,27 @@ try {
             },
 
             //.css-mc683d-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
-
+            MuiOutlinedInput: {
+              styleOverrides: {
+                  root: {
+                      //fontFamily: "Ariel", //"var(--fontFamily)",
+                      color: "var(--on-input)",
+                      background: "var(--input)",
+                      borderRadius: "var(--spacing-half)",
+                      padding: "var(spacing-1)",
+                      "& .MuiInputBase-root": {
+                          borderRadius: "var(--spacing-half)",
+                      },
+                      "& .MuiInputBase-root.Mui-disabled": {
+                          backgroundColor: "var(--input-disabled)",
+                          color: "var(--on-input-disabled)",
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                          border: 'none',
+                      },
+                  }
+              }
+            },
             MuiTextField: {
                 styleOverrides: {
                     root: {
