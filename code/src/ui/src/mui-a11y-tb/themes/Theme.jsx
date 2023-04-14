@@ -5,6 +5,7 @@
 import { createTheme,  darken, lighten } from "@mui/material/styles";
 import { formLabelClasses } from "@mui/material";
 import './Theme.css'
+import './TB.css'
 //import calcAstParser from "postcss-calc-ast-parser";
 //import { transform } from "css-calc-transform";
 
@@ -52,6 +53,18 @@ export const setCssValues = (props) => {
 
 export const setCssValue = (prop, value) => {
     console.log(`setCssValue(${prop}, ${value})`);
+   // if (prop.indexOf("inbevel" > -1)) { console.log("SKIP BEVEL"); return;} 
+    // if (prop == "--inbevel-dark-opacity") { console.log("SKIP BEVEL"); return; } 
+    // if (prop == "--inbevel-change") { console.log("SKIP BEVEL"); return;} 
+    // if (prop == "--reverse-bevel-2") { 
+    //     console.log("@bcbc SKIP BEVEL");
+    //     console.log("@bcbc SKIP value before change=", getCssValue(prop));
+    //     console.log("@bcbc SKIP = ", value);
+    //     return;
+    // } 
+    // if (prop == "--reverse-bevel-8") { 
+    //     return;
+    // }
     //if (prop == "--on-dropdown-focus-bg") { console.log(">>>@bc --on-dropdown-focus-bg"); return; }
     if (value == "TODO") return;
     if (!rootStyleSheet) {
