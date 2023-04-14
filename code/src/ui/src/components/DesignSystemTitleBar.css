@@ -11,11 +11,11 @@
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
-    color: var(--on-primary);
+    color: var(--on-surface);
 }
 
 .titleBarDiv .MuiSelect-icon {
-    fill: var(--on-primary);
+    fill: var(--on-surface);
 }
 
 .titleBarDiv .MuiOutlinedInput-notchedOutline {
@@ -49,7 +49,7 @@
     display: flex;
     align-items: left;
     flex-direction: column;
-    gap: var(--spacing-Half);
+    gap: var(--spacing-half);
 }
 
 .titleBarDiv .right-titlebar {

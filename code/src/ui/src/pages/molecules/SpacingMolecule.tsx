@@ -43,13 +43,13 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
                 <div style={{padding: (spacingMolecule.sectionPadding.getValue() || 24)+"px", background: guideColor}}>
                     <h2>Sample</h2>
                     <div style={{padding: (spacingMolecule.paragraphPadding.getValue() || 8)+"px", background: guideColor}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
                     </div>
                     <div style={{padding: (spacingMolecule.paragraphPadding.getValue() || 8)+"px", background: guideColor}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
                     <h2>Sample</h2>
                     <div style={{padding: (spacingMolecule.paragraphPadding.getValue() || 8)+"px", background: guideColor}}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
                     </div>
                 </div>
