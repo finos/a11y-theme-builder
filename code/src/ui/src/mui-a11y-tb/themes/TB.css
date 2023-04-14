@@ -577,12 +577,12 @@
   --card-border: var(--border-1);
   --card-border-color: var(--border);
   --card-shadow: var(--card-elevation), var(--card-bevel);
-  --modal-radius: 8px;
+  --modal-radius: 4;
   --modal-elevation: var(--elevation-0);
   --modal-padding: 2;
   --modal-border: var(--spacing-2);
   --modal-shadow: var(--spacing-2);
-  --modal-overlay: var(--spacing-2);
+  --modal-overlay: var(--black);
   --dmtooltip: ;
   --tooltip-padding: 2;
   --tooltip-border: var(--border-1);
