@@ -231,6 +231,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
+    cursor: pointer;
 }
 .design-system-editor-right-content .color-box.hotlink {
     background: var(--hotlink);

@@ -304,9 +304,14 @@ try {
                         "&.Mui-checked": {
                             color: "var(--button) !important",
                         },
-                        "&.Mui-disabled": {
-                            color: "var(--input-disabled)"
-                        },
+                    }
+                }
+            },
+            MuiDivider: {
+                styleOverrides: {
+                    root: {
+                        borderColor: "var(--on-background)",
+                        opacity: ".6",
                     }
                 }
             },
@@ -390,7 +395,7 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-1)",
+                                    borderRadius: "var(--spacing-Half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
@@ -403,6 +408,9 @@ try {
                                       width: "var(--min-target)",
                                     },
 
+                                },
+                                '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:has(.Hex)': {
+                                    opacity: "1",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
                                     color: "var(--on-dropdown-hover-bg)",
@@ -426,11 +434,16 @@ try {
                 },
                 styleOverrides: {
                     root: {
-                        borderRadius: "calc(var(--radius-1) * var(--button-radius))",
-                        boxShadow: "var(--button-shadow)",
-                        letterSpacing: "var(--buttonCharcterSpacing)",
+                        borderRadius: "var(--spacing-half)",
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
+                        background: "var(--surface)",
+                        border: "1px solid var(--border)",
+                        position: "relative",
+                        "& .MuiOutlinedInput-input": {
+                          padding: "0 var(--spacing-6) 0 var(--spacing-2) !important",
+
+                        },
                     },
                 }
             },
@@ -440,12 +453,8 @@ try {
                         "&.Mui-checked":{
                             color: "var(--button)",
                         },
-                        "&.Mui-disabled":{
-                            opacity: "var(--disable)",
-                        },
                         "&.Mui-checked.Mui-disabled":{
                             color: "var(--button)",
-                            opacity: "var(--disabled)",
                         },
                     },
                 },
@@ -455,13 +464,6 @@ try {
                     root: {
                         "&.Mui-checked":{
                             color: "var(--button)",
-                        },
-                        "&.Mui-disabled":{
-                            opacity: "var(--disable)",
-                        },
-                        "&.Mui-checked.Mui-disabled":{
-                            color: "var(--button)",
-                            opacity: "var(--disabled)",
                         },
                     },
                 },
@@ -509,7 +511,27 @@ try {
             },
 
             //.css-mc683d-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
-
+            MuiOutlinedInput: {
+              styleOverrides: {
+                  root: {
+                      //fontFamily: "Ariel", //"var(--fontFamily)",
+                      color: "var(--on-input)",
+                      background: "var(--input)",
+                      borderRadius: "var(--spacing-half)",
+                      padding: "var(spacing-1)",
+                      "& .MuiInputBase-root": {
+                          borderRadius: "var(--spacing-half)",
+                      },
+                      "& .MuiInputBase-root.Mui-disabled": {
+                          backgroundColor: "var(--input-disabled)",
+                          color: "var(--on-input-disabled)",
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                          border: 'none',
+                      },
+                  }
+              }
+            },
             MuiTextField: {
                 styleOverrides: {
                     root: {
@@ -615,7 +637,7 @@ try {
                         "& .MuiTabs-indicator": {
                             background: "var(--on-button)" ,
                             height: "var(--spacing-half)",
-                            marginBottom: "2px",
+                            bottom:   "2px",
                         },
 
                     }
@@ -628,6 +650,7 @@ try {
                         fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
                         background: "var(--button)",
                         opacity: "var(--quiet)",
+                        padding: "0 var(--spacing-2)",
                         "&:hover": {
                             opacity: "1"
                         },
@@ -673,6 +696,43 @@ try {
                     }
                 }
             },
+            MuiFormControlLabel: {
+                styleOverrides: {
+                    root: {
+                      background: "transparent !important",
+                      color: "var(--on-background)",
+                      "& .MuiTypography-root": {
+                        color: "var(--on-background)",
+                      },
+                      ".darkmode & .MuiTypography-root": {
+                        color: "var(--dm-on-background)",
+                      },
+                      "&.black": {
+                        background: "transparent !important",
+                        color: "var(--black) !important",
+                        "& svg path": {
+                          fill: "var(--black) !important",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "var(--black) !important",
+                        },
+                      },
+                      "&.white": {
+                        background: "transparent !important",
+                        color: "var(--white) !important",
+                        "& svg path": {
+                          fill: "var(--white) !important",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "var(--white) !important",
+                        },
+                      },
+                      "&.Mui-disabled": {
+                        opacity: "var(--disabled)",
+                      },
+                    }
+                }
+            },
             MuiPagination: {
                 styleOverrides: {
                     root: {
@@ -687,7 +747,7 @@ try {
                     root: {
                       padding: "0",
                       minWidth: "var(--min-target)",
-                      height: "var(--min-target) !important",
+                      height: "var(--min-target)",
                       borderRadius: "calc( var(--radius-1) * var(--button-radius))",
                       background: "var(--transparent) !important",
                       color: "var(--button) !important",
@@ -701,6 +761,12 @@ try {
                       },
                       "& .MuiPagination-ul": {
                         gap: "var(--spacing-half)",
+                      },
+                      "&.MuiPaginationItem-ellipsis": {
+                        alignItems: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        paddingBottom: "20%",
                       }
                     }
                 }
@@ -710,7 +776,9 @@ try {
                     root: {
                         "& .MuiListSubheader-root": {
                           background: "var(--background-secondary)",
+                          color: "var(--on-background-secondary)",
                           fontWeight: "500",
+                          "& "
                         },
                     }
                 }
@@ -742,7 +810,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         "& .MuiAlert-icon":{
-                            marginRight: "var(--spacing-1)",
+                            marginRight: "var(--spacing-2)",
                             alignSelf: "center",
                             padding: "0",
 
@@ -936,18 +1004,16 @@ try {
                             fill: "var(--on-chip)",
                         },
                         "& .MuiAvatar-root": {
-                            border: "solid calc(var(--border-1) * var(--on-chip)) var(--accent)",
+                            border: "solid calc(var(--border-1) * var(--avatar-border)) var(--on-chip) !important",
+                            magin: "0px !important",
                         },
                         ".darkmode &::before": {
                             background: "var(--dm-chip)",
                             color: "var(--dm-onchip)",
                         },
                         ".darkmode & .MuiAvatar-root": {
-                            border: "1px solid calc(var(--border-1) * var(--dm-on-chip)) var(--accent)",
+                            border: "1px solid calc(var(--border-1) * var(--avatar-border)) var(--dm-white) !important",
                         },
-
-
-
                     },
                 },
             },
@@ -977,6 +1043,7 @@ try {
                     },
                 },
             },
+
             // MuiListItemButton: {
             //     styleOverrides: {
             //         root: {
