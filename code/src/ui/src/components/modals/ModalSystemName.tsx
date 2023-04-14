@@ -48,7 +48,7 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
             <div className='modal modal-systemName'>
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5">{title || "Design System Name"}</h1>
+                        <h5 className="modal-title fs-5">{title || "Design System Name"}</h5>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="modal-body">
@@ -66,7 +66,7 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
                             />
                         </div>
                         <div className="modal-footer">
-                            <Button onClick={handleCancel}>Cancel</Button>
+                            <Button onClick={handleCancel} className="MuiButton-outlined">Cancel</Button>
                             <Button onClick={handleSubmit}>Next</Button>
                         </div>
                     </form>

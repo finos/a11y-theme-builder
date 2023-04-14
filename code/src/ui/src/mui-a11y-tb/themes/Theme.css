@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 :root {
     --zoom: 1;
     --meshSVGfill: rgb(0, 102, 239);
@@ -3490,9 +3488,12 @@ a:active {
   color: var(--dm-on-background-tertiary);
 }
 /* input */
-.MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(#hexValue) .MuiOutlinedInput-root:not(.info) {
+.MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
   color: var(--on-input);
   background: var(--input);
+}
+.hexValue .MuiOutlinedInput-root {
+  background: none !important;
 }
 /* Modal */
 .overlay {
