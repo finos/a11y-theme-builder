@@ -102,7 +102,12 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
                     {showItem === "code" && <>
-                        Introduction...
+                        <h1>Getting Started with Code</h1>
+                        Once your design system has been created and you've tweaked all of the parameters for the various atoms, molecules and organisms, you can generate code that can be used to ensure accessibility-compliant applications.
+                        <ul>
+                            <li>For a web application: <p>CSS is generated.  It can be copied into your application's css file and used style HTML or MUI React components to provide accessibile content.</p></li>
+                            <li>For a design tool: <p>JSON tokens are generated.  They can be copied and imported into your design tool such as Figma.</p></li>
+                        </ul>
                     </>}
                     {showItem === "css" && <>
                         <HeadingSection title="Code Generators" heading="CSS Code" />
