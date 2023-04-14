@@ -2070,7 +2070,7 @@ button.small-btn.icon:hover::after {
   left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
   right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
-/* COMPONENTS and COLOR VARAIANTS */
+/* COMPONENTS and COLOR VARIANTS */
 /* black buttons */
 button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   background: var(--black) !important;
@@ -2186,6 +2186,34 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
+
+/* dropdowns */
+.MuiMenuItem-root-select {
+  background: var(--surface);
+  color: var(--on-surface)
+}
+.MuiMenuItem-root:hover {
+  background: var(--dropdown-hover-bg);
+  color: var(--on-dropdown-hover-bg)
+}   
+.MuiMenuItem-root:focus {
+  background: var(--dropdown-focus-bg);
+  color: var(--on-dropdown-focus-bg)
+}   
+
+/* darkmode dropdowns */
+.darkmode .MuiMenuItem-root {
+  background: var(--dm-surface);
+  color: var(--dm-on-surface)
+}
+.darkmode .MuiMenuItem-root:hover {
+  background: var(--dm-dropdown-hover-bg);
+  color: var(--dm-on-dropdown-hover-bg)
+}   
+.darkmode .MuiMenuItem-root:focus {
+  background: var(--dm-dropdown-focus-bg);
+  color: var(--dm-on-dropdown-focus-bg)
+}   
 
 /* black divider */
 .MuiList-root.black .MuiDivider-root {
