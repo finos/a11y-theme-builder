@@ -44,7 +44,7 @@ export const ColorProperty: React.FC<ColorProps> = ({ property, style, label="",
 
     return (
         <div style={style}>
-            <span onClick={() => setShow(true)}>
+            <span onClick={() => setShow(true)} style={{cursor:"pointer"}}>
                 <ColorSwatch shade={value} label={label || property.name} style={{width: "150px"}}/>
             </span>
             {show && 
