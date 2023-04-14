@@ -1,3 +1,5 @@
-# Page Title Here
+# Designers and Theme Builder
 
->Content Pending...
+Designers are here at the beginning of the Theme Builder story and will continue to be the catalysts behind most of the projects that will eventually benefit from Theme Builder's capabilities.  Designers create and enhance the designs that will ultimately shape how users will experience web and mobile applications.  In order to prepare, designers already collaborate with business leaders, product owners, architects, developers, and many others to build a vision for the application that will guide their designs.  Theme Builder, like many other comparable design tools, can help designers realize their visions.  But Theme Builder's unique strength lies in its ability to ensure that the design system that is ultimately defined by its author will meet widely accepted accessibility guidelines.
+
+The following sections will describe how designers can leverage key features in Theme Builder to allow their application to be consumed by the widest possible audience of end users.
