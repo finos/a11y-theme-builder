@@ -4,22 +4,21 @@
  */
 import React from 'react';
 import { Alert } from '@mui/material';
-import { DesignSystem, Toasts } from 'a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
+import { Toasts } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
+import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 interface Props {
     toastsMolecule: Toasts;
-    designSystem: DesignSystem;
 }
 
-export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule, designSystem }) => {
-    const grid = designSystem.atoms.gridSettings.grid.getValue();
+export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
+    const grid = parseInt(getCssValue("--spacing-1"));
 
     return (
         <>
@@ -36,7 +35,7 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule, designSystem }
             </ExampleSection>
             <SettingsSection>
                 <div className="form-row">
-                    <NumberSelectable property={toastsMolecule.gap} units="px" defaultValue={32} />
+                    <NumberScaledSelectable property={toastsMolecule.padding} units="px" defaultValue={1} scale={grid}/>
                 </div>
                 <div className="form-row">
                     <StringSelectable property={toastsMolecule.elevation} defaultValue="No Elevation" />

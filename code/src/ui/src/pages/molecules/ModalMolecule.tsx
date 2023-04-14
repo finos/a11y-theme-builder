@@ -2,10 +2,10 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import { Button, InputLabel, MenuItem, Select } from '@mui/material';
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { ColorSelect } from '../../components/ColorSelect';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
+import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import ModalSample from '../../components/modals/ModalSample';
 import { Modal, Shade } from 'a11y-theme-builder-sdk';
@@ -13,6 +13,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
+import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 const name = "ModalMolecule";
 
@@ -21,12 +22,10 @@ interface Props {
 }
 
 export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
-    // console.log(`${name} - >>> enter()`)
+    const scale = parseInt(getCssValue("--radius-1"));
 
     const colorProperty         = modalMolecule.color
-
     const startingColor = (colorProperty.getValue() || "#FFFFFF") as Shade
-
     const [sampleModalIsOpen, setSampleModalIsOpen] = useState(false);
 
     return (
@@ -43,7 +42,7 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
                     <ColorSelect value={colorProperty} label="Color:" defaultValue={startingColor?.hex} ></ColorSelect>
                 </div>
                 <div className="form-row">
-                    <NumberSelectable property={modalMolecule.borderRadius} units="px" defaultValue={8} />
+                    <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
                 </div>
                 <div className="form-row">
                     <StringSelectable property={modalMolecule.elevation} defaultValue="No Elevation" />

@@ -279,12 +279,12 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
                 )}
                 {showMolecule === molecules.sliders.value && (
                     <ErrorHandler>
-                        <SlidersMolecule slidersMolecule={designSystem.molecules.sliders} />
+                        <SlidersMolecule slidersMolecule={designSystem.molecules.sliders}/>
                     </ErrorHandler>
                 )}
                 {showMolecule === molecules.toasts.value && (
                     <ErrorHandler>
-                        <ToastsMolecule toastsMolecule={designSystem.molecules.toasts} designSystem={designSystem}/>
+                        <ToastsMolecule toastsMolecule={designSystem.molecules.toasts}/>
                     </ErrorHandler>
                 )}
             </div>
