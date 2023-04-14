@@ -170,8 +170,6 @@ nav:
     - Adding Accessibility Layers: developers/add-a11y-layers.md
     - Adding output generators: developers/add-output-generators.md
     - Adding storage: developers/add-storage.md
-    - Create desktop theme: developers/create-desktop-theme.md
-    - Create mobile theme: developers/create-mobile-theme.md
     - Managing light and dark modes: developers/managing-modes.md
   - Under the Hood:
     - architecture/index.md
