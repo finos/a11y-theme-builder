@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 :root {
     --zoom: 1;
     --meshSVGfill: rgb(0, 102, 239);
@@ -1175,7 +1174,6 @@
   --statTextTransform: uppercase;
   --statLetterSpacing: 1.5%;
 }
->>>>>>> Stashed changes
 /* Typography */
 /* Headers */
 h1 {
@@ -2387,31 +2385,31 @@ a:active {
   color: var(--dm-icon);
 }
 .MuiCard-root.clickable::after{
- position: absolute;
- content: '';
- top:    calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
- bottom: calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
- left:   calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
- right:  calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
- opacity: 0;
- border: var(--focusBorder)  solid var(--button);
- border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
- box-shadow: 0 0 var(--focusBlur) 0px var(--button);
- transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  position: absolute;
+  content: '';
+  top:    calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
+  bottom: calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
+  left:   calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
+  right:  calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
+  opacity: 0;
+  border: var(--focusBorder)  solid var(--button);
+  border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
+  box-shadow: 0 0 var(--focusBlur) 0px var(--button);
+  transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 .MuiCard-root.clickable:hover::after{
- opacity: .5;
- top:    calc(0px - 1px - var(--border-1));
- bottom: calc(0px - 1px - var(--border-1));
- left:   calc(0px - 1px - var(--border-1));
- right:  calc(0px - 1px - var(--border-1));
+  opacity: .5;
+  top:    calc(0px - 1px - var(--border-1));
+  bottom: calc(0px - 1px - var(--border-1));
+  left:   calc(0px - 1px - var(--border-1));
+  right:  calc(0px - 1px - var(--border-1));
 }
 .MuiCard-root.clickable:focus::after{
- opacity: 1;
- top:    calc(0px - 1px - var(--border-1));
- bottom: calc(0px - 1px - var(--border-1));
- left:   calc(0px - 1px - var(--border-1));
- right:  calc(0px - 1px - var(--border-1));
+  opacity: 1;
+  top:    calc(0px - 1px - var(--border-1));
+  bottom: calc(0px - 1px - var(--border-1));
+  left:   calc(0px - 1px - var(--border-1));
+  right:  calc(0px - 1px - var(--border-1));
 }
 
 .MuiCard-root.centerAligned {
@@ -2720,34 +2718,34 @@ a:active {
 }
 /* accordian */
 .MuiAccordion-root::after {
- position: absolute;
- top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
- left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
- right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
- bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
- border-radius: calc(var(--spacing-1) + 1.6px);
- border: var(--focusBorder) solid var(--button);
- background: transparent !important;
- opacity: 0;
- content: '';
- transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
- z-index: -1;
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border-radius: calc(var(--spacing-1) + 1.6px);
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 0;
+  content: '';
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
 }
 .MuiAccordion-root:hover::after {
- position: absolute;
- top: calc(0px - calc(var(--focusBorder) + 2px));
- left: calc(0px - calc(var(--focusBorder) + 2px));
- right: calc(0px - calc(var(--focusBorder) + 2px));
- bottom: calc(0px - calc(var(--focusBorder) + 2px));
- opacity: .5;
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px));
+  left: calc(0px - calc(var(--focusBorder) + 2px));
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: .5;
 }
 .MuiAccordion-root:focus::after {
- position: absolute;
- top: calc(0px - calc(var(--focusBorder) + 2px));
- left: calc(0px - calc(var(--focusBorder) + 2px));
- right: calc(0px - calc(var(--focusBorder) + 2px));
- bottom: calc(0px - calc(var(--focusBorder) + 2px));
- opacity: 1;
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px));
+  left: calc(0px - calc(var(--focusBorder) + 2px));
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: 1;
 }
 /* darkmode accordian */
 .darkmode .MuiAccordion-root {
@@ -2792,20 +2790,20 @@ a:active {
   z-index: -1;
 }
 .MuiSwitch-root:hover .MuiSwitch-switchBase .MuiSwitch-thumb::after {
- position: absolute;
- top: calc(0px - calc(var(--focusBorder) + 2px));
- left: calc(0px - calc(var(--focusBorder) + 2px));
- right: calc(0px - calc(var(--focusBorder) + 2px));
- bottom: calc(0px - calc(var(--focusBorder) + 2px));
- opacity: .5;
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px));
+  left: calc(0px - calc(var(--focusBorder) + 2px));
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: .5;
 }
 .MuiSwitch-root:focus .MuiSwitch-switchBase .MuiSwitch-thumb::after {
- position: absolute;
- top: calc(0px - calc(var(--focusBorder) + 2px));
- left: calc(0px - calc(var(--focusBorder) + 2px));
- right: calc(0px - calc(var(--focusBorder) + 2px));
- bottom: calc(0px - calc(var(--focusBorder) + 2px));
- opacity: 1;
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px));
+  left: calc(0px - calc(var(--focusBorder) + 2px));
+  right: calc(0px - calc(var(--focusBorder) + 2px));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px));
+  opacity: 1;
 }
 .MuiSwitch-root .MuiSwitch-track {
   position: absolute;
@@ -2852,54 +2850,54 @@ a:active {
 }
 
 .MuiSlider-root .MuiSlider-thumb {
-  /* need to update once the coorect value is being passed
-  height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
-   width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
-   width: var(--spacing-3);
-   width: var(--spacing-3);
-   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
-   background-color: var(--button);
-   position: relative;
- }
- .MuiSlider-root .MuiSwitch-thumb::after {
-   position: absolute;
-   pointer-events: none;
-   top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
-   border: var(--focusBorder) solid var(--button);
-   background: transparent !important;
-   opacity: 1;
-   content: '';
-   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-   z-index: -1;
- }
+  /* need to update once the correct value is being passed */
+  /* height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
+  width: calc( var(--sliderhandleHeight) * var(--spacing-1) ); */
+  width: var(--spacing-3);
+  width: var(--spacing-3);
+  border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
+  background-color: var(--button);
+  position: relative;
+}
+.MuiSlider-root .MuiSwitch-thumb::after {
+  position: absolute;
+  pointer-events: none;
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 1;
+  content: '';
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
+}
 
- .darkmode .MuiSlider-root .MuiSwitch-thumb{
-   background-color: var(--dm-button);
- }
- .darkmode .MuiSlider-root .MuiSwitch-thumb::after {
-   border: var(--focusBorder) solid var(--dm-button);
- }
+.darkmode .MuiSlider-root .MuiSwitch-thumb{
+  background-color: var(--dm-button);
+}
+.darkmode .MuiSlider-root .MuiSwitch-thumb::after {
+  border: var(--focusBorder) solid var(--dm-button);
+}
   .darkmode .MuiSlider-root .MuiSlider-track{
-   background-color: var(--dm-button);
-   opacity: var(--quiet);
- }
+  background-color: var(--dm-button);
+  opacity: var(--quiet);
+}
 /* popovers */
 .MuiPopover-paper {
-   border-radius: calc(var(--popoverRadius) * var(--radius-1)) !important;
-   background: var(--surface) !important;
-   z-index: 1;
-   transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
-   box-shadow: var(--popoverShadow);
-   color: var(--black) !important;
- }
+  border-radius: calc(var(--popoverRadius) * var(--radius-1)) !important;
+  background: var(--surface) !important;
+  z-index: 1;
+  transform: translate(calc(0px - var(--spacing-half)), calc(0px - var(--spacing-half))) !important;
+  box-shadow: var(--popoverShadow);
+  color: var(--black) !important;
+}
 .darkmode .MuiPopover-paper {
   background: var(--dm-background)   !important;
   color: var(--black)  !important;
-   z-index: 1;
+  z-index: 1;
 }
 .darkmode .MuiPopover-paper::before {
   background: var(--dm-white)  !important;
@@ -2953,7 +2951,7 @@ a:active {
   background: transparent;
   pointer-events: none;
   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px)
-},
+}
 .MuiOutlinedInput-root:hover::after {
   position: absolute;
   height: calc(var(--spacing-3) + 3px);
@@ -2969,7 +2967,7 @@ a:active {
   right: calc(0px - calc(var(--focusBorder) + 2px));
   bottom: calc(0px - calc(var(--focusBorder) + 2px));
   opacity: 1;
-},
+}
 
 
 
@@ -3014,10 +3012,10 @@ a:active {
 
 /* dark mode states */
 .darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
- color: var(--dm-danger);
+  color: var(--dm-danger);
 }
 .darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
- color: var(--dm-danger);
+  color: var(--dm-danger);
 }
 
 /* images */
@@ -3056,16 +3054,16 @@ a:active {
 
 /* dark mode images */
 .inline-image::after {
- position: absolute;
- content: '';
- top:0;
- left: 0;
- right:0;
- bottom:0;
- border-radius: var(--inline-image-image-radius);
- background: rgba(0,0,0,.25);
- z-index: 2;
- pointer-events: none;
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  border-radius: var(--inline-image-image-radius);
+  background: rgba(0,0,0,.25);
+  z-index: 2;
+  pointer-events: none;
 }
 .image-lg img::after, .image-sq img::after{
   position: absolute;
@@ -3509,7 +3507,7 @@ a:active {
 .modal-content {
   padding: var(--spacing-3);
   display: flex;
- flex-direction: column;
+  flex-direction: column;
 }
 
 .modal-footer {
@@ -3970,7 +3968,7 @@ a:active {
 }
 .gradient-1  .MuiBreadcrumbs-root,
 .gradient-1 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
-  color: var(---on-gradient-1));
+  color: var(---on-gradient-1);
   opacity: var(--quiet);
 }
 /* avatars */
@@ -3996,7 +3994,7 @@ a:active {
   color: var(--onbuttonOnGradient1) !important;
   background: var(--buttonOnGradient1) !important;
 }
-.gradient-1 button:not(.white).MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text,   {
+.gradient-1 button:not(.white).MuiButton-outlined .gradient-1 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient1) !important;
 }
 .gradient-1 button:not(.MuiTab-root):not(.white)::after{
@@ -4033,7 +4031,7 @@ a:active {
 }
 .gradient-2  .MuiBreadcrumbs-root,
 .gradient-2 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
-  color: var(---on-gradient-2));
+  color: var(---on-gradient-2);
   opacity: var(--quiet);
 }
 /* avatars */
@@ -4096,7 +4094,7 @@ a:active {
 }
 .gradient-3  .MuiBreadcrumbs-root,
 .gradient-3 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
-  color: var(---on-gradient-3));
+  color: var(---on-gradient-3);
   opacity: var(--quiet);
 }
 /* avatars */
