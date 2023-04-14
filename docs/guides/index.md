@@ -1,4 +1,4 @@
-## Workflow Guidance
+# Workflow Guidance
 Imagine the possibilities for how the *Theme Builder* could be used or extended. 
 
 We have established this section in our documentation dedicated to providing guidance on how current and/or future features could be put to use. 
