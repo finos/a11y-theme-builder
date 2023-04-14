@@ -6,9 +6,6 @@ import { createTheme,  darken, lighten } from "@mui/material/styles";
 import { formLabelClasses } from "@mui/material";
 import './Theme.css'
 import './TB.css'
-//import calcAstParser from "postcss-calc-ast-parser";
-//import { transform } from "css-calc-transform";
-
 
 export const getCssValue = (prop) => {
     //console.log(`ENTER - getCssValue(${prop})`);
@@ -23,22 +20,10 @@ export const getCssValue = (prop) => {
         v = v.trim();
         if (v.indexOf("var(") > -1) {
             v = v.replace(/var\(([a-zA-Z0-9\-]+)\)/g, function(m, p1) {
-                //console.log(" -- regex.replace =",m,"p1 =",p1)
                 const val = getCssValue(p1)
-                //console.log(" -- regex.replace returning =",val);
                 return val;
             });
-            //console.log(" -- found var in",prop," so replace with css value =",v);
         }
-        // if (v.indexOf("calc(") > -1) {
-        //     console.log(" -- calc found for v=",v)
-        //     const t = transform( {
-        //         prop: "width",
-        //         value: v,
-        //     })
-        //     v = t + "px";
-        //     console.log(" -- calc done for v=",v)
-        // }
     }
     console.log(`getCssValue(${prop}) = ${v}`)
     return v;
@@ -53,19 +38,6 @@ export const setCssValues = (props) => {
 
 export const setCssValue = (prop, value) => {
     console.log(`setCssValue(${prop}, ${value})`);
-   // if (prop.indexOf("inbevel" > -1)) { console.log("SKIP BEVEL"); return;} 
-    // if (prop == "--inbevel-dark-opacity") { console.log("SKIP BEVEL"); return; } 
-    // if (prop == "--inbevel-change") { console.log("SKIP BEVEL"); return;} 
-    // if (prop == "--reverse-bevel-2") { 
-    //     console.log("@bcbc SKIP BEVEL");
-    //     console.log("@bcbc SKIP value before change=", getCssValue(prop));
-    //     console.log("@bcbc SKIP = ", value);
-    //     return;
-    // } 
-    // if (prop == "--reverse-bevel-8") { 
-    //     return;
-    // }
-    //if (prop == "--on-dropdown-focus-bg") { console.log(">>>@bc --on-dropdown-focus-bg"); return; }
     if (value == "TODO") return;
     if (!rootStyleSheet) {
         rootStyleSheet = getStyleSheet(":root");
@@ -107,19 +79,6 @@ const getStyleValue = (selector, prop) => {
 export const themes = {};
 
 try {
-    // const c = calcAstParser.parse("calc(var(--radius-1) * 2)");
-    // console.log(" radius c=",c);
-    // console.log(" radius stringify=",calcAstParser.stringify(c.nodes[0]));
-
-    // const r1 = getCssValue("--radius-1")
-    // console.log(" radius r1=",r1);
-    // const t = transform( {
-    //     prop: "width",
-    //     value: "calc("+r1+" * 2)",
-    // })
-    // console.log(" radius t=",t);
-
-
     const lightTheme = createTheme({
         // Can't change these, since css doesn't seem to be defined at this point
          palette: {
@@ -138,7 +97,6 @@ try {
             },
             //divider: "",
             background: {
-                //paper: "",
                 default: getCssValue("--background"),
             },
             error: {
@@ -1094,135 +1052,10 @@ try {
                     },
                 },
             },
-
-            // MuiListItemButton: {
-            //     styleOverrides: {
-            //         root: {
-            //             fontSize: "3em",
-            //         }
-            //     }
-            // }
         },
     });
 
     themes["light"] = lightTheme;
-
-    const darkTheme = createTheme({
-        palette: {
-            primary: {
-                main: getCssValue("--dm-primary"),
-            },
-            // secondary: {
-            //     main: "calc(var(--color)))",
-            // },
-            text: {
-                fontFamily: getCssValue("--primaryFont"),
-                color: "var(--on-dm-background)",
-                // primary: getCssValue("--primary"),
-                // secondary: getCssValue("--secondary"),
-                // disabled: getCssValue("--textDark"),
-            },
-            //divider: "",
-            background: {
-                //paper: "",
-                default: getCssValue("--dm-background"),
-            },
-            error: {
-                main: getCssValue("--dm-danger"),
-            },
-            warning: {
-                main: getCssValue("--dm-warning"),
-            },
-            success: {
-                main: getCssValue("--dm-success"),
-            },
-            info: {
-                main: getCssValue("--dm-info"),
-            },
-        },
-        typography: {
-            allVariants: {
-                color: "#ff0000"
-            },
-            // h1: {
-            //     fontSize: "--h1",
-            //     //color: "#ff0000",
-            // },
-        },
-        components: {
-            // Style all react components using css root vars
-            MuiButton: {
-                styleOverrides: {
-                    root: {
-                        marginTop: "var(--spacing-half)",
-                        color: "var(--textDark)",
-                        background: "var(--dm-primary)",
-                        ":hover": {
-                            background: "var(--dm-on-primary)",
-                        },
-
-                    }
-                }
-            },
-            MuiInputLabel: {
-                styleOverrides: {
-                    root: {
-                        fontFamily: "var(--primaryFont)",
-                        fontWeight: "var(--fontWeight-4)",
-                        fontSize: "calc(var(--baseFont) * .875)",
-                        lineHeight: "var(--standard-LineHeight)",
-                        letterSpacing: "1.25%",
-                        textTransform: "none",
-                        marginBottom: "10px",
-                        color: "#ff0000",
-                    }
-                }
-            },
-            MuiFormLabel: {
-                styleOverrides: {
-                    root: {
-                        fontFamily: "var(--primaryFont)",
-                        fontWeight: "var(--fontWeight-4)",
-                        fontSize: "calc(var(--baseFont) * .875)",
-                        lineHeight: "var(--standard-LineHeight)",
-                        letterSpacing: "1.25%",
-                        textTransform: "none",
-                        marginBottom: "10px",
-                        color: "#ff0000",
-                        //color: "var(--on-dm-background)",
-                        [`&.${formLabelClasses.focused}`]: {
-                            color: "var(--on-dm-background)",
-                        },
-                    },
-                },
-            },
-            "& .MuiTab-wrapper": {
-                flexDirection: "row",
-                justifyContent: "flex-start"
-            },
-            MuiTab: {
-                styleOverrides: {
-                    root: {
-                        //color: "var(--on-dm-background)",
-                        color: "#ff0000",
-                        "&.Mui-selected": {
-                            backgroundColor: "var(--dm-secondary)", //theme.palette.secondary.main,
-                            color: "var(--on-dm-background)", //theme.palette.secondary.contrastText,
-                        },
-                    }
-                }
-            },
-            // MuiListItemButton: {
-            //     styleOverrides: {
-            //         root: {
-            //             fontSize: "3em",
-            //         }
-            //     }
-            // }
-        }
-    });
-
-    themes["dark"] = darkTheme;
 
 } catch (e) {
     console.error("Error in Theme.jsx: ", e);
