@@ -77,7 +77,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
             const colors = _colors;
             colors.push(newColor);
             _setColors(colors);
-            // reset the color input field 
+            // reset the color input field
             resetUI();
         } catch (error: any) {
             _setAddColorErrorMessage(`${error.message}`);
@@ -135,7 +135,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                             value={_colorName}
                         />
                     </div>
-                    <div className="input-col">
+                    <div className="input-col hexValue">
                         <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
                         <TextField
                             id='hexValue'
