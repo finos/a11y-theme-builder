@@ -1,4 +1,4 @@
-##  Glossary
+#  Glossary
 
 ### Impaired Person
 A content consumer with one or more disabilities or disorders. Needs to be able to interact with accessible content to achieve goals.
