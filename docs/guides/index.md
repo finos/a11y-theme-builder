@@ -1,3 +1,3 @@
-# Page Title Here
+# Guides
 
->Content Pending...
+There are quite a few topics surrounding Theme Builder that are reasonably complex or cover subjects and technology with which many users are not already familiar and therefore require detailed explanations.  There are also many different types of users that could be involved with Theme Builder such as brand and application designers and application developers looking to style their products, dev-ops engineers leveraging Theme Builder in their pipelines to support their products and developers interested in enhancing the Theme Builder tool.  This section will serve to assemble this wide variety of information.
