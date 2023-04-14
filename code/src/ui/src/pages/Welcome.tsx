@@ -34,7 +34,7 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                 </a>.
             </p>
 
-            <h5>Get started with a few simple steps</h5>
+            {/* <h5>Get started with a few simple steps</h5>
             <div style={{ background: "red", color: "yellow" }}>TODO: Verify and document these steps</div>
             <h6 className='top40'>Step 1. Build your theme</h6>
             <ul>
@@ -58,7 +58,7 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                 <source src="/ApplyTheme.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-            </div>
+            </div> */}
             <div className="button-area">
                 <Button onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
                 <Button onClick={(event) => changeTab(event, "getStarted")}>Explore Your Design Systems</Button>
