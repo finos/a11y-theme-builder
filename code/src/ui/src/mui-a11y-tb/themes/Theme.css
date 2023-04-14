@@ -367,7 +367,7 @@
     --dm-surface: var(--dm-background);
     --dm-on-surface:  var(--dm-white);
     /* borders */
-    --border: rgba(0,0,0,.15);
+    --border: rgba(0,0,0,.25);
     --dm-border: rgba(255,255,255,.15);
     /* input */
     --input: rgba(255,255,255,1);
@@ -2937,10 +2937,10 @@ a:active {
 .MuiOutlinedInput-root {
   position: relative;
 }
-.MuiOutlinedInput-root::after {
+.MuiOutlinedInput-root.MuiSwitch-switchBase::after {
   position: absolute;
-  height: var(--min-target);
-  width: var(--min-target);
+  height: var(--sliderhandleHeight);
+  width: var(--sliderhandleHeight);
   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   border: var(--focusBorder) solid var(--button);
@@ -3488,6 +3488,53 @@ a:active {
   color: var(--dm-on-background-tertiary);
 }
 /* input */
+.MuiInputBase-root .MuiOutlinedInput-input {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--spacing-half);
+  position: relative;
+}
+.MuiInputBase-root {
+  position: relative;
+}
+.MuiInputBase-root .MuiInputBase-input {
+  min-height: var(--min-target);
+  padding: 0 8px;
+}
+
+.MuiInputBase-root::after {
+  position: absolute;
+  content: '';
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance) ));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance) ));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance)));
+  border: var(--focusBorder) solid var(--button);
+  border-radius: calc(var(--spacing-half) + 1.6px);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+.MuiOutlinedInput-root:hover::after {
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px ));
+  left: calc(0px - calc(var(--focusBorder) + 2px ));
+  right: calc(0px - calc(var(--focusBorder) + 2px ));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px ));
+  opacity: calc(0px - calc(var(--focusBorder) + 2px ));
+}
+.MuiOutlinedInput-root:focus::after {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  opacity: 1;
+}
+.MuiInputBase-root {
+  min-height: var(--min-target);
+}
+
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
   color: var(--on-input);
   background: var(--input);
