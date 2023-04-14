@@ -1,5 +1,5 @@
-## References
-### Accessibility
+# References
+## Accessibility
 * [Web Content Accessibility Guidelines (WCAG) 2.1][WCAG]
 * [Color Desaturation](https://css-tricks.com/using-javascript-to-adjust-saturation-and-brightness-of-rgb-colors/)
 * [Color Blindness Simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/)
@@ -12,11 +12,11 @@
 * [Learning Disorders in Children](https://www.cdc.gov/ncbddd/developmentaldisabilities/learning-disorder.html)
 * [CDC Disability Impacts All of Us Infographic](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html)
 
-### Design
+## Design
 * [Atomic Design Concepts](https://bradfrost.com/blog/post/atomic-web-design/)
 * [Atomic Design Review](https://uxdesign.cc/4-things-you-need-to-know-about-atomic-design-e0d3e8269420)
 
-### Development
+## Development
 * [Design System elements](https://blog.hubspot.com/website/design-system)
 * [Mui Library](https://mui.com/base/getting-started/overview/)
 * [W3C Accessibility](https://www.w3.org/standards/webdesign/accessibility)
