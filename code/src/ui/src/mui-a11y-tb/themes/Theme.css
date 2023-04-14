@@ -1,4 +1,3 @@
-
 :root {
     --zoom: 1;
     --meshSVGfill: rgb(0, 102, 239);
@@ -1463,8 +1462,8 @@ h6 {
 .stat {
   font-family:  var(--statFontFamily);
   font-weight: var(--statFontWeight) !important;
-  font-size: var(--statontSize) !important;
-  line-height: var(--statineHeight) !important;
+  font-size: var(--statFontSize) !important;
+  line-height: var(--statLineHeight) !important;
   letter-spacing: var(--statLetterSpacing) !important;
   text-transform: var(--statTextTransform) !important;
   text-decoration:  var(--statTextDecoration) !important;
@@ -1484,13 +1483,14 @@ section {
 .disabled {
   opacity: var(--disabled);
 }
-/* text decoraiton */
+/* text decoration */
 .drop-color {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
 .gradient-title {
   background: var(--text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .darkmode .drop-color {
@@ -1499,8 +1499,10 @@ section {
 .darkmode .gradient-title {
   background: var(--dm-text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* MOLECULES */
 
 /* avatars */
@@ -1578,7 +1580,7 @@ section {
 .darkmode .white.MuiAvatar-root.xs svg path,
 .darkmode .white.MuiAvatar-root.sm svg path,
 .darkmode .white.MuiAvatar-root.md svg path {
-   fill: var(--black)
+  fill: var(--black)
 }
 .avatar.lg {
     width: var(--spacing-10);
@@ -2068,7 +2070,7 @@ button.small-btn.icon:hover::after {
   left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
   right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
-/* COMPOENTNS and COLOR VARIENTS */
+/* COMPONENTS and COLOR VARAIANTS */
 /* black buttons */
 button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   background: var(--black) !important;
@@ -2618,7 +2620,7 @@ a:active {
 .darkmode .MuiFormLabel-root {
   color: var(--dm-on-background)
 }
-/* secodary tabs */
+/* secondary tabs */
 .secondaryTab.MuiTab-root {
   font-size: var(--CTA-SmallFontSize);
   font-family: var(--CTA-SmallFontFamily);
@@ -2635,6 +2637,7 @@ a:active {
   color: var(--dm-on-button)  !important;
   box-shadow: none !important;
 }
+
 .MuiTabs-root .MuiTab-root {
     box-shadow: none !important;
 }
@@ -2716,7 +2719,7 @@ a:active {
 .darkmode .MuiTabs-root.white .MuiTabs-indicator {
   background: var(--black) !important;
 }
-/* accordian */
+/* accordion */
 .MuiAccordion-root::after {
   position: absolute;
   top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
@@ -2747,7 +2750,7 @@ a:active {
   bottom: calc(0px - calc(var(--focusBorder) + 2px));
   opacity: 1;
 }
-/* darkmode accordian */
+/* darkmode accordion */
 .darkmode .MuiAccordion-root {
   background: var(--dm-surface) !important;
   color: var(--dm-on-surface) !important;
@@ -2763,7 +2766,7 @@ a:active {
 .list-content {
   flex-grow: 1;
 }
-/* swicth */
+/* switch */
 .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
   background: var(--button);
   padding: 0;
@@ -3065,7 +3068,7 @@ a:active {
   z-index: 2;
   pointer-events: none;
 }
-.image-lg img::after, .image-sq img::after{
+.image-lg img::after, .image-sq img::after {
   position: absolute;
   content: '';
   top:0;
@@ -3994,7 +3997,7 @@ a:active {
   color: var(--onbuttonOnGradient1) !important;
   background: var(--buttonOnGradient1) !important;
 }
-.gradient-1 button:not(.white).MuiButton-outlined .gradient-1 button:not(.white).MuiButton-text {
+.gradient-1 button:not(.white).MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient1) !important;
 }
 .gradient-1 button:not(.MuiTab-root):not(.white)::after{
@@ -4253,5 +4256,5 @@ a:active {
   background-color: var(--dmbuttonOnBlack)
 }
 .darkmode .white .MuiAvatar-root:not(.white) svg path {
-    fill: var(--dmbonuttonOnBlack)
+    fill: var(--dmonbuttonOnBlack)
 }
