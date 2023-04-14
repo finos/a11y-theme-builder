@@ -415,6 +415,8 @@ try {
                           padding: "0 var(--spacing-6) 0 var(--spacing-2) !important",
 
                         },
+                        minHeight: "var(--min-target)",
+                        lineHeight: "var(--min-target)",
                     },
                 }
             },
