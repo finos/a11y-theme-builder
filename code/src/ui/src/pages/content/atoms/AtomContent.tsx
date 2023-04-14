@@ -112,6 +112,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             }
         }
         setAtoms(_atoms);
+        if (_atoms[showAtom] && _atoms[showAtom].disabled) {
+            setShowAtom("atoms");
+        }
     }
 
     const [atoms, setAtoms] = useState<{[key: string]:atomItem}>(atomsList);
