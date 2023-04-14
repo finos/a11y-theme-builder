@@ -512,7 +512,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         "& .MuiAlert-icon":{
-                            marginRight: "var(--toast-padding)",
+                            marginRight: "calc(var(--toast-padding) * var(--spacing-1))",
                             alignSelf: "center",
                             padding: "0",
                         },
