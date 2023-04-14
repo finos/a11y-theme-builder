@@ -12,7 +12,6 @@ import { createRoot } from 'react-dom/client';
 import { ErrorHandler } from './ErrorHandler';
 import App from './App';
 import { IntlProvider } from 'react-intl';
-//import messages from './locales/data.json';
 
 console.log("Document cookie=",document.cookie);
 
@@ -53,7 +52,7 @@ loadLocale().then(function(messages:any) {
         root.render(
             <React.StrictMode>
                 <ErrorHandler>
-                    <IntlProvider locale={navigator.language} messages={messages} >
+                    <IntlProvider locale={navigator.language} messages={messages} onError={(error) => { } }>
                         <App user={user}/>
                     </IntlProvider>
                 </ErrorHandler>
