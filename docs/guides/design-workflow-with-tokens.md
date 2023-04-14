@@ -23,5 +23,5 @@ Build your theme and REMEMBER to click SAVE!
 
 
 <video style="width:90% centered" controls controls>
-   <source src="../_videos/apply-theme.mp4" type="video/mp4">
+   <source src="../../_videos/apply-theme.mp4" type="video/mp4">
 </video>
