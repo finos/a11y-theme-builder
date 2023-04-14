@@ -1,8 +1,3 @@
-> Content herein has been deferred for a future milestone.
-
-![wip](../../_images/work-in-progress.jpeg)
-
->If you are interested in helping us document this feature, please see our [call for contributors](../contribute/index.md).
 
 Get started with a few simple steps
 
@@ -28,5 +23,5 @@ Build your theme and REMEMBER to click SAVE!
 
 
 <video style="width:90% centered" controls controls>
-   <source src="./_videos/apply-theme.mp4" type="video/mp4">
+   <source src="../_videos/apply-theme.mp4" type="video/mp4">
 </video>
