@@ -42,15 +42,15 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
             </ul>
             <h6>Step 2. Sign up / Sign in to Figma</h6>
               <ul>
-                <li><a href="http://www.figma.com">Go to Figma</a></li>
+                <li><a href="http://www.figma.com" target="_blank">Go to Figma</a></li>
               </ul>
             <h6>Step 3. Install Tokens Studio Pro</h6>
             <ul>
-              <li><a href="https://tokens.studio/">Go to Tokens Studio</a></li>
+              <li><a href="https://tokens.studio/" target="_blank">Go to Tokens Studio</a></li>
             </ul>
             <h6>Step 4. Duplicate our Figma Theme Builder File</h6>
             <ul>
-              <li><a href="https://www.figma.com/community/file/1228341192167108876" target="new">Theme Builder - Figma Component Library</a></li>
+              <li><a href="https://www.figma.com/community/file/1228341192167108876" target="_blank">Theme Builder - Figma Component Library</a></li>
             </ul>
             <h6>Step 5. Apply your theme to the Figma Theme Builder File</h6>
             <div className="videoWrapper">

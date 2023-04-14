@@ -817,7 +817,7 @@ try {
                         background: "var(--surface)",
                         color: "var(--on-surface)",
                         border: "1px solid var(--border)",
-                        padding: "var(--spacing-1) calc(2 * var(--spacing-1)) !important",
+                        padding: "var(--spacing-1) calc(var(--toast-padding) * var(--spacing-1)) !important",
                         paddingLeft: "calc(calc(2 * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         boxShadow: "var(--toast-boxshadow)",
@@ -1038,6 +1038,18 @@ try {
                       backgroundColor: "var(--button)",
                       boxShadow: "var(----avatar-shadow)",
                       border: "solid calc(var(--border-1) * var(--avatar-border-lg)) var(--button) !important",
+                      "&.xxs": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.xs": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.sm": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.md": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
                       "& svg path": {
                           fill: "var(--on-button)",
                       },
@@ -1047,6 +1059,18 @@ try {
                         "& svg path": {
                             fill: "var(--white)",
                         },
+                        "&.xxs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.xs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.sm": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.md": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        }
                       },
                       "&.white" : {
                         backgroundColor: "var(--white)",
@@ -1054,6 +1078,18 @@ try {
                         "& svg path": {
                             fill: "var(--black)",
                         },
+                        "&.xxs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.xs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.sm": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.md": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        }
                       },
                     },
                 },

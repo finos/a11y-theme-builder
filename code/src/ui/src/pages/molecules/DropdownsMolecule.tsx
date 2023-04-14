@@ -75,7 +75,7 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                                   },
                                 },
                               }}
-                            
+
                             onChange={(event) => setSample(event.target.value)}
                         >
                             <MenuItem value="option1">Option 1</MenuItem>
@@ -87,8 +87,6 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
             </ExampleSection>
             <SettingsSection>
                 <StringSelectable property={molecule.menuFocusState} defaultValue="true" variant="radio" />
-                <div className="top24"/>
-                <NumberScaledSelectable property={molecule.borderRadius} units="px" scale={grid} />
             </SettingsSection>
             <GeneratedCodeSection item={molecule} />
         </div >
