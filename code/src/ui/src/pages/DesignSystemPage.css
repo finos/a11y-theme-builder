@@ -146,6 +146,16 @@
     margin: 8px 0
 }
 
+
+.modal-content input{
+  margin: 8px 0;
+  height: 44px;
+  padding: 0 8px;
+  border-radius: var(--spacing-half);
+  border: 1px solid var(--border);
+  opacity: 1;
+}
+
 /* darkmode Mui Textfield */
 
 .design-system-editor-right-content .darkmode input {

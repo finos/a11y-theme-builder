@@ -53,13 +53,13 @@ export const LeftNavText = styled(ListSubheader)(( {theme }) => ({
     fontSize: "1em",
 }));
 
-export interface LeftNavItemProps { 
-    selected?:string, 
-    value?: string, 
-    text: string, 
-    indent?: number, 
-    disabled?:boolean, 
-    children?:ReactNode, 
+export interface LeftNavItemProps {
+    selected?:string,
+    value?: string,
+    text: string,
+    indent?: number,
+    disabled?:boolean,
+    children?:ReactNode,
     onClick?:any
 }
 
@@ -72,21 +72,22 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
     return(
         <ListItemButton sx={{
             pl: 2 + (props.indent ? 2*props.indent : 0),
-            background: selected ? "var(--secondary)" : null,
-            color: selected ? "var(--on-secondary)" : null,
+            background: selected ? "var(--dropdown-focus-bg)" : null,
+            color: selected ? "var(--on-dropdown-focus-bg)" : null,
             borderRight: selected ? "2px solid black" : null,
-            ':hover': { 
-                backgroundColor: selected ? "var(--secondary)" : null,
-                color: selected ? "var(--on-secondary)" : null,
+            marginLeft: "8px",
+            ':hover': {
+                backgroundColor: selected ? "var(--dropdown-hover-bg)" : null,
+                color: selected ? "var(--on-dropdown-hover-bg)" : null,
             }
         }}
             disabled={props.disabled}
             onClick={props.onClick}
         >
-            <ListItemText 
-                primary={props.text} 
+            <ListItemText
+                primary={props.text}
                 primaryTypographyProps={{
-                    textTransform: "uppercase", 
+                    textTransform: "uppercase",
                     fontSize: fontSize,
                     fontWeight: "500",
                 }}

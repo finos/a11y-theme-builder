@@ -315,20 +315,6 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                         </div>
                         <div className="form-row">
                             <label className="label-1">
-                                Light Glow Opacity
-                            </label>
-                            <Slider
-                                aria-label="InverseLightGlowOpacity"
-                                value={inverseLightGlowOpacity}
-                                sx={{maxWidth:600}}
-                                onChange={handleInverseLightGlowOpacityChange}
-                                valueLabelDisplay="auto"
-                                min={inverseLightGlowOpacityProperty.min}
-                                max={inverseLightGlowOpacityProperty.max}
-                            />
-                        </div>
-                        <div className="form-row">
-                            <label className="label-1">
                                 Dark Glow Opacity
                             </label>
                             <Slider

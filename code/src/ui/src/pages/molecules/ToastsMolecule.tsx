@@ -36,9 +36,6 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule, designSystem }
             </ExampleSection>
             <SettingsSection>
                 <div className="form-row">
-                    <NumberScaledSelectable property={toastsMolecule.handleBorderRadius} units="px" defaultValue={8} scale={grid}/>
-                </div>
-                <div className="form-row">
                     <NumberSelectable property={toastsMolecule.gap} units="px" defaultValue={32} />
                 </div>
                 <div className="form-row">
