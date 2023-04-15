@@ -44,7 +44,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     }
     useEffect(() => {
         if (designSystem) {
-            designSystem.setListener("CodeContent-isEditable", 
+            designSystem.setListener("CodeContent-isEditable",
                 function(event: Event) {
                     if (event.type == EventType.NodeDisabled) {
                         enableDisableItems();
@@ -60,7 +60,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
 
     useEffect(() => {
     }, [disabled])
-    
+
     const getCssCode = () => {
         const r = [":root {"];
         const vars = designSystem.code.getCSSVars();
@@ -85,7 +85,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         <>
             <div className="design-system-editor-left-nav">
                 <div className="design-system-editor-left-nav-scrollable">
-                <List 
+                <List
                         sx={{
                             '& ul': {padding:0},
                             paddingTop: "0px",
@@ -121,7 +121,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
                         </div>
 
                         <div className="top40">
@@ -134,13 +134,13 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
                         </div>
 
                         <div className="top40">
                             <h5>Accessibility CSS</h5>
                         </div>
-            
+
                         <div className="top40">
                             <InputLabel>Motion Sensitive</InputLabel>
                             <pre style={codeStyle}>
@@ -148,7 +148,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
                         </div>
 
                         <div className="top40">
@@ -158,7 +158,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
                         </div>
                     </>}
 
@@ -175,7 +175,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
                         </div>
 
                         <div className="top40">
@@ -185,7 +185,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
                         </div>
 
                         <div className="top40">
@@ -198,13 +198,13 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
                         </div>
 
                         <div className="top40">
                             <h5>Accessibility JSON</h5>
                         </div>
-            
+
                         <div className="top40">
                             <InputLabel>Motion Sensitive</InputLabel>
                             <pre style={codeStyle}>
@@ -212,7 +212,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
                         </div>
 
                         <div className="top40">
@@ -222,7 +222,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             </pre>
                             <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="contained" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
                         </div>
                     </>}
                 </div>
