@@ -1472,11 +1472,11 @@ a:active {
   opacity: 0;
 }
 .MuiTabs-root.black .MuiTab-root:hover::after {
-  border-bottom: var(--spacing-half) solid var(--white) !important;
+  border-bottom: var(--spacing-half) solid var(--buttonOnWhite) !important;
   opacity: .5;
 }
 .MuiTabs-root.black .MuiTabs-indicator {
-  background: var(--white) !important;
+  background: var(--buttonOnWhite) !important;
 }
 .MuiTabs-root.white .MuiTab-root {
   background: var(--white) !important;
@@ -1487,11 +1487,11 @@ a:active {
   opacity: 0;
 }
 .MuiTabs-root.white .MuiTab-root:hover::after {
-  border-bottom: var(--spacing-half) solid var(--black) !important;
+  border-bottom: var(--spacing-half) solid var(--buttonOnWhite) !important;
   opacity: .5;
 }
 .MuiTabs-root.white .MuiTabs-indicator {
-  background: var(--black) !important;
+  background: var(--buttonOnWhite) !important;
 }
 .MuiTabs-root .MuiTabs-indicator {
   background: var(--on-button) !important;
@@ -2737,6 +2737,7 @@ a:active {
 .white button:not(.MuiTab-root):not(.white)::after{
   border: var(--focusBorder) solid var(--buttonOnWhite);
 }
+
 /* white group buttons */
 .white button.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--black);
