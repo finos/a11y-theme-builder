@@ -278,6 +278,7 @@
   --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .8))) calc(var(--inbevel-blur) * .2) calc(var(--inbevel-spread) * .2) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .8)) ));
   --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .9))) calc(var(--inbevel-blur) * .1) calc(var(--inbevel-spread) * .1) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .9)) ));
   --focusBlur: 4;
+  --focusBorder: 2px;
   --info: #0066EF;
   --on-info: rgba(255,255,255,0.6);
   --dm-info: #0066EF;

@@ -1776,7 +1776,7 @@ a:active {
   pointer-events: none;
   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
 }
-.MuiOutlinedInput-root:hover::after {
+.MuiOutlinedInput-root.MuiSwitch-switchBase:hover::after {
   position: absolute;
   height: calc(var(--spacing-3) + 3px);
   width: calc(var(--spacing-3) + 3px);
@@ -1784,7 +1784,7 @@ a:active {
   bottom: calc(0px - calc(var(--focusBorder) + 2px));
   opacity: .5;
 }
-.MuiOutlinedInput-root:focus::after {
+.MuiOutlinedInput-root.MuiSwitch-switchBase:focus::after {
   position: absolute;
   height: calc(var(--spacing-3) + 3px);
   width: calc(var(--spacing-3) + 3px);
@@ -2314,6 +2314,7 @@ a:active {
   border: 1px solid var(--border) !important;
   border-radius: var(--spacing-half);
   position: relative;
+  min-height: calc(var(--button-height) * var(--spacing-1));
 }
 .MuiInputBase-root {
   position: relative;
@@ -2339,18 +2340,18 @@ a:active {
 }
 .MuiOutlinedInput-root:hover::after {
   position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px ));
-  left: calc(0px - calc(var(--focusBorder) + 2px ));
-  right: calc(0px - calc(var(--focusBorder) + 2px ));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px ));
-  opacity: calc(0px - calc(var(--focusBorder) + 2px ));
+  top: calc(0px - calc(var(--focusBorder) + 1px )) !important;
+  left: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
+  right: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
+  bottom: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
+  opacity: .5;
 }
 .MuiOutlinedInput-root:focus::after {
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  top: calc(0px - calc(var(--focusBorder) + 1px )) !important;
+  left: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
+  right: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
+  bottom: calc(0px - calc(var(--focusBorder) + 1px )) !important;;
   opacity: 1;
 }
 .MuiInputBase-root {
@@ -2363,6 +2364,13 @@ a:active {
 }
 .hexValue .MuiOutlinedInput-root {
   background: none !important;
+}
+/* input error */
+.MuiFormHelperText-root.Mui-error {
+  color: var(--danger) !important;
+}
+.MuiOutlinedInput-root.Mui-error .MuiInputBase-input{
+  border: calc(var(--button-border) * var(--border-1)) solid var(--danger) !important;
 }
 /* Modal */
 .overlay {
@@ -2379,7 +2387,7 @@ a:active {
 .modal-content {
   padding: var(--spacing-3);
   display: flex;
- flex-direction: column;
+  flex-direction: column;
 }
 
 .modal-footer {
