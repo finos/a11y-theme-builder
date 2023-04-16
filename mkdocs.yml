@@ -158,7 +158,7 @@ nav:
     - Asking a question: https://github.com/discoverfinancial/a11y-theme-builder/discussions
   - Designers:
     - designers/index.md
-    - How to generate a design system: designers/how-to-generate-design-system.md
+    - What is a design system: designers/what-is-a-design-system.md
     - How to configure fonts: designers/how-to-configure-fonts.md
     - How to configure disability overlays: designers/how-to-configure-overlays.md
     - How to work with Design Tokens: designers/how-to-work-with-tokens.md
