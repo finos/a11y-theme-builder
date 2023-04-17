@@ -158,19 +158,11 @@ nav:
     - Asking a question: https://github.com/discoverfinancial/a11y-theme-builder/discussions
   - Designers:
     - designers/index.md
-    - How to generate a design system: designers/how-to-generate-design-system.md
+    - What is a design system: designers/what-is-a-design-system.md
     - How to configure fonts: designers/how-to-configure-fonts.md
     - How to configure disability overlays: designers/how-to-configure-overlays.md
     - How to work with Design Tokens: designers/how-to-work-with-tokens.md
     - How to use components with Storybook: designers/how-to-work-with-storybook.md
-  - Developers:
-    - developers/index.md
-    - Code Walkthrough: developers/code-walkthrough.md
-    - Adding Atomic Elements: developers/add-atomic-elements.md
-    - Adding Accessibility Layers: developers/add-a11y-layers.md
-    - Adding output generators: developers/add-output-generators.md
-    - Adding storage: developers/add-storage.md
-    - Managing light and dark modes: developers/managing-modes.md
   - Under the Hood:
     - architecture/index.md
     - Component Model: architecture/component-model.md
@@ -178,6 +170,14 @@ nav:
     - Understanding SDK: architecture/sdk-intro.md
     - Foundational Services: architecture/base-services.md
     - Understanding Application APIs: architecture/app-api.md
+  - Extending the Tool:
+    - developers/index.md
+    - Code Walkthrough: developers/code-walkthrough.md
+    - Adding Atomic Elements: developers/add-atomic-elements.md
+    - Adding Accessibility Layers: developers/add-a11y-layers.md
+    - Adding output generators: developers/add-output-generators.md
+    - Adding storage: developers/add-storage.md
+    - Managing light and dark modes: developers/managing-modes.md
   - Guides:
     - guides/index.md
     - Generate a theme: guides/create-a-theme.md
