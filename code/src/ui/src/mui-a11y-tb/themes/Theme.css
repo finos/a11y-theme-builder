@@ -2188,7 +2188,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 
 /* dropdowns */
-.MuiMenuItem-root-select {
+.MuiMenuItem-root {
   background: var(--surface);
   color: var(--on-surface)
 }
