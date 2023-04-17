@@ -58,7 +58,7 @@
 }
 
 .darkmode.design-system-editor-right-content {
-    background-color: var(--dm-background);
+    background-color: var(--dm-background) !;
     color: var(--dm-on-background);
     min-height: 80vh;
 }
@@ -230,6 +230,23 @@
     gap: 8px;
     margin:  var(--spacing-1) 0;
     width: 98px;
+}
+
+.darkmode.design-system-editor-right-content  {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background) !important;
+}
+
+.darkmode.design-system-editor-right-content .color-swatch {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background) !important;
+    border: 1px solid var(--dm-border);
+}
+
+.darkmode.design-system-editor-right-content .color-swatch.white{
+    background: var(--dm-white) !important;
+    color: var(--dm-on-white) !important;
+    border: 1px solid var(--dm-border);
 }
 
 .design-system-editor-right-content .color-box {

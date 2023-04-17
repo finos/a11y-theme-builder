@@ -46,7 +46,7 @@ export const ColorGradientHeader: React.FC<Props> = ({className, value, fromLabe
             <div className={className}>
                 {!readonly && <ColorSelect value={value.from} label={fromLabel ?? "From Color:"}></ColorSelect>}
                 {!readonly && <ColorSelect value={value.to} label={toLabel ?? "To Color:"}></ColorSelect>}
-                {_fromShade && _toShade && <div className="caption">{sampleLabel ?? "Sample Gradient:"}<h2 className="gradient-title" style={{backgroundImage: `linear-gradient(15deg, ${_fromShade.hex}, ${_toShade.hex})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>{sampleText}</h2></div>}
+                {_fromShade && _toShade && <div className="caption">{sampleLabel ?? "Sample Gradient:"}<h1 className="gradient-title" style={{backgroundImage: `linear-gradient(15deg, ${_fromShade.hex}, ${_toShade.hex})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>{sampleText}</h1></div>}
             </div >
         );
 

@@ -465,6 +465,10 @@ section {
     background: transparent !important;
 }
 
+.white.MuiBreadcrumbs-ol, .black.MuiBreadcrumbs-ol, .colored.MuiBreadcrumbs-ol {
+  background: transparent !important;
+}
+
 .breadcrumbs .MuiBreadcrumbs-li .MuiTypography-root {
   font-family: var(--caption-boldFontFamily) !important;
   font-weight: var(--caption-boldFontWeight) !important;
@@ -527,13 +531,14 @@ section {
 .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   text-decoration: none !important;
   font-style: italic !important;
-  font-family: var(--caption-boldFontFamily);
+  font-size: var(--caption-boldFontSize) !important;
+  font-family: var(--caption-boldFontFamily) !important;
   font-weight: var(--caption-boldFontWeight) !important;
   font-size: var(--caption-boldFontSize) !important;
   line-height: var(--caption-boldLineHeight) !important;
   letter-spacing: var(--caption-boldLetterSpacing) !important;
-  text-transform: var(--caption-boldTextTransform) !important;
-  text-decoration:  var(--caption-boldTextDecoration) !important;
+  padding: 0 !important;
+  margin-top: 2px;
 }
 .breadcrumbs:not(.back-breadcrumbs).black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--black) !important;
@@ -1703,15 +1708,19 @@ a:active {
    z-index: -1;
  }
 
- .darkmode .MuiSlider-root .MuiSwitch-thumb{
+ .darkmode .MuiSlider-root .MuiSwitch-thumb,  .darkmode .MuiSlider-root .MuiSlider-thumb{
    background-color: var(--dm-button);
  }
- .darkmode .MuiSlider-root .MuiSwitch-thumb::after {
+ .darkmode .MuiSlider-root .MuiSwitch-thumb::after, .darkmode .MuiSlider-root .MuiSlider-thumb::after {
    border: var(--focusBorder) solid var(--dm-button);
  }
   .darkmode .MuiSlider-root .MuiSlider-track{
    background-color: var(--dm-button);
    opacity: var(--quiet);
+ }
+
+ .darkmode .MuiSlider-root .MuiSlider-rail {
+   background: var(--dm-on-background)
  }
 /* popovers */
 .MuiPopover-paper {
@@ -1814,6 +1823,11 @@ a:active {
 .gradient-title {
 
 }
+/* gradients */
+.darkmode .gradient-1 {
+  background: var(--dm-gradient-1);
+  color: var(--dm-on-gradient-1);
+}
 /* icons */
 .icon-body {
   display: flex;
@@ -1904,29 +1918,6 @@ a:active {
   pointer-events: none;
 }
 
-
-/* darkmode white */
-.darkmode .white {
-  background: var(--dm-white) !important;
-  color: var(--black) !important;
-}
-.darkmode .white button  {
-  background: var(--buttonOnWhite) !important;
-  color: var(--onbuttonOnWhite) !important;
-}
-.darkmode .white button::after {
-  border: var(--focusBorder)  solid var(--buttonOnWhite);
-}
-.darkmode .white button .inline-icon path {
-  fill: var(--onbuttonOnWhite) !important;
-}
-.darkmode .white .inline-icon path  {
-  fill: var(--dmiconOnWhite) !important;
-}
-.darkmode .white a {
-  text-decoration: underline;
-  color: var(--black);
-}
 
 .primary-050-bg {
   background: var(--primary-0) !important;
@@ -2605,7 +2596,7 @@ a:active {
 }
 /* VARYING BACKGROUND COLORS */
 /*  BLACK  */
-.black, .black-bg {
+.black:not(.breadcrumbs), .black-bg:not(.breadcrumbs) {
     background: var(--black) !important;
     color: var(--white) !important;
 }
@@ -2616,6 +2607,9 @@ a:active {
   color: var(--iconOnBlack) !important;
 }
 /* hotlinks &  breadcrumbs */
+.MuiBreadcrumbs-li p {
+  padding-bottom: 0 !important;
+}
 .black a,
 .black .breadcrumbs .MuiBreadcrumbs-li a,
 .black .breadcrumbs .MuiBreadcrumbs-li:focus a,
@@ -2682,7 +2676,7 @@ a:active {
 
 
 /*  WHITE  */
-.white, .white-bg {
+.white:not(.breadcrumbs), .white-bg {
     background: var(--white) !important;
     color: var(--black) !important;
 }
@@ -3018,7 +3012,7 @@ a:active {
     fill: var(--onbuttonOnGradient3);
 }
 /*  Darkmode BLACK  */
-.darkmode .black, .black-bg {
+.darkmode .black:not(.breadcrumbs) {
     background: var(--black) !important;
     color: var(--dm-white) !important;
 }
@@ -3078,7 +3072,7 @@ a:active {
     fill: var(--dmonbuttonOnBlack);
 }
 /* dark mode white */
-.darkmode .white, .white-bg {
+.darkmode .white:not(.breadcrumbs), .white-bg {
     background: var(--dm-white) !important;
     color: var(--black) !important;
 }
