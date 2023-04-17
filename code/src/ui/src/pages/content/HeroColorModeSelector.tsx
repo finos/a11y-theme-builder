@@ -31,7 +31,7 @@ export const HeroColorModeSelector: React.FC<HeroColorModeSelector> = ({ colorMo
         <InputLabel>Color Variants</InputLabel>
         <Typography variant="caption">View components as default, black or white variants</Typography>
         <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
-            <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
+            <FormControlLabel value="colored" control={<Radio size="small"/>} label="Default"/>
             <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
             <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
             <FormControlLabel value="gradient-1" control={<Radio size="small"/>} label="Gradient 1"/>

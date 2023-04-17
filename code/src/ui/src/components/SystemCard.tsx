@@ -154,7 +154,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
         secondary = metadata.colors.secondary;
         tertiary = metadata.colors.tertiary;
         background = metadata.colors.background;
-    } 
+    }
     let isSample = false;
     if (metadata && metadata.sample) {
         isSample = true;
@@ -162,11 +162,12 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
 
     return (
         <div className="system-card">
-            <Card>
+            <Card className="clickable">
                 <CardHeader
                     action={
-                        <IconButton 
-                            aria-label="settings" 
+                        <IconButton
+                            className= "MuiButton-text"
+                            aria-label="settings"
                             sx={{
                                 "&::after": {
                                     border: "none",
@@ -177,7 +178,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                         </IconButton>
                     }
                     title={
-                        <h5 
+                        <h5
                             onClick={() => handleClose("load")}
                             style={{cursor: "pointer"}}
                         >{name}</h5>
@@ -210,7 +211,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                 <MenuItem onClick={() => handleClose("copy")}>Copy Design System</MenuItem>
                 <MenuItem onClick={() => handleClose("rename")}>Rename Design System</MenuItem>
                 {!isSample && <MenuItem onClick={() => handleClose("add")}>Add to Samples Page</MenuItem>}
-                {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}                
+                {isSample && <MenuItem onClick={() => handleClose("remove")}>Remove from Samples Page</MenuItem>}
                 <Divider/>
                 <MenuItem onClick={() => handleClose("view")}>View Design System Data</MenuItem>
                 <MenuItem onClick={() => handleClose("download")}>Download Design System Data</MenuItem>

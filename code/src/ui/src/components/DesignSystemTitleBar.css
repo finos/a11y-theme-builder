@@ -49,7 +49,7 @@
     display: flex;
     align-items: left;
     flex-direction: column;
-    gap: var(--spacing-half);
+    gap: var(--spacing-1);
 }
 
 .titleBarDiv .right-titlebar {
@@ -57,7 +57,7 @@
     align-items: left;
     margin: 8px;
     flex-direction: column;
-    gap: var(--spacing-Half);
+    gap: var(--spacing-1);
 }
 
 .titleBarDiv .label {

@@ -278,6 +278,7 @@
   --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .8))) calc(var(--inbevel-blur) * .2) calc(var(--inbevel-spread) * .2) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .8)) ));
   --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .9))) calc(var(--inbevel-blur) * .1) calc(var(--inbevel-spread) * .1) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .9)) ));
   --focusBlur: 4;
+  --focusBorder: 2px;
   --info: #0066EF;
   --on-info: rgba(255,255,255,0.6);
   --dm-info: #0066EF;
@@ -577,12 +578,12 @@
   --card-border: var(--border-1);
   --card-border-color: var(--border);
   --card-shadow: var(--card-elevation), var(--card-bevel);
-  --modal-radius: 8px;
+  --modal-radius: 4;
   --modal-elevation: var(--elevation-0);
   --modal-padding: 2;
   --modal-border: var(--spacing-2);
   --modal-shadow: var(--spacing-2);
-  --modal-overlay: var(--spacing-2);
+  --modal-overlay: var(--black);
   --dmtooltip: ;
   --tooltip-padding: 2;
   --tooltip-border: var(--border-1);
