@@ -1082,13 +1082,14 @@ a:active {
   text-decoration:  var(--dmhotlinkDecorationOnTertiary );
   color: var(--dmhotlinkOnTertiary );
 }
-.darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.MuiPaginationItem-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
 .darkmode button.small-btn:not(.black):not(.white):not(.MuiTab-root):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
 }
+
 
 /* darkmode buttons */
 .darkmode > button {
@@ -1190,6 +1191,28 @@ a:active {
   background: var(--dm-button) !important;
   color: var(--dm-on-button) !important;
 }
+/* pagination */
+button.MuiPaginationItem-root {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
+  opacity: var(--quiet);
+  min-height: var(--min-target)
+}
+button.MuiPaginationItem-root:hover {
+  opacity: 1;
+}
+.MuiPaginationItem-root.Mui-selected {
+  background: var(--button);
+  opacity: 1;
+}
+/* darmode pagination */
+.darkmode button.MuiPaginationItem-root {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dm-button) !important;
+}
+.darkmdoe button.MuiPaginationItem-root.Mui-selected {
+  background: var(--dm-button);
+  opacity: 1;
+}
+
 .gradient-swatch {
   width: 400px;
   height: var(--spacing-6);
