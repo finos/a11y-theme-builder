@@ -28,9 +28,11 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
         setAnchor(null)
     }
 
-    const boxShadowString = (popoversMolecule.elevation.getValue() === "No Elevation") 
-        ? "none" 
-        : "var(--" + popoversMolecule.elevation.getValue()?.toLowerCase() +") !important"
+    let noElevation = popoversMolecule.elevation.getValue() === "No Elevation"
+    let elevationBoxShadowString = noElevation ? "none" : "var(--" + popoversMolecule.elevation.getValue()?.toLowerCase() +") !important"
+    
+    let noBevel = popoversMolecule.bevel.getValue() === "No Bevel"
+    let bevelBoxShadowString = noBevel ? "none" : "var(--" + popoversMolecule.bevel.getValue()?.toLowerCase() +") !important"
 
     return (
         <div>
@@ -55,7 +57,7 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                     PaperProps={{
                         sx: {
                             borderRadius: "calc(var(--popoverRadius) * var(--radius-1))",
-                            boxShadow: boxShadowString
+                            boxShadow: noElevation ? bevelBoxShadowString : elevationBoxShadowString
                         }
                     }}
                 >
