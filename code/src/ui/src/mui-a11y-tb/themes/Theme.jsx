@@ -482,7 +482,20 @@ try {
                     },
                 },
             },
+            MuiFormHelperText  : {
+              styleOverrides: {
+                  root: {
+                    fontSize: "var(-smallFontSize)",
+                    fontWeight: "var(--smallFontWeight)",
+                    fontFamily: "var(--smallFontFamily)",
+                    letterSpacing: "var(--smallLetterSpacing)",
+                    lineHeight: "var(--smallLineHeight)",
+                    padding: "var(--spacing-1) 0",
+                    margin: "0",
+                  }
 
+              }
+            },
             //.css-mc683d-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
             MuiOutlinedInput: {
               styleOverrides: {

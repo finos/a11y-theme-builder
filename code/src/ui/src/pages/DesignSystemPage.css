@@ -83,6 +83,11 @@
     align-items: flex-start;
 }
 
+.top32 {
+    margin-top: 32px !important;
+}
+
+
 .top24 {
     margin-top: 24px !important;
 }

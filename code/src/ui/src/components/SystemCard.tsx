@@ -162,7 +162,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
 
     return (
         <div className="system-card">
-            <Card>
+            <Card className="clickable">
                 <CardHeader
                     action={
                         <IconButton
