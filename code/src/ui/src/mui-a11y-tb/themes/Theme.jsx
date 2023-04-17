@@ -684,6 +684,13 @@ try {
                     }
                 }
             },
+            MuiFormControl: {
+                styleOverrides: {
+                    root: {
+                      margin: "var(--spacing-3) 0 0 important" ,
+                    },
+                },
+            },
             MuiFormControlLabel: {
                 styleOverrides: {
                     root: {

@@ -124,4 +124,3 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
         );
     }
 }
-
