@@ -1248,6 +1248,7 @@ button.MuiPaginationItem-root:hover {
  border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
  box-shadow: 0 0 var(--focusBlur) 0px var(--button);
  transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+ pointer-events: none;
 }
 .MuiCard-root.clickable:hover::after{
  opacity: .5;
