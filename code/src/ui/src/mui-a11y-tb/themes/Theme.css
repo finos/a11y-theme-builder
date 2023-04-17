@@ -1013,16 +1013,36 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
-
 /* black divider */
-.MuiList-root.black .MuiDivider-root {
+.MuiList-root.black .MuiDivider-root, .MuiDivider-root.white {
   border-color: var(--white);
 }
 /* white divider */
-.MuiList-root.white .MuiDivider-root,
+.MuiList-root.white .MuiDivider-root, .MuiDivider-root.black,
 .darkmode .MuiList-root.white .MuiDivider-root {
   border-color: var(--black);
 }
+/* darkmode divider */
+.darkmode .MuiList-root .MuiDivider-root.white  {
+  border-color: var(--dm-white);
+}
+.darkmode .MuiList-root .MuiDivider-root.black {
+  border-color: var(--black);
+}
+
+/* darkmode list and divider */
+.darkmode .MuiList-root {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+  color: var(--dm-on-surface);
+}
+.darkmode .MuiList-root.white , .darkmode .white .MuiList-root {
+  border-color: var(--dm-on-background);
+}
+.darkmode .MuiList-root.black , .darkmode .white .MuiList-root   {
+  border-color: var(--black);
+}
+
 /* darkmode list and divider */
 .darkmode .MuiList-root {
   background: var(--dm-surface);
@@ -1627,14 +1647,12 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiPaper-root.MuiPopover-paper .MuiMenuItem-root {
   background: var(--surface) !important;
-  width: calc(100% - 8px)
 }
 .MuiPaper-root.MuiPopover-paper {
   transform: translate(0px, 0px) !important;
   background: var(--surface);
   color: var(--on-surface);
   border: 1px solid var(--border);
-  width: calc(100% - 16px);
   padding: 0 0 0 8px;
 
 }
@@ -1671,7 +1689,6 @@ button.MuiPaginationItem-root:hover {
 }
 .darkmode .MuiPaper-root.MuiPopover-paper .MuiMenuItem-root {
   background: var(--dm-surface) !important;
-  width: calc(100% - 8px)
 }
 .darkmode .MuiButtonBase-root .MuiMenuItem-root.Mui-selected {
   background: var(--dm-dropdown-focus-bg);
@@ -1683,10 +1700,6 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-dropdown-focus-bg) !important;
 }
 
-
-.darkmode .MuiList-root {
-
-}
 /* switchBaseh */
 .MuiSwitch-root {
   position: relative;
@@ -2778,7 +2791,13 @@ button.MuiPaginationItem-root:hover {
 .black button.MuiButton-text::after {
   background: var(--white);
 }
-
+/* black divider */
+.black .MuiDivider-root, .MuiDivider-root:not(.black){
+  border-color: var(--white);
+}
+.darkmode .black .MuiList-root .MuiDivider-root:not(.black) {
+  border-color: var(--dm-white);
+}
 
 /*  WHITE  */
 .white:not(.breadcrumbs), .white-bg {
@@ -2852,7 +2871,7 @@ button.MuiPaginationItem-root:hover {
 .white .MuiAvatar-root:not(.white) {
   background-color: var(--buttonOnBlack)
 }
-.white .MuiAvatar-root:not(.white) svg path {
+.darkmode .white .MuiAvatar-root:not(.white) svg path {
     fill: var(--on-buttonOnBlack);
 }
 
@@ -2861,6 +2880,11 @@ button.MuiPaginationItem-root:hover {
   background: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
 }
+/* black divider */
+.white .MuiDivider-root, .MuiDivider-root:not(.white),.white .MuiList-root .MuiDivider-root:not(.white) {
+  border-color: var(--lack);
+}
+
 /* hotlinks &  breadcrumbs */
 .colored a,
 .colored.breadcrumbs .MuiBreadcrumbs-li a,
@@ -2919,6 +2943,13 @@ button.MuiPaginationItem-root:hover {
 }
 .colored .MuiAvatar-root:not(.white) svg path {
     fill: var(--on-buttonOnTertiary);
+}
+/* colores divider */
+.colored .MuiDivider-root, .MuiDivider-root:not(.black){
+  border-color: var(--on-background-tertiary);
+}
+.darkmode .colored .MuiList-root .MuiDivider-root:not(.black) {
+  border-color: var(--dm-on-background-tertiary);
 }
 
 /*  GRADIENT 1 */
@@ -2984,6 +3015,13 @@ button.MuiPaginationItem-root:hover {
 .gradient-1 button:not(.MuiTab-root):not(.white)::after{
   border: var(--focusBorder) solid var(--buttonOnGradient1);
 }
+/* gradeint 1 divider */
+.gradient-1 .MuiDivider-root, .MuiDivider-root{
+  border-color: var(--on-gradeint-1);
+}
+.darkmode .gradient-1 .MuiList-root .MuiDivider-root.black {
+  border-color: var(--dm-on-gradient-1);
+}
 /*  GRADIENT 2 */
 .gradient-2 {
   background: var(--gradient-2) !important;
@@ -2992,6 +3030,7 @@ button.MuiPaginationItem-root:hover {
 .gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
   color: var(--on-gradient-2) !important;
 }
+
 /* hotlinks &  breadcrumbs */
 .gradient-2 a,
 .gradient-2 .breadcrumbs .MuiBreadcrumbs-li a,
@@ -3046,6 +3085,13 @@ button.MuiPaginationItem-root:hover {
 }
 .gradient-2 button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient2);
+}
+/* gradeint 2 divider */
+.gradient-2 .MuiDivider-root, .MuiDivider-root{
+  border-color: var(--on-gradeint-2);
+}
+.darkmode .gradient-2 .MuiList-root .MuiDivider-root.black {
+  border-color: var(--dm-on-gradient-2);
 }
 /*  GRADIENT 3 */
 .gradient-3 {
@@ -3115,6 +3161,13 @@ button.MuiPaginationItem-root:hover {
 }
 .gradient-3  .MuiAvatar-root svg path {
     fill: var(--onbuttonOnGradient3);
+}
+/* gradeint 3 divider */
+.gradient-3 .MuiDivider-root, .MuiDivider-root{
+  border-color: var(--on-gradeint-3);
+}
+.darkmode .gradient-3 .MuiList-root .MuiDivider-root.black {
+  border-color: var(--dm-on-gradient-3);
 }
 /*  Darkmode BLACK  */
 .darkmode .black:not(.breadcrumbs) {
