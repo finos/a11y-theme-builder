@@ -20,7 +20,7 @@ export const AccordionComponent: React.FC<Props> = () => {
         <div>
             <HeadingSection title="Desktop" heading="Accordions" />
             <ExampleSection>
-                <Accordion style={{ margin: "40px" }}>
+                <Accordion>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"

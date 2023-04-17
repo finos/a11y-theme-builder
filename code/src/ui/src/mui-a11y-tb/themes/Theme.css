@@ -1366,7 +1366,7 @@ button.MuiPaginationItem-root:hover {
 .hero {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing-1) * var(--hero-gap));
+  gap: calc(var(--spacing-1) * var(--hero-padding));
   padding:  calc(var(--hero-padding) * var(--spacing-1));
   margin: 0;
 }
@@ -1594,6 +1594,9 @@ button.MuiPaginationItem-root:hover {
   background: var(--black) !important;
 }
 /* accordian */
+.MuiAccordion-root {
+  margin-bottom: var(--spacing-2);
+}
 .MuiAccordion-root::after {
  position: absolute;
  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
@@ -1640,6 +1643,27 @@ button.MuiPaginationItem-root:hover {
 .list-content {
   flex-grow: 1;
 }
+/* MuiFormControl-root */
+.MuiFormControl-root {
+  margin: 16px 0 0 !important;
+}
+/* MuiFormLabel-root NOT ANIMATED */
+.MuiFormControl-root .MuiFormLabel-root:not(.MuiInputLabel-animated), .motionSensative .MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated, .motionSensative .MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated.MuiInputLabel-shrink[data-shrink="true"]  {
+  position: absolute;
+  top: calc(calc(var(--spacing-1) * var(--button-height))/2);
+  transform: translate(0px, calc(-50% - 32px)) scale(.85) !important;
+}
+/* MuiFormLabel-root */
+.MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated {
+  position: absolute;
+  top: calc(calc(var(--spacing-1) * var(--button-height))/2);
+  transform: translate(var(--spacing-2) , -50%);
+}
+.MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated.MuiInputLabel-shrink[data-shrink="true"] {
+  transform: translate(0px, calc(-50% - 32px)) scale(.85);
+}
+
+
 /* dark mode dropdown list */
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue) .MuiOutlinedInput-root {
     color: var(--input);
@@ -2436,7 +2460,6 @@ button.MuiPaginationItem-root:hover {
   display: flex;
   align-items: center;
 }
-
 .MuiInputBase-root::after {
   position: absolute;
   content: '';
@@ -2798,6 +2821,13 @@ button.MuiPaginationItem-root:hover {
 .darkmode .black .MuiList-root .MuiDivider-root:not(.black) {
   border-color: var(--dm-white);
 }
+/* colored rootbase after */
+.black .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--buttonOnBlack);
+}
+.darkmode .black .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--dmbuttonOnBlack);
+}
 
 /*  WHITE  */
 .white:not(.breadcrumbs), .white-bg {
@@ -2874,17 +2904,19 @@ button.MuiPaginationItem-root:hover {
 .darkmode .white .MuiAvatar-root:not(.white) svg path {
     fill: var(--on-buttonOnBlack);
 }
-
+/* white divider */
+.white .MuiDivider-root, .MuiDivider-root:not(.white),.white .MuiList-root .MuiDivider-root:not(.white) {
+  border-color: var(--black);
+}
+/* colored rootbase after */
+.white .MuiInputBase-root::after, .darkmode .white .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--buttonOnBlack);
+}
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .colored, .backgroundTertiary {
   background: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
 }
-/* black divider */
-.white .MuiDivider-root, .MuiDivider-root:not(.white),.white .MuiList-root .MuiDivider-root:not(.white) {
-  border-color: var(--lack);
-}
-
 /* hotlinks &  breadcrumbs */
 .colored a,
 .colored.breadcrumbs .MuiBreadcrumbs-li a,
@@ -2950,6 +2982,13 @@ button.MuiPaginationItem-root:hover {
 }
 .darkmode .colored .MuiList-root .MuiDivider-root:not(.black) {
   border-color: var(--dm-on-background-tertiary);
+}
+/* colored rootbase after */
+.colored .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--on-background-tertiary);
+}
+.darkmode .colored .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--dm-on-background-tertiary);
 }
 
 /*  GRADIENT 1 */
@@ -3022,6 +3061,14 @@ button.MuiPaginationItem-root:hover {
 .darkmode .gradient-1 .MuiList-root .MuiDivider-root.black {
   border-color: var(--dm-on-gradient-1);
 }
+/* gradient rootbase after */
+.gradient-1 .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--on-gradient-1);
+}
+.darkmode .gradient-1 .MuiInputBase-root::after {
+  border: var(--focusBorder) solid var(--dm-on-gradient-1);
+}
+
 /*  GRADIENT 2 */
 .gradient-2 {
   background: var(--gradient-2) !important;
