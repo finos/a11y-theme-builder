@@ -1620,6 +1620,19 @@ button.MuiPaginationItem-root:hover {
   flex-grow: 1;
 }
 /* swicth */
+
+.MuiSwitch-root {
+  position: relative;
+}
+.MuiSwitch-root .MuiSwitch-switchBase  {
+  position: absolute;
+  top: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.MuiSwitch-root .MuiSwitch-switchBase.Mui-checked  {
+  left: unset;
+  right: 0;
+}
 .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb {
   background: var(--button);
   padding: 0;
@@ -1663,7 +1676,8 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiSwitch-root .MuiSwitch-track {
   position: absolute;
-  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sliderbarHeight)))/2) !important;
+  top: 50%;
+  transform: translate(0, -50%);
   left: calc(var(--spacing-1) + 1px) ;
   right: calc(var(--spacing-1) + 1px) ;
   height: calc(var(--spacing-1) * var(--sliderbarHeight)) ;
