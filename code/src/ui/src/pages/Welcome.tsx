@@ -60,8 +60,8 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
               </video>
             </div> */}
             <div className="button-area">
-                <Button onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
                 <Button onClick={(event) => changeTab(event, "getStarted")}>Explore Your Design Systems</Button>
+                <Button  variant="outlined"  onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
             </div>
         </div>
     );

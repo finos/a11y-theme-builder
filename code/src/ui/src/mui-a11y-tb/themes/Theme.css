@@ -1240,31 +1240,31 @@ a:active {
   color: var(--dm-icon);
 }
 .MuiCard-root.clickable::after{
-  position: absolute;
-  content: '';
-  top:    calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
-  bottom: calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
-  left:   calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
-  right:  calc(0px - 1px - var(--border-1) - var(--animation-focus-distance));
-  opacity: 0;
-  border: var(--focusBorder)  solid var(--button);
-  border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
-  box-shadow: 0 0 var(--focusBlur) 0px var(--button);
-  transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+ position: absolute;
+ content: '';
+ top:    calc(0px - 3px - var(--animation-focus-distance));
+ bottom: calc(0px - 3px - var(--animation-focus-distance));
+ left:   calc(0px - 3px - var(--animation-focus-distance));
+ right:  calc(0px - 3px - var(--animation-focus-distance));
+ opacity: 0;
+ border: var(--focusBorder)  solid var(--button);
+ border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
+ box-shadow: 0 0 var(--focusBlur) 0px var(--button);
+ transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 .MuiCard-root.clickable:hover::after{
-  opacity: .5;
-  top:    calc(0px - 1px - var(--border-1));
-  bottom: calc(0px - 1px - var(--border-1));
-  left:   calc(0px - 1px - var(--border-1));
-  right:  calc(0px - 1px - var(--border-1));
+ opacity: .5;
+ top:    calc(0px - 3px);
+ bottom: calc(0px - 3px);
+ left:   calc(0px - 3px);
+ right:  calc(0px - 3px);
 }
 .MuiCard-root.clickable:focus::after{
-  opacity: 1;
-  top:    calc(0px - 1px - var(--border-1));
-  bottom: calc(0px - 1px - var(--border-1));
-  left:   calc(0px - 1px - var(--border-1));
-  right:  calc(0px - 1px - var(--border-1));
+ opacity: 1;
+ top:    calc(0px - 3px);
+ bottom: calc(0px - 3px);
+ left:   calc(0px - 3px);
+ right:  calc(0px - 3px);
 }
 
 .MuiCard-root.centerAligned {
@@ -1312,6 +1312,10 @@ a:active {
   display: flex;
   gap: var(--spacing-1);
   align-items: start;
+}
+.MuiCard-root {
+  position: relative;
+  overflow: visible !important;
 }
 .MuiCardMedia-root {
   background-color: var(--on-background);
@@ -2343,7 +2347,7 @@ a:active {
 }
 /* input */
 .MuiInputBase-root .MuiOutlinedInput-input {
-  border: 1px solid var(--border) !important;
+  border: var(--border-1) solid var(--border) !important;
   border-radius: var(--spacing-half);
   position: relative;
   min-height: calc(var(--button-height) * var(--spacing-1));

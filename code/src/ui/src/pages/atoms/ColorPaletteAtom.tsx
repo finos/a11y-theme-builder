@@ -153,7 +153,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                         <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
                     </div>
                     <div className="input-col">
-                        <Button className="top24" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
+                        <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
                         {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
                     </div>
                 </div>
