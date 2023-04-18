@@ -308,7 +308,41 @@ section {
 .disabled {
   opacity: var(--disabled);
 }
-/* text decoraiton */
+
+/* THEME */
+.primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.secondaty {
+  background: var(--secondary);
+  color: var(--on-secondary);
+}
+.tertiary {
+  background: var(--tertiary);
+  color: var(--on-tertiary);
+}
+.background {
+  background: var(--background);
+  color: var(--on-background);
+}
+.background-secondary {
+  background: var(--background-secondary);
+  color: var(--on-background-secondary);
+}
+.button {
+  background: var(--button);
+  color: var(--on-button);
+}
+.icon {
+  background: var(--icon);
+  color: var(--on-icon);
+}
+.accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+/* theme text decoraiton */
 .drop-color {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
@@ -316,6 +350,40 @@ section {
   background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* darkmode theme */
+.darkmode .primary {
+  background: var(--dm-primary);
+  color: var(--dm-on-primary);
+}
+.darkmode .secondaty {
+  background: var(--dm-secondary);
+  color: var(--dm-on-secondary);
+}
+.darkmode .tertiary {
+  background: var(--dm-tertiary);
+  color: var(--dm-on-tertiary);
+}
+.darkmode .background {
+  background: var(--dm-background);
+  color: var(--dm-on-background);
+}
+.darkmode .background-secondary {
+  background: var(--dm-background-secondary);
+  color: var(--dm-on-background-secondary);
+}
+.darkmode .button {
+  background: var(--dm-button);
+  color: var(--dm-on-button);
+}
+.darkmode .icon {
+  background: var(--dm-icon);
+  color: var(--dm-on-icon);
+}
+.darkmode .accent {
+  background: var(--dm-accent);
+  color: var(--dm-on-accent);
 }
 .darkmode .drop-color {
   text-shadow: 4px 4px 0px var(--dm-color-drop);
