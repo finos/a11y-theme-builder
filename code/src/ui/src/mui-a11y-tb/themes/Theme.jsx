@@ -552,7 +552,7 @@ try {
                         lineHeight: "var(--standard-LineHeight)",
                         letterSpacing: "1.25%",
                         textTransform: "none",
-                        marginBottom: "10px",
+                        marginBottom: "0px",
 
                     }
                 }
