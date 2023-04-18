@@ -21,7 +21,6 @@ p {
 }
 
 p a {
-    color: #1884ffa7;
     font-weight: bold;
     cursor: pointer;
 }
@@ -138,4 +137,3 @@ a:active {
 .darkmode a:active {
     text-decoration: var(--dm-hotlink-hover-decoration)
 }
-  
