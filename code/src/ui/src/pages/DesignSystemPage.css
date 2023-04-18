@@ -378,3 +378,7 @@
 .darkmode .black  .MuiList-root {
   background: transparent
 }
+
+.form-columns label {
+  margin-bottom: var(--spacing-1)
+}
