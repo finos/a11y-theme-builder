@@ -347,8 +347,9 @@ section {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
 .gradient-title {
-  background: -webkit-linear-gradient(var(--text-gradient));
+  background: var(--text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -389,8 +390,9 @@ section {
   text-shadow: 4px 4px 0px var(--dm-color-drop) !important;
 }
 .darkmode .gradient-title {
-  background: -webkit-linear-gradient(var(--dm-text-gradient));
+  background: var(--dm-text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
