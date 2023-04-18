@@ -2981,6 +2981,36 @@ button.MuiPaginationItem-root:hover {
   border: var(--focusBorder) solid var(--buttonOnBlack);
 }
 /*  COLORED, PRIMARY, TERTIARY_BG */
+.primary, .backgroundTertiary {
+
+  background: var(--primary) !important;
+
+  color: var(--on-primary) !important;
+
+}
+
+.primary  button , .backgroundTertiary button {
+  background: var(--buttonOnTertiary) !important;
+  color: var(--onbuttonOnTertiary) !important;
+}
+
+.primary  button::after , .backgroundTertiary button::after {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary);
+}
+
+.primary button .inline-icon path, .backgroundTertiary button .inline-icon path {
+  fill: var(--onbuttonOnTertiary) !important;
+}
+
+.primary .inline-icon path, .backgroundTertiary .inline-icon path{
+  fill: var(--iconOnTertiary) !important;
+}
+
+.primary a, .backgroundTertiary a  {
+  text-decoration:  var(--hotlinkDecorationOnTertiary );
+  color: var(--hotlinkOnTertiary );
+}
+/*  COLORED, PRIMARY, TERTIARY_BG */
 .colored, .backgroundTertiary {
   background: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
