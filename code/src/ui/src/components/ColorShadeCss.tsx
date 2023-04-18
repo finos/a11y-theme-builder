@@ -34,10 +34,17 @@ function parseColor(color:string): Array<number> {
         const parts = color.split("(")[1].split(")")[0].split(",");
         console.log("parts=",parts);
         let mult = 1;
+        let add = 0;
         if (parts[3]) {
-            //mult = parseFloat(parts[3]);
+            const opacity = parseFloat(parts[3]);
+            mult = 1-opacity;
+            add = 255 * opacity;
         }
-        r = [parseInt(parts[0])*mult, parseInt(parts[1])*mult, parseInt(parts[2])*mult]
+        r = [
+            Math.floor(parseInt(parts[0])*mult+add), 
+            Math.floor(parseInt(parts[1])*mult+add), 
+            Math.floor(parseInt(parts[2])*mult+add)
+        ]
         console.log("r=",r);
     }
     return r;
