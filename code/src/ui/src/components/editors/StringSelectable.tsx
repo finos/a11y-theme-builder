@@ -25,7 +25,7 @@ export const StringSelectable: React.FC<StringProps> = ({ property, defaultValue
         return (
             <div>
                 <InputLabel id="stringSelectLabel">{label}</InputLabel>
-                <Select id="stringSelect" labelId="stringSelectLabel" value={title} onChange={handleChange} autoWidth>
+                <Select id="stringSelect" labelId="stringSelectLabel" value={title} onChange={handleChange}>
                     {renderSelectableItems(property)}
                 </Select>
             </div>
