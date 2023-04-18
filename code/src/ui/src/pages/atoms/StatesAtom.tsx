@@ -13,6 +13,7 @@ import { HeadingSection } from '../content/HeadingSection';
 import { LightModeSection } from '../content/LightModeSection';
 import { DarkModeSection } from '../content/DarkModeSection';
 import { ColorProperty } from '../../components/editors/ColorProperty';
+import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 interface Props {
     atom: StateSettings;
@@ -23,31 +24,26 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
     const [_blockPickerColor, _setBlockPickerColor] = useState<string>("#ffffff");
     const [_selectedState, _setSelectedState] = useState<string>("");
 
-    const renderExample = (darkMode?:boolean) => {
-        let info = atom.info.lmShade.hex;
-        let success = atom.warning.lmShade.hex;
-        let warning = atom.warning.lmShade.hex;
-        let danger = atom.danger.lmShade.hex;
-        if (darkMode) {
-            info = atom.info.dmShade.hex;
-            success = atom.warning.dmShade.hex;
-            warning = atom.warning.dmShade.hex;
-            danger = atom.danger.dmShade.hex;
-        }
+    const renderExample = (lm?:boolean) => {
+        const mode = lm ? "" : "dm-";
+        let info = getCssValue(`--${mode}info`);
+        let success = getCssValue(`--${mode}success`);
+        let warning = getCssValue(`--${mode}warning`);
+        let danger = getCssValue(`--${mode}danger`);
         return (
-        <div style={{paddingRight:"20px"}}>
-            <InputLabel className="label-1">Information</InputLabel>
-            <TextField className="info" value={info}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Success</InputLabel>
-            <TextField className="success" value={success}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Warning</InputLabel>
-            <TextField className="warning" value={warning}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Danger</InputLabel>
-            <TextField className="danger" value={danger}/>
-        </div>
+            <div style={{paddingRight:"20px"}}>
+                <InputLabel className="label-1">Information</InputLabel>
+                <TextField className="info" value={info}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Success</InputLabel>
+                <TextField className="success" value={success}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Warning</InputLabel>
+                <TextField className="warning" value={warning}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Danger</InputLabel>
+                <TextField className="danger" value={danger}/>
+            </div>
         )
     }
 
@@ -61,10 +57,10 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
                 <div className="top40"/>
                 <div style={{display:"flex", gap:"40px"}}>
                 <LightModeSection>
-                    {renderExample()}
+                    {renderExample(true)}
                 </LightModeSection>
                 <DarkModeSection style={{paddingRight:"20px"}}>
-                    {renderExample(true)}
+                    {renderExample(false)}
                 </DarkModeSection>
                 </div>
             </ExampleSection>
