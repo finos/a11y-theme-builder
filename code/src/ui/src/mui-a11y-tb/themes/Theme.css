@@ -2982,11 +2982,8 @@ button.MuiPaginationItem-root:hover {
 }
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .primary, .backgroundTertiary {
-
   background: var(--primary) !important;
-
   color: var(--on-primary) !important;
-
 }
 
 .primary  button , .backgroundTertiary button {
