@@ -312,3 +312,6 @@
     gap: var(--spacing-2);
     margin: var(--spacing-3) 0;
 }
+.darkmode .black  .MuiList-root {
+  background: transparent
+}

@@ -180,7 +180,7 @@ nav:
     - Managing light and dark modes: developers/managing-modes.md
   - Guides:
     - guides/index.md
-    - Generate a theme: guides/create-a-theme.md
+    - Create a design system: guides/create-a-design-system.md
     - Replace Sample Preview: guides/replace-sample-app.md
     - Testing a Theme with Fable: guides/test-theme-with-fable.md
     - Create React Components: guides/create-react-component.md

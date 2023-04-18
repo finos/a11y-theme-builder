@@ -19,19 +19,13 @@ export const DividerComponent: React.FC<Props> = () => {
         <div>
             <HeadingSection title="Desktop" heading="Divider" />
             <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <List className={colorMode}>
-                        <ListItemButton>
-                            <ListItemText primary="Item One" />
-                        </ListItemButton>
-                        <Divider />
-                        <ListItemButton>
-                            <ListItemText primary="Item Two" />
-                        </ListItemButton>
-                        <Divider />
-                        <ListItemButton>
-                            <ListItemText primary="Item Three" />
-                        </ListItemButton>
+            <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                    <List style={{ background: 'transparent' }}>
+                        <br /><br />
+                        <Divider className={colorMode} />
+                        <br /><br />
+                        <Divider className={colorMode} />
+                        <br /><br />
                     </List>
                 </ColorModeSelector>
             </ExampleSection>
