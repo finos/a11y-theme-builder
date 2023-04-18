@@ -310,15 +310,15 @@ section {
 }
 
 /* THEME */
-.primary {
+.theme-primary {
   background: var(--primary);
   color: var(--on-primary);
 }
-.secondaty {
+.theme-secondaty {
   background: var(--secondary);
   color: var(--on-secondary);
 }
-.tertiary {
+.theme-tertiary {
   background: var(--tertiary);
   color: var(--on-tertiary);
 }
@@ -353,15 +353,15 @@ section {
 }
 
 /* darkmode theme */
-.darkmode .primary {
+.darkmode .theme-primary {
   background: var(--dm-primary);
   color: var(--dm-on-primary);
 }
-.darkmode .secondaty {
+.darkmode .theme-secondaty {
   background: var(--dm-secondary);
   color: var(--dm-on-secondary);
 }
-.darkmode .tertiary {
+.darkmode .theme-tertiary {
   background: var(--dm-tertiary);
   color: var(--dm-on-tertiary);
 }
