@@ -66,8 +66,9 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
                             />
                         </div>
                         <div className="modal-footer">
-                            <Button onClick={handleCancel} className="MuiButton-outlined">Cancel</Button>
                             <Button onClick={handleSubmit}>Next</Button>
+                            <Button onClick={handleCancel} className="MuiButton-outlined">Cancel</Button>
+
                         </div>
                     </form>
                 </div>
