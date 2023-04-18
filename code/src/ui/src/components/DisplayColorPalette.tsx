@@ -5,7 +5,7 @@
 import React, { ChangeEvent, useState } from "react";
 import { InputLabel, Switch } from "@mui/material";
 import { Color, ColorPalette } from 'a11y-theme-builder-sdk';
-import { ColorShade } from './ColorShade';
+import { ColorShadeCss } from './ColorShadeCss';
 import { LightModeSection } from "../pages/content/LightModeSection";
 import { DarkModeSection } from "../pages/content/DarkModeSection";
 
@@ -42,7 +42,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="colorRow">
                                     {color.light.shades.map((shade, i) => {
                                         return (
-                                            <ColorShade className="color-block" key={"ColorShade" + i} shade={shade} showDetails={_showDetails} showId />
+                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId/>
                                         );
                                     })}
                                 </div>
@@ -59,7 +59,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="colorRow">
                                     {color.dark.shades.map((shade, i) => {
                                         return (
-                                            <ColorShade className="color-block" key={"ColorShade" + i} shade={shade} showDetails={_showDetails} showId />
+                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={false} showDetails={_showDetails} showId/>
                                         );
                                     })}
                                 </div>

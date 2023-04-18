@@ -40,7 +40,7 @@ export const NumberScaledSelectable: React.FC<PixelProps> = ({ property, default
         <div>
             <InputLabel id="pixelSelectLabel">{children || property.name}</InputLabel>
             {description && <div style={{fontWeight:"normal"}}>{description}</div>}
-            <Select id="pixelSelect" labelId="pixelSelectLabel" value={value} onChange={handleChange} autoWidth>
+            <Select id="pixelSelect" labelId="pixelSelectLabel" value={value} onChange={handleChange}>
                 {r}
             </Select>
         </div>

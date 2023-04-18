@@ -14,8 +14,9 @@
 
 .tb-logo {
     height: 48px;
-    width: 128px;
+    width: 48px;
     cursor: pointer;
+    padding: 0 var(--spacing-2);
 }
 
 .welcome-left-nav {
@@ -43,6 +44,26 @@
     vertical-align: top;
     font-family: var(--primaryFont);
     border: 0px solid red; /* test */
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin-bottom: 80px
+}
+.videoWrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
 }
 
 /*

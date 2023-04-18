@@ -77,7 +77,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
             const colors = _colors;
             colors.push(newColor);
             _setColors(colors);
-            // reset the color input field 
+            // reset the color input field
             resetUI();
         } catch (error: any) {
             _setAddColorErrorMessage(`${error.message}`);
@@ -135,7 +135,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                             value={_colorName}
                         />
                     </div>
-                    <div className="input-col">
+                    <div className="input-col hexValue">
                         <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
                         <TextField
                             id='hexValue'
@@ -153,7 +153,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                         <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
                     </div>
                     <div className="input-col">
-                        <Button className="top24" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
+                        <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
                         {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
                     </div>
                 </div>

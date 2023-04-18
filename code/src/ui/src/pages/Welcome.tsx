@@ -26,57 +26,42 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                 Unified Design System that supports light and dark mode, desktop and mobile applications.
             </p>
             <p>
-                In addition, for each system we will provide a dylexic theme,
-                a non-animated theme (for folks with motion sensitivities)
-                and a color blind theme.  &nbsp;
-                <a onClick={() => setInclusiveIsOpen(true)} >Learn more</a>
-                &nbsp; about our inclusive themes.
-            </p>
-            <ModalInclusive isOpen={inclusiveIsOpen} onClose={() => setInclusiveIsOpen(false)} />
-            <p>
-                A Unified Design System is made up of a core Figma Design Library
-                and paired with a complementing and consistent core CSS and core React Component Library.
-            </p>
-            <p>
-                The Theme Builder give you the power to customize the Design System and the foundational JSON.
-            </p>
-            <p>
-                Using GitHub the JSON that feeds these core systems keeps everything synchronized.
-            </p>
-            <p>
-                More information on the Theme Builder and its usage 
+                More information on the Theme Builder and its usage
                 can be found in the &nbsp;
-                <a href="https://discoverfinancial.github.io/a11y-theme-builder/" 
+                <a href="https://discoverfinancial.github.io/a11y-theme-builder/"
                     target="_blank" rel="noreferrer noopener">
                     Docs
                 </a>.
             </p>
 
-            <h5>Get started with 3 simple steps</h5>
+            {/* <h5>Get started with a few simple steps</h5>
             <div style={{ background: "red", color: "yellow" }}>TODO: Verify and document these steps</div>
-            <h6 className='top40'>Step 1. Duplicate</h6>
+            <h6 className='top40'>Step 1. Build your theme</h6>
             <ul>
-                <li>Duplicated our Core Figma Library</li>
-                <li>Fork our Component Library</li>
+              <li>Build your theme and REMEMBER to click SAVE!</li>
             </ul>
-            <h6>Step 2. Configure</h6>
+            <h6>Step 2. Sign up / Sign in to Figma</h6>
+              <ul>
+                <li><a href="http://www.figma.com" target="_blank">Go to Figma</a></li>
+              </ul>
+            <h6>Step 3. Install Tokens Studio Pro</h6>
             <ul>
-                <li>Create a Storybook and point to the GitHub repot.</li>
-                <li>Install the Figma Tokens Figma Plug-In</li>
-                <li>Configure Figma Tokens to point to the cloned repo.</li>
+              <li><a href="https://tokens.studio/" target="_blank">Go to Tokens Studio</a></li>
             </ul>
-            <h6>Step 3. Customize</h6>
+            <h6>Step 4. Duplicate our Figma Theme Builder File</h6>
             <ul>
-                <li>Use the Theme Builder to customize your Design System.</li>
-                <li>Copy the code from the Theme Builder and paste it into existing, 'Brand,' Token Set.</li>
-                <li>Copy the dark mode JSON into the existing, 'Dark mode' Token Set.</li>
-                <li>Apply the themes and observe the magic.</li>
-                <li>Push the updates to GitHub.</li>
-                <li>Go to Storybook and accept the updates and observe the transformation of your Digital component library.</li>
+              <li><a href="https://www.figma.com/community/file/1228341192167108876" target="_blank">Theme Builder - Figma Component Library</a></li>
             </ul>
+            <h6>Step 5. Apply your theme to the Figma Theme Builder File</h6>
+            <div className="videoWrapper">
+              <video width="320" height="240" controls>
+                <source src="/ApplyTheme.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div> */}
             <div className="button-area">
-                <Button onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
                 <Button onClick={(event) => changeTab(event, "getStarted")}>Explore Your Design Systems</Button>
+                <Button  variant="outlined"  onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
             </div>
         </div>
     );

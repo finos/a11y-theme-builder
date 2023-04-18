@@ -1,3 +1,5 @@
+<<<<<<< Updated upstream
+=======
 .color-block {
     display: inline-block;
     font-size: 11px;
@@ -6,7 +8,6 @@
     margin: 0px 5px 24px 5px;
     vertical-align: top;
 }
-
 .Hex {
     width: 44px;
     height: 44px;
@@ -17,8 +18,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    background: rgba(0,0,0,0);
+    margin: 8px auto;
+}
+.color-block .Hex {
+    margin: 8px auto;
 }
 
 
@@ -34,6 +37,7 @@
     text-align: center!important;
 }
 
+>>>>>>> Stashed changes
 .swatch-details.active {
     display: block;
 }

@@ -5,9 +5,7 @@
 import { createTheme,  darken, lighten } from "@mui/material/styles";
 import { formLabelClasses } from "@mui/material";
 import './Theme.css'
-//import calcAstParser from "postcss-calc-ast-parser";
-//import { transform } from "css-calc-transform";
-
+import './TB.css'
 
 export const getCssValue = (prop) => {
     //console.log(`ENTER - getCssValue(${prop})`);
@@ -22,22 +20,10 @@ export const getCssValue = (prop) => {
         v = v.trim();
         if (v.indexOf("var(") > -1) {
             v = v.replace(/var\(([a-zA-Z0-9\-]+)\)/g, function(m, p1) {
-                //console.log(" -- regex.replace =",m,"p1 =",p1)
                 const val = getCssValue(p1)
-                //console.log(" -- regex.replace returning =",val);
                 return val;
             });
-            //console.log(" -- found var in",prop," so replace with css value =",v);
         }
-        // if (v.indexOf("calc(") > -1) {
-        //     console.log(" -- calc found for v=",v)
-        //     const t = transform( {
-        //         prop: "width",
-        //         value: v,
-        //     })
-        //     v = t + "px";
-        //     console.log(" -- calc done for v=",v)
-        // }
     }
     console.log(`getCssValue(${prop}) = ${v}`)
     return v;
@@ -52,7 +38,6 @@ export const setCssValues = (props) => {
 
 export const setCssValue = (prop, value) => {
     console.log(`setCssValue(${prop}, ${value})`);
-    //if (prop == "--on-dropdown-focus-bg") { console.log(">>>@bc --on-dropdown-focus-bg"); return; }
     if (value == "TODO") return;
     if (!rootStyleSheet) {
         rootStyleSheet = getStyleSheet(":root");
@@ -94,19 +79,6 @@ const getStyleValue = (selector, prop) => {
 export const themes = {};
 
 try {
-    // const c = calcAstParser.parse("calc(var(--radius-1) * 2)");
-    // console.log(" radius c=",c);
-    // console.log(" radius stringify=",calcAstParser.stringify(c.nodes[0]));
-
-    // const r1 = getCssValue("--radius-1")
-    // console.log(" radius r1=",r1);
-    // const t = transform( {
-    //     prop: "width",
-    //     value: "calc("+r1+" * 2)",
-    // })
-    // console.log(" radius t=",t);
-
-
     const lightTheme = createTheme({
         // Can't change these, since css doesn't seem to be defined at this point
          palette: {
@@ -125,7 +97,6 @@ try {
             },
             //divider: "",
             background: {
-                //paper: "",
                 default: getCssValue("--background"),
             },
             error: {
@@ -395,7 +366,7 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-1)",
+                                    borderRadius: "var(--spacing-Half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
@@ -434,11 +405,18 @@ try {
                 },
                 styleOverrides: {
                     root: {
-                        borderRadius: "calc(var(--radius-1) * var(--button-radius))",
-                        boxShadow: "var(--button-shadow)",
-                        letterSpacing: "var(--buttonCharcterSpacing)",
+                        borderRadius: "var(--spacing-half)",
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
+                        background: "var(--surface)",
+                        border: "1px solid var(--border)",
+                        position: "relative",
+                        "& .MuiOutlinedInput-input": {
+                          padding: "0 var(--spacing-6) 0 var(--spacing-2) !important",
+
+                        },
+                        minHeight: "var(--min-target)",
+                        lineHeight: "var(--min-target)",
                     },
                 }
             },
@@ -477,6 +455,8 @@ try {
                         padding: "0",
                         position: "relative",
                         overflow: "visible !important",
+                        display: "flex",
+                        alignItems: "center",
                     },
                     "& .MuiSwitch-switchBase": {
                         backgroundColor: "var(--button)",
@@ -494,7 +474,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         "& .MuiAlert-icon":{
-                            marginRight: "var(--toast-padding)",
+                            marginRight: "calc(var(--toast-padding) * var(--spacing-1))",
                             alignSelf: "center",
                             padding: "0",
                         },
@@ -504,9 +484,42 @@ try {
                     },
                 },
             },
+            MuiFormHelperText  : {
+              styleOverrides: {
+                  root: {
+                    fontSize: "var(-smallFontSize)",
+                    fontWeight: "var(--smallFontWeight)",
+                    fontFamily: "var(--smallFontFamily)",
+                    letterSpacing: "var(--smallLetterSpacing)",
+                    lineHeight: "var(--smallLineHeight)",
+                    padding: "var(--spacing-1) 0",
+                    margin: "0",
+                  }
 
+              }
+            },
             //.css-mc683d-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
-
+            MuiOutlinedInput: {
+              styleOverrides: {
+                  root: {
+                      //fontFamily: "Ariel", //"var(--fontFamily)",
+                      color: "var(--on-input)",
+                      background: "var(--input)",
+                      borderRadius: "var(--spacing-half)",
+                      padding: "var(spacing-1)",
+                      "& .MuiInputBase-root": {
+                          borderRadius: "var(--spacing-half)",
+                      },
+                      "& .MuiInputBase-root.Mui-disabled": {
+                          backgroundColor: "var(--input-disabled)",
+                          color: "var(--on-input-disabled)",
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                          border: 'none',
+                      },
+                  }
+              }
+            },
             MuiTextField: {
                 styleOverrides: {
                     root: {
@@ -539,7 +552,7 @@ try {
                         lineHeight: "var(--standard-LineHeight)",
                         letterSpacing: "1.25%",
                         textTransform: "none",
-                        marginBottom: "10px",
+                        marginBottom: "0px",
 
                     }
                 }
@@ -671,6 +684,13 @@ try {
                     }
                 }
             },
+            MuiFormControl: {
+                styleOverrides: {
+                    root: {
+                      margin: "var(--spacing-3) 0 0 important" ,
+                    },
+                },
+            },
             MuiFormControlLabel: {
                 styleOverrides: {
                     root: {
@@ -754,6 +774,9 @@ try {
                           color: "var(--on-background-secondary)",
                           fontWeight: "500",
                         },
+                        "& .MuiListItemButton-root:active": {
+                          background: '#000000'
+                        }
                     }
                 }
             },
@@ -776,7 +799,7 @@ try {
                         background: "var(--surface)",
                         color: "var(--on-surface)",
                         border: "1px solid var(--border)",
-                        padding: "var(--spacing-1) calc(2 * var(--spacing-1)) !important",
+                        padding: "var(--spacing-1) calc(var(--toast-padding) * var(--spacing-1)) !important",
                         paddingLeft: "calc(calc(2 * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         boxShadow: "var(--toast-boxshadow)",
@@ -873,6 +896,8 @@ try {
                        boxShadow: "var(--sliderhandleElevation)",
                        backgroundColor: "var(--button)",
                        position: "absolute",
+                       top: "50%",
+                       transform: "translate(0, -50%)",
                        "&::after": {
                          position: "absolute",
                          height: "var(--min-target)",
@@ -997,6 +1022,18 @@ try {
                       backgroundColor: "var(--button)",
                       boxShadow: "var(----avatar-shadow)",
                       border: "solid calc(var(--border-1) * var(--avatar-border-lg)) var(--button) !important",
+                      "&.xxs": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.xs": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.sm": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
+                      "&.md": {
+                        border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",
+                      },
                       "& svg path": {
                           fill: "var(--on-button)",
                       },
@@ -1006,6 +1043,18 @@ try {
                         "& svg path": {
                             fill: "var(--white)",
                         },
+                        "&.xxs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.xs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.sm": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        },
+                        "&.md": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--black) !important",
+                        }
                       },
                       "&.white" : {
                         backgroundColor: "var(--white)",
@@ -1013,139 +1062,26 @@ try {
                         "& svg path": {
                             fill: "var(--black)",
                         },
+                        "&.xxs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.xs": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.sm": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        },
+                        "&.md": {
+                          border: "solid calc(var(--border-1) * var(--avatar-border)) var(--white) !important",
+                        }
                       },
                     },
                 },
             },
-
-            // MuiListItemButton: {
-            //     styleOverrides: {
-            //         root: {
-            //             fontSize: "3em",
-            //         }
-            //     }
-            // }
         },
     });
 
     themes["light"] = lightTheme;
-
-    const darkTheme = createTheme({
-        palette: {
-            primary: {
-                main: getCssValue("--dm-primary"),
-            },
-            // secondary: {
-            //     main: "calc(var(--color)))",
-            // },
-            text: {
-                fontFamily: getCssValue("--primaryFont"),
-                color: "var(--on-dm-background)",
-                // primary: getCssValue("--primary"),
-                // secondary: getCssValue("--secondary"),
-                // disabled: getCssValue("--textDark"),
-            },
-            //divider: "",
-            background: {
-                //paper: "",
-                default: getCssValue("--dm-background"),
-            },
-            error: {
-                main: getCssValue("--dm-danger"),
-            },
-            warning: {
-                main: getCssValue("--dm-warning"),
-            },
-            success: {
-                main: getCssValue("--dm-success"),
-            },
-            info: {
-                main: getCssValue("--dm-info"),
-            },
-        },
-        typography: {
-            allVariants: {
-                color: "#ff0000"
-            },
-            // h1: {
-            //     fontSize: "--h1",
-            //     //color: "#ff0000",
-            // },
-        },
-        components: {
-            // Style all react components using css root vars
-            MuiButton: {
-                styleOverrides: {
-                    root: {
-                        marginTop: "var(--spacing-half)",
-                        color: "var(--textDark)",
-                        background: "var(--dm-primary)",
-                        ":hover": {
-                            background: "var(--dm-on-primary)",
-                        },
-
-                    }
-                }
-            },
-            MuiInputLabel: {
-                styleOverrides: {
-                    root: {
-                        fontFamily: "var(--primaryFont)",
-                        fontWeight: "var(--fontWeight-4)",
-                        fontSize: "calc(var(--baseFont) * .875)",
-                        lineHeight: "var(--standard-LineHeight)",
-                        letterSpacing: "1.25%",
-                        textTransform: "none",
-                        marginBottom: "10px",
-                        color: "#ff0000",
-                    }
-                }
-            },
-            MuiFormLabel: {
-                styleOverrides: {
-                    root: {
-                        fontFamily: "var(--primaryFont)",
-                        fontWeight: "var(--fontWeight-4)",
-                        fontSize: "calc(var(--baseFont) * .875)",
-                        lineHeight: "var(--standard-LineHeight)",
-                        letterSpacing: "1.25%",
-                        textTransform: "none",
-                        marginBottom: "10px",
-                        color: "#ff0000",
-                        //color: "var(--on-dm-background)",
-                        [`&.${formLabelClasses.focused}`]: {
-                            color: "var(--on-dm-background)",
-                        },
-                    },
-                },
-            },
-            "& .MuiTab-wrapper": {
-                flexDirection: "row",
-                justifyContent: "flex-start"
-            },
-            MuiTab: {
-                styleOverrides: {
-                    root: {
-                        //color: "var(--on-dm-background)",
-                        color: "#ff0000",
-                        "&.Mui-selected": {
-                            backgroundColor: "var(--dm-secondary)", //theme.palette.secondary.main,
-                            color: "var(--on-dm-background)", //theme.palette.secondary.contrastText,
-                        },
-                    }
-                }
-            },
-            // MuiListItemButton: {
-            //     styleOverrides: {
-            //         root: {
-            //             fontSize: "3em",
-            //         }
-            //     }
-            // }
-        }
-    });
-
-    themes["dark"] = darkTheme;
 
 } catch (e) {
     console.error("Error in Theme.jsx: ", e);

@@ -104,7 +104,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     const [molecules, setMolecules] = useState<{[key: string]:moleculeItem}>(moleculesList);
     useEffect(() => {
         if (designSystem) {
-            designSystem.setListener("MoleculeContent-isEditable", 
+            designSystem.setListener("MoleculeContent-isEditable",
                 function(event: Event) {
                     if (event.type == EventType.NodeDisabled) {
                         enableDisableItems();
@@ -117,7 +117,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
             enableDisableItems();
         }
     }, [])
-    
+
     useEffect(() => {
         //console.log("Molecules updated =",molecules)
     }, [molecules])
@@ -131,12 +131,12 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     interface LeftNavMoleculeProps { item: any, indent?:number, disabled?:boolean };
     const LeftNavMolecule : React.FC<LeftNavMoleculeProps> = ({item, indent, disabled}) => {
         return (
-            <LeftNavItem 
+            <LeftNavItem
                 selected={showMolecule}
                 value={item.value}
-                text={item.label} 
-                indent={indent} 
-                disabled={disabled !== undefined ? disabled : item.disabled} 
+                text={item.label}
+                indent={indent}
+                disabled={disabled !== undefined ? disabled : item.disabled}
                 onClick={()=> {setShowMolecule(item.value)}}
             />
         )
@@ -159,10 +159,10 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     //             disabled={props.disabled}
     //             onClick={props.onClick}
     //         >
-    //             <ListItemText 
-    //                 primary={props.text} 
+    //             <ListItemText
+    //                 primary={props.text}
     //                 primaryTypographyProps={{
-    //                     textTransform: "uppercase", 
+    //                     textTransform: "uppercase",
     //                     fontSize: fontSize,
     //                     fontWeight: "500",
     //                 }}
@@ -172,12 +172,12 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     //         </ListItemButton>
     //     )
     // }
-    
+
     return (
         <>
             <div className="design-system-editor-left-nav">
             <div className="design-system-editor-left-nav-scrollable">
-                <List 
+                <List
                     sx={{
                         '& ul': {padding:0},
                         paddingTop: "0px",
@@ -185,7 +185,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
                     <LeftNavItem text={"Molecules"} value="molecules" indent={1} selected={showMolecule} onClick={()=> {setShowMolecule("molecules")}}/>
-                    
+
                     <LeftNavHeader>Molecule Settings</LeftNavHeader>
                     <LeftNavItem text={"General Desktop"} indent={1} onClick={()=>setDisplayGeneral(!displayGeneral)}>
                         {displayGeneral ? <ExpandLess /> : <ExpandMore />}
@@ -224,7 +224,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">
-                {showMolecule === "molecules" && 
+                {showMolecule === "molecules" &&
                     <MoleculeIntro />
                 }
                 {showMolecule === molecules.avatars.value && (
@@ -284,7 +284,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
                 )}
                 {showMolecule === molecules.toasts.value && (
                     <ErrorHandler>
-                        <ToastsMolecule toastsMolecule={designSystem.molecules.toasts} designSystem={designSystem}/>
+                        <ToastsMolecule toastsMolecule={designSystem.molecules.toasts}/>
                     </ErrorHandler>
                 )}
             </div>
@@ -292,4 +292,3 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         </>
     );
 }
-

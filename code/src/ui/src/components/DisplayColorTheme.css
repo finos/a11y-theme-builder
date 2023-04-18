@@ -1,7 +1,3 @@
-.theme-page .Hex {
-    margin: 0px;
-}
-
 .theme-page .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -17,6 +13,6 @@
     margin-bottom: 0.5rem;
 }
 
-.darkmode .Hex {
-    border: 1px solid var(--dm-border);
+.default-gradient {
+    padding: var(--spacing-1);
 }

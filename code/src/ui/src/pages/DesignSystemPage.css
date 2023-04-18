@@ -58,7 +58,7 @@
 }
 
 .darkmode.design-system-editor-right-content {
-    background-color: var(--dm-background);
+    background-color: var(--dm-background) !;
     color: var(--dm-on-background);
     min-height: 80vh;
 }
@@ -82,6 +82,11 @@
     gap: 16px;
     align-items: flex-start;
 }
+
+.top32 {
+    margin-top: 32px !important;
+}
+
 
 .top24 {
     margin-top: 24px !important;
@@ -132,7 +137,8 @@
 .design-system-editor-right-content .form-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-2);
+    margin-right: var(--spacing-2);
 }
 
 .inputRow {
@@ -143,6 +149,16 @@
 
 .inputRow .Hex {
     margin: 8px 0
+}
+
+
+.modal-content input{
+  margin: 8px 0;
+  height: 44px;
+  padding: 0 8px;
+  border-radius: var(--spacing-half);
+  border: 1px solid var(--border);
+  opacity: 1;
 }
 
 /* darkmode Mui Textfield */
@@ -216,10 +232,90 @@
     width: 98px;
 }
 
+.design-system-editor-right-content .color-block {
+    display: inline-block;
+    font-size: 11px;
+    width: 96px;
+    /* margin-bottom: 24px; changing to use side margins to provide some separation */
+    margin: 0px 5px 24px 5px;
+    vertical-align: top;
+}
+
+.design-system-editor-right-content .Hex {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius:8px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin: 8px 0;
+}
+.design-system-editor-right-content .Hex.button {
+    background: var(--button);
+    color: var(--on-button);
+}
+.design-system-editor-right-content .Hex.icon {
+    background: var(--icon);
+    color: var(--on-icon);
+}
+.design-system-editor-right-content .Hex.accent {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+.design-system-editor-right-content .darkmode .Hex {
+    border: 1px solid var(--dm-border);
+}
+.design-system-editor-right-content .darkmode .Hex.button {
+    background: var(--dm-button);
+    color: var(--dm-on-button);
+}
+.design-system-editor-right-content .darkmode .Hex.icon {
+    background: var(--dm-icon);
+    color: var(--dm-on-icon);
+}
+.design-system-editor-right-content .darkmode .Hex.accent {
+    background: var(--dm-accent);
+    color: var(--dm-on-accent);
+}
+
+.design-system-editor-right-content .caption {
+    font-family: var(--primaryFont);
+    font-weight: var(--fontWeight-3);
+    font-size: calc(var(--baseFont) * .75);
+    line-height: var(--standard-LineHeight);
+    letter-spacing: 0.5%;
+}
+
+.design-system-editor-right-content .text-center {
+    text-align: center!important;
+}
+
+.darkmode.design-system-editor-right-content  {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background) !important;
+}
+
+.darkmode.design-system-editor-right-content .color-swatch {
+    background: var(--dm-background) !important;
+    color: var(--dm-on-background) !important;
+    border: 1px solid var(--dm-border);
+}
+
+.darkmode.design-system-editor-right-content .color-swatch.white{
+    background: var(--dm-white) !important;
+    color: var(--dm-on-white) !important;
+    border: 1px solid var(--dm-border);
+}
+
 .design-system-editor-right-content .color-box {
     border: 1px solid var(--border);
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
+    cursor: pointer;
 }
 .design-system-editor-right-content .color-box.hotlink {
     background: var(--hotlink);
@@ -277,4 +373,11 @@
     flex-direction: column;
     gap: var(--spacing-2);
     margin: var(--spacing-3) 0;
+}
+.darkmode .black  .MuiList-root {
+  background: transparent
+}
+
+.form-columns label {
+  margin-bottom: var(--spacing-1)
 }

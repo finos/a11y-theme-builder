@@ -43,7 +43,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     const [spreadRadius,           setSpreadRadius          ] = useState<number>(spreadRadiusProperty.getValue()           || 0);
     const [lightGlowOpacity,       setLightGlowOpacity      ] = useState<number>(lightGlowOpacityProperty.getValue()       || 0);
     const [darkShadowOpacity,      setDarkShadowOpacity     ] = useState<number>(darkShadowOpacityProperty.getValue()      || 0);
-    const [percentChange,          sertPercentChange        ] = useState<number>(percentChangeProperty.getValue()          || 0);
+    const [percentChange,          setPercentChange         ] = useState<number>(percentChangeProperty.getValue()          || 0);
 
     async function handleHorizontalShadowLengthChange(event: any): Promise<void> {
         const value = Number(event.target.value);
@@ -77,7 +77,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     }
     async function handlePercentChangeChange(event: any): Promise<void> {
         const value = Number(event.target.value);
-        sertPercentChange(value);
+        setPercentChange(value);
         percentChangeProperty.setValue(value)
     }
 
@@ -95,7 +95,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     const [inverseSpreadRadius,           setInverseSpreadRadius          ] = useState<number>(inverseSpreadRadiusProperty.getValue()           || 0);
     const [inverseLightGlowOpacity,       setInverseLightGlowOpacity      ] = useState<number>(inverseLightGlowOpacityProperty.getValue()       || 0);
     const [inverseDarkShadowOpacity,      setInverseDarkShadowOpacity     ] = useState<number>(inverseDarkShadowOpacityProperty.getValue()      || 0);
-    const [inversePercentChange,          sertInversePercentChange        ] = useState<number>(inversePercentChangeProperty.getValue()          || 0);
+    const [inversePercentChange,          setInversePercentChange        ] = useState<number>(inversePercentChangeProperty.getValue()          || 0);
 
     async function handleInverseHorizontalShadowLengthChange(event: any): Promise<void> {
         const value = Number(event.target.value);
@@ -129,7 +129,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     }
     async function handleInversePercentChangeChange(event: any): Promise<void> {
         const value = Number(event.target.value);
-        sertInversePercentChange(value);
+        setInversePercentChange(value);
         inversePercentChangeProperty.setValue(value)
     }
 
@@ -315,7 +315,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                         </div>
                         <div className="form-row">
                             <label className="label-1">
-                                Light Glow Opacity
+                                Spread Radius
                             </label>
                             <Slider
                                 aria-label="InverseLightGlowOpacity"

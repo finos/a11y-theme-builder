@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, {useState, useEffect } from 'react';
-import { Checkbox, FormControl, InputLabel, 
+import { Checkbox, FormControl, InputLabel,
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { DesignSystem } from 'a11y-theme-builder-sdk';
 import './AccessibilityLayersButton.css';
@@ -49,9 +49,10 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
 
     return (
         <>
-            <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
+
             <div>
                 <FormControl sx={{ width: 400 }}>
+                    <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
                     <Select
                         labelId="a11y-layers-multiple-checkbox-label"
                         id="a11y-layers-multiple-checkbox"
@@ -70,7 +71,7 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
                         {layersProperty.map((prop:any) => (
                             <MenuItem key={prop.name} value={prop.name}>
                                 <Checkbox
-                                    checked={a11yLayers.indexOf(prop.name) > -1} 
+                                    checked={a11yLayers.indexOf(prop.name) > -1}
                                     disableRipple
                                     sx={{
                                         marginLeft: "-12px",
