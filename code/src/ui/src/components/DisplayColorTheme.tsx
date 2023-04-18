@@ -32,15 +32,15 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             <div className="form-columns top16">
                                 <div className="input-col">
                                     <div className="caption text-center">Primary</div>
-                                    <div className="Hex primary">Aa</div>
+                                    <div className="Hex theme-primary">Aa</div>
                                 </div>
                                 <div className="input-col">
                                     <div className="caption">Secondary</div>
-                                    <div className="Hex secondary">Aa</div>
+                                    <div className="Hex theme-secondary">Aa</div>
                                 </div>
                                 <div className="input-col">
                                     <div className="caption">Tertiary</div>
-                                    <div className="Hex tertiary">Aa</div>
+                                    <div className="Hex theme-tertiary">Aa</div>
                                 </div>
                             </div>
                             <div className="formRow">
@@ -83,13 +83,13 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             </div>
                             <div className="formRow">
                                 <div className="subtitle1">Gradient Header Text</div>
-                                <h2 className="default-gradient-title gradient-title">Sample Header</h2>
+                                <h2 className="gradient-title">Sample Header</h2>
                             </div>
                             <div className="formRow">
                                 <div className="form-columns top16">
                                     <div className="input-col">
                                         <div className="caption">Accent Color</div>
-                                        <div className="Hex accent">Aa</div>
+                                        <div className="Hex accent"></div>
                                     </div>
                                 </div>
                             </div>
@@ -99,21 +99,15 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             <div className="form-columns top16">
                                 <div className="input-col">
                                     <div className="caption text-center">Primary</div>
-                                    <div className="Hex primary">
-                                        <div className="on-color">Aa</div>
-                                    </div>
+                                    <div className="Hex theme-primary">Aa</div>
                                 </div>
                                 <div className="input-col">
                                     <div className="caption">Secondary</div>
-                                    <div className="Hex secondary">
-                                        <div className="on-color">Aa</div>
-                                    </div>
+                                    <div className="Hex theme-secondary">Aa</div>
                                 </div>
                                 <div className="input-col">
                                     <div className="caption">Tertiary</div>
-                                    <div className="Hex tertiary">
-                                        <div className="on-color">Aa</div>
-                                    </div>
+                                    <div className="Hex theme-tertiary">Aa</div>
                                 </div>
                             </div>
                             <div className="formRow">
@@ -162,7 +156,7 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                                 <div className="form-columns top16">
                                     <div className="input-col">
                                         <div className="caption">Accent Color</div>
-                                        <div className="Hex accent">Aa</div>
+                                        <div className="Hex accent"></div>
                                     </div>
                                 </div>
                             </div>

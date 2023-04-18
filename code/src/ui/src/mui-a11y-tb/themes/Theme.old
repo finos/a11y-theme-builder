@@ -287,8 +287,8 @@ h6 {
 .stat {
   font-family:  var(--statFontFamily);
   font-weight: var(--statFontWeight) !important;
-  font-size: var(--statFontSize) !important;
-  line-height: var(--statLineHeight) !important;
+  font-size: var(--statontSize) !important;
+  line-height: var(--statineHeight) !important;
   letter-spacing: var(--statLetterSpacing) !important;
   text-transform: var(--statTextTransform) !important;
   text-decoration:  var(--statTextDecoration) !important;
@@ -314,7 +314,7 @@ section {
   background: var(--primary);
   color: var(--on-primary);
 }
-.theme-secondary {
+.theme-secondaty {
   background: var(--secondary);
   color: var(--on-secondary);
 }
@@ -349,7 +349,6 @@ section {
 .gradient-title {
   background: var(--text-gradient);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -392,10 +391,8 @@ section {
 .darkmode .gradient-title {
   background: var(--dm-text-gradient);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* MOLECULES */
 
 /* avatars */
@@ -473,7 +470,7 @@ section {
 .darkmode .white.MuiAvatar-root.xs svg path,
 .darkmode .white.MuiAvatar-root.sm svg path,
 .darkmode .white.MuiAvatar-root.md svg path {
-  fill: var(--black)
+   fill: var(--black)
 }
 .avatar.lg {
     width: var(--spacing-10);
@@ -968,7 +965,7 @@ button.small-btn.icon:hover::after {
   left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
   right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
-/* COMPONENTS and COLOR VARIANTS */
+/* COMPOENTNS and COLOR VARIENTS */
 /* black buttons */
 button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
   background: var(--black) !important;
@@ -1084,35 +1081,6 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
-
-/* dropdowns */
-.MuiMenuItem-root {
-  background: var(--surface);
-  color: var(--on-surface)
-}
-.MuiMenuItem-root:hover {
-  background: var(--dropdown-hover-bg);
-  color: var(--on-dropdown-hover-bg)
-}
-.MuiMenuItem-root:focus {
-  background: var(--dropdown-focus-bg);
-  color: var(--on-dropdown-focus-bg)
-}
-
-/* darkmode dropdowns */
-.darkmode .MuiMenuItem-root {
-  background: var(--dm-surface);
-  color: var(--dm-on-surface)
-}
-.darkmode .MuiMenuItem-root:hover {
-  background: var(--dm-dropdown-hover-bg);
-  color: var(--dm-on-dropdown-hover-bg)
-}
-.darkmode .MuiMenuItem-root:focus {
-  background: var(--dm-dropdown-focus-bg);
-  color: var(--dm-on-dropdown-focus-bg)
-}
-
 /* black divider */
 .MuiList-root.black .MuiDivider-root, .MuiDivider-root.white {
   border-color: var(--white);
@@ -1595,7 +1563,7 @@ button.MuiPaginationItem-root:hover {
 .darkmode .MuiFormLabel-root {
   color: var(--dm-on-background)
 }
-/* secondary tabs */
+/* secodary tabs */
 .secondaryTab.MuiTab-root {
   font-size: var(--CTA-SmallFontSize);
   font-family: var(--CTA-SmallFontFamily);
@@ -1612,7 +1580,6 @@ button.MuiPaginationItem-root:hover {
   color: var(--dm-on-button)  !important;
   box-shadow: none !important;
 }
-
 .MuiTabs-root .MuiTab-root {
     box-shadow: none !important;
 }
@@ -1694,41 +1661,41 @@ button.MuiPaginationItem-root:hover {
 .darkmode .MuiTabs-root.white .MuiTabs-indicator {
   background: var(--black) !important;
 }
-/* accordion */
+/* accordian */
 .MuiAccordion-root {
   margin-bottom: var(--spacing-2);
 }
 .MuiAccordion-root::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--spacing-1) + 1.6px);
-  border: var(--focusBorder) solid var(--button);
-  background: transparent !important;
-  opacity: 0;
-  content: '';
-  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  z-index: -1;
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+ border-radius: calc(var(--spacing-1) + 1.6px);
+ border: var(--focusBorder) solid var(--button);
+ background: transparent !important;
+ opacity: 0;
+ content: '';
+ transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+ z-index: -1;
 }
 .MuiAccordion-root:hover::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px));
-  left: calc(0px - calc(var(--focusBorder) + 2px));
-  right: calc(0px - calc(var(--focusBorder) + 2px));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px));
-  opacity: .5;
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: .5;
 }
 .MuiAccordion-root:focus::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px));
-  left: calc(0px - calc(var(--focusBorder) + 2px));
-  right: calc(0px - calc(var(--focusBorder) + 2px));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px));
-  opacity: 1;
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: 1;
 }
-/* darkmode accordion */
+/* darkmode accordian */
 .darkmode .MuiAccordion-root {
   background: var(--dm-surface) !important;
   color: var(--dm-on-surface) !important;
@@ -1744,8 +1711,8 @@ button.MuiPaginationItem-root:hover {
 .list-content {
   flex-grow: 1;
 }
-
 /* MuiFormControl-root */
+
 .MuiFormControl-root {
   display: flex;
   gap: var(--spacing-1);
@@ -1828,7 +1795,7 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-dropdown-focus-bg) !important;
 }
 
-/* switchBase */
+/* switchBaseh */
 .MuiSwitch-root {
   position: relative;
 }
@@ -1867,20 +1834,20 @@ button.MuiPaginationItem-root:hover {
   z-index: -1;
 }
 .MuiSwitch-root:hover .MuiSwitch-switchBase .MuiSwitch-thumb::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px));
-  left: calc(0px - calc(var(--focusBorder) + 2px));
-  right: calc(0px - calc(var(--focusBorder) + 2px));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px));
-  opacity: .5;
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: .5;
 }
 .MuiSwitch-root:focus .MuiSwitch-switchBase .MuiSwitch-thumb::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px));
-  left: calc(0px - calc(var(--focusBorder) + 2px));
-  right: calc(0px - calc(var(--focusBorder) + 2px));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px));
-  opacity: 1;
+ position: absolute;
+ top: calc(0px - calc(var(--focusBorder) + 2px));
+ left: calc(0px - calc(var(--focusBorder) + 2px));
+ right: calc(0px - calc(var(--focusBorder) + 2px));
+ bottom: calc(0px - calc(var(--focusBorder) + 2px));
+ opacity: 1;
 }
 .MuiSwitch-root .MuiSwitch-track {
   position: absolute;
@@ -1928,30 +1895,29 @@ button.MuiPaginationItem-root:hover {
 }
 
 .MuiSlider-root .MuiSlider-thumb {
-
   /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
-  width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
-  width: var(--spacing-3);
-  width: var(--spacing-3);
-  border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
-  background-color: var(--button);
-  position: relative;
-}
-.MuiSlider-root .MuiSwitch-thumb::after {
-  position: absolute;
-  pointer-events: none;
-  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
-  border: var(--focusBorder) solid var(--button);
-  background: transparent !important;
-  opacity: 1;
-  content: '';
-  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  z-index: -1;
+   width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
+   width: var(--spacing-3);
+   width: var(--spacing-3);
+   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
+   background-color: var(--button);
+   position: relative;
+ }
+ .MuiSlider-root .MuiSwitch-thumb::after {
+   position: absolute;
+   pointer-events: none;
+   top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+   border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+   border: var(--focusBorder) solid var(--button);
+   background: transparent !important;
+   opacity: 1;
+   content: '';
+   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+   z-index: -1;
  }
 
  .darkmode .MuiSlider-root .MuiSwitch-thumb,  .darkmode .MuiSlider-root .MuiSlider-thumb{
@@ -1968,7 +1934,6 @@ button.MuiPaginationItem-root:hover {
  .darkmode .MuiSlider-root .MuiSlider-rail {
    background: var(--dm-on-background)
  }
-
 /* popovers */
 .MuiPopover-paper {
    border-radius: calc(var(--popoverRadius) * var(--radius-1)) !important;
@@ -1981,7 +1946,6 @@ button.MuiPaginationItem-root:hover {
 .darkmode .MuiPopover-paper  {
   background: var(--dm-background) !important;
   color: var(--black) !important;
-
 }
 .darkmode .MuiPopover-paper::before {
   background: var(--dm-white)  !important;
@@ -2099,10 +2063,10 @@ button.MuiPaginationItem-root:hover {
 
 /* dark mode states */
 .darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
-  color: var(--dm-danger);
+ color: var(--dm-danger);
 }
 .darkmode .MuiSvgIcon-root.MuiSvgIcon-colorError {
-  color: var(--dm-danger);
+ color: var(--dm-danger);
 }
 
 /* images */
@@ -2141,18 +2105,18 @@ button.MuiPaginationItem-root:hover {
 
 /* dark mode images */
 .inline-image::after {
-  position: absolute;
-  content: '';
-  top:0;
-  left: 0;
-  right:0;
-  bottom:0;
-  border-radius: var(--inline-image-image-radius);
-  background: rgba(0,0,0,.25);
-  z-index: 2;
-  pointer-events: none;
+ position: absolute;
+ content: '';
+ top:0;
+ left: 0;
+ right:0;
+ bottom:0;
+ border-radius: var(--inline-image-image-radius);
+ background: rgba(0,0,0,.25);
+ z-index: 2;
+ pointer-events: none;
 }
-.image-lg img::after, .image-sq img::after {
+.image-lg img::after, .image-sq img::after{
   position: absolute;
   content: '';
   top:0;
@@ -3020,33 +2984,6 @@ button.MuiPaginationItem-root:hover {
   border: var(--focusBorder) solid var(--buttonOnBlack);
 }
 /*  COLORED, PRIMARY, TERTIARY_BG */
-.primary, .backgroundTertiary {
-  background: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-
-.primary  button , .backgroundTertiary button {
-  background: var(--buttonOnTertiary) !important;
-  color: var(--onbuttonOnTertiary) !important;
-}
-
-.primary  button::after , .backgroundTertiary button::after {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary);
-}
-
-.primary button .inline-icon path, .backgroundTertiary button .inline-icon path {
-  fill: var(--onbuttonOnTertiary) !important;
-}
-
-.primary .inline-icon path, .backgroundTertiary .inline-icon path{
-  fill: var(--iconOnTertiary) !important;
-}
-
-.primary a, .backgroundTertiary a  {
-  text-decoration:  var(--hotlinkDecorationOnTertiary );
-  color: var(--hotlinkOnTertiary );
-}
-/*  COLORED, PRIMARY, TERTIARY_BG */
 .colored, .backgroundTertiary {
   background: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
@@ -3471,5 +3408,5 @@ button.MuiPaginationItem-root:hover {
   background-color: var(--dmbuttonOnBlack)
 }
 .darkmode .white .MuiAvatar-root:not(.white) svg path {
-    fill: var(--dmonbuttonOnBlack)
+    fill: var(--dmbonuttonOnBlack)
 }
