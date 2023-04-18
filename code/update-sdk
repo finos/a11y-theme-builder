@@ -1,6 +1,13 @@
+# Script that pulls the latest version of the SDK into your ThemeBuilder
+# To be used if there are any issues arise with pulling the latest SDK in your ThemeBuilder build
 CUR_DIR=`pwd`
 SDK=a11y-theme-builder-sdk
 cd ../../$SDK
+
+echo "This script will overwrite any uncommitted changes in your SDK git directory. Abort now if you have uncommited changes."
+sleep 7
+echo "getting latest SDK ..."
+
 git checkout main
 git reset --hard
 git pull
