@@ -232,6 +232,69 @@
     width: 98px;
 }
 
+.design-system-editor-right-content .color-block {
+    display: inline-block;
+    font-size: 11px;
+    width: 96px;
+    /* margin-bottom: 24px; changing to use side margins to provide some separation */
+    margin: 0px 5px 24px 5px;
+    vertical-align: top;
+}
+
+.design-system-editor-right-content .Hex {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius:8px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background: rgba(0,0,0,0);
+    margin: 8px 0;
+}
+.design-system-editor-right-content .Hex.button {
+    background: var(--button);
+    color: var(--on-button);
+}
+.design-system-editor-right-content .Hex.icon {
+    background: var(--icon);
+    color: var(--on-icon);
+}
+.design-system-editor-right-content .Hex.accent {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+.design-system-editor-right-content .darkmode .Hex {
+    border: 1px solid var(--dm-border);
+}
+.design-system-editor-right-content .darkmode .Hex.button {
+    background: var(--dm-button);
+    color: var(--dm-on-button);
+}
+.design-system-editor-right-content .darkmode .Hex.icon {
+    background: var(--dm-icon);
+    color: var(--dm-on-icon);
+}
+.design-system-editor-right-content .darkmode .Hex.accent {
+    background: var(--dm-accent);
+    color: var(--dm-on-accent);
+}
+
+.design-system-editor-right-content .caption {
+    font-family: var(--primaryFont);
+    font-weight: var(--fontWeight-3);
+    font-size: calc(var(--baseFont) * .75);
+    line-height: var(--standard-LineHeight);
+    letter-spacing: 0.5%;
+}
+
+.design-system-editor-right-content .text-center {
+    text-align: center!important;
+}
+
 .darkmode.design-system-editor-right-content  {
     background: var(--dm-background) !important;
     color: var(--dm-on-background) !important;

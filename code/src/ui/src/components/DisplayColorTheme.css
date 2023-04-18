@@ -13,6 +13,6 @@
     margin-bottom: 0.5rem;
 }
 
-.darkmode .Hex {
-    border: 1px solid var(--dm-border);
+.default-gradient {
+    padding: var(--spacing-1);
 }
