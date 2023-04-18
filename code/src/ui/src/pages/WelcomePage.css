@@ -14,8 +14,9 @@
 
 .tb-logo {
     height: 48px;
-    width: 128px;
+    width: 48px;
     cursor: pointer;
+    padding: 0 var(--spacing-2);
 }
 
 .welcome-left-nav {

@@ -455,6 +455,8 @@ try {
                         padding: "0",
                         position: "relative",
                         overflow: "visible !important",
+                        display: "flex",
+                        alignItems: "center",
                     },
                     "& .MuiSwitch-switchBase": {
                         backgroundColor: "var(--button)",
@@ -682,6 +684,13 @@ try {
                     }
                 }
             },
+            MuiFormControl: {
+                styleOverrides: {
+                    root: {
+                      margin: "var(--spacing-3) 0 0 important" ,
+                    },
+                },
+            },
             MuiFormControlLabel: {
                 styleOverrides: {
                     root: {
@@ -887,6 +896,8 @@ try {
                        boxShadow: "var(--sliderhandleElevation)",
                        backgroundColor: "var(--button)",
                        position: "absolute",
+                       top: "50%",
+                       transform: "translate(0, -50%)",
                        "&::after": {
                          position: "absolute",
                          height: "var(--min-target)",

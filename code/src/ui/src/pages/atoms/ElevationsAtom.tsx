@@ -2,9 +2,9 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect, ChangeEvent } from 'react';
-import { MenuItem, Select, FormControl, InputLabel, TextField, Slider } from '@mui/material';
-import { DesignSystem, ElevationSettings } from 'a11y-theme-builder-sdk';
+import React, { useState } from 'react';
+import { InputLabel, TextField, Slider } from '@mui/material';
+import { ElevationSettings } from 'a11y-theme-builder-sdk';
 //import { ExampleElevation } from '../../components/ExampleElevation';
 import { ChromePicker, ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
@@ -55,7 +55,7 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
     const [blurRadius,             setBlurRadius            ] = useState<number>(blurRadiusProperty.getValue()             || 0);
     const [spreadRadius,           setSpreadRadius          ] = useState<number>(spreadRadiusProperty.getValue()           || 0);
     const [colorOpacity,           setColorOpacity          ] = useState<number>(colorOpacityProperty.getValue()           || 0);
-    const [percentChange,          sertPercentChange        ] = useState<number>(percentChangeProperty.getValue()          || 0);
+    const [percentChange,          setPercentChange         ] = useState<number>(percentChangeProperty.getValue()          || 0);
 
     const handleShadowColorChange = (event: any) => {
         if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
@@ -113,7 +113,7 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
     }
     async function handlePercentChangeChange(event: any): Promise<void> {
         const value = Number(event.target.value);
-        sertPercentChange(value);
+        setPercentChange(value);
         percentChangeProperty.setValue(value)
     }
 
