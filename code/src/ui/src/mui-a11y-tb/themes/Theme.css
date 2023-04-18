@@ -357,7 +357,7 @@ section {
   background: var(--dm-primary);
   color: var(--dm-on-primary);
 }
-.darkmode .theme-secondaty {
+.darkmode .theme-secondary {
   background: var(--dm-secondary);
   color: var(--dm-on-secondary);
 }
