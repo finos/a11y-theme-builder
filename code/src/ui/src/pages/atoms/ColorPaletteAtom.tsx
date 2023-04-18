@@ -131,7 +131,6 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                             onChange={(e)=>{_setColorName(e.target.value)}}
                             onBlur={handleColorNameBlur}
                             helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
-                            defaultValue={_colorName}
                             value={_colorName}
                         />
                     </div>

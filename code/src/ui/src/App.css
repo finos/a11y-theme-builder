@@ -99,7 +99,7 @@ p a:hover {
 
 .darkmode .background, .darkmode.background {
     background: var(--dm-background) !important;
-    color: var(--dm-on-background);
+    color: var(--dm-on-background)  !important;
 }
 
 /* hotlinks */

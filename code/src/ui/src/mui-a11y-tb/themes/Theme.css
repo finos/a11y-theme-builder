@@ -333,66 +333,64 @@ section {
 .button {
   background: var(--button) !important;
   color: var(--on-button) !important;
-}  
+}
 .icon {
-  background: var(--icon);
-  color: var(--on-icon);
+  background: var(--icon) !important;
+  color: var(--on-icon) !important;
 }
 .accent {
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--accent) !important;
+  color: var(--on-accent) !important;
 }
 /* theme text decoraiton */
 .drop-color {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
 .gradient-title {
-  background: var(--text-gradient);
+  background: -webkit-linear-gradient(var(--text-gradient));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* darkmode theme */
 .darkmode .theme-primary {
-  background: var(--dm-primary);
-  color: var(--dm-on-primary);
+  background: var(--dm-primary) !important;
+  color: var(--dm-on-primary) !important;
 }
 .darkmode .theme-secondary {
-  background: var(--dm-secondary);
-  color: var(--dm-on-secondary);
+  background: var(--dm-secondary) !important;
+  color: var(--dm-on-secondary) !important;
 }
 .darkmode .theme-tertiary {
-  background: var(--dm-tertiary);
-  color: var(--dm-on-tertiary);
+  background: var(--dm-tertiary) !important;
+  color: var(--dm-on-tertiary) !important;
 }
 .darkmode .background {
-  background: var(--dm-background);
-  color: var(--dm-on-background);
+  background: var(--dm-background) !important;
+  color: var(--dm-on-background) !important;
 }
 .darkmode .background-secondary {
-  background: var(--dm-background-secondary);
-  color: var(--dm-on-background-secondary);
+  background: var(--dm-background-secondary) !important;
+  color: var(--dm-on-background-secondary) !important;
 }
 .darkmode .button {
-  background: var(--dm-button);
-  color: var(--dm-on-button);
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
 }
 .darkmode .icon {
-  background: var(--dm-icon);
-  color: var(--dm-on-icon);
+  background: var(--dm-icon) !important;
+  color: var(--dm-on-icon) !important;
 }
 .darkmode .accent {
-  background: var(--dm-accent);
-  color: var(--dm-on-accent);
+  background: var(--dm-accent) !important;
+  color: var(--dm-on-accent) !important;
 }
 .darkmode .drop-color {
-  text-shadow: 4px 4px 0px var(--dm-color-drop);
+  text-shadow: 4px 4px 0px var(--dm-color-drop) !important;
 }
 .darkmode .gradient-title {
-  background: var(--dm-text-gradient);
+  background: -webkit-linear-gradient(var(--dm-text-gradient));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -2522,34 +2520,16 @@ button.MuiPaginationItem-root:hover {
   color: var(--dm-on-nearblack);
 }
 
-.background {
-  background: var(--background) !important;
-  color: var(--on-background);
-}
 /*.background:nth-of-type(even), .background-secondary  {*/
-.background-secondary  {
-  background: var(--background-secondary) !important;
-  color: var(--on-background-secondary);
-}
 
-.background-tertiary  {
-  background: var(--background-tertiary) !important;
-  color: var(--on-background-tertiary);
-}
-
-.darkmode .background, .darkmode.background {
-  background: var(--dm-background) !important;
-  color: var(--dm-on-background);
-}
-
-.darkmode .background:nth-of-type(even), .darkmode .background-secondary{
+.darkmode section.background:nth-of-type(even), .darkmode .background-secondary{
   background: var(--dm-background-secondary) !important;
-  color: var(--dm-on-background-secondary);
+  color: var(--dm-on-background-secondary)!important;
 }
 
 .darkmode .background-tertiary {
   background: var(--dm-background-tertiary) !important;
-  color: var(--dm-on-background-tertiary);
+  color: var(--dm-on-background-tertiary)!important;
 }
 /* input */
 .MuiInputBase-root .MuiOutlinedInput-input {
