@@ -1713,7 +1713,9 @@ button.MuiPaginationItem-root:hover {
 }
 /* MuiFormControl-root */
 .MuiFormControl-root {
-  margin: 16px 0 0 !important;
+  display: flex;
+  gap: var(--spacing-1);
+  margin: 8px 0 0 !important;
 }
 /* MuiFormLabel-root NOT ANIMATED */
 .MuiFormControl-root .MuiFormLabel-root:not(.MuiInputLabel-animated), .motionSensative .MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated, .motionSensative .MuiFormControl-root .MuiFormLabel-root.MuiInputLabel-animated.MuiInputLabel-shrink[data-shrink="true"]  {
