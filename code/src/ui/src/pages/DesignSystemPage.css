@@ -245,7 +245,8 @@
   opacity: 0;
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
 }
 .color-swatch:hover::after {
   opacity: .5;

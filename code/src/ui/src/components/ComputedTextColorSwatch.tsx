@@ -70,7 +70,7 @@ export const ComputedTextColorSwatch: React.FC<Props> = ({sampleText, colorSampl
 
     if (sampleText) {
     return (
-        <div className={`color-swatch ${containerClassName || ""} text-swatch`} style={style}>
+        <div className={`color-swatch ${containerClassName || ""} text-swatch`} >
             {label && <div className="small-semibold">{label}</div>}
             <div className="color-box" style={{backgroundColor: `${_backgroundColorRGB}`}} />
             <div>
@@ -98,6 +98,6 @@ export const ComputedTextColorSwatch: React.FC<Props> = ({sampleText, colorSampl
     return (
         <div>Missing ColorShade information</div>
     );
-    
+
     }
 }
