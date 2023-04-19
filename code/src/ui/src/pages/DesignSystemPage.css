@@ -154,7 +154,7 @@
 
 .modal-content input{
   height: 44px;
-  padding: 0 8px;
+  padding-left: 8px;
   border-radius: var(--spacing-half);
   border: 1px solid var(--border);
   opacity: 1;
