@@ -62,11 +62,13 @@ p a:hover {
     margin: 0;
 }
 
+/*
 .system-card button {
     background: var(--background);
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
 }
+*/
 
 .button-area {
     justify-content: flex-start;
