@@ -1956,12 +1956,8 @@ button.MuiPaginationItem-root:hover {
 }
 
 .MuiSlider-root .MuiSlider-thumb {
-
-  /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
-  width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
-  width: var(--spacing-3);
-  width: var(--spacing-3);
+  width: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
   background-color: var(--button);
   position: relative;
