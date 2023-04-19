@@ -229,6 +229,63 @@
     gap: 8px;
     margin:  var(--spacing-1) 0;
     width: 98px;
+    cursor: pointer;
+    position: relative;
+}
+
+.color-swatch::after {
+  position: absolute;
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border-radius: calc(var(--spacing-1) + 1.6px);
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 0;
+  content: '';
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
+}
+.color-swatch:hover::after {
+  opacity: .5;
+  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+.color-swatch:focus::after {
+  opacity: 1;
+  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
+  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
+}
+.windowOverlay {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 99;
+}
+.colorPop {
+  position: fixed;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 100;
 }
 
 .design-system-editor-right-content .color-block {
