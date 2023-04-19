@@ -892,9 +892,9 @@ try {
                        marginTop: "  margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2)",
                     },
                     "& .MuiSlider-thumb": {
-                       height: "var(--spacing-3)",
-                       width: "var(--spacing-3)",
-                       borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
+                        height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
+                        width: "calc(var(--sliderhandleHeight) * var(--spacing-1) )",
+                        borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
                        boxShadow: "var(--sliderhandleElevation)",
                        backgroundColor: "var(--button)",
                        position: "absolute",
