@@ -166,7 +166,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                 </Select>
             </FormControl>
         )
-    }    
+    }
 
     if (!isOpen || !designSystem || !typographyStyling || !textKey) return null;
     return (
@@ -231,21 +231,21 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                                 />
                                 { isHeader || (charSpacing > (0.12*fontSize))
                                     || <Alert severity="error">
-                                            WCAG AA guidelines require Line Height to be at least 0.12 times the font size. 
+                                            WCAG AA guidelines require Line Height to be at least 0.12 times the font size.
                                         </Alert> }
                             </FormControl>
                         </form>
                     </SettingsSection>
                     <div className="modal-footer">
                         <div className="button-area">
-                            <Button onClick={onCancel}>Cancel</Button>
                             <Button onClick={handleSave} disabled={!isHeader && !(charSpacing > (0.12*fontSize))}>Save</Button>
+                            <Button  variant="outlined" onClick={onCancel}>Cancel</Button>
                         </div>
                     </div>
                 </div>
             </div>
         </>
-    ) 
+    )
 }
 
 export default ModalFontEdit;

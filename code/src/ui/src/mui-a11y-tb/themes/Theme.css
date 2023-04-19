@@ -2622,12 +2622,14 @@ button.MuiPaginationItem-root:hover {
   border-radius: calc(var(--modal-radius) * var(--radius-1)) !important;
   padding: var(--spacing-3);
   background: var(--surface);
+  max-height: calc(100vh - var(--spacing-10));
 }
 .modal-content {
   padding: var(--spacing-3);
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-1);
+  overflow-y: scroll;
 }
 
 .modal-footer {
