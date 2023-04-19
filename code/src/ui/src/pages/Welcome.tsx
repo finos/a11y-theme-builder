@@ -33,6 +33,14 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                     Docs
                 </a>.
             </p>
+            <h3>Getting Started</h3>
+            <p>Watch our video and learn how to make a Design System with Theme Buidler</p>
+            <div className="videoWrapper">
+            <video width="320" height="240" controls>
+              <source src="buildtheme.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+            </video>
+            </div>
 
             {/* <h5>Get started with a few simple steps</h5>
             <div style={{ background: "red", color: "yellow" }}>TODO: Verify and document these steps</div>
