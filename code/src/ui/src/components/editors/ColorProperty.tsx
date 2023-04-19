@@ -29,22 +29,10 @@ export const ColorProperty: React.FC<ColorProps> = ({ property, style, label="",
         property.prop.setValue(value);
     }
 
-    const popup:any = {
-        background: "var(--background)",
-        border: "1px solid var(--border)",
-        borderRadius: "var(--radius-1)",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        position: "absolute",
-        zIndex: "100",
-    }
 
     return (
         <div style={style}>
-            <span onClick={() => setShow(true)} style={{cursor:"pointer"}}>
+            <span onClick={() => setShow(true)}>
                 <ColorSwatch shade={value} label={label || property.name} style={{width: "150px"}}/>
             </span>
             {show &&
