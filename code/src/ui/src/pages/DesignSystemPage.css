@@ -153,7 +153,6 @@
 
 
 .modal-content input{
-  margin: 8px 0;
   height: 44px;
   padding: 0 8px;
   border-radius: var(--spacing-half);
