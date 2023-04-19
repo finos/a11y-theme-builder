@@ -1110,13 +1110,13 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 /* dropdowns */
 .MuiMenuItem-root {
   background: var(--surface);
-  color: var(--on-surface)
+  color: var(--on-surface);
 }
 .MuiMenuItem-root:hover {
   background: var(--dropdown-hover-bg);
   color: var(--on-dropdown-hover-bg)
 }
-.MuiMenuItem-root:focus {
+.MuiMenuItem-root:focus, .Mui-selected {
   background: var(--dropdown-focus-bg);
   color: var(--on-dropdown-focus-bg)
 }
@@ -1803,8 +1803,10 @@ button.MuiPaginationItem-root:hover {
   background: var(--surface);
   color: var(--on-surface);
   border: 1px solid var(--border);
-  padding: 0 0 0 8px;
-
+}
+.MuiPopover-paper .MuiList-root.MuiMenu-list .MuiMenuItem-root {
+  margin-left: 8px;
+  background: transparent !important
 }
 .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--on-surface);
@@ -1825,6 +1827,10 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-surface) !important;
   color: var(--dm-on-surface) !important;
   border: 1px solid var(--dm-border) !important;
+}
+.darkmode .MuiPopover-paper .MuiList-root.MuiMenu-list .MuiMenuItem-root {
+  margin-left: 8px;
+  background: transparent !important
 }
 .darkmode .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--dm-white);
