@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider } from "@mui/material";
+import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider, Button } from "@mui/material";
 import React, { useState, MouseEvent, ReactNode } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
@@ -121,8 +121,19 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                 <div className="overlay" onClick={() => setView(null)} ></div>
                 <div className="modal" style={{width: "50%", height:"80%", overflow:"auto"}}>
                     <h5>Data for {name}</h5>
+                    <div className="button-area">
+                        <Button variant="contained" onClick={() => navigator.clipboard.writeText(view)}>Copy to clipboard</Button>
+                        <Button  variant="outlined" onClick={() => handleClose("view")}>Cancel</Button>
+                    </div>
                     <div>
-                        <pre>{view}</pre>
+                        <pre 
+                            style={{
+                                border:"1px solid var(--border)", 
+                                borderRadius:"var(--spacing-half)",
+                                padding: "10px",
+                                fontSize: "var(--baseFont)",
+                            }}
+                        >{view}</pre>
                     </div>
                 </div>
             </>
