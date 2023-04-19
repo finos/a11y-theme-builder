@@ -346,12 +346,23 @@ section {
 .drop-color {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
+.gradient-1 {
+  background: var(--gradient-1);
+  color: var(--on-gradient-1);
+}
+.gradient-2 {
+  background: var(--gradient-2);
+  color: var(--on-gradient-2);
+}
+.gradient-3 {
+  background: var(--gradient-3);
+  color: var(--on-gradient-3);
+}
 .gradient-title {
-  background: -webkit-linear-gradient(var(--text-gradient));
+  background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* darkmode theme */
 .darkmode .theme-primary {
   background: var(--dm-primary) !important;
@@ -388,11 +399,24 @@ section {
 .darkmode .drop-color {
   text-shadow: 4px 4px 0px var(--dm-color-drop) !important;
 }
-.darkmode .gradient-title {
-  background: -webkit-linear-gradient(var(--dm-text-gradient));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.darkmode .gradient-1 {
+  background: var(--dm-gradient-1)  !important;
+  color: var(--dm-on-gradient-1)  !important;
 }
+.darkmode .gradient-2 {
+  background: var(--dm-gradient-2)  !important;
+  color: var(--dm-on-gradient-2)  !important;
+}
+.darkmode .gradient-3 {
+  background: var(--dm-gradient-3)  !important;
+  color: var(--dm-on-gradient-3)  !important;
+}
+.darkmode .gradient-title {
+  background: var(--dm-text-gradient)  !important;
+ -webkit-background-clip: text  !important;
+ -webkit-text-fill-color: transparent  !important;
+}
+
 
 /* MOLECULES */
 
@@ -2064,15 +2088,7 @@ button.MuiPaginationItem-root:hover {
   border: 1px auto var(--dm-button);
   box-shadow: 0 0 var(--focusBlur) 1px var(--dm-button-half);
 }
-/* gradient header */
-.gradient-title {
 
-}
-/* gradients */
-.darkmode .gradient-1 {
-  background: var(--dm-gradient-1);
-  color: var(--dm-on-gradient-1);
-}
 /* icons */
 .icon-body {
   display: flex;
@@ -2603,7 +2619,7 @@ button.MuiPaginationItem-root:hover {
 .modal {
   height: auto;
   box-shadow: var(--modal-shadow);
-  border-radius: calc(var(--modal-radius) * var(--radius-1));
+  border-radius: calc(var(--modal-radius) * var(--radius-1)) !important;
   padding: var(--spacing-3);
   background: var(--surface);
 }
@@ -2611,10 +2627,11 @@ button.MuiPaginationItem-root:hover {
   padding: var(--spacing-3);
   display: flex;
   flex-direction: column;
+  border-radius: var(--radius-1);
 }
 
 .modal-footer {
-  padding: var(--spacing-3) 0;
+  padding: var(--spacing-3) 0 0;
   gap: var(--spacing-2);
   display: flex;;
   justify-content: start;
@@ -3106,10 +3123,6 @@ button.MuiPaginationItem-root:hover {
 }
 
 /*  GRADIENT 1 */
-.gradient-1 {
-  background: var(--gradient-1) !important;
-  color: var(--on-gradient-1) !important;
-}
 .gradient-1 .fa-regular:not(button *), .gradient-1 .fa-solid:not(button *) {
   color: var(--on-gradient-1) !important;
 }

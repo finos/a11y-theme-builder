@@ -22,16 +22,16 @@ const ModalSample: React.FC<Props> = ({isOpen, onClose, modalMolecule}) => {
             <div className='modal modal-sample' style={{borderRadius: modalMolecule.borderRadius.getValue() + "px"}}>
                 <div className="modal-content">
                     <div className="modal-header">
-                    <h5 className="modal-title fs-5">Modal title</h5>
+                    <h5 className="modal-title fs-5">Sample modal title</h5>
 
                     </div>
                     <div className="modal-body">
-                        ...
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                     <div className="modal-footer">
                         <div className="button-area">
-                            <Button onClick={onClose}>Close</Button>
                             <Button variant="contained">Save Changes</Button>
+                            <Button variant="outlined" onClick={onClose}>Close</Button>
                         </div>
                     </div>
                 </div>
