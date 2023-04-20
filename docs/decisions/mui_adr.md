@@ -32,6 +32,7 @@ Chosen option: "Material UI".  Once React.js was chosen, the next decision was w
 The most common web frameworks and technologies used in 2022 are listed on [StackOverflow](https://survey.stackoverflow.co/2022/#web-frameworks-and-technologies).
 
 All respondents:
+
 * 43% use React.js
 * 29% use jQuery
 * 20% use Angular
