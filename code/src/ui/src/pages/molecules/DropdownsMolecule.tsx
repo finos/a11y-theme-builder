@@ -28,6 +28,7 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
     }, []);
 
     const [sample, setSample] = useState<string>("option1");
+    const refContainer = React.useRef(null);
 
     return (
         <div>
@@ -55,33 +56,16 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                             className="dropdown-toggle dropdownFocus darkmode"
                             value={sample}
                             sx={{ width: "300px" }}
-                            //@TODO: Need to determine how to move this to Theme.jsx
                             MenuProps={{
-                                PaperProps: {
-                                  sx: {
-                                    '& .MuiList-root.MuiMenu-list': {
-                                      background: 'var(--dm-surface) !important',
-                                      color: 'var(--dm-on-surface)',
-                                      border: '1px solid var(--dm-border)',
-                                    },
-                                    '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
-                                        color: "var(--dm-on-background)",
-                                    },
-                                    '& .MuiList-root.MuiMenu-list .MuiMenuItem-root:hover': {
-                                        color: "var(--dm-on-dropdown-hover-bg)",
-                                        background: "var(--dm-dropdown-hover-bg)",
-                                    },
-                                        borderRadius: 'calc(var(--radius-1) * var(--dropdown-radius))',
-                                  },
-                                },
-                              }}
-
+                                container: refContainer.current
+                            }}
                             onChange={(event) => setSample(event.target.value)}
                         >
                             <MenuItem value="option1">Option 1</MenuItem>
                             <MenuItem value="option2">Option 2</MenuItem>
                             <MenuItem value="option3">Option 3</MenuItem>
                         </Select>
+                        <div ref={refContainer} ></div>
                     </div>
                 </DarkModeSection>
             </ExampleSection>
