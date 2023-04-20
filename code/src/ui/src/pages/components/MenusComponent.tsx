@@ -5,8 +5,9 @@
 import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { Button, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
+import { Button, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import { Menu } from '../../mui-a11y-tb/components/Menu';
 
 
 interface Props {
