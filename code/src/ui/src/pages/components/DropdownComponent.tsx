@@ -14,6 +14,8 @@ export const DropdownComponent: React.FC<Props> = () => {
         setAge(event.target.value as string);
     };
 
+    const refContainer = React.useRef(null);
+
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Dropdown'></HeadingSection>
@@ -26,12 +28,16 @@ export const DropdownComponent: React.FC<Props> = () => {
                     value={age}
                     label="Age"
                     onChange={handleChange}
+                    MenuProps={{
+                        container: refContainer.current
+                    }}
                     >
                         <MenuItem value={10}>10</MenuItem>
                         <MenuItem value={20}>20</MenuItem>
                         <MenuItem value={30}>30</MenuItem>
                     </Select>
                 </FormControl>
+                <div ref={refContainer} ></div>
             </ExampleSection>
         </div>
     )
