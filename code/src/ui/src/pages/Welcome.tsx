@@ -20,7 +20,7 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
 
     return (
         <div>
-            <HeadingSection title="Design System" heading="Welcome" />
+            <HeadingSection heading="Welcome" />
             <p>
                 This tool was created to help teams quickly create a robust and accessible
                 Unified Design System that supports light and dark mode, desktop and mobile applications.
@@ -35,39 +35,13 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
             </p>
             <h3>Getting Started</h3>
             <p>Watch our video and learn how to make a Design System with Theme Buidler</p>
-            <div className="videoWrapper">
-            <video width="320" height="240" controls>
-              <source src="buildtheme.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-            </video>
-            </div>
-
-            {/* <h5>Get started with a few simple steps</h5>
-            <div style={{ background: "red", color: "yellow" }}>TODO: Verify and document these steps</div>
-            <h6 className='top40'>Step 1. Build your theme</h6>
-            <ul>
-              <li>Build your theme and REMEMBER to click SAVE!</li>
-            </ul>
-            <h6>Step 2. Sign up / Sign in to Figma</h6>
-              <ul>
-                <li><a href="http://www.figma.com" target="_blank">Go to Figma</a></li>
-              </ul>
-            <h6>Step 3. Install Tokens Studio Pro</h6>
-            <ul>
-              <li><a href="https://tokens.studio/" target="_blank">Go to Tokens Studio</a></li>
-            </ul>
-            <h6>Step 4. Duplicate our Figma Theme Builder File</h6>
-            <ul>
-              <li><a href="https://www.figma.com/community/file/1228341192167108876" target="_blank">Theme Builder - Figma Component Library</a></li>
-            </ul>
-            <h6>Step 5. Apply your theme to the Figma Theme Builder File</h6>
-            <div className="videoWrapper">
-              <video width="320" height="240" controls>
-                <source src="/ApplyTheme.mp4" type="video/mp4" />
+            <div>
+              <video controls>
+                <source src="buildtheme.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-            </div> */}
-            <div className="button-area">
+            </div>
+            <div className="button-area top40">
                 <Button onClick={(event) => changeTab(event, "getStarted")}>Explore Your Design Systems</Button>
                 <Button  variant="outlined"  onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>
             </div>
