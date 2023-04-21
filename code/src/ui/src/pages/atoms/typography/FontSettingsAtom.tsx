@@ -10,7 +10,7 @@ import { ExampleSection } from '../../content/ExampleSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { SettingsSection } from '../../content/SettingsSection';
 import { HeadingSection } from '../../content/HeadingSection';
-import { Alert, Grid, InputAdornment, InputLabel, TextField } from '@mui/material';
+import { Alert, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { FontWeightsUtil } from './FontWeightsUtil';
 import { StringProperty } from '../../../components/editors/StringProperty';
 
@@ -23,6 +23,7 @@ const textFieldMb = 3
 const textFieldGridSpacing = 3
 const textFieldGridWidth = 4
 const alertGridWidth = 7
+const selectableWeights = [100,200,300,400,500,600,700,800,900,1000]
 
 const alertStyles = {width: 400, height: 100, marginTop: 1}
 const fontNotCommonAlert = <Alert severity='warning' sx={alertStyles}>
@@ -38,6 +39,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontHelpIsOpen, setFontHelpIsOpen] = useState(false);
 
     const fontSettingsAtom = atoms.fontsSettings
+
 
     const primaryFontFamilyProperty     = fontSettingsAtom.primaryFont
     const secondaryFontFamilyProperty   = fontSettingsAtom.secondaryFont
@@ -108,6 +110,67 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         } else {
             setFontWeight4WarningTriggered(false)
         }
+    }
+
+    const renderFontWeight0Selectables = () => {
+        var r = [];
+        for (var i=0; i<selectableWeights.length; i++) {
+            const s = selectableWeights[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <Select label={fontWeight0Property.name} labelId='fontWeight0Label' value={fontWeight0} onChange={handleFontWeight0Change}>{r}</Select>
+            </FormControl>
+        )
+    }
+    const renderFontWeight1Selectables = () => {
+        var r = [];
+        for (var i=0; i<selectableWeights.length; i++) {
+            const s = selectableWeights[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <Select label={fontWeight1Property.name} labelId='fontWeight1Label' value={fontWeight1} onChange={handleFontWeight1Change}>{r}</Select>
+            </FormControl>
+        )
+    }
+    const renderFontWeight2Selectables = () => {
+        var r = [];
+        for (var i=0; i<selectableWeights.length; i++) {
+            const s = selectableWeights[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <Select label={fontWeight2Property.name} labelId='fontWeight2Label' value={fontWeight2} onChange={handleFontWeight2Change}>{r}</Select>
+            </FormControl>
+        )
+    }
+    const renderFontWeight3Selectables = () => {
+        var r = [];
+        for (var i=0; i<selectableWeights.length; i++) {
+            const s = selectableWeights[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <Select label={fontWeight3Property.name} labelId='fontWeight3Label' value={fontWeight3} onChange={handleFontWeight3Change}>{r}</Select>
+            </FormControl>
+        )
+    }
+    const renderFontWeight4Selectables = () => {
+        var r = [];
+        for (var i=0; i<selectableWeights.length; i++) {
+            const s = selectableWeights[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <Select label={fontWeight4Property.name} labelId='fontWeight4Label' value={fontWeight4} onChange={handleFontWeight4Change}>{r}</Select>
+            </FormControl>
+        )
     }
 
     async function handlePrimaryFontChange(event: any): Promise<void> {
@@ -333,13 +396,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     <Grid container spacing={textFieldGridSpacing}>
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="fontWeight0TextField" id="fontWeight0Label">{fontWeight0Property.name}</InputLabel>
-                            <div style={{fontWeight:"normal"}}>For decorative and non critial text.</div>
-                            <TextField 
-                                id="fontWeight0TextField"
-                                value={isNaN(fontWeight0) ? "" : ""+fontWeight0 }
-                                onChange={handleFontWeight0Change}
-                                sx={{width:textFieldWidth, mb: textFieldMb }}
-                            />
+                            <div style={{fontWeight:"normal"}}>For decorative and non critical text.</div>
+                            {renderFontWeight0Selectables()}
                         </Grid>
                         <Grid item xs={alertGridWidth}>
                             {!fontWeight0WarningTriggered || weightUnsupportedAlert}
@@ -351,12 +409,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="fontWeight1TextField" id="fontWeight1Label">{fontWeight1Property.name}</InputLabel>
                             <div style={{fontWeight:"normal"}}>For standard body text.</div>
-                            <TextField 
-                                id="fontWeight1TextField"
-                                value={isNaN(fontWeight1) ? "" : ""+fontWeight1 }
-                                onChange={handleFontWeight1Change}
-                                sx={{width:textFieldWidth, mb: textFieldMb }}
-                            />
+                            {renderFontWeight1Selectables()}
                         </Grid>
                         <Grid item xs={alertGridWidth}>
                             {!fontWeight1WarningTriggered || weightUnsupportedAlert}
@@ -368,12 +421,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="fontWeight2TextField" id="fontWeight2Label">{fontWeight2Property.name}</InputLabel>
                             <div style={{fontWeight:"normal"}}>For headers and small text that is important.</div>
-                            <TextField 
-                                id="fontWeight2TextField"
-                                value={isNaN(fontWeight2) ? "" : ""+fontWeight2 }
-                                onChange={handleFontWeight2Change}
-                                sx={{width:textFieldWidth, mb: textFieldMb }}
-                            />
+                            {renderFontWeight2Selectables()}
                         </Grid>
                         <Grid item xs={alertGridWidth}>
                             {!fontWeight2WarningTriggered || weightUnsupportedAlert}
@@ -385,12 +433,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="fontWeight3TextField" id="fontWeight3Label">{fontWeight3Property.name}</InputLabel>
                             <div style={{fontWeight:"normal"}}>For emphasized text.</div>
-                            <TextField 
-                                id="fontWeight3TextField"
-                                value={isNaN(fontWeight3) ? "" : ""+fontWeight3 }
-                                onChange={handleFontWeight3Change}
-                                sx={{width:textFieldWidth, mb: textFieldMb }}
-                            />
+                            {renderFontWeight3Selectables()}
                         </Grid>
                         <Grid item xs={alertGridWidth}>
                             {!fontWeight3WarningTriggered || weightUnsupportedAlert}
@@ -402,12 +445,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="fontWeight4TextField" id="fontWeight4Label">{fontWeight4Property.name}</InputLabel>
                             <div style={{fontWeight:"normal"}}>Used sparingly on text of great importance such as stats.</div>
-                            <TextField 
-                                id="fontWeight4TextField"
-                                value={isNaN(fontWeight4) ? "" : ""+fontWeight4 }
-                                onChange={handleFontWeight4Change}
-                                sx={{width:textFieldWidth, mb: textFieldMb }}
-                            />
+                            {renderFontWeight4Selectables()}
                         </Grid>
                         <Grid item xs={alertGridWidth}>
                             {!fontWeight4WarningTriggered || weightUnsupportedAlert}
