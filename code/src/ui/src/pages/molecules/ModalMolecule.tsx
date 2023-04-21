@@ -31,7 +31,9 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
     return (
         <>
             <ModalSample isOpen={sampleModalIsOpen} onClose={ () => setSampleModalIsOpen(false)} modalMolecule={modalMolecule}/>
-            <HeadingSection item={modalMolecule} title="Apply Styles"/>
+            <HeadingSection item={modalMolecule} title="Apply Styles">
+                <p>Configure settings that affect the appearance of modal dialogs and the overlays upon which they appear.</p>
+            </HeadingSection>
             <ExampleSection>
                 <div className="caption">Sample Modal</div>
                 <Button variant="contained" onClick={() => setSampleModalIsOpen(true)}>Launch Demo Modal</Button>

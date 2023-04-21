@@ -67,6 +67,7 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
     return (
         <div className="color-palette-right-content">
             <HeadingSection item={atom} title="Theme">
+                <p>Select the colors that will be used to display informative text for the user.  For example, these colors could be used to display banners, popups or toasts informing the user of the results of some task or process.</p>
             </HeadingSection>
             <ExampleSection>
                 The color values are calculated from the input colors under Settings.  They will not necessarily be the same value that was selected.
