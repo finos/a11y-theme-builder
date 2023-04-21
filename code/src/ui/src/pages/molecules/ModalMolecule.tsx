@@ -32,7 +32,7 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
         <>
             <ModalSample isOpen={sampleModalIsOpen} onClose={ () => setSampleModalIsOpen(false)} modalMolecule={modalMolecule}/>
             <HeadingSection item={modalMolecule} title="Apply Styles">
-                <p>Configure settings that affect the appearance of modal dialogs and the overlays upon which they appear.</p>
+                A modal is a window within an application that disables the main window but keeps it visible, with the modal window as a child window in front of it.
             </HeadingSection>
             <ExampleSection>
                 <div className="caption">Sample Modal</div>

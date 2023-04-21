@@ -47,7 +47,24 @@ export const BodyStylesAtom: React.FC<Props> = ({ designSystem }) => {
         || !keyBody3 || !keyBody3Bold) return null;
     return (
         <div className="container">
-            <HeadingSection item={bodyStylesAtom} title="Typography" />
+            <HeadingSection item={bodyStylesAtom} title="Typography">
+                The Body Styles Atom sets Typography settings for the 6 Body types:
+                <ul>
+                    <li>Body 1</li>
+                    <li>Body 1 - Bold</li>
+                    <li>Body 2</li>
+                    <li>Body 2 - Bold</li>
+                    <li>Body 3</li>
+                    <li>Body 3 - Bold</li>
+                </ul>
+                The Settings that can be changed for each are:
+                <ul>
+                    <li>Font Family</li>
+                    <li>Font Size</li>
+                    <li>Font Weight</li>
+                    <li>Character Spacing</li>
+                </ul>
+            </HeadingSection>
             <ExampleSection>
                 None
             </ExampleSection>

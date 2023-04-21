@@ -22,7 +22,6 @@ interface Props {
 }
 
 export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
-    const grid = designSystem.atoms.gridSettings.grid.getValue();
 
     useEffect(() => {
         console.log("DropdownsMolecule mounted");
@@ -34,8 +33,7 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
-                <p>Configure settings that affect the appearance of dropdowns.</p>
-                <p>You can stylize your dropdown menu items in their hover and selection states.</p>
+                You can stylize your dropdown menu items in their hover and focus states.
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>

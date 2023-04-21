@@ -107,9 +107,25 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
     return (
         <div className="container">
             <HeadingSection item={headerStylesAtom} title="Typography">
-                Set the global criterien for your display and 
-                headers.  You can then adjust the specifics of each 
-                style below.
+            The Header Styles Atom sets Typography settings for the 8 Header types:
+                <ul>
+                    <li>Display 1</li>
+                    <li>Display 2</li>
+                    <li>Header 1</li>
+                    <li>Header 2</li>
+                    <li>Header 3</li>
+                    <li>Header 4</li>
+                    <li>Header 5</li>
+                    <li>Header 6</li>
+                </ul>
+                The Settings that can be changed for each are:
+                <ul>
+                    <li>Font Family</li>
+                    <li>Font Size</li>
+                    <li>Font Weight</li>
+                    <li>Character Spacing</li>
+                </ul>
+                In addition, the change in size between headers can be changed, along with the font weight.
             </HeadingSection>
             <ExampleSection>
                 None

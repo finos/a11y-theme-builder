@@ -23,7 +23,9 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
 
     return (
         <>
-            <HeadingSection item={slidersMolecule} title="Apply Styles"/>
+            <HeadingSection item={slidersMolecule} title="Apply Styles">
+                A Slider is an interface that allows a numerical value to be changed by dragging a thumb along an axis.
+            </HeadingSection>
             <ExampleSection>
                 <div className="caption">Sample Slider</div>
                 <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>

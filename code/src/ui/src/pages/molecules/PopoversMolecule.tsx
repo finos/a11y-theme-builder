@@ -36,7 +36,9 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
 
     return (
         <div>
-            <HeadingSection item={popoversMolecule} title="Apply Styles"></HeadingSection>
+            <HeadingSection item={popoversMolecule} title="Apply Styles">
+            A Popover is an element that won't be rendered until it becomes shown, at which point it will be rendered on top of other page content.
+            </HeadingSection>
             <ExampleSection>
                 <Button variant="contained" onClick={openPopover}>
                     Popover on Top

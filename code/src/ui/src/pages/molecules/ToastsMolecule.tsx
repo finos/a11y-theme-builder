@@ -22,7 +22,9 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
 
     return (
         <>
-            <HeadingSection item={toastsMolecule} title="Apply Styles" />
+            <HeadingSection item={toastsMolecule} title="Apply Styles">
+                A Toast is an alert box that informs the user about something important.
+            </HeadingSection>
             <ExampleSection>
                 <Alert
                     severity="error"

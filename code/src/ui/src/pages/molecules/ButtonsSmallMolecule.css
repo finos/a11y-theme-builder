@@ -23,9 +23,9 @@
     font: var(--sm-buttonTypography);
     box-shadow: var(--button-shadow);
     opacity: 1;
-  }
+}
 
-  .design-system-editor-right-content button.MuiButton-outlined::before {
+.design-system-editor-right-content button.MuiButton-outlined::before {
     position: absolute;
     border: calc(var(--border-1) * var(--button-border)) solid var(--button);
     border-radius: calc(var(--radius-1) * var(--button-radius));
