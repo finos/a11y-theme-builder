@@ -313,7 +313,7 @@ try {
                           },
                         },
                         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                            border: '1px auto var(--button)',
+                            border: '1px solid var(--button)',
                             boxShadow: '0 0 var(--focusBlur) 1px var(--button-half)',
                         },
                         "& fieldset": {
@@ -522,7 +522,7 @@ try {
                             color: "var(--on-input-disabled)",
                         },
                         "& .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                            border: '1px auto var(--button)',
+                            border: '1px solid var(--button)',
                             boxShadow: '0 0 var(--focusBlur) 1px var(--button-half)',
                         },
                     }
