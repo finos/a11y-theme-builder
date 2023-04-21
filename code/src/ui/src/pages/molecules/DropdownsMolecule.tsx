@@ -34,7 +34,8 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
-                You can stylize your dropdown menu items in their hover and focus states.
+                <p>Configure settings that affect the appearance of dropdowns.</p>
+                <p>You can stylize your dropdown menu items in their hover and selection states.</p>
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>

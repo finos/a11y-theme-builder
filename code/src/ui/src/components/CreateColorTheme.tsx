@@ -94,7 +94,13 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
     if (_colorTheme) {
     return (
         <div className="content theme-page active" id="buildThemes">
-            <HeadingSection title="Theme" heading="Create Default Theme" />
+            <HeadingSection title="Theme" heading="Create Default Theme">
+                <p>
+                    Initialize the default color theme for this design designSystem
+                    by selecting colors that will be used throughout your
+                    application.
+                </p>
+            </HeadingSection>
             <SettingsSection>
             <div className="container">
                 <div className="row">

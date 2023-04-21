@@ -17,7 +17,9 @@ interface Props {
 export const BordersAtom: React.FC<Props> = ({ atom }) => {
     return (
         <div>
-            <HeadingSection item={atom} title="Borders" />
+            <HeadingSection item={atom} title="Borders">
+                <p>Modify these most popular border settings to affect the borders of components in your application.</p>
+            </HeadingSection>
             <ExampleSection>
                 <div style={{
                     borderWidth: "var(--border-1)", 

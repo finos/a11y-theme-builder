@@ -65,7 +65,9 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
 
     return (
         <div>
-            <HeadingSection item={atom} title="Spacing" />
+            <HeadingSection item={atom} title="Spacing">
+                <p>The base value used to determine the distance between elements in the application.  This value is most used in margin, padding and gap styling.</p>
+            </HeadingSection>
             <ExampleSection>
                 This is the size of the grid spacing.
                 <div className="top24" style={{height: "304px"}}>
