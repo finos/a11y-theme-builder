@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -470,22 +470,6 @@ try {
                     },
                 },
             },
-            MuiAlert: {
-                styleOverrides: {
-                    root: {
-                        borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
-                        alignItems: "center",
-                        "& .MuiAlert-icon":{
-                            marginRight: "calc(var(--toast-padding) * var(--spacing-1))",
-                            alignSelf: "center",
-                            padding: "0",
-                        },
-                        "& .MuiAlert-message": {
-                          overflow: "visible !important",
-                        }
-                    },
-                },
-            },
             MuiFormHelperText  : {
               styleOverrides: {
                   root: {
@@ -809,7 +793,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         "& .MuiAlert-icon":{
-                            marginRight: "var(--spacing-2)",
+                            marginRight: "calc(var(--toast-padding) * var(--spacing-1))",
                             alignSelf: "center",
                             padding: "0",
 
