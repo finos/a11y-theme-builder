@@ -19,3 +19,14 @@ If you desire to extend or enhance the application, a local development environm
 * npm 8+
  
 Visit [Node.js downloads](https://nodejs.org/en/download/) for latest versions.
+
+## Targeted Browsers
+
+We are targeting the following browser versions:
+
+* Chrome v109+
+* Safari v15.6+
+* Edge v110+
+* Firefox v111+
+
+This list consists of reasonably recent versions that are most likely to be in use by designers and developers.  We would welcome any input from enterprise-type users to help improve this list.
