@@ -2096,8 +2096,8 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-surface);
   color: var(--dm-on-surface);
 }
-.darkmode .MuiOutlinedInput-notchedOutline fieldset::focus {
-  border: 1px auto var(--dm-button);
+.darkmode .MuiInputBase-root.Mui-focused fieldset.MuiOutlinedInput-notchedOutline {
+  border: 10px solid var(--dm-button);
   box-shadow: 0 0 var(--focusBlur) 1px var(--dm-button-half);
 }
 
