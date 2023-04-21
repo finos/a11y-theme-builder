@@ -256,6 +256,8 @@ try {
                         boxShadow: "var(--card-shadow)",
                         background: "var(--surface)",
                         minHeight: "var(--spacing-3)",
+                        display: "flex",
+                        flexDirection: "column",
                     }
                 }
             },
@@ -890,9 +892,9 @@ try {
                        marginTop: "  margin-top: calc( calc(var(--min-target) - calc( var(--sliderbarHeight) * var(--spacing-1) ))/2)",
                     },
                     "& .MuiSlider-thumb": {
-                       height: "var(--spacing-3)",
-                       width: "var(--spacing-3)",
-                       borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
+                        height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
+                        width: "calc(var(--sliderhandleHeight) * var(--spacing-1) )",
+                        borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
                        boxShadow: "var(--sliderhandleElevation)",
                        backgroundColor: "var(--button)",
                        position: "absolute",
@@ -1016,11 +1018,20 @@ try {
                     },
                 },
             },
+            MuiInputAdornment: {
+              styleOverrides: {
+                  root: {
+                    "& p": {
+                        padding: "0px var(--spacing-1) !important",
+                    },
+                  },
+              },
+            },
             MuiAvatar: {
                 styleOverrides: {
                     root: {
                       backgroundColor: "var(--button)",
-                      boxShadow: "var(----avatar-shadow)",
+                      boxShadow: "var(--avatar-shadow)",
                       border: "solid calc(var(--border-1) * var(--avatar-border-lg)) var(--button) !important",
                       "&.xxs": {
                         border: "solid calc(var(--border-1) * var(--avatar-border)) var(--button) !important",

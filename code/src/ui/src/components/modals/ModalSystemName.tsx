@@ -9,20 +9,28 @@ import './Modals.css';
 interface Props {
     isOpen: any;
     onClose: any;
-    cmd?: string;       // copy or rename.  If not set, then create a new design system
+    cmd?: string;       // copy or rename or import.  If not set, then create a new design system
     source?: string;    // name of design system
     title?: string;     // optional title to display
     message?: string;   // optional message to display
+    error?: string;     // optional error string to display
 }
 
-const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title, message }) => {
+const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title, message, error }) => {
 
     const [systemName, setSystemName] = useState('');
+    const [data, setData] = useState("");
 
     const handleSubmit = async () => {
         if (cmd) {
-            console.log(cmd + " Design System " + source + " to " + systemName);
-            await onClose(cmd, systemName);
+            if (cmd == "copy" || cmd == "rename") {
+                console.log(cmd + " Design System " + source + " to " + systemName);
+                await onClose(cmd, systemName);
+            }
+            else if (cmd == "import") {
+                console.log(cmd + " Design System as " + systemName);
+                await onClose(cmd, systemName, data);
+            }
         }
         else {
             onClose();
@@ -39,6 +47,8 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
         else {
             onClose();
         }
+        setSystemName("");
+        setData("");
     }
 
     if (!isOpen) return null
@@ -62,9 +72,33 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
                                 className='input-1'
                                 required
                                 value={systemName}
+                                style={{width: "100%"}}
                                 onChange={(e) => setSystemName(e.target.value)}
                             />
+                            {cmd=="import" && <div>
+                                <br />
+                                <label className='label-1' htmlFor="import-data">Design System data</label>
+                                <br/>
+                                <textarea className="input-1" id="import-data" 
+                                    value={data}
+                                    style={{
+                                        width:"100%", 
+                                        paddingLeft:"8px", 
+                                        border:"1px solid var(--border)", 
+                                        height:"100px", 
+                                        borderRadius:"var(--spacing-half)",
+                                        fontFamily: "var(--primaryFont)",
+                                        fontSize: "var(--baseFont)",
+                                    }} 
+                                    placeholder="Copy & paste design system data here"
+                                    onChange={(e) => setData(e.target.value)}
+                                />
+                                </div>
+                            }
                         </div>
+                        {error && <div style={{color:"red"}}>
+                            {error}
+                        </div>}
                         <div className="modal-footer">
                             <Button onClick={handleSubmit}>Next</Button>
                             <Button onClick={handleCancel} className="MuiButton-outlined">Cancel</Button>

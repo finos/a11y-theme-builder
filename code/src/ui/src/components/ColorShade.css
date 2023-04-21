@@ -21,7 +21,7 @@
     margin: 8px auto;
 }
 .color-block .Hex {
-    margin: 8px auto;
+    margin: 8px auto !important;
 }
 
 

@@ -21,7 +21,6 @@ p {
 }
 
 p a {
-    color: #1884ffa7;
     font-weight: bold;
     cursor: pointer;
 }
@@ -63,11 +62,13 @@ p a:hover {
     margin: 0;
 }
 
+/*
 .system-card button {
     background: var(--background);
     border-radius: var(--radius-1);
     padding: var(--spacing-1);
 }
+*/
 
 .button-area {
     justify-content: flex-start;
@@ -100,7 +101,7 @@ p a:hover {
 
 .darkmode .background, .darkmode.background {
     background: var(--dm-background) !important;
-    color: var(--dm-on-background);
+    color: var(--dm-on-background)  !important;
 }
 
 /* hotlinks */
@@ -138,4 +139,3 @@ a:active {
 .darkmode a:active {
     text-decoration: var(--dm-hotlink-hover-decoration)
 }
-  

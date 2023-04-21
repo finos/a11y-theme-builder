@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { InputLabel, TextField } from '@mui/material';
 import { StateSettings } from 'a11y-theme-builder-sdk';
 import './StatesAtom.css'
@@ -13,6 +13,7 @@ import { HeadingSection } from '../content/HeadingSection';
 import { LightModeSection } from '../content/LightModeSection';
 import { DarkModeSection } from '../content/DarkModeSection';
 import { ColorProperty } from '../../components/editors/ColorProperty';
+import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 interface Props {
     atom: StateSettings;
@@ -23,34 +24,45 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
     const [_blockPickerColor, _setBlockPickerColor] = useState<string>("#ffffff");
     const [_selectedState, _setSelectedState] = useState<string>("");
 
-    const renderExample = (darkMode?:boolean) => {
-        let info = atom.info.lmShade.hex;
-        let success = atom.warning.lmShade.hex;
-        let warning = atom.warning.lmShade.hex;
-        let danger = atom.danger.lmShade.hex;
-        if (darkMode) {
-            info = atom.info.dmShade.hex;
-            success = atom.warning.dmShade.hex;
-            warning = atom.warning.dmShade.hex;
-            danger = atom.danger.dmShade.hex;
-        }
+    const [info, setInfo] = useState([getCssValue(`--info`), getCssValue(`--dm-info`)]);
+    const [success, setSuccess] = useState([getCssValue(`--success`), getCssValue(`--dm-success`)]);
+    const [warning, setWarning] = useState([getCssValue(`--warning`), getCssValue(`--dm-warning`)]);
+    const [danger, setDanger] = useState([getCssValue(`--danger`), getCssValue(`--dm-danger`)]);
+
+    useEffect(() => {
+        atom.info.prop.setListener("atom", function() {
+            setInfo([getCssValue(`--info`), getCssValue(`--dm-info`)]);
+        })
+        atom.success.prop.setListener("atom", function() {
+            setSuccess([getCssValue(`--success`), getCssValue(`--dm-success`)]);
+        })
+        atom.warning.prop.setListener("atom", function() {
+            setWarning([getCssValue(`--warning`), getCssValue(`--dm-warning`)]);
+        })
+        atom.danger.prop.setListener("atom", function() {
+            setDanger([getCssValue(`--danger`), getCssValue(`--dm-danger`)]);
+        })
+    }, [])
+
+
+    const renderExample = (lm?:boolean) => {
+        const mode = lm ? 0 : 1;
         return (
-        <div style={{paddingRight:"20px"}}>
-            <InputLabel className="label-1">Information</InputLabel>
-            <TextField className="info" value={info}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Success</InputLabel>
-            <TextField className="success" value={success}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Warning</InputLabel>
-            <TextField className="warning" value={warning}/>
-            <div className="top24"/>
-            <InputLabel className="label-1">Danger</InputLabel>
-            <TextField className="danger" value={danger}/>
-        </div>
+            <div style={{paddingRight:"20px"}}>
+                <InputLabel className="label-1">Information</InputLabel>
+                <TextField className="info" value={info[mode]}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Success</InputLabel>
+                <TextField className="success" value={success[mode]}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Warning</InputLabel>
+                <TextField className="warning" value={warning[mode]}/>
+                <div className="top24"/>
+                <InputLabel className="label-1">Danger</InputLabel>
+                <TextField className="danger" value={danger[mode]}/>
+            </div>
         )
     }
-
 
     return (
         <div className="color-palette-right-content">
@@ -61,10 +73,10 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
                 <div className="top40"/>
                 <div style={{display:"flex", gap:"40px"}}>
                 <LightModeSection>
-                    {renderExample()}
+                    {renderExample(true)}
                 </LightModeSection>
                 <DarkModeSection style={{paddingRight:"20px"}}>
-                    {renderExample(true)}
+                    {renderExample(false)}
                 </DarkModeSection>
                 </div>
             </ExampleSection>

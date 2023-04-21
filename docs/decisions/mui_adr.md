@@ -1,74 +1,79 @@
-# [short title of solved problem and solution]
+# Decision to use React.js and Material UI
 
-* Status: [proposed | rejected | accepted | deprecated ] <!-- optional -->
-* Deciders: [list everyone involved in the decision] <!-- optional -->
-* Date: [YYYY-MM-DD when the decision was last updated] <!-- optional -->
-
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* Status: Accepted 
+* Deciders: Bryce Curtis, Aaron Reed, Evan Countouris, Dan Gisolfi 
+* Date: 2023-02-03 
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+There are several component libraries that can be used to write a web application.  The initial limited-function POC was written as a single page app using jQuery.  Since a complete redesign of the app was needed to turn it into an MVP, several Javascript frameworks and component libraries were considered. 
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers 
 
-* [driver 1, e.g., a force, facing concern, …]
-* [driver 2, e.g., a force, facing concern, …]
-* … <!-- numbers of drivers can vary -->
+* Component-based architecture
+* Open source
+* Community support
+* Usage in Discover
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+* jQuery
+* React.js with Material UI
+* Angular
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "React.js", because it is a component-based architecture, it supports typescript, it is open source with a large and active community, and it is widely used in Discover. 
 
-### Positive Consequences <!-- optional -->
+Chosen option: "Material UI".  Once React.js was chosen, the next decision was which component library to use.  The overriding factor for choosing Material UI was because it is widely used by Discover.  It also supports typescript, and it is open source with a large and active community.  
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+## Pros and Cons of the Options 
 
-### Negative Consequences <!-- optional -->
+The most common web frameworks and technologies used in 2022 are listed on [StackOverflow](https://survey.stackoverflow.co/2022/#web-frameworks-and-technologies).
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
+All respondents:
 
-## Pros and Cons of the Options <!-- optional -->
+* 43% use React.js
+* 29% use jQuery
+* 20% use Angular
 
-### [option 1]
+### jQuery
 
-[example | description | pointer to more information | …] <!-- optional -->
+https://jquery.com/ 
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Good, because it is lightweight and simple
+* Good, because it has cross-browser support
+* Bad, because it is not component-based
 
-### [option 2]
+### React.js with Material UI
 
-[example | description | pointer to more information | …] <!-- optional -->
+https://react.dev/
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+* Good, because it is component-based
+* Good, because it supports typescript
+* Good, because it is widely used by Discover
+* Good, because it is open source
+* Good, because it has active community support
 
-### [option 3]
+https://mui.com/
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Good, because it supports typescript
+* Good, because Material UI component library is widely used by Discover
+* Good, because it is open source
+* Good, because it has active community support
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+### Angular
 
-## Links <!-- optional -->
+https://angularjs.org/
 
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
+* Good, because it is component-based
+* Good, because it supports typescript
+* Good, because it is open source
+* Good, because it has active community support
+* Bad, because it is not used by Discover
+
+## Links
+
+* [The Top React Component Libraries that are Worth Trying (Jan 2023)](https://technostacks.com/blog/react-component-libraries/)
 
 <!-- markdownlint-disable-file MD013 -->

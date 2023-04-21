@@ -29,36 +29,25 @@ export const ColorProperty: React.FC<ColorProps> = ({ property, style, label="",
         property.prop.setValue(value);
     }
 
-    const popup:any = {
-        background: "var(--background)",
-        border: "1px solid var(--border)",
-        borderRadius: "var(--radius-1)",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        position: "absolute",
-        zIndex: "100",
-    }
 
     return (
         <div style={style}>
-            <span onClick={() => setShow(true)} style={{cursor:"pointer"}}>
+            <span onClick={() => setShow(true)}>
                 <ColorSwatch shade={value} label={label || property.name} style={{width: "150px"}}/>
             </span>
-            {show && 
-            <div style={{position: "relative"}}>
-                { /* <div style={{position:"fixed",top:"0px",right:"0px",bottom:"0px",left:"0px"}} 
+            {show &&
+            <div className="windowOverlay ">
+              <div className="colorPop">
+                { /* <div style={{position:"fixed",top:"0px",right:"0px",bottom:"0px",left:"0px"}}
                     onClick={handleCancel}/> */ }
-                <div style={popup}>
+
                     <div><b>Select a Color</b></div>
                     <ChromePicker color={value} onChange={(color:any) => setValue(color.hex)} />
-                    <div style={{display:"flex", justifyContent:"space-between", paddingTop:"20px"}}>
-                        <Button onClick={handleCancel}>Cancel</Button>
+                    <div style={{display:"flex", justifyContent:"space-between", paddingTop:"20px", gap: "8px"}}>
                         <Button onClick={handleSave}>Save</Button>
+                        <Button variant="outlined" onClick={handleCancel}>Cancel</Button>
                     </div>
-                </div>
+              </div>
             </div>
             }
         </div>

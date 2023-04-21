@@ -1,8 +1,8 @@
 import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
-
+import { FormControl, InputLabel, MenuItem } from '@mui/material';
+import { Dropdown } from '../../mui-a11y-tb/components/Dropdown';
 
 interface Props {
 }
@@ -20,17 +20,17 @@ export const DropdownComponent: React.FC<Props> = () => {
             <ExampleSection>
                 <FormControl sx={{ m: 2, minWidth: 80 }}>
                     <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}
+                    <Dropdown
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        label="Age"
+                        onChange={handleChange}
                     >
                         <MenuItem value={10}>10</MenuItem>
                         <MenuItem value={20}>20</MenuItem>
                         <MenuItem value={30}>30</MenuItem>
-                    </Select>
+                    </Dropdown>
                 </FormControl>
             </ExampleSection>
         </div>

@@ -311,90 +311,112 @@ section {
 
 /* THEME */
 .theme-primary {
-  background: var(--primary);
-  color: var(--on-primary);
+  background: var(--primary) !important;
+  color: var(--on-primary) !important;
 }
 .theme-secondary {
-  background: var(--secondary);
-  color: var(--on-secondary);
+  background: var(--secondary) !important;
+  color: var(--on-secondary) !important;
 }
 .theme-tertiary {
-  background: var(--tertiary);
-  color: var(--on-tertiary);
+  background: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
 }
 .background {
-  background: var(--background);
-  color: var(--on-background);
+  background: var(--background) !important;
+  color: var(--on-background) !important;
 }
 .background-secondary {
-  background: var(--background-secondary);
-  color: var(--on-background-secondary);
+  background: var(--background-secondary) !important;
+  color: var(--on-background-secondary) !important;
 }
 .button {
-  background: var(--button);
-  color: var(--on-button);
+  background: var(--button) !important;
+  color: var(--on-button) !important;
 }
 .icon {
-  background: var(--icon);
-  color: var(--on-icon);
+  background: var(--icon) !important;
+  color: var(--on-icon) !important;
 }
 .accent {
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--accent) !important;
+  color: var(--on-accent) !important;
 }
 /* theme text decoraiton */
 .drop-color {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
+.gradient-1 {
+  background: var(--gradient-1);
+  color: var(--on-gradient-1);
+}
+.gradient-2 {
+  background: var(--gradient-2);
+  color: var(--on-gradient-2);
+}
+.gradient-3 {
+  background: var(--gradient-3);
+  color: var(--on-gradient-3);
+}
 .gradient-title {
   background: var(--text-gradient);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* darkmode theme */
 .darkmode .theme-primary {
-  background: var(--dm-primary);
-  color: var(--dm-on-primary);
+  background: var(--dm-primary) !important;
+  color: var(--dm-on-primary) !important;
 }
 .darkmode .theme-secondary {
-  background: var(--dm-secondary);
-  color: var(--dm-on-secondary);
+  background: var(--dm-secondary) !important;
+  color: var(--dm-on-secondary) !important;
 }
 .darkmode .theme-tertiary {
-  background: var(--dm-tertiary);
-  color: var(--dm-on-tertiary);
+  background: var(--dm-tertiary) !important;
+  color: var(--dm-on-tertiary) !important;
 }
 .darkmode .background {
-  background: var(--dm-background);
-  color: var(--dm-on-background);
+  background: var(--dm-background) !important;
+  color: var(--dm-on-background) !important;
 }
 .darkmode .background-secondary {
-  background: var(--dm-background-secondary);
-  color: var(--dm-on-background-secondary);
+  background: var(--dm-background-secondary) !important;
+  color: var(--dm-on-background-secondary) !important;
 }
 .darkmode .button {
-  background: var(--dm-button);
-  color: var(--dm-on-button);
+  background: var(--dm-button) !important;
+  color: var(--dm-on-button) !important;
 }
 .darkmode .icon {
-  background: var(--dm-icon);
-  color: var(--dm-on-icon);
+  background: var(--dm-icon) !important;
+  color: var(--dm-on-icon) !important;
 }
 .darkmode .accent {
-  background: var(--dm-accent);
-  color: var(--dm-on-accent);
+  background: var(--dm-accent) !important;
+  color: var(--dm-on-accent) !important;
 }
 .darkmode .drop-color {
-  text-shadow: 4px 4px 0px var(--dm-color-drop);
+  text-shadow: 4px 4px 0px var(--dm-color-drop) !important;
+}
+.darkmode .gradient-1 {
+  background: var(--dm-gradient-1)  !important;
+  color: var(--dm-on-gradient-1)  !important;
+}
+.darkmode .gradient-2 {
+  background: var(--dm-gradient-2)  !important;
+  color: var(--dm-on-gradient-2)  !important;
+}
+.darkmode .gradient-3 {
+  background: var(--dm-gradient-3)  !important;
+  color: var(--dm-on-gradient-3)  !important;
 }
 .darkmode .gradient-title {
-  background: var(--dm-text-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: var(--dm-text-gradient)  !important;
+ -webkit-background-clip: text  !important;
+ -webkit-text-fill-color: transparent  !important;
 }
+
 
 /* MOLECULES */
 
@@ -1088,13 +1110,13 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 /* dropdowns */
 .MuiMenuItem-root {
   background: var(--surface);
-  color: var(--on-surface)
+  color: var(--on-surface);
 }
 .MuiMenuItem-root:hover {
   background: var(--dropdown-hover-bg);
   color: var(--on-dropdown-hover-bg)
 }
-.MuiMenuItem-root:focus {
+.MuiMenuItem-root:focus, .Mui-selected {
   background: var(--dropdown-focus-bg);
   color: var(--on-dropdown-focus-bg)
 }
@@ -1781,8 +1803,10 @@ button.MuiPaginationItem-root:hover {
   background: var(--surface);
   color: var(--on-surface);
   border: 1px solid var(--border);
-  padding: 0 0 0 8px;
-
+}
+.MuiPopover-paper .MuiList-root.MuiMenu-list .MuiMenuItem-root {
+  margin-left: 8px;
+  background: transparent !important
 }
 .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--on-surface);
@@ -1803,6 +1827,10 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-surface) !important;
   color: var(--dm-on-surface) !important;
   border: 1px solid var(--dm-border) !important;
+}
+.darkmode .MuiPopover-paper .MuiList-root.MuiMenu-list .MuiMenuItem-root {
+  margin-left: 8px;
+  background: transparent !important
 }
 .darkmode .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--dm-white);
@@ -1928,12 +1956,8 @@ button.MuiPaginationItem-root:hover {
 }
 
 .MuiSlider-root .MuiSlider-thumb {
-
-  /* need to update once the coorect value is being passed
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
-  width: calc( var(--sliderhandleHeight) * var(--spacing-1) );*/
-  width: var(--spacing-3);
-  width: var(--spacing-3);
+  width: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
   background-color: var(--button);
   position: relative;
@@ -2001,14 +2025,14 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-background) !important;
   color: var(--black)  !important;
   z-index: 1;
-}
-.MuiTooltip-tooltip {
+} */
+/* .MuiTooltip-tooltip {
     background: var(--dm-background) !important;
     color: var(--black)  !important;
     z-index: 1;
-}
+} */
 
-.MuiTooltip-tooltip::before {
+/* .MuiTooltip-tooltip::before {
   background: var(--dm-white)  !important;
   position: absolute;
   top: 0;
@@ -2017,7 +2041,17 @@ button.MuiPaginationItem-root:hover {
   bottom: 0;
   z-index: -1;
   content: "";
-} */
+}  */
+
+.MuiTooltip-tooltip {
+  background: var(--background);
+  color: var(--on-background);
+}
+.darkmode .MuiTooltip-tooltip {
+  background: var(--dm-on-background);
+  color: var(--dm-background);
+}
+
 .MuiOutlinedInput-root {
   position: relative;
 }
@@ -2066,15 +2100,7 @@ button.MuiPaginationItem-root:hover {
   border: 1px auto var(--dm-button);
   box-shadow: 0 0 var(--focusBlur) 1px var(--dm-button-half);
 }
-/* gradient header */
-.gradient-title {
 
-}
-/* gradients */
-.darkmode .gradient-1 {
-  background: var(--dm-gradient-1);
-  color: var(--dm-on-gradient-1);
-}
 /* icons */
 .icon-body {
   display: flex;
@@ -2522,34 +2548,16 @@ button.MuiPaginationItem-root:hover {
   color: var(--dm-on-nearblack);
 }
 
-.background {
-  background: var(--background) !important;
-  color: var(--on-background);
-}
 /*.background:nth-of-type(even), .background-secondary  {*/
-.background-secondary  {
-  background: var(--background-secondary) !important;
-  color: var(--on-background-secondary);
-}
 
-.background-tertiary  {
-  background: var(--background-tertiary) !important;
-  color: var(--on-background-tertiary);
-}
-
-.darkmode .background, .darkmode.background {
-  background: var(--dm-background) !important;
-  color: var(--dm-on-background);
-}
-
-.darkmode .background:nth-of-type(even), .darkmode .background-secondary{
+.darkmode section.background:nth-of-type(even), .darkmode .background-secondary{
   background: var(--dm-background-secondary) !important;
-  color: var(--dm-on-background-secondary);
+  color: var(--dm-on-background-secondary)!important;
 }
 
 .darkmode .background-tertiary {
   background: var(--dm-background-tertiary) !important;
-  color: var(--dm-on-background-tertiary);
+  color: var(--dm-on-background-tertiary)!important;
 }
 /* input */
 .MuiInputBase-root .MuiOutlinedInput-input {
@@ -2623,18 +2631,21 @@ button.MuiPaginationItem-root:hover {
 .modal {
   height: auto;
   box-shadow: var(--modal-shadow);
-  border-radius: calc(var(--modal-radius) * var(--radius-1));
+  border-radius: calc(var(--modal-radius) * var(--radius-1)) !important;
   padding: var(--spacing-3);
   background: var(--surface);
+  max-height: calc(100vh - var(--spacing-10));
 }
 .modal-content {
   padding: var(--spacing-3);
   display: flex;
   flex-direction: column;
+  border-radius: var(--radius-1);
+  overflow-y: scroll;
 }
 
 .modal-footer {
-  padding: var(--spacing-3) 0;
+  padding: var(--spacing-3) 0 0;
   gap: var(--spacing-2);
   display: flex;;
   justify-content: start;
@@ -3126,10 +3137,6 @@ button.MuiPaginationItem-root:hover {
 }
 
 /*  GRADIENT 1 */
-.gradient-1 {
-  background: var(--gradient-1) !important;
-  color: var(--on-gradient-1) !important;
-}
 .gradient-1 .fa-regular:not(button *), .gradient-1 .fa-solid:not(button *) {
   color: var(--on-gradient-1) !important;
 }

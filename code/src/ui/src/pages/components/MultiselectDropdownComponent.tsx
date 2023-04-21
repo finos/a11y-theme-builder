@@ -5,8 +5,8 @@
 import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { Checkbox, FormControl, ListItemText, MenuItem, OutlinedInput, Select } from '@mui/material';
-
+import { Checkbox, FormControl, ListItemText, MenuItem, OutlinedInput } from '@mui/material';
+import { Dropdown } from '../../mui-a11y-tb/components/Dropdown';
 
 interface Props {
 }
@@ -45,7 +45,7 @@ export const MultiselectDropdownComponent: React.FC<Props> = () => {
             <HeadingSection title='Desktop' heading='Multiselect Dropdown'></HeadingSection>
             <ExampleSection>
                 <FormControl sx={{ m: 1, width: 300 }}>
-                    <Select
+                    <Dropdown
                         labelId="multiselect-dropdown-label"
                         id="multiselect-dropdown-checkbox"
                         multiple
@@ -53,7 +53,7 @@ export const MultiselectDropdownComponent: React.FC<Props> = () => {
                         value={topping}
                         onChange={handleChange}
                         input={<OutlinedInput/>}
-                        renderValue={(selected) => {
+                        renderValue={(selected:any) => {
                             if (selected.length === 0) {
                                 return <em>None Selected</em>;
                             }
@@ -70,7 +70,7 @@ export const MultiselectDropdownComponent: React.FC<Props> = () => {
                                 <ListItemText primary={top} />
                             </MenuItem>
                         ))}
-                    </Select>
+                    </Dropdown>
                 </FormControl>
             </ExampleSection>
         </div>

@@ -51,8 +51,9 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
         <>
 
             <div>
+                <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
                 <FormControl sx={{ width: 400 }}>
-                    <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
+
                     <Select
                         labelId="a11y-layers-multiple-checkbox-label"
                         id="a11y-layers-multiple-checkbox"
