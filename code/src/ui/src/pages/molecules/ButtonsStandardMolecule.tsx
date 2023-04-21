@@ -28,7 +28,9 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
 
     return (
         <div>
-            <HeadingSection item={molecule} title="Apply Styles" />
+            <HeadingSection item={molecule} title="Apply Styles">
+                <p>Configure settings that affect the appearance of standard-size buttons</p>
+            </HeadingSection>
             <ExampleSection>
                 <div className="buttonDemo">
                     <Button variant="contained">Primary</Button>

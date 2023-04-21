@@ -23,7 +23,9 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
 
     return (
         <div>
-            <HeadingSection item={molecule} title="Apply Styles" />
+            <HeadingSection item={molecule} title="Apply Styles">
+                <p>Configure settings that affect the borders, elevations and shadows of avatars</p>
+            </HeadingSection>
             <ExampleSection>
                 <div className="subtitle1">Avatars is icons</div>
                 <Stack direction="row" spacing={1} alignItems="center">

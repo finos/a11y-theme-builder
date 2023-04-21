@@ -1,9 +1,0 @@
-CUR_DIR=`pwd`
-SDK=a11y-theme-builder-sdk
-cd ../../$SDK
-git pull
-npm run build-lib
-cd $CUR_DIR
-rm -rf src/ui/node_modules/.cache
-rm -rf src/ui/node_modules/$SDK
-cp -R ../../$SDK src/ui/node_modules

@@ -7,7 +7,7 @@
 		"build": "npm install && npm run build-ui && npm run build-api",
 		"build-ui": "cd src/ui && npm run build",
 		"build-api": "npm install && tsc",
-		"debug": "nodemon --exec 'ts-node' src/app.ts",
+		"debug": "nodemon --exec \"ts-node\" src/app.ts",
 		"start": "node build/app.js",
 		"dev-ui": "cd src/ui && npm run start",
 		"debug-inspect": "nodemon --exec node --inspect=0.0.0.0:9229 -r ts-node/register src/app.ts",

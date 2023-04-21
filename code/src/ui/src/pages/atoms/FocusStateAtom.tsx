@@ -36,7 +36,8 @@ export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
     return (
         <div>
             <HeadingSection item={focusStates} title="Focus States">
-                Focus states need to have a contrast of 3.1 or higher against the selected background.
+                <p>Settings that affect focus state for components such as textfields and cards</p>
+                <p>Focus states need to have a contrast of 3.1 or higher against the selected background.</p>
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>

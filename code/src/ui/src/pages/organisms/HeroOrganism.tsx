@@ -23,10 +23,12 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
 
     return (
         <div>
-            <HeadingSection item={organism} title="Apply Styles" />
+            <HeadingSection item={organism} title="Apply Styles">
+                <p>Configure settings that affect the appearance of Hero organisms.</p>
+            </HeadingSection>
 
 
-              <HeroExample/>
+            <HeroExample/>
 
 
 

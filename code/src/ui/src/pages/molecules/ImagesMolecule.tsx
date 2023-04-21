@@ -28,6 +28,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles" heading="Images">
+                <p>Configure settings that affect the appearance of images.</p>
             </HeadingSection>
             <ExampleSection>
                 <div className="row">

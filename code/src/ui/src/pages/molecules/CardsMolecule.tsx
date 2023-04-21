@@ -49,7 +49,9 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
 
     return (
         <div>
-            <HeadingSection item={molecule} title="Apply Styles" />
+            <HeadingSection item={molecule} title="Apply Styles">
+                <p>Configure settings that affect the appearance of cards.</p>
+            </HeadingSection>
             <ExampleSection>
                 <Card>
                     <CardHeader title="Card Title" />

@@ -24,7 +24,9 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
     if (colorTheme) {
         return (
             <div className="content theme-page active" id="buildThemes">
-                <HeadingSection title="Theme" heading="Default Theme" />
+                <HeadingSection title="Theme" heading="Default Theme">
+                    <p>Read-only representation of the colors in the default color theme for the currently selected design system.</p>
+                </HeadingSection>
                 <ExampleSection>
                     <div style={{ display: "flex", gap: "40px" }}>
                         <LightModeSection>
