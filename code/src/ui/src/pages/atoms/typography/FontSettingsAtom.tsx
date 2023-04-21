@@ -254,7 +254,14 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
     return (
         <>
-            <HeadingSection item={fontSettingsAtom} title="Typography" />
+            <HeadingSection item={fontSettingsAtom} title="Typography">
+                    The Font Settings Atom includes:
+                    <ul>
+                        <li>Primary and Secondary Font</li>
+                        <li>5 different font weights (0-4)</li>
+                        <li>3 different Line Heights (Standard, Header, Small)</li>
+                    </ul>
+            </HeadingSection>
             <ExampleSection>
                 <div style={{fontFamily: primaryFontFamilyProperty.getValue()}}>
                     <b>The Primary Font is {primaryFontFamilyProperty.getValue()}.</b>

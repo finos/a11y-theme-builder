@@ -82,7 +82,32 @@ export const SmallTextStylesAtom: React.FC<Props> = ({ designSystem }) => {
     return (
         <div className="container">
             <HeadingSection item={smallTextStylesAtom} title="Typography">
-            Note: You can continue to modify each style below.
+            The Small Text Styles Atom sets Typography settings for the 16 Small Text types:
+                <ul>
+                    <li>Subtitle 1</li>
+                    <li>Subtitle 2</li>
+                    <li>Caption</li>
+                    <li>Caption Bold</li>
+                    <li>Overline</li>
+                    <li>Overline Large</li>
+                    <li>Overline Extra Large</li>
+                    <li>Label 1</li>
+                    <li>Label 2 All Caps</li>
+                    <li>Label 1</li>
+                    <li>Label 2 All Caps</li>
+                    <li>Label Small</li>
+                    <li>Call to Action</li>
+                    <li>Call to Action Small</li>
+                    <li>Small</li>
+                    <li>Small Semibold</li>
+                </ul>
+                The Settings that can be changed for each are:
+                <ul>
+                    <li>Font Family</li>
+                    <li>Font Size</li>
+                    <li>Font Weight</li>
+                    <li>Character Spacing</li>
+                </ul>
             </HeadingSection>
             <ExampleSection>
                 None
