@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -19,17 +19,17 @@ export const AnimationAtom: React.FC<Props> = ({ atom }) => {
     return (
         <div>
             <HeadingSection item={atom} title="Animations">
-                Animation speed and distance for transitions.
+                Animation speed and distance for for hover and focus transitions.
             </HeadingSection>
             <ExampleSection>
             <div className="row">
-                        <div className="col-61">
-                            <div className="form-row">
-                                <InputLabel className="label-1" htmlFor="animation-preview">Animate hover and focus</InputLabel>
-                                <TextField id="animation-preview" value="Sample input Field" />
-                            </div>
-                        </div>
+                <div className="col-6">
+                    <div className="form-row">
+                        <InputLabel className="label-1" htmlFor="animation-preview">Animate hover and focus</InputLabel>
+                        <TextField id="animation-preview" value="Sample input Field" />
                     </div>
+                </div>
+            </div>
             </ExampleSection>
             <SettingsSection>
                 <div className="top40">
