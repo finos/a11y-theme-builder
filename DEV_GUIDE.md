@@ -133,12 +133,9 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
-#### Windows Specific Steps
-Currently, there are a few extra steps to use the app on a Windows machine:
-
-* delete both `package-lock.json` files before build
-* replace `'` chars in the debug script in the package.json with `\"`, so t reads `"debug": "nodemon --exec \"ts-node\" src/app.ts",`
-* delete the `data/themes` file, before running both the server(s) 
+#### Potential Windows Issue
+One problem you might run into on a Windows system is that themes may not appear, load, or be created.
+If this is the case, it most likely means there is a problem with you [themes file](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
 
 
 ## Understanding Server APIs
