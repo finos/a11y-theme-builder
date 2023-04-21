@@ -96,6 +96,18 @@ To access the application, load the following URL into a browser:
 ```
 http://localhost:3001
 ```
+
+### Targeted Browsers
+
+We are targeting the following browser versions:
+
+* Chrome v109+
+* Safari v15.6+
+* Edge v110+
+* Firefox v111+
+
+This list consists of reasonably recent versions that are most likely to be in use by designers and developers.  We would welcome any input from enterprise-type users to help improve this list.
+
 ## Development
 
 The Theme Builder is a web application that uses Node for the server and React for the UI.  Both server and UI use typescript, which is compiled into javascript and saved in the build directories:
