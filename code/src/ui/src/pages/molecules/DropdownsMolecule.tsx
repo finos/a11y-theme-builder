@@ -22,7 +22,6 @@ interface Props {
 }
 
 export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
-    const grid = designSystem.atoms.gridSettings.grid.getValue();
 
     useEffect(() => {
         console.log("DropdownsMolecule mounted");

@@ -136,6 +136,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
     return (
         <div>
             <HeadingSection item={bevelSettings} title="Bevels & Inverse Bevels">
+                Bevels add 3D depth to a graphic or text object by making its edges appear sloped.
             </HeadingSection>
             <ExampleSection title="Bevel Shadow Settings">
                 <div className="row">

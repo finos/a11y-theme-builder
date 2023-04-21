@@ -24,7 +24,7 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
-                Like small buttons, you can adjust the visibile height of a chip but the target area will be consistent with your selected minimum height. However, you will notice you can't go smaller than 32px to accomodate the need for chips with icons.
+                Like small buttons, you can adjust the visible height of a chip but the target area will be consistent with your selected minimum height. However, you will notice you can't go smaller than 32px to accommodate the need for chips with icons.
             </HeadingSection>
             <ExampleSection>
                 <div>
