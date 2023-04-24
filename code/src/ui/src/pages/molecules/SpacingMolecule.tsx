@@ -42,7 +42,7 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
     return (
         <>
             <HeadingSection item={spacingMolecule} title="Assign Spacing">
-                The Spacing Atom controls the amount of space between lines of text within a paragraph, adn the paragraphs themselves.
+                The Spacing Molecule controls the amount of space between lines of text within a paragraph, and the paragraphs themselves.
             </HeadingSection>
             <Switch
                 checked={showGuidelines}

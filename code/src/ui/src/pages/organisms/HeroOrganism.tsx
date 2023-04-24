@@ -24,7 +24,7 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
     return (
         <div>
             <HeadingSection item={organism} title="Apply Styles">
-                <p>Configure settings that affect the appearance of Hero organisms.</p>
+                <p>Configure settings that affect the appearance of Hero organisms.  Heros are a common content-pattern that is located in a prominant location and may contain introductory text for a website and may contain breadcrumbs, buttons and other components.</p>
             </HeadingSection>
 
 
