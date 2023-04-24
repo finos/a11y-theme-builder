@@ -330,6 +330,11 @@ section {
   background: var(--background-secondary) !important;
   color: var(--on-background-secondary) !important;
 }
+
+.background-tertiary {
+  background: var(--background-tertiary) !important;
+  color: var(--on-background-tertiary) !important;
+}
 .button {
   background: var(--button) !important;
   color: var(--on-button) !important;
