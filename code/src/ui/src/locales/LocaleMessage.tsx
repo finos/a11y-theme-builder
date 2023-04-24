@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -8,6 +8,8 @@ import { LocaleMgr } from '../LocaleMgr';
 import { Button, TextField } from '@mui/material';
 import  { useState } from 'react'
 import '../components/modals/Modals.css'
+
+const prod = true;
 
 interface ModalProps {
     isOpen: any;
@@ -78,6 +80,13 @@ export const LocaleMessage: React.FC<Props> = ({ id }) => {
     }
 
     const intl = useIntl();
+
+    if (prod) {
+        return(
+            <FormattedMessage id={id} />
+        );
+    }
+
     const msg = intl.formatMessage({id:id});
     //console.log("LocaleMessage=",m);
     //@TODO: Consider a safer way to support HTML
@@ -97,8 +106,4 @@ export const LocaleMessage: React.FC<Props> = ({ id }) => {
             </span>
         );
     }
-
-    // return(
-    //     <FormattedMessage id={id} />
-    // );
 }
