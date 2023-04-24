@@ -1193,6 +1193,24 @@ a:active {
   text-decoration: var(--hotlink-hover-decoration)
 }
 
+/* darkmode links */
+.darkmode a {
+  color: var(--dm-hotlink);
+  text-decoration: var(--dm-hotlink-decoration)
+}
+
+.darkmode a:visited {
+  opacity: .7
+}
+
+.darkmode a:hover {
+  text-decoration: var(--dm-hotlink-hover-decoration) !important;
+}
+
+.darkmode a:active {
+  text-decoration: var(--dm-hotlink-hover-decoration)
+}
+
 
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .darkmode .default{
