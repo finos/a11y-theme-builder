@@ -1220,10 +1220,6 @@ a:active {
 .darkmode .fa-regular:not(button *), .darkmode .fa-solid:not(button *) {
   color: var(--dm-icon) !important;
 }
-.darkmode a {
-  text-decoration:  var(--dmhotlinkDecorationOnTertiary );
-  color: var(--dmhotlinkOnTertiary );
-}
 .darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.MuiPaginationItem-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
