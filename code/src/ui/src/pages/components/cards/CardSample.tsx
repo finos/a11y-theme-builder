@@ -70,7 +70,7 @@ export const CardSample: React.FC<Props> = ({label, title, className, imagePath,
                                 {renderBarGraphIcon()}
                             </IconButton>
                         }
-                        {(!hotlink && !hideSecondary) && <Button variant="text">Secondary</Button>}
+                        {(!hotlink && !hideSecondary) && <Button variant="outlined">Secondary</Button>}
                         {hotlink && <a href="#">Learn More</a>}
                     </CardActions>}
                 </Card>
