@@ -103,39 +103,3 @@ p a:hover {
     background: var(--dm-background) !important;
     color: var(--dm-on-background)  !important;
 }
-
-/* hotlinks */
-a {
-    color: var(--hotlink);
-    text-decoration: var(--hotlink-decoration)
-}
-
-a:visited {
-    opacity: .7
-}
-
-a:hover {
-    text-decoration: var(--hotlink-hover-decoration) !important;
-}
-
-a:active {
-    text-decoration: var(--hotlink-hover-decoration)
-}
-
-/* darkmode links */
-.darkmode a {
-    color: var(--dm-hotlink);
-    text-decoration: var(--dm-hotlink-decoration)
-}
-
-.darkmode a:visited {
-    opacity: .7
-}
-
-.darkmode a:hover {
-    text-decoration: var(--dm-hotlink-hover-decoration) !important;
-}
-
-.darkmode a:active {
-    text-decoration: var(--dm-hotlink-hover-decoration)
-}
