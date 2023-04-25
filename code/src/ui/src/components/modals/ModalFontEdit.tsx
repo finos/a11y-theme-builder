@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -47,7 +47,7 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
 
     const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || "Open Sans"));
     const [fontSize,    setFontSize   ] = useState<number>(fontSizeProperty.getValue()       || 16);
-    const [fontWeight,  setFontWeight ] = useState<number>((fontWeightProperty as any).value || defaultWeight);
+    const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue() || defaultWeight);
     const [charSpacing, setCharSpacing] = useState<number>(charSpacingProperty.getValue()    || 0);
 
     const [fontUncommon, setFontUncommon] = useState<boolean>(!FontWeightsUtil.isFontCommon(fontFamily))
