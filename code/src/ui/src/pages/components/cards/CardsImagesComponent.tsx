@@ -32,22 +32,22 @@ export const CardsImagesComponent: React.FC<Props> = () => {
             </FormControl>
             </SettingsSection>
             <ExampleSection>
-            <CardSample label="Left Aligned 9:16 Ratio" title="Title" imagePath="/userTest-2.jpeg" clickable={_clickableCards}>
+            <CardSample label="Left Aligned 9:16 Ratio" title="Title" imagePath="/sample.jpg" clickable={_clickableCards}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
-            <CardSample label="Left Aligned 9:21 Ratio" title="Title" imagePath="/test.jpeg" imageClassName="cinemascope" clickable={_clickableCards}>
+            <CardSample label="Left Aligned 9:21 Ratio" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" clickable={_clickableCards}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
-            <CardSample label="Center Aligned 9:16 Ratio" title="Title" imagePath="/userTest-2.jpeg" className="centerAligned" clickable={_clickableCards}>
+            <CardSample label="Center Aligned 9:16 Ratio" title="Title" imagePath="/sample.jpg" className="centerAligned" clickable={_clickableCards}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <CardSample
                 label="Center Aligned 9:21 Ratio"
                 title="Title"
-                imagePath="/test.jpeg"
+                imagePath="/sample.jpg"
                 className="centerAligned"
                 imageClassName="cinemascope"
                 clickable={_clickableCards}
