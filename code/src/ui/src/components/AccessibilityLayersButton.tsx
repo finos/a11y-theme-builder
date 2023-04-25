@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -48,11 +48,9 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
     }
 
     return (
-        <>
-
             <div>
                 <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
-                <FormControl sx={{ width: 400 }}>
+                <FormControl sx={{ width: 400, paddingRight: "4px" }}>
 
                     <Select
                         labelId="a11y-layers-multiple-checkbox-label"
@@ -88,6 +86,5 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
                     </Select>
                 </FormControl>
             </div>
-        </>
     )
 }
