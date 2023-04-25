@@ -258,6 +258,7 @@ try {
                         minHeight: "var(--spacing-3)",
                         display: "flex",
                         flexDirection: "column",
+                        minWidth: "290px",
                     }
                 }
             },

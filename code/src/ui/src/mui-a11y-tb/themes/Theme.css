@@ -334,7 +334,7 @@ section {
   background: var(--button) !important;
   color: var(--on-button) !important;
 }
-.icon {
+.icon:not(button) {
   background: var(--icon) !important;
   color: var(--on-icon) !important;
 }
