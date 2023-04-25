@@ -1,42 +1,10 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, { ReactNode } from 'react';
 import { styled } from '@mui/material';
-import { Tab, Tabs, ListSubheader, ListItemButton, ListItemText } from "@mui/material";
-
-// export const LeftNavTab = styled(Tab)(({ theme }) => ({
-//     alignItems: "flex-start",
-//     left: "20px",
-// }));
-
-// export const LeftNavTab2 = styled(Tab)(({ theme }) => ({
-//     alignItems: "flex-start",
-//     left: "40px",
-//     fontSize: "smaller",
-// }));
-
-// export const LeftNavHeaderTab = styled(Tab)(( {theme }) => ({
-//     alignItems: "flex-start",
-//     fontWeight: "bold",
-// }))
-
-// export const LeftNavTabs = styled(Tabs)(( {theme }) => ({
-//     '.MuiTabs-indicator': {
-//         left: 0,
-//         backgroundColor: "#000"
-//     },
-//     '.Mui-disabled': {
-//         color: "black", //"var(--color)",
-//         opacity: 1,
-//     },
-// }))
-
-// export const LeftPreviewTab = styled(Tab)(({ theme }) => ({
-//     alignItems: "flex-start",
-// }));
-
+import { ListSubheader, ListItemButton, ListItemText } from "@mui/material";
 
 export const LeftNavHeader = styled(ListSubheader)(( {theme }) => ({
     fontWeight: "bold",
@@ -74,7 +42,6 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
             pl: 2 + (props.indent ? 2*props.indent : 0),
             background: selected ? "var(--dropdown-focus-bg)" : null,
             color: selected ? "var(--on-dropdown-focus-bg)" : null,
-            borderRight: selected ? "2px solid black" : null,
             marginLeft: "8px",
             ':hover': {
                 backgroundColor: selected ? "var(--dropdown-hover-bg)" : null,
