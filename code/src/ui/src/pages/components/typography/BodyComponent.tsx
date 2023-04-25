@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -6,9 +6,9 @@ import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import TypographyBox from '../../../components/TypographyBox';
 
-const body1CssPrefix = "Body1"
-const body2CssPrefix = "Body2"
-const body3CssPrefix = "Body3"
+const body1CssPrefix = "body1"
+const body2CssPrefix = "body2"
+const body3CssPrefix = "body3"
 
 interface Props {
 }
