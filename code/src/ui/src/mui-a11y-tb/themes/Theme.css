@@ -1490,6 +1490,12 @@ button.MuiPaginationItem-root:hover {
   background-color: var(--dm-on-background);
   opacity: var(--disabled);
 }
+
+.MuiChip-root .MuiAvatar-root.MuiChip-avatar {
+ margin: 0 !important;
+ box-shadow: none !important;
+ border-width: 2px !important;
+}
 /* dark mode chips */
 .MuiChip-avatar {
   margin: 0 !important;
