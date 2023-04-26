@@ -581,7 +581,7 @@
   --card-shadow: var(--card-elevation), var(--card-bevel);
   --modal-radius: 3;
   --modal-elevation: var(--elevation-0);
-  --modal-overlay: core=Black, index=-1, hex=#121212, opacity=1, onHex=, id=unknown;
+  --modal-overlay: var(--black);
   --modal-padding: 2;
   --modal-border: var(--spacing-2);
   --modal-shadow: var(--modal-elevation);
