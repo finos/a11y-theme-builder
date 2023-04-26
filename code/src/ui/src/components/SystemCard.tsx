@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -123,7 +123,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                     <h5>Data for {name}</h5>
                     <div className="button-area">
                         <Button variant="contained" onClick={() => navigator.clipboard.writeText(view)}>Copy to clipboard</Button>
-                        <Button  variant="outlined" onClick={() => handleClose("view")}>Cancel</Button>
+                        <Button  variant="outlined" onClick={() => setView(null)}>Cancel</Button>
                     </div>
                     <div>
                         <pre 
