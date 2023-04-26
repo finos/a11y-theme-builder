@@ -36,18 +36,26 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     // console.log(`${name} - >>> enter()`);
 
     const typographyStyling = designSystem.getNode(textKey) as TypographyStyling;
-    const atom = designSystem.atoms.displayAndHeaderStyles;
-    const defaultWeight = atom.headingDisplayFontWeight.getValue() || 400;
-    console.log("@bc defaultWeight=",defaultWeight);
+
+    let defaultWeight: number;
+    if (isHeader) {
+        defaultWeight = designSystem.atoms.displayAndHeaderStyles.headingDisplayFontWeight.getValue() || 600;
+    } else {
+        defaultWeight = designSystem.atoms.fontsSettings.fontWeights[1].getValue() || 600;
+    }
+
+    const primaryFont   = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Open Sans";
+    const secondaryFont = designSystem.atoms.fontsSettings.secondaryFont.getValue() || "Open Sans";
+    const defaultFont   = isHeader ? secondaryFont : primaryFont;
 
     const fontFamilyProperty    = typographyStyling.fontFamily
     const fontSizeProperty      = typographyStyling.fontSize
     const fontWeightProperty    = typographyStyling.fontWeight
     const charSpacingProperty   = typographyStyling.letterSpacing
 
-    const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || "Open Sans"));
+    const [fontFamily,  setFontFamily ] = useState<string>(""+(fontFamilyProperty.getValue() || defaultFont));
     const [fontSize,    setFontSize   ] = useState<number>(fontSizeProperty.getValue()       || 16);
-    const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue() || defaultWeight);
+    const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue()     || defaultWeight);
     const [charSpacing, setCharSpacing] = useState<number>(charSpacingProperty.getValue()    || 0);
 
     const [fontUncommon, setFontUncommon] = useState<boolean>(!FontWeightsUtil.isFontCommon(fontFamily))
@@ -83,13 +91,13 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     const cssFontSize         = "var(--" + cssPrefix + "FontSize)";
     const cssFontWeight       = "var(--" + cssPrefix + "FontWeight)";
     const cssLineHeight       = "var(--" + cssPrefix + "LineHeight)";
-    const cssLetterSpacing = "var(--" + cssPrefix + "LetterSpacing)";
+    const cssLetterSpacing    = "var(--" + cssPrefix + "LetterSpacing)";
 
     const [sampleStyle, setSampleStyle] = useState<any>({
-        fontFamily: cssFontFamily,
-        fontSize: cssFontSize,
-        fontWeight: cssFontWeight,
-        lineHeight: cssLineHeight,
+        fontFamily:    cssFontFamily,
+        fontSize:      cssFontSize,
+        fontWeight:    cssFontWeight,
+        lineHeight:    cssLineHeight,
         letterSpacing: cssLetterSpacing,
         //padding: "32px",
     })
@@ -120,26 +128,20 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
         charSpacingProperty.setValue(charSpacing)
         onCancel()
     }
-
+    
     const renderFontFamilySelectables = () => {
-        var r = [];
-        var selectables = fontFamilyProperty.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
-            const s = selectables[i].toString();
-            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
-        }
         return (
             <FormControl sx={{ m: 2, minWidth: 350}}>
                 <InputLabel id='fontFamilyLabel'>
                     {fontFamilyProperty.name}
                 </InputLabel>
                 <Select
-                    //label={fontFamilyProperty.name}
                     labelId='fontFamilyLabel'
                     value={fontFamily}
                     onChange={handleFontFamilyChanged}
                 >
-                    {r}
+                    <MenuItem key={"1"+primaryFont} value={primaryFont}> <b>{"Primary Font: "+primaryFont}</b> </MenuItem>
+                    <MenuItem key={"2"+secondaryFont} value={secondaryFont}> <b>{"Secondary Font: "+secondaryFont}</b> </MenuItem>
                 </Select>
             </FormControl>
         )
