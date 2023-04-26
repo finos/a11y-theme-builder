@@ -4,6 +4,7 @@
  */
 import express, { Request, Response, NextFunction } from "express";
 const fs = require("fs");
+import { cwd } from "process";
 
 export class DocError extends Error {
     public readonly scode: number;
@@ -15,7 +16,8 @@ export class DocError extends Error {
 
 const DB_NAME = "themes";
 var Engine = require('tingodb')();
-var db = new Engine.Db(__dirname + '/data', {});
+// var db = new Engine.Db(cwd() + '/src/data', {});
+var db = new Engine.Db(__dirname + '/../src/data', {});
 var collection = db.collection(DB_NAME);
 collection.compactCollection(function(a:any, b:any) {
     console.log(`compactCollection a=${a} b=${b}`);
