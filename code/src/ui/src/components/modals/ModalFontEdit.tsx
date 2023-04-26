@@ -39,9 +39,9 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
 
     let defaultWeight: number;
     if (isHeader) {
-        defaultWeight = designSystem.atoms.displayAndHeaderStyles.headingDisplayFontWeight.getValue() || 600;
+        defaultWeight = designSystem.atoms.displayAndHeaderStyles.headingDisplayFontWeight.getValue() || 400;
     } else {
-        defaultWeight = designSystem.atoms.fontsSettings.fontWeights[1].getValue() || 600;
+        defaultWeight = designSystem.atoms.fontsSettings.fontWeights[1].getValue() || 500;
     }
 
     const primaryFont   = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Open Sans";
@@ -135,13 +135,13 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                 <InputLabel id='fontFamilyLabel'>
                     {fontFamilyProperty.name}
                 </InputLabel>
-                <Select
-                    labelId='fontFamilyLabel'
-                    value={fontFamily}
-                    onChange={handleFontFamilyChanged}
-                >
-                    <MenuItem key={"1"+primaryFont} value={primaryFont}> <b>{"Primary Font: "+primaryFont}</b> </MenuItem>
-                    <MenuItem key={"2"+secondaryFont} value={secondaryFont}> <b>{"Secondary Font: "+secondaryFont}</b> </MenuItem>
+                <Select labelId='fontFamilyLabel' value={fontFamily} onChange={handleFontFamilyChanged}>
+                    <MenuItem key={"1"+primaryFont}   value={primaryFont}>
+                        <b>{"Primary Font: "+primaryFont}</b>
+                    </MenuItem>
+                    <MenuItem key={"2"+secondaryFont} value={secondaryFont}>
+                        <b>{"Secondary Font: "+secondaryFont}</b>
+                    </MenuItem>
                 </Select>
             </FormControl>
         )
