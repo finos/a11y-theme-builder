@@ -24,6 +24,34 @@ See [Extending the SDK](https://github.com/discoverfinancial/a11y-theme-builder-
 * Complete the new React component, by completing a HeadingSection, ExampleSection and Settings Section.
 * Add your new component to the correct content page depending on whether it is a atom, molecule, organism or component.
 
+The following image shows the various areas of the Theme Builder editor with the specific files that contribute to its rendering.
+
+![theme-builder-ui](../_images/theme-builder-ui.png)
+
+* [DesignSystemPage.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/DesignSystemPage.tsx): The design system page
+* [DesignSystemTitleBar.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/components/DesignSystemTitleBar.tsx): Title bar with save button and accessibility layers
+* [AccessibilityLayersButton.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/components/AccessibilityLayersButton.tsx): Accessibility layers selection dropdown
+* [code/src/ui/src/pages/content](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/content): Renders the main navigation tabs
+  * [AtomContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/atoms/AtomContent.tsx): Renders all atoms
+  * [MoleculeContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/molecules/MoleculeContent.tsx): Renders all molecules
+  * [OrganismContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/organisms/OrganismContent.tsx): Renders all atoms
+  * [ComponentsContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/components/ComponentsContent.tsx): Renders all components
+  * [PreviewContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/preview/PreviewContent.tsx): Renders preview content
+  * [CodeContent.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/code/CodeContent.tsx): Renders code content
+* [LeftNavTabs.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/components/LeftNavTabs.tsx): Each main tab content has a left navigation list that uses the LeftNavTabs component
+* [code/src/ui/src/pages/atoms](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/atoms): Location for all atoms
+* [code/src/ui/src/pages/molecules](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/molecules): Location for all molecules
+* [code/src/ui/src/pages/organisms](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/organisms): Location for all organisms
+* [code/src/ui/src/pages/components](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/components): Location for all components
+* [code/src/ui/src/components/editors](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/components/editors): Property editors used by atoms, molecules and organisms
+* Sections for rendered atoms, molecules, organisms and components
+  * [HeadingSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/HeadingSection.tsx): Heading section with title and description
+  * [ExampleSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/ExampleSection.tsx): Example section 
+    * [LightModeSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/LightModeSection.tsx): Light mode section used to show rendering for light mode
+    * [DarkModeSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/DarkModeSection.tsx): Dark mode section used to show rendering for dark mode
+  * [SettingsSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/SettingsSection.tsx): Settings section that contains the property editors
+  * [GeneratedCodeSection.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/GeneratedCodeSection.tsx): Code section that shows the CSS variables set by the item and their real-time value
+
 ### Walkthrough: Creating a new Atom
 
 We have included an [Example Atom](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/atoms/ExampleAtom.tsx) as a DEMO.
