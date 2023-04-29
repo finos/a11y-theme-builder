@@ -42,13 +42,13 @@ export const ToastsDoubleLineComponent: React.FC<Props> = () => {
                         <h6>Single Line with Close</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error"
-                                action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div> Toast Title</Alert>
-                            <Alert severity="warning" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="warning" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div> Toast Title</Alert>
-                            <Alert severity="success" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="success" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div> Toast Title</Alert>
-                            <Alert severity="info" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="info" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div> Toast Title</Alert>
                         </Stack>
                     </div>
@@ -60,16 +60,16 @@ export const ToastsDoubleLineComponent: React.FC<Props> = () => {
                         <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
                             <Alert severity="error"
-                                action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                                action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div>
                                 Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="warning" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="warning" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div>
                                 Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="success" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="success" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div>
                                 Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="info" action={<IconButton className="small-btn text icon"><CloseIcon/></IconButton>}>
+                            <Alert severity="info" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
                                 <div className="overline">OVERLINE</div>
                                 Toast Title <br/><Button className="small-btn">Button</Button></Alert>
                         </Stack>
