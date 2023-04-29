@@ -631,12 +631,12 @@
   --on-leftNav: var(--on-gray-100);
   --leftNavPadding: var(--spacing-2);
   --hero-padding: 3;
-  --hero-heroTitleTypography: var(--Display1FontWeight) var(--Dislay1FontSize) / var(--Display1LineHeight) var(--Display1FontFamily);
+  --hero-heroTitleTypography: var(--Display1FontWeight) var(--Display1FontSize) / var(--Display1LineHeight) var(--Display1FontFamily);
   --hero-heroTitleTransform: var(--Display1TextTransform);
-  --hero-heroTitleSpacing: var(--Dislay1LetterSpacing);
+  --hero-heroTitleSpacing: var(--Display1LetterSpacing);
   --hero-heroBodyTypography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
-  --hero-heroBodyTransform: var(--body1TextTransform);
-  --hero-heroBodySpacing: var(--body1LetterSpacing);
+  --hero-heroBodyTransform: var(--body1-boldTextTransform);
+  --hero-heroBodySpacing: var(--body1-boldLetterSpacing);
   --hero-title-gap: 16px;
   --hero-justify-content: flex-start;
   --tableheaderTypography: var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
@@ -1146,4 +1146,5 @@
   --dm-on-input: rgba(255,255,255,0.6);
   --dm-input-disabled: rgba(13,13,13,0.515);
   --dm-input-hover: rgba(255,255,255,.12);
+
 }
