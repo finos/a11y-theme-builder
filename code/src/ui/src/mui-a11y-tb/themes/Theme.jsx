@@ -612,7 +612,7 @@ try {
                         "& .MuiTabs-indicator": {
                             background: "var(--on-button)" ,
                             height: "var(--spacing-half)",
-                            bottom:   "calc(var(--spacing-half) + 2px) !important",
+                            bottom:   "2px !important",
                         },
 
                     }
