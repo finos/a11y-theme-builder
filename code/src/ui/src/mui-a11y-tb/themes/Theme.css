@@ -1125,6 +1125,9 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
   background: var(--dropdown-focus-bg);
   color: var(--on-dropdown-focus-bg)
 }
+.MuiSelect-outlined {
+  padding-right: var(--spacing-6) !important
+}
 
 /* darkmode dropdowns */
 .darkmode .MuiMenuItem-root {
@@ -1230,7 +1233,7 @@ a:active {
   background: var(--dmbuttonOnTertiary) !important;
   color: var(--dmonbuttonOnTertiary) !important;
 }
-.darkmode .default button::after, .darkmode .primary button::after, .darkmode .backgroundTertiary button::after {
+.darkmode .default button:not(.MuiTab-root)::after, .darkmode .primary button:not(.MuiTab-root)::after, .darkmode .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid rgb(var(--dmfocusOnTertiary));
 }
 .darkmode .default .fa-regular:not(button *), .darkmode .primary .fa-regular:not(button *), .darkmode .default   .fa-solid:not(button *) {
@@ -1642,6 +1645,9 @@ button.MuiPaginationItem-root:hover {
 .darkmode .MuiFormLabel-root {
   color: var(--dm-on-background)
 }
+/* tabs */
+
+
 /* secondary tabs */
 .secondaryTab.MuiTab-root {
   font-size: var(--CTA-SmallFontSize);
