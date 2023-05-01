@@ -9,7 +9,6 @@ import * as path from "path";
 import { Config } from "./config";
 import { addAuthMiddleware } from "./auth";
 import { registerThemesEndpoint } from "./themesEndpoint";
-import { cwd } from "process";
 
 const cfg = new Config();
 
@@ -48,10 +47,8 @@ async function createApp(cfg: Config): Promise<express.Application> {
     app.use('/api/*', bodyParser.json());
     registerThemesEndpoint(app);
     app.use(handleError);
-    // app.use(express.static(path.join(cwd(), 'src/ui/build')));
     app.use(express.static(path.join(__dirname, '../src/ui/build')));
     app.get('/*', function(req: Request, res: Response) {
-        // res.sendFile(path.join(cwd(), 'src/ui/build', 'index.html'));
         res.sendFile(path.join(__dirname, '../src/ui/build', 'index.html'));
     });
     return app;

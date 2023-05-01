@@ -34,7 +34,6 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
 
     // designSystemName comes into the component from the path
     //  of the Route
-    //TODO: Throw error here if themeBuilder not set?
     const { designSystemName } = useParams();
 
     const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
@@ -83,14 +82,6 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
         if (!initComplete) {
             initComplete = true;
             setDesignSystemName(designSystemName);
-
-            // Test theme change from light to dark to light
-            // setTimeout(function() {
-            //     setThemeName("dark")
-            // }, 5000)
-            // setTimeout(function() {
-            //     setThemeName("light")
-            // }, 10000)
         }
     }, []);
 
