@@ -8,11 +8,12 @@ import "./Hero.css";
 interface Props {
     style?: any;
     children?: React.ReactNode;
+    className?: string;
 }
 
-export const Hero: React.FC<Props> = ({style, children}) => {
+export const Hero: React.FC<Props> = ({style, children, className=""}) => {
     return (
-        <div className="hero" style={style}>
+        <div className={"hero " + className} style={style}>
             {children}
         </div>
     )

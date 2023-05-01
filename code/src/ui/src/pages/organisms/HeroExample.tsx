@@ -17,7 +17,7 @@ export const HeroExample: React.FC<Props> = ({style}) => {
     return (
         <ExampleSection>
           <HeroColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-            <div className={"hero " + colorMode} >
+            <Hero className={colorMode} >
                 <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
                     <Link>Home</Link>
                     <Link>Page</Link>
@@ -30,7 +30,7 @@ export const HeroExample: React.FC<Props> = ({style}) => {
                     </p>
                 </div>
                 <Button>Get Started</Button>
-            </div>
+            </Hero>
           </HeroColorModeSelector>
         </ExampleSection>
     )
