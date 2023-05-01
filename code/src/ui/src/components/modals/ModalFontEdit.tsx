@@ -14,6 +14,9 @@ import { SettingsSection } from '../../pages/content/SettingsSection';
 
 const name = "ModalFontEdit";
 
+const PRIMARY_PREFIX    = "Primary Font: "
+const SECONDARY_PREFIX  = "Secondary Font: "
+
 interface Props {
     isOpen: any;
     onCancel: any;
@@ -47,6 +50,8 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     const primaryFont   = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Open Sans";
     const secondaryFont = designSystem.atoms.fontsSettings.secondaryFont.getValue() || "Open Sans";
     const defaultFont   = isHeader ? secondaryFont : primaryFont;
+    const primaryFontWithPrefix = PRIMARY_PREFIX + primaryFont
+    const secondaryFontWithPrefix = SECONDARY_PREFIX + secondaryFont
 
     const fontFamilyProperty    = typographyStyling.fontFamily
     const fontSizeProperty      = typographyStyling.fontSize
@@ -57,6 +62,9 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
     const [fontSize,    setFontSize   ] = useState<number>(fontSizeProperty.getValue()       || 16);
     const [fontWeight,  setFontWeight ] = useState<number>(fontWeightProperty.getValue()     || defaultWeight);
     const [charSpacing, setCharSpacing] = useState<number>(charSpacingProperty.getValue()    || 0);
+
+    const [fontFamilyWithPrefix, setFontFamilyWithPrefix ] = useState<string>(fontFamily === primaryFont 
+                                                            ? primaryFontWithPrefix : secondaryFontWithPrefix);
 
     const [fontUncommon, setFontUncommon] = useState<boolean>(!FontWeightsUtil.isFontCommon(fontFamily))
     const [fontWeightWarningTriggered, setFontWeightWarningTriggered] = useState<boolean>(false)
@@ -104,7 +112,9 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
 
     async function handleFontFamilyChanged(event: any): Promise<void> {
         const value = event.target.value;
-        setFontFamily(value);
+        setFontFamilyWithPrefix(value)
+        const fontValue = value.split(": ")[1]
+        setFontFamily(fontValue);
     }
     async function handleFontSizeChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
@@ -135,12 +145,16 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                 <InputLabel id='fontFamilyLabel'>
                     {fontFamilyProperty.name}
                 </InputLabel>
-                <Select labelId='fontFamilyLabel' value={fontFamily} onChange={handleFontFamilyChanged}>
-                    <MenuItem key={"1"+primaryFont}   value={primaryFont}>
-                        <b>{"Primary Font: "+primaryFont}</b>
+                <Select
+                    labelId='fontFamilyLabel'  
+                    value={fontFamilyWithPrefix}
+                    onChange={handleFontFamilyChanged}
+                >
+                    <MenuItem key={primaryFontWithPrefix}   value={primaryFontWithPrefix}>
+                        <b>{primaryFontWithPrefix}</b>
                     </MenuItem>
-                    <MenuItem key={"2"+secondaryFont} value={secondaryFont}>
-                        <b>{"Secondary Font: "+secondaryFont}</b>
+                    <MenuItem key={secondaryFontWithPrefix} value={secondaryFontWithPrefix}>
+                        <b>{secondaryFontWithPrefix}</b>
                     </MenuItem>
                 </Select>
             </FormControl>

@@ -177,6 +177,32 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = event.target.value;
         setPrimaryFont(value);
         primaryFontFamilyProperty.setValue(value);
+
+        // Update all Body and Small Text Styles Fonts:
+        atoms.bodyStyles.body1.fontFamily.setValue                  (value ? value : undefined)
+        atoms.bodyStyles.body1Bold.fontFamily.setValue              (value ? value : undefined)
+        atoms.bodyStyles.body2.fontFamily.setValue                  (value ? value : undefined)
+        atoms.bodyStyles.body2Bold.fontFamily.setValue              (value ? value : undefined)
+        atoms.bodyStyles.body3.fontFamily.setValue                  (value ? value : undefined)
+        atoms.bodyStyles.body3Bold.fontFamily.setValue              (value ? value : undefined)
+        atoms.smallTextStyles.subtitle1.fontFamily.setValue         (value ? value : undefined)
+        atoms.smallTextStyles.subtitle2.fontFamily.setValue         (value ? value : undefined)
+        atoms.smallTextStyles.caption.fontFamily.setValue           (value ? value : undefined)
+        atoms.smallTextStyles.captionBold.fontFamily.setValue       (value ? value : undefined)
+        atoms.smallTextStyles.overline.fontFamily.setValue          (value ? value : undefined)
+        atoms.smallTextStyles.overlineLarge.fontFamily.setValue     (value ? value : undefined)
+        atoms.smallTextStyles.overlineExtraLarge.fontFamily.setValue(value ? value : undefined)
+        atoms.smallTextStyles.label1.fontFamily.setValue            (value ? value : undefined)
+        atoms.smallTextStyles.label1AllCaps.fontFamily.setValue     (value ? value : undefined)
+        atoms.smallTextStyles.label2.fontFamily.setValue            (value ? value : undefined)
+        atoms.smallTextStyles.label2AllCaps.fontFamily.setValue     (value ? value : undefined)
+        atoms.smallTextStyles.labelSmall.fontFamily.setValue        (value ? value : undefined)
+        atoms.smallTextStyles.callToAction.fontFamily.setValue      (value ? value : undefined)
+        atoms.smallTextStyles.callToActionSmall.fontFamily.setValue (value ? value : undefined)
+        atoms.smallTextStyles.small.fontFamily.setValue             (value ? value : undefined)
+        atoms.smallTextStyles.smallSemibold.fontFamily.setValue     (value ? value : undefined)
+        atoms.statStyles.stat.fontFamily.setValue                   (value ? value : undefined)
+
         if (FontWeightsUtil.isFontCommon(value)) {
             setPrimaryFontUncommon(false)
         } else {
@@ -187,6 +213,17 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = event.target.value;
         setSecondaryFont(value);
         secondaryFontFamilyProperty.setValue(value);
+
+        // Update all Display and Header Fonts:
+        atoms.displayAndHeaderStyles.headerStyles[0].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[1].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[2].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[3].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[4].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[5].fontFamily.setValue (value ? value : undefined)
+        atoms.displayAndHeaderStyles.displayStyles[0].fontFamily.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.displayStyles[1].fontFamily.setValue(value ? value : undefined)
+
         if (FontWeightsUtil.isFontCommon(value)) {
             setSecondaryFontUncommon(false)
         } else {
