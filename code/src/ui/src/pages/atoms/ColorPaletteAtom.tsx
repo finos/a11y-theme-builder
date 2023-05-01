@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -112,6 +112,13 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
         reflectColorPickerChangeInUI(color.hex)
     }
 
+    const handleColorChange = (event: any) => {
+        const value = event.target.value;
+        if (value.match(/^[a-zA-Z0-9\-]*$/)) {
+            _setColorName(value);
+        }
+    }
+
     return (
         <div className="container color-palette-right-content">
             <HeadingSection title="Palette" heading="Add Colors to Palette">
@@ -128,7 +135,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                         <TextField
                             id='colorName'
                             error={_addColorErrorTriggered}
-                            onChange={(e)=>{_setColorName(e.target.value)}}
+                            onChange={handleColorChange}
                             onBlur={handleColorNameBlur}
                             helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
                             value={_colorName}
