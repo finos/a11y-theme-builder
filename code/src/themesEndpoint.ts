@@ -4,7 +4,6 @@
  */
 import express, { Request, Response, NextFunction } from "express";
 const fs = require("fs");
-import { cwd } from "process";
 
 export class DocError extends Error {
     public readonly scode: number;
@@ -16,7 +15,6 @@ export class DocError extends Error {
 
 const DB_NAME = "themes";
 var Engine = require('tingodb')();
-// var db = new Engine.Db(cwd() + '/src/data', {});
 var db = new Engine.Db(__dirname + '/../src/data', {});
 var collection = db.collection(DB_NAME);
 collection.compactCollection(function(a:any, b:any) {
@@ -223,7 +221,7 @@ export function registerThemesEndpoint(app: express.Application) {
 
     app.all("/api/themes", themesEndpoint);
     app.all("/api/themes/:id", themesEndpointWithId);
-    app.all("/api/locale", localeEndpoint);
+    app.all("/api/locale", localeEndpoint); // Development use only
 
     // Endpoint /api/themes
     async function themesEndpoint(req: Request, res: Response, next: NextFunction) {
@@ -304,37 +302,31 @@ export function registerThemesEndpoint(app: express.Application) {
     }
 
     // Endpoint /api/locale
+    // Development Use Only
     async function localeEndpoint(req: Request, res: Response, next: NextFunction) {
         const method = req.method;
         console.info(`locale endpoint ${method}`);
-        console.log("pwd=",process.cwd())
         try {
 
             // Get locale
             if (method == "GET") {
                 const r = fs.readFileSync("./src/ui/src/locales/data.json", "utf8");
-                console.log("r=",JSON.stringify(JSON.parse(r),null,4));
+                //console.log("r=",JSON.stringify(JSON.parse(r),null,4));
                 return res.send(r);
             }
 
-            // Create new theme
+            // Update locale
             else if (method == "POST") {
                 const data = req.body;
-                console.log("data=",typeof data);
+                //console.log("data=",typeof data);
                 const r = fs.readFileSync("./src/ui/src/locales/data.json", "utf8");
                 const json = JSON.parse(r);
                 for (var key in data) {
                     json[key] = data[key];
                 }
-                console.log("json=",JSON.stringify(json,null,4));
+                //console.log("json=",JSON.stringify(json,null,4));
                 fs.writeFileSync("./src/ui/src/locales/data.json", JSON.stringify(json,null,4), "utf8");
                 return res.send(json);
-            }
-
-            // Delete all themes
-            else if (method == "DELETE") {
-                // const r = await deleteDocs();
-                // return res.send(r);
             }
     
             else {
@@ -345,7 +337,4 @@ export function registerThemesEndpoint(app: express.Application) {
             next(e);
         }
     }
-
-    // endpoint /api/db/compact
-
 }
