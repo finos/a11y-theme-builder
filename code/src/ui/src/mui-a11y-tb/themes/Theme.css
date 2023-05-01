@@ -1395,8 +1395,14 @@ button.MuiPaginationItem-root:hover {
   font-size: 1.25em;
   color: var(--icon);
 }
+.MuiAlert-action {
+  margin-right: 0 !important;
+}
 .MuiAlert-root button.small-btn svg {
   height: var(--spacing-2);
+}
+.MuiAlert-root button.small-btn svg path {
+  color: var(--on-surface);
 }
 .darkmode > .MuiCard-root .fa-solid, .darkmode > .MuiCard-root .fa-regular {
   color: var(--dm-icon);
@@ -1484,7 +1490,6 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiCardMedia-root {
   background-color: var(--on-background);
-  opacity: var(--disabled);
 }
 /* darkmode card */
 .darkmode .MuiCard-root {
@@ -1614,6 +1619,9 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-white) !important;
 }
 .darkmode .MuiAlert-root .MuiButton-root::after {
+  border: var(--focusBorder)  solid var(--dm-white) !important;
+}
+.darkmode .MuiAlert-action button.small-btn::after {
   border: var(--focusBorder)  solid var(--dm-white) !important;
 }
 .darkmode .MuiAlert-root button svg path {
@@ -1810,6 +1818,51 @@ button.MuiPaginationItem-root:hover {
 .list-content {
   flex-grow: 1;
 }
+.list {
+  padding: var(--spacing-1);
+  position: relative;
+}
+.list-clickable, .clickable {
+  position: relative;
+  z-index: 1;
+}
+.list-clickable::after, .clickable::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
+  border-radius: calc(var(--radius-1)  + 1.6px);
+  border: var(--focusBorder) solid var(--button);
+  background: transparent !important;
+  opacity: 0;
+  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  z-index: -1;
+}
+.list-clickable:hover::after, .clickable:hover::after  {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  opacity: .5;
+}
+.list-clickable:focus::after, .clickable:focus::after  {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  opacity: 1;
+}
+.clickable:has(img):hover::after  {
+  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.6px);
+}
+.clickable:has(img):focus::after  {
+  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.6px);
+}
+
+
 
 /* MuiFormControl-root */
 .MuiFormControl-root {
@@ -2180,13 +2233,13 @@ button.MuiPaginationItem-root:hover {
   position: relative;
   z-index: 1;
 }
-.inline-image img{
+.inline-image img, img{
   max-height: 100%;
   min-width: 100%;
   object-fit: cover;
   vertical-align: middle;
-  border-radius: var(--inline-image-image-radius);
-  box-shadow: var(--imageElevation);
+  border-radius: calc(var(--radius-1) * var(--image-radius));
+  box-shadow: var(--image-shadow);
 }
 .image-lg img{
   max-height: 100%;
@@ -2235,7 +2288,305 @@ button.MuiPaginationItem-root:hover {
   pointer-events: none;
 }
 
+/* image decorations */
+.fourCorners {
+  --b: var(--spacing-1);   /* border thickness */
+  --c: #0000 25%, var(--accent) 0; /* define the color here */
+  padding: var(--spacing-2);
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+  background-size: var(--spacing-4) var(--spacing-4); /* adjust border length here */
+  background-repeat: no-repeat;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  position: relative;
+}
+.fourCorners::before  {
+  transition: var(--animation-speed) var(--_i,var(--animation-speed));
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: var(--spacing-1) solid var(--accent);
+  clip-path:
+   polygon(
+     0    0   ,
+     var(--spacing-4)  0   ,
+     var(--spacing-4) var(--spacing-4)       ,
+     calc(100% - var(--spacing-4))  var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  0 ,
+     100% 0   ,
+     100% var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  calc(100% - var(--spacing-4)) ,
+     100% calc(100% - var(--spacing-4)),
+     100%  100%,
+     calc(100% - var(--spacing-4)) 100%,
+     calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4)),
+     var(--spacing-4)  calc(100% - var(--spacing-4)),
+     var(--spacing-4)  100%,
+     0 100%       ,
+     0 calc(100% - var(--spacing-4)),
+     var(--spacing-4) calc(100% - var(--spacing-4)),
+     var(--spacing-4) var(--spacing-4),
+     0 var(--spacing-4)
+   )
+}
+.fourCorners.clickable::before {
+  border: var(--spacing-1) solid var(--button);
+}
 
+
+.fourCorners.clickable {
+  --c: #0000 25%, var(--button) 0; /* define the color here */
+  transition: var(--animation-speed) ;
+  cursor: pointer;
+}
+.fourCorners.clickable:hover {
+  background-size: 51% 51%;
+}
+.twoCornders1 {
+  --b: var(--spacing-1);  /* border thickness*/
+  --s: var(--spacing-5);  /* size of the corner*/
+  --g: var(--spacing-1);  /* the gap*/
+  padding: calc(var(--b) + var(--g));
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  background-image:
+    conic-gradient(from  90deg at top    var(--b) left  var(--b), #0000 25%, var(--accent) 0),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), #0000 25%, var(--accent) 0);
+  background-position:
+    var(--_p, 0%) var(--_p, 0%),
+    calc(100% - var(--_p, 0%)) calc(100% - var(--_p, 0%));
+  background-size: var(--s) var(--s);
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  transition:
+    background-position var(--animation-speed) var(--_i,var(--animation-speed)),
+    background-size var(--animation-speed) calc(var(--animation-speed) - var(--_i, var(--animation-speed)));
+    clip-path:
+     polygon(
+       0 var(--spacing-4),
+       var(--spacing-4) var(--spacing-4) ,
+       var(--spacing-4) 0,
+       calc(100% - var(--spacing-4)) 0,
+       calc(100% - var(--spacing-4)) var(--spacing-4) ,
+       100% var(--spacing-4),
+       100% calc(100% - var(--spacing-4)),
+       calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4))
+       calc(100% - var(--spacing-4)) 100%,
+       var(--spacing-4) 100%,
+       var(--spacing-4) calc(100% - var(--spacing-4)),
+       0 calc(100% - var(--spacing-4)),
+       0 var(--spacing-4)
+
+     )
+}
+.twoCornders1::before  {
+  transition: var(--animation-speed) var(--_i,var(--animation-speed));
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: var(--spacing-1) solid var(--accent);
+  clip-path:
+   polygon(
+     0    0   ,
+     var(--spacing-4)  0   ,
+     var(--spacing-4) var(--spacing-4)       ,
+     100% var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  calc(100% - var(--spacing-4)) ,
+     100% calc(100% - var(--spacing-4)),
+     100%  100%,
+     calc(100% - var(--spacing-4)) 100%,
+     calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4)),
+     0  calc(100% - var(--spacing-4)),
+     var(--spacing-4) calc(100% - var(--spacing-4)),
+     var(--spacing-4) var(--spacing-4),
+     0 var(--spacing-4)
+   )
+}
+.twoCornders1.clickable::before  {
+  border: var(--spacing-1) solid var(--button);
+}
+.twoCornders1.clickable {
+  background-image:
+    conic-gradient(from  90deg at top    var(--b) left  var(--b), #0000 25%, var(--button) 0),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), #0000 25%, var(--button) 0);
+    clip-path:
+    polygon(
+      0% var(--spacing-4)
+      var(--spacing-4) var(--spacing-4),
+      var(--spacing-4) 0%,
+      calc(100% - var(--spacing-4)) 0%,
+      calc(100% - var(--spacing-4)) var(--spacing-4),
+      100% var(--spacing-4),
+      100% calc(100% - var(--spacing-4)),
+      calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4)),
+      calc(100% - var(--spacing-4)) 100%,
+      var(--spacing-4) 100%,
+      var(--spacing-4) calc(100% - var(--spacing-4)),
+      0% calc(100% - var(--spacing-4))
+    );
+
+}
+.twoCornders1.clickable:hover {
+  background-size: calc(100% - var(--g)) calc(100% - var(--g));
+  --_p: calc(var(--g) / 2);
+  --_i: 0s;
+  clip-path:
+  polygon(
+    0% var(--spacing-6)
+    var(--spacing-6) var(--spacing-46),
+    var(--spacing-6) 0%,
+    calc(100% - var(--spacing-6)) 0%,
+    calc(100% - var(--spacing-6)) var(--spacing-6),
+    100% var(--spacing-6),
+    100% calc(100% - var(--spacing-6)),
+    calc(100% - var(--spacing-6)) calc(100% - var(--spacing-6)),
+    calc(100% - var(--spacing-6)) 100%,
+    var(--spacing-6) 100%,
+    var(--spacing-6) calc(100% - var(--spacing-6)),
+    0% calc(100% - var(--spacing-6))
+  );
+}
+.twoCornders1.clickable:hover::before {
+  top: var(--spacing-half);
+  left: var(--spacing-half);
+  bottom: var(--spacing-half);
+  right: var(--spacing-half);
+}
+.twoCornders2 {
+  --b: var(--spacing-1);  /* border thickness*/
+  --s: var(--spacing-5);  /* size of the corner*/
+  --g: var(--spacing-1);  /* the gap*/
+  padding: calc(var(--b) + var(--g));
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  background-image:
+    conic-gradient(from  90deg at top    var(--b) left  var(--b), #0000 25%, var(--accent) 0),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), #0000 25%, var(--accent) 0);
+  background-position:
+    var(--_p, 0%) var(--_p, 0%),
+    calc(100% - var(--_p, 0%)) calc(100% - var(--_p, 0%));
+  background-size: var(--s) var(--s);
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  transition:
+    background-position var(--animation-speed) var(--_i,var(--animation-speed)),
+    background-size var(--animation-speed) calc(var(--animation-speed) - var(--_i, var(--animation-speed)));
+    clip-path:
+     polygon(
+       0 var(--spacing-4),
+       var(--spacing-4) var(--spacing-4) ,
+       var(--spacing-4) 0,
+       calc(100% - var(--spacing-4)) 0,
+       calc(100% - var(--spacing-4)) var(--spacing-4) ,
+       100% var(--spacing-4),
+       100% calc(100% - var(--spacing-4)),
+       calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4))
+       calc(100% - var(--spacing-4)) 100%,
+       var(--spacing-4) 100%,
+       var(--spacing-4) calc(100% - var(--spacing-4)),
+       0 calc(100% - var(--spacing-4)),
+       0 var(--spacing-4)
+
+     )
+}
+.twoCornders2::before  {
+  transition: var(--animation-speed) var(--_i,var(--animation-speed));
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  border-radius: calc( calc(var(--radius-1) * var(--image-radius)) + calc(var(--image-radius) * 2.6px));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: var(--spacing-1) solid var(--accent);
+  clip-path:
+   polygon(
+     0    0   ,
+     var(--spacing-4)  0   ,
+     var(--spacing-4) var(--spacing-4)       ,
+     100% var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  var(--spacing-4) ,
+     calc(100% - var(--spacing-4))  calc(100% - var(--spacing-4)) ,
+     100% calc(100% - var(--spacing-4)),
+     100%  100%,
+     calc(100% - var(--spacing-4)) 100%,
+     calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4)),
+     0  calc(100% - var(--spacing-4)),
+     var(--spacing-4) calc(100% - var(--spacing-4)),
+     var(--spacing-4) var(--spacing-4),
+     0 var(--spacing-4)
+   )
+}
+.twoCornders2:.clickable:before  {
+  border: var(--spacing-1) solid var(--button);
+}
+.twoCornders2.clickable {
+  background-image:
+    conic-gradient(from  90deg at top    var(--b) left  var(--b), #0000 25%, var(--button) 0),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), #0000 25%, var(--button) 0);
+    clip-path:
+    polygon(
+      0% var(--spacing-4)
+      var(--spacing-4) var(--spacing-4),
+      var(--spacing-4) 0%,
+      calc(100% - var(--spacing-4)) 0%,
+      calc(100% - var(--spacing-4)) var(--spacing-4),
+      100% var(--spacing-4),
+      100% calc(100% - var(--spacing-4)),
+      calc(100% - var(--spacing-4)) calc(100% - var(--spacing-4)),
+      calc(100% - var(--spacing-4)) 100%,
+      var(--spacing-4) 100%,
+      var(--spacing-4) calc(100% - var(--spacing-4)),
+      0% calc(100% - var(--spacing-4))
+    );
+
+}
+
+.twoCornders2.clickable:hover {
+  background-size: calc(100% - var(--g)) calc(100% - var(--g));
+  --_p: calc(var(--g) / 2);
+  --_i: 0s;
+  clip-path:
+  polygon(
+    0% var(--spacing-6)
+    var(--spacing-6) var(--spacing-46),
+    var(--spacing-6) 0%,
+    calc(100% - var(--spacing-6)) 0%,
+    calc(100% - var(--spacing-6)) var(--spacing-6),
+    100% var(--spacing-6),
+    100% calc(100% - var(--spacing-6)),
+    calc(100% - var(--spacing-6)) calc(100% - var(--spacing-6)),
+    calc(100% - var(--spacing-6)) 100%,
+    var(--spacing-6) 100%,
+    var(--spacing-6) calc(100% - var(--spacing-6)),
+    0% calc(100% - var(--spacing-6))
+  );
+}
+.twoCornders2.clickable:hover::before {
+  top: var(--spacing-half);
+  left: var(--spacing-half);
+  bottom: var(--spacing-half);
+  right: var(--spacing-half);
+}
+
+
+/* theme shades */
 .primary-050-bg {
   background: var(--primary-0) !important;
   color: var(--on-primary-0) !important;
@@ -2967,7 +3318,6 @@ button.MuiPaginationItem-root:hover {
 .black .MuiAvatar-root:not(.black) svg path {
     fill: var(--on-buttonOnBlack);
 }
-
 /* black group buttons */
 .black button.MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack);
@@ -2976,12 +3326,30 @@ button.MuiPaginationItem-root:hover {
 .black button.MuiButton-text::after {
   background: var(--white);
 }
+/* clickable */
+.black .list-clickable::after, .black .clickable::after {
+  border: var(--focusBorder) solid var(--buttonOnBlack);
+}
 /* black divider */
 .black .MuiDivider-root, .MuiDivider-root:not(.black){
   border-color: var(--white);
 }
 .darkmode .black .MuiList-root .MuiDivider-root:not(.black) {
   border-color: var(--dm-white);
+}
+.black .vertical-line:not(.black):not(.colored), .vertical-line.black, .darkmode .white .vertical-line:not(.black):not(.colored),  .darkmode .vertical-line.black  {
+  min-height: 24px;
+  height: 100%;
+  width: 1px;
+  background: var(--white) !important;
+  opacity: .6;
+}
+.darkmode .white .vertical-line:not(.black):not(.colored),  .darkmode .vertical-line.black  {
+  min-height: 24px;
+  height: 100%;
+  width: 1px;
+  background: var(--dm-white) !important;
+  opacity: .6;
 }
 /* colored rootbase after */
 .black .MuiInputBase-root::after {
@@ -3069,6 +3437,17 @@ button.MuiPaginationItem-root:hover {
 /* white divider */
 .white .MuiDivider-root, .MuiDivider-root:not(.white),.white .MuiList-root .MuiDivider-root:not(.white) {
   border-color: var(--black);
+}
+.white .vertical-line:not(.white):not(.colored), .vertical-line.black, .darkmode .white .vertical-line:not(.white):not(.colored),  .darkmode .vertical-line.black  {
+  min-height: 24px;
+  height: 100%;
+  width: 1px;
+  background: var(--black) !important;
+  opacity: .6;
+}
+/* clickable */
+.white .list-clickable::after, .white .clickable::after {
+  border: var(--focusBorder) solid var(--buttonOnWhite);
 }
 /* colored rootbase after */
 .white .MuiInputBase-root::after, .darkmode .white .MuiInputBase-root::after {
@@ -3165,12 +3544,30 @@ button.MuiPaginationItem-root:hover {
 .colored .MuiAvatar-root:not(.white) svg path {
     fill: var(--on-buttonOnTertiary);
 }
-/* colores divider */
-.colored .MuiDivider-root, .MuiDivider-root:not(.black){
-  border-color: var(--on-background-tertiary);
+/* clickable */
+.colored.list-clickable::after, .colored .clickable::after {
+  border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
-.darkmode .colored .MuiList-root .MuiDivider-root:not(.black) {
-  border-color: var(--dm-on-background-tertiary);
+/* colored divider */
+.colored .MuiDivider-root, .MuiDivider-root:not(.black):not(.white){
+  border-color: var(--accent);
+}
+.darkmode .colored .MuiList-root .MuiDivider-root:not(.black):not(.white) {
+  border-color: var(--dm-accent);
+}
+.vertical-line, .colored .vertical-line {
+  min-height: 24px;
+  height: 100%;
+  width: 1px;
+  background: var(--accent) !important;
+  opacity: .6;
+}
+.darkmode .vertical-line, .darkmode .colored .vertical-line {
+  min-height: 24px;
+  height: 100%;
+  width: 1px;
+  background: var(--dm-accent) !important;
+  opacity: .6;
 }
 /* colored rootbase after */
 .colored .MuiInputBase-root::after {
@@ -3239,12 +3636,22 @@ button.MuiPaginationItem-root:hover {
 .gradient-1 button:not(.MuiTab-root):not(.white)::after{
   border: var(--focusBorder) solid var(--buttonOnGradient1);
 }
+/* clickable */
+.gradient-1 .list-clickable::after, .gradient-1  .clickable::after {
+  border: var(--focusBorder) solid var(--on-gradeint-1);
+}
 /* gradeint 1 divider */
 .gradient-1 .MuiDivider-root, .MuiDivider-root{
   border-color: var(--on-gradeint-1);
 }
 .darkmode .gradient-1 .MuiList-root .MuiDivider-root.black {
   border-color: var(--dm-on-gradient-1);
+}
+.gradient-1 .vertical-line  {
+  background: var(--on-gradeint-1) !important;
+}
+.darkmode .gradient-1 .vertical-line  {
+  background: var(--dm-on-gradeint-1) !important;
 }
 /* gradient rootbase after */
 .gradient-1 .MuiInputBase-root::after {
@@ -3318,12 +3725,22 @@ button.MuiPaginationItem-root:hover {
 .gradient-2 button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient2);
 }
+/* clickable */
+.gradient-2 .list-clickable::after, .gradient-2  .clickable::after {
+  border: var(--focusBorder) solid var(--on-gradeint-2);
+}
 /* gradeint 2 divider */
 .gradient-2 .MuiDivider-root, .MuiDivider-root{
   border-color: var(--on-gradeint-2);
 }
 .darkmode .gradient-2 .MuiList-root .MuiDivider-root.black {
   border-color: var(--dm-on-gradient-2);
+}
+.gradient-2 .vertical-line  {
+  background: var(--on-gradeint-2) !important;
+}
+.darkmode .gradient-2 .vertical-line  {
+  background: var(--dm-on-gradeint-2) !important;
 }
 /*  GRADIENT 3 */
 .gradient-3 {
@@ -3394,12 +3811,22 @@ button.MuiPaginationItem-root:hover {
 .gradient-3  .MuiAvatar-root svg path {
     fill: var(--onbuttonOnGradient3);
 }
+/* clickable */
+.gradient-3 .list-clickable::after, .gradient-3  .clickable::after {
+  border: var(--focusBorder) solid var(--on-gradeint-3);
+}
 /* gradeint 3 divider */
 .gradient-3 .MuiDivider-root, .MuiDivider-root{
   border-color: var(--on-gradeint-3);
 }
 .darkmode .gradient-3 .MuiList-root .MuiDivider-root.black {
   border-color: var(--dm-on-gradient-3);
+}
+.gradient-3 .vertical-line  {
+  background: var(--on-gradeint-3) !important;
+}
+.darkmode .gradient-3 .vertical-line  {
+  background: var(--dm-on-gradeint-3) !important;
 }
 /*  Darkmode BLACK  */
 .darkmode .black:not(.breadcrumbs) {

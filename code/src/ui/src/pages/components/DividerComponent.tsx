@@ -18,13 +18,23 @@ export const DividerComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Desktop" heading="Divider" />
+
             <ExampleSection>
             <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                    <div className="subtitle1">Horizontal</div>
                     <List style={{ background: 'transparent' }}>
                         <br /><br />
                         <Divider className={colorMode} />
                         <br /><br />
                         <Divider className={colorMode} />
+                        <br /><br />
+                    </List>
+                    <div className="subtitle1">Vertical</div>
+                    <List style={{ background: 'transparent' }}>
+                        <br /><br />
+                        <div className={"vertical-line " + colorMode}  />
+                        <br /><br />
+                        <div className={"vertical-line " + colorMode}/>
                         <br /><br />
                     </List>
                 </ColorModeSelector>

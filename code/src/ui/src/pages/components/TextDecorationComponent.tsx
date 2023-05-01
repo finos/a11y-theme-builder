@@ -9,7 +9,7 @@ import { ExampleSection } from '../content/ExampleSection';
 interface Props {
 }
 
-export const TextDecoration: React.FC<Props> = () => {
+export const TextDecorationComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Text Decorations'></HeadingSection>
@@ -17,8 +17,8 @@ export const TextDecoration: React.FC<Props> = () => {
               <div className="subtitle1">Gradient Title</div>
               <h1 className="gradient-title">Sample Title</h1>
 
-              <div className="subtitle1">Colored Drop Shadow Title</div>
-              <h1 className="gradient-title">Sample Title</h1>
+              <div className="subtitle1 top40">Colored Drop Shadow Title</div>
+              <h1 className="drop-color">Sample Title</h1>
 
             </ExampleSection>
         </div>

@@ -499,7 +499,7 @@
   --CTALetterSpacing: 2%;
   --CTALineHeight: 110%;
   --CTATextDecoration: none;
-  --CTATextTransform: none;
+  --CTATextTransform: uppercase;
   --CTA-SmallFontSize: 14px;
   --CTA-SmallFontWeight: 600;
   --CTA-SmallFontFamily: Open Sans;
@@ -637,7 +637,7 @@
   --hero-heroBodyTypography: var(--body1FontWeight) var(--body1FontSize) / var(--body1LineHeight) var(--body1FontFamily);
   --hero-heroBodyTransform: var(--body1-boldTextTransform);
   --hero-heroBodySpacing: var(--body1-boldLetterSpacing);
-  --hero-title-gap: 16px;
+  --hero-gap: 2;
   --hero-justify-content: flex-start;
   --tableheaderTypography: var(--label-1FontWeight) var(--label-1FontSize) / var(--label-1LineHeight) var(--label-1FontFamily);
   --tableheaderSpacing: var(--label-1LetterSpacing);
@@ -965,7 +965,7 @@
   --dm-gradient2-b: #86A7D3;
   --dm-on-gradient2-b: #121212;
   --gradient3-a: var(--gray-0);
-  --on-gradient3-a: var(--gray-300);
+  --on-gradient3-a: var(--on-gray-0);
   --dm-gradient3-a: var(--on-gray-300);
   --dm-on-gradient3-a: var(--on-gray-300);
   --gradient3-b: var(--dm-gray-700);
