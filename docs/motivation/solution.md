@@ -1,13 +1,13 @@
 ## Unified Design
 
-Our desired solution is possible if we apply the concepts of a *Unified Design* system consisting of the following a building blocks:
+Our desired solution is possible if we apply the concepts of a *Unified Design* system consisting of the following building blocks:
 
 ![unified-design](../../_images/unified-design.png)
 ## Atomic Accessibility Design
 ### Inspiration
 Atomic Design is a methodology, developed by [Brad Frost](https://bradfrost.com/blog/post/atomic-web-design/), for creating design systems.
 
-The methodology enables the creation of scalable systems, reusable components, and design systems. While originally associated with the design of web interfaces, this methodology can be applied to a wide array of design domains. There are five distinct levels in Atomic Design:
+The methodology enables the creation of scalable systems, reusable components, and design systems. While originally associated with the design of web interfaces, this methodolallogy can be applied to a wide array of design domains. There are five distinct levels in Atomic Design:
 
 | Component | Description |
 | --- | --- |
@@ -24,7 +24,7 @@ Atomic Design provides a clear methodology for crafting design systems based on 
 
 ![persona-dnd](../../_images/persona-disorders-disabilities_sm.png)
 
-Given the challenges associated with risk compliance for people with disabilities (Visual, Motion, Motor, Auditory, Seizures, Cognitive/Learning), Atomic Design enables designers and developers to establish a round-trip workflow process that traverses from abstract concepts to concrete details. The application of Atomic Design concepts towards the development of accessibly compliance solutions can yield consistency and scalability while mitigating regulatory risk.
+Given the challenges associated with risk compliance to support people with disabilities (Visual, Motion, Motor, Auditory, Seizures, Cognitive/Learning), Atomic Design enables designers and developers to establish a round-trip workflow process that traverses from abstract concepts to concrete details. The application of Atomic Design concepts towards the development of accessibly compliant solutions can yield consistency and scalability while mitigating regulatory risk.
 
 An **Atomic Accessibility Design Methodology** extrapolates the concepts of atomic design to provide a general purpose approach to the systematic publishing/rendering of accessible content relating to physical and digital instruments.
 
@@ -55,7 +55,7 @@ The list of such impairments include but is not limited to:
 ## Theme Builder
 ![tb](./../../_images/theme-builder.png)
 
-The Theme Builder is a tool that combines brand design input + the structure of atomic design +  logic to generate accessible atoms and molecules to output code which transforms a robust, out of the box Design Library and a React Component Library into a Branded and accessible Unified Design System. 
+The Theme Builder is a tool that combines brand design input + the structure of atomic design +  logic to generate accessible atoms and molecules.  The output from this tool has the ability to transform a robust, out of the box Design Library and a React Component Library into a Branded and accessible Unified Design System.
 
 ### Conceptual Workflow
 ![pub-workflow](../../_images/publication-workflow.png)
@@ -69,23 +69,23 @@ For each of the following steps, a theme builder *User* may be a *Designer* or *
 4. *User* adds 10 shades of a color in light and dark mode with corresponding "on color" to the project.
 5. *User* defines the base atoms for the theme. This lays the foundation for all light and dark mode calculations. The Theme Building Tool guides the *User* through the following steps that **must** occur in sequential order:
 
-   1. Select Primary, Secondary, and Tertiary Colors
-   2. Define Light mode background and dark mode background.
-   3. Define Gradient backgrounds, Buttons and Icons colors, and Gradient Text.
+    1. Select Primary, Secondary, and Tertiary Colors
+    2. Define light mode background and dark mode background.
+    3. Define Gradient backgrounds, Buttons and Icons colors, and Gradient Text.
 
 6. *User* defines other atomic elements (atoms, molecules) that will be used by the theme. The Theme Building Tool guides the *User* through the following steps:
 
-   1. Data independent preferences
-      1. Specify minimum desktop target area
-      2. Specify grid system
-      3. Specify animation settings
-   2. Data dependent preferences using decisions associated with Primary, Secondary, Tertiary, Light and Dark Mode background colors. These attribute values are calculated:
-      1. state colors
-      2. Fonts / Typography
-      3. Default Border Settings
-      4. Elevations
-      5. Bevels
-      6. Chart colors
+    1. Data independent preferences
+        1. Specify minimum desktop target area
+        2. Specify grid system
+        3. Specify animation settings
+    2. Data dependent preferences using decisions associated with Primary, Secondary, Tertiary, Light and Dark Mode background colors. These attribute values are calculated:
+        1. state colors
+        2. Fonts / Typography
+        3. Default Border Settings
+        4. Elevations
+        5. Bevels
+        6. Chart colors
 
 7. *User* applies atomic settings to molecules associated with the theme project.
 8. *User* uses the Theme Building Tool to generate theme asset types (JSON, CSS, design tokens).
@@ -99,7 +99,7 @@ Each theme is layered on top of the core design system.The default theme rendere
 
 ![layers](../../_images/layers.png)
 
-Additional theme layers can be applied by the user to generate themes that are effectively a combination of atomic layers. Initially layering support is provided for the following accessibility preferences:
+Additional theme layers can be applied by the user to generate themes that are effectively a combination of atomic layers. Initially, layering support is provided for the following accessibility preferences:
 
 * Dyslexic preferences
   
@@ -116,7 +116,7 @@ Additional theme layers can be applied by the user to generate themes that are e
     * Users can choose to adjust the colors of the branded components to colors that best accommodate their specific color perception deficiency Protanopia, Deuteranopia, and Tritanopia
     * The updated colors meet the WCAG contrast guidelines and are non-jarring and visually pleasing
 
-Themes can also be organization into different sub themes. For example rendering experiences with different system color palette combinations.  
+Themes can also be organized into different sub themes. For example, rendering experiences with different system color palette combinations.
 
 ![subthemes](../../_images/sub-themes.png)
 
