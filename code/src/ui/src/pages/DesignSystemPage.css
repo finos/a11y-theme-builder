@@ -439,3 +439,8 @@
 .form-columns label {
   margin-bottom: var(--spacing-1)
 }
+
+.sample-image {
+  width: 300px;
+  height: 200px;
+}

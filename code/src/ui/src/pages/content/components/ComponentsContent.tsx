@@ -21,6 +21,8 @@ import { HeadersComponent } from '../../components/typography/HeadersComponent';
 import { BodyComponent } from '../../components/typography/BodyComponent';
 import { SmallFontsStylesComponent } from '../../components/typography/SmallFontsStylesComponent';
 import { TooltipsComponent } from '../../components/TooltipsComponent';
+import { TextDecorationComponent } from '../../components/TextDecorationComponent';
+import { ImageDecorationsComponent } from '../../components/ImageDecorationsComponent';
 import { ToastsSingleLineComponent } from '../../components/ToastsSingleLineComponent';
 import { ToastsDoubleLineComponent } from '../../components/ToastsDoubleLineComponent';
 import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComponent';
@@ -94,7 +96,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     }
     useEffect(() => {
         if (designSystem) {
-            designSystem.setListener("CodeContent-isEditable", 
+            designSystem.setListener("CodeContent-isEditable",
                 function(event: Event) {
                     if (event.type == EventType.NodeDisabled) {
                         enableDisableItems();
@@ -120,7 +122,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
         <>
             <div className="design-system-editor-left-nav">
             <div className="design-system-editor-left-nav-scrollable">
-                <List 
+                <List
                     sx={{
                         '& ul': {padding:0},
                         paddingTop: "0px",
@@ -159,10 +161,10 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                     <LeftNavHeader>Desktop Components</LeftNavHeader>
                     <LeftNavItem text={"Accordions"} value="accordions" indent={1} selected={showComponent} onClick={()=> {setShowComponent("accordions")}} disabled={disabled}/>
-                    
+
                     <LeftNavItem text={"Avatars" /* - Single */} value="avatarsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsSingle")}} disabled={disabled}/>
                     { /* <LeftNavItem text={"Avatars - Groups"} value="avatarsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsGroups")}} disabled={disabled}/> */}
-                    
+
                     <LeftNavItem text={"Breadcrumbs"} value="breadcrumbs" indent={1} selected={showComponent} onClick={()=> {setShowComponent("breadcrumbs")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Buttons - Standard"} value="buttonsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsStandard")}} disabled={disabled}/>
@@ -181,8 +183,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {/* <LeftNavItem text={"Datepicker"} value="datepicker" indent={1} selected={showComponent} onClick={()=> {setShowComponent("datepicker")}} disabled={disabled}/> */}
 
                     <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} disabled={disabled}/>
-                    
+
                     <LeftNavItem text={"Dropdown"} value="dropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("dropdown")}} disabled={disabled}/>
+                    <LeftNavItem text={"Images"} value="imageDecorations" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageDecorations")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
 
@@ -199,11 +202,13 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Radio Buttons"} value="radioButtons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("radioButtons")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Sliders"} value="sliders" indent={1} selected={showComponent} onClick={()=> {setShowComponent("sliders")}} disabled={disabled}/>
-                    
+
                     <LeftNavItem text={"Switch"} value="switch" indent={1} selected={showComponent} onClick={()=> {setShowComponent("switch")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Tabs - Primary"} value="tabsPrimary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsPrimary")}} disabled={disabled}/>
                     <LeftNavItem text={"Tabs - Secondary"} value="tabsSecondary" indent={1} selected={showComponent} onClick={()=> {setShowComponent("tabsSecondary")}} disabled={disabled}/>
+
+                    <LeftNavItem text={"Text Decorations"} value="textDecoration" indent={1} selected={showComponent} onClick={()=> {setShowComponent("textDecoration")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Toasts - Single Line"} value="toastsSingleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsSingleLine")}} disabled={disabled}/>
                     <LeftNavItem text={"Toasts - Double Line"} value="toastsDoubleLine" indent={1} selected={showComponent} onClick={()=> {setShowComponent("toastsDoubleLine")}} disabled={disabled}/>
@@ -294,6 +299,12 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "divider" &&
                         <DividerComponent />
                     }
+                    {showComponent === "dropdown" &&
+                        <DropdownComponent/>
+                    }
+                    {showComponent === "imageDecorations" &&
+                        <ImageDecorationsComponent/>
+                    }
                     {showComponent === "listsSingle" &&
                         <ListsSingleComponent/>
                     }
@@ -303,9 +314,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "listsTriple" &&
                         <ListsTripleComponent/>
                     }
-                    {showComponent === "dropdown" &&
-                        <DropdownComponent/>
-                    }
+
                     {showComponent === "menus" &&
                         <MenusComponent/>
                     }
@@ -327,16 +336,19 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "switch" &&
                         <SwitchComponent />
                     }
-                    {showComponent === "tabsPrimary" && 
+                    {showComponent === "tabsPrimary" &&
                         <PrimaryTabsComponent />
                     }
-                    {showComponent === "tabsSecondary" && 
+                    {showComponent === "tabsSecondary" &&
                         <SecondaryTabsComponent />
                     }
-                    {showComponent === "toastsSingleLine" && 
+                    {showComponent === "textDecoration" &&
+                        <TextDecorationComponent />
+                    }
+                    {showComponent === "toastsSingleLine" &&
                         <ToastsSingleLineComponent />
                     }
-                    {showComponent === "toastsDoubleLine" && 
+                    {showComponent === "toastsDoubleLine" &&
                         <ToastsDoubleLineComponent />
                     }
                     {showComponent === "toastsTripleLine" &&
@@ -350,4 +362,3 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
         </>
     );
 }
-
