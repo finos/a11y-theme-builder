@@ -4,8 +4,8 @@
  */
 import React, { useEffect, useState } from 'react';
 import { InputLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
-import { Hero } from 'a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
+import { DesignSystem, Hero } from 'a11y-theme-builder-sdk';
+import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { HeroExample } from './HeroExample';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -15,10 +15,11 @@ import { HeadingSection } from '../content/HeadingSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 interface Props {
     organism: Hero;
+    designSystem: DesignSystem;
 }
 
-export const HeroOrganism: React.FC<Props> = ({ organism }) => {
-
+export const HeroOrganism: React.FC<Props> = ({ organism, designSystem }) => {
+    const grid = designSystem.atoms.gridSettings.grid.getValue();
     const [colorMode, setColorMode] = useState<string>("default");
 
     return (
@@ -34,7 +35,10 @@ export const HeroOrganism: React.FC<Props> = ({ organism }) => {
 
             <SettingsSection>
                 <div className="top40">
-                    <NumberSelectable property={organism.verticalGap} defaultValue={24} units="px" />
+                    <NumberScaledSelectable property={organism.verticalPadding} units="px" scale={grid}/>
+                </div>
+                <div className="top40">
+                    <NumberScaledSelectable property={organism.verticalGap} units="px" scale={grid}/>
                 </div>
                 <div className="top40">
                     <StringSelectable property={organism.title} defaultValue={"Display 1"} />

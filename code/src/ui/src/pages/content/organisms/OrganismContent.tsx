@@ -147,7 +147,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showOrganism === "hero" && (
                         <ErrorHandler>
-                            <HeroOrganism organism={designSystem.organisms.hero}/>
+                            <HeroOrganism organism={designSystem.organisms.hero} designSystem={designSystem}/>
                         </ErrorHandler>
                     )}
                     {showOrganism === "primaryNav" && (
