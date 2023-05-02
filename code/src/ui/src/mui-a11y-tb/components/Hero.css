@@ -56,10 +56,6 @@
 }
 
 .hero .body {
-    display: flex;
-    padding-top: calc(var(--spacing-1) * var(--hero-padding));
-    padding-bottom: calc(var(--spacing-1) * var(--hero-padding));
-    flex-direction: column;
     font: var(--hero-bodyTypography) !important;
     letter-spacing: var(--hero-bodySpacing);
     text-transform: var(--hero-bodyTransform);
