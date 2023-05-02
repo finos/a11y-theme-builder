@@ -6,7 +6,8 @@
     margin: 0;
     gap: calc(var(--spacing-1) * var(--hero-gap));
     width: 100%;
-    padding: calc(var(--spacing-1) * var(--hero-padding));
+    padding-top: calc(var(--spacing-1) * var(--hero-padding));
+    padding-bottom: calc(var(--spacing-1) * var(--hero-padding));
     position: relative;
     z-index: 4;
     background-color: var(--hero);
