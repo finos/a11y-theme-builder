@@ -124,15 +124,17 @@ To better understand the power of the Theme Builder, let us imagine we need to b
 
 ![autoupdate](../../_images/auto-update.png)
 
-Typically, this would be very challenging. However, with the Theme Builder all we need to do is:
+Typically, this would be very challenging. However, with the Theme Builder all we would need to do is:
 
-1. Duplicate our AA compliant design system 
-2. Update one atomic setting for the WCAG compliance from AA to AAA.
+1. Duplicate our AA compliant design system
+2. Update one atomic property to switch the WCAG compliance setting from AA to AAA.
     * The atomic elements of new design system will be automatically updated:
         * Colors and contrast will be automatically updated to meet the elevated requirements
         * Line heights updated
-        * Character spacing is updated 
-3. Save the new Design System. 
+        * Character spacing is updated
+3. Save the new Design System.
+
+>Note: The atomic property mentioned above is an enhancement that is yet to be implemented.  The WCAG AA and AAA compliance capabilities are already in place.
 
 ## DesignOps Toolchain
 
@@ -146,7 +148,7 @@ Alternatively, changes can also be pushed from the staging repo to Figma.
 
 ![storybook-workflow](../../_images/design-ops-storybook.png)
 
->Note: This only demonstrates the work flow not the approval processes.  This toolchain utilizes Figma Tokens, Figma, GitHub, a React Component Library and Chromatic (a paid and enhanced version of Storybook).
+>Note: This only demonstrates the work flow not the approval processes.  This toolchain utilizes Figma Tokens, Figma, GitHub, a React Component Library and Chromatic (an enhanced, fee-based version of Storybook).
 
 
 
