@@ -1520,25 +1520,6 @@ button.MuiPaginationItem-root:hover {
 .darkmode .MuiChip-root svg path {
   fill: var(--dm-white);
 }
-/* hero */
-.hero {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacing-1) * var(--hero-padding));
-  padding:  calc(var(--hero-padding) * var(--spacing-1));
-  margin: 0;
-}
-
-.hero .title {
-  font: var(--hero-heroTitleTypography);
-  letter-spacing: var(--hero-heroTitleSpacing);
-}
-
-.hero .body {
-  font: var(--hero-heroBodyTypography);
-  letter-spacing: var(--hero-heroBodySpacing);
-}
-
 /* toast */
 .MuiAlert-root .MuiAlert-message {
   overflow: visible;
