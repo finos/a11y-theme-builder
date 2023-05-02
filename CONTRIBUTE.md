@@ -9,10 +9,14 @@ Meet and join our [Team of Contributors](./MAINTAINERS.md).
 <!-- Fill out Missing Project Communications -->
 This section includes ways to get started with your open source project. Include links to documentation and to different communication channels: 
 
-* Mailing list: 
-* IRC channel: 
-* Slack channel: 
-* Blog:         
+* Github Discussions
+  * Used for questions and discussions of interest to the broader community.
+  * Link: https://github.com/discoverfinancial/a11y-theme-builder/discussions
+* Slack
+  * Used for questions to project maintainers or for private chat.
+  * Link: https://a11y-l464962.slack.com
+* Blog/Wiki
+  * Link: https://github.com/discoverfinancial/a11y-theme-builder/wiki 
 
 ## Community 
 Participating in our project community spans a variety of activities:
@@ -30,12 +34,16 @@ Our project uses a combination of GitHub Issues and Project Kanban Dashboards to
 
 ### Project Roadmap
 <!-- ToDo provide Wiki URL for release plan. -->
-Our vision for the maturation of this project is outlined in the [Project Roadmap]() which is reflective of our intended milestones/release plan.
+Our vision for the maturation of this project is outlined in the [Project Roadmap](https://github.com/discoverfinancial/a11y-theme-builder/wiki/Roadmap) which is reflective of our intended milestones/release plan.
 
 ### Meetings
->Logistics for Project Triage Sessions TBD
 
-* Project Kanban Dashboard: *TBD*
+Logistics for Project Triage Sessions:
+* [Meeting Details](https://github.com/discoverfinancial/a11y-theme-builder/wiki/Communication#meetings)
+* [Meeting Minutes](https://github.com/discoverfinancial/a11y-theme-builder/wiki/Meeting-Minutes)
+
+Project Management:
+* [Project Kanban Dashboard](https://github.com/orgs/discoverfinancial/projects/1/views/1)
 
 ### Contributing Issue/Feature Reports
 When submitting [Issue/Feature Reports](https://github.com/discoverfinancial/a11y-theme-builder/issues), please use the provided templates and try to convey answers for the following:
