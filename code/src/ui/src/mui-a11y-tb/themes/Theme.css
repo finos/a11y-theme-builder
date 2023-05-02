@@ -2533,7 +2533,7 @@ button.MuiPaginationItem-root:hover {
      0 var(--spacing-4)
    )
 }
-.twoCornders2:.clickable:before  {
+.twoCornders2.clickable:before  {
   border: var(--spacing-1) solid var(--button);
 }
 .twoCornders2.clickable {
