@@ -3,9 +3,10 @@
 Perform the following steps to run a local version of the Theme Builder application.  
 
 ## Fetch Latest Code
-These instructions assume you have a local copy of a forked instance of [discoverfinancial/a11y-theme-builder](https://github.com/discoverfinancial/a11y-theme-builder).
+These instructions assume you have a forked instance of [discoverfinancial/a11y-theme-builder](https://github.com/discoverfinancial/a11y-theme-builder) in your personal GitHub account.
 
 ```
+mkdir <WORKSPACE>
 cd <WORKSPACE>
 git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
 cd a11y-theme-builder
@@ -13,7 +14,7 @@ cd a11y-theme-builder
 
 where:
 
-* `<WORKSPACE>` is path to the local folder where you have created a copy of the GitHub repository.
+* `<WORKSPACE>` is the path to the local folder where you want to create a copy of the GitHub repository.
 * `<YOUR-ORG>` is the name of your GitHub account or personal GitHub organization.
 
 ## Quick and Easy
@@ -45,7 +46,7 @@ http://localhost:8080
 ### Remove the stopped Application build image
 To remove the Theme Builder Docker image from your system run the following command.  
 
-Note that the application must be stopped before the image can be removed.  Once the image is removed, you won't be able to run the Theme Builder application unless you build the Docker image again.
+Note that the application container must be [stopped and removed](../start-builder/#docker-commands-to-manage-the-theme-builder-application) before the image can be removed.  Once the image is removed, you won't be able to run the Theme Builder application unless you build the Docker image again.
 
 ```
 docker rmi a11y-theme-builder
@@ -56,7 +57,7 @@ The following commands will build and run the Theme Builder application using a 
 
 ### Build the Theme Builder application
 ```
-cd a11y-theme-builder/code
+cd <WORKSPACE>/a11y-theme-builder/code
 npm run build
 ```
 
@@ -77,6 +78,12 @@ http://localhost:3001
 Currently, there are a few extra steps to use the app on a Windows system:
 
 * delete both `package-lock.json` files before build
-* replace `'` chars in the debug script in the package.json with `\"`, so t reads `"debug": "nodemon --exec \"ts-node\" src/app.ts",`
-* delete the `data/themes` file, before running the application 
+    * `<WORKSPACE>/a11y-theme-builder/code/package-lock.json`
+    * `<WORKSPACE>/a11y-theme-builder/code/src/ui/package-lock.json`
+* replace `'` chars in the debug script in the package.json with `\"`, so that it reads
+ ```
+ "debug": "nodemon --exec \"ts-node\" src/app.ts",
+ ```
+* delete the `data/themes` file, before running the application
+    * `<WORKSPACE>/a11y-theme-builder/code/src/data/themes`
 
