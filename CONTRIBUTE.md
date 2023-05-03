@@ -69,8 +69,26 @@ answer our [call for contributions](https://discoverfinancial.github.io/a11y-the
 4. Add the GitHub Topic `a11y-tb` to your forked repo for that we can query all of GitHub for available features and fixes to import.
 
 #### Coding Conventions
-* `camelCase`: Unless overridden by industry standards or tool/framework standards, all code will follow [camelCase](https://en.wikipedia.org/wiki/Camel_case).
-* `snake-case`: All documentation files will follow [snake-case](https://en.wikipedia.org/wiki/Snake_case).
+* ReactJS:
+  * `PascalCase`: ReactJS components, interfaces, component file names (tsx, jsx, css)
+  * `camelCase`: JavaScript data variables, functions, non-component file names (ts, js, css)
+  * Tab: 4 spaces
+* NodeJS:
+  * `camelCase`: JavaScript data variables, functions, non-component file names
+  * Tab: 4 spaces
+* CSS:
+  * `kebab-case`: CSS variables
+  * Tab: 2 spaces
+* Other
+  * `kebab-case`: Directories and file names
+  * `UPPERCASE`: Some root markdown files that are commonly all caps
+
+References:
+* [ReactJS coding conventions](https://levelup.gitconnected.com/react-code-conventions-and-best-practices-433e23ed69aa)
+* [React Best Practices](https://www.freecodecamp.org/news/best-practices-for-react)
+* [Case Styles: Camel, Pascal, Snake and Kebab Case](https://betterprogramming.pub/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841)
+* [camelCase](https://en.wikipedia.org/wiki/Camel_case)
+
 
 ## Testing 
 Testing new releases and/or features is a great way to contribute to the community. If you find issues, please submit an [Issue/Feature Report](https://github.com/discoverfinancial/a11y-theme-builder/issues).
