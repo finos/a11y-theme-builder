@@ -497,8 +497,8 @@ try {
                       "& .MuiInputBase-root": {
                           borderRadius: "var(--spacing-half)",
                       },
-                      "& .MuiInputBase-root.Mui-disabled": {
-                          backgroundColor: "var(--input-disabled)",
+                      "& .Mui-disabled": {
+                          backgroundColor: "rgba(0,0,0,.1)",
                           color: "var(--on-input-disabled)",
                       },
                       "& .MuiOutlinedInput-notchedOutline": {
