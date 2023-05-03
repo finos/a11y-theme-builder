@@ -3,7 +3,7 @@
 ## Concepts
 The following concepts are used in computations.
 
-* **on-color**: [Google Material Design][M2DESIGN] refers to the [color elements](https://m2.material.io/design/color/the-color-system.html#color-theme-creation) that appear “on” top of surfaces that use the following colors: a primary color, secondary color, surface color, background color, or error color. When a color appears “on” top of a primary color, it’s called an “on primary color.” They are labelled using the original color category (such as primary color) with the prefix “on”. These “On” colors are primarily applied to text, iconography, and strokes.
+* **on-color**: [Google Material Design][M2DESIGN] refers to the [color elements](https://m2.material.io/design/color/the-color-system.html#color-theme-creation) that appear “on” top of surfaces that use the following colors: a primary color, secondary color, surface color, background color, or error color, as "on" colors. When a color appears “on” top of a primary color, it’s called an “on primary color.” They are labelled using the original color category (such as primary color) with the prefix “on”. These “On” colors are primarily applied to text, iconography, and strokes.
 
 ## Computational Instructions
 ### Light and Dark Mode Shades
@@ -37,36 +37,41 @@ The following concepts are used in computations.
       For 0 to 900 by 100:
         DARK_MODE_LIGHTNESS = (((900 - SHADE_VALUE)/1000) - (.075 * REDUCTION_VALUE )
     ```
-0. Calculate each color by taking the original HSL value updating each shade with the new calculated lightness value and then convert the color from HSL back to RGB.
+
+0. Calculate each color by taking the original HSL value, updating each shade with the new calculated lightness value, and then convert the color from HSL back to RGB.
 0. Check the swatch and its color contrast against light and dark text to see which has a higher contrast.
-    * In light mode dark text is (#121212) and light text (#ffffff)
-    * In dark mode dark text is (#121212) and light text rgba(255,255,255,0.6)
+    * In light mode dark text is "\#121212" and light text is "\#ffffff"
+    * In dark mode dark text is "\#121212" and light text is "rgba(255,255,255,0.6)"
 0. Check with resulting color and text color combination to calculate its contrast ratio.  If it has a contrast ratio of 4.5:1 or higher compute the swatch with the corresponding text or 'On-Color'.
-0. If the contrast is < 4.5:1 test to see if it takes more cycles to lighten the color with dark text or darken the color with light text to get to the desired contrast ratio of 4.5:1.
+0. If the contrast is < 4.5:1, test to see if it takes more cycles to lighten the color with dark text or darken the color with light text to get to the desired contrast ratio of 4.5:1.
 0. Loop through a function to lighten or darken the shade until it has an on-color with a contrast ratio of 4.5:1.
 0. Smooth out the transitions through the colors so there are no obvious jumps by identifying those colors that have been lightened or darkened, and placing the corresponding shade along a gradient to the lightest and darkest shades and updating the shades in-between at equal percentage intervals.
 
 ### Gradients
+
 * Light Mode Color Selection
-  1. Once the user selects the primary, secondary, and tertiary colors of a theme, a menu will be generated for the user to select the first color, color "a", of a gradient, from the shades generated for the primary, secondary, and tertiary colors.
-  2. Once the "a" color is selected only those colors of the primary, secondary and tertiary shades with the same "on-color" as "a" can be selected by the user for color "b".
-  3. Any text or icon used on the full gradient will now meet the required 4.5:1 contrast.
+
+    1. Once the user selects the primary, secondary, and tertiary colors of a theme, a menu will be generated for the user to select the first color, color "a", of a gradient, from the shades generated for the primary, secondary, and tertiary colors.
+    2. Once the "a" color is selected only those colors of the primary, secondary and tertiary shades with the same "on-color" as "a" can be selected by the user for color "b".
+    3. Any text or icon used on the full gradient will now meet the required 4.5:1 contrast.
+
 * Dark Mode Color Selection
-  1. If color "a" and "b" are the same color and shade 500 or higher, identify dark "on-colors" and proceed to map the same jump in shade values as the user picked in light mode.
-  2. If there are not 2 or more dark "on-color" shades then look at all of the light "on-color" shades to build a gradient with the same jump in shades.
-  3. This yields gradients in dark mode that are not too bright or light for the eyes and "a" and "b" shades have the same "on-color," keeping it accessible.
+
+    1. If color "a" and "b" are the same color and shade 500 or higher, identify dark "on-colors" and proceed to map the same jump in shade values as the user picked in light mode.
+    2. If there are not 2 or more dark "on-color" shades then look at all of the light "on-color" shades to build a gradient with the same jump in shades.
+    3. This yields gradients in dark mode that are not too bright or light for the eyes and "a" and "b" shades have the same "on-color," keeping it accessible.
 
 ### Icons and Buttons
 
-1. User selects preferences
-   1. Primary, secondary, and tertiary colors
-   1. Light mode background color
-   1. Dark mode background color
+1. User selects values for the following preferences.  These are required in order to specify icon and button colors in the default color theme.
+    1. Primary, secondary, and tertiary colors
+    1. Light mode background colors
+    1. Dark mode background colors
 1. Build light mode accessible buttons
-   1. Limit the selection of button colors to those primary, secondary, and tertiary shades that have a contrast against the secondary light mode background color of 3.1:1 or higher.  Note secondary background needs to be slightly darker than the primary background.
+    1. Limit the selection of button colors to those primary, secondary, and tertiary shades that have a contrast against the secondary light mode background color of 3.1:1 or higher.  Note secondary background needs to be slightly darker than the primary background.
 1. Build dark mode accessible buttons
-   1. Start with the users selected light mode button shade and test it against their selected primary dark mode background color selection, which is slightly darker than the secondary background color.
-   2. If the button does not have the required contrast, then loop through the lighter shades until finding an appropriate shade.
+    1. Start with the users selected light mode button shade and test it against their selected primary dark mode background color selection, which is slightly darker than the secondary background color.
+    2. If the button does not have the required contrast, then loop through the lighter shades until finding an appropriate shade.
 1. Repeat steps 2-3 for icon color.
 
 ### Elevations
@@ -102,7 +107,7 @@ The user can specify the primary, secondary and tertiary colors, the light and d
 
 As a result, a dark and light mode are generated for each color theme and all the calculations are made to transform the interface accordingly.
 
-In addition to making the required color changes to reduce the eye strain while maintaining the required contrast levels, adjust the brightness of images by adding on a desaturation layer (a black layer with an opacity of 5%) over the image.
+In addition to making the required color changes to reduce eye strain while maintaining the required contrast levels, adjust the brightness of images by adding on a desaturation layer (a black layer with an opacity of 5%) over the image.
 
 ### Focus state
 
@@ -112,13 +117,13 @@ For each element, provide a focus state with the required contrast.
 
 Let the user specify the default browser settings designed for focus states or the identified button color for focus states for interfaces with white/off-white or nearblack/off-black backgrounds in light mode and nearblack/off-black backgrounds in dark mode.
 
-Overwrite these default settings if user selected a colored background in light or dark mode.  In such a case, use the button color for hotlinks and focus states - which provides the contrast on-color.
+Overwrite these default settings if user selected a colored background in light or dark mode.  In such a case, use the selected button color for hotlinks and focus states - which provides the contrast on-color.
 
 ### Hotlinks
 
-Hotlinks need to have a contrast of 3.1:1 against the background. In addition, the hotlink color needs to have a contrast of 3.1:1 and against the surrounding text if not underlined, in both light and dark mode.
+To meet standards compliance, hotlinks need to have a contrast of 4.5:1 against the background. In addition, hotlinks needs to have a contrast of 3.1:1 against the text surrounding it.  If it does not meet these two conditions, then it has to be underlined so that it can be easily distinguished in its position in the page.  These rules exist for hotlinks whether they are in light mode or dark mode.
 
-The links also need to change on hover and have a visual distinguishing effect other than the color change on focus.
+The links also need to change on hover and have a visual distinguishing effect, other than the color change, on focus.  As an example of compliant behavior, if a hotlink is underlined (due to user preference or lack of contrast) then the hotlink would NOT be underlined while it is being hovered or has focus.
 
 Allow the user to pick the default settings or apply link coloring that compliments their theme.  They can choose if they want the hotlink to be initially underlined or not.  If in dark mode, we cannot find a color that meets both criteria we will underline the hotlink to stay compliant.
 

@@ -23,9 +23,11 @@ There are several component libraries that can be used to write a web applicatio
 
 ## Decision Outcome
 
-Chosen option: "React.js", because it is a component-based architecture, it supports typescript, it is open source with a large and active community, and it is widely used in Discover. 
+Chosen option: "React.js", because it is a component-based architecture, it supports typescript, it is open source with a large and active community, and it is widely used in Discover.
 
-Chosen option: "Material UI".  Once React.js was chosen, the next decision was which component library to use.  The overriding factor for choosing Material UI was because it is widely used by Discover.  It also supports typescript, and it is open source with a large and active community.  
+Chosen option: "Material UI".  Once React.js was chosen, the next decision was which component library to use.  The overriding factor for choosing Material UI was because it is widely used by Discover.  It also supports typescript, and it is open source with a large and active community.
+
+>Note: The relevance of each of these technologies to Discover was an important consideration because the initial code was written by Discover, who had great trust and high regard for these technologies as well as much experience developing in such an environment.
 
 ## Pros and Cons of the Options 
 
