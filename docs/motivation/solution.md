@@ -134,7 +134,7 @@ Typically, this would be very challenging. However, with the Theme Builder all w
         * Character spacing is updated
 3. Save the new Design System.
 
->Note: The atomic property mentioned above is an enhancement that is yet to be implemented.  The WCAG AA and AAA compliance capabilities are already in place.
+>Note: Coming soon.  The atomic property mentioned above is an enhancement that is yet to be implemented.  The WCAG AA and AAA compliance capabilities are already in place.
 
 ## DesignOps Toolchain
 

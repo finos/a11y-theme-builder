@@ -6,7 +6,7 @@ In particular, the SDK provides the following:
 
 * APIs for creating, modifying, and deleting themes;
 * calculations that are necessary to ensure that accessibility requirements are met;
-* a pluggable persistent interface;
+* a pluggable persistence interface;
 * code generation for CSS and JSON (Figma-compliant); and
 * extensibility with regard to atoms, molecules, organisms, and accessibility layers.
 

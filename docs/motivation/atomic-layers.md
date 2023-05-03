@@ -25,7 +25,7 @@ Themes can also be organization into different sub themes. For example rendering
 
 ![subthemes](../../_images/sub-themes.png)
 
-To better understand the power of the Theme Builder, let us imagine we need to build an entire Design System to meet the legal requirements of WCAG AA guidelines (Enterprise Grade) and then find we need a WCGA AAA compliant (Government Grade) system for a government contract. 
+To better understand the power of Theme Builder, let us imagine we need to build an entire Design System to meet the legal requirements of WCAG AA guidelines (Enterprise Grade) and then find we need a WCGA AAA compliant (Government Grade) system for a government contract. 
 
 ![autoupdate](../../_images/auto-update.png)
 
