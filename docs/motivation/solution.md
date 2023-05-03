@@ -7,12 +7,12 @@ Our desired solution is possible if we apply the concepts of a *Unified Design* 
 ### Inspiration
 Atomic Design is a methodology, developed by [Brad Frost](https://bradfrost.com/blog/post/atomic-web-design/), for creating design systems.
 
-The methodology enables the creation of scalable systems, reusable components, and design systems. While originally associated with the design of web interfaces, this methodolallogy can be applied to a wide array of design domains. There are five distinct levels in Atomic Design:
+The methodology enables the creation of scalable systems, reusable components, and design systems. While originally associated with the design of web interfaces, this methodology can be applied to a wide array of design domains. There are five distinct levels in Atomic Design:
 
 | Component | Description |
 | --- | --- |
 | Atoms     | Atoms represent the smallest entity in UI elements and they can’t be broken down any further. They serve as the foundational building blocks of your interface. Some examples are: colors, fonts, animations and single images. |
-| Molecules | Molecules are groups of compound atoms. Molecules are associated with distinct properties and serve as the backbone of design systems. In the web arena, molecules depict simple UI elements functioning together as a unit. Some   examples are: a form label, search input, and buttons. |
+| Molecules | Molecules are groups of compound atoms. Molecules are associated with distinct properties and serve as the backbone of design systems. In the web arena, molecules depict simple UI elements functioning together as a unit. Some examples are: a form label, search input, and buttons. |
 | Organisms | Organisms are groups of molecules and/or atoms joined together to form a relatively complex, distinct section of an interface.  Examples include: navigation, sidebars, forms, and popups. |
 | Templates | Templates consist mostly of groups of organisms stitched together to define the structure (design) of possible pages. Templates are void of real content. |
 | Pages     | Pages are instances of templates that contain real content. Essentially, they combine all the components of a design coupled with real data. |
