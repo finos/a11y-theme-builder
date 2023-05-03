@@ -142,7 +142,8 @@
   --border-2: calc(var(--border-1) * 2);
   --border-3: calc(var(--border-1) * 3);
   --border-4: calc(var(--border-1) * 4);
-  --elevation-change: 0.2;
+  /* elevation settings */
+  --elevation-change: .2;
   --change-2: calc(1 + calc(var(--elevation-change) * 2));
   --change-3: calc(1 + calc(var(--elevation-change) * 3));
   --change-4: calc(1 + calc(var(--elevation-change) * 4));
@@ -152,99 +153,34 @@
   --change-8: calc(1 + calc(var(--elevation-change) * 8));
   --change-9: calc(1 + calc(var(--elevation-change) * 9));
   --elevation-horizontal: 2px;
-  --reverse-elevation-horizontal: -2px;
   --elevation-vertical: 2px;
-  --reverse-elevation-vertical: -2px;
-  --elevation-horizontal-2: calc(var(--elevation-horizontal) * var(--change-2));
-  --elevation-horizontal-3: calc(var(--elevation-horizontal) * var(--change-3));
-  --elevation-horizontal-4: calc(var(--elevation-horizontal) * var(--change-4));
-  --elevation-horizontal-5: calc(var(--elevation-horizontal) * var(--change-5));
-  --elevation-horizontal-6: calc(var(--elevation-horizontal) * var(--change-6));
-  --elevation-horizontal-7: calc(var(--elevation-horizontal) * var(--change-7));
-  --elevation-horizontal-8: calc(var(--elevation-horizontal) * var(--change-8));
-  --elevation-horizontal-9: calc(var(--elevation-horizontal) * var(--change-9));
-  --elevation-vertical-2: calc(var(--elevation-vertical) * var(--change-2));
-  --elevation-vertical-3: calc(var(--elevation-vertical) * var(--change-3));
-  --elevation-vertical-4: calc(var(--elevation-vertical) * var(--change-4));
-  --elevation-vertical-5: calc(var(--elevation-vertical) * var(--change-5));
-  --elevation-vertical-6: calc(var(--elevation-vertical) * var(--change-6));
-  --elevation-vertical-7: calc(var(--elevation-vertical) * var(--change-7));
-  --elevation-vertical-8: calc(var(--elevation-vertical) * var(--change-8));
-  --elevation-vertical-9: calc(var(--elevation-vertical) * var(--change-9));
-  --reverse-elevation-horizontal-2: calc(var(--reverse-elevation-horizontal) * var(--change-2));
-  --reverse-elevation-horizontal-3: calc(var(--reverse-elevation-horizontal) * var(--change-3));
-  --reverse-elevation-horizontal-4: calc(var(--reverse-elevation-horizontal) * var(--change-4));
-  --reverse-elevation-horizontal-5: calc(var(--reverse-elevation-horizontal) * var(--change-5));
-  --reverse-elevation-horizontal-6: calc(var(--reverse-elevation-horizontal) * var(--change-6));
-  --reverse-elevation-horizontal-7: calc(var(--reverse-elevation-horizontal) * var(--change-7));
-  --reverse-elevation-horizontal-8: calc(var(--reverse-elevation-horizontal) * var(--change-8));
-  --reverse-elevation-horizontal-9: calc(var(--reverse-elevation-horizontal) * var(--change-9));
-  --reverse-elevation-vertical-2: calc(var(--reverse-elevation-vertical) * var(--change-2));
-  --reverse-elevation-vertical-3: calc(var(--reverse-elevation-vertical) * var(--change-3));
-  --reverse-elevation-vertical-4: calc(var(--reverse-elevation-vertical) * var(--change-4));
-  --reverse-elevation-vertical-5: calc(var(--reverse-elevation-vertical) * var(--change-5));
-  --reverse-elevation-vertical-6: calc(var(--reverse-elevation-vertical) * var(--change-6));
-  --reverse-elevation-vertical-7: calc(var(--reverse-elevation-vertical) * var(--change-7));
-  --reverse-elevation-vertical-8: calc(var(--reverse-elevation-vertical) * var(--change-8));
-  --reverse-elevation-vertical-9: calc(var(--reverse-elevation-vertical) * var(--change-9));
   --elevation-blur: 2px;
-  --elevation-blur-2: calc(var(--elevation-blur) * var(--change-2));
-  --elevation-blur-3: calc(var(--elevation-blur) * var(--change-3));
-  --elevation-blur-4: calc(var(--elevation-blur) * var(--change-4));
-  --elevation-blur-5: calc(var(--elevation-blur) * var(--change-5));
-  --elevation-blur-6: calc(var(--elevation-blur) * var(--change-6));
-  --elevation-blur-7: calc(var(--elevation-blur) * var(--change-7));
-  --elevation-blur-8: calc(var(--elevation-blur) * var(--change-8));
-  --elevation-blur-9: calc(var(--elevation-blur) * var(--change-9));
   --elevation-spread: 2px;
-  --elevation-spread-2: calc(var(--elevation-spread) * var(--change-2));
-  --elevation-spread-3: calc(var(--elevation-spread) * var(--change-3));
-  --elevation-spread-4: calc(var(--elevation-spread) * var(--change-4));
-  --elevation-spread-5: calc(var(--elevation-spread) * var(--change-5));
-  --elevation-spread-6: calc(var(--elevation-spread) * var(--change-6));
-  --elevation-spread-7: calc(var(--elevation-spread) * var(--change-7));
-  --elevation-spread-8: calc(var(--elevation-spread) * var(--change-8));
-  --elevation-spread-9: calc(var(--elevation-spread) * var(--change-9));
-  --base-elevation-1: 0 0 var(--base-elevation-blur) var(--base-elevation-spread);
-  --base-elevation-2: 0 0 var(--base-elevation-blur-2) var(--base-elevation-spread-2);
-  --base-elevation-3: 0 0 var(--base-elevation-blur-3) var(--base-elevation-spread-3);
-  --base-elevation-4: 0 0 var(--base-elevation-blur-4) var(--base-elevation-spread-4);
-  --base-elevation-5: 0 0 var(--base-elevation-blur-5) var(--base-elevation-spread-5);
-  --base-elevation-6: 0 0 var(--base-elevation-blur-6) var(--base-elevation-spread-6);
-  --base-elevation-7: 0 0 var(--base-elevation-blur-7) var(--base-elevation-spread-7);
-  --base-elevation-8: 0 0 var(--base-elevation-blur-8) var(--base-elevation-spread-8);
-  --base-elevation-9: 0 0 var(--base-elevation-blur-9) var(--base-elevation-spread-9);
   --base-elevation-blur: 2px;
-  --base-elevation-blur-2: calc(var(--base-elevation-blur) * var(--change-2));
-  --base-elevation-blur-3: calc(var(--base-elevation-blur) * var(--change-3));
-  --base-elevation-blur-4: calc(var(--base-elevation-blur) * var(--change-4));
-  --base-elevation-blur-5: calc(var(--base-elevation-blur) * var(--change-5));
-  --base-elevation-blur-6: calc(var(--base-elevation-blur) * var(--change-6));
-  --base-elevation-blur-7: calc(var(--base-elevation-blur) * var(--change-7));
-  --base-elevation-blur-8: calc(var(--base-elevation-blur) * var(--change-8));
-  --base-elevation-blur-9: calc(var(--base-elevation-blur) * var(--change-9));
   --base-elevation-spread: 2px;
-  --base-elevation-spread-2: calc(var(--base-elevation-spread) * var(--change-2));
-  --base-elevation-spread-3: calc(var(--base-elevation-spread) * var(--change-3));
-  --base-elevation-spread-4: calc(var(--base-elevation-spread) * var(--change-4));
-  --base-elevation-spread-5: calc(var(--base-elevation-spread) * var(--change-5));
-  --base-elevation-spread-6: calc(var(--base-elevation-spread) * var(--change-6));
-  --base-elevation-spread-7: calc(var(--base-elevation-spread) * var(--change-7));
-  --base-elevation-spread-8: calc(var(--base-elevation-spread) * var(--change-8));
-  --base-elevation-spread-9: calc(var(--base-elevation-spread) * var(--change-9));
-  --elevation-rgb: 113, 50, 166;
+  --elevation-rgb: 0, 0, 0;
   --elevation-opacity: 0.04;
   --base-elevation-opacity: 0.04;
   --elevation-0: 0 0 0 0 rgba(0,0,0,0);
-  --elevation-1: calc(var(--elevation-horizontal) * var(--change-1)) calc(var(--elevation-vertical) * var(--change-1)) calc(var(--elevation-blur) * var(--change-1)) calc(var(--elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-1))), 0 0 calc(var(--base-elevation-blur) * var(--change-1)) calc(var(--base-elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-1)));
-  --elevation-2: calc(var(--elevation-horizontal) * var(--change-2)) calc(var(--elevation-vertical) * var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-2))), 0 0 calc(var(--base-elevation-blur) * var(--change-2)) calc(var(--base-elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-2)));
-  --elevation-3: calc(var(--elevation-horizontal) * var(--change-3)) calc(var(--elevation-vertical) * var(--change-3)) calc(var(--elevation-blur) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-3))), 0 0 calc(var(--base-elevation-blur) * var(--change-3)) calc(var(--base-elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-3)));
-  --elevation-4: calc(var(--elevation-horizontal) * var(--change-4)) calc(var(--elevation-vertical) * var(--change-4)) calc(var(--elevation-blur) * var(--change-4)) calc(var(--elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-4))), 0 0 calc(var(--base-elevation-blur) * var(--change-4)) calc(var(--base-elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-4)));
-  --elevation-5: calc(var(--elevation-horizontal) * var(--change-5)) calc(var(--elevation-vertical) * var(--change-5)) calc(var(--elevation-blur) * var(--change-5)) calc(var(--elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-5))), 0 0 calc(var(--base-elevation-blur) * var(--change-5)) calc(var(--base-elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-5)));
-  --elevation-6: calc(var(--elevation-horizontal) * var(--change-6)) calc(var(--elevation-vertical) * var(--change-6)) calc(var(--elevation-blur) * var(--change-6)) calc(var(--elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-6))), 0 0 calc(var(--base-elevation-blur) * var(--change-6)) calc(var(--base-elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-6)));
-  --elevation-7: calc(var(--elevation-horizontal) * var(--change-7)) calc(var(--elevation-vertical) * var(--change-7)) calc(var(--elevation-blur) * var(--change-7)) calc(var(--elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-7))), 0 0 calc(var(--base-elevation-blur) * var(--change-7)) calc(var(--base-elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-7)));
-  --elevation-8: calc(var(--elevation-horizontal) * var(--change-8)) calc(var(--elevation-vertical) * var(--change-8)) calc(var(--elevation-blur) * var(--change-8)) calc(var(--elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-8))), 0 0 calc(var(--base-elevation-blur) * var(--change-8)) calc(var(--base-elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-8)));
-  --elevation-9: calc(var(--elevation-horizontal) * var(--change-9)) calc(var(--elevation-vertical) * var(--change-9)) calc(var(--elevation-blur) * var(--change-9)) calc(var(--elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-9))), 0 0 calc(var(--base-elevation-blur) * var(--change-9)) calc(var(--base-elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-9)));
+  /* elevation */
+  --elevation-1: calc(var(--elevation-horizontal) * var(--change-1)) calc(var(--elevation-vertical)* var(--change-1)) calc(var(--elevation-blur) * var(--change-1)) calc(var(--elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-1)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-1)) calc(var(--base-elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-1)));
+  --elevation-2: calc(var(--elevation-horizontal) * var(--change-2)) calc(var(--elevation-vertical)* var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-2)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-2)) calc(var(--base-elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-2)));
+  --elevation-3: calc(var(--elevation-horizontal) * var(--change-3)) calc(var(--elevation-vertical)* var(--change-3)) calc(var(--elevation-blur) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-3)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-3)) calc(var(--base-elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-3)));
+  --elevation-4: calc(var(--elevation-horizontal) * var(--change-4)) calc(var(--elevation-vertical)* var(--change-4)) calc(var(--elevation-blur) * var(--change-4)) calc(var(--elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-4)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-4)) calc(var(--base-elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-4)));
+  --elevation-5: calc(var(--elevation-horizontal) * var(--change-5)) calc(var(--elevation-vertical)* var(--change-5)) calc(var(--elevation-blur) * var(--change-5)) calc(var(--elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-5)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-5)) calc(var(--base-elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-5)));
+  --elevation-6: calc(var(--elevation-horizontal) * var(--change-6)) calc(var(--elevation-vertical)* var(--change-6)) calc(var(--elevation-blur) * var(--change-6)) calc(var(--elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-6)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-6)) calc(var(--base-elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-6)));
+  --elevation-7: calc(var(--elevation-horizontal) * var(--change-7)) calc(var(--elevation-vertical)* var(--change-7)) calc(var(--elevation-blur) * var(--change-7)) calc(var(--elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-7)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-7)) calc(var(--base-elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-7)));
+  --elevation-8: calc(var(--elevation-horizontal) * var(--change-8)) calc(var(--elevation-vertical)* var(--change-8)) calc(var(--elevation-blur) * var(--change-8)) calc(var(--elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-8)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-8)) calc(var(--base-elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-8)));
+  --elevation-9: calc(var(--elevation-horizontal) * var(--change-9)) calc(var(--elevation-vertical)* var(--change-9)) calc(var(--elevation-blur) * var(--change-9)) calc(var(--elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-9)) ),
+    0 0 calc(var(--base-elevation-blur) * var(--change-9)) calc(var(--base-elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-9)));
   --bevel-horizontal: 6px;
   --bevel-vertical: 6px;
   --bevel-spread: 1px;
