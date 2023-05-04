@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -14,17 +14,13 @@ export interface HeroColorModeSelector {
 export const HeroColorModeSelector: React.FC<HeroColorModeSelector> = ({ colorMode, setColorMode, children }) => {
 
     const backgroundColor:any = {colored: "rgba(255,255,255,0)", black: "rgba(255,255,255,.5)", white: "rgba(0,0,0,.5)"}
-    // const color:any = {default: "var(--on-primary)", black: "black", white: "white"}
 
     const style = {
         border: "1px dotted black",
-        //color: color[colorMode],
         backgroundColor: backgroundColor[colorMode],
         padding: "10px",
         marginTop: "24px",
     }
-
-    console.log("style=",style);
 
     return (
         <>
