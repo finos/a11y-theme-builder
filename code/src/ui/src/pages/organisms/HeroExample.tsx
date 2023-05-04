@@ -9,29 +9,24 @@ import { Hero } from "../../mui-a11y-tb/components/Hero";
 import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {
-    style?: any;
+    colorMode?: string;
 }
 
-export const HeroExample: React.FC<Props> = ({style}) => {
-  const [colorMode, setColorMode] = useState<string>("default");
+export const HeroExample: React.FC<Props> = ({colorMode=""}) => {
     return (
-        <ExampleSection>
-          <HeroColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-            <Hero className={colorMode} >
-                <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
-                    <Link>Home</Link>
-                    <Link>Page</Link>
-                    <Typography>Page</Typography>
-                </Breadcrumbs>
-                <div className="title">Page Title</div>
-                <div className="body">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                    </p>
-                </div>
-                <Button>Get Started</Button>
-            </Hero>
-          </HeroColorModeSelector>
-        </ExampleSection>
+        <Hero className={colorMode} >
+            <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                <Link>Home</Link>
+                <Link>Page</Link>
+                <Typography>Page</Typography>
+            </Breadcrumbs>
+            <div className="title">Page Title</div>
+            <div className="body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                </p>
+            </div>
+            <Button>Get Started</Button>
+        </Hero>
     )
 }
