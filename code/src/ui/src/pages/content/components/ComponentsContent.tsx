@@ -54,6 +54,7 @@ import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
 import { DividerComponent } from '../../components/DividerComponent';
+import { HeroComponent } from '../../components/HeroComponent';
 
 interface Props {
     user: any;
@@ -185,6 +186,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Dropdown"} value="dropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("dropdown")}} disabled={disabled}/>
+                    <LeftNavItem text={"Hero"} value="hero" indent={1} selected={showComponent} onClick={()=> {setShowComponent("hero")}} disabled={disabled}/>
                     <LeftNavItem text={"Images"} value="imageDecorations" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageDecorations")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
@@ -356,6 +358,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "tooltips" &&
                         <TooltipsComponent />
+                    }
+                    {showComponent === "hero" &&
+                        <HeroComponent />
                     }
             </div>
             </div>
