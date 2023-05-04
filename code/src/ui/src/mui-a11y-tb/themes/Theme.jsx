@@ -762,7 +762,6 @@ try {
                           fontWeight: "500",
                         },
                         "& .MuiListItemButton-root:active": {
-                          background: '#000000'
                         }
                     }
                 }
