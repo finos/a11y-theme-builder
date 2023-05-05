@@ -645,12 +645,15 @@ section {
   color: var(--white) !important;
 }
 /* dark mode bread crumbs */
+.darkmode .breadcrumbs:not(.back-breadcrumb) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
+  color: var(--dm-on-background-tertiary);
+}
 .darkmode .breadcrumbs .MuiBreadcrumbs-li a, .darkmode .breadcrumbs .MuiBreadcrumbs-li:focus a, .darkmode .breadcrumbs .MuiBreadcrumbs-li:active a {
-    color: var(--dm-hotlink) !important;
+    color: var(--dm-hotlink);
     text-decoration: var(--dm-hotlink-decoration);
     text-decoration-color: var(--dm-hotlink);
 }
-.darkmode .breadcrumb .MuiBreadcrumbs-separator {
+.darkmode .breadcrumbs .MuiBreadcrumbs-separator {
   color: var(--dm-on-background);
   opacity: var(--quiet);
 }
@@ -3488,9 +3491,14 @@ button.MuiPaginationItem-root:hover {
 .colored .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: none!important;
 }
-.colored .MuiBreadcrumbs-root,
-.colored .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+.default .MuiBreadcrumbs-root,
+.default .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
   color: var(--on-background-tertiary);
+  opacity: var(--quiet);
+}
+.darkmode .default .MuiBreadcrumbs-root,
+.darkmode .default .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
+  color: var(--dm-on-background-tertiary);
   opacity: var(--quiet);
 }
 /* buttons */
