@@ -679,6 +679,9 @@ section {
 .darkmode .breadcrumbs.white .MuiBreadcrumbs-separator {
   color: var(--dm-white) !important;
 }
+.darkmode .breadcrumbs.white .MuiBreadcrumbs-li:hover a {
+  text-decoration: none !important;
+}
 
 .darkmode .breadcrumbs:not(.back-breadcrumb).white .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--dm-white) !important;
@@ -694,6 +697,9 @@ section {
 }
 .darkmode .breadcrumbs:not(.back-breadcrumb).black .MuiBreadcrumbs-li:last-of-type .MuiTypography-root{
   color: var(--black) !important;
+}
+.darkmode .breadcrumbs.black .MuiBreadcrumbs-li:hover a {
+  text-decoration: none !important;
 }
 
 
