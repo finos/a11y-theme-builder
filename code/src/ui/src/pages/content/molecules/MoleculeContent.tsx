@@ -23,6 +23,7 @@ import { SlidersMolecule } from '../../molecules/SlidersMolecule';
 import { SpacingMolecule } from '../../molecules/SpacingMolecule';
 import { ModalMolecule } from '../../molecules/ModalMolecule';
 import { ChipsMolecule } from '../../molecules/ChipsMolecule';
+import { Preferences } from '../../../Preferences';
 
 const name = "MoleculeContent"
 
@@ -64,23 +65,24 @@ interface Props {
 }
 
 export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
     let generalSelected = false;
-    if (localStorage.getItem("themebuilder-molecule-general-selected") == "true") {
+    if (pref.get("molecule-general-selected") == "true") {
         generalSelected = true;
     }
     const [displayGeneral, setDisplayGeneral] = useState<boolean>(generalSelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-molecule-general-selected", ""+displayGeneral)
+        pref.set("molecule-general-selected", ""+displayGeneral)
     }, [displayGeneral])
 
     let chartsSelected = false;
-    if (localStorage.getItem("themebuilder-molecule-charts-selected") == "true") {
+    if (pref.get("molecule-charts-selected") == "true") {
         generalSelected = true;
     }
     const [displayCharts, setDisplayCharts] = useState<boolean>(chartsSelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-molecule-charts-selected", ""+displayCharts)
+        pref.set("molecule-charts-selected", ""+displayCharts)
     }, [displayCharts])
 
     function enableDisableItems() {
@@ -122,9 +124,9 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         //console.log("Molecules updated =",molecules)
     }, [molecules])
 
-    const [showMolecule, setShowMolecule] = React.useState(localStorage.getItem("themebuilder-molecule-content-selected") || "molecules");
+    const [showMolecule, setShowMolecule] = React.useState(pref.get("molecule-content-selected") || "molecules");
     useEffect(() => {
-        localStorage.setItem("themebuilder-molecule-content-selected", showMolecule)
+        pref.set("molecule-content-selected", showMolecule)
         console.log(`${name} - showMolecule=${showMolecule}`)
     }, [showMolecule])
 
