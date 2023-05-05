@@ -421,6 +421,10 @@
 .design-system-editor-right-content .darkmode .hotlink.visited {
     opacity: .7;
 }
+.design-system-editor-right-content .darkmode .hotlink.active,
+.design-system-editor-right-content.darkmode .hotlink.active {
+    text-decoration: var(--dm-hotlink-hover-decoration);
+}
 
 .design-system-editor-right-content .color-title {
     margin-top: 4px;

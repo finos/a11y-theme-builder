@@ -574,14 +574,17 @@ section {
   line-height: var(--caption-boldLineHeight) !important;
   letter-spacing: var(--caption-boldLetterSpacing) !important;
   text-transform: var(--caption-boldTextTransform) !important;
-  text-decoration:  var(--caption-boldTextDecoration) !important;
+  /* changed text-decoration away from being !important because it is messing up hotlink
+   * underlining
+   */
+  text-decoration:  var(--caption-boldTextDecoration)
 }
 
 .breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
   margin-right: var(--spacing-1);
 }
 
-.breadcrumbs .MuiBreadcrumbs-li a, .breadcrumbs .MuiBreadcrumbs-li:focus a, .breadcrumbs .MuiBreadcrumbs-li:active a {
+.breadcrumbs .MuiBreadcrumbs-li a.MuiLink-root, .breadcrumbs .MuiBreadcrumbs-li:focus a.MuiLink-root, .breadcrumbs .MuiBreadcrumbs-li:active a.MuiLink-root {
     color: var(--hotlink);
     text-decoration: var(--hotlink-decoration);
     text-decoration-color: var(--hotlink);
