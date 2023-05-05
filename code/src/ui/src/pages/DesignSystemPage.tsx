@@ -18,6 +18,7 @@ import './DesignSystemPage.css';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
 import { MeasureDiv } from './MeasureDiv';
+import { Preferences } from '../Preferences';
 
 const name = "DesignSystemPage"
 
@@ -40,10 +41,13 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
     const [designSystem, setDesignSystem] = useState<DesignSystem>();
 
-    const [tabIndex, setTabIndex] = useState<string>(localStorage.getItem("themebuilder-content-selected") ||"atoms");
+    const [tabIndex, setTabIndex] = useState<string|null>(null);
     const handleTabChange = (event:any, newTabIndex:string) => {
         setTabIndex(newTabIndex);
-        localStorage.setItem("themebuilder-content-selected", newTabIndex)
+        if (designSystem) {
+            const pref = new Preferences(designSystem.name);
+            pref.set("content-selected", newTabIndex)
+        }
     };
 
     const setDesignSystemName = async (designName: string | undefined) => {
@@ -88,6 +92,8 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     useEffect(() => {
         if (designSystem) {
             designSystem.code.setCSSVarListener("css", setCssValue);
+            const pref = new Preferences(designSystem.name);
+            setTabIndex(pref.get("content-selected") || "atoms");
         }
     }, [designSystem])
 
@@ -109,7 +115,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
         height: (size - divHeight - 4) + "px",
     }
 
-    if (designSystem && themeBuilder)
+    if (designSystem && themeBuilder && tabIndex)
         return (
             <ThemeProvider theme={(themes as any)[themeName]}>
                 <div className="design-system-container">

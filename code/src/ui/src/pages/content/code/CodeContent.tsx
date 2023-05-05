@@ -9,6 +9,7 @@ import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 import FileSaver from 'file-saver';
+import { Preferences } from '../../../Preferences';
 
 interface Props {
     user: any;
@@ -28,10 +29,11 @@ const codeStyle = {
 }
 
 export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
-    const [showItem, setShowItem] = React.useState(localStorage.getItem("themebuilder-code-content-selected") || "code");
+    const [showItem, setShowItem] = React.useState(pref.get("code-content-selected") || "code");
     useEffect(() => {
-        localStorage.setItem("themebuilder-code-content-selected", showItem)
+        pref.set("code-content-selected", showItem)
     }, [showItem])
 
     const [disabled, setDisabled] = useState<boolean>(false);

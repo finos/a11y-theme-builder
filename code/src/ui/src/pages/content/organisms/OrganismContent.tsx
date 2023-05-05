@@ -15,6 +15,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import { PrimaryNavOrganism } from '../../organisms/PrimaryNavOrganism';
 import { SecondaryNavOrganism } from '../../organisms/SecondaryNavOrganism';
 import { FooterCopyrightOrganism } from '../../organisms/FooterCopyrightOrganism';
+import { Preferences } from '../../../Preferences';
 
 interface organismItem {
     value: string;
@@ -40,15 +41,16 @@ interface Props {
 }
 
 export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
     let navigationSelected = false;
-    if (localStorage.getItem("themebuilder-organism-navigation-selected") == "true") {
+    if (pref.get("organism-navigation-selected") == "true") {
         navigationSelected = true;
     }
     const [displayNavigation, setDisplayNavigation] = useState<boolean>(navigationSelected);
     useEffect(() => {
         console.log("displayNavigation=",displayNavigation)
-        localStorage.setItem("themebuilder-organism-navigation-selected", ""+displayNavigation)
+        pref.set("organism-navigation-selected", ""+displayNavigation)
     }, [displayNavigation])
 
     function enableDisableItems() {
@@ -90,9 +92,9 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
         //console.log("Organisms updated =",organisms)
     }, [organisms])
 
-    const [showOrganism, setShowOrganism] = React.useState(localStorage.getItem("themebuilder-organism-content-selected") || "organisms");
+    const [showOrganism, setShowOrganism] = React.useState(pref.get("organism-content-selected") || "organisms");
     useEffect(() => {
-        localStorage.setItem("themebuilder-organism-content-selected", showOrganism)
+        pref.set("organism-content-selected", showOrganism)
     }, [showOrganism])
 
     interface LeftNavOrganismProps { item: any, indent?:number, disabled?:boolean };
