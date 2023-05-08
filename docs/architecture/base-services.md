@@ -58,8 +58,8 @@ The following concepts are used in computations.
 * Dark Mode Color Selection
 
     1. If color "a" and "b" are the same color and shade 500 or higher, identify dark "on-colors" and proceed to map the same jump in shade values as the user picked in light mode.
-    2. If there are not 2 or more dark "on-color" shades then look at all of the light "on-color" shades to build a gradient with the same jump in shades.
-    3. This yields gradients in dark mode that are not too bright or light for the eyes and "a" and "b" shades have the same "on-color," keeping it accessible.
+    2. If there are not 2 or more dark "on-color" shades, then look at all of the light "on-color" shades to build a gradient with the same jump in shades.
+    3. This yields gradients in dark mode that are not too bright or light for the eyes and "a" and "b" shades that have the same "on-color," keeping it accessible.
 
 ### Icons and Buttons
 
@@ -77,17 +77,17 @@ The following concepts are used in computations.
 ### Elevations
 
 * In light mode elevations are represented with increasing dropshadows.
-  * To calculate the elevations, gather information from the user about the base dropshadow.
-    * color of the shadow
-    * horizontal distance
-    * vertical distance
-    * blur
-    * spread
-  * User specifies desired change between elevations.
-  * Compute 10 consistently increasing dropshadow styles to represent the 10 elevations in light mode.
-* In dark mode elevations are represented by object of increasing lightness.
-  * Use the background color which serves as the elevation 0 shade and apply an increasing white overlay on the colors to generate 10 shades.
-  * Leverage the [Material Design][M2DESIGN] elevation calculations to determine the appropriate lightness.
+    * To calculate the elevations, gather information from the user about the base dropshadow.
+        * color of the shadow
+        * horizontal distance
+        * vertical distance
+        * blur
+        * spread
+    * User specifies desired change between elevations.
+    * Compute 10 elevations, consistently increasing dropshadow styles to represent the 10  elevations in light mode.
+* In dark mode, instead of elevations being represented by increasing dropshadows as they are in light mode, elevations are represented by increasing lightness.
+    * Use the background color which serves as the elevation 0 shade and apply an increasing  white overlay on the colors to generate 10 shades.
+    * Leverage the [Material Design][M2DESIGN] elevation calculations to determine the  appropriate lightness.
 
 ### Minimum Click Area Control
 
@@ -96,8 +96,8 @@ The following concepts are used in computations.
 1. User selects desired MINIMUM_CLICK_AREA for their desktop application.
 2. By default the MINIMUM_CLICK_AREA will change to 44px for tablet and mobile interfaces.
 3. Create clickable elements that meet the MINIMUM_CLICK_AREA but appear smaller
-   1. Wrap the component in a parent that is in fact the identified MINIMUM_CLICK_AREA but the visual elements can appear smaller.
-   2. Although a user sees a button that looks 24 pixels high - it's click area is in fact set to the minimum click area.  This feature allows the design to create visually smaller elements that are less overwhelming in an interface while meeting accessibility guidelines.
+    1. Wrap the component in a parent that is in fact the identified MINIMUM_CLICK_AREA but  the visual elements can appear smaller.
+    2. Although a user sees a button that looks 24 pixels high - it's click area is in fact  set to the minimum click area.  This feature allows the design to create visually  smaller elements that are less overwhelming in an interface while meeting accessibility  guidelines.
 
 ### Color Themes
 
