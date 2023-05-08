@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -22,13 +22,15 @@ interface Props {
 }
 
 export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
-
-    useEffect(() => {
-        console.log("DropdownsMolecule mounted");
-    }, []);
-
     const [sample, setSample] = useState<string>("option1");
     const refContainer = React.useRef(null);
+    const [container, setContainer] = useState<any>();
+
+    useEffect(() => {
+        if (refContainer && refContainer.current) {
+            setContainer(refContainer.current);
+        }
+    }, [refContainer]);
 
     return (
         <div>
@@ -57,7 +59,7 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                             value={sample}
                             sx={{ width: "300px" }}
                             MenuProps={{
-                                container: refContainer.current
+                                container: container
                             }}
                             onChange={(event:any) => setSample(event.target.value)}
                         >
