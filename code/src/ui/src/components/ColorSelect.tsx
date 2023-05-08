@@ -28,6 +28,7 @@ class GridShade {
 
 export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
 
+    const [_selectedValue, _setSelectedValue] = useState<string>(defaultValue || "");
     const [_selectableValues, _setSelectableValues] = useState<GridShade[]>([]);
     const [_selectableValuesGrid, _setSelectableValuesGrid] = useState<Shade[][]>();
     const [_longestRow, _setLongestRow] = useState<number>(0);
@@ -45,6 +46,15 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                 }
                 if (event.type === EventType.NodeEnabled) {
                     _setDisabled(!value.isEnabled());
+                    return;
+                }
+                if (event.type === EventType.ValueChanged) {
+                    // handle case where design system sets a property value to undefined when
+                    //  a property that it depends on changes
+                    const currValue = value.getValue();
+                    if (!currValue) {
+                        _setSelectedValue("");
+                    }
                     return;
                 }
             };
@@ -107,7 +117,9 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
         const selectedValue = event.target.value;
         if (selectedValue && _selectableValues) {
             const indexOfSelectedItem = parseInt(selectedValue.split(';')[1]);
-            value.setValue(_selectableValues[indexOfSelectedItem].shade);
+            const newSelectedValue = _selectableValues[indexOfSelectedItem].shade;
+            value.setValue(newSelectedValue);
+            _setSelectedValue(selectedValue);
             console.log(`Color changed by UI to ${value}`);
         }
     };
@@ -138,7 +150,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                 <Select
                     onChange={handleColorChange}
                     displayEmpty={true}
-                    defaultValue={defaultValue || ""}
+                    value={_selectedValue}
                     disabled={_disabled}
                     renderValue={(selected) => (
                         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>

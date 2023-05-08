@@ -26,16 +26,11 @@ export const ColorGradientHeader: React.FC<Props> = ({className, value, fromLabe
             _setFromShade(value.from.getValue());
             _setToShade(value.to.getValue());
             const fromListener = function (event: EventValueChange<Shade>) {
-                if (event.newValue !== undefined) {
-                    _setFromShade(event.newValue);
-                }
+                _setFromShade(event.newValue);
             };
             value.from.setPropertyListener("fromListener", fromListener);
             const toListener = function (event: EventValueChange<Shade>) {
-                if (event.newValue !== undefined) {
-                    _setToShade(event.newValue);
-                    console.log(`toShade: ${event.newValue.hex}`);
-                }
+                _setToShade(event.newValue);
             };
             value.to.setPropertyListener("toListener", toListener);
         }

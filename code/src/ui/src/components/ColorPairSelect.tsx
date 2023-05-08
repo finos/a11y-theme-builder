@@ -17,6 +17,7 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
 
     const [_selectableValues, _setSelectableValues] = useState<ColorPair[]>(value.getSelectableValues());
     const [_disabled, _setDisabled] = useState<boolean>(!value.isEnabled());
+    const [_selectedValue, _setSelectedValue] = useState<string>("");
 
     useEffect(() => {
         if (value) {
@@ -31,6 +32,15 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                 }
                 if (event.type === EventType.NodeEnabled) {
                     _setDisabled(!value.isEnabled());
+                    return;
+                }
+                if (event.type === EventType.ValueChanged) {
+                    // handle case where design system sets a property value to undefined when
+                    //  a property that it depends on changes
+                    const newValue = value.getValue();
+                    if (!newValue) {
+                        _setSelectedValue("");
+                    }
                     return;
                 }
             };
@@ -62,6 +72,7 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                 return;
             }
             value.setValue(selectedColorPair);
+            _setSelectedValue(event.target.value);
         }
     };
 
@@ -74,6 +85,7 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                     onChange={handleColorChange}
                     displayEmpty={true}
                     defaultValue=""
+                    value={_selectedValue}
                     disabled={_disabled}
                     renderValue={(selected) => (
                         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
