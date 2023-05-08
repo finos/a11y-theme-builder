@@ -93,11 +93,14 @@ The following concepts are used in computations.
 
 >Note: WCAG 2.1 AA requires desktop applications to have a target click area of 24px.
 
-1. User selects desired MINIMUM_CLICK_AREA for their desktop application.
-2. By default the MINIMUM_CLICK_AREA will change to 44px for tablet and mobile interfaces.
-3. Create clickable elements that meet the MINIMUM_CLICK_AREA but appear smaller
-    1. Wrap the component in a parent that is in fact the identified MINIMUM_CLICK_AREA but  the visual elements can appear smaller.
-    2. Although a user sees a button that looks 24 pixels high - it's click area is in fact  set to the minimum click area.  This feature allows the design to create visually  smaller elements that are less overwhelming in an interface while meeting accessibility  guidelines.
+The user can select the desired MINIMUM_CLICK_AREA for their desktop application.
+
+  * By default the MINIMUM_CLICK_AREA will change to 44px for tablet and mobile interfaces.
+
+It is possible to create clickable elements that meet the MINIMUM_CLICK_AREA selected but appear smaller:
+
+  1. Wrap the component in a parent that is, in fact, the identified MINIMUM_CLICK_AREA but then make the visual elements of the wrapped component smaller (e.g. 24px).
+  2. Although a user sees a button that looks 24 pixels high - it's click area is, in fact, set to the minimum click area due to the size of its parent.  This feature allows the design to create visually smaller elements that are less overwhelming in an interface while meeting accessibility guidelines.
 
 ### Color Themes
 
@@ -111,37 +114,37 @@ In addition to making the required color changes to reduce eye strain while main
 
 ### Focus state
 
-Buttons and other clickable interface items require a visual change to an element with a contrast of 3.1:1 or higher when focused.
+Buttons and other clickable interface items are required to demonstrate a visual change when focused, with a color change conrasting 3.1:1 or more compared to its original color.
 
 For each element, provide a focus state with the required contrast.
 
 Let the user specify the default browser settings designed for focus states or the identified button color for focus states for interfaces with white/off-white or nearblack/off-black backgrounds in light mode and nearblack/off-black backgrounds in dark mode.
 
-Overwrite these default settings if user selected a colored background in light or dark mode.  In such a case, use the selected button color for hotlinks and focus states - which provides the contrast on-color.
+Overwrite these default settings if the user selected a colored background in light or dark mode.  In such a case, use the selected button color for hotlinks and focus states - which provides the contrast on-color.
 
 ### Hotlinks
 
-To meet standards compliance, hotlinks need to have a contrast of 4.5:1 against the background. In addition, hotlinks needs to have a contrast of 3.1:1 against the text surrounding it.  If it does not meet these two conditions, then it has to be underlined so that it can be easily distinguished in its position in the page.  These rules exist for hotlinks whether they are in light mode or dark mode.
+To meet standards compliance, hotlinks need to have a contrast of 4.5:1 against the background. In addition, hotlinks need to have a contrast of 3.1:1 against the text surrounding it.  If it does not meet these two conditions, then it has to be underlined so that it can be easily distinguished in its position on the page.  These rules exist for hotlinks whether they are in light mode or dark mode.
 
-The links also need to change on hover and have a visual distinguishing effect, other than the color change, on focus.  As an example of compliant behavior, if a hotlink is underlined (due to user preference or lack of contrast) then the hotlink would NOT be underlined while it is being hovered or has focus.
+The links also need to change when hovered and have a visual distinguishing effect, other than the color change, on focus.  As an example of compliant behavior, if a hotlink is underlined (due to user preference or lack of contrast) then the hotlink would NOT be underlined while it is being hovered or has focus.
 
-Allow the user to pick the default settings or apply link coloring that compliments their theme.  They can choose if they want the hotlink to be initially underlined or not.  If in dark mode, we cannot find a color that meets both criteria we will underline the hotlink to stay compliant.
+Allow the user to pick the default settings or apply link coloring that compliments their theme.  They can choose, if they want, whether the hotlink will be underlined by default or not.  In dark mode, if we cannot find a color that satisfies both criteria (the background contrast as well as the surrounding text contrast), we will underline the hotlink to ensure compliance.
 
-Note if the hotlinks start not underlined then on hover and focus, they will become underlined.  If they start underlined the underline is removed on hover and focus to meet the visual change requirement.
+**Note:** If the hotlinks are NOT underlined by default, then on hover and focus they will become underlined.  If they are underlined by default, the underline is removed on hover and focus to meet the visual change requirement.
 
 ### Bevels and Reverse Bevels
 
-A bevel effect adds 3D depth to a graphic or text object by making a light shadow on the top and left side of a shape and a dark shadow on the right and bottoms sides of a shape.
+A bevel effect adds 3D depth to a graphic or text object by making a light shadow on the top and left side of the target and a dark shadow on the right and bottoms sides of the target.
 
-An inverse bevel applies a dark shadow to the top and right side of a shape making it look three dimensionally recessed.
+An inverse bevel applies a dark shadow to the top and right side of a shape, making it look three dimensionally recessed.
 
 1. Collect the following values
-   * horizontal distance
-   * vertical distance
-   * blur
-   * spread
-   * opacity level of the dark shadow
-   * opacity level of the light shadow
+    * horizontal distance
+    * vertical distance
+    * blur
+    * spread
+    * opacity level of the dark shadow
+    * opacity level of the light shadow
 2. Generate 10 bevels and 10 recessed bevels that consistently scale.
 
 <!--- Reusable Inline Named Links  --->

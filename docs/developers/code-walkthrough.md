@@ -3,6 +3,7 @@
 This section provides an overview of the code comprising the Theme Builder application.
 
 It is divided into two sections based upon two different github repositories:
+
 * [User Interface Code Overview](#user-interface-code-overview)
 * [SDK Code Overview](#sdk-code-overview)
 
@@ -19,7 +20,7 @@ The following is an overview of the code layout of this repository:
 * [code/src/ui/src/pages/atoms](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/atoms) - The directory containing all react components for ThemeBuilder Atoms.
 * [code/src/ui/src/pages/molecules](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/molecules) - The directory containing all react components for ThemeBuilder Molecules.
 * [code/src/ui/src/pages/organisms](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/organisms) - The directory containing all react components for ThemeBuilder Organisms.
-* [code/src/ui/src/pages/components](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/components) - The directory containing all react components for ThemeBuilder Atoms.
+* [code/src/ui/src/pages/components](https://github.com/discoverfinancial/a11y-theme-builder/tree/main/code/src/ui/src/pages/components) - The directory containing all react components demonstrating ThemeBuilder Molecules.
 
 ## SDK Code Overview
 

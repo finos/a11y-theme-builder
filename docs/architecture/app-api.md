@@ -18,7 +18,7 @@ The APIs are under the `/api/` endpoint, with the following apis available:
 - **Return Errors**: 500, 501 invalid document, 502 document already exists
 - **Example**: POST /api/themes { id:"theme3", key1:themeData} => { id:"theme3", key1:themeData}
 
-### /api/themes - Delete all themes (This deletes the database, so use with caution)
+### /api/themes - Delete all themes (This deletes the database, so **use with caution**)
 - **Method**: DELETE
 - **Returns**: returns boolean (true=success, false=fail)
 - **Return Errors**: none
@@ -30,7 +30,7 @@ The APIs are under the `/api/` endpoint, with the following apis available:
 - **Return Errors**: 404 document :id was not found, 500
 - **Example**: GET /api/themes/theme5 => { id:"theme5", key1:themeData}
 
-### /api/themes/:id?fields=field1,field2,... - Get a theme and return only fields
+### /api/themes/:id?fields=field1,field2,... - Get a theme and return only specified fields
 - **Method**: GET
 - **Returns**: Partial theme object
 - **Return Errors**: 404 document :id was not found, 500
