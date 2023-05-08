@@ -26,16 +26,12 @@ export const ColorGradient: React.FC<Props> = ({className, value, fromLabel, toL
             _setToShade(value.to.getValue());
             const fromListener = function (event: EventValueChange<Shade>) {
                 console.log(`Notified of gradientFrom value changing, event: ${event}`);
-                if (event.newValue !== undefined) {
-                    _setFromShade(event.newValue);
-                }
+                _setFromShade(event.newValue);
             };
             value.from.setPropertyListener("fromListener", fromListener);
             const toListener = function (event: EventValueChange<Shade>) {
                 console.log(`Notified of gradientTo value changing, event: ${event}`);
-                if (event.newValue !== undefined) {
-                    _setToShade(event.newValue);
-                }
+                _setToShade(event.newValue);
             };
             value.to.setPropertyListener("toListener", toListener);
         }
