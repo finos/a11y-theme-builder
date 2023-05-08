@@ -10,6 +10,7 @@ import { LeftNavHeader, LeftNavItem, LeftNavText } from '../../../components/Lef
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { NavSwitch } from '../../../components/NavSwitch';
+import { Preferences } from '../../../Preferences';
 
 interface Props {
     user: any;
@@ -17,25 +18,26 @@ interface Props {
 }
 
 export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
     let desktopPreviewSelected = false;
-    if (localStorage.getItem("themebuilder-preview-desktopPreview-selected") == "true") {
+    if (pref.get("preview-desktopPreview-selected") == "true") {
         desktopPreviewSelected = true;
     }
     const [displayDesktopPreview, setDisplayDesktopPreview] = useState<boolean>(desktopPreviewSelected);
     useEffect(() => {
         console.log("displayDesktopPreview=",displayDesktopPreview)
-        localStorage.setItem("themebuilder-preview-desktopPreview-selected", ""+displayDesktopPreview)
+        pref.set("preview-desktopPreview-selected", ""+displayDesktopPreview)
     }, [displayDesktopPreview])
 
     let mobilePreviewSelected = false;
-    if (localStorage.getItem("themebuilder-preview-mobilePreview-selected") == "true") {
+    if (pref.get("preview-mobilePreview-selected") == "true") {
         mobilePreviewSelected = true;
     }
     const [displayMobilePreview, setDisplayMobilePreview] = useState<boolean>(mobilePreviewSelected);
     useEffect(() => {
         console.log("displayMobilePreview=",displayMobilePreview)
-        localStorage.setItem("themebuilder-preview-mobilePreview-selected", ""+displayMobilePreview)
+        pref.set("preview-mobilePreview-selected", ""+displayMobilePreview)
     }, [displayMobilePreview])
 
     const divStyle = {

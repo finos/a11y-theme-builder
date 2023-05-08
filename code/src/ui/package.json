@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
-        "a11y-theme-builder-sdk": "^0.0.3",
+        "a11y-theme-builder-sdk": "^0.0.6",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
         "@mui/icons-material": "^5.11.9",

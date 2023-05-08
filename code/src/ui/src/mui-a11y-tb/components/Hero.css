@@ -13,6 +13,7 @@
     background-color: var(--hero);
 }
 
+/*
 .black .hero {
     --hero: rgba(24, 24, 24);
     --on-hero: #ffffff;
@@ -42,6 +43,7 @@
     --hero: var(--dm-primary);
     --on-hero: var(--dm-on-primary);
 }
+*/
 
 .darkmode .hero {
     color: var(--dm-on-hero)

@@ -9,6 +9,7 @@ import ModalSystemName from '../components/modals/ModalSystemName';
 import { Storage, ThemeBuilder } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from './content/HeadingSection';
 import { ExampleSection } from './content/ExampleSection';
+import { Preferences } from '../Preferences';
 
 interface Props {
     user: any;
@@ -27,6 +28,30 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
         setThemeBuilder(_themeBuilder);
     }
 
+    const cleanUpLocalStorage = () => {
+        console.log("cleanUpLocalStorage()");
+        const names = [];
+        for (var i in designSystems) {
+            //console.log("Looking at ds",designSystems[i]);
+            names.push(designSystems[i].id);
+        }
+        const pref = new Preferences("");
+        const keys = pref.listKeys();
+        const deleteNames:any = {};
+        for (var i in keys) {
+            const name = keys[i].split("-")[0];
+            //console.log("Looking at pref",keys[i],"name=",name);
+            if (names.indexOf(name) == -1) {
+                if (!deleteNames[name]) {
+                    console.log(`Design system ${name} not found - Deleting local storage objects`);
+                    deleteNames[name] = true;
+                    pref.designSystemName = name;
+                    pref.deleteAll();
+                }
+            }
+        }
+    }
+
     useEffect(() => {
         if (themeBuilder) {
             themeBuilder.listMetadata().then(function(_designSystems:any) {
@@ -34,6 +59,12 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
             });
         }
     }, [themeBuilder]);
+
+    useEffect(() => {
+        if (designSystems.length > 0) {
+            cleanUpLocalStorage();
+        }
+    }, [designSystems]);
 
     useEffect(() => {
         getDesignSystemNames();

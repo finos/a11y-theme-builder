@@ -421,6 +421,10 @@
 .design-system-editor-right-content .darkmode .hotlink.visited {
     opacity: .7;
 }
+.design-system-editor-right-content .darkmode .hotlink.active,
+.design-system-editor-right-content.darkmode .hotlink.active {
+    text-decoration: var(--dm-hotlink-hover-decoration);
+}
 
 .design-system-editor-right-content .color-title {
     margin-top: 4px;
@@ -443,4 +447,16 @@
 .sample-image {
   width: 300px;
   height: 200px;
+}
+
+.design-system-editor-right-content .hero-color-mode-selector,
+.design-system-editor-right-content .color-mode-selector {
+    border: 1px dotted var(--border);
+    padding: 10px;
+    margin-top: 24px;
+}
+
+.design-system-editor-right-content.darkmode .hero-color-mode-selector,
+.design-system-editor-right-content.darkmode .color-mode-selector {
+    border: 1px dotted var(--dm-border);
 }

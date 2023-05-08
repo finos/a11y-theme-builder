@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 //import ModalAtomicIntro from './modals/ModalAtomicIntro';
 import AtomicIntro from './AtomicIntro';
 import { GridAtom } from '../../atoms/GridAtom';
@@ -24,19 +24,17 @@ import { FocusStateAtom } from '../../atoms/FocusStateAtom';
 import { DesignSystem, Event, EventType, Atom } from 'a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { ErrorHandler } from '../../../ErrorHandler';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { ElevationsAtom } from '../../atoms/ElevationsAtom';
 import { BevelsAtom } from '../../atoms/BevelsAtom';
+import { Preferences } from '../../../Preferences';
 
 // DEMO:    Import your atom
 import { ExampleAtom } from '../../atoms/ExampleAtom';
 
 //import { TestAtom } from '../pages/atoms/TestAtom';
-
-// To test loading of atom summary modal
-//localStorage.removeItem("themebuilder-atom-show-intro");
 
 interface atomItem {
     value: string;
@@ -79,23 +77,24 @@ interface Props {
 }
 
 export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
     let typographySelected = false;
-    if (localStorage.getItem("themebuilder-atom-typography-selected") == "true") {
+    if (pref.get("atom-typography-selected") == "true") {
         typographySelected = true;
     }
     const [displayTypography, setDisplayTypography] = useState<boolean>(typographySelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-atom-typography-selected", ""+displayTypography)
+        pref.set("atom-typography-selected", ""+displayTypography)
     }, [displayTypography])
 
     let otherSelected = false;
-    if (localStorage.getItem("themebuilder-atom-other-selected") == "true") {
+    if (pref.get("atom-other-selected") == "true") {
         otherSelected = true;
     }
     const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-atom-other-selected", ""+displayOther)
+        pref.set("atom-other-selected", ""+displayOther)
     }, [displayOther])
 
     function enableDisableItems() {
@@ -105,42 +104,40 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 if (notImplemented.indexOf(key) == -1) {
                     if (_atoms[key]) {
                         console.log("Atom enabled:"+key+" enabled="+node.isEnabled());
-                        //_atoms[key].disabled = false; //TODO: remove when done developing
-                        _atoms[key].disabled = !node.isEnabled(); //TODO: uncomment when done developing
+                        _atoms[key].disabled = !node.isEnabled();
                     }
                 }
             }
         }
         setAtoms(_atoms);
-        if (_atoms[showAtom] && _atoms[showAtom].disabled) {
-            setShowAtom("atoms");
-        }
     }
 
     const [atoms, setAtoms] = useState<{[key: string]:atomItem}>(atomsList);
     useEffect(() => {
-        if (designSystem) {
-            designSystem.setListener("AtomContent-isEditable", 
-                function(event: Event) {
-                    if (event.type == EventType.NodeDisabled) {
-                        enableDisableItems();
-                    }
-                    else if (event.type == EventType.NodeEnabled) {
-                        enableDisableItems();
-                    }
+        designSystem.setListener("AtomContent-isEditable", 
+            function(event: Event) {
+                if (event.type == EventType.NodeDisabled) {
+                    enableDisableItems();
                 }
-            )
-            enableDisableItems();
-        }
+                else if (event.type == EventType.NodeEnabled) {
+                    enableDisableItems();
+                }
+            }
+        )
+        enableDisableItems();
     }, [])
 
     useEffect(() => {
-        //console.log("Atoms updated =",atoms)
+        if (showAtom) {
+            if (atoms[showAtom] && atoms[showAtom].disabled) {
+                setShowAtom("atoms");
+            }
+        }
     }, [atoms])
 
-    const [showAtom, setShowAtom] = React.useState(localStorage.getItem("themebuilder-atom-content-selected") || "atoms");
+    const [showAtom, setShowAtom] = useState(pref.get("atom-content-selected") || "atoms");
     useEffect(() => {
-        localStorage.setItem("themebuilder-atom-content-selected", showAtom)
+        pref.set("atom-content-selected", showAtom)
     }, [showAtom])
 
     interface LeftNavAtomProps { atom: any, indent?:number, disabled?:boolean };

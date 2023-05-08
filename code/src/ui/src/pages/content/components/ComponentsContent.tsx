@@ -54,6 +54,9 @@ import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
 import { DividerComponent } from '../../components/DividerComponent';
+import { HeroComponent } from '../../components/HeroComponent';
+
+import { Preferences } from '../../../Preferences';
 
 interface Props {
     user: any;
@@ -61,28 +64,29 @@ interface Props {
 }
 
 export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
+    const pref = new Preferences(designSystem.name);
 
     let colorsSelected = false;
-    if (localStorage.getItem("themebuilder-components-colors-selected") == "true") {
+    if (pref.get("components-colors-selected") == "true") {
         colorsSelected = true;
     }
     const [displayColors, setDisplayColors] = useState<boolean>(colorsSelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-components-colors-selected", ""+displayColors)
+        pref.set("components-colors-selected", ""+displayColors)
     }, [displayColors])
 
     let typographySelected = false;
-    if (localStorage.getItem("themebuilder-components-typography-selected") == "true") {
+    if (pref.get("components-typography-selected") == "true") {
         typographySelected = true;
     }
     const [displayTypography, setDisplayTypography] = useState<boolean>(typographySelected);
     useEffect(() => {
-        localStorage.setItem("themebuilder-components-typography-selected", ""+displayTypography)
+        pref.set("components-typography-selected", ""+displayTypography)
     }, [displayTypography])
 
-    const [showComponent, setShowComponent] = React.useState(localStorage.getItem("themebuilder-components-content-selected") || "colorsPrimary");
+    const [showComponent, setShowComponent] = React.useState(pref.get("components-content-selected") || "colorsPrimary");
     useEffect(() => {
-        localStorage.setItem("themebuilder-components-content-selected", showComponent)
+        pref.set("components-content-selected", showComponent)
     }, [showComponent])
 
 
@@ -113,9 +117,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     useEffect(() => {
     }, [disabled])
 
-    const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem("themebuilder-components-mode-selected") == "true" || false);
+    const [darkMode, setDarkMode] = useState<boolean>(pref.get("components-mode-selected") == "true" || false);
     useEffect(() => {
-        localStorage.setItem("themebuilder-components-mode-selected", ""+darkMode);
+        pref.set("components-mode-selected", ""+darkMode);
     }, [darkMode]);
 
     return (
@@ -185,6 +189,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Divider"} value="divider" indent={1} selected={showComponent} onClick={()=> {setShowComponent("divider")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Dropdown"} value="dropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("dropdown")}} disabled={disabled}/>
+                    <LeftNavItem text={"Hero"} value="hero" indent={1} selected={showComponent} onClick={()=> {setShowComponent("hero")}} disabled={disabled}/>
                     <LeftNavItem text={"Images"} value="imageDecorations" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageDecorations")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
@@ -356,6 +361,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "tooltips" &&
                         <TooltipsComponent />
+                    }
+                    {showComponent === "hero" &&
+                        <HeroComponent />
                     }
             </div>
             </div>
