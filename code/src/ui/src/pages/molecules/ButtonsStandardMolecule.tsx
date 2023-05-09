@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -25,7 +25,8 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
     }, [])
 
     const grid = designSystem.atoms.gridSettings.grid.getValue();
-
+    const border = designSystem.atoms.borderSettings.baseBorderWidth.getValue();
+    
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
@@ -67,7 +68,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                 </div>
                 <div className="overline-XL top40">Secondary Button Styling</div>
                 <div className="formRow top16">
-                    <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={grid}/>
+                    <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={molecule} />
