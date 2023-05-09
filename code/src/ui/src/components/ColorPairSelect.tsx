@@ -87,6 +87,16 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                     defaultValue=""
                     value={_selectedValue}
                     disabled={_disabled}
+                    MenuProps={{
+                        anchorOrigin: {
+                            vertical: "bottom",
+                            horizontal: "left",
+                        },
+                        transformOrigin: {
+                            vertical: "top",
+                            horizontal: "left",
+                        },
+                    }}
                     renderValue={(selected) => (
                         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                             <ColorShade shade={selected ? getColorPairByIndex(selected.split(';')[2])?.primary : "" || ""} />
