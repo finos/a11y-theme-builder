@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@mui/material';
 import { ColorTheme, ColorThemes, Event, EventType, Shade } from 'a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
@@ -23,10 +23,14 @@ interface Props {
 
 export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeInitialized}) => {
 
+    const defaultIconShade = Shade.fromHex("#ffffff");
+
     const [_colorTheme, _setColorTheme] = useState<ColorTheme>();
     const [_themeInitialized, _setThemeInitialized] = useState<boolean>(false);
-    const [_iconColor, _setIconColor] = useState<Shade>(Shade.fromHex("#ffffff"));
+    const [_iconColor, _setIconColor] = useState<Shade>(defaultIconShade);
     const [_openConfirmation, _setOpenConfirmation] = useState<boolean>(false);
+
+    const colorIconRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         // creating a color theme should not work if the designSystem isn't
@@ -58,17 +62,21 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                 });
             }
 
-            let newShade = colorTheme.icon.getValue();
-            if (newShade) {
-                _setIconColor(newShade);
-            }
             colorTheme.icon.setListener("ColorThemeAtom-iconColor",
                 function (event: Event) {
                     if (event.type == EventType.ValueChanged) {
                         console.log(`Notified of default color theme icon color value changing, event: ${event}`);
-                        newShade = colorTheme?.icon.getValue();
+                        const newShade = colorTheme?.icon.getValue();
+                        const iconSampleDiv = colorIconRef.current;
+                        if (!iconSampleDiv) {
+                            throw new Error("color icon sample missing DOM information");
+                        }
                         if (newShade) {
                             _setIconColor(newShade);
+                            iconSampleDiv.style.display = '';
+                        } else {
+                            _setIconColor(defaultIconShade);
+                            iconSampleDiv.style.display = 'none';
                         }
                     }
                 }
@@ -154,7 +162,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                                 <ColorSelect value={_colorTheme.icon} label="Color:"></ColorSelect>
                                 <div className="input-col default-col">
                                     <div className="caption">Sample Icon</div>
-                                    <div className="default-icon" id="themeIcon-sample">
+                                    <div className="default-icon" id="themeIcon-sample" ref={colorIconRef} style={{display: 'none'}}>
                                         <div className="icon-body">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill={_iconColor.getHexOrRGBA()} xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_775_36558)">
