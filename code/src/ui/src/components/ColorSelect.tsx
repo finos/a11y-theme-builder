@@ -158,6 +158,14 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                         </Box>
                     )}
                     MenuProps={{
+                        anchorOrigin: {
+                            vertical: "bottom",
+                            horizontal: "left",
+                        },
+                        transformOrigin: {
+                            vertical: "top",
+                            horizontal: "left",
+                        },
                         PaperProps: {
                           sx: {
                             '& .MuiList-root.MuiMenu-list': {
