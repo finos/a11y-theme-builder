@@ -49,6 +49,8 @@ The following concepts are used in computations.
 
 ### Gradients
 
+![sample-gradient](../../_images/AtomColorTheme-Gradient.png)
+
 * Light Mode Color Selection
 
     1. Once the user selects the primary, secondary, and tertiary colors of a theme, a menu will be generated for the user to select the first color, color "a", of a gradient, from the shades generated for the primary, secondary, and tertiary colors.
@@ -76,6 +78,8 @@ The following concepts are used in computations.
 
 ### Elevations
 
+![sample-elevations](../../_images/AtomElevations.png)
+
 * In light mode elevations are represented with increasing dropshadows.
     * To calculate the elevations, gather information from the user about the base dropshadow.
         * color of the shadow
@@ -86,7 +90,7 @@ The following concepts are used in computations.
     * User specifies desired change between elevations.
     * Compute 10 elevations, consistently increasing dropshadow styles to represent the 10  elevations in light mode.
 * In dark mode, instead of elevations being represented by increasing dropshadows as they are in light mode, elevations are represented by increasing lightness.
-    * Use the background color which serves as the elevation 0 shade and apply an increasing  white overlay on the colors to generate 10 shades.
+    * Use the background color which serves as the elevation 0 shade and apply an increasing white overlay on the background color to generate 10 elevations.
     * Leverage the [Material Design][M2DESIGN] elevation calculations to determine the  appropriate lightness.
 
 ### Minimum Click Area Control
@@ -114,6 +118,8 @@ In addition to making the required color changes to reduce eye strain while main
 
 ### Focus state
 
+![sample-focus-state](../../_images/AtomFocusState.png)
+
 Buttons and other clickable interface items are required to demonstrate a visual change when focused, with a color change conrasting 3.1:1 or more compared to its original color.
 
 For each element, provide a focus state with the required contrast.
@@ -124,6 +130,8 @@ Overwrite these default settings if the user selected a colored background in li
 
 ### Hotlinks
 
+![sample-hotlinks](../../_images/AtomHotlinks.png)
+
 To meet standards compliance, hotlinks need to have a contrast of 4.5:1 against the background. In addition, hotlinks need to have a contrast of 3.1:1 against the text surrounding it.  If it does not meet these two conditions, then it has to be underlined so that it can be easily distinguished in its position on the page.  These rules exist for hotlinks whether they are in light mode or dark mode.
 
 The links also need to change when hovered and have a visual distinguishing effect, other than the color change, on focus.  As an example of compliant behavior, if a hotlink is underlined (due to user preference or lack of contrast) then the hotlink would NOT be underlined while it is being hovered or has focus.
@@ -133,6 +141,8 @@ Allow the user to pick the default settings or apply link coloring that complime
 **Note:** If the hotlinks are NOT underlined by default, then on hover and focus they will become underlined.  If they are underlined by default, the underline is removed on hover and focus to meet the visual change requirement.
 
 ### Bevels and Reverse Bevels
+
+![sample-bevels](../../_images/AtomBevels.png)
 
 A bevel effect adds 3D depth to a graphic or text object by making a light shadow on the top and left side of the target and a dark shadow on the right and bottoms sides of the target.
 

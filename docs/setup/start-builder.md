@@ -104,6 +104,8 @@ To access the Theme Builder application through the React Development Server, lo
 http://localhost:3000
 ```
 
+![Welcome-page](../../_images/WelcomePage.png)
+
 Any changes made to the React source code will automatically be picked up by the server and updated in the browser on port 3000.  
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
