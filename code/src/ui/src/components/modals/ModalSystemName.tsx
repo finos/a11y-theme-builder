@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -72,7 +72,10 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
                                 className='input-1'
                                 required
                                 value={systemName}
-                                style={{width: "100%"}}
+                                style={{
+                                    width: "100%",
+                                    boxSizing: "border-box",
+                                }}
                                 onChange={(e) => setSystemName(e.target.value)}
                             />
                             {cmd=="import" && <div>
@@ -89,6 +92,7 @@ const ModalSystemName: React.FC<Props> = ({ isOpen, onClose, cmd, source, title,
                                         borderRadius:"var(--spacing-half)",
                                         fontFamily: "var(--primaryFont)",
                                         fontSize: "var(--baseFont)",
+                                        boxSizing: "border-box",
                                     }} 
                                     placeholder="Copy & paste design system data here"
                                     onChange={(e) => setData(e.target.value)}
