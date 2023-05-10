@@ -3029,7 +3029,7 @@ button.MuiPaginationItem-root:hover {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-1);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .modal-footer {
