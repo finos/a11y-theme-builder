@@ -3,7 +3,7 @@ This document provides guidance for how YOU can collaborate with our project com
 
 ## Team members
 
-Meet and join our [Team of Contributors](./MAINTAINERS.md).
+Meet and join our [Team of Contributors](https://github.com/discoverfinancial/a11y-theme-builder/wiki/Maintainers-&-Contributors).
 
 ## Learn & listen
 <!-- Fill out Missing Project Communications -->
@@ -27,6 +27,8 @@ Participating in our project community spans a variety of activities:
 * [Identifying and tracking new use cases](https://discoverfinancial.github.io/a11y-theme-builder/contribute)
 * Create an example of the project in real world by building something or showing what others have built. 
 * Blog about other people’s projects based on this project. Show how it’s used in daily life. Take screenshots and make videos!
+
+To join our community see the [Onboarding Resources](https://github.com/discoverfinancial/a11y-theme-builder/wiki/Onboarding-Resources) page in the wiki.
 
 ## Project Management
 <!-- Fill out Missing Project Communications Details-->
