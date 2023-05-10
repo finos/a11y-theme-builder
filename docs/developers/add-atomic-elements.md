@@ -67,3 +67,5 @@ The pages for all atoms, molecules, organisms and components share a similar lay
 We have included an [Example Atom](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/atoms/ExampleAtom.tsx) as a DEMO.
 
 Follow the comments labeled with `DEMO` in the above file and the [Atom Content Page](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/atoms/AtomContent.tsx).
+
+As you develop a new atom, molecule, organism or component and begin defining the style rules that will apply to it, keep in mind that the atomic element needs to be able to render equally well in light or dark mode.  For more on this topic, see: [Managing Light and Dark Mode](./managing-modes.md).

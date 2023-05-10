@@ -12,12 +12,13 @@ You'll notice patterns in the naming of the CSS variables.  Being aware of these
 :--------------:|:-------------:|:--------------:|
 | --component     | Styles for a component type | --button
 | --on-component  | Foreground color of the component | --on-button    |
-| --dm-component  | Styles for a component type in darkmode | --dm-on-button |
+| --dm-component  | Styles for a component type in darkmode | --dm-button |
+| --dm-component  | Foreground color of the component when in darkmode | --dm-on-button |
 | --variable-number  | Often used to signify a calcuation made with a CSS variable value and a multiplier | --spacing-4 |
 
 ### Store the theme
 
-It is our recommendation that you store the Theme Builder-generated design system that your designer provided to you in a file in your source code repository.  This file will contain little more than a collection of CSS variables with default values.  It will be up to you to bind the appropriate styling rules in your application to the CSS variables in this file.  If this is done correctly, then updating your application's design system should be little more than replacing this file with a newly exported Theme Builder design system.
+It is our recommendation that you store the Theme Builder-generated design system that your designer provided to you as a file in your source code repository.  This file will contain little more than a collection of root CSS variables with default values.  It will be up to you to bind the appropriate styling rules in your application to the CSS variables in this file.  If this is done correctly, then updating your application's design system in the future should be little more than replacing this file with a newly exported Theme Builder design system.
 
 ### Binding component to theme
 
@@ -39,7 +40,7 @@ As mentioned above, let's use a pushbutton as an example of a component from you
 
 After loading the design system into Theme Builder, activate the `ATOMS` tab.  Then select the `Buttons-Standard` option from the left-hand menu.  Verify that the colors, typography, and button styling reflect those of your design system.  If you now scroll to the bottom of this page, you'll see, under the `Generated Code` section, the CSS variables that were generated in your design system by the Standard Buttons Molecule settings fields and a description for each.
 
-If you scroll back toward the top of the page, to the `Example` section, you'll see styled examples of each button type, Primary, Secondary and Tertiary.  One or more of these will likely correspond to buttons in your application.  If you use your browser's developer tools to inspect the CSS for the Primary button, you'll see the variables mentioned in the Generated Code section, but you'll also see styles that have been applied to the button by Theme Builder.  For example, for the Primary button, you may see that `{color: var(--on-button)}` binds the button's text color to the --on-button CSS variable in your design system.  Now you would know that you should bind `var(--on-button)` to the CSS styling rule that you are currently using in your application to define button text color.
+If you scroll back toward the top of the page, to the `Example` section, you'll see styled examples of each button type, Primary, Secondary and Tertiary.  One or more of these will likely correspond to buttons in your application.  If you use your browser's developer tools to inspect the CSS for the Primary button, you'll see the variables mentioned in the `Generated Code` section, but you'll also see styles that have been applied to the button by Theme Builder.  For example, for the Primary button, you may see that `{color: var(--on-button)}` binds the button's text color to the `--on-button` CSS variable in your design system.  Now you would know that you should bind `var(--on-button)` to the CSS styling rule that you are currently using in your application to define button text color.
 
 In addition to the atom, molecule and organism examples, the **Preview** and **Components** tabs have more examples of Theme Builder displaying content that is already bound to the CSS variables of the currently selected design system.
 
