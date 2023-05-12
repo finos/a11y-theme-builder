@@ -69,7 +69,8 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                         const newShade = colorTheme?.icon.getValue();
                         const iconSampleDiv = colorIconRef.current;
                         if (!iconSampleDiv) {
-                            throw new Error("color icon sample missing DOM information");
+                            //throw new Error("color icon sample missing DOM information");
+                            return;
                         }
                         if (newShade) {
                             _setIconColor(newShade);
@@ -82,7 +83,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                 }
             );
         }
-    }, [])
+    }, [colorIconRef])
 
     const handleShowTheme = () => {
         // when the user clicks the "Show Theme" button, we should be letting
