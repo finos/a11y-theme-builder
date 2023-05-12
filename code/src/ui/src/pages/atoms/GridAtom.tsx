@@ -78,7 +78,7 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
                 <FormControl>
                     <FormLabel id="gridSettingsLabel">Grid Setting</FormLabel>
                     <RadioGroup
-                        aria-aria-labelledby="gridSettingsLabel"
+                        aria-labelledby="gridSettingsLabel"
                         name="controlled-radio-buttons-group"
                         value={grid}
                         onChange={handleChanged}
