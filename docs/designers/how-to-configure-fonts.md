@@ -4,6 +4,8 @@ The first is `Fonts Settings` which governs the more general settings for all te
 
 ## Fonts Settings
 
+![fonts-settings](../../_images/AtomTypography.png)
+
 This atom allows you to set the primary and secondary font, the base font size, base font weights and line heights. As the user changes these settings, they should expect the text on the same page to change accordingly.
 
 ### Primary and Secondary Fonts
@@ -24,6 +26,8 @@ Here, the user can define three sets of line heights, for body, headers and smal
 
 ## Display and Header Styles
 
+![Typography-Display-settings](../../_images/Typography-Display-Header-styles.png)
+
 This atom defines settings for all text with a display or header class, including h1-6, display1 and display2.
 
 ### Header/Display Font Weight
@@ -40,9 +44,13 @@ There are 8 further settings below that open a modal and allow the user to edit 
 
 ## Body Styles
 
+![Typography-Body-settings](../../_images/Typography-Body-styles.png)
+
 This atom defines 6 classes that are used for body text. These include `Body 1`, `Body 1 - Bold`, `Body 2`, `Body 2 - Bold`, `Body 3`, and `Body 3 - Bold`. Each section allows the user to alter individual settings for each class. For information on how this works see the [Font Edit modal documentation](#font-edit-modal).
 
 ## Small Text Styles
+
+![Typography-Small-Text-settings](../../_images/Typography-Small-Text-sytles.png)
 
 This atom defines 16 classes that are used in body text or forms, such as labeling fields, captioning images, button text and other purposes. These include `Subtitle 1`, `Subtitle 2`, `Caption`, `Caption Bold`, `Overline`, `Overline Large`, `Overline Extra Large`, `Label 1`, `Label 1 All Caps`, `Label 2`, `Label 2 All Caps`, `Label Small`, `Call to Action`, `Call to Action Small`, `Small`, `Small Semibold`. Each section allows the user to alter individual settings for each class. For information on how this works see the [Font Edit modal documentation](#font-edit-modal).
 
@@ -51,6 +59,8 @@ This atom defines 16 classes that are used in body text or forms, such as labeli
 This atom defines 1 class that is used for stat text: `Stat`. This one section allows the user to alter individual settings for this class. For information on how this works see the [Font Edit modal documentation](#font-edit-modal).
 
 ## Font Edit Modal
+
+![Typography-Modal](../../_images/Typography-Modal.png)
 
 Each individual text class is editable, and will open up a modal with a few settings.
 

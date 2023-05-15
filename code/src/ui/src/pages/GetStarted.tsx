@@ -88,12 +88,26 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
         return r;
     }
 
+    const isDesignSystemExist = (name: string) => {
+        if (!designSystems) return false;
+        for (var i=0; i<designSystems.length; i++) {
+            const ds = designSystems[i];
+            if (ds.id == name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     const onImportClose = async (cmd: string, dest: string, data: string) => {
         if (cmd == "import") {
             console.log("Importing design system: name=",dest,"data=",data);
-            if (data) {
+            if (data !== undefined) {
+                document.body.style.cursor = "wait";
                 try {
                     if (!dest) throw new Error("Missing design system name");
+                    if (isDesignSystemExist(dest)) throw new Error("Design system already exists");
+                    if (!data) throw new Error("Missing data");
                     const json = JSON.parse(data);
                     json.id = dest;
                     const ds = themeBuilder?.newDesignSystemFromObject(dest, json);
@@ -112,8 +126,10 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
                     }
                     console.warn("Error: " + message)
                     setError("Error: " + message)
+                    document.body.style.cursor = "unset";
                     return;
                 }
+                document.body.style.cursor = "unset";
             }
         }
         setImportIsOpen(false);
