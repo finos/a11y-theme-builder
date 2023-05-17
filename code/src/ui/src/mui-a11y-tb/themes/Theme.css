@@ -1259,8 +1259,8 @@ a:active {
   color: var(--dm-icon) !important;
 }
 .darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.MuiPaginationItem-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
-  color: var(--dm-on-button);
-  background: var(--dm-button);
+  color: var(--dm-on-button) !important;
+  background: var(--dm-button) !important;
 }
 
 .darkmode button.small-btn:not(.black):not(.white):not(.MuiTab-root):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
