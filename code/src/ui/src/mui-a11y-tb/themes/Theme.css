@@ -3827,7 +3827,7 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-on-gradeint-3) !important;
 }
 /*  Darkmode BLACK  */
-.darkmode .black:not(.breadcrumbs) {
+.darkmode .black:not(.breadcrumbs):not(.MuiFormControlLabel-root) {
     background: var(--black) !important;
     color: var(--dm-white) !important;
 }
