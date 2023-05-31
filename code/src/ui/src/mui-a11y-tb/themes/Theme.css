@@ -1125,7 +1125,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 }
 
 /* dropdowns */
-.MuiMenuItem-root {
+.MuiMenuItem-root, .MuiMenuItem-root .MuiSvgIcon-root{
   background: var(--surface);
   color: var(--on-surface);
 }
@@ -1140,18 +1140,30 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .MuiSelect-outlined {
   padding-right: var(--spacing-6) !important
 }
+.MuiMenuItem-root:hover .MuiSvgIcon-root{
+  color: var(--on-dropdown-hover-bg)
+}
+.MuiMenuItem-root:focus  .MuiSvgIcon-root {
+  color: var(--on-dropdown-focus-bg)
+}
 
 /* darkmode dropdowns */
-.darkmode .MuiMenuItem-root {
+.darkmode .MuiMenuItem-root, .darkmode .MuiMenuItem-root .MuiSvgIcon-root {
   background: var(--dm-surface);
   color: var(--dm-on-surface)
 }
-.darkmode .MuiMenuItem-root:hover {
+.darkmode .MuiMenuItem-root:hover{
   background: var(--dm-dropdown-hover-bg);
   color: var(--dm-on-dropdown-hover-bg)
 }
 .darkmode .MuiMenuItem-root:focus {
   background: var(--dm-dropdown-focus-bg);
+  color: var(--dm-on-dropdown-focus-bg)
+}
+.darkmode .MuiMenuItem-root:hover, .darkmode .MuiMenuItem-root:hover .MuiSvgIcon-root {
+  color: var(--dm-on-dropdown-hover-bg)
+}
+.darkmode .MuiMenuItem-root:focus, .darkmode .MuiMenuItem-root:focus .MuiSvgIcon-root {
   color: var(--dm-on-dropdown-focus-bg)
 }
 
@@ -2256,29 +2268,8 @@ button.MuiPaginationItem-root:hover {
 }
 
 /* dark mode images */
-.inline-image::after {
-  position: absolute;
-  content: '';
-  top:0;
-  left: 0;
-  right:0;
-  bottom:0;
-  border-radius: var(--inline-image-image-radius);
-  background: rgba(0,0,0,.25);
-  z-index: 2;
-  pointer-events: none;
-}
-.image-lg img::after, .image-sq img::after {
-  position: absolute;
-  content: '';
-  top:0;
-  left: 0;
-  right:0;
-  bottom:0;
-  border-radius: var(--image-radius);
-  background: rgba(0,0,0,.25);
-  z-index: 2;
-  pointer-events: none;
+.darkmode img {
+  opacity: .68;
 }
 
 /* image decorations */
