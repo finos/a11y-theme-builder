@@ -21,6 +21,9 @@ copyright: >-
   <a href="https://www.discover.com/credit-cards/discover-terms-of-use/?ICMPGN=PUB_FTR_QL_TERMS">Terms of Use</a>.
   </br>
 
+extra_css:
+  - stylesheets/extra.css
+
 # Theme Configuration
 theme:
   name: material
