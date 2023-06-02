@@ -147,7 +147,7 @@ Note that the build directory is not updated with these changes until an `npm ru
 
 #### Potential Windows Issue
 One problem you might run into on a Windows system is that themes may not appear, load, or be created.
-If this is the case, it most likely means there is a problem with you [themes file](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
+If this is the case, it most likely means there is a problem with your [themes file](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
 
 
 ## Understanding Server APIs
