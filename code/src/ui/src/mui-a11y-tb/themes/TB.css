@@ -79,7 +79,7 @@
   --gradient-1a: '';
   --dm-gradient-1: linear-gradient(45deg, var(--dm-gradient1-a) 0%, var(--dm-gradient1-b) 100%);
   --dm-gradient-2: linear-gradient(45deg, var(--dm-gradient2-a) 0%, var(--dm-gradient2-b) 100%);
-  --dm-gradient-3: linear-gradient(45deg, var(--dm-gradient3-a) 0%, var(--dm-gradient3-b) 100%);
+  --dm-gradient-3: linear-gradient(45deg, var(--dm-gradient3-a) 0%, var(--dm-gradient3-b) 110%);
   --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
   --dm-on-gradient-1: var(--dm-on-gradient1-a);
   --dm-on-gradient-2: var(--dm-on-gradient2-a);
@@ -901,11 +901,11 @@
   --dm-gradient2-b: #86A7D3;
   --dm-on-gradient2-b: #121212;
   --gradient3-a: var(--gray-0);
-  --on-gradient3-a: var(--on-gray-0);
-  --dm-gradient3-a: var(--on-gray-300);
-  --dm-on-gradient3-a: var(--on-gray-300);
+  --on-gradient3-a: var(--on-dm-gray-700);
+  --dm-gradient3-a: var(--dm-gray-700);
+  --dm-on-gradient3-a: var(--dm-white);
   --gradient3-b: var(--dm-gray-700);
-  --on-gradient3-b: var(--dm-on-gray-700);;
+  --on-gradient3-b: var(--dm-white);;
   --dm-gradient3-b: var(--black);
   --dm-on-gradient3-b: var(--dm-white);
   --buttonOnWhite: var(--Info-500);
