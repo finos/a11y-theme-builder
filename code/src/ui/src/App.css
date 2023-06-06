@@ -9,7 +9,7 @@
 }
 
 body {
-    color: rgba(0,0,0,.78);
+    color: var(--on-background);
     font-family: var(--bodyFamily);
     font-weight: var(--fontWeight-2);
     font-size: calc(var(--zoom) * var(--baseFont));
@@ -96,7 +96,7 @@ p a:hover {
     width: 100%;
     height: 30px;
     font-size: var(--baseFont);
-    margin: 8px;
+    margin: 8px 0px;
 }
 
 .darkmode .background, .darkmode.background {

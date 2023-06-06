@@ -3014,6 +3014,7 @@ button.MuiPaginationItem-root:hover {
   padding: var(--spacing-3);
   background: var(--surface);
   max-height: calc(100vh - var(--spacing-10));
+  border: 1px solid var(--border);
 }
 .modal-content {
   padding: var(--spacing-3);

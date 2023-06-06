@@ -20,6 +20,9 @@
     align-items: center;
     margin: 8px auto;
 }
+li .Hex {
+  margin-right: 8px;
+}
 .color-block .Hex {
     margin: 8px auto !important;
 }

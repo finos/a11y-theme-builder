@@ -1011,6 +1011,13 @@ try {
                   },
               },
             },
+            MuiTableCell: {
+              styleOverrides: {
+                  root: {
+                    color: "inherit !important",
+                  },
+              },
+            },
             MuiAvatar: {
                 styleOverrides: {
                     root: {
