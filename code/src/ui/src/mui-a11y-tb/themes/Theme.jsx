@@ -511,8 +511,7 @@ try {
                 styleOverrides: {
                     root: {
                         //fontFamily: "Ariel", //"var(--fontFamily)",
-                        color: "var(--on-input)",
-                        background: "var(--input)",
+
                         borderRadius: "var(--spacing-half)",
                         padding: "var(spacing-1)",
                         "& .MuiInputBase-root": {

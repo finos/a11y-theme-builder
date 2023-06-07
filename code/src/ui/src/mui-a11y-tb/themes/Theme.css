@@ -1140,6 +1140,9 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .MuiSelect-outlined {
   padding-right: var(--spacing-6) !important
 }
+.MuiSelect-icon {
+  color: var(--on-background);
+}
 .MuiMenuItem-root:hover .MuiSvgIcon-root{
   color: var(--on-dropdown-hover-bg)
 }
@@ -1418,6 +1421,9 @@ button.MuiPaginationItem-root:hover {
   margin-right: 8px;
   font-size: 1.25em;
   color: var(--icon);
+}
+.MuiCardHeader-title h5 {
+  overflow-wrap: anywhere;
 }
 .MuiAlert-action {
   margin-right: 0 !important;
@@ -1938,8 +1944,8 @@ button.MuiPaginationItem-root:hover {
  color: var(--dm-white);
 }
 .darkmode .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue) .MuiOutlinedInput-root {
-    color: var(--dm-on-input);
-    background: var(--dm-input);
+    color: inherit !important;
+    background: transparent;
 }
 .darkmode .MuiPopover-paper .MuiList-root{
   background: var(--dm-surface);
@@ -2989,11 +2995,15 @@ button.MuiPaginationItem-root:hover {
 }
 
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
-  color: var(--on-input);
+  color: inherit !important;
   background: var(--input);
 }
 .hexValue .MuiOutlinedInput-root {
   background: none !important;
+}
+.Mui-disabled {
+  opacity: .25;
+  -webkit-text-fill-color: inherit;
 }
 /* input error */
 .MuiFormHelperText-root.Mui-error {

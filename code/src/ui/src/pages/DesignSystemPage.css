@@ -164,8 +164,7 @@
 
 .design-system-editor-right-content .darkmode input {
     background: var(--dm-input) !important;
-    color: var(--dm-on-input);
-    -webkit-text-fill-color: var(--dm-on-input);
+    -webkit-text-fill-color: inherit;
 }
 
 .design-system-editor-right-content .darkmode .MuiInputBase-root fieldset.MuiOutlinedInput-notchedOutline {
@@ -178,8 +177,9 @@
 }
 
 .design-system-editor-right-content .darkmode input:disabled {
-    background: var(--dm-input-disabled) !important;
-    -webkit-text-fill-color: var(--dm-on-input);
+    background: var(--dm-input) !important;
+    -webkit-text-fill-color: inherit;
+    opacity: .5;
 }
 
 /* dark mode dropdown */
