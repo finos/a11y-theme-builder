@@ -50,13 +50,24 @@ The Theme Builder application requires the use of a  persisted embedded database
 
 ```
 docker build . -t a11y-theme-builder
+``` 
+
+#### Create volume
+
+Create a named Docker volume to persist data from the running container into your local Docker environment.  This allows a new a11y-theme-builder container associated with that Docker volume to load previously saved design systems, for example.
+
+```
+docker volume create A11yThemeBuilder
 ```
 
 #### Start new container
 
+Start a new Docker container running the a11y-theme-builder image, mounting to the named Docker volume specified above.
+
 ```
-docker run -p 8080:3001 -v ${pwd}:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
+docker run -p 8080:3001 -v A11yThemeBuilder:/code/src/data --name a11y-theme-builder -d a11y-theme-builder
 ```
+
 ### View Application
 
 To access the running application, load the following URL into a browser:
@@ -80,6 +91,14 @@ docker start a11y-theme-builder
 
 ```
 docker rm a11y-theme-builder
+```
+
+#### Remove a named volume
+
+This will remove/delete the named Docker volume specified above. **NOTE:** this will delete any data saved by previously run Docker containers that used this volume.  For example, your saved a11y-theme-builder design systems will be lost if they were saved in Docker containers that were created with the instructions above.
+
+```
+docker volume rm A11yThemeBuilder
 ```
 
 ### Javascript Runtime Environment
