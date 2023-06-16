@@ -404,7 +404,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                 <div className="row top40">
                   <div className="col-6"></div>
                   <div className="col-6">
-                      <div className="subtitle1">Sample Ridges</div>
+                      <div className="subtitle1">Sample Recessed</div>
                       <ExampleBevel className="recessed-1" label="Ridge 1"/>
                       <ExampleBevel className="recessed-2" label="Ridge 2"/>
                       <ExampleBevel className="recessed-3" label="Ridge 3"/>
