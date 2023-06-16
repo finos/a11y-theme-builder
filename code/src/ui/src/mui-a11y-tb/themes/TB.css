@@ -205,15 +205,33 @@
   --inbevel-light-opacity: 0.3;
   --inbevel-dark-opacity: 0.5;
   --inbevel-change: 0.2;
-  --reverse-bevel-1: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 1))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .1))) calc(var(--inbevel-blur) * .9) calc(var(--inbevel-spread) * .9) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .1)) ));
-  --reverse-bevel-2: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 2))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .2))) calc(var(--inbevel-blur) * .8) calc(var(--inbevel-spread) * .8) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .2)) ));
-  --reverse-bevel-3: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 3))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .3))) calc(var(--inbevel-blur) * .7) calc(var(--inbevel-spread) * .7) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .3)) ));
-  --reverse-bevel-4: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 4))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .4))) calc(var(--inbevel-blur) * .6) calc(var(--inbevel-spread) * .6) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .4)) ));
-  --reverse-bevel-5: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 5))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .5))) calc(var(--inbevel-blur) * .5) calc(var(--inbevel-spread) * .5) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .5)) ));
-  --reverse-bevel-6: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 6))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .6))) calc(var(--inbevel-blur) * .4) calc(var(--inbevel-spread) * .4) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .6)) ));
-  --reverse-bevel-7: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 7))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .7))) calc(var(--inbevel-blur) * .3) calc(var(--inbevel-spread) * .3) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .7)) ));
-  --reverse-bevel-8: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 8))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .8))) calc(var(--inbevel-blur) * .2) calc(var(--inbevel-spread) * .2) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .8)) ));
-  --reverse-bevel-9: inset calc(var(--inbevel-horizontal) * calc(1 - calc(var(--inbevel-change) * 9))) calc(var(--inbevel-vertical) * calc(1 - calc(var(--inbevel-change) * .9))) calc(var(--inbevel-blur) * .1) calc(var(--inbevel-spread) * .1) rgba(0,0,0, calc(var(--inbevel-dark-opacity)  * calc(1 + calc(var(--inbevel-change) * .9)) ));
+  --reverse-bevel-1: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * 1) calc(var(--inbevel-spread) * 1)
+  rgba(0,0,0, var(--inbevel-dark-opacity)), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * 1) calc(var(--inbevel-spread) * 1)
+  rgba(255,255,255,var(--inbevel-light-opacity));
+  --reverse-bevel-2: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + var(--inbevel-change)) ) calc(var(--inbevel-spread) * calc(1 + var(--inbevel-change)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + var(--inbevel-change)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + var(--inbevel-change)))
+   calc(var(--inbevel-spread) * calc(1 + var(--inbevel-change))) rgba(255,255,255,var(--inbevel-light-opacity));
+  --reverse-bevel-3: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 2))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 2)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 2)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 2)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 2))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-4: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 3))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 3)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 3)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 3)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 3))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-5: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 4))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 4)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 4)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-6: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 5))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 5)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 5)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 5)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-7: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 6))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 6)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 6)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 6)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 6))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-8: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 7))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 7)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 7)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 7))) rgba(255,255,255, var(--inbevel-light-opacity));
+  --reverse-bevel-9: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 8))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 8)))
+  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 8)))
+  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 8))) rgba(255,255,255, var(--inbevel-light-opacity));
   --focusBlur: 4;
   --focusBorder: 2px;
   --info: #0066EF;

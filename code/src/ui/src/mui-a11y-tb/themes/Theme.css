@@ -1273,12 +1273,12 @@ a:active {
 .darkmode .fa-regular:not(button *), .darkmode .fa-solid:not(button *) {
   color: var(--dm-icon) !important;
 }
-.darkmode button:not(.black):not(.white):not(.MuiTab-root):not(.MuiPaginationItem-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button:not(.gradient-1 *):not(.gradient-2 *):not(.gradient-3 *):not(.black):not(.white):not(.MuiTab-root):not(.MuiPaginationItem-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
   background: var(--dm-button) !important;
 }
 
-.darkmode button.small-btn:not(.black):not(.white):not(.MuiTab-root):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
+.darkmode button.small-btn:not(.gradient-1 *):not(.gradient-2 *):not(.gradient-3 *):not(.black):not(.white):not(.MuiTab-root):not(.MuiButton-outlined):not(.MuiButton-text).MuiButtonBase-root {
   color: var(--dm-on-button) !important;
 }
 
