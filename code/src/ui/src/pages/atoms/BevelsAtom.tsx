@@ -370,7 +370,52 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                         <ExampleBevel className="bevel-8-inverse" label="Bevel 8"/>
                         <ExampleBevel className="bevel-9-inverse" label="Bevel 9"/>
                     </div>
+                  </div>
+                  <div className="row top40">
+                    <div className="col-6"></div>
+                    <div className="col-6">
+                        <div className="subtitle1">Sample Grooves</div>
+                        <ExampleBevel className="groove-1" label="Groove 1"/>
+                        <ExampleBevel className="groove-2" label="Groove 2"/>
+                        <ExampleBevel className="groove-3" label="Groove 3"/>
+                        <ExampleBevel className="groove-4" label="Groove 4"/>
+                        <ExampleBevel className="groove-5" label="Groove 5"/>
+                        <ExampleBevel className="groove-6" label="Groove 6"/>
+                        <ExampleBevel className="groove-7" label="Groove 7"/>
+                        <ExampleBevel className="groove-8" label="Groove 8"/>
+                        <ExampleBevel className="groove-9" label="Groove 9"/>
+                    </div>
+                  </div>
+                  <div className="row top40">
+                    <div className="col-6"></div>
+                    <div className="col-6">
+                        <div className="subtitle1">Sample Ridges</div>
+                        <ExampleBevel className="ridge-1" label="Ridge 1"/>
+                        <ExampleBevel className="ridge-2" label="Ridge 2"/>
+                        <ExampleBevel className="ridge-3" label="Ridge 3"/>
+                        <ExampleBevel className="ridge-4" label="Ridge 4"/>
+                        <ExampleBevel className="ridge-5" label="Ridge 5"/>
+                        <ExampleBevel className="ridge-6" label="Ridge 6"/>
+                        <ExampleBevel className="ridge-7" label="Ridge 7"/>
+                        <ExampleBevel className="ridge-8" label="Ridge 8"/>
+                        <ExampleBevel className="ridge-9" label="Ridge 9"/>
+                    </div>
                 </div>
+                <div className="row top40">
+                  <div className="col-6"></div>
+                  <div className="col-6">
+                      <div className="subtitle1">Sample Recessed</div>
+                      <ExampleBevel className="recessed-1" label="Ridge 1"/>
+                      <ExampleBevel className="recessed-2" label="Ridge 2"/>
+                      <ExampleBevel className="recessed-3" label="Ridge 3"/>
+                      <ExampleBevel className="recessed-4" label="Ridge 4"/>
+                      <ExampleBevel className="recessed-5" label="Ridge 5"/>
+                      <ExampleBevel className="recessed-6" label="Ridge 6"/>
+                      <ExampleBevel className="recessed-7" label="Ridge 7"/>
+                      <ExampleBevel className="recessed-8" label="Ridge 8"/>
+                      <ExampleBevel className="recessed-9" label="Ridge 9"/>
+                  </div>
+              </div>
             </ExampleSection>
             <GeneratedCodeSection item={bevelSettings}/>
         </div>
