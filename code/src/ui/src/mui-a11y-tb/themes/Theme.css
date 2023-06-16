@@ -3243,6 +3243,144 @@ button.MuiPaginationItem-root:hover {
   -webkit-box-shadow:var(--reverse-bevel-9) !important;
   -moz-box-shadow: var(--reverse-bevel-9) !important;
 }
+/* grooves */
+.groove-1 {
+  box-shadow: var(--groove-1) !important;
+  -webkit-box-shadow:var(--groove-1) !important;
+  -moz-box-shadow: var(--groove-1) !important;
+}
+.groove-2 {
+  box-shadow: var(--groove-2) !important;
+  -webkit-box-shadow:var(--groove-2) !important;
+  -moz-box-shadow: var(--groove-2) !important;
+}
+.groove-3 {
+  box-shadow: var(--groove-3) !important;
+  -webkit-box-shadow:var(--groove-3) !important;
+  -moz-box-shadow: var(--groove-3) !important;
+}
+.groove-4 {
+  box-shadow: var(--groove-4) !important;
+  -webkit-box-shadow:var(--groove-4) !important;
+  -moz-box-shadow: var(--groove-4) !important;
+}
+.groove-5 {
+  box-shadow: var(--groove-5) !important;
+  -webkit-box-shadow:var(--groove-5) !important;
+  -moz-box-shadow: var(--groove-5) !important;
+}
+.groove-6 {
+  box-shadow: var(--groove-6) !important;
+  -webkit-box-shadow:var(--groove-6) !important;
+  -moz-box-shadow: var(--groove-6) !important;
+}
+.groove-7 {
+  box-shadow: var(--groove-7) !important;
+  -webkit-box-shadow:var(--groove-7) !important;
+  -moz-box-shadow: var(--groove-7) !important;
+}
+.groove-8 {
+  box-shadow: var(--groove-8) !important;
+  -webkit-box-shadow:var(--groove-8) !important;
+  -moz-box-shadow: var(--groove-8) !important;
+}
+.groove-9 {
+  box-shadow: var(--groove-9) !important;
+  -webkit-box-shadow:var(--groove-9) !important;
+  -moz-box-shadow: var(--groove-9) !important;
+}
+/* ridges */
+.ridge-1 {
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--ridge-1) !important;
+  -webkit-box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--ridge-1) !important;
+  -moz-box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--ridge-1) !important;
+}
+.ridge-2 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-2) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-2) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-2) !important;
+}
+.ridge-3 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-3) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-3) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-3) !important;
+}
+.ridge-4 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-4) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-4) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-4) !important;
+}
+.ridge-5 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-5) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-5) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--ridge-5) !important;
+}
+.ridge-6 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-6) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-6) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-6) !important;
+}
+.ridge-7 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-7) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-7) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-7) !important;
+}
+.ridge-8 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-8) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-8) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--ridge-8) !important;
+}
+.ridge-9 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-9) !important;
+  -webkit-box-shadow:  1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-9) !important;
+  -moz-box-shadow:  1px 1px 0px 0px rgba(255,255,255,.8), var(--ridge-9) !important;
+}
+/* ridges */
+.recessed-1 {
+  box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--recessed-1) !important;
+  -webkit-box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--recessed-1) !important;
+  -moz-box-shadow: -1px -1px 0px 0px rgba(255,255,255,.8), var(--recessed-1) !important;
+}
+.recessed-2 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-2) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-2) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-2) !important;
+}
+.recessed-3 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-3) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-3) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-3) !important;
+}
+.recessed-4 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-4) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-4) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-4) !important;
+}
+.recessed-5 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-5) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-5) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--recessed-5) !important;
+}
+.recessed-6 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-6) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-6) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-6) !important;
+}
+.recessed-7 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-7) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-7) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-7) !important;
+}
+.recessed-8 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-8) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-8) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--recessed-8) !important;
+}
+.recessed-9 {
+  box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-9) !important;
+  -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-9) !important;
+  -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--recessed-9) !important;
+}
 /* VARYING BACKGROUND COLORS */
 /*  BLACK  */
 .black:not(.breadcrumbs), .black-bg:not(.breadcrumbs) {
