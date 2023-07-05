@@ -3248,6 +3248,7 @@ button.MuiPaginationItem-root:hover {
   box-shadow: var(--groove-1) !important;
   -webkit-box-shadow:var(--groove-1) !important;
   -moz-box-shadow: var(--groove-1) !important;
+  position: relative;
 }
 .groove-2 {
   box-shadow: var(--groove-2) !important;
@@ -3977,11 +3978,11 @@ button.MuiPaginationItem-root:hover {
 /* on black hotlinks */
 .darkmode .black a {
   text-decoration:  var(--hotlinkOnBlack-decoration);
-  color: var(--hotlinkOnBlack);
+  color: rgba(255,255,255,.6) !important;
 }
 .darkmode .black a:visited {
   text-decoration:  var(--hotlinkOnBlack-decoration) !important;
-  color: var(--hotlinkOnBlack);
+  color: rgba(255,255,255,.6) !important;
   opacity: .7
 }
 .darkmode .black a:hover {
@@ -4039,7 +4040,7 @@ button.MuiPaginationItem-root:hover {
 }
 /* on white hotlinks */
 .darkmode .white a {
-  text-decoration:  underline;
+  text-decoration:  underline !important;
   color: var(--dmhotlinkOnWhite);
 }
 .darkmode .white a:visited{
@@ -4047,7 +4048,7 @@ button.MuiPaginationItem-root:hover {
   color: var(--dmhotlinkOnWhite);
   opacity: .5
 }
-.darkmode .white a:hover {
+.darkmode .white a:hover, .darkmode .white a.active {
   text-decoration: none !important;
 }
 .darkmode .white a:active {
