@@ -2244,7 +2244,7 @@ button.MuiPaginationItem-root:hover {
   position: relative;
   z-index: 1;
 }
-.inline-image img, img{
+.inline-image img {
   max-height: 100%;
   min-width: 100%;
   object-fit: cover;
