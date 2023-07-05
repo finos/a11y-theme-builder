@@ -13,6 +13,7 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { Alert, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { FontWeightsUtil } from './FontWeightsUtil';
 import { StringProperty } from '../../../components/editors/StringProperty';
+import WebFont from "webfontloader";
 
 interface Props {
     atoms: Atoms;
@@ -74,7 +75,12 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
     useEffect(() => {
         recheckWeights()
-    }, [primaryFont,secondaryFont])
+        WebFont.load({
+            google: {
+            families: [primaryFont, secondaryFont],
+            }
+        });
+    }, [primaryFont, secondaryFont])
 
     const recheckWeights = () => {
         if (primaryFontUncommon || secondaryFontUncommon) {
