@@ -73,6 +73,22 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         return r.join("\n");
     }
 
+    const getDyslexiaCssCode = () => {
+        return designSystem.code.cssGenerator.getDyslexiaAsString();
+    }
+
+    const getMotionSensitivityCssCode = () => {
+        return designSystem.code.cssGenerator.getMotionSensitivityAsString();
+    }
+
+    const getDyslexiaJsonCode = () => {
+        return designSystem.code.jsonGenerator.getDyslexiaAsString();
+    }
+
+    const getMotionSensitivityJsonCode = () => {
+        return designSystem.code.jsonGenerator.getMotionSensitivityAsString();
+    }
+
     const getJsonCode = (lm: boolean) => {
         const code = designSystem.code.getJSON(lm);
         return JSON.stringify(code,null,2);
@@ -146,21 +162,21 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         <div className="top40">
                             <InputLabel>Motion Sensitive</InputLabel>
                             <pre style={codeStyle}>
-                                Code goes here
+                                { getMotionSensitivityCssCode() }
                             </pre>
-                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getMotionSensitivityCssCode())}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getMotionSensitivityCssCode(), designSystem.name + "-motion.css")}>Download</Button>
                         </div>
 
                         <div className="top40">
                             <InputLabel>Dyslexic</InputLabel>
                             <pre style={codeStyle}>
-                                Code goes here
+                                { getDyslexiaCssCode() }
                             </pre>
-                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getDyslexiaCssCode())}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.css")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getDyslexiaCssCode(), designSystem.name + "-dyslexic.css")}>Download</Button>
                         </div>
                     </>}
 
@@ -210,21 +226,21 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         <div className="top40">
                             <InputLabel>Motion Sensitive</InputLabel>
                             <pre style={codeStyle}>
-                                Code goes here
+                                { getMotionSensitivityJsonCode() }
                             </pre>
-                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getMotionSensitivityJsonCode())}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-motion.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getMotionSensitivityJsonCode(), designSystem.name + "-motion.json")}>Download</Button>
                         </div>
 
                         <div className="top40">
                             <InputLabel>Dyslexic</InputLabel>
                             <pre style={codeStyle}>
-                                Code goes here
+                                { getDyslexiaJsonCode() }
                             </pre>
-                            <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getDyslexiaJsonCode())}>Copy</Button>
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                            <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-dyslexic.json")}>Download</Button>
+                            <Button variant="outlined" onClick={() => saveFile(getDyslexiaJsonCode(), designSystem.name + "-dyslexic.json")}>Download</Button>
                         </div>
                     </>}
                 </div>
