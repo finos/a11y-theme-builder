@@ -75,12 +75,17 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
     useEffect(() => {
         recheckWeights()
+        // We dynamically load the fonts here:
+        // NOTE: After a few loads, the Google API can give 400 errors.
+        // The solution to the above is to ensure the first letter of each word of the font is capitalized.
         WebFont.load({
             google: {
             families: [primaryFont, secondaryFont],
             }
         });
+        // TODO: Catch any errors with font loading and notify the user.
     }, [primaryFont, secondaryFont])
+    
 
     const recheckWeights = () => {
         if (primaryFontUncommon || secondaryFontUncommon) {
