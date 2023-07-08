@@ -241,6 +241,31 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
             setSecondaryFontUncommon(true)
         }
     }
+    async function handlePrimaryFontSelect(event: any): Promise<void> {
+        
+    }
+    async function handleSecondaryFontSelect(event: any): Promise<void> {
+        
+    }
+    const renderCommonFontSelectables = () => {
+        var r = [];
+        const commonFontsList = FontWeightsUtil.listCommonFonts()
+        for (var i=0; i<commonFontsList.length; i++) {
+            const s = commonFontsList[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+            
+        return (
+            <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
+                <InputLabel id="primary-font-select-label">Select from Common Fonts</InputLabel>
+                <Select labelId="primary-font-select-label" value={primaryFont} label="Select from Common Fonts" onChange={handlePrimaryFontSelect}>
+                    {r}
+                </Select>
+            </FormControl>
+        )
+
+
+    }
     async function handleFontWeight0Change(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setFontWeight0(value)
@@ -414,6 +439,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <h4>Font Families</h4>
                 <div>
+                    
+            {renderCommonFontSelectables()}
 					<StringProperty 
 						property={primaryFontFamilyProperty} 
 						description="The primary font is used for the body and small font styles." 
@@ -444,7 +471,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 <h4>Font Sizes</h4>
                 <div className="form-row">
                     <NumberProperty property={fontSettingsAtom.baseFontSize} defaultValue={16} units="px"
-                        description={"All typography is multipled from the base font size."} />
+                        description={"All typography is multiplied from the base font size."} />
                 </div>
                 <h4>Primary Font Weights</h4>
                 <div className="form-row">

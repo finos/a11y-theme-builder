@@ -154,4 +154,10 @@ export class FontWeightsUtil {
         return weightArray?.includes(weight)
     }
 
+    public static listCommonFonts(): string[] {
+        var r = [] as string[];
+        r = Array.from( CommonFontsSupportedWeights.keys() );
+        return r;
+    }
+
 }
