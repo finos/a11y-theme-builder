@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button , Grid} from '@mui/material';
 import { useEffect, useState } from 'react';
 import ModalInclusive from '../components/modals/ModalInclusive';
 import { HeadingSection } from './content/HeadingSection';
@@ -35,12 +35,14 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
             </p>
             <h3>Getting Started</h3>
             <p>Watch our video and learn how to make a Design System with Theme Buidler</p>
-            <div>
-              <video controls>
-                <source src="buildtheme.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <Grid container spacing={2} columns={12}>
+              <Grid item xl={8} lg={10} md={12} xs={12}>
+                <video controls>
+                  <source src="buildtheme.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Grid>
+            </Grid>
             <div className="button-area top40">
                 <Button onClick={(event) => changeTab(event, "getStarted")}>Explore Your Design Systems</Button>
                 <Button  variant="outlined"  onClick={(event) => changeTab(event, "jumpStart")}>Explore Samples</Button>

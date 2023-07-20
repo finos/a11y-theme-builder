@@ -1,3 +1,14 @@
+/* container */
+.MuiGrid-container {
+  width: calc(100% - var(--spacing-4)) !important;
+  margin: var(--spacing-2);
+}
+.MuiGrid-item {
+  padding-left: var(--spacing-2);
+  padding-top: var(--spacing-2);
+}
+
+
 /* Typography */
 /* Headers */
 h1 {
@@ -3382,10 +3393,56 @@ button.MuiPaginationItem-root:hover {
   -webkit-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8), var(--recessed-9) !important;
   -moz-box-shadow: 1px 1px 0px 0px rgba(255,255,255,.8),var(--recessed-9) !important;
 }
+/* glows */
+.glow-1 {
+  box-shadow: var(--glow-1) !important;
+  -webkit-box-shadow: var(--glow-1) !important;
+  -moz-box-shadow: var(--glow-1) !important;
+}
+.glow-2 {
+  box-shadow: var(--glow-2) !important;
+  -webkit-box-shadow: var(--glow-2) !important;
+  -moz-box-shadow: var(--glow-2) !important;
+}
+.glow-3 {
+  box-shadow: var(--glow-3) !important;
+  -webkit-box-shadow: var(--glow-3) !important;
+  -moz-box-shadow: var(--glow-3) !important;
+}
+.glow-4 {
+  box-shadow: var(--glow-4) !important;
+  -webkit-box-shadow: var(--glow-4) !important;
+  -moz-box-shadow: var(--glow-4) !important;
+}
+.glow-5 {
+  box-shadow: var(--glow-5) !important;
+  -webkit-box-shadow: var(--glow-5) !important;
+  -moz-box-shadow: var(--glow-5) !important;
+}
+.glow-6 {
+  box-shadow: var(--glow-6) !important;
+  -webkit-box-shadow:  var(--glow-6) !important;
+  -moz-box-shadow:  var(--glow-6) !important;
+}
+.glow-7 {
+  box-shadow:  var(--glow-7) !important;
+  -webkit-box-shadow:  var(--glow-7) !important;
+  -moz-box-shadow:  var(--glow-7) !important;
+}
+.glow-8 {
+  box-shadow: var(--glow-8) !important;
+  -webkit-box-shadow: var(--glow-8) !important;
+  -moz-box-shadow: var(--glow-8) !important;
+}
+.glow-9 {
+  box-shadow: var(--glow-9) !important;
+  -webkit-box-shadow: var(--glow-9)  !important;
+  -moz-box-shadow: var(--glow-9) !important;
+}
 /* VARYING BACKGROUND COLORS */
 /*  BLACK  */
 .black:not(.breadcrumbs), .black-bg:not(.breadcrumbs) {
-    background: var(--black) !important;
+    background-color: var(--black) !important;
     color: var(--white) !important;
 }
 .black-half {
@@ -3495,7 +3552,7 @@ button.MuiPaginationItem-root:hover {
 
 /*  WHITE  */
 .white:not(.breadcrumbs), .white-bg {
-    background: var(--white) !important;
+    background-color: var(--white) !important;
     color: var(--black) !important;
 }
 .white-half {
@@ -3616,7 +3673,7 @@ button.MuiPaginationItem-root:hover {
 }
 /*  COLORED, PRIMARY, TERTIARY_BG */
 .colored, .backgroundTertiary {
-  background: var(--background-tertiary) !important;
+  background-color: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
 }
 /* hotlinks &  breadcrumbs */
@@ -3802,7 +3859,7 @@ button.MuiPaginationItem-root:hover {
 
 /*  GRADIENT 2 */
 .gradient-2 {
-  background: var(--gradient-2) !important;
+  background: var(--gradient-2);
   color: var(--on-gradient-2) !important;
 }
 .gradient-2 .fa-regular:not(button *), .gradient-2 .fa-solid:not(button *) {
@@ -3883,7 +3940,7 @@ button.MuiPaginationItem-root:hover {
 }
 /*  GRADIENT 3 */
 .gradient-3 {
-  background: var(--gradient-3) !important;
+  background: var(--gradient-3);
   color: var(--on-gradient-3) !important;
 }
 .gradient-3 .fa-regular:not(button *), .gradient-3 .fa-solid:not(button *) {
@@ -3968,8 +4025,8 @@ button.MuiPaginationItem-root:hover {
   background: var(--dm-on-gradeint-3) !important;
 }
 /*  Darkmode BLACK  */
-.darkmode .black:not(.breadcrumbs):not(.MuiFormControlLabel-root) {
-    background: var(--black) !important;
+.darkmode .black:not(.breadcrumbs):not(.MuiFormControlLabel-root):not(.herowithOverlay) {
+    background-color: var(--black) !important;
     color: var(--dm-white) !important;
 }
 .darkmode .black .fa-regular:not(button *), .black .fa-solid:not(button *) {
@@ -4029,7 +4086,7 @@ button.MuiPaginationItem-root:hover {
 }
 /* dark mode white */
 .darkmode .white:not(.breadcrumbs), .white-bg {
-    background: var(--dm-white) !important;
+    background-color: var(--dm-white) !important;
     color: var(--black) !important;
 }
 .darkmode .white-half {
