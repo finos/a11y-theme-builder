@@ -114,7 +114,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
 
     const [atoms, setAtoms] = useState<{[key: string]:atomItem}>(atomsList);
     useEffect(() => {
-        designSystem.setListener("AtomContent-isEditable", 
+        designSystem.setListener("AtomContent-isEditable",
             function(event: Event) {
                 if (event.type == EventType.NodeDisabled) {
                     enableDisableItems();
@@ -143,12 +143,12 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     interface LeftNavAtomProps { atom: any, indent?:number, disabled?:boolean };
     const LeftNavAtom : React.FC<LeftNavAtomProps> = ({atom, indent, disabled}) => {
         return (
-            <LeftNavItem 
+            <LeftNavItem
                 selected={showAtom}
                 value={atom.value}
-                text={atom.label} 
-                indent={indent} 
-                disabled={disabled !== undefined ? disabled : atom.disabled} 
+                text={atom.label}
+                indent={indent}
+                disabled={disabled !== undefined ? disabled : atom.disabled}
                 onClick={()=> {setShowAtom(atom.value)}}
             />
         )
@@ -158,7 +158,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         <>
             <div className="design-system-editor-left-nav">
                 <div className="design-system-editor-left-nav-scrollable">
-                    <List 
+                    <List
                         sx={{
                             '& ul': {padding:0},
                             paddingTop: "0px",
@@ -212,7 +212,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
-                    {showAtom === "atoms" && 
+                    {showAtom === "atoms" &&
                         <AtomicIntro changeTab={setShowAtom}/>
                     }
                     {showAtom === atoms.colorPalette.value && (
@@ -317,4 +317,3 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         </>
     );
 }
-
