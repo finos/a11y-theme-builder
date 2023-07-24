@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -369,7 +369,7 @@ try {
                                     background: "var(--surface)",
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
-                                    borderRadius: "var(--spacing-Half)",
+                                    borderRadius: "var(--spacing-half)",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
@@ -412,7 +412,7 @@ try {
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
                         background: "var(--surface)",
-                        border: "1px solid var(--border)",
+                        // border: "1px solid var(--border)",
                         position: "relative",
                         "& .MuiOutlinedInput-input": {
                           padding: "0 var(--spacing-6) 0 var(--spacing-2) !important",
