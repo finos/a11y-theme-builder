@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField } from '@mui/material';
+import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, Shade } from 'a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
@@ -130,38 +130,46 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
             </ExampleSection>
             <SettingsSection>
                 <div style={{display:"flex", gap:"40px"}}>
-                    <div className="input-col">
-                        <InputLabel htmlFor='colorName'>Color Name</InputLabel>
-                        <TextField
-                            id='colorName'
-                            error={_addColorErrorTriggered}
-                            onChange={handleColorChange}
-                            onBlur={handleColorNameBlur}
-                            helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
-                            value={_colorName}
-                        />
-                    </div>
-                    <div className="input-col hexValue">
-                        <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
-                        <TextField
-                            id='hexValue'
-                            error={_addColorInputErrorTriggered}
-                            onChange={handleColorValueInputChange}
-                            helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
-                            value={_blockPickerColor}
-                            sx={{
-                                backgroundColor: `${_blockPickerColor}`,
-                                input: {
-                                    color: `${_blockPickerOnColor}`
-                                }
-                            }}
-                        />
-                        <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
-                    </div>
-                    <div className="input-col">
-                        <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
-                        {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
-                    </div>
+                  <Grid container spacing={2} columns={12}>
+                    <Grid item xl={4} lg={4} md={4} sm={12}>
+                      <div className="input-col">
+                          <InputLabel htmlFor='colorName'>Color Name</InputLabel>
+                          <TextField
+                              id='colorName'
+                              error={_addColorErrorTriggered}
+                              onChange={handleColorChange}
+                              onBlur={handleColorNameBlur}
+                              helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
+                              value={_colorName}
+                          />
+                      </div>
+                    </Grid>
+                    <Grid item xl={4} lg={4} md={8} sm={12}>
+                      <div className="input-col hexValue">
+                          <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
+                          <TextField
+                              id='hexValue'
+                              error={_addColorInputErrorTriggered}
+                              onChange={handleColorValueInputChange}
+                              helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
+                              value={_blockPickerColor}
+                              sx={{
+                                  backgroundColor: `${_blockPickerColor}`,
+                                  input: {
+                                      color: `${_blockPickerOnColor}`
+                                  }
+                              }}
+                          />
+                          <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
+                      </div>
+                    </Grid>
+                    <Grid item xl={4} lg={4} md={12} sm={12}>
+                      <div className="input-col">
+                          <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
+                          {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
+                      </div>
+                    </Grid>
+                  </Grid>
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={atom}/>

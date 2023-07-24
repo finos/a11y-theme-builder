@@ -2,10 +2,10 @@
   --zoom: 1;
   --meshSVGfill: rgb(0,102,239);
   --transparent: rgba(0,0,0,0);
-  --white: #ffffff;
+  --white: rgb(255,255,255);
   --white-half: rgba(255, 255, 255, 0.5);
   --on-white: var(--black);
-  --black: #121212;
+  --black: rgb(250,250,250);
   --black-half: rgba(0,0,0, 0.5);
   --nearblack: #181818;
   --on-nearblack: #ffffff;
@@ -164,25 +164,49 @@
   --base-elevation-opacity: 0.04;
   --elevation-0: 0 0 0 0 rgba(0,0,0,0);
   /* elevation */
-  --elevation-1: calc(var(--elevation-horizontal) * var(--change-1)) calc(var(--elevation-vertical) * var(--change-1)) calc(var(--elevation-blur) * var(--change-1)) calc(var(--elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-1)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-1)) calc(var(--base-elevation-spread) * var(--change-1)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-1)));
-  --elevation-2: calc(var(--elevation-horizontal) * var(--change-2)) calc(var(--elevation-vertical)* var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-2)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-2)) calc(var(--base-elevation-spread) * var(--change-2)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-2)));
-  --elevation-3: calc(var(--elevation-horizontal) * var(--change-3)) calc(var(--elevation-vertical)* var(--change-3)) calc(var(--elevation-blur) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-3)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-3)) calc(var(--base-elevation-spread) * var(--change-3)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-3)));
-  --elevation-4: calc(var(--elevation-horizontal) * var(--change-4)) calc(var(--elevation-vertical)* var(--change-4)) calc(var(--elevation-blur) * var(--change-4)) calc(var(--elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-4)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-4)) calc(var(--base-elevation-spread) * var(--change-4)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-4)));
-  --elevation-5: calc(var(--elevation-horizontal) * var(--change-5)) calc(var(--elevation-vertical)* var(--change-5)) calc(var(--elevation-blur) * var(--change-5)) calc(var(--elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-5)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-5)) calc(var(--base-elevation-spread) * var(--change-5)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-5)));
-  --elevation-6: calc(var(--elevation-horizontal) * var(--change-6)) calc(var(--elevation-vertical)* var(--change-6)) calc(var(--elevation-blur) * var(--change-6)) calc(var(--elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-6)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-6)) calc(var(--base-elevation-spread) * var(--change-6)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-6)));
-  --elevation-7: calc(var(--elevation-horizontal) * var(--change-7)) calc(var(--elevation-vertical)* var(--change-7)) calc(var(--elevation-blur) * var(--change-7)) calc(var(--elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-7)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-7)) calc(var(--base-elevation-spread) * var(--change-7)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-7)));
-  --elevation-8: calc(var(--elevation-horizontal) * var(--change-8)) calc(var(--elevation-vertical)* var(--change-8)) calc(var(--elevation-blur) * var(--change-8)) calc(var(--elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-8)) ),
-   0 0 calc(var(--base-elevation-blur) * var(--change-8)) calc(var(--base-elevation-spread) * var(--change-8)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-8)));
-  --elevation-9: calc(var(--elevation-horizontal) * var(--change-9)) calc(var(--elevation-vertical)* var(--change-9)) calc(var(--elevation-blur) * var(--change-9)) calc(var(--elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--elevation-opacity) * var(--change-9)) ),
-    0 0 calc(var(--base-elevation-blur) * var(--change-9)) calc(var(--base-elevation-spread) * var(--change-9)) rgba(var(--elevation-rgb), calc(var(--base-elevation-opacity) * var(--change-9)));
-
+  --elevation-1: calc(var(--elevation-horizontal) * var(--change-1)) calc(var(--elevation-vertical) * var(--change-1)) calc(var(--elevation-blur) * var(--change-1)) calc(var(--elevation-spread) * var(--change-1)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-1)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-1)) calc(var(--base-elevation-spread) * var(--change-1)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-1)));
+  --elevation-2: calc(var(--elevation-horizontal) * var(--change-2)) calc(var(--elevation-vertical)* var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-2)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-2)) calc(var(--base-elevation-spread) * var(--change-2)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-2)));
+  --elevation-3: calc(var(--elevation-horizontal) * var(--change-3)) calc(var(--elevation-vertical)* var(--change-3)) calc(var(--elevation-blur) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-3)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-3)) calc(var(--base-elevation-spread) * var(--change-3)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-3)));
+  --elevation-4: calc(var(--elevation-horizontal) * var(--change-4)) calc(var(--elevation-vertical)* var(--change-4)) calc(var(--elevation-blur) * var(--change-4)) calc(var(--elevation-spread) * var(--change-4)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-4)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-4)) calc(var(--base-elevation-spread) * var(--change-4)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-4)));
+  --elevation-5: calc(var(--elevation-horizontal) * var(--change-5)) calc(var(--elevation-vertical)* var(--change-5)) calc(var(--elevation-blur) * var(--change-5)) calc(var(--elevation-spread) * var(--change-5)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-5)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-5)) calc(var(--base-elevation-spread) * var(--change-5)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-5)));
+  --elevation-6: calc(var(--elevation-horizontal) * var(--change-6)) calc(var(--elevation-vertical)* var(--change-6)) calc(var(--elevation-blur) * var(--change-6)) calc(var(--elevation-spread) * var(--change-6)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-6)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-6)) calc(var(--base-elevation-spread) * var(--change-6)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-6)));
+  --elevation-7: calc(var(--elevation-horizontal) * var(--change-7)) calc(var(--elevation-vertical)* var(--change-7)) calc(var(--elevation-blur) * var(--change-7)) calc(var(--elevation-spread) * var(--change-7)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-7)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-7)) calc(var(--base-elevation-spread) * var(--change-7)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-7)));
+  --elevation-8: calc(var(--elevation-horizontal) * var(--change-8)) calc(var(--elevation-vertical)* var(--change-8)) calc(var(--elevation-blur) * var(--change-8)) calc(var(--elevation-spread) * var(--change-8)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-8)) ),
+   0 0 calc(var(--base-elevation-blur) * var(--change-8)) calc(var(--base-elevation-spread) * var(--change-8)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-8)));
+  --elevation-9: calc(var(--elevation-horizontal) * var(--change-9)) calc(var(--elevation-vertical)* var(--change-9)) calc(var(--elevation-blur) * var(--change-9)) calc(var(--elevation-spread) * var(--change-9)) rgba(0,0,0, calc(var(--elevation-opacity) * var(--change-9)) ),
+    0 0 calc(var(--base-elevation-blur) * var(--change-9)) calc(var(--base-elevation-spread) * var(--change-9)) rgba(0,0,0, calc(var(--base-elevation-opacity) * var(--change-9)));
+  /* glow settings */
+  --glow-blur: 2px;
+  --glow-spread: 2px;
+  --glow-rgb: 0, 0, 0;
+  --glow-opacity: 0.2;
+  --glow-change: 0.2;
+  /* glows */
+  --glow-1: 0,0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), calc(var(--glow-opacity) * var(--glow-change)) );
+  --glow-2: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 2))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 2)))
+   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 2))) );
+  --glow-3: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 3))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 3)))
+   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 3))) );
+  --glow-4: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 4))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 4)))
+   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 4))) );
+  --glow-5: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 5))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 5)))
+   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 5))) );
+  --glow-6: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 6))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 6)))
+    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 6))) );
+  --glow-7: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 7))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 7)))
+    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 7))) );
+  --glow-8: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 8))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 8)))
+    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 8))) );
+  --glow-9: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 9))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 9)))
+    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 9))) );
+  /* bevels */
   --bevel-horizontal: 6px;
   --bevel-vertical: 6px;
   --bevel-spread: 1px;
@@ -191,115 +215,183 @@
   --bevel-dark-opacity: 0.1;
   --bevel-change: 0.08;
   --bevel-0: 0 0 0 0 rgba(0,0,0,0);
-  --bevel-1: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 1))));
-  --bevel-2: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 2)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
-  --bevel-3: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3))));
-  --bevel-4: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 4))));
-  --bevel-5: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 5))));
-  --bevel-6: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 6))));
-  --bevel-7: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7))));
-  --bevel-8: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
-  --bevel-9: inset calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9))) calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9))) var(--bevel-blur) var(--bevel-spread) rgba(255, 255, 255, var(--bevel-light-opacity)), inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9)))) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9))));
-  --inbevel-horizontal: 6px;
-  --inbevel-vertical: 6px;
-  --inbevel-spread: 1px;
-  --inbevel-blur: 6px;
-  --inbevel-light-opacity: 0.3;
-  --inbevel-dark-opacity: 0.5;
-  --inbevel-change: 0.2;
-  --reverse-bevel-1: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * 1) calc(var(--inbevel-spread) * 1)
-  rgba(0,0,0, var(--inbevel-dark-opacity)), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * 1) calc(var(--inbevel-spread) * 1)
-  rgba(255,255,255,var(--inbevel-light-opacity));
-  --reverse-bevel-2: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 2))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 2)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 2)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 2)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 2))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-3: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 3))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 3)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 3)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 3)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 3))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-4: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 4))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 4)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 4)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-5: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 5))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 5)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 5)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 5)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-6: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 6))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 6)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 6)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 6)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 6))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-7: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 7))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 7)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 7)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 7))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-8: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 8))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 8)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 8)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 8))) rgba(255,255,255, var(--inbevel-light-opacity));
-  --reverse-bevel-8: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 9))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 9)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) )), inset calc(0px - var(--inbevel-horizontal)) calc(0px - var(--inbevel-vertical)) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 9)))
-  calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 9))) rgba(255,255,255, var(--inbevel-light-opacity));
-
-
+  /* bevel */
+  --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 1)))),
+   inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread)
+   rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 1))));
+  --bevel-2: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 2)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
+  --bevel-3: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 3)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3))));
+  --bevel-4: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 4)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 4))));
+  --bevel-5: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 5)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 5))));
+  --bevel-6: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 6)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 6))));
+  --bevel-7: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 7)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7))));
+  --bevel-8: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 8)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
+  --bevel-9:
+  inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 9)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9))));
+  /* inverted bevel */
+  --reverse-bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 1)))),
+   inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread)
+   rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 1))));
+  --reverse-bevel-2: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 2)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255 ,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 2))));
+  --reverse-bevel-3: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 3)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 3)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 3))));
+  --reverse-bevel-4: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 4)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 4)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 4)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 4))));
+  --reverse-bevel-5: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 5)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 5)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 5)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 5))));
+  --reverse-bevel-6: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 6)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 6)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 6)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 6))));
+  --reverse-bevel-7: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 7)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 7)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 7))));
+  --reverse-bevel-8: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 8)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 8)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 8))));
+  --reverse-bevel-9: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(0,0,0, calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9)))),
+    inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 9)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 9)))) var(--bevel-blur) var(--bevel-spread)
+    rgba(255,255,255,calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 9))));
   /* Right Shadows - elevations + reverse bevels  */
-  --ridge-1: var(--reverse-bevel-1), var(--elevation-1), var(--elevation-horizontal) var(--elevation-vertical) var(--elevation-blur) var(--elevation-spread) rgba(255,255,255,.2);
-  --ridge-2: var(--reverse-bevel-2), var(--elevation-2), calc(var(--elevation-horizontal) * var(--change-2))  calc(var(--elevation-vertical) * var(--change-2)) calc(var(--elevation-blur) * var(--change-2))  calc(var(--elevation-spread) * var(--change-2))
- rgba(255,255,255,.2);
-  --ridge-3: var(--reverse-bevel-3), var(--elevation-3), calc(var(--elevation-horizontal) * var(--change-3))  calc(var(--elevation-vertical) * var(--change-3)) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(255,255,255,.2);
-  --ridge-4: var(--reverse-bevel-4), var(--elevation-4), calc(var(--elevation-horizontal) * var(--change-4))  calc(var(--elevation-vertical) * var(--change-4)) calc(var(--elevation-blur) * var(--change-4))  calc(var(--elevation-spread) * var(--change-4))
-rgba(255,255,255,.2);
-  --ridge-5: var(--reverse-bevel-5), var(--elevation-5), calc(var(--elevation-horizontal) * var(--change-5))  calc(var(--elevation-vertical) * var(--change-5)) calc(var(--elevation-blur) * var(--change-5))  calc(var(--elevation-spread) * var(--change-5))
-rgba(255,255,255,.2);
-  --ridge-6: var(--reverse-bevel-6), var(--elevation-6), calc(var(--elevation-horizontal) * var(--change-6))  calc(var(--elevation-vertical) * var(--change-6)) calc(var(--elevation-blur) * var(--change-6))  calc(var(--elevation-spread) * var(--change-6))
-rgba(255,255,255,.2);
-  --ridge-7: var(--reverse-bevel-7), var(--elevation-7), calc(var(--elevation-horizontal) * var(--change-7))  calc(var(--elevation-vertical) * var(--change-7)) calc(var(--elevation-blur) * var(--change-7))  calc(var(--elevation-spread) * var(--change-7))
-rgba(255,255,255,.2);
-  --ridge-8: var(--reverse-bevel-8), var(--elevation-8), calc(var(--elevation-horizontal) * var(--change-8))  calc(var(--elevation-vertical) * var(--change-8)) calc(var(--elevation-blur) * var(--change-8))  calc(var(--elevation-spread) * var(--change-8))
-  rgba(255,255,255,.2);
-  --ridge-9: var(--reverse-bevel-8), var(--elevation-9), calc(var(--elevation-horizontal) * var(--change-9))  calc(var(--elevation-vertical) * var(--change-9)) calc(var(--elevation-blur) * var(--change-9))  calc(var(--elevation-spread) * var(--change-9))
-  rgba(255,255,255,.2);
+  --ridge: 2px;
+  --ridge-1: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2), inset 1px 1px 1px 1px rgba(0,0,0,.3),
+   calc(0px - var(--ridge)) calc(0px - var(--ridge)) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+   calc(var(--ridge) * 1)  calc(var(--ridge) * 1) calc(var(--ridge) * 1) calc(var(--ridge) * 1) rgba(0,0,0,.3),
+   0px 0px 0px var(--ridge)  rgba(255,255,255,1);
+  --ridge-2: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2), inset 1.5px 1.5px 1px 1px rgba(0,0,0,.3),
+   calc(0px - calc(var(--ridge) * var(--change-2)))  calc(0px - calc(var(--ridge) * var(--change-2))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+   calc(var(--ridge) * var(--change-2))  calc(var(--ridge) * var(--change-2)) calc(var(--ridge) * var(--change-2)) calc(var(--ridge) * var(--change-2)) rgba(0,0,0,.3),
+  0px 0px 0px calc(var(--ridge) * var(--change-2))  rgba(255,255,255,1);
+  --ridge-3: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2), 1px 1px 0 0 rgba(255,255,255,.8),
+   inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 1)) calc(1.5px * calc(1 + var(--bevel-change) * 1)) calc(1.5px * calc(1 + var(--bevel-change) * 1)) calc(1.5px * calc(1 + var(--bevel-change) * 1))
+   rgba(0,0,0,.3),
+   calc(0px - calc(var(--ridge) * var(--change-3)))  calc(0px - calc(var(--ridge) * var(--change-3))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+   calc(var(--ridge) * var(--change-3))  calc(var(--ridge) * var(--change-3)) calc(var(--ridge) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(0,0,0,.3),
+  0px 0px 0px calc(var(--ridge) * var(--change-3))  rgba(255,255,255,1);
+  --ridge-4: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 2)) calc(1.5px * calc(1 + var(--bevel-change) * 2)) calc(1.5px * calc(1 + var(--bevel-change) * 2)) calc(1.5px * calc(1 + var(--bevel-change) * 2))
+   rgba(0,0,0,.3),
+   calc(0px - calc(var(--ridge) * var(--change-4)))  calc(0px - calc(var(--ridge) * var(--change-4))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+   calc(var(--ridge) * var(--change-4))  calc(var(--ridge) * var(--change-4)) calc(var(--ridge) * var(--change-4)) calc(var(--ridge) * var(--change-4)) rgba(0,0,0,.3),
+   0px 0px 0px calc(var(--ridge) * var(--change-4))  rgba(255,255,255,1);
+  --ridge-5: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 3)) calc(1.5px * calc(1 + var(--bevel-change) * 3)) calc(1.5px * calc(1 + var(--bevel-change) * 3)) calc(1.5px * calc(1 + var(--bevel-change) * 3))
+   rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-5)))  calc(0px - calc(var(--ridge) * var(--change-5))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+    calc(var(--ridge) * var(--change-5))  calc(var(--ridge) * var(--change-5)) calc(var(--ridge) * var(--change-5)) calc(var(--ridge) * var(--change-5)) rgba(0,0,0,.3),
+    0px 0px 0px calc(var(--ridge) * var(--change-5))  rgba(255,255,255,1);
+  --ridge-6: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 4)) calc(1.5px * calc(1 + var(--bevel-change) * 4)) calc(1.5px * calc(1 + var(--bevel-change) * 4)) calc(1.5px * calc(1 + var(--bevel-change) * 4))
+   rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-6)))  calc(0px - calc(var(--ridge) * var(--change-6))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+    calc(var(--ridge) * var(--change-6))  calc(var(--ridge) * var(--change-6)) calc(var(--ridge) * var(--change-6)) calc(var(--ridge) * var(--change-6)) rgba(0,0,0,.3),
+    0px 0px 0px calc(var(--ridge) * var(--change-6))  rgba(255,255,255,1);
+  --ridge-7: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 5)) calc(1.5px * calc(1 + var(--bevel-change) * 5)) calc(1.5px * calc(1 + var(--bevel-change) * 5)) calc(1.5px * calc(1 + var(--bevel-change) * 5))
+   rgba(0,0,0,.3),
+   calc(0px - calc(var(--ridge) * var(--change-7)))  calc(0px - calc(var(--ridge) * var(--change-7))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+   calc(var(--ridge) * var(--change-7))  calc(var(--ridge) * var(--change-9)) calc(var(--ridge) * var(--change-7)) calc(var(--ridge) * var(--change-7)) rgba(0,0,0,.3),
+  0px 0px 0px calc(var(--ridge) * var(--change-7))  rgba(255,255,255,1);
+  --ridge-8: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 6)) calc(1.5px * calc(1 + var(--bevel-change) * 6)) calc(1.5px * calc(1 + var(--bevel-change) * 6)) calc(1.5px * calc(1 + var(--bevel-change) * 6))
+   rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-8)))  calc(0px - calc(var(--ridge) * var(--change-8))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+    calc(var(--ridge) * var(--change-8))  calc(var(--ridge) * var(--change-8)) calc(var(--ridge) * var(--change-8)) calc(var(--ridge) * var(--change-8)) rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-8)))  calc(var(--ridge) * var(--change-8)) var(--ridge) var(--ridge) rgba(0,0,0,.08),
+    calc(var(--ridge) * var(--change-8))  calc(0px - calc(var(--ridge) * var(--change-8))) var(--ridge) var(--ridge) rgba(0,0,0,.08),
+    0px 0px 0px calc(var(--ridge) * var(--change-8))  rgba(255,255,255,1);
+
+  --ridge-9: -1px -1px 0 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(255,255,255,.8), inset 1px 1px 0 0 rgba(0,0,0,.2),
+  inset calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 7))
+   rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-9)))  calc(0px - calc(var(--ridge) * var(--change-9))) var(--ridge) var(--ridge) rgba(255,255,255,.8),
+    calc(var(--ridge) * var(--change-9))  calc(var(--ridge) * var(--change-9)) calc(var(--ridge) * var(--change-9)) calc(var(--ridge) * var(--change-9)) rgba(0,0,0,.3),
+    calc(0px - calc(var(--ridge) * var(--change-9)))  calc(var(--ridge) * var(--change-9)) var(--ridge) var(--ridge) rgba(0,0,0,.08),
+    calc(var(--ridge) * var(--change-9))  calc(0px - calc(var(--ridge) * var(--change-9))) var(--ridge) var(--ridge) rgba(0,0,0,.08),
+    0px 0px 0px calc(var(--ridge) * var(--change-9))  rgba(255,255,255,1);
   /* Groove Shadows */
-  --groove-1: var(--bevel-1), calc(0px - calc(var(--elevation-horizontal) * var(--change-1)))  calc(0px - calc(var(--elevation-vertical) * var(--change-1))) calc(var(--elevation-blur) * var(--change-1))  calc(var(--elevation-spread) * var(--change-1))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 1)))), var(--elevation-horizontal) var(--elevation-vertical) var(--elevation-blur) var(--elevation-spread) rgba(255,255,255,.2);
-  --groove-2: var(--bevel-2), calc(0px - calc(var(--elevation-horizontal) * var(--change-2)))  calc(0px - calc(var(--elevation-vertical) * var(--change-2))) calc(var(--elevation-blur) * var(--change-2))  calc(var(--elevation-spread) * var(--change-2))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 2)))), calc(var(--elevation-horizontal) * var(--change-2))  calc(var(--elevation-vertical) * var(--change-2)) calc(var(--elevation-blur) * var(--change-2))  calc(var(--elevation-spread) * var(--change-2))
- rgba(255,255,255,.2);
-  --groove-3: var(--bevel-3), calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 3)))), calc(var(--elevation-horizontal) * var(--change-3))  calc(var(--elevation-vertical) * var(--change-3)) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(255,255,255,.2);
-  --groove-4: var(--bevel-4), calc(0px - calc(var(--elevation-horizontal) * var(--change-4)))  calc(0px - calc(var(--elevation-vertical) * var(--change-4))) calc(var(--elevation-blur) * var(--change-4))  calc(var(--elevation-spread) * var(--change-4))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 4)))), var(--elevation-4), calc(var(--elevation-horizontal) * var(--change-4))  calc(var(--elevation-vertical) * var(--change-4)) calc(var(--elevation-blur) * var(--change-4))  calc(var(--elevation-spread) * var(--change-4))
-rgba(255,255,255,.2);
-  --groove-5: var(--bevel-5), calc(0px - calc(var(--elevation-horizontal) * var(--change-5)))  calc(0px - calc(var(--elevation-vertical) * var(--change-5))) calc(var(--elevation-blur) * var(--change-5))  calc(var(--elevation-spread) * var(--change-5))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 5)))), calc(var(--elevation-horizontal) * var(--change-5))  calc(var(--elevation-vertical) * var(--change-5)) calc(var(--elevation-blur) * var(--change-5))  calc(var(--elevation-spread) * var(--change-5))
-rgba(255,255,255,.2);
-  --groove-6: var(--bevel-6), calc(0px - calc(var(--elevation-horizontal) * var(--change-6)))  calc(0px - calc(var(--elevation-vertical) * var(--change-6))) calc(var(--elevation-blur) * var(--change-6))  calc(var(--elevation-spread) * var(--change-6))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 6)))), calc(var(--elevation-horizontal) * var(--change-6))  calc(var(--elevation-vertical) * var(--change-6)) calc(var(--elevation-blur) * var(--change-6))  calc(var(--elevation-spread) * var(--change-6))
-rgba(255,255,255,.2);
-  --groove-7: var(--bevel-7), calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 7)))), calc(var(--elevation-horizontal) * var(--change-7))  calc(var(--elevation-vertical) * var(--change-7)) calc(var(--elevation-blur) * var(--change-7))  calc(var(--elevation-spread) * var(--change-7))
-rgba(255,255,255,.2);
-  --groove-8: var(--bevel-8), calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 8)))), calc(var(--elevation-horizontal) * var(--change-8))  calc(var(--elevation-vertical) * var(--change-8)) calc(var(--elevation-blur) * var(--change-8))  calc(var(--elevation-spread) * var(--change-8))
-  rgba(255,255,255,.2);
-  --groove-9: var(--bevel-9), calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) calc(var(--elevation-blur) * var(--change-3))  calc(var(--elevation-spread) * var(--change-3))
- rgba(0,0,0,calc(var(--bevel-dark-opacity) * calc(1 + calc(var(--bevel-change) * 9)))), calc(var(--elevation-horizontal) * var(--change-9))  calc(var(--elevation-vertical) * var(--change-9)) calc(var(--elevation-blur) * var(--change-9))  calc(var(--elevation-spread) * var(--change-9))
-  rgba(255,255,255,.2);
+  --groove-1: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-1),
+  calc(0px - calc(var(--elevation-horizontal) * 1))  calc(0px - calc(var(--elevation-vertical) * 1)) calc(var(--elevation-blur) * 1) calc(var(--elevation-spread) * 1) rgba(0,0,0,.3),
+  calc(var(--elevation-horizontal) * 1)  calc(var(--elevation-vertical) * 1) calc(var(--elevation-blur) * 1) calc(var(--elevation-spread) * 1) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * 1))  calc(var(--elevation-vertical) * 1) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * 1)  calc(0px - calc(var(--elevation-vertical) * 1)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-2: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-2),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-2)))  calc(0px - calc(var(--elevation-vertical) * var(--change-2))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-2))  calc(var(--elevation-vertical) * var(--change-2)) calc(var(--elevation-blur) * var(--change-2)) calc(var(--elevation-spread) * var(--change-2)) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-2)))  calc(var(--elevation-vertical) * var(--change-2)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-2))  calc(0px - calc(var(--elevation-vertical) * var(--change-2))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-3: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-3),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-3))  calc(var(--elevation-vertical) * var(--change-3)) calc(var(--elevation-blur) * var(--change-3)) calc(var(--elevation-spread) * var(--change-3)) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-3)))  calc(var(--elevation-vertical) * var(--change-3)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-3))  calc(0px - calc(var(--elevation-vertical) * var(--change-3))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-4: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-4),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-4)))  calc(0px - calc(var(--elevation-vertical) * var(--change-4))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-4))  calc(var(--elevation-vertical) * var(--change-4)) calc(var(--elevation-blur) * var(--change-4)) calc(var(--elevation-spread) * var(--change-4)) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-4)))  calc(var(--elevation-vertical) * var(--change-4)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-4))  calc(0px - calc(var(--elevation-vertical) * var(--change-4))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-5: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-5),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-5)))  calc(0px - calc(var(--elevation-vertical) * var(--change-5))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-5))  calc(var(--elevation-vertical) * var(--change-5)) calc(var(--elevation-blur) * var(--change-5)) calc(var(--elevation-spread) * var(--change-5)) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-5)))  calc(var(--elevation-vertical) * var(--change-5)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-5))  calc(0px - calc(var(--elevation-vertical) * var(--change-5))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-6: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-6),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-6)))  calc(0px - calc(var(--elevation-vertical) * var(--change-6))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-6))  calc(var(--elevation-vertical) * var(--change-6)) calc(var(--elevation-blur) * var(--change-6)) calc(var(--elevation-spread) * var(--change-6)) rgba(255,255,255,.8);
+  --groove-7: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-7),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-7)))  calc(0px - calc(var(--elevation-vertical) * var(--change-7))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-7))  calc(var(--elevation-vertical) * var(--change-7)) calc(var(--elevation-blur) * var(--change-7)) calc(var(--elevation-spread) * var(--change-7)) rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-7)))  calc(var(--elevation-vertical) * var(--change-7)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-7))  calc(0px - calc(var(--elevation-vertical) * var(--change-7))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-8: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-8)))  calc(0px - calc(var(--elevation-vertical) * var(--change-8))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3) ,
+  calc(var(--elevation-horizontal) * var(--change-8))  calc(var(--elevation-vertical) * var(--change-8)) var(--elevation-blur) var(--elevation-spread)  rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-8)))  calc(var(--elevation-vertical) * var(--change-8)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-8))  calc(0px - calc(var(--elevation-vertical) * var(--change-8))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+  --groove-9: -1px -1px 0 0 rgba(255,255,255,.5),  1px 1px 0 0 rgba(0,0,0,.3), var(--bevel-9),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-9)))  calc(0px - calc(var(--elevation-vertical) * var(--change-9))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.3),
+  calc(var(--elevation-horizontal) * var(--change-9))  calc(var(--elevation-vertical) * var(--change-9)) var(--elevation-blur) var(--elevation-spread)  rgba(255,255,255,.8),
+  calc(0px - calc(var(--elevation-horizontal) * var(--change-9)))  calc(var(--elevation-vertical) * var(--change-9)) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08),
+  calc(var(--elevation-horizontal) * var(--change-9))  calc(0px - calc(var(--elevation-vertical) * var(--change-9))) var(--elevation-blur) var(--elevation-spread) rgba(0,0,0,.08);
+
   /* recessed  */
-  --recessed-1: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * 1) calc(var(--inbevel-spread) * 1)
-  rgba(0,0,0, var(--inbevel-dark-opacity));
-  --recessed-2: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 2))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 2)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 2)) ));
-  --recessed-3: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 3))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 3)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 3)) ));
-  --recessed-4: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 4))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 4)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 4)) ));
-  --recessed-5: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 5))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 5)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 5)) ));
-  --recessed-6: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 6))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 6)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 6)) ));
-  --recessed-7: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 7))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 7)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 7)) ));
-  --recessed-8: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 8))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 8)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 8)) ));
-  --recessed-9: inset var(--inbevel-horizontal) var(--inbevel-vertical) calc(var(--inbevel-blur) * calc(1 + calc(var(--inbevel-change) * 9))) calc(var(--inbevel-spread) * calc(1 + calc(var(--inbevel-change) * 9)))
-  rgba(0,0,0, calc(var(--inbevel-dark-opacity) * calc(1 + calc(var(--inbevel-change) * 9)) ));
+  --recessed-1: inset 1px 1px 0 0 rgba(0,0,0,.2), inset 1px 1px 1px 1px rgba(0,0,0,.3);
+  --recessed-2: inset 1px 1px 0 0 rgba(0,0,0,.2), inset 1.5px 1.5px 1px 1px rgba(0,0,0,.3);
+  --recessed-3: inset calc(1.5px * calc(1 + var(--bevel-change) * 1)) calc(1.5px * calc(1 + var(--bevel-change) * 1)) calc(1.5px * calc(1 + var(--bevel-change) * 1))
+   calc(1.5px * calc(1 + var(--bevel-change) * 1)) rgba(0,0,0,.3);
+  --recessed-4: inset calc(1.5px * calc(1 + var(--bevel-change) * 2)) calc(1.5px * calc(1 + var(--bevel-change) * 2)) calc(1.5px * calc(1 + var(--bevel-change) * 2))
+   calc(1.5px * calc(1 + var(--bevel-change) * 2)) rgba(0,0,0,.3);
+  --recessed-5: inset calc(1.5px * calc(1 + var(--bevel-change) * 4)) calc(1.5px * calc(1 + var(--bevel-change) * 3)) calc(1.5px * calc(1 + var(--bevel-change) * 3))
+   calc(1.5px * calc(1 + var(--bevel-change) * 3)) rgba(0,0,0,.3);
+  --recessed-6: inset calc(1.5px * calc(1 + var(--bevel-change) * 5)) calc(1.5px * calc(1 + var(--bevel-change) * 4)) calc(1.5px * calc(1 + var(--bevel-change) * 4))
+   calc(1.5px * calc(1 + var(--bevel-change) * 4)) rgba(0,0,0,.3);
+  --recessed-7: inset calc(1.5px * calc(1 + var(--bevel-change) * 6)) calc(1.5px * calc(1 + var(--bevel-change) * 5)) calc(1.5px * calc(1 + var(--bevel-change) * 5))
+   calc(1.5px * calc(1 + var(--bevel-change) * 5)) rgba(0,0,0,.3);
+  --recessed-8: inset calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 6)) calc(1.5px * calc(1 + var(--bevel-change) * 6))
+   calc(1.5px * calc(1 + var(--bevel-change) * 6)) rgba(0,0,0,.3);
+  --recessed-9:  inset calc(1.5px * calc(1 + var(--bevel-change) * 8)) calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 7))
+   calc(1.5px * calc(1 + var(--bevel-change) * 7)) rgba(0,0,0,.3);
 
 
 

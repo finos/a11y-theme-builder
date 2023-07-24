@@ -1,5 +1,17 @@
+.heroSamples {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-10)
+
+}
+
+.hero .MuiGrid-container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .hero {
-    color: var(--on-hero);
+    color: var(--on-primary);
     /* min-height: calc(var(--zoom) * 200px); */
     display: flex;
     flex-direction: column;
@@ -10,40 +22,106 @@
     padding-bottom: calc(var(--spacing-1) * var(--hero-padding));
     position: relative;
     z-index: 4;
-    background-color: var(--hero);
+    background-color: var(--primary);
+    position: relative;
+}
+.hero.backgroundImage {
+  background-size: cover !important;
+}
+.hero.backgroundImage::before, .hero.backgroundVideo::before  {
+  opacity: .35;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+/* colored wiuth background image */
+.hero.backgroundImage::after , .hero.backgroundVideo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 0;
 }
 
-/*
-.black .hero {
-    --hero: rgba(24, 24, 24);
-    --on-hero: #ffffff;
+/* white with background image */
+.hero.backgroundImage.white::before, .hero.backgroundVideo.white::before {
+  background: var(--white);
+  opacity: .5
 }
 
-.black .hero .darkmode {
-    --hero: var(--dm-background);
-    --on-hero: rgba(255, 255, 255, .6);
+.hero.backgroundImage.white::after, .hero.backgroundVideo.white::after  {
+  opacity: .85;
+  background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2 2" style="enable-background:new 0 0 2 2;" xml:space="preserve"><style type="text/css">.st0{fill:rgb(255,255,255); opacity: 0} .st1{fill:rgb(255,255,255);}</style><rect class="st1" width="1" height="1"/><rect x="1" class="st0" width="1" height="1"/><rect y="1" class="st0" width="1" height="1"/><rect class="st1" x="1" y="1" width="1" height="1"/></svg>');
+  background-repeat: repeat;
+    background-size: 2px;
+}
+.hero.backgroundImage.white, .hero.backgroundImage.white.breadcrumbs .MuiBreadcrumbs-li a, .hero.backgroundVideo.white  {
+  text-shadow: #FFF 0px 0 10px  !important;
+}
+/* darkmode white */
+.darkmode .hero.backgroundImage.white, .darkmode .hero.backgroundVideo.white {
+  color: rgba(255,255,255,.6) !important
+}
+.darkmode .hero.backgroundImage.white::after, .darkmode .hero.backgroundVideo.white::after  {
+  opacity: .85;
+  background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2 2" style="enable-background:new 0 0 2 2;" xml:space="preserve"><style type="text/css">.st0{fill:rgb(255,255,255); opacity: 0} .st1{fill:rgb(0,0,0);}</style><rect class="st1" width="1" height="1"/><rect x="1" class="st0" width="1" height="1"/><rect y="1" class="st0" width="1" height="1"/><rect class="st1" x="1" y="1" width="1" height="1"/></svg>');
+  background-repeat: repeat;
+  background-size: 2px;
+}
+.darkmode .hero.backgroundImage.white::before, .darkmode .hero.backgroundVideo.white::before {
+  background: var(--black);
+  opacity: .5
+}
+.darkmode .hero.backgroundImage.white, .darkmode .hero.backgroundImage.white.breadcrumbs .MuiBreadcrumbs-li a, .darkmode .hero.backgroundVideo.white  {
+  text-shadow: rgb(0,0,0) 0px 0 10px  !important;
 }
 
-.white .hero {
-    --hero: #ffffff;
-    --on-hero: #1d1d1f;
+/* black with background image */
+.hero.backgroundImage.black::before, .hero.backgroundVideo.black::before  {
+  background: var(--black);
+  opacity: .5
+}
+.hero.backgroundImage.black::after, .hero.backgroundVideo.black::after {
+  opacity: .85;
+  background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2 2" style="enable-background:new 0 0 2 2;" xml:space="preserve"><style type="text/css">.st0{fill:rgb(0,0,0); opacity: 0} .st1{fill:rgb(0,0,0);}</style><rect class="st1" width="1" height="1"/><rect x="1" class="st0" width="1" height="1"/><rect y="1" class="st0" width="1" height="1"/><rect class="st1" x="1" y="1" width="1" height="1"/></svg>');
+  background-repeat: repeat;
+    background-size: 2px;
+}
+.hero.backgroundImage.black, .hero.backgroundImage.black.breadcrumbs .MuiBreadcrumbs-li a, .hero.backgroundVideo.black {
+  text-shadow: #000 0px 0 10px  !important;
 }
 
-.white .hero .darkmode {
-    --hero: var(--dm-background);
-    --on-hero: var(--dm-on-background);
+/* gradient-1 with background image */
+
+ .herowithOverlay.white, .herowithOverlay.black,  .darkmode .herowithOverlay.white, .darkmode .herowithOverlay.black  {
+   background-color: transparent !important;
+   color: inherit !important;
+ }
+
+.herowithOverlay.colored, .herowithOverlay.gradient-1, .herowithOverlay.gradient-2, .herowithOverlay.gradient-3 {
+ display: none;
 }
 
-.colored .hero {
-    --hero: var(--primary);
-    --on-hero: var(--on-primary);
+
+
+.hero .inline-image {
+  height: 300px;
 }
 
-.colored .hero .darkmode {
-    --hero: var(--dm-primary);
-    --on-hero: var(--dm-on-primary);
+.hero.inlineVideo button {
+  margin-top: var(--spacing-3);
 }
-*/
+
+.hero > * {
+  z-index: 2;
+}
 
 .darkmode .hero {
     color: var(--dm-on-hero)
@@ -149,13 +227,6 @@
     border: 1px solid #121212;
 }
 
-.hero .event,
-.hero .button,
-.hero .button-secondary,
-.hero .image,
-.hero .video {
-    display: none;
-}
 
 /*
   .backgroundImage {
@@ -223,4 +294,41 @@
     right: 0;
     bottom: 0;
     z-index: 4;
+}
+
+.video-container {
+    /* width is set as 100% here. any width can be specified as per requirement */
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+    background: #000;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
+.hero.backgroundVideo {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  padding: 0;
+}
+
+.hero .bgVideo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
 }
