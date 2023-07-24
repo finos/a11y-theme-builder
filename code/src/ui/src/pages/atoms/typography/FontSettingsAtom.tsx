@@ -243,10 +243,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     }
     async function handlePrimaryFontSelect(event: any): Promise<void> {
         handlePrimaryFontChange(event);
-        
     }
     async function handleSecondaryFontSelect(event: any): Promise<void> {
-        
+        handleSecondaryFontChange(event);
     }
     const renderPrimaryCommonFontSelectables = () => {
         var r = [];
@@ -264,8 +263,23 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </Select>
             </FormControl>
         )
-
-
+    }
+    const renderSecondaryCommonFontSelectables = () => {
+        var r = [];
+        const commonFontsList = FontWeightsUtil.listCommonFonts()
+        for (var i=0; i<commonFontsList.length; i++) {
+            const s = commonFontsList[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+            
+        return (
+            <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
+                <InputLabel id="secondary-font-select-label">Select from Common Fonts</InputLabel>
+                <Select labelId="secondary-font-select-label" value={secondaryFont} label="Select from Common Fonts" onChange={handleSecondaryFontSelect}>
+                    {r}
+                </Select>
+            </FormControl>
+        )
     }
     async function handleFontWeight0Change(event: any): Promise<void> {
         const value = parseInt(event.target.value);
@@ -440,8 +454,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <h4>Font Families</h4>
                 <div>
-                    
-            {renderPrimaryCommonFontSelectables()}
+                    {renderPrimaryCommonFontSelectables()}
 					<StringProperty 
 						property={primaryFontFamilyProperty} 
 						description="The primary font is used for the body and small font styles." 
@@ -456,6 +469,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     </Alert>}
                 </div>
                 <div>
+                    {renderSecondaryCommonFontSelectables()}
 					<StringProperty 
 						property={secondaryFontFamilyProperty} 
 						description="The secondary font is used for displays and headers." 
