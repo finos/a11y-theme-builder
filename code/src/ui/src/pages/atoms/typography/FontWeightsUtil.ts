@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 
-// Key is the font family converted to lower case
+// Key is the font family
 // Value is an array of numbers representing font weights that the font supports
 const CommonFontsSupportedWeights = new Map<string, number[]>([
     ["Roboto",                         [100,            300,            500,            700,            900         ]],
@@ -116,8 +116,7 @@ export class FontWeightsUtil {
     / this should be ran first to check the font is in this list before running anything else
     */
     public static isFontCommon(font: string): boolean {
-        const key = font.trim()
-        return CommonFontsSupportedWeights.has(key)
+        return CommonFontsSupportedWeights.has(font)
     }
 
     /*
@@ -126,8 +125,7 @@ export class FontWeightsUtil {
     / in the rare case the font is not in the list (wasn't checked first), return an emtpy array
     */
     public static getFontWeightsIfUnsupported(font: string, weight: number): number[] | null {
-        const key = font.trim()
-        const weightArray = CommonFontsSupportedWeights.get(key) as number[]
+        const weightArray = CommonFontsSupportedWeights.get(font) as number[]
         if (!weightArray) {
             return []
         }
@@ -142,23 +140,21 @@ export class FontWeightsUtil {
     / otherwise returns the list of supported weights
     */
     public static getFontWeights(font: string): number[] | null {
-        const key = font.trim()
-        return CommonFontsSupportedWeights.get(key) as number[]
+        return CommonFontsSupportedWeights.get(font) as number[]
     }
 
     /*
     / returns true if the weight is supported in the font
     */
     public static isWeightSupported(font: string, weight: number): boolean {
-        const key = font.toLowerCase().trim()
-        const weightArray = CommonFontsSupportedWeights.get(key) as number[]
+        const weightArray = CommonFontsSupportedWeights.get(font) as number[]
         return weightArray?.includes(weight)
     }
 
     public static listCommonFonts(): string[] {
         var r = [] as string[];
         r = Array.from( CommonFontsSupportedWeights.keys() );
-        return r;
+        return r.sort();
     }
 
 }

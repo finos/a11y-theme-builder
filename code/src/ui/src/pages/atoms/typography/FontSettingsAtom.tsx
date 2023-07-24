@@ -242,12 +242,13 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         }
     }
     async function handlePrimaryFontSelect(event: any): Promise<void> {
+        handlePrimaryFontChange(event);
         
     }
     async function handleSecondaryFontSelect(event: any): Promise<void> {
         
     }
-    const renderCommonFontSelectables = () => {
+    const renderPrimaryCommonFontSelectables = () => {
         var r = [];
         const commonFontsList = FontWeightsUtil.listCommonFonts()
         for (var i=0; i<commonFontsList.length; i++) {
@@ -440,7 +441,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 <h4>Font Families</h4>
                 <div>
                     
-            {renderCommonFontSelectables()}
+            {renderPrimaryCommonFontSelectables()}
 					<StringProperty 
 						property={primaryFontFamilyProperty} 
 						description="The primary font is used for the body and small font styles." 
