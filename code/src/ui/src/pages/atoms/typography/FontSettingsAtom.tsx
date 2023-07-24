@@ -451,7 +451,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     {primaryFontUncommon
                     || <Alert severity='info' sx={alertStyles}>
                         This font is a common google font. <br/> It has the supported font weights:<br/>
-                        <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")}</b>.
+                        <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")+"."}</b>
                     </Alert>}
                 </div>
                 <div>
@@ -465,7 +465,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     {secondaryFontUncommon
                     || <Alert severity='info' sx={alertStyles}>
                         This font is a common google font. <br/> It has the supported font weights:<br/>
-                        <b>{FontWeightsUtil.getFontWeights(secondaryFont)?.join(", ")}</b>.
+                        <b>{FontWeightsUtil.getFontWeights(secondaryFont)?.join(", ")+"."}</b>
                     </Alert>}
                 </div>
                 <h4>Font Sizes</h4>
