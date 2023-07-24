@@ -10,10 +10,13 @@ import { ExampleSection } from '../../content/ExampleSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { SettingsSection } from '../../content/SettingsSection';
 import { HeadingSection } from '../../content/HeadingSection';
-import { Alert, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Alert, FormControl, FormControlLabel, Grid, InputAdornment, InputLabel, MenuItem, Select, Switch, TextField } from '@mui/material';
 import { FontWeightsUtil } from './FontWeightsUtil';
 import { StringProperty } from '../../../components/editors/StringProperty';
 import WebFont from "webfontloader";
+
+const primaryFontDescription = "The primary font is used for the body and small font styles."
+const secondaryFontDescription = "The secondary font is used for displays and headers." 
 
 interface Props {
     atoms: Atoms;
@@ -26,7 +29,7 @@ const textFieldGridWidth = 4
 const alertGridWidth = 7
 const selectableWeights = [100,200,300,400,500,600,700,800,900,1000]
 
-const alertStyles = {width: 400, height: 100, marginTop: 1}
+const alertStyles = {width: 400, height: 100, margin: "24px 0"}
 const fontNotCommonAlert = <Alert severity='warning' sx={alertStyles}>
     This font is not a common google font.
     <br/> Ensure you only use supported font weights to avoid any later errors.
@@ -40,7 +43,6 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontHelpIsOpen, setFontHelpIsOpen] = useState(false);
 
     const fontSettingsAtom = atoms.fontsSettings
-
 
     const primaryFontFamilyProperty     = fontSettingsAtom.primaryFont
     const secondaryFontFamilyProperty   = fontSettingsAtom.secondaryFont
@@ -72,6 +74,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontWeight2WarningTriggered,      setFontWeight2WarningTriggered     ] = useState<boolean>(false)
     const [fontWeight3WarningTriggered,      setFontWeight3WarningTriggered     ] = useState<boolean>(false)
     const [fontWeight4WarningTriggered,      setFontWeight4WarningTriggered     ] = useState<boolean>(false)
+
+    const [manualPrimaryFont, setManualPrimaryFont    ] = useState<boolean>(false)
+    const [manualSecondaryFont, setManualSecondaryFont] = useState<boolean>(false)
 
     useEffect(() => {
         recheckWeights()
@@ -241,12 +246,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
             setSecondaryFontUncommon(true)
         }
     }
-    async function handlePrimaryFontSelect(event: any): Promise<void> {
-        handlePrimaryFontChange(event);
-    }
-    async function handleSecondaryFontSelect(event: any): Promise<void> {
-        handleSecondaryFontChange(event);
-    }
+
     const renderPrimaryCommonFontSelectables = () => {
         var r = [];
         const commonFontsList = FontWeightsUtil.listCommonFonts()
@@ -254,11 +254,12 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
             const s = commonFontsList[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }
-            
+
         return (
             <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
-                <InputLabel id="primary-font-select-label">Select from Common Fonts</InputLabel>
-                <Select labelId="primary-font-select-label" value={primaryFont} label="Select from Common Fonts" onChange={handlePrimaryFontSelect}>
+                <div className='subtitle'><b>{primaryFontFamilyProperty.name}</b></div>
+                <div className='body1' style={{fontWeight:"normal"}}>{primaryFontDescription}</div>
+                <Select id="primaryFontSelect" value={primaryFont} onChange={handlePrimaryFontChange}>
                     {r}
                 </Select>
             </FormControl>
@@ -274,8 +275,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
             
         return (
             <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
-                <InputLabel id="secondary-font-select-label">Select from Common Fonts</InputLabel>
-                <Select labelId="secondary-font-select-label" value={secondaryFont} label="Select from Common Fonts" onChange={handleSecondaryFontSelect}>
+                <div className='subtitle'><b>{secondaryFontFamilyProperty.name}</b></div>
+                <div className='body1' style={{fontWeight:"normal"}}>{secondaryFontDescription}</div>
+                <Select id="secondaryFontSelect" value={secondaryFont} onChange={handleSecondaryFontChange}>
                     {r}
                 </Select>
             </FormControl>
@@ -454,12 +456,20 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <h4>Font Families</h4>
                 <div>
-                    {renderPrimaryCommonFontSelectables()}
-					<StringProperty 
+                    <FormControlLabel
+                        control={<Switch checked={manualPrimaryFont} onChange={() => setManualPrimaryFont(!manualPrimaryFont)} />}
+                        label="Use Keyboard"
+                        labelPlacement="start"
+                    />
+                    <br />
+                    {manualPrimaryFont || renderPrimaryCommonFontSelectables()}
+					{!manualPrimaryFont ||
+                    <StringProperty 
 						property={primaryFontFamilyProperty} 
-						description="The primary font is used for the body and small font styles." 
+						description={primaryFontDescription}
 						onChange={handlePrimaryFontChange}
-					/>
+					/>}
+
                     {!primaryFontUncommon
                     || fontNotCommonAlert}
                     {primaryFontUncommon
@@ -469,12 +479,19 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     </Alert>}
                 </div>
                 <div>
-                    {renderSecondaryCommonFontSelectables()}
-					<StringProperty 
+                    <FormControlLabel
+                        control={<Switch checked={manualSecondaryFont} onChange={() => setManualSecondaryFont(!manualSecondaryFont)} />}
+                        label="Use Keyboard"
+                        labelPlacement="start"
+                    />
+                    <br />
+                    {manualSecondaryFont || renderSecondaryCommonFontSelectables()}
+					{!manualSecondaryFont ||
+                    <StringProperty 
 						property={secondaryFontFamilyProperty} 
-						description="The secondary font is used for displays and headers." 
+						description={secondaryFontDescription}
 						onChange={handleSecondaryFontChange}
-					/>
+					/>}
                     {!secondaryFontUncommon
                     || fontNotCommonAlert}
                     {secondaryFontUncommon

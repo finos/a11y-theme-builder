@@ -40,9 +40,11 @@ export const StringProperty: React.FC<NumberProps> = ({ property, defaultValue, 
 
     return (
         <div>
-            <InputLabel htmlFor="stringPropertyTextField" id="stringPropertyLabel">{children || property.name}
-            {description && <div style={{fontWeight:"normal"}}>{description}</div>}
-            </InputLabel>            <TextField 
+            <InputLabel htmlFor="stringPropertyTextField" id="stringPropertyLabel">
+                {children || property.name}
+                {description && <div style={{fontWeight:"normal"}}>{description}</div>}
+            </InputLabel>
+            <TextField 
                 id="stringPropertyTextField"
                 InputProps={units ? {endAdornment: <InputAdornment position="end">{units}</InputAdornment>} : {}}
                 value={value }
