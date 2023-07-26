@@ -350,9 +350,6 @@ section {
   background: var(--button) !important;
   color: var(--on-button) !important;
 }
-.button:focus {
-  box-shadow: none !important;
-}
 .icon:not(button) {
   background: var(--icon) !important;
   color: var(--on-icon) !important;
@@ -366,16 +363,16 @@ section {
   text-shadow: 4px 4px 0px var(--color-drop);
 }
 .gradient-1 {
-  background: var(--gradient-1);
-  color: var(--on-gradient-1);
+  background: var(--gradient-1) !important;
+  color: var(--on-gradient-1) !important;
 }
 .gradient-2 {
-  background: var(--gradient-2);
-  color: var(--on-gradient-2);
+  background: var(--gradient-2) !important;
+  color: var(--on-gradient-2) !important;
 }
 .gradient-3 {
-  background: var(--gradient-3);
-  color: var(--on-gradient-3);
+  background: var(--gradient-3) !important;
+  color: var(--on-gradient-3) !important;
 }
 .gradient-title {
   background: var(--text-gradient);
@@ -892,6 +889,9 @@ button.small-btn:focus::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: -4px;
+  right: -4px;
 }
 button.small-btn::before {
   position: absolute;
@@ -998,10 +998,10 @@ button.MuiButton-text::after {
 
 button.small-btn.MuiButton-text::before {
   position: absolute;
-  top: calc(var(--sm-button-space)/2);
+  top: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   left: 0px;
   right: 0px;
-  bottom: calc(var(--sm-button-space)/2);
+  bottom: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   content: '';
   background: transparent !important;
   box-shadow: var(--button-shadow) !important;
@@ -3442,6 +3442,16 @@ button.MuiPaginationItem-root:hover {
   -webkit-box-shadow: var(--glow-9)  !important;
   -moz-box-shadow: var(--glow-9) !important;
 }
+/* make all dropshadows none on focus */
+.glow-1:focus, .glow-2:focus, .glow-3:focus, .glow-4:focus, .glow-5:focus, .glow-6:focus, .glow-7:focus, .glow-8:focus, .glow-9:focus , .groove-1:focus, .groove-2:focus, .groove-3:focus, .groove-4:focus, .groove-5:focus, .groove-6:focus, .groove-7:focus,
+.groove-8:focus, .groove-9:focus, .ridge-1:focus, .ridge-2:focus, .ridge-3:focus, .ridge-4:focus, .ridge-5:focus, .ridge-6:focus, .ridge-7:focus,
+.ridge-8:focus, .ridge-9:focus, .elevation-1:focus, .elevation-2:focus, .elevation-3:focus, .elevation-4:focus, .elevation-5:focus, .elevation-6:focus, .elevation-7:focus,
+.elevation-8:focus, .elevation-9:focus, button:focus, .chip:focus, .clickable:focus {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
 /* VARYING BACKGROUND COLORS */
 /*  BLACK  */
 .black:not(.breadcrumbs), .black-bg:not(.breadcrumbs) {
