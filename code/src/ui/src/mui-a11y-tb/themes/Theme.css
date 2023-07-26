@@ -889,6 +889,9 @@ button.small-btn:focus::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: -4px;
+  right: -4px;
 }
 button.small-btn::before {
   position: absolute;
@@ -995,10 +998,10 @@ button.MuiButton-text::after {
 
 button.small-btn.MuiButton-text::before {
   position: absolute;
-  top: calc(var(--sm-button-space)/2);
+  top: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   left: 0px;
   right: 0px;
-  bottom: calc(var(--sm-button-space)/2);
+  bottom: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   content: '';
   background: transparent !important;
   box-shadow: var(--button-shadow) !important;
