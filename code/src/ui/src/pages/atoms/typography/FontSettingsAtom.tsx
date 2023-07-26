@@ -384,7 +384,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </ExampleSection>
             <SettingsSection>
             <Grid container spacing={2} columns={12} margin={2}>
-              <Grid lg={6} md={12} sm={12}>
+              <Grid lg={8} md={12} sm={12}>
 
                   <h4>Font Families</h4>
                   <div>
@@ -405,7 +405,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
 
               </Grid>
-              <Grid lg={6} md={12} sm={12}>
+              <Grid lg={4} md={12} sm={12}>
                 <div style={{ marginTop: "40px" }}>
                     <div className="subtitle1">Not seeing your font in Figma?</div>
                     <p>Take these steps to render your selected fonts in Figma.</p>
@@ -451,60 +451,60 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                   <h4>Primary Font Weights</h4>
                   <div className="form-row">
                     <Grid container columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={5} md={12} sm={12}>
                           <InputLabel htmlFor="fontWeight0TextField" id="fontWeight0Label">{fontWeight0Property.name}</InputLabel>
                           <div style={{fontWeight:"normal"}}>For decorative and non critical text.</div>
                           {renderFontWeight0Selectables()}
                       </Grid>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={7} md={12} sm={12}>
                           {!fontWeight0WarningTriggered || weightUnsupportedAlert}
                       </Grid>
                     </Grid>
                   </div>
                   <div className="form-row">
                     <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={5} md={12} sm={12}>
                           <InputLabel htmlFor="fontWeight1TextField" id="fontWeight1Label">{fontWeight1Property.name}</InputLabel>
                           <div style={{fontWeight:"normal"}}>For standard body text.</div>
                           {renderFontWeight1Selectables()}
                       </Grid>
-                        <Grid lg={6} md={12} sm={12}>
+                        <Grid lg={7} md={12} sm={12}>
                           {!fontWeight1WarningTriggered || weightUnsupportedAlert}
                       </Grid>
                     </Grid>
                   </div>
                   <div className="form-row">
                     <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={5} md={12} sm={12}>
                           <InputLabel htmlFor="fontWeight2TextField" id="fontWeight2Label">{fontWeight2Property.name}</InputLabel>
                           <div style={{fontWeight:"normal"}}>For headers and small text that is important.</div>
                           {renderFontWeight2Selectables()}
                       </Grid>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={7} md={12} sm={12}>
                           {!fontWeight2WarningTriggered || weightUnsupportedAlert}
                       </Grid>
                     </Grid>
                   </div>
                   <div className="form-row">
                     <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={5} md={12} sm={12}>
                           <InputLabel htmlFor="fontWeight3TextField" id="fontWeight3Label">{fontWeight3Property.name}</InputLabel>
                           <div style={{fontWeight:"normal"}}>For emphasized text.</div>
                           {renderFontWeight3Selectables()}
                       </Grid>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={7} md={12} sm={12}>
                           {!fontWeight3WarningTriggered || weightUnsupportedAlert}
                       </Grid>
                     </Grid>
                   </div>
                   <div className="form-row">
                     <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={5} md={12} sm={12}>
                           <InputLabel htmlFor="fontWeight4TextField" id="fontWeight4Label">{fontWeight4Property.name}</InputLabel>
                           <div style={{fontWeight:"normal"}}>Used sparingly on text of great importance such as stats.</div>
                           {renderFontWeight4Selectables()}
                       </Grid>
-                      <Grid lg={6} md={12} sm={12}>
+                      <Grid lg={7} md={12} sm={12}>
                           {!fontWeight4WarningTriggered || weightUnsupportedAlert}
                       </Grid>
                     </Grid>
