@@ -1924,7 +1924,7 @@ button.MuiPaginationItem-root:hover {
   border: 1px solid var(--border);
 }
 .MuiPopover-paper .MuiList-root.MuiMenu-list .MuiMenuItem-root {
-  margin-left: 8px;
+  margin-left: 0px;
   background: transparent !important
 }
 .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
