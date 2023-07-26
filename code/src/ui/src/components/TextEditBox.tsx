@@ -7,8 +7,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
 import ModalFontEdit from "./modals/ModalFontEdit";
 
-const sampleBody = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna 
+const sampleBody = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna
 aliqua. Ut enim ad minim veniam, quis nostrud exercitation`
 
 interface Props {
@@ -60,7 +60,7 @@ export const TextEditBox: React.FC<Props> = ({ designSystem, cssPrefix, textKey,
             />
             <hr/>
             <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid item lg={6} md={8} sm={12}>
                     {!isBody && !headerNo && <div ref={sampleRef} style={sampleStyle}>
                         {typographyStyling.name}
                     </div>}
@@ -82,7 +82,7 @@ export const TextEditBox: React.FC<Props> = ({ designSystem, cssPrefix, textKey,
                     {(headerNo==5) && <h5 ref={sampleRef} style={sampleStyle}>{typographyStyling.name}</h5>}
                     {(headerNo==6) && <h6 ref={sampleRef} style={sampleStyle}>{typographyStyling.name}</h6>}
                 </Grid>
-                <Grid item xs={5}>
+                <Grid item lg={6} md={4} sm={12}>
                     <div className="label-1">
                         Styling
                     </div>

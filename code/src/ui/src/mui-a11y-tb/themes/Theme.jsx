@@ -370,6 +370,7 @@ try {
                                     WebkitBoxShadow: "var(--elevation) !important",
                                     MozBoxShadow: "var(--elevation) !important",
                                     borderRadius: "var(--spacing-half)",
+                                    marginLeft: "0",
                                 },
                                 '& .MuiList-root.MuiMenu-list .MuiMenuItem-root': {
                                     color: "var(--on-background)",
