@@ -55,6 +55,12 @@ import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
 import { DividerComponent } from '../../components/DividerComponent';
 import { HeroComponent } from '../../components/HeroComponent';
+import { ElevationComponent } from '../../components/shadows/ElevationComponent';
+import { BevelComponent } from '../../components/shadows/BevelComponent';
+import { InvertedBevelComponent } from '../../components/shadows/InvertedBevelComponent';
+import { RidgeComponent } from '../../components/shadows/RidgeComponent';
+import { GrooveComponent } from '../../components/shadows/GrooveComponent';
+import { GlowComponent } from '../../components/shadows/GlowComponent';
 
 import { Preferences } from '../../../Preferences';
 
@@ -74,6 +80,15 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     useEffect(() => {
         pref.set("components-colors-selected", ""+displayColors)
     }, [displayColors])
+
+    let shadowSelected = false;
+    if (pref.get("components-shadows-selected") == "true") {
+        shadowSelected = true;
+    }
+    const [displayShadows, setDisplayShadows] = useState<boolean>(shadowSelected);
+    useEffect(() => {
+        pref.set("components-shadows-selected", ""+displayShadows)
+    }, [displayShadows])
 
     let typographySelected = false;
     if (pref.get("components-typography-selected") == "true") {
@@ -150,6 +165,19 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                             <LeftNavItem text={"States"} value="colorsStates" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsStates")}} />
                             <LeftNavItem text={"Hotlinks"} value="colorsHotlinks" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsHotlinks")}} />
                             <LeftNavItem text={"Text"} value="colorsText" indent={2} selected={showComponent} onClick={()=> {setShowComponent("colorsText")}} />
+                        </List>
+                    </Collapse>
+                    <LeftNavItem text={"Shadows"} indent={1} onClick={()=>setDisplayShadows(!displayShadows)}>
+                        {displayShadows ? <ExpandLess /> : <ExpandMore />}
+                    </LeftNavItem>
+                    <Collapse in={displayShadows} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                            <LeftNavItem text={"Elevations"} value="shadowElevations" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowElevations")}} />
+                            <LeftNavItem text={"Bevels"} value="shadowBevels" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowBevels")}} />
+                            <LeftNavItem text={"Inverted Bevels"} value="shadowInvertedBevels" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowInvertedBevels")}} />
+                            <LeftNavItem text={"Ridges"} value="shadowRidges" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowRidges")}} />
+                            <LeftNavItem text={"Grooves"} value="shadowGrooves" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowGrooves")}} />
+                            <LeftNavItem text={"Glows"} value="shadowGlows" indent={2} selected={showComponent} onClick={()=> {setShowComponent("shadowGlows")}} />
                         </List>
                     </Collapse>
                     <LeftNavItem text={"Typography"} indent={1} onClick={()=>setDisplayTypography(!displayTypography)}>
@@ -252,6 +280,24 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "colorsHotlinks" &&
                         <HotlinksComponent />
+                    }
+                    {showComponent === "shadowElevations" &&
+                        <ElevationComponent />
+                    }
+                    {showComponent === "shadowBevels" &&
+                        <BevelComponent />
+                    }
+                    {showComponent === "shadowInvertedBevels" &&
+                        <InvertedBevelComponent />
+                    }
+                    {showComponent === "shadowRidges" &&
+                        <RidgeComponent />
+                    }
+                    {showComponent === "shadowGrooves" &&
+                        <GrooveComponent />
+                    }
+                    {showComponent === "shadowGlows" &&
+                        <GlowComponent />
                     }
                     {showComponent === "colorsText" &&
                         <TextComponent />

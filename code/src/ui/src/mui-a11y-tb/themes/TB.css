@@ -5,7 +5,7 @@
   --white: rgb(255,255,255);
   --white-half: rgba(255, 255, 255, 0.5);
   --on-white: var(--black);
-  --black: rgb(250,250,250);
+  --black: rgb(18,18,18);
   --black-half: rgba(0,0,0, 0.5);
   --nearblack: #181818;
   --on-nearblack: #ffffff;
@@ -72,7 +72,7 @@
   --background-tertiary: var(--primary);
   --on-background-tertiary: var(--on-primary);
   --dm-background-tertiary: var(--dm-primary-800);
-  --dm-on-background-tertiary: var(--dm-white);
+  --dm-on-background-tertiary: var(--dm-on-primary-800);
   --gradient-1: linear-gradient(45deg, var(--gradient1-a) 0%, var(--gradient1-b) 100%);
   --gradient-2: linear-gradient(45deg, var(--gradient2-a) 0%, var(--gradient2-b) 100%);
   --gradient-3: linear-gradient(45deg, var(--gradient3-a) 0%, var(--gradient3-b) 100%);

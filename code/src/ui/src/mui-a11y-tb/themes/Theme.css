@@ -3676,6 +3676,10 @@ button.MuiPaginationItem-root:hover {
   background-color: var(--background-tertiary) !important;
   color: var(--on-background-tertiary) !important;
 }
+.darkmode .colored, .backgroundTertiary {
+  background-color: var(--dm-background-tertiary) !important;
+  color: var(--dm-on-background-tertiary) !important;
+}
 /* hotlinks &  breadcrumbs */
 .colored a,
 .colored.breadcrumbs .MuiBreadcrumbs-li a,
@@ -3698,6 +3702,21 @@ button.MuiPaginationItem-root:hover {
 .colored .breadcrumbs .MuiBreadcrumbs-li a:active  {
   text-decoration: none!important;
 }
+
+.darkmode .colored a,
+.darkmode.colored.breadcrumbs .MuiBreadcrumbs-li a,
+.darkmode.colored .breadcrumbs .MuiBreadcrumbs-li:focus a,
+.darkmode.colored .breadcrumbs .MuiBreadcrumbs-li:active a {
+  text-decoration:  underline !important;
+  color: var(--dm-on-background-tertiary) !important;
+}
+.darkmode .colored a:visited,
+.darkmode .colored .breadcrumbs .MuiBreadcrumbs-li a:visited {
+  text-decoration: underline !important;
+  color: var(--dm-on-background-tertiary) !important;
+  opacity: .7
+}
+
 .default .MuiBreadcrumbs-root,
 .default .breadcrumbs:not(.back-breadcrumbs) .MuiBreadcrumbs-li:last-of-type .MuiTypography-root {
   color: var(--on-background-tertiary);
@@ -3733,6 +3752,32 @@ button.MuiPaginationItem-root:hover {
 .colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
+/* darkmode */
+.darkmode .colored button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+  background: var(--dm-buttonOnTertiary) !important;
+  color: var(--onbuttonOnTertiary) !important;
+}
+.darkmode .colored button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
+}
+.darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
+  color: var(--onbuttonOnTertiary) !important;
+}
+.darkmode .colored button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
+  color: var(--buttonOnTertiary) !important;
+  background: none !important
+}
+.darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+  color: var(--onbuttonOnTertiary) !important;
+  background: var(--buttonOnTertiary) !important;
+}
+.darkmode .colored button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
+  color: var(--buttonOnTertiary) !important;
+}
+.darkmode .colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
+  border: var(--focusBorder) solid var(--buttonOnTertiary);
+}
+
 /* avatars */
 .colored .MuiAvatar-root:not(.white) {
   background-color: var(--buttonOnTertiary)
@@ -4276,7 +4321,7 @@ button.MuiPaginationItem-root:hover {
 .darkmode .gradient-3 .breadcrumbs .MuiBreadcrumbs-li:focus a,
 .darkmode .gradient-3 .breadcrumbs .MuiBreadcrumbs-li:active a {
   text-decoration: underline !important;
-  color: var(--dm-on-gradient-1) !important;
+  color: var(--dm-on-gradient-3) !important;
 }
 .darkmode .gradient-3 a:visited,
 .darkmode .gradient-3 .breadcrumbs .MuiBreadcrumbs-li a:visited {

@@ -242,6 +242,7 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                     </div>
                     <div className="col-6">
                         <div className="subtitle1">Sample Bevels</div>
+                        <ExampleBevel className="bevel-0" label="Bevel 0"/>
                         <ExampleBevel className="bevel-1" label="Bevel 1"/>
                         <ExampleBevel className="bevel-2" label="Bevel 2"/>
                         <ExampleBevel className="bevel-3" label="Bevel 3"/>
@@ -257,9 +258,108 @@ export const BevelsAtom: React.FC<Props> = ({ bevelSettings }) => {
                 <ExampleSection title="Inverse Bevel Shadow Settings">
                 <div className="row">
                     <div className="col-6">
+                        <div className="form-row">
+                            <label className="label-1">
+                                Horizontal Shadow Length
+                            </label>
+                            <Slider
+                                aria-label="InverseHorizontalShadowLength"
+                                value={inverseHorizontalShadowLength}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseHorizontalShadowLengthChange}
+                                valueLabelDisplay="auto"
+                                min={inverseHorizontalShadowLengthProperty.min}
+                                max={inverseHorizontalShadowLengthProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Vertical Shadow Length
+                            </label>
+                            <Slider
+                                aria-label="InverseVerticalShadowLength"
+                                value={inverseVerticalShadowLength}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseVerticalShadowLengthChange}
+                                valueLabelDisplay="auto"
+                                min={inverseVerticalShadowLengthProperty.min}
+                                max={inverseVerticalShadowLengthProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Blur Radius
+                            </label>
+                            <Slider
+                                aria-label="InverseBlurRadius"
+                                value={inverseBlurRadius}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseBlurRadiusChange}
+                                valueLabelDisplay="auto"
+                                min={inverseBlurRadiusProperty.min}
+                                max={inverseBlurRadiusProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Spread Radius
+                            </label>
+                            <Slider
+                                aria-label="InverseSpreadRadius"
+                                value={inverseSpreadRadius}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseSpreadRadiusChange}
+                                valueLabelDisplay="auto"
+                                min={inverseSpreadRadiusProperty.min}
+                                max={inverseSpreadRadiusProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Spread Radius
+                            </label>
+                            <Slider
+                                aria-label="InverseLightGlowOpacity"
+                                value={inverseLightGlowOpacity}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseLightGlowOpacityChange}
+                                valueLabelDisplay="auto"
+                                min={inverseLightGlowOpacityProperty.min}
+                                max={inverseLightGlowOpacityProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Dark Glow Opacity
+                            </label>
+                            <Slider
+                                aria-label="InverseDarkGlowOpacity"
+                                value={inverseDarkShadowOpacity}
+                                sx={{maxWidth:600}}
+                                onChange={handleInverseDarkShadowOpacityChange}
+                                valueLabelDisplay="auto"
+                                min={inverseDarkShadowOpacityProperty.min}
+                                max={inverseDarkShadowOpacityProperty.max}
+                            />
+                        </div>
+                        <div className="form-row">
+                            <label className="label-1">
+                                Percentage Change
+                            </label>
+                            <Slider
+                                aria-label="InversePercentageChange"
+                                value={inversePercentChange}
+                                sx={{maxWidth:600}}
+                                onChange={handleInversePercentChangeChange}
+                                valueLabelDisplay="auto"
+                                min={inversePercentChangeProperty.min}
+                                max={inversePercentChangeProperty.max}
+                            />
+                        </div>
                     </div>
                     <div className="col-6">
                         <div className="subtitle1">Sample Inverse Bevels</div>
+                        <ExampleBevel className="bevel-0-inverse" label="Bevel 0"/>
                         <ExampleBevel className="bevel-1-inverse" label="Bevel 1"/>
                         <ExampleBevel className="bevel-2-inverse" label="Bevel 2"/>
                         <ExampleBevel className="bevel-3-inverse" label="Bevel 3"/>
