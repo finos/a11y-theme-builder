@@ -75,8 +75,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontWeight3WarningTriggered,      setFontWeight3WarningTriggered     ] = useState<boolean>(false)
     const [fontWeight4WarningTriggered,      setFontWeight4WarningTriggered     ] = useState<boolean>(false)
 
-    const [manualPrimaryFont, setManualPrimaryFont    ] = useState<boolean>(false)
-    const [manualSecondaryFont, setManualSecondaryFont] = useState<boolean>(false)
+    const [selectPrimaryFont, setSelectPrimaryFont    ] = useState<boolean>(true)
+    const [selectSecondaryFont, setSelectSecondaryFont] = useState<boolean>(true)
 
     useEffect(() => {
         recheckWeights()
@@ -457,13 +457,13 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 <h4>Font Families</h4>
                 <div>
                     <FormControlLabel
-                        control={<Switch checked={manualPrimaryFont} onChange={() => setManualPrimaryFont(!manualPrimaryFont)} />}
-                        label="Use Keyboard"
+                        control={<Switch checked={selectPrimaryFont} onChange={() => setSelectPrimaryFont(!selectPrimaryFont)} />}
+                        label="Select Primary Font"
                         labelPlacement="start"
                     />
                     <br />
-                    {manualPrimaryFont || renderPrimaryCommonFontSelectables()}
-					{!manualPrimaryFont ||
+                    {!selectPrimaryFont || renderPrimaryCommonFontSelectables()}
+					{selectPrimaryFont ||
                     <StringProperty 
 						property={primaryFontFamilyProperty} 
 						description={primaryFontDescription}
@@ -480,13 +480,13 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <div>
                     <FormControlLabel
-                        control={<Switch checked={manualSecondaryFont} onChange={() => setManualSecondaryFont(!manualSecondaryFont)} />}
-                        label="Use Keyboard"
+                        control={<Switch checked={selectSecondaryFont} onChange={() => setSelectSecondaryFont(!selectSecondaryFont)} />}
+                        label="Select Secondary Font"
                         labelPlacement="start"
                     />
                     <br />
-                    {manualSecondaryFont || renderSecondaryCommonFontSelectables()}
-					{!manualSecondaryFont ||
+                    {!selectSecondaryFont || renderSecondaryCommonFontSelectables()}
+					{selectSecondaryFont ||
                     <StringProperty 
 						property={secondaryFontFamilyProperty} 
 						description={secondaryFontDescription}
