@@ -19,7 +19,7 @@ Share an idea for how Theme Builder could be improved.  Explore and/or augment t
 | Default Test App | Write a node-based web application that utilizes the output (generated CSS and/or JSON theme files) of Theme Builder. This could be applied to printing services, ATM’s, payment devices, etc. | |
 
 ## Use Cases
-Share an idea for how Theme Builder can be used. We are interested in all possible use cases (not limited to Finance Sector). Are you interested in building a prototype for a use case? Explore and/or augment this list of use cases. Please use an [existing or new ticket](https://github.com/discoverfinancial/a11y-theme-builder/issues) to expand on a specific use case. 
+Share an idea for how Theme Builder can be used. We are interested in all possible use cases (not limited to the Finance Sector). Are you interested in building a prototype for a use case? Explore and/or augment this list of use cases. Please use an [existing or new ticket](https://github.com/discoverfinancial/a11y-theme-builder/issues) to expand on a specific use case. 
 
 | Feature Name | Description | Suggestion Ticket |
 | --- | --- | --- | 
