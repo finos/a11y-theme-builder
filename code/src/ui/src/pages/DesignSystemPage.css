@@ -117,7 +117,7 @@
 */
 
 .design-system-editor-right-content .row {
-    --bs-gutter-x: 1.5rem;
+    --bs-gutter-x: 0;
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
