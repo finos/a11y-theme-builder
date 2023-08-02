@@ -427,6 +427,7 @@ try {
             MuiRadio: {
                 styleOverrides: {
                     root: {
+                        color: "var(--on-background)",
                         "&.Mui-checked":{
                             color: "var(--button)",
                         },
@@ -439,6 +440,7 @@ try {
             MuiCheckbox: {
                 styleOverrides: {
                     root: {
+                        color: "var(--on-background)",
                         "&.Mui-checked":{
                             color: "var(--button)",
                         },
