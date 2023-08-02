@@ -17,7 +17,7 @@ interface Props {
 
 export const HeroComponent: React.FC<Props> = ({ }) => {
 
-    const [colorMode, setColorMode] = useState<string>("default");
+    const [colorMode, setColorMode] = useState<string>("colored");
 
     return (
         <div>

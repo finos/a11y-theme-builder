@@ -28,6 +28,7 @@ import { List, Collapse } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { ElevationsAtom } from '../../atoms/ElevationsAtom';
+import { GlowAtom } from '../../atoms/GlowAtom';
 import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
 
@@ -62,6 +63,7 @@ const atomsList: {[key: string]:atomItem} = {
     inputBackground: {value: "inputBackground", label: "Input Background", atom: "Input Background", disabled: true},
     elevationSettings: {value: "elevationSettings", label: "Elevation Settings", atom: "Elevation Settings", disabled: true},
     bevelSettings: {value: "bevelSettings", label: "Bevel Settings", atom: "Bevel Settings", disabled: true},
+    glowSettings: {value: "glowSettings", label: "Glow Settings", atom: "Glow Settings", disabled: true},
     animationSettings: {value: "animationSettings", label: "Animation Settings", atom: "Animation Settings", disabled: true},
 
 // DEMO:    Add your atom to the atomsList
@@ -198,6 +200,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 <LeftNavAtom atom={atoms.inputBackground} indent={2} />
                                 <LeftNavAtom atom={atoms.elevationSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.bevelSettings} indent={2} />
+                                <LeftNavAtom atom={atoms.glowSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.animationSettings} indent={2} />
 
                                 {
@@ -296,6 +299,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.bevelSettings.value && (
                         <BevelsAtom bevelSettings={designSystem.atoms.bevelSettings}/>
+                    )}
+                    {showAtom === atoms.glowSettings.value && (
+                        <GlowAtom glowSettings={designSystem.atoms.glowSettings}/>
                     )}
                     {showAtom === atoms.animationSettings.value && (
                         <ErrorHandler>

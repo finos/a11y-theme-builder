@@ -16,13 +16,13 @@ interface Props {
     colorMode?: string;
 }
 
-export const HeroExample: React.FC<Props> = ({colorMode=""}) => {
+export const HeroExample: React.FC<Props> = ({colorMode="colored"}) => {
     return (
 
 
       <div>
         <h5>Standard Hero</h5>
-        <Hero className={"colored " + colorMode} >
+        <Hero className={colorMode} >
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid xs={12}>
               <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
@@ -66,7 +66,7 @@ export const HeroExample: React.FC<Props> = ({colorMode=""}) => {
           </HeroImage>
         </div>
         <h5 className="top40">Hero with Image</h5>
-        <HeroInlineImage className={"HeroInlineImage colored " + colorMode} >
+        <HeroInlineImage className={"HeroInlineImage  " + colorMode} >
           <Grid container spacing={2} columns={12} margin={1}>
             <Grid item xs={12}>
               <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
@@ -94,7 +94,7 @@ export const HeroExample: React.FC<Props> = ({colorMode=""}) => {
           </Grid>
         </HeroInlineImage>
         <h5 className="top40">Hero with Video</h5>
-        <HeroVideo className={"inlineVideo colored " + colorMode} >
+        <HeroVideo className={"inlineVideo  " + colorMode} >
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid item xs={12}>
               <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">

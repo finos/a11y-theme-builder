@@ -369,70 +369,78 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         <li>3 different Line Heights (Standard, Header, Small)</li>
                     </ul>
             </HeadingSection>
-            <ExampleSection>
-                <div style={{fontFamily: primaryFontFamilyProperty.getValue()}}>
-                    <b>The Primary Font is {primaryFontFamilyProperty.getValue()}.</b>
-                    <div style={{padding:"10px"}}>
-                        abcdefghijklmnopqrstuvwxyz<br/>
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
-                        0123456789
-                    </div>
-                </div>
-                <div className="top40" />
-                <div style={{fontFamily: secondaryFontFamilyProperty.getValue()}}>
-                    <b>The Secondary Font is {secondaryFontFamilyProperty.getValue()}.</b>
-                    <div style={{padding:"10px"}}>
-                        abcdefghijklmnopqrstuvwxyz<br/>
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
-                        0123456789
-                    </div>
-                </div>
-            </ExampleSection>
-            <SettingsSection>
-                <div style={{ float: "right", marginTop: "40px" }}>
-                    <div className="subtitle1">Not seeing your font in Figma?</div>
-                    <p>Take these steps to render your selected fonts in Figma.</p>
-                    <ul>
-                        <li>Download and install your font on your local system.</li>
-                        <li>Upload font to &nbsp;
-                            <a
-                                href="https://help.figma.com/hc/en-us/articles/360039956774-Upload-custom-fonts-to-an-organization"
-                                target="new"
-                            >oranization's Figma account.</a>
-                        </li>
-                        <li>
-                            Make sure you only reference the available font weights.&nbsp;
-                            <a onClick={() => setFontHelpIsOpen(true)} >
-                                Need help?
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <h4>Font Families</h4>
-                <div>
-                    <FormControlLabel
-                        control={<Switch checked={selectPrimaryFont} onChange={() => setSelectPrimaryFont(!selectPrimaryFont)} />}
-                        label="Select Primary Font"
-                        labelPlacement="start"
-                    />
-                    <br />
-                    {!selectPrimaryFont || renderPrimaryCommonFontSelectables()}
-					{selectPrimaryFont ||
-                    <StringProperty 
-						property={primaryFontFamilyProperty} 
-						description={primaryFontDescription}
-						onChange={handlePrimaryFontChange}
-					/>}
 
-                    {!primaryFontUncommon
-                    || fontNotCommonAlert}
-                    {primaryFontUncommon
-                    || <Alert severity='info' sx={alertStyles}>
-                        This font is a common google font. <br/> It has the supported font weights:<br/>
-                        <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")+"."}</b>
-                    </Alert>}
-                </div>
-                <div>
+                <ExampleSection>
+                    <div style={{fontFamily: primaryFontFamilyProperty.getValue()}}>
+                        <b>The Primary Font is {primaryFontFamilyProperty.getValue()}.</b>
+                        <div style={{padding:"10px"}}>
+                            abcdefghijklmnopqrstuvwxyz<br/>
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                            0123456789
+                        </div>
+                    </div>
+                    <div className="top40" />
+                    <div style={{fontFamily: secondaryFontFamilyProperty.getValue()}}>
+                        <b>The Secondary Font is {secondaryFontFamilyProperty.getValue()}.</b>
+                        <div style={{padding:"10px"}}>
+                            abcdefghijklmnopqrstuvwxyz<br/>
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                            0123456789
+                        </div>
+                    </div>
+                </ExampleSection>
+            <SettingsSection>
+            <Grid container spacing={2} columns={12} margin={2}>
+
+                <Grid lg={4} md={12} sm={12}>
+                    <div>
+                        <div className="subtitle1">Not seeing your font in Figma?</div>
+                        <p>Take these steps to render your selected fonts in Figma.</p>
+                        <ul>
+                            <li>Download and install your font on your local system.</li>
+                            <li>Upload font to &nbsp;
+                                <a
+                                    href="https://help.figma.com/hc/en-us/articles/360039956774-Upload-custom-fonts-to-an-organization"
+                                    target="new"
+                                >oranization's Figma account.</a>
+                            </li>
+                            <li>
+                                Make sure you only reference the available font weights.&nbsp;
+                                <a onClick={() => setFontHelpIsOpen(true)} >
+                                    Need help?
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Font Families</h4>
+                    <div>
+                        <FormControlLabel
+                            control={<Switch checked={selectPrimaryFont} onChange={() => setSelectPrimaryFont(!selectPrimaryFont)} />}
+                            label="Select Primary Font"
+                            labelPlacement="start"
+                        />
+                        <br />
+                        {!selectPrimaryFont || renderPrimaryCommonFontSelectables()}
+                        {selectPrimaryFont ||
+                        <StringProperty 
+                            property={primaryFontFamilyProperty} 
+                            description={primaryFontDescription}
+                            onChange={handlePrimaryFontChange}
+                        />}
+
+                        {!primaryFontUncommon
+                        || fontNotCommonAlert}
+                        {primaryFontUncommon
+                        || <Alert severity='info' sx={alertStyles}>
+                            This font is a common google font. <br/> It has the supported font weights:<br/>
+                            <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")+"."}</b>
+                        </Alert>}
+                    </div>
+                    <div>
+                        
+                    </div>
+                </Grid>
+            </Grid>
                     <FormControlLabel
                         control={<Switch checked={selectSecondaryFont} onChange={() => setSelectSecondaryFont(!selectSecondaryFont)} />}
                         label="Select Secondary Font"
@@ -453,7 +461,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                         This font is a common google font. <br/> It has the supported font weights:<br/>
                         <b>{FontWeightsUtil.getFontWeights(secondaryFont)?.join(", ")+"."}</b>
                     </Alert>}
-                </div>
+
                 <h4>Font Sizes</h4>
                 <div className="form-row">
                     <NumberProperty property={fontSettingsAtom.baseFontSize} defaultValue={16} units="px"
@@ -526,7 +534,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                     <Grid container spacing={textFieldGridSpacing}>
                         <Grid item xs={textFieldGridWidth}>
                             <InputLabel htmlFor="standardLineHeightTextField" id="standardLineHeightLabel">{standardLineHeightProperty.name}</InputLabel>
-                            <TextField 
+                            <TextField
                                 id="standardLineHeightTextField"
                                 InputProps={{endAdornment: <InputAdornment position="end">{"%"}</InputAdornment>}}
                                 value={isNaN(standardLineHeight) ? "" : ""+standardLineHeight }
@@ -537,7 +545,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                             />
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!standardLineHeightErrorTriggered 
+                                {!standardLineHeightErrorTriggered
                                 || <Alert variant='filled' severity='error' sx={{width: 500, padding: 3}}>
                                 <b>Standard Line Height must be at least 150%!</b>
                             </Alert>}
@@ -546,7 +554,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <div className="form-row">
                     <InputLabel htmlFor="headerLineHeightTextField" id="headerLineHeightLabel">{headerLineHeightProperty.name}</InputLabel>
-                    <TextField 
+                    <TextField
                         id="headerLineHeightTextField"
                         InputProps={{endAdornment: <InputAdornment position="end">{"%"}</InputAdornment>}}
                         value={isNaN(headerLineHeight) ? "" : ""+headerLineHeight }
@@ -556,7 +564,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </div>
                 <div className="form-row">
                     <InputLabel htmlFor="smallLineHeightTextField" id="smallLineHeightLabel">{smallLineHeightProperty.name}</InputLabel>
-                    <TextField 
+                    <TextField
                         id="smallLineHeightTextField"
                         InputProps={{endAdornment: <InputAdornment position="end">{"%"}</InputAdornment>}}
                         value={isNaN(smallLineHeight) ? "" : ""+smallLineHeight }
