@@ -189,23 +189,16 @@
   --glow-opacity: 0.2;
   --glow-change: 0.2;
   /* glows */
-  --glow-1: 0,0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), calc(var(--glow-opacity) * var(--glow-change)) );
-  --glow-2: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 2))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 2)))
-   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 2))) );
-  --glow-3: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 3))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 3)))
-   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 3))) );
-  --glow-4: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 4))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 4)))
-   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 4))) );
-  --glow-5: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 5))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 5)))
-   rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 5))) );
-  --glow-6: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 6))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 6)))
-    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 6))) );
-  --glow-7: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 7))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 7)))
-    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 7))) );
-  --glow-8: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 8))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 8)))
-    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 8))) );
-  --glow-9: 0,0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 9))) calc(var(--glow-blur) * calc(1 + calc(var(--glow-spread) * 9)))
-    rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 9))) );
+  --glow-1: 0 0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), var(--glow-opacity)  );
+  --glow-2: 0 0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 1)))  );
+  --glow-3: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 2))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 2))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 2)))  );
+  --glow-4: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 3))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 3))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 3)))  );
+  --glow-5: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 4))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 4))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 4)))  );
+  --glow-6: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 5))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 5))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 5)))  );
+  --glow-7: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 6))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 6))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 6)))  );
+  --glow-8: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 7))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 7))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 7)))  );
+  --glow-9: 0 0 calc(var(--glow-blur) * calc(1 + calc(var(--glow-change) * 8))) calc(var(--glow-spread) * calc(1 + calc(var(--glow-change) * 8))) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 8)))  );
+
   /* bevels */
   --bevel-horizontal: 6px;
   --bevel-vertical: 6px;
