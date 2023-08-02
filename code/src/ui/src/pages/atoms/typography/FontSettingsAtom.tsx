@@ -3,16 +3,20 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, { useEffect, useState } from 'react';
-import { Atoms } from 'a11y-theme-builder-sdk';
+import { Atoms, PropertyNumber } from 'a11y-theme-builder-sdk';
 import ModalFontHelp from '../../../components/modals/ModalFontHelp';
 import { NumberProperty } from '../../../components/editors/NumberProperty';
 import { ExampleSection } from '../../content/ExampleSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { SettingsSection } from '../../content/SettingsSection';
 import { HeadingSection } from '../../content/HeadingSection';
-import { Alert, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Alert, FormControl, FormControlLabel, Grid, InputAdornment, InputLabel, MenuItem, Select, Switch, TextField } from '@mui/material';
 import { FontWeightsUtil } from './FontWeightsUtil';
 import { StringProperty } from '../../../components/editors/StringProperty';
+import WebFont from "webfontloader";
+
+const primaryFontDescription = "The primary font is used for the body and small font styles."
+const secondaryFontDescription = "The secondary font is used for displays and headers." 
 
 interface Props {
     atoms: Atoms;
@@ -23,9 +27,9 @@ const textFieldMb = 3
 const textFieldGridSpacing = 3
 const textFieldGridWidth = 4
 const alertGridWidth = 7
-const selectableWeights = [100,200,300,400,500,600,700,800,900,1000]
+const allWeights = [100,200,300,400,500,600,700,800,900,1000]
 
-const alertStyles = {width: 400, height: 100, marginTop: 1}
+const alertStyles = {width: 400, height: 100, margin: "24px 0"}
 const fontNotCommonAlert = <Alert severity='warning' sx={alertStyles}>
     This font is not a common google font.
     <br/> Ensure you only use supported font weights to avoid any later errors.
@@ -39,7 +43,6 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontHelpIsOpen, setFontHelpIsOpen] = useState(false);
 
     const fontSettingsAtom = atoms.fontsSettings
-
 
     const primaryFontFamilyProperty     = fontSettingsAtom.primaryFont
     const secondaryFontFamilyProperty   = fontSettingsAtom.secondaryFont
@@ -72,9 +75,22 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [fontWeight3WarningTriggered,      setFontWeight3WarningTriggered     ] = useState<boolean>(false)
     const [fontWeight4WarningTriggered,      setFontWeight4WarningTriggered     ] = useState<boolean>(false)
 
+    const [selectPrimaryFont, setSelectPrimaryFont    ] = useState<boolean>(true)
+    const [selectSecondaryFont, setSelectSecondaryFont] = useState<boolean>(true)
+
     useEffect(() => {
         recheckWeights()
-    }, [primaryFont,secondaryFont])
+        // We dynamically load the fonts here:
+        // NOTE: After a few loads, the Google API can give 400 errors.
+        // The solution to the above is to ensure the first letter of each word of the font is capitalized.
+        WebFont.load({
+            google: {
+            families: [primaryFont, secondaryFont],
+            }
+        });
+        // TODO: Catch any errors with font loading and notify the user.
+    }, [primaryFont, secondaryFont])
+    
 
     const recheckWeights = () => {
         if (primaryFontUncommon || secondaryFontUncommon) {
@@ -112,63 +128,17 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         }
     }
 
-    const renderFontWeight0Selectables = () => {
+    const renderFontWeightSelectables = (fontWeightProperty: PropertyNumber, fontWeight: number, handleFontWeightChange: any, weightNum: string) => {
         var r = [];
-        for (var i=0; i<selectableWeights.length; i++) {
-            const s = selectableWeights[i].toString();
+        const selectables = primaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(primaryFont);
+        if (!selectables) return;
+        for (var i=0; i<selectables.length; i++) {
+            const s = selectables[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }
         return (
             <FormControl sx={{m: 2, minWidth: 120}}>
-                <Select label={fontWeight0Property.name} labelId='fontWeight0Label' value={fontWeight0} onChange={handleFontWeight0Change}>{r}</Select>
-            </FormControl>
-        )
-    }
-    const renderFontWeight1Selectables = () => {
-        var r = [];
-        for (var i=0; i<selectableWeights.length; i++) {
-            const s = selectableWeights[i].toString();
-            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
-        }
-        return (
-            <FormControl sx={{m: 2, minWidth: 120}}>
-                <Select label={fontWeight1Property.name} labelId='fontWeight1Label' value={fontWeight1} onChange={handleFontWeight1Change}>{r}</Select>
-            </FormControl>
-        )
-    }
-    const renderFontWeight2Selectables = () => {
-        var r = [];
-        for (var i=0; i<selectableWeights.length; i++) {
-            const s = selectableWeights[i].toString();
-            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
-        }
-        return (
-            <FormControl sx={{m: 2, minWidth: 120}}>
-                <Select label={fontWeight2Property.name} labelId='fontWeight2Label' value={fontWeight2} onChange={handleFontWeight2Change}>{r}</Select>
-            </FormControl>
-        )
-    }
-    const renderFontWeight3Selectables = () => {
-        var r = [];
-        for (var i=0; i<selectableWeights.length; i++) {
-            const s = selectableWeights[i].toString();
-            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
-        }
-        return (
-            <FormControl sx={{m: 2, minWidth: 120}}>
-                <Select label={fontWeight3Property.name} labelId='fontWeight3Label' value={fontWeight3} onChange={handleFontWeight3Change}>{r}</Select>
-            </FormControl>
-        )
-    }
-    const renderFontWeight4Selectables = () => {
-        var r = [];
-        for (var i=0; i<selectableWeights.length; i++) {
-            const s = selectableWeights[i].toString();
-            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
-        }
-        return (
-            <FormControl sx={{m: 2, minWidth: 120}}>
-                <Select label={fontWeight4Property.name} labelId='fontWeight4Label' value={fontWeight4} onChange={handleFontWeight4Change}>{r}</Select>
+                <Select label={fontWeightProperty.name} labelId={`fontWeight${weightNum}Label`} value={fontWeight} onChange={handleFontWeightChange}>{r}</Select>
             </FormControl>
         )
     }
@@ -229,6 +199,43 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         } else {
             setSecondaryFontUncommon(true)
         }
+    }
+
+    const renderPrimaryCommonFontSelectables = () => {
+        var r = [];
+        const commonFontsList = FontWeightsUtil.listCommonFonts()
+        for (var i=0; i<commonFontsList.length; i++) {
+            const s = commonFontsList[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+
+        return (
+            <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
+                <div className='subtitle'><b>{primaryFontFamilyProperty.name}</b></div>
+                <div className='body1' style={{fontWeight:"normal"}}>{primaryFontDescription}</div>
+                <Select id="primaryFontSelect" value={primaryFont} onChange={handlePrimaryFontChange}>
+                    {r}
+                </Select>
+            </FormControl>
+        )
+    }
+    const renderSecondaryCommonFontSelectables = () => {
+        var r = [];
+        const commonFontsList = FontWeightsUtil.listCommonFonts()
+        for (var i=0; i<commonFontsList.length; i++) {
+            const s = commonFontsList[i].toString();
+            r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
+        }
+            
+        return (
+            <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
+                <div className='subtitle'><b>{secondaryFontFamilyProperty.name}</b></div>
+                <div className='body1' style={{fontWeight:"normal"}}>{secondaryFontDescription}</div>
+                <Select id="secondaryFontSelect" value={secondaryFont} onChange={handleSecondaryFontChange}>
+                    {r}
+                </Select>
+            </FormControl>
+        )
     }
     async function handleFontWeight0Change(event: any): Promise<void> {
         const value = parseInt(event.target.value);
@@ -384,131 +391,143 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                 </ExampleSection>
             <SettingsSection>
             <Grid container spacing={2} columns={12} margin={2}>
-              <Grid lg={8} md={12} sm={12}>
 
-                  <h4>Font Families</h4>
-                  <div>
+                <Grid lg={4} md={12} sm={12}>
+                    <div>
+                        <div className="subtitle1">Not seeing your font in Figma?</div>
+                        <p>Take these steps to render your selected fonts in Figma.</p>
+                        <ul>
+                            <li>Download and install your font on your local system.</li>
+                            <li>Upload font to &nbsp;
+                                <a
+                                    href="https://help.figma.com/hc/en-us/articles/360039956774-Upload-custom-fonts-to-an-organization"
+                                    target="new"
+                                >oranization's Figma account.</a>
+                            </li>
+                            <li>
+                                Make sure you only reference the available font weights.&nbsp;
+                                <a onClick={() => setFontHelpIsOpen(true)} >
+                                    Need help?
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Font Families</h4>
+                    <div>
+                        <FormControlLabel
+                            control={<Switch checked={selectPrimaryFont} onChange={() => setSelectPrimaryFont(!selectPrimaryFont)} />}
+                            label="Select Primary Font"
+                            labelPlacement="start"
+                        />
+                        <br />
+                        {!selectPrimaryFont || renderPrimaryCommonFontSelectables()}
+                        {selectPrimaryFont ||
+                        <StringProperty 
+                            property={primaryFontFamilyProperty} 
+                            description={primaryFontDescription}
+                            onChange={handlePrimaryFontChange}
+                        />}
 
-        					<StringProperty
-        						property={primaryFontFamilyProperty}
-        						description="The primary font is used for the body and small font styles."
-        						onChange={handlePrimaryFontChange}
-        					/>
-                            {!primaryFontUncommon
-                            || fontNotCommonAlert}
-                            {primaryFontUncommon
-                            || <Alert severity='info' sx={alertStyles}>
-                                This font is a common google font. <br/> It has the supported font weights:<br/>
-                                <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")}</b>.
-                            </Alert>}
-                        </div>
-
-
-              </Grid>
-              <Grid lg={4} md={12} sm={12}>
-                <div style={{ marginTop: "40px" }}>
-                    <div className="subtitle1">Not seeing your font in Figma?</div>
-                    <p>Take these steps to render your selected fonts in Figma.</p>
-                    <ul>
-                        <li>Download and install your font on your local system.</li>
-                        <li>Upload font to &nbsp;
-                            <a
-                                href="https://help.figma.com/hc/en-us/articles/360039956774-Upload-custom-fonts-to-an-organization"
-                                target="new"
-                            >oranization's Figma account.</a>
-                        </li>
-                        <li>
-                            Make sure you only reference the available font weights.&nbsp;
-                            <a onClick={() => setFontHelpIsOpen(true)} >
-                                Need help?
-                            </a>
-                        </li>
-                    </ul>
-                  </div>
+                        {!primaryFontUncommon
+                        || fontNotCommonAlert}
+                        {primaryFontUncommon
+                        || <Alert severity='info' sx={alertStyles}>
+                            This font is a common google font. <br/> It has the supported font weights:<br/>
+                            <b>{FontWeightsUtil.getFontWeights(primaryFont)?.join(", ")+"."}</b>
+                        </Alert>}
+                    </div>
+                    <div>
+                        
+                    </div>
                 </Grid>
-              </Grid>
-
-					<StringProperty
-						property={secondaryFontFamilyProperty}
-						description="The secondary font is used for displays and headers."
+            </Grid>
+                    <FormControlLabel
+                        control={<Switch checked={selectSecondaryFont} onChange={() => setSelectSecondaryFont(!selectSecondaryFont)} />}
+                        label="Select Secondary Font"
+                        labelPlacement="start"
+                    />
+                    <br />
+                    {!selectSecondaryFont || renderSecondaryCommonFontSelectables()}
+					{selectSecondaryFont ||
+                    <StringProperty 
+						property={secondaryFontFamilyProperty} 
+						description={secondaryFontDescription}
 						onChange={handleSecondaryFontChange}
-					/>
+					/>}
                     {!secondaryFontUncommon
                     || fontNotCommonAlert}
                     {secondaryFontUncommon
                     || <Alert severity='info' sx={alertStyles}>
                         This font is a common google font. <br/> It has the supported font weights:<br/>
-                        <b>{FontWeightsUtil.getFontWeights(secondaryFont)?.join(", ")}</b>.
+                        <b>{FontWeightsUtil.getFontWeights(secondaryFont)?.join(", ")+"."}</b>
                     </Alert>}
 
                 <h4>Font Sizes</h4>
                 <div className="form-row">
                     <NumberProperty property={fontSettingsAtom.baseFontSize} defaultValue={16} units="px"
-                        description={"All typography is multipled from the base font size."} />
+                        description={"All typography is multiplied from the base font size."} />
                 </div>
-
-
-                  <h4>Primary Font Weights</h4>
-                  <div className="form-row">
-                    <Grid container columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={5} md={12} sm={12}>
-                          <InputLabel htmlFor="fontWeight0TextField" id="fontWeight0Label">{fontWeight0Property.name}</InputLabel>
-                          <div style={{fontWeight:"normal"}}>For decorative and non critical text.</div>
-                          {renderFontWeight0Selectables()}
-                      </Grid>
-                      <Grid lg={7} md={12} sm={12}>
-                          {!fontWeight0WarningTriggered || weightUnsupportedAlert}
-                      </Grid>
+                <h4>Primary Font Weights</h4>
+                <div className="form-row">
+                    <Grid container spacing={textFieldGridSpacing}>
+                        <Grid item xs={textFieldGridWidth}>
+                            <InputLabel htmlFor="fontWeight0TextField" id="fontWeight0Label">{fontWeight0Property.name}</InputLabel>
+                            <div style={{fontWeight:"normal"}}>For decorative and non critical text.</div>
+                            {renderFontWeightSelectables(fontWeight0Property, fontWeight0, handleFontWeight0Change, "0")}
+                        </Grid>
+                        <Grid item xs={alertGridWidth}>
+                            {!fontWeight0WarningTriggered || weightUnsupportedAlert}
+                        </Grid>
                     </Grid>
-                  </div>
-                  <div className="form-row">
-                    <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={5} md={12} sm={12}>
-                          <InputLabel htmlFor="fontWeight1TextField" id="fontWeight1Label">{fontWeight1Property.name}</InputLabel>
-                          <div style={{fontWeight:"normal"}}>For standard body text.</div>
-                          {renderFontWeight1Selectables()}
-                      </Grid>
-                        <Grid lg={7} md={12} sm={12}>
-                          {!fontWeight1WarningTriggered || weightUnsupportedAlert}
-                      </Grid>
+                </div>
+                <div className="form-row">
+                    <Grid container spacing={textFieldGridSpacing}>
+                        <Grid item xs={textFieldGridWidth}>
+                            <InputLabel htmlFor="fontWeight1TextField" id="fontWeight1Label">{fontWeight1Property.name}</InputLabel>
+                            <div style={{fontWeight:"normal"}}>For standard body text.</div>
+                            {renderFontWeightSelectables(fontWeight1Property, fontWeight1, handleFontWeight1Change, "1")}
+                        </Grid>
+                        <Grid item xs={alertGridWidth}>
+                            {!fontWeight1WarningTriggered || weightUnsupportedAlert}
+                        </Grid>
                     </Grid>
-                  </div>
-                  <div className="form-row">
-                    <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={5} md={12} sm={12}>
-                          <InputLabel htmlFor="fontWeight2TextField" id="fontWeight2Label">{fontWeight2Property.name}</InputLabel>
-                          <div style={{fontWeight:"normal"}}>For headers and small text that is important.</div>
-                          {renderFontWeight2Selectables()}
-                      </Grid>
-                      <Grid lg={7} md={12} sm={12}>
-                          {!fontWeight2WarningTriggered || weightUnsupportedAlert}
-                      </Grid>
+                </div>
+                <div className="form-row">
+                    <Grid container spacing={textFieldGridSpacing}>
+                        <Grid item xs={textFieldGridWidth}>
+                            <InputLabel htmlFor="fontWeight2TextField" id="fontWeight2Label">{fontWeight2Property.name}</InputLabel>
+                            <div style={{fontWeight:"normal"}}>For headers and small text that is important.</div>
+                            {renderFontWeightSelectables(fontWeight2Property, fontWeight2, handleFontWeight2Change, "2")}
+                        </Grid>
+                        <Grid item xs={alertGridWidth}>
+                            {!fontWeight2WarningTriggered || weightUnsupportedAlert}
+                        </Grid>
                     </Grid>
-                  </div>
-                  <div className="form-row">
-                    <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={5} md={12} sm={12}>
-                          <InputLabel htmlFor="fontWeight3TextField" id="fontWeight3Label">{fontWeight3Property.name}</InputLabel>
-                          <div style={{fontWeight:"normal"}}>For emphasized text.</div>
-                          {renderFontWeight3Selectables()}
-                      </Grid>
-                      <Grid lg={7} md={12} sm={12}>
-                          {!fontWeight3WarningTriggered || weightUnsupportedAlert}
-                      </Grid>
+                </div>
+                <div className="form-row">
+                    <Grid container spacing={textFieldGridSpacing}>
+                        <Grid item xs={textFieldGridWidth}>
+                            <InputLabel htmlFor="fontWeight3TextField" id="fontWeight3Label">{fontWeight3Property.name}</InputLabel>
+                            <div style={{fontWeight:"normal"}}>For emphasized text.</div>
+                            {renderFontWeightSelectables(fontWeight3Property, fontWeight3, handleFontWeight3Change, "3")}
+                        </Grid>
+                        <Grid item xs={alertGridWidth}>
+                            {!fontWeight3WarningTriggered || weightUnsupportedAlert}
+                        </Grid>
                     </Grid>
-                  </div>
-                  <div className="form-row">
-                    <Grid container  columns={12} margin={2}  spacing={textFieldGridSpacing}>
-                      <Grid lg={5} md={12} sm={12}>
-                          <InputLabel htmlFor="fontWeight4TextField" id="fontWeight4Label">{fontWeight4Property.name}</InputLabel>
-                          <div style={{fontWeight:"normal"}}>Used sparingly on text of great importance such as stats.</div>
-                          {renderFontWeight4Selectables()}
-                      </Grid>
-                      <Grid lg={7} md={12} sm={12}>
-                          {!fontWeight4WarningTriggered || weightUnsupportedAlert}
-                      </Grid>
+                </div>
+                <div className="form-row">
+                    <Grid container spacing={textFieldGridSpacing}>
+                        <Grid item xs={textFieldGridWidth}>
+                            <InputLabel htmlFor="fontWeight4TextField" id="fontWeight4Label">{fontWeight4Property.name}</InputLabel>
+                            <div style={{fontWeight:"normal"}}>Used sparingly on text of great importance such as stats.</div>
+                            {renderFontWeightSelectables(fontWeight4Property, fontWeight4, handleFontWeight4Change, "4")}
+                        </Grid>
+                        <Grid item xs={alertGridWidth}>
+                            {!fontWeight4WarningTriggered || weightUnsupportedAlert}
+                        </Grid>
                     </Grid>
-                  </div>
+                </div>
                 <ModalFontHelp isOpen={fontHelpIsOpen} onClose={() => setFontHelpIsOpen(false)} />
                 <h4>Line heights</h4>
                 <div className="form-row">

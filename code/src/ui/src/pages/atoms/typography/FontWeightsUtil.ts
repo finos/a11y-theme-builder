@@ -2,111 +2,112 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-// Key is the font family converted to lower case
+
+// Key is the font family
 // Value is an array of numbers representing font weights that the font supports
 const CommonFontsSupportedWeights = new Map<string, number[]>([
-    ["roboto",                         [100,            300,            500,            700,            900         ]],
-    ["open sans",                      [                300,    400,    500,    600,    700,    800                 ]],
-    ["noto sans japanese",             [100,            300,    400,    500,            700,            900         ]],
-    ["montserrat",                     [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["lato",                           [100,            300,    400,                    700,            900         ]],
-    ["poppins",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["roboto condensed",               [                300,    400,                    700                         ]],
-    ["source sans pro",                [        200,    300,    400,            600,    700,            900         ]],
-    ["inter",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["roboto mono",                    [100,    200,    300,    400,    500,    600,    700                         ]],
-    ["oswald",                         [        200,    300,    400,    500,    600,    700                         ]],
-    ["raleway",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["noto sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["ubuntu",                         [                300,    400,    500,            700                         ]],
-    ["roboto slab",                    [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["nunito",                         [        200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["nunito sans",                    [        200,    300,    400,            600,    700,    800,    900         ]],
-    ["playfair display",               [                        400,    500,    600,    700,    800,    900         ]],
-    ["merriweather",                   [                300,    400,                    700,            900         ]],
-    ["rubik",                          [                300,    400,    500,    600,    700,    800,    900         ]],
-    ["pt sans",                        [                        400,                    700                         ]],
-    ["mukta",                          [                300,    400,    500,    600,    700,    800                 ]],
-    ["noto sans korean",               [100,            300,    400,    500,            700,            900         ]],
-    ["work sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["kanit",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["lora",                           [                        400,    500,    600,    700                         ]],
-    ["fira sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["noto sans traditional chinese",  [100,            300,    400,    500,            700,            900         ]],
-    ["quicksand",                      [                300,    400,    500,    600,    700                         ]],
-    ["mulish",                         [        200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["barlow",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["ibm plex sans",                  [100,    200,    300,    400,    500,    600,    700                         ]],
-    ["heebo",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["noto serif",                     [                        400,                    700                         ]],
-    ["libre franklin",                 [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["dm sans",                        [                        400,    500,            700                         ]],
-    ["nanum gothic",                   [                        400,                    700,    800                 ]],
-    ["manrope",                        [        200,    300,    400,    500,    600,    700,    800                 ]],
-    ["karla",                          [        200,    300,    400,    500,    600,    700,    800                 ]],
-    ["hind siliguri",                  [                300,    400,    500,    600,    700                         ]],
-    ["josefin sans",                   [100,    200,    300,    400,    500,    600,    700                         ]],
-    ["arimo",                          [                        400,    500,    600,    700                         ]],
-    ["dosis",                          [        200,    300,    400,    500,    600,    700,    800                 ]],
-    ["pt sans narrow",                 [                        400,                    700                         ]],
-    ["libre baskerville",              [                        400,                    700                         ]],
-    ["bitter",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["source serif pro",               [        200,    300,    400,            600,    700,            900         ]],
-    ["oxygen",                         [                300,    400,                    700                         ]],
-    ["source code pro",                [        200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["cabin",                          [                        400,    500,    600,    700                         ]],
-    ["cairo",                          [        200,    300,    400,    500,    600,    700,    800,    900,    1000]],
-    ["anton",                          [                        400                                                 ]],
-    ["bebas neue",                     [                        400                                                 ]],
-    ["noto sans simplified chinese",   [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["abel",                           [                        400                                                 ]],
-    ["lobster",                        [                        400                                                 ]],
-    ["rajdhani",                       [                300,    400,    500,    600,    700                         ]],
-    ["prompt",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["dancing script",                 [                        400,    500,    600,    700                         ]],
-    ["eb garamond",                    [                        400,    500,    600,    700,    800                 ]],
-    ["barlow condensed",               [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["exo 2",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["comfort",                        [                300,    400,    500,    600,    700                         ]],
-    ["signika negative",               [                300,    400,    500,    600,    700                         ]],
-    ["pacifico",                       [                        400                                                 ]],
-    ["varela round",                   [                        400                                                 ]],
-    ["hind",                           [                300,    400,    500,    600,    700                         ]],
-    ["teko",                           [                300,    400,    500,    600,    700                         ]],
-    ["maven pro",                      [                        400,    500,    600,    700,    800,    900         ]],
-    ["fjalla one",                     [                        400                                                 ]],
-    ["crimson text",                   [                        400,            600,    700                         ]],
-    ["space grotesk",                  [                300,    400,    500,    600,    700                         ]],
-    ["noto serif japanese",            [        200,    300,    400,    500,    600,    700,            900         ]],
-    ["jost",                           [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["arvo",                           [                        400,                    700                         ]],
-    ["merriweather sans",              [                300,    400,    500,    600,    700,    800                 ]],
-    ["archivo",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["abril fatface",                  [                        400                                                 ]],
-    ["assistant",                      [        200,    300,    400,    500,    600,    700,    800                 ]],
-    ["asap",                           [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["hind madurai",                   [                300,    400,    500,    600,    700                         ]],
-    ["shadows into light",             [                        400                                                 ]],
-    ["caveat",                         [                        400,    500,    600,    700                         ]],
-    ["noto sans hong kong",            [100,            300,    400,    500,            700,            900         ]],
-    ["cormorant garamond",             [                300,    400,    500,    600                                 ]],
-    ["kanone kaffeesatz",              [        200,    300,    400,    500,    600,    700                         ]],
-    ["fira sans condensed",            [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["overpass",                       [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["tajawal",                        [        200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["public sans",                    [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["righteous",                      [                        400                                                 ]],
-    ["m plus rounded 1c",              [100,            300,    400,    500,            700,    800,    900         ]],
-    ["slabo 27px",                     [                        400                                                 ]],
-    ["satisfy",                        [                        400                                                 ]],
-    ["ibm plex mono",                  [100,    200,    300,    400,    500,    600,    700                         ]],
-    ["play",                           [                        400,                    700                         ]],
-    ["indie flower",                   [                        400                                                 ]],
-    ["zilla slab",                     [                300,    400,    500,    600,    700                         ]],
-    ["red hat display",                [                300,    400,    500,    600,    700,    800,    900         ]],
-    ["catamaran",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
-    ["secular one",                    [                        400                                                 ]],
-    ["sarabun",                        [100,    200,    300,    400,    500,    600,    700,    800                 ]],
+    ["Roboto",                         [100,            300,            500,            700,            900         ]],
+    ["Open Sans",                      [                300,    400,    500,    600,    700,    800                 ]],
+    ["Noto Sans Japanese",             [100,            300,    400,    500,            700,            900         ]],
+    ["Montserrat",                     [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Lato",                           [100,            300,    400,                    700,            900         ]],
+    ["Poppins",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Roboto Condensed",               [                300,    400,                    700                         ]],
+    ["Source Sans Pro",                [        200,    300,    400,            600,    700,            900         ]],
+    ["Inter",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Roboto Mono",                    [100,    200,    300,    400,    500,    600,    700                         ]],
+    ["Oswald",                         [        200,    300,    400,    500,    600,    700                         ]],
+    ["Raleway",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Noto Sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Ubuntu",                         [                300,    400,    500,            700                         ]],
+    ["Roboto Slab",                    [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Nunito",                         [        200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Nunito Sans",                    [        200,    300,    400,            600,    700,    800,    900         ]],
+    ["Playfair Display",               [                        400,    500,    600,    700,    800,    900         ]],
+    ["Merriweather",                   [                300,    400,                    700,            900         ]],
+    ["Rubik",                          [                300,    400,    500,    600,    700,    800,    900         ]],
+    ["PT Sans",                        [                        400,                    700                         ]],
+    ["Mukta",                          [                300,    400,    500,    600,    700,    800                 ]],
+    ["Noto Sans Korean",               [100,            300,    400,    500,            700,            900         ]],
+    ["Work Sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Kanit",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Lora",                           [                        400,    500,    600,    700                         ]],
+    ["Fira Sans",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Noto Sans Traditional Chinese",  [100,            300,    400,    500,            700,            900         ]],
+    ["Quicksand",                      [                300,    400,    500,    600,    700                         ]],
+    ["Mulish",                         [        200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Barlow",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["IBM Plex Sans",                  [100,    200,    300,    400,    500,    600,    700                         ]],
+    ["Heebo",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Noto Serif",                     [                        400,                    700                         ]],
+    ["Libre Franklin",                 [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["DM Sans",                        [                        400,    500,            700                         ]],
+    ["Nanum Gothic",                   [                        400,                    700,    800                 ]],
+    ["Manrope",                        [        200,    300,    400,    500,    600,    700,    800                 ]],
+    ["Larla",                          [        200,    300,    400,    500,    600,    700,    800                 ]],
+    ["Hind Siliguri",                  [                300,    400,    500,    600,    700                         ]],
+    ["Josefin Sans",                   [100,    200,    300,    400,    500,    600,    700                         ]],
+    ["Arimo",                          [                        400,    500,    600,    700                         ]],
+    ["Dosis",                          [        200,    300,    400,    500,    600,    700,    800                 ]],
+    ["PT Sans Narrow",                 [                        400,                    700                         ]],
+    ["Libre Baskerville",              [                        400,                    700                         ]],
+    ["Bitter",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Source Serif Pro",               [        200,    300,    400,            600,    700,            900         ]],
+    ["Oxygen",                         [                300,    400,                    700                         ]],
+    ["Source Code Pro",                [        200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Cabin",                          [                        400,    500,    600,    700                         ]],
+    ["Cairo",                          [        200,    300,    400,    500,    600,    700,    800,    900,    1000]],
+    ["Anton",                          [                        400                                                 ]],
+    ["Bebas Neue",                     [                        400                                                 ]],
+    ["Noto Sans Simplified Chinese",   [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Abel",                           [                        400                                                 ]],
+    ["Lobster",                        [                        400                                                 ]],
+    ["Rajdhani",                       [                300,    400,    500,    600,    700                         ]],
+    ["Prompt",                         [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Dancing Script",                 [                        400,    500,    600,    700                         ]],
+    ["EB Garamond",                    [                        400,    500,    600,    700,    800                 ]],
+    ["Barlow Condensed",               [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Exo 2",                          [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Comfort",                        [                300,    400,    500,    600,    700                         ]],
+    ["Signika Negative",               [                300,    400,    500,    600,    700                         ]],
+    ["Pacifico",                       [                        400                                                 ]],
+    ["Varela Round",                   [                        400                                                 ]],
+    ["Hind",                           [                300,    400,    500,    600,    700                         ]],
+    ["Teko",                           [                300,    400,    500,    600,    700                         ]],
+    ["Maven Pro",                      [                        400,    500,    600,    700,    800,    900         ]],
+    ["Fjalla one",                     [                        400                                                 ]],
+    ["Crimson Text",                   [                        400,            600,    700                         ]],
+    ["Space Grotesk",                  [                300,    400,    500,    600,    700                         ]],
+    ["Noto Serif Japanese",            [        200,    300,    400,    500,    600,    700,            900         ]],
+    ["Jost",                           [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Arvo",                           [                        400,                    700                         ]],
+    ["Merriweather Sans",              [                300,    400,    500,    600,    700,    800                 ]],
+    ["Archivo",                        [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Abril Fatface",                  [                        400                                                 ]],
+    ["Assistant",                      [        200,    300,    400,    500,    600,    700,    800                 ]],
+    ["Asap",                           [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Hind Madurai",                   [                300,    400,    500,    600,    700                         ]],
+    ["Shadows Into Light",             [                        400                                                 ]],
+    ["Caveat",                         [                        400,    500,    600,    700                         ]],
+    ["Noto Sans Hong Kong",            [100,            300,    400,    500,            700,            900         ]],
+    ["Cormorant Garamond",             [                300,    400,    500,    600                                 ]],
+    ["Kanone Kaffeesatz",              [        200,    300,    400,    500,    600,    700                         ]],
+    ["Fira Sans Condensed",            [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Overpass",                       [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Tajawal",                        [        200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Public Sans",                    [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Righteous",                      [                        400                                                 ]],
+    ["M PLUS Rounded 1c",              [100,            300,    400,    500,            700,    800,    900         ]],
+    ["Slabo 27px",                     [                        400                                                 ]],
+    ["Satisfy",                        [                        400                                                 ]],
+    ["IBM Plex Mono",                  [100,    200,    300,    400,    500,    600,    700                         ]],
+    ["Play",                           [                        400,                    700                         ]],
+    ["Indie Flower",                   [                        400                                                 ]],
+    ["Zilla Slab",                     [                300,    400,    500,    600,    700                         ]],
+    ["Red Hat Display",                [                300,    400,    500,    600,    700,    800,    900         ]],
+    ["Catamaran",                      [100,    200,    300,    400,    500,    600,    700,    800,    900         ]],
+    ["Secular One",                    [                        400                                                 ]],
+    ["Sarabun",                        [100,    200,    300,    400,    500,    600,    700,    800                 ]],
 ]);
 						
 export class FontWeightsUtil {
@@ -115,18 +116,16 @@ export class FontWeightsUtil {
     / this should be ran first to check the font is in this list before running anything else
     */
     public static isFontCommon(font: string): boolean {
-        const key = font.toLowerCase().trim()
-        return CommonFontsSupportedWeights.has(key)
+        return CommonFontsSupportedWeights.has(font)
     }
 
     /*
     / returns null if the font weight is supported,
-    / otherwise returns the list of suported weights so we can alert the user
+    / otherwise returns the list of supported weights so we can alert the user
     / in the rare case the font is not in the list (wasn't checked first), return an emtpy array
     */
     public static getFontWeightsIfUnsupported(font: string, weight: number): number[] | null {
-        const key = font.toLowerCase().trim()
-        const weightArray = CommonFontsSupportedWeights.get(key) as number[]
+        const weightArray = CommonFontsSupportedWeights.get(font) as number[]
         if (!weightArray) {
             return []
         }
@@ -138,20 +137,24 @@ export class FontWeightsUtil {
 
     /*
     / returns null if the font weight is unsupported,
-    / otherwise returns the list of suported weights
+    / otherwise returns the list of supported weights
     */
     public static getFontWeights(font: string): number[] | null {
-        const key = font.toLowerCase().trim()
-        return CommonFontsSupportedWeights.get(key) as number[]
+        return CommonFontsSupportedWeights.get(font) as number[]
     }
 
     /*
     / returns true if the weight is supported in the font
     */
     public static isWeightSupported(font: string, weight: number): boolean {
-        const key = font.toLowerCase().trim()
-        const weightArray = CommonFontsSupportedWeights.get(key) as number[]
+        const weightArray = CommonFontsSupportedWeights.get(font) as number[]
         return weightArray?.includes(weight)
+    }
+
+    public static listCommonFonts(): string[] {
+        var r = [] as string[];
+        r = Array.from( CommonFontsSupportedWeights.keys() );
+        return r.sort();
     }
 
 }
