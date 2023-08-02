@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -133,37 +133,96 @@ try {
             htmlFontSize: parseInt(getCssValue("--baseFont")), // must be a number
             //fontSize: "var(--baseFont)", // must be a number
             fontSize: parseInt(getCssValue("--baseFont")), // must be a number
-            // h1: {
-            //     fontSize: "--h1",
-            //     //color: "#00000",
-            // },
-            // h2: {
-            //     fontSize: "--h2",
-            // },
-            // h3: {
-            //     fontSize: "--h3",
-            // },
-            // h4: {
-            //     fontSize: "--h4",
-            // },
-            // h5: {
-            //     fontSize: "--h5",
-            // },
-            // h6: {
-            //     fontSize: "--h6",
-            // },
-            // subtitle1: {
-            // },
-            // subtitle2: {
-            // },
-            // body1: {
-            // },
-            // body2: {
-            // },
+            h1: {
+                fontSize: "var(--h1FontSize)",
+                fontWeight: "var(--h1FontWeight)",
+                letterSpacing: "var(--h1LetterSpacing)",
+                lineHeight: "var(--h1LineHeight)",
+                textDecoration: "var(--h1TextDecoration)",
+                textTransform: "var(--h1TextTransform)",
+            },
+            h2: {
+                fontSize: "var(--h2FontSize)",
+                fontWeight: "var(--h2FontWeight)",
+                letterSpacing: "var(--h2LetterSpacing)",
+                lineHeight: "var(--h2LineHeight)",
+                textDecoration: "var(--h2TextDecoration)",
+                textTransform: "var(--h2TextTransform)",
+            },
+            h3: {
+                fontSize: "var(--h3FontSize)",
+                fontWeight: "var(--h3FontWeight)",
+                letterSpacing: "var(--h3LetterSpacing)",
+                lineHeight: "var(--h3LineHeight)",
+                textDecoration: "var(--h3TextDecoration)",
+                textTransform: "var(--h3TextTransform)",
+            },
+            h4: {
+                fontSize: "var(--h4FontSize)",
+                fontWeight: "var(--h4FontWeight)",
+                letterSpacing: "var(--h4LetterSpacing)",
+                lineHeight: "var(--h4LineHeight)",
+                textDecoration: "var(--h4TextDecoration)",
+                textTransform: "var(--h4TextTransform)",
+            },
+            h5: {
+                fontSize: "var(--h5FontSize)",
+                fontWeight: "var(--h5FontWeight)",
+                letterSpacing: "var(--h5LetterSpacing)",
+                lineHeight: "var(--h5LineHeight)",
+                textDecoration: "var(--h5TextDecoration)",
+                textTransform: "var(--h5TextTransform)",
+            },
+            h6: {
+                fontSize: "var(--h6FontSize)",
+                fontWeight: "var(--h6FontWeight)",
+                letterSpacing: "var(--h6LetterSpacing)",
+                lineHeight: "var(--h6LineHeight)",
+                textDecoration: "var(--h6TextDecoration)",
+                textTransform: "var(--h6TextTransform)",
+            },
+            subtitle1: {
+                fontSize: "var(--subtitle1FontSize)",
+                fontWeight: "var(--subtitle1FontWeight)",
+                letterSpacing: "var(--subtitle1LetterSpacing)",
+                lineHeight: "var(--subtitle1LineHeight)",
+                textDecoration: "var(--subtitle1TextDecoration)",
+                textTransform: "var(--subtitle1TextTransform)",
+            },
+            subtitle2: {
+                fontSize: "var(--subtitle2FontSize)",
+                fontWeight: "var(--subtitle2FontWeight)",
+                letterSpacing: "var(--subtitle2LetterSpacing)",
+                lineHeight: "var(--subtitle2LineHeight)",
+                textDecoration: "var(--subtitle2TextDecoration)",
+                textTransform: "var(--subtitle2TextTransform)",
+            },
+            body1: {
+                fontSize: "var(--body1FontSize)",
+                fontWeight: "var(--body1FontWeight)",
+                letterSpacing: "var(--body1LetterSpacing)",
+                lineHeight: "var(--body1LineHeight)",
+                textDecoration: "var(--body1TextDecoration)",
+                textTransform: "var(--body1TextTransform)",
+            },
+            body2: {
+                fontSize: "var(--body2FontSize)",
+                fontWeight: "var(--body2FontWeight)",
+                letterSpacing: "var(--body2LetterSpacing)",
+                lineHeight: "var(--body2LineHeight)",
+                textDecoration: "var(--body2TextDecoration)",
+                textTransform: "var(--body2TextTransform)",
+            },
+            caption: {
+                fontSize: "var(--captionFontSize)",
+                fontWeight: "var(--captionFontWeight)",
+                letterSpacing: "var(--captionLetterSpacing)",
+                lineHeight: "var(--captionLineHeight)",
+                textDecoration: "var(--captionTextDecoration)",
+                textTransform: "var(--captionTextTransform)",
+            },            
             // button: {
             //     /* fontStyle: "italic" */
-            // },
-            // caption: {
             // },
             // overline: {
             // },
@@ -181,6 +240,16 @@ try {
             //borderRadius:  "var(--radius-2)",
         },
         components: {
+            MuiButtonBase: {
+                defaultProps: {
+                    disableRipple: true,
+                },
+            },
+            MuiButtonGroup: {
+                defaultProps: {
+                    disableRipple: true,
+                },
+            },
             // Style all react components using css root vars
             MuiAccordion: {
                 styleOverrides: {
