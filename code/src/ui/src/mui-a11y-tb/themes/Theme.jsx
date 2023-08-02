@@ -522,7 +522,7 @@ try {
                         },
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
-                            color: "var(--on-input-disabled)",
+            
                         },
                         "& .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: '1px solid var(--button)',

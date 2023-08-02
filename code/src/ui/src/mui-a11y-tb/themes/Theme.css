@@ -3016,7 +3016,6 @@ button.MuiPaginationItem-root:hover {
   background: none !important;
 }
 .Mui-disabled {
-  opacity: .25;
   -webkit-text-fill-color: inherit;
 }
 /* input error */
