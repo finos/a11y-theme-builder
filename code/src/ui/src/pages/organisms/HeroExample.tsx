@@ -16,7 +16,7 @@ interface Props {
     colorMode?: string;
 }
 
-export const HeroExample: React.FC<Props> = ({colorMode=""}) => {
+export const HeroExample: React.FC<Props> = ({colorMode="colored"}) => {
     return (
 
 
