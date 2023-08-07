@@ -1,0 +1,75 @@
+name: CVE Scanning
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8,18 * * 1-5'
+  push:
+    paths:
+      - '**/package.json'
+      - '**/package-lock.json'
+      - '**/Dockerfile'
+      - '.github/workflows/*-ignore-list.xml'
+      - '.github/workflows/security.yml'
+
+jobs:
+  node-modules-scan:
+    name: ${{ matrix.module-folder }}-node-scan
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    strategy:
+        matrix:
+          module-folder: [
+            'code',
+            'code/src/ui']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Build project with NPM
+        run: npm install --omit=dev
+        working-directory: ${{ matrix.module-folder }}
+      - name: Depcheck
+        uses: dependency-check/Dependency-Check_Action@main
+        id: Depcheck
+        with:
+          project: '${{ matrix.module-folder }}'
+          path: '${{ matrix.module-folder }}'
+          format: 'HTML'
+          out: '${{ matrix.module-folder }}-reports'
+          args: >
+            --suppression .github/node-cve-ignore-list.xml
+            --nodeAuditSkipDevDependencies
+            --nodePackageSkipDevDependencies
+            --failOnCVSS 5
+            --enableRetired
+      - name: Upload Test results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: Depcheck report
+          path: ${{ github.workspace }}/${{ matrix.module-folder }}-reports
+
+  dockerfile-scan:
+    name: ${{ matrix.module-folder }}-dockerfile-scan
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    strategy:
+        matrix:
+          module-folder: [
+            'code']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker-practice/actions-setup-docker@master
+      - name: Build
+        run: docker build -f Dockerfile -t user/app:latest .
+        working-directory: ${{ matrix.module-folder }}
+      - name: Scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@v2
+        with:
+          image: user/app:latest
+          dockerfile: ./Dockerfile
+          severity: HIGH
