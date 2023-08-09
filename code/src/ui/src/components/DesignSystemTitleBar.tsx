@@ -4,7 +4,7 @@
  */
 import React, {useState, useEffect } from 'react';
 import {DesignSystem} from 'a11y-theme-builder-sdk';
-import {Select, SelectChangeEvent, InputLabel, FormControl, FormControlLabel, Button } from '@mui/material';
+import {Select, SelectChangeEvent, InputLabel, FormControl, FormControlLabel, Button, Snackbar, Alert } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import { AccessibilityLayersButton } from './AccessibilityLayersButton';
 import './DesignSystemTitleBar.css';
@@ -24,6 +24,8 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
     const [_designSystemsList, _setDesignSystemsList] = useState<string[]>([]);
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
 
+    const [showToast, setShowToast] = useState(false);
+
     const createNewDesignSystem = "New design system";
 
     useEffect(() => {
@@ -36,7 +38,16 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
     const saveDesignSystem = async () => {
         console.log(`Save Design System`);
         designSystem.store();
+        
+        setShowToast(true);
     }
+
+    const handleSaveClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setShowToast(false);
+    };
 
     const handleDSChange = async (event: SelectChangeEvent) => {
         const value = event.target.value;
@@ -116,8 +127,8 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                         <path fillRule="evenodd" clipRule="evenodd" d="M50.1736 80.4719L49.8359 79.6084C48.0049 74.9262 47 69.8303 47 64.5C47 60.2263 47.646 56.1033 48.8458 52.2234C34.8173 58.2852 25 72.2461 25 88.5C25 110.315 42.6848 128 64.5 128C86.3152 128 104 110.315 104 88.5C104 72.6971 94.7199 59.0616 81.312 52.7461C82.4106 56.4729 83 60.4177 83 64.5C83 69.6641 82.0568 74.6082 80.3329 79.1692L80.0137 80.0137L79.1692 80.3329C74.6082 82.0568 69.6641 83 64.5 83C59.793 83 55.2687 82.2163 51.0507 80.7722L50.1736 80.4719ZM78.8802 51.6992C78.8802 51.699 78.8801 51.6988 78.88 51.6986C74.7252 50.0738 70.2265 49.132 65.5195 49.0129C65.1807 49.0043 64.8409 49 64.5 49C63.9887 49 63.4797 49.0097 62.9731 49.029C58.8795 49.1844 54.9483 49.9623 51.2696 51.2696C51.2695 51.2698 51.2695 51.2701 51.2694 51.2703C49.8004 55.4039 49 59.8564 49 64.5C49 69.5771 49.9569 74.4262 51.6986 78.88C55.7108 80.2537 60.0163 81 64.5 81C69.4189 81 74.1236 80.1018 78.4621 78.4621C80.1018 74.1236 81 69.4189 81 64.5C81 60.0165 80.2538 55.7113 78.8802 51.6992ZM80.4764 50.1868C95.4657 56.4445 106 71.242 106 88.5C106 111.42 87.4198 130 64.5 130C41.5802 130 23 111.42 23 88.5C23 70.7944 34.0879 55.6785 49.6988 49.7172C49.9958 49.6038 50.2944 49.4937 50.5947 49.387C50.5964 49.3863 50.5981 49.3857 50.5999 49.3851C54.9457 47.8406 59.6248 47 64.5 47C69.8303 47 74.9262 48.0049 79.6084 49.8359C79.6133 49.8378 79.6181 49.8397 79.623 49.8416C79.909 49.9536 80.1935 50.0687 80.4764 50.1868Z" fill="var(--on-background-tertiary)"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M51.6983 78.8794C51.6984 78.8796 51.6985 78.8798 51.6986 78.88C55.1007 80.0448 58.7136 80.7585 62.4673 80.9486C63.1406 80.9827 63.8183 81 64.5 81C65.289 81 66.0727 80.9769 66.8503 80.9312C70.919 80.6927 74.8196 79.8388 78.4621 78.4621C78.4622 78.4619 78.4623 78.4617 78.4624 78.4614C80.1019 74.1231 81 69.4186 81 64.5C81 60.0163 80.2537 55.7108 78.88 51.6986C74.4262 49.9569 69.5771 49 64.5 49C59.8562 49 55.4035 49.8005 51.2696 51.2696C49.8005 55.4035 49 59.8562 49 64.5C49 69.5769 49.9568 74.4257 51.6983 78.8794ZM80.9484 77.4229C82.28 73.3557 83 69.0118 83 64.5C83 59.793 82.2163 55.2687 80.7722 51.0507L80.4719 50.1736L79.6084 49.8359C74.9262 48.0049 69.8303 47 64.5 47C59.6248 47 54.9457 47.8406 50.5999 49.3851L49.7036 49.7036L49.3851 50.5999C47.8406 54.9457 47 59.6248 47 64.5C47 69.2027 47.7822 73.723 49.2238 77.9376C34.994 71.9648 25 57.8995 25 41.5C25 19.6848 42.6848 2 64.5 2C86.3152 2 104 19.6848 104 41.5C104 57.4454 94.5518 71.184 80.9484 77.4229ZM80.0185 80.0012C95.2507 73.8557 106 58.9332 106 41.5C106 18.5802 87.4198 0 64.5 0C41.5802 0 23 18.5802 23 41.5C23 59.3827 34.3108 74.6236 50.1685 80.4589C50.4544 80.5641 50.7417 80.6662 51.0305 80.7653C51.0372 80.7676 51.044 80.7699 51.0507 80.7722C55.2687 82.2163 59.793 83 64.5 83C69.6641 83 74.6082 82.0568 79.1692 80.3329C79.4538 80.2254 79.7369 80.1148 80.0185 80.0012Z" fill="var(--on-background-tertiary)"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M50.1736 80.4719L49.8359 79.6084C48.0049 74.9262 47 69.8303 47 64.5C47 59.6248 47.8406 54.9457 49.3851 50.5999L49.7036 49.7036L50.5999 49.3851C54.9457 47.8406 59.6248 47 64.5 47C69.2027 47 73.723 47.7822 77.9376 49.2238C71.9648 34.994 57.8995 25 41.5 25C19.6848 25 2 42.6848 2 64.5C2 86.3152 19.6848 104 41.5 104C57.4454 104 71.184 94.5518 77.4229 80.9484C73.3557 82.28 69.0118 83 64.5 83C59.793 83 55.2687 82.2163 51.0507 80.7722L50.1736 80.4719ZM78.4614 78.4624C78.4616 78.4623 78.4619 78.4622 78.4621 78.4621C79.8745 74.725 80.7367 70.7161 80.9486 66.5327C80.9827 65.8594 81 65.1817 81 64.5C81 63.711 80.9769 62.9273 80.9312 62.1497C80.7178 58.5098 80.0119 55.0046 78.88 51.6986C78.8798 51.6985 78.8796 51.6984 78.8794 51.6983C74.4257 49.9568 69.5769 49 64.5 49C59.8562 49 55.4035 49.8005 51.2696 51.2696C49.8005 55.4035 49 59.8562 49 64.5C49 69.5771 49.9569 74.4262 51.6986 78.88C55.7108 80.2537 60.0163 81 64.5 81C69.4186 81 74.1231 80.1019 78.4614 78.4624ZM80.0012 80.0185C73.8557 95.2507 58.9332 106 41.5 106C18.5802 106 0 87.4198 0 64.5C0 41.5802 18.5802 23 41.5 23C59.3827 23 74.6236 34.3108 80.4589 50.1685C80.5638 50.4537 80.6657 50.7403 80.7645 51.0284C80.7671 51.0358 80.7696 51.0433 80.7722 51.0507C82.2163 55.2687 83 59.793 83 64.5C83 69.6641 82.0568 74.6082 80.3329 79.1692C80.3311 79.1741 80.3292 79.179 80.3274 79.1839C80.2215 79.4636 80.1128 79.7418 80.0012 80.0185Z" fill="var(--on-background-tertiary)"/>
-                      </svg>
-                  </div>
+                    </svg>
+                </div>
 
                 </div>
 
@@ -142,6 +153,12 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                         </Select>
                     </div>
                     <Button size="small" onClick={saveDesignSystem}>Save</Button>
+                    
+                    <Snackbar open={showToast} autoHideDuration={5000} onClose={handleSaveClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+                        <Alert onClose={handleSaveClose} severity="success" sx={{ width: '100%' }}>
+                            Design System Saved
+                        </Alert>
+                    </Snackbar>
                 </div>
 
                 <div className="right-titlebar">
