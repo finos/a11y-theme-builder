@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2023 Discover Financial Services
- * Licensed under MIT License. See License.txt in the project root for license information
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";

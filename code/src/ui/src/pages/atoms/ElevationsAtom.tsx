@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2023 Discover Financial Services
- * Licensed under MIT License. See License.txt in the project root for license information
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
 import { InputLabel, TextField, Slider } from '@mui/material';
