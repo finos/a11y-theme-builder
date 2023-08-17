@@ -1,4 +1,4 @@
-[![DFS - Incubating](./_images/discover-incubating.svg)](https://technology.discover.com/technologies/open_source) [![Maintainers-Invited](https://img.shields.io/badge/Maintainers-Wanted-blueviolet)](./CONTRIBUTE.md) [![Contributors-Invited](https://img.shields.io/badge/Contributors-Wanted-blue)](./CONTRIBUTE.md)
+[![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://community.finos.org/docs/governance/Software-Projects/stages/incubating)[![DFS - Incubating](./_images/discover-incubating.svg)](https://technology.discover.com/technologies/open_source) [![Maintainers-Invited](https://img.shields.io/badge/Maintainers-Wanted-blueviolet)](./CONTRIBUTE.md) [![Contributors-Invited](https://img.shields.io/badge/Contributors-Wanted-blue)](./CONTRIBUTE.md)
 # Accessibility Theme Builder
 ![logo](./_images/tb-logo-sm.png) A system for generating machine readable asset types allowing design systems to publish products that are accessibly inclusive.
 
@@ -29,4 +29,4 @@ Learn how to [work with](https://github.com/discoverfinancial/a11y-theme-builder
 
 Copyright 2023 Discover Financial Services 
 
-Distributed under the [MIT License](./LICENSE).
+Distributed under the [Apache-2.0 License](./LICENSE).
