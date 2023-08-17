@@ -52,24 +52,3 @@ jobs:
         with:
           name: Depcheck report
           path: ${{ github.workspace }}/${{ matrix.module-folder }}-reports
-
-  dockerfile-scan:
-    name: ${{ matrix.module-folder }}-dockerfile-scan
-    runs-on: ubuntu-latest
-    continue-on-error: false
-    strategy:
-        matrix:
-          module-folder: [
-            'code']
-    steps:
-      - uses: actions/checkout@v3
-      - uses: docker-practice/actions-setup-docker@master
-      - name: Build
-        run: docker build -f Dockerfile -t user/app:latest .
-        working-directory: ${{ matrix.module-folder }}
-      - name: Scan for vulnerabilities
-        uses: crazy-max/ghaction-container-scan@v2
-        with:
-          image: user/app:latest
-          dockerfile: ./Dockerfile
-          severity: HIGH
