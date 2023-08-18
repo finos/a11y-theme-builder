@@ -3,11 +3,26 @@
   width: calc(100% - var(--spacing-4)) !important;
   margin: var(--spacing-2);
 }
+.MuiGrid-container.background {
+  margin: 0px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+.backgroundImage {
+  background-size: cover;
+  min-height: 400px;
+}
+
 .MuiGrid-item {
   padding-left: var(--spacing-2);
   padding-top: var(--spacing-2);
 }
-
+.MuiGrid-item:not(:last-child) {
+  padding-right: var(--spacing-2);
+}
 
 /* Typography */
 /* Headers */
@@ -309,7 +324,8 @@ p {
   padding-bottom: calc(var(--p-padding) * var(--baseFont));
 }
 section {
-  padding: calc(var(--section-padding) * var(--baseFont));
+  padding-top: calc(var(--section-padding) * var(--baseFont)) !important;
+  padding-bottom: calc(var(--section-padding) * var(--baseFont)) !important;
 }
 
 /* opacity */

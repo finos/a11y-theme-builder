@@ -13,6 +13,7 @@ import { MoleculeContent } from './content/molecules/MoleculeContent';
 import { OrganismContent } from './content/organisms/OrganismContent';
 import { PreviewContent } from './content/preview/PreviewContent';
 import { ComponentsContent } from './content/components/ComponentsContent';
+import { TemplatesContent } from './content/templates/TemplatesContent';
 import { CodeContent } from './content/code/CodeContent';
 import './DesignSystemPage.css';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
@@ -139,6 +140,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                                 <TopNavTab label="Molecules" value="molecules"/>
                                 <TopNavTab label="Organisms" value="organisms"/>
                                 <TopNavTab label="Components" value="components"/>
+                                <TopNavTab label="Templates" value="templates"/>
                                 <TopNavTab label="Preview" value="preview"/>
                                 <TopNavTab label="Code" value="code"/>
                             </Tabs>
@@ -156,6 +158,9 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                         )}
                         {tabIndex === "preview" && (
                             <PreviewContent user={user} designSystem={designSystem}/>
+                        )}
+                        {tabIndex === "templates" && (
+                            <TemplatesContent user={user} designSystem={designSystem}/>
                         )}
                         {tabIndex === "components" && (
                             <ComponentsContent user={user} designSystem={designSystem}/>
