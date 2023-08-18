@@ -11,7 +11,7 @@ interface Props {
     className?: string;
 }
 
-export const ImageTextRight: React.FC<Props> = ({children, className=""}) => {
+export const ImageTextRight: React.FC<Props> = ({className=""}) => {
     return (
         <section className={className}>
           <Grid className="v-center" container spacing={2} columns={12} margin={2}>
@@ -30,7 +30,6 @@ export const ImageTextRight: React.FC<Props> = ({children, className=""}) => {
               </div>
             </Grid>
           </Grid>
-            {children}
         </section>
     )
 }

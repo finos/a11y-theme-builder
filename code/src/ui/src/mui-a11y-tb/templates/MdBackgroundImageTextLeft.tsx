@@ -11,7 +11,7 @@ interface Props {
     className?: string;
 }
 
-export const MdBackgroundImageTextLeft: React.FC<Props> = ({children, className=""}) => {
+export const MdBackgroundImageTextLeft: React.FC<Props> = ({className=""}) => {
     return (
 
           <Grid className={"v-center background " + className}  container spacing={2} columns={12}>
