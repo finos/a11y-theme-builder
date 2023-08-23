@@ -77,6 +77,10 @@
     margin-left: 0px;
 }
 
+.section-body .subtitle1 {
+  margin-bottom: var(--spacing-2)
+}
+
 .form-columns {
     display: flex;
     gap: 16px;

@@ -7,12 +7,12 @@ import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, FormCont
 import { HeadingSection } from '../../content/HeadingSection';
 
 interface Props {
-    label: string,
     title: string,
     className?: string,
     imagePath?: string,
     imageClassName?: string,
     icon?: boolean,
+    stat?: boolean,
     centerText?: boolean,
     iconButton?: boolean,
     hotlink?: boolean,
@@ -21,11 +21,11 @@ interface Props {
     children?: React.ReactNode,
 }
 
-export const CardSample: React.FC<Props> = ({label, title, className, imagePath, imageClassName, icon, centerText, iconButton, hotlink, hideSecondary, clickable, children }) => {
+export const CardSample: React.FC<Props> = ({title, className, imagePath, imageClassName, icon, centerText, iconButton, hotlink, hideSecondary, clickable, stat,  children }) => {
 
     function renderBarGraphIcon() {
         return (
-            <i className="fa-solid fa-chart-simple"></i>
+            <i className="inline-icon fa-solid fa-chart-simple"></i>
         );
     }
     function titleWithBarGraphIcon(title: string, icon?: boolean) {
@@ -43,21 +43,27 @@ export const CardSample: React.FC<Props> = ({label, title, className, imagePath,
     if (clickable) rootClassName += `${className?" ":""}clickable`;
 
     return (
-        <div className="sample">
-            <div className="subtitle1">{label}</div>
-            <div style={{ width: '50%', position: 'relative' }}>
+
+
                 <Card className={rootClassName || ""}>
                     {imagePath && <CardMedia className={imageClassName || ""}
                         image={imagePath}
                         title="users working on a tablet"
                     />}
-                    <CardHeader
+                    {(!stat) && <CardHeader
                         className="card-title-area"
                         title={titleWithBarGraphIcon(title, icon)}
                         titleTypographyProps={{
                             variant: "h5"
                         }}
-                    />
+                    />}
+                    {(stat) && <CardHeader
+                        className="stat"
+                        title={titleWithBarGraphIcon(title, icon)}
+                        titleTypographyProps={{
+                            variant: "h5"
+                        }}
+                    />}
                     <CardContent>
                         <Typography variant="body2" component="div">
                             {children}
@@ -74,7 +80,7 @@ export const CardSample: React.FC<Props> = ({label, title, className, imagePath,
                         {hotlink && <a href="#">Learn More</a>}
                     </CardActions>}
                 </Card>
-            </div>
-        </div>
+
+
     );
 }

@@ -1079,7 +1079,7 @@
   --on-gradient3-a: var(--on-dm-gray-700);
   --dm-gradient3-a: var(--dm-gray-700);
   --dm-on-gradient3-a: var(--dm-white);
-  --gradient3-b: var(--dm-gray-700);
+  --gradient3-b: var(--gray-200);
   --on-gradient3-b: var(--dm-white);;
   --dm-gradient3-b: var(--black);
   --dm-on-gradient3-b: var(--dm-white);
@@ -1091,7 +1091,7 @@
   --buttonHalfOnBlack: var(--Info-500);
   --buttonOnTertiary: #FFFFFF;
   --onbuttonOnTertiary: #121212;
-  --onbuttonHalfOnTertiary: rgba(0,0,0,0.5);
+  --buttonHalfOnTertiary: rgba(255,255,255,0.5);
   --buttonOnGradient1: #121212;
   --onbuttonOnGradient1: var(--white);
   --buttonHalfOnGradient1: rgba(18,18,18,0.5);
@@ -1100,7 +1100,7 @@
   --buttonHalfOnGradient2: rgba(18,18,18,0.5);
   --buttonOnGradient3: #121212;
   --onbuttonOnGradient3: #FFFFFF;
-  --onbuttonHalfOnGradient3: rgba(0,0,0,0.5);
+  --buttonHalfOnGradient3: rgba(18,18,18,0.5);
   --button: var(--Info-500);
   --on-button: #FFFFFF;
   --button-half: rgba(0,102,239,0.5);

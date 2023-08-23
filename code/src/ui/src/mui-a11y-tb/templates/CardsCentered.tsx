@@ -25,7 +25,7 @@ export const CardsCentered: React.FC<Props> = ({className=""}) => {
                 </p>
               </div>
               <Grid item lg={4} md={3} sm={6} xs={12}>
-                <CardSample label="Left Aligned" title="Title" clickable={_clickableCards}>
+                <CardSample title="Title" clickable={false}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
