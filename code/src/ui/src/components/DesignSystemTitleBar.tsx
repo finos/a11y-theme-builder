@@ -25,6 +25,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
 
     const [showToast, setShowToast] = useState(false);
+    const [showFail,  setShowFail]  = useState(false);
 
     const createNewDesignSystem = "New design system";
 
@@ -37,9 +38,15 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
 
     const saveDesignSystem = async () => {
         console.log(`Save Design System`);
-        designSystem.store();
-        
-        setShowToast(true);
+
+        try {
+            await designSystem.store();
+            setShowToast(true);
+            setShowFail(false);
+        } catch (e) {
+            setShowFail(true);
+            console.log(`Save Design System FAILED`);
+        }
     }
 
     const handleSaveClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
@@ -47,6 +54,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
             return;
         }
         setShowToast(false);
+        setShowFail(false);
     };
 
     const handleDSChange = async (event: SelectChangeEvent) => {
@@ -157,6 +165,11 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                     <Snackbar open={showToast} autoHideDuration={3000} onClose={handleSaveClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} sx={{width: '25%'}}>
                         <Alert severity="success" sx={{ width: '100%', top: '120px'}}>
                             <div className='subtitle' style={{margin: '12px 0'}}>Design System Saved</div>
+                        </Alert>
+                    </Snackbar>
+                    <Snackbar open={showFail} autoHideDuration={3000} onClose={handleSaveClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} sx={{width: '25%'}}>
+                        <Alert severity="error" sx={{ width: '100%', top: '120px'}}>
+                            <div className='subtitle' style={{margin: '12px 0'}}>Error Saving Design System</div>
                         </Alert>
                     </Snackbar>
                 </div>
