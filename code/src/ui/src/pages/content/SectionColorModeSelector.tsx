@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { InputLabel, RadioGroup, FormControlLabel, Radio, Typography } from '@mui/material';
+import { InputLabel, RadioGroup, FormControlLabel, Radio, Typography, Grid } from '@mui/material';
 
 export interface SectionColorModeSelector {
     colorMode: string;
@@ -19,21 +19,26 @@ export const SectionColorModeSelector: React.FC<SectionColorModeSelector> = ({ c
 
     return (
         <>
-        <InputLabel>Color Variants</InputLabel>
-        <Typography variant="caption">View components as default, black, white or gradient variants</Typography>
-        <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
-            <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-            <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-            <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-            <FormControlLabel value="gradient-1" control={<Radio size="small"/>} label="Gradient 1"/>
-            <FormControlLabel value="gradient-2" control={<Radio size="small"/>} label="Gradient 2"/>
-            <FormControlLabel value="gradient-3" control={<Radio size="small"/>} label="Gradient 3"/>
-        </RadioGroup>
-        {children &&
-            <div style={style}>
-                {children}
-            </div>
-        }
+        <Grid container spacing={2} columns={12} margin={2}>
+          <Grid item spacing={2} lg={12} md={12} sm={12}>
+            <InputLabel>Color Variants</InputLabel>
+            <Typography variant="caption">View components on various background colors: default, colored, black, white or gradients</Typography>
+            <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
+                <FormControlLabel value="" control={<Radio size="small"/>} label="Default"/>
+                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
+                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
+                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
+                <FormControlLabel value="gradient-1" control={<Radio size="small"/>} label="Gradient 1"/>
+                <FormControlLabel value="gradient-2" control={<Radio size="small"/>} label="Gradient 2"/>
+                <FormControlLabel value="gradient-3" control={<Radio size="small"/>} label="Gradient 3"/>
+            </RadioGroup>
+            {children &&
+                <div style={style}>
+                    {children}
+                </div>
+            }
+          </Grid>
+        </Grid>
         </>
     )
 }

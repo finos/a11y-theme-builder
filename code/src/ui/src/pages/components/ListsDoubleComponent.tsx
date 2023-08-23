@@ -7,7 +7,6 @@ import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { SettingsSection } from '../content/SettingsSection';
-
 import { ListComponent } from './ListComponent';
 
 
@@ -31,7 +30,7 @@ export const ListsDoubleComponent: React.FC<Props> = () => {
         <div className="content">
             <HeadingSection title='Desktop' heading='Lists - Double Line'></HeadingSection>
             <SettingsSection>
-                <RadioGroup 
+                <RadioGroup
                     aria-labelledby="isClickable-button-group-label"
                     name="isClickable-buttons-group"
                     defaultValue="non-clickable"
@@ -46,18 +45,18 @@ export const ListsDoubleComponent: React.FC<Props> = () => {
                     <div className="row">
                         <div className="col-6">
                             <h6>Double Line Lists without Checkbox</h6>
-                            <ListComponent isClickable={isClickable} type={2} title={'Single Line - Style 1'}></ListComponent>
-                            <ListComponent isClickable={isClickable} type={2} title={'List - Style 2'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasAvatar type={2} title={'Style 1 - with Avatar'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasAvatar type={2} title={'Style 2 - with Avatar'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasImg type={2} title={'Style 1 - with Square Image'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasImg type={2} title={'Style 2 - with Square Image'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasImg isLarge type={2} title={'Style 1 - with Wide Image'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasImg isLarge type={2} title={'Style 2 - with Wide Image'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasIcon type={2} title={'Style 1 - with Icon'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasIcon type={2} title={'Style 2 - with Icon'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasIcon isLarge type={2} title={'Style 1 - with Large Icon'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasIcon isLarge type={2} title={'Style 2 - with Large Icon'} isStyle2></ListComponent>
+                            <ListComponent isClickable={isClickable} type={2} title={'Single Line - Style 1'} overline={'Overline'} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} type={2} title={'List - Style 2'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasAvatar type={2} title={'Style 1 - with Avatar'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasAvatar type={2} title={'Style 2 - with Avatar'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasImg type={2} title={'Style 1 - with Square Image'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasImg type={2} title={'Style 2 - with Square Image'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasImg isLarge type={2} title={'Style 1 - with Wide Image'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasImg isLarge type={2} title={'Style 2 - with Wide Image'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasIcon type={2} title={'Style 1 - with Icon'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasIcon type={2} title={'Style 2 - with Icon'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasIcon isLarge type={2} title={'Style 1 - with Large Icon'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasIcon isLarge type={2} title={'Style 2 - with Large Icon'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
                         </div>
                     </div>
                 </section>
@@ -65,17 +64,18 @@ export const ListsDoubleComponent: React.FC<Props> = () => {
                     <div className="row">
                         <div className="col-6">
                             <h6>Double Line Lists with Checkbox</h6>
-                            <ListComponent isClickable={isClickable} hasCheckbox type={2} title={'Single Line - Style 1'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox type={2} title={'List - Style 2'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasAvatar type={2} title={'Style 1 - with Avatar'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasAvatar type={2} title={'Style 2 - with Avatar'} isStyle2></ListComponent>                            <ListComponent hasCheckbox hasImg type={2} title={'Style 1 - with Square Image'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasImg type={2} title={'Style 2 - with Square Image'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasImg isLarge type={2} title={'Style 1 - with Wide Image'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasImg isLarge type={2} title={'Style 2 - with Wide Image'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon type={2} title={'Style 1 - with Icon'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon type={2} title={'Style 2 - with Icon'} isStyle2></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon isLarge type={2} title={'Style 1 - with Large Icon'}></ListComponent>
-                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon isLarge type={2} title={'Style 2 - with Large Icon'} isStyle2></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox type={2} title={'Single Line - Style 1'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox type={2} title={'List - Style 2'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasAvatar type={2} title={'Style 1 - with Avatar'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasAvatar type={2} title={'Style 2 - with Avatar'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent hasCheckbox hasImg type={2} title={'Style 1 - with Square Image'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasImg type={2} title={'Style 2 - with Square Image'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasImg isLarge type={2} title={'Style 1 - with Wide Image'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasImg isLarge type={2} title={'Style 2 - with Wide Image'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon type={2} title={'Style 1 - with Icon'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon type={2} title={'Style 2 - with Icon'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon isLarge type={2} title={'Style 1 - with Large Icon'}  overline={''} body={'testing'}  ></ListComponent>
+                            <ListComponent isClickable={isClickable} hasCheckbox hasIcon isLarge type={2} title={'Style 2 - with Large Icon'} isStyle2  overline={''} body={'testing'}  ></ListComponent>
                         </div>
                     </div>
                 </section>

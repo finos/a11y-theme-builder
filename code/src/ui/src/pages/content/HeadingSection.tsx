@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Atom, Molecule, Organism } from 'a11y-theme-builder-sdk';
+import { Grid } from '@mui/material';
 
 
 interface Props {
@@ -31,6 +32,8 @@ export const HeadingSection: React.FC<Props> = ({item, children, title, heading}
 
     return (
         <>
+        <Grid container spacing={2} columns={12} margin={2}>
+          <Grid item spacing={2} lg={12} md={12} sm={12}>
             <div className="overline-large">{title || item?.name}</div>
             <h1>{heading || item?.name}</h1>
             <div className="section-body">
@@ -39,6 +42,8 @@ export const HeadingSection: React.FC<Props> = ({item, children, title, heading}
                     TODO: Add description for {item?.name || heading} {getType()}.
                 </div>}
             </div>
+          </Grid>
+        </Grid>
         </>
     )
 }

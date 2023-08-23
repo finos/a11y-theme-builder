@@ -6,106 +6,118 @@ import React, { useState } from 'react';
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ExampleSection } from '../../content/ExampleSection';
-import { SettingsSection } from '../../content/SettingsSection';
+import { CardColorModeSelector } from '../../content/CardColorModeSelector';
 import { CardSample } from './CardSample';
 
 interface Props {
 }
 
 export const CardsStandardComponent: React.FC<Props> = () => {
+      const [colorMode, setColorMode] = useState<string>("colored");
 
     const [_clickableCards, _setClickableCards] = useState<boolean>(false);
 
     return (
         <div>
             <HeadingSection title="Desktop" heading="Standard Cards" />
-            <SettingsSection>
-                <FormControl>
-                    <RadioGroup
-                        name="cards-standard-radio-buttons-group"
-                        value={_clickableCards}
-                        onChange={(event) => { _setClickableCards(event.target.value === "true") }}
-                    >
-                        <FormControlLabel value="false" control={<Radio />} label="Non-clickable Cards (with buttons)" />
-                        <FormControlLabel value="true" control={<Radio />} label="Clickable Cards" />
-                    </RadioGroup>
-                </FormControl>
-            </SettingsSection>
+            <CardColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+            </CardColorModeSelector>
             <ExampleSection>
-                <CardSample label="Left Aligned" title="Title" clickable={_clickableCards}>
+                <div className="subtitle1 top40">Left Aligned with Two Buttons</div>
+                <CardSample title="Title"  className={colorMode}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample label="Left Aligned with Icon" title="Title" icon={ true } clickable={_clickableCards}>
+                <div className="subtitle1 top40">Left Aligned with one Button</div>
+                <CardSample title="Title"  className={colorMode} hideSecondary={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample label="Center Aligned" title="Title" className="centerAligned" clickable={_clickableCards}>
+                <div className="subtitle1 top40">Left Aligned with Hotlink</div>
+                <CardSample title="Title"  className={colorMode} hotlink={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample label="Center Aligned with Icon" title="Lorem ipsum dolor" className="centerAligned" icon={ true } clickable={_clickableCards}>
+                <div className="subtitle1 top40">Left Aligned, Clickable</div>
+                <CardSample title="Title"  className={colorMode} clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample
-                    label="Black Background"
-                    title="Lorem ipsum dolor"
-                    className="black centerAligned"
-                    icon={ true }
-                    iconButton={ true }
-                    clickable={_clickableCards}
-                >
+
+                <div className="subtitle1 top40">Center Aligned with Two Buttons</div>
+                <CardSample  title="Title" className={"centerAligned " + colorMode}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
+                    sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample
-                    label="Tertiary Background"
-                    title="Lorem ipsum dolor"
-                    className="colored"
-                    icon={ true }
-                    clickable={_clickableCards}
-                >
+                <div className="subtitle1 top40">Center Aligned with one Button</div>
+                <CardSample  title="Lorem ipsum dolor" className={"centerAligned " + colorMode} hideSecondary={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
+                    sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample
-                    label="Gradient-1 Background"
-                    title="Lorem ipsum dolor"
-                    className="gradient-1"
-                    icon={ true }
-                    clickable={_clickableCards}
-                >
+                <div className="subtitle1 top40">Center Aligned with hotlink</div>
+                <CardSample  title="Lorem ipsum dolor" className={"centerAligned " + colorMode} hotlink={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
+                    sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample
-                    label="Gradient-2 Background"
-                    title="Lorem ipsum dolor"
-                    className="gradient-2"
-                    icon={ true }
-                    clickable={_clickableCards}
-                >
+                <div className="subtitle1 top40">Center Aligned, Clickable</div>
+                <CardSample  title="Lorem ipsum dolor" className={"centerAligned " + colorMode} clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
+                    sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
-                <CardSample
-                    label="Gradient-3 Background"
-                    title="Lorem ipsum dolor"
-                    className="gradient-3"
-                    icon={ true }
-                    clickable={_clickableCards}
-                >
+                <div className="subtitle1 top40">Left Aligned with Icon and Two Buttons</div>
+                <CardSample title="Title" icon={ true }   className={colorMode} >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt <a href="#">ut labore et dolore</a>
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Left Aligned with Icon and one Buttons</div>
+                <CardSample title="Title" icon={ true }   className={colorMode} hideSecondary={true} hotlink={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Left Aligned with Icon and Hotlink</div>
+                <CardSample title="Title" icon={ true }   className={colorMode}  hotlink={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Left Aligned, Clickable</div>
+                <CardSample title="Title" icon={ true }   className={colorMode} clickable={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Center Aligned with Icon and Two Buttons</div>
+                <CardSample title="Title" icon={ true } className={"centerAligned " + colorMode} >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Center Aligned with Icon and one Buttons</div>
+                <CardSample title="Title" icon={ true } className={"centerAligned " + colorMode} hideSecondary={true} hotlink={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Center Aligned with Icon and Hotlink</div>
+                <CardSample title="Title" icon={ true } className={"centerAligned " + colorMode} hotlink={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua
+                </CardSample>
+                <div className="subtitle1 top40">Center Aligned, Clickable</div>
+                <CardSample title="Title" icon={ true }  className={"centerAligned " + colorMode} clickable={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
             </ExampleSection>
