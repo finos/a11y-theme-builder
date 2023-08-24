@@ -338,7 +338,32 @@ section {
   padding-top: calc(calc(var(--section-padding) - 2) * var(--spacing-1)) !important;
   padding-bottom: calc(var(--section-padding) * var(--spacing-1)) !important;
 }
-
+section:has( .backgroundImage) {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+section:has( .backgroundImage) .MuiGrid-root{
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+section:has( .backgroundImage) .MuiGrid-root video{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translateX(-50%) translateY(-50%);
+   transform: translateX(-50%) translateY(-50%);
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   z-index: -1000;
+   overflow: hidden;
+}
 /* opacity */
 .quiet {
   opacity: var(--quiet);

@@ -13,8 +13,9 @@ interface Props {
     className?: string;
 }
 
-export const BlackCards: React.FC<Props> = ({className=""}) => {
+export const TableColored: React.FC<Props> = ({className=""}) => {
     return (
+
         <section className={className}>
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={12} md={12} sm={12}>
