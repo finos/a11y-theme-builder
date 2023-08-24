@@ -11,8 +11,10 @@ import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Bu
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { ImagesOnly } from '../../templates/ImagesOnly';
 import { TemplateExample } from '../../templates/TemplateExample';
 import { BackgroundImageExample } from '../../templates/BackgroundImageExample';
+import { FullWidthBackgrounds } from '../../templates/FullWidthBackgrounds';
 import { ListsSingle } from '../../templates/ListsSingle';
 import { ListsDouble } from '../../templates/ListsDouble';
 import { ListsTriple } from '../../templates/ListsTriple';
@@ -39,6 +41,8 @@ interface templateItem {
 const templateList: {[key: string]:templateItem} = {
     imageText: {value: "imageText", label: "Image & Text", template: "ImageText", disabled: false},
     backgroundimageText: {value: "backgroundimageText", label: "Background Image & Text", template: "ImageText", disabled: false},
+    fullBackground: {value: "fullBackground", label: "Full Width Backgrounds", template: "fullBackground", disabled: false},
+
     listVariations: {value: "listVariations", label: "List - Single Line", template: "listVariations", disabled: false},
     listsDoubleVariations: {value: "listsDoubleVariations", label: "List - Double Line", template: "listsDoubleVariations", disabled: false},
     listsTripleVariations: {value: "listsTripleVariations", label: "List - Triple Line", template: "listsTripleVariations", disabled: false},
@@ -49,6 +53,7 @@ const templateList: {[key: string]:templateItem} = {
     cardVariationsIcons: {value: "cardVariationsIcons", label: "Cards, with Icons", template: "cardVariationsIcons", disabled: false},
     imageCardVariations: {value: "imageCardVariations", label: "Cards, with Images 9:21", template: "imageCardVariations", disabled: false},
     imageCard916Variations: {value: "imageCard916Variations", label: "Cards, with Images 9:16", template: "imageCard916Variations", disabled: false},
+    imagesOnlyVariations: {value: "imagesOnlyVariations", label: "Images Only", template: "imagesOnlyVariations", disabled: false},
     videoVariations: {value: "videoVariations", label: "Videos", template: "videoVariations", disabled: false},
     youTubeVariations: {value: "youTubeVariations", label: "YouTube Videos", template: "youTubeVariations", disabled: false},
 
@@ -142,10 +147,16 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                     </LeftNavItem>
                     <Collapse in={displayGeneral} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.imagesOnlyVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.imageText} indent={2} />
                         </List>
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.backgroundimageText} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.fullBackground} indent={2} />
                         </List>
                     </Collapse>
                     <LeftNavItem text={"Videos"} indent={1} onClick={()=>setDisplayVideo(!displayVideo)}>
@@ -218,9 +229,19 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <TemplateExample />
                     </ErrorHandler>
                 )}
+                {showTemplate === templates.imagesOnlyVariations.value && (
+                    <ErrorHandler>
+                        <ImagesOnly />
+                    </ErrorHandler>
+                )}
                 {showTemplate === templates.backgroundimageText.value && (
                     <ErrorHandler>
                         <BackgroundImageExample />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.fullBackground.value && (
+                    <ErrorHandler>
+                        <FullWidthBackgrounds />
                     </ErrorHandler>
                 )}
                 {showTemplate === templates.listVariations.value && (
