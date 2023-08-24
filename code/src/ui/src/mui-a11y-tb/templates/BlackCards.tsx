@@ -3,7 +3,7 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Breadcrumbs, Button, Link, Typography, Grid, Datagrid } from '@mui/material';
+import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ListComponent } from '../../pages/components/ListComponent';
 import { CardSample } from '../../pages/components/cards/CardSample';
 
