@@ -22,25 +22,32 @@ interface Props {
 
 export const BackgroundImageExample: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Image & Text" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <SmBackgroundImageTextRight className={"top40 " + colorMode} />
-                      <p></p>
-                      <SmBackgroundImageTextLeft className={"top40 " + colorMode} />
-                      <p></p>
-                      <MdBackgroundImageTextRight className={"top40 " + colorMode} />
-                      <p></p>
-                      <MdBackgroundImageTextLeft className={"top40 " + colorMode} />
-                      <p></p>
-                      <LgBackgroundImageTextRight className={"top40 " + colorMode} />
-                      <p></p>
-                      <LgBackgroundImageTextLeft className={"top40 " + colorMode} />
-                  </SectionColorModeSelector>
+                  <div className="subtitle1">Small Image on Right</div>
+                  <SmBackgroundImageTextRight className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">Small Image on Left</div>
+                  <SmBackgroundImageTextLeft className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">Medium Image on Right</div>
+                  <MdBackgroundImageTextRight className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">Medium Image on Left</div>
+                  <MdBackgroundImageTextLeft className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">Large Image on Right</div>
+                  <LgBackgroundImageTextRight className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">Large Image on Left</div>
+                  <LgBackgroundImageTextLeft className={"top40 " + colorMode} />
               </ExampleSection>
           </div>
       )

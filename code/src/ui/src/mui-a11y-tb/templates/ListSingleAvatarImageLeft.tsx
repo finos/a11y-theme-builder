@@ -13,20 +13,20 @@ interface Props {
     className?: string;
 }
 
-export const ListTripleIconLargeClickable: React.FC<Props> = ({className=""}) => {
+export const ListSingleAvatar: React.FC<Props> = ({className=""}) => {
     return (
-        <section className={className}>
+        <section className={"list-section " + className}>
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
-              <h6>List Items with an image and 2 lines</h6>
+              <h6>Title</h6>
               <div className="body">
-                <ListComponent isClickable={true} hasIcon isLarge type={3} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
+                <ListComponent hasAvatar type={1} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
-                <ListComponent isClickable={true} hasIcon isLarge type={3} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
+                <ListComponent hasAvatar type={1} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
-                <ListComponent isClickable={true} hasIcon isLarge type={3} title={'Episode 3'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
+                <ListComponent hasAvatar type={1} title={'Episode 3'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
-                <ListComponent isClickable={true} hasIcon isLarge type={3} title={'Episode 4'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
+                <ListComponent hasAvatar type={1} title={'Episode 4'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
               </div>
             </Grid>
 

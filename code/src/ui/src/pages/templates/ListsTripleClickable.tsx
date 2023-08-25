@@ -8,11 +8,12 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { ListDoubleAvatarClickable } from "../../mui-a11y-tb/templates/ListDoubleAvatarClickable";
-import { ListDoubleImageClickable } from "../../mui-a11y-tb/templates/ListDoubleImageClickable";
-import { ListDoubleImageWideClickable } from "../../mui-a11y-tb/templates/ListDoubleImageWideClickable";
-import { ListDoubleIconSmallClickable } from "../../mui-a11y-tb/templates/ListDoubleIconSmallClickable";
-import { ListDoubleIconLargeClickable} from "../../mui-a11y-tb/templates/ListDoubleIconLargeClickable";
+import { ListTripleClickable } from "../../mui-a11y-tb/templates/ListTripleClickable";
+import { ListTripleAvatarClickable } from "../../mui-a11y-tb/templates/ListTripleAvatarClickable";
+import { ListTripleImageClickable } from "../../mui-a11y-tb/templates/ListTripleImageClickable";
+import { ListTripleImageWideClickable } from "../../mui-a11y-tb/templates/ListTripleImageWideClickable";
+import { ListTripleIconSmallClickable } from "../../mui-a11y-tb/templates/ListTripleIconSmallClickable";
+import { ListTripleIconLargeClickable} from "../../mui-a11y-tb/templates/ListTripleIconLargeClickable";
 
 interface Props {
     colorMode?: string;
@@ -21,24 +22,33 @@ interface Props {
 
 export const ListsTripleClickable: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Lists, Triple Line" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <ListDoubleAvatarClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImageClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImageWideClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconSmallClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconLargeClickable className={"top40 " + colorMode} />
-                      <p></p>
-                  </SectionColorModeSelector>
+                  <div className="subtitle1">List, Standard</div>
+                  <ListTripleClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with avatars</div>
+                  <ListTripleAvatarClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with images</div>
+                  <ListTripleImageClickable className={"top40 " + colorMode} />
+                  <p></p>
+                    <div className="subtitle1">List, with wide images</div>
+                  <ListTripleImageWideClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with icons</div>
+                  <ListTripleIconSmallClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with wide icons</div>
+                  <ListTripleIconLargeClickable className={"top40 " + colorMode} />
+                  <p></p>
               </ExampleSection>
           </div>
       )

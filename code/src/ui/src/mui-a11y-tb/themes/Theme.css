@@ -27,6 +27,9 @@
 .centered {
   text-align: center;
 }
+.centered *{
+  margin: auto;
+}
 
 /* Typography */
 /* Headers */
@@ -341,6 +344,7 @@ section {
 section:has( .backgroundImage) {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  overflow: hidden;
 }
 section:has( .backgroundImage) .MuiGrid-root{
   padding: 0px !important;
@@ -364,6 +368,12 @@ section:has( .backgroundImage) .MuiGrid-root video{
    z-index: -1000;
    overflow: hidden;
 }
+.paralux {
+   background-attachment: fixed
+}
+.list-section .MuiGrid-container {
+  align-items: center;
+}
 /* opacity */
 .quiet {
   opacity: var(--quiet);
@@ -371,6 +381,7 @@ section:has( .backgroundImage) .MuiGrid-root video{
 .disabled {
   opacity: var(--disabled);
 }
+
 
 /* THEME */
 .theme-primary {
@@ -489,6 +500,13 @@ section:has( .backgroundImage) .MuiGrid-root video{
 /* MOLECULES */
 
 /* avatars */
+.MuiGrid-item:has(.avatar) {
+  margin-bottom: var(--spacing-2);
+}
+.MuiGrid-item:has(.avatar) .subtitle1 {
+  margin: var(--spacing-1);
+}
+
 .avatars {
     display: flex;
     justify-content: start;
@@ -1589,6 +1607,42 @@ button.MuiPaginationItem-root:hover {
 .card.statCard {
   padding: calc(var(--spacing-1) * var(--card-padding) * 2) calc(var(--spacing-1) * var(--card-padding)) !important;
 }
+.MuiCard-root.pricing {
+  text-align: center;
+  justify-content: stretch;
+  display: flex;
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+.MuiCard-root.pricing button {
+  width: 100%;
+}
+.MuiCard-root.pricing a {
+  margin: auto;
+}
+.pricingSection {
+  justify-content: stretch;
+  display: flex;
+}
+.pricingSection .MuiGrid-item {
+  justify-content: stretch;
+  display: flex;
+}
+.pricingSection .MuiCardContent-root {
+  flex-grow: 1
+}
+.top-grey {
+  border-top: 8px solid var(--gray-400) !important;
+}
+.top-primary {
+  border-top: 8px solid var(--primary) !important;
+}
+.top-secondary {
+  border-top: 8px solid var(--secondary) !important;
+}
+.top-tertiary {
+  border-top: 8px solid var(--tertiary) !important;
+}
 
 .client-title-area {
   display: flex;
@@ -1621,7 +1675,7 @@ button.MuiPaginationItem-root:hover {
   scroll-snap-type: x mandatory;
 }
 /* darkmode card */
-.darkmode .MuiCard-root {
+.darkmode .MuiCard-root:not(.white):not(.black):not(.colored):not(.gradient-1):not(.gradient-2):not(.gradient-3) {
   background: var(--dm-surface);
   border: 1px solid var(--dm-border) !important;
   color: var(--dm-on-surface) !important;
@@ -1934,6 +1988,7 @@ button.MuiPaginationItem-root:hover {
 .list {
   padding: var(--spacing-1);
   position: relative;
+  text-align: left;
 }
 .list-clickable {
   position: relative;
@@ -3928,7 +3983,7 @@ button.MuiPaginationItem-root:hover {
   color: var(--black) !important;
 }
 .darkmode .colored button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
   color: var(--onbuttonOnTertiary) !important;
@@ -3938,11 +3993,11 @@ button.MuiPaginationItem-root:hover {
   background: none !important
 }
 .darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
-  color: var(--onbuttonOnTertiary) !important;
-  background: var(--buttonOnTertiary) !important;
+  color: var(--dmonbuttonOnTertiary) !important;
+  background: var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
-  color: var(--buttonOnTertiary) !important;
+  color: var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--dm-white);
@@ -4603,4 +4658,24 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* footer */
+.socialIcons {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+footer .MuiGrid-container {
+  align-items: start
+}
+.subtitle1 {
+  margin-top: var(--spacing-3);
+  margin-bottom: var(--spacing-1);
+}
+.list-clickable {
+  min-height: 24px !important;
+}
+.copyright {
+  padding: var(--spacing-2) 0;
 }

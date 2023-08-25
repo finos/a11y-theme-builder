@@ -8,6 +8,7 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
+import { ListDoubleClickable } from "../../mui-a11y-tb/templates/ListDoubleClickable";
 import { ListDoubleAvatarClickable } from "../../mui-a11y-tb/templates/ListDoubleAvatarClickable";
 import { ListDoubleImageClickable } from "../../mui-a11y-tb/templates/ListDoubleImageClickable";
 import { ListDoubleImageWideClickable } from "../../mui-a11y-tb/templates/ListDoubleImageWideClickable";
@@ -21,24 +22,33 @@ interface Props {
 
 export const ListsDoubleClickable: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Lists, Double Line" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <ListDoubleAvatarClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImageClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImageWideClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconSmallClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconLargeClickable className={"top40 " + colorMode} />
-                      <p></p>
-                  </SectionColorModeSelector>
+                <div className="subtitle1">List, Standard</div>
+                <ListDoubleClickable className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with avatars</div>
+                <ListDoubleAvatarClickable className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with images</div>
+                <ListDoubleImageClickable className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with wide images</div>
+                <ListDoubleImageWideClickable className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with icons</div>
+                <ListDoubleIconSmallClickable className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with wide icons</div>
+                <ListDoubleIconLargeClickable className={"top40 " + colorMode} />
+                <p></p>
               </ExampleSection>
           </div>
       )

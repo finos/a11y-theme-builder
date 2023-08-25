@@ -21,25 +21,31 @@ interface Props {
 
 export const YouTubeLayouts: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
-          <div className={colorMode}>
+          <div>
               <HeadingSection title="Templates" heading="YouTube Videos" />
-              <ExampleSection>
-              </ExampleSection>
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <YouTubeLeftSmall/>
-              <p></p>
-              <YouTubeLeft/>
-              <p></p>
-              <YouTubeCentered/>
-              <p></p>
-              <YouTubeRightSmall/>
-              <p></p>
-              <YouTubeRight/>
-              <p></p>
+              <div className={colorMode}></div>
+              <ExampleSection>
+                <div className="subtitle1">Small YouTube Video Left</div>
+                <YouTubeLeftSmall className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Medium YouTube Video Left</div>
+                <YouTubeLeft className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">YouTube Video Centered</div>
+                <YouTubeCentered className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Small YouTube Video Right</div>
+                <YouTubeRightSmall className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Medium YouTube Video Right</div>
+                <YouTubeRight className={colorMode}/>
+                <p></p>
+              </ExampleSection>
 
           </div>
       )

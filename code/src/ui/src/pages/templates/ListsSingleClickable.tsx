@@ -22,26 +22,33 @@ interface Props {
 
 export const ListsSingleClickable: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Lists, Single Line" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <ListSingleClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListSingleAvatarClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListSingleImageClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListSingleImageWideClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListSingleIconSmallClickable className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListSingleIconLargeClickable className={"top40 " + colorMode} />
-                      <p></p>
-                  </SectionColorModeSelector>
+                  <div className="subtitle1">List, Standard</div>
+                  <ListSingleClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with avatars</div>
+                  <ListSingleAvatarClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with images</div>
+                  <ListSingleImageClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with wide images</div>
+                  <ListSingleImageWideClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with icons</div>
+                  <ListSingleIconSmallClickable className={"top40 " + colorMode} />
+                  <p></p>
+                  <div className="subtitle1">List, with large icons</div>
+                  <ListSingleIconLargeClickable className={"top40 " + colorMode} />
+                  <p></p>
               </ExampleSection>
           </div>
       )

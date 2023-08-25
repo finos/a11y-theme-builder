@@ -22,26 +22,33 @@ interface Props {
 
 export const ListsSingle: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Lists, Single Line" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+                      <div className="subtitle1">List, Standard</div>
                       <ListSingle className={"top40 " + colorMode} />
                       <p></p>
+                      <div className="subtitle1">List, with avatars</div>
                       <ListSingleAvatar className={"top40 " + colorMode} />
                       <p></p>
+                      <div className="subtitle1">List, with images</div>
                       <ListSingleImage className={"top40 " + colorMode} />
                       <p></p>
+                      <div className="subtitle1">List, with wide images</div>
                       <ListSingleImageWide className={"top40 " + colorMode} />
                       <p></p>
+                      <div className="subtitle1">List, with icons</div>
                       <ListSingleIconSmall className={"top40 " + colorMode} />
                       <p></p>
+                      <div className="subtitle1">List, with wide icons</div>
                       <ListSingleIconLarge className={"top40 " + colorMode} />
                       <p></p>
-                  </SectionColorModeSelector>
               </ExampleSection>
           </div>
       )
