@@ -11,6 +11,7 @@ import { HeadingSection } from '../../pages/content/HeadingSection';
 import { ImageLarge } from "../../mui-a11y-tb/templates/ImageLarge";
 import { TwoImages } from "../../mui-a11y-tb/templates/TwoImages";
 import { ThreeImages } from "../../mui-a11y-tb/templates/ThreeImages";
+import { FourImages } from "../../mui-a11y-tb/templates/FourImages";
 
 interface Props {
     colorMode?: string;
@@ -19,19 +20,26 @@ interface Props {
 
 export const ImagesOnly: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
-              <HeadingSection title="Templates" heading="Image & Text" />
+              <HeadingSection title="Templates" heading="Image Only Sections" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <ImageLarge className={"top40 " + colorMode} />
-                      <p></p>
-                      <TwoImages className={"top40 " + colorMode} />
-                      <p></p>
-                      <ThreeImages className={"top40 " + colorMode} />
-                  </SectionColorModeSelector>
+                <div className="subtitle1">Single Image</div>
+                <ImageLarge className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">Two Images</div>
+                <TwoImages className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">Three Images</div>
+                <ThreeImages className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">Four Images</div>
+                <FourImages className={"top40 " + colorMode} />
               </ExampleSection>
           </div>
       )

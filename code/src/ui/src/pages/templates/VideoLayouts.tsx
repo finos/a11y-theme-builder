@@ -21,26 +21,31 @@ interface Props {
 
 export const VideoLayouts: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
-          <div className={colorMode}>
+          <div>
               <HeadingSection title="Templates" heading="Videos" />
-              <ExampleSection>
-              </ExampleSection>
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <VideoLeftSmall/>
-              <p></p>
-              <VideoLeft/>
-              <p></p>
-              <VideoCentered/>
-              <p></p>
-              <VideoRightSmall/>
-              <p></p>
-              <VideoRight/>
-              <p></p>
-
+              <div className={colorMode}></div>
+              <ExampleSection>
+                <div className="subtitle1">Small Video Left</div>
+                <VideoLeftSmall  className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Medium Video Left</div>
+                <VideoLeft className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Video Centered</div>
+                <VideoCentered className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Small Video Right</div>
+                <VideoRightSmall className={colorMode}/>
+                <p></p>
+                <div className="subtitle1">Medium Video Right</div>
+                <VideoRight className={colorMode}/>
+                <p></p>
+              </ExampleSection>
           </div>
       )
   }

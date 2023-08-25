@@ -19,7 +19,7 @@ export const VideoLeft: React.FC<Props> = ({className=""}) => {
                <video src="/video.mp4" controls></video>
             </Grid>
             <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
-              <h2>Video on Left</h2>
+              <h2>Title</h2>
               <div className="body">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.

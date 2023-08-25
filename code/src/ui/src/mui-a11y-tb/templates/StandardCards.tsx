@@ -15,7 +15,7 @@ interface Props {
 
 export const StandardCards: React.FC<Props> = ({className=""}) => {
     return (
-        <section className={className}>
+        <section className={className } >
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={10} md={10} sm={12}>
               <h2>Responsive Cards, Left Aligned, Two Buttons</h2>

@@ -8,6 +8,7 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
+import { ListDouble } from "../../mui-a11y-tb/templates/ListDouble";
 import { ListDoubleAvatar } from "../../mui-a11y-tb/templates/ListDoubleAvatar";
 import { ListDoubleImage } from "../../mui-a11y-tb/templates/ListDoubleImage";
 import { ListDoubleImageWide } from "../../mui-a11y-tb/templates/ListDoubleImageWide";
@@ -21,24 +22,33 @@ interface Props {
 
 export const ListsDouble: React.FC<Props> = ({ }) => {
 
-      const [colorMode, setColorMode] = useState<string>("colored");
+      const [colorMode, setColorMode] = useState<string>("");
 
       return (
           <div>
               <HeadingSection title="Templates" heading="Lists, Double Line" />
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className={colorMode}></div>
               <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <ListDoubleAvatar className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImage className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleImageWide className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconSmall className={"top40 " + colorMode} />
-                      <p></p>
-                      <ListDoubleIconLarge className={"top40 " + colorMode} />
-                      <p></p>
-                  </SectionColorModeSelector>
+                <div className="subtitle1">List, standard</div>
+                <ListDouble className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with avatars</div>
+                <ListDoubleAvatar className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with images</div>
+                <ListDoubleImage className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with wide images</div>
+                <ListDoubleImageWide className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with icons</div>
+                <ListDoubleIconSmall className={"top40 " + colorMode} />
+                <p></p>
+                <div className="subtitle1">List, with wide icons</div>
+                <ListDoubleIconLarge className={"top40 " + colorMode} />
+                <p></p>
               </ExampleSection>
           </div>
       )

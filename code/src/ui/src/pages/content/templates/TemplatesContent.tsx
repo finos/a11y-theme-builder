@@ -15,18 +15,26 @@ import { ImagesOnly } from '../../templates/ImagesOnly';
 import { TemplateExample } from '../../templates/TemplateExample';
 import { BackgroundImageExample } from '../../templates/BackgroundImageExample';
 import { FullWidthBackgrounds } from '../../templates/FullWidthBackgrounds';
+import { FullWidthVideo } from '../../templates/FullWidthVideo';
 import { ListsSingle } from '../../templates/ListsSingle';
 import { ListsDouble } from '../../templates/ListsDouble';
+import { ListsDoubleImageLeft } from '../../templates/ListsDoubleImageLeft';
 import { ListsTriple } from '../../templates/ListsTriple';
 import { ListsSingleClickable } from '../../templates/ListsSingleClickable';
 import { ListsDoubleClickable  } from '../../templates/ListsDoubleClickable';
 import { ListsTripleClickable  } from '../../templates/ListsTripleClickable';
+import { ListsDoubleClickableImageLeft } from '../../templates/ListsDoubleClickableImageLeft';
 import { CardsStandard  } from '../../templates/CardsStandard';
 import { IconCardsStandard  } from '../../templates/IconCardsStandard';
 import { ImageCardsStandard  } from '../../templates/ImageCardsStandard';
 import { ImageCardsStandard916  } from '../../templates/ImageCardsStandard916';
+import { PricingCardSamples } from '../../templates/PricingCardSamples';
+import { StatCardSamples } from '../../templates/StatCardSamples';
+import { StatIconCardSamples } from '../../templates/StatIconCardSamples';
 import { VideoLayouts  } from '../../templates/VideoLayouts';
 import { YouTubeLayouts  } from '../../templates/YouTubeLayouts';
+import { FooterLayouts  } from '../../templates/FooterLayouts';
+import { TeamLayouts  } from '../../templates/TeamLayouts';
 import { Preferences } from '../../../Preferences';
 
 const name = "TemplatesContent"
@@ -42,20 +50,28 @@ const templateList: {[key: string]:templateItem} = {
     imageText: {value: "imageText", label: "Image & Text", template: "ImageText", disabled: false},
     backgroundimageText: {value: "backgroundimageText", label: "Background Image & Text", template: "ImageText", disabled: false},
     fullBackground: {value: "fullBackground", label: "Full Width Backgrounds", template: "fullBackground", disabled: false},
-
+    fullVideo: {value: "fullVideo", label: "Full Width Video", template: "fullVideo", disabled: false},
     listVariations: {value: "listVariations", label: "List - Single Line", template: "listVariations", disabled: false},
     listsDoubleVariations: {value: "listsDoubleVariations", label: "List - Double Line", template: "listsDoubleVariations", disabled: false},
     listsTripleVariations: {value: "listsTripleVariations", label: "List - Triple Line", template: "listsTripleVariations", disabled: false},
     listVariationsClickable: {value: "listVariationsClickable", label: "Lists, Clickable - Single Line", template: "listVariationsClickable", disabled: false},
     listsDoubleVariationsClickable: {value: "listsDoubleVariationsClickable", label: "Lists, Clickable - Double Line", template: "listsDoubleVariationsClickable", disabled: false},
     listsTripleVariationsClickable: {value: "listsTripleVariationsClickable", label: "Lists, Clickable - Triple Line", template: "listsTripleVariationsClickable", disabled: false},
+    listsDoubleVariationsImageLeft: {value: "listsDoubleVariationsImageLeft", label: "List - Double Line", template: "listsDoubleVariationsImageLeft", disabled: false},
+    listsDoubleVariationsClickableImageLeft: {value: "listsDoubleVariationsClickableImageLeft", label: "Lists, Clickable - Double Line", template: "listsDoubleVariationsClickableImageLeft", disabled: false},
+
     cardVariationsStandard: {value: "cardVariationsStandard", label: "Cards, Standard", template: "cardVariationsStandard", disabled: false},
     cardVariationsIcons: {value: "cardVariationsIcons", label: "Cards, with Icons", template: "cardVariationsIcons", disabled: false},
     imageCardVariations: {value: "imageCardVariations", label: "Cards, with Images 9:21", template: "imageCardVariations", disabled: false},
     imageCard916Variations: {value: "imageCard916Variations", label: "Cards, with Images 9:16", template: "imageCard916Variations", disabled: false},
+    pricingCardVariations: {value: "pricingCardVariations:", label: "Cards, with Pricing", template: "pricingCardVariations:", disabled: false},
+    statCardVariations: {value: "statCardVariations:", label: "Cards, with Stats", template: "statCardVariations:", disabled: false},
+    staticonCardVariations: {value: "staticonCardVariations:", label: "Cards, with Stats & Icons", template: "staticonCardVariations", disabled: false},
     imagesOnlyVariations: {value: "imagesOnlyVariations", label: "Images Only", template: "imagesOnlyVariations", disabled: false},
     videoVariations: {value: "videoVariations", label: "Videos", template: "videoVariations", disabled: false},
     youTubeVariations: {value: "youTubeVariations", label: "YouTube Videos", template: "youTubeVariations", disabled: false},
+    footerVariations: {value: "footerVariations", label: "Footers", template: "footerVariations", disabled: false},
+    teamVariations: {value: "teamVariations", label: "Teams", template: "teamVariations", disabled: false},
 
 }
 
@@ -91,11 +107,11 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("templates-templates-selected", ""+displayLists)
     }, [displayLists])
 
-    let listSelectedClickable = false;
-    const [displayListsClickable, setDisplayListClickable] = useState<boolean>(listSelectedClickable);
+    let listSelectedImageLeft = false;
+    const [displayListsImageLeft, setDisplayListImageLeft] = useState<boolean>(listSelectedImageLeft);
     useEffect(() => {
-        pref.set("templates-templates-selected", ""+displayListsClickable)
-    }, [displayListsClickable])
+        pref.set("templates-templates-selected", ""+displayListsImageLeft)
+    }, [displayListsImageLeft])
 
     let cardsClickable = false;
     const [displayCardsClickable, setDisplayCardsClickable] = useState<boolean>(cardsClickable);
@@ -103,7 +119,14 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("templates-templates-selected", ""+displayCardsClickable)
     }, [displayCardsClickable])
 
+    let otherSelected = false;
+    const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
+    useEffect(() => {
+        pref.set("templates-templates-selected", ""+displayOther)
+    }, [displayOther])
+
     const [templates, setTemplates] = useState<{[key: string]:templateItem}>(templateList);
+
 
 
     useEffect(() => {
@@ -169,8 +192,11 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.youTubeVariations} indent={2} />
                         </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.fullVideo} indent={2} />
+                        </List>
                     </Collapse>
-                    <LeftNavItem text={"Lists - Not Clickable"} indent={1} onClick={()=>setDisplayList(!displayLists)}>
+                    <LeftNavItem text={"Lists, Center Aligned"} indent={1} onClick={()=>setDisplayList(!displayLists)}>
                         {displayLists ? <ExpandLess /> : <ExpandMore />}
                     </LeftNavItem>
                     <Collapse in={displayLists} timeout="auto" unmountOnExit>
@@ -183,11 +209,6 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.listsTripleVariations} indent={2} />
                         </List>
-                    </Collapse>
-                    <LeftNavItem text={"Lists, Clickable"} indent={1} onClick={()=>setDisplayListClickable(!displayListsClickable)}>
-                        {displayListsClickable ? <ExpandLess /> : <ExpandMore />}
-                    </LeftNavItem>
-                    <Collapse in={displayListsClickable} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.listVariationsClickable} indent={2} />
                         </List>
@@ -196,6 +217,18 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         </List>
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.listsTripleVariationsClickable} indent={2} />
+                        </List>
+                    </Collapse>
+                    <LeftNavItem text={"Lists, Image Left"} indent={1} onClick={()=>setDisplayListImageLeft(!displayListsImageLeft)}>
+                        {displayListsImageLeft ? <ExpandLess /> : <ExpandMore />}
+                    </LeftNavItem>
+                    <Collapse in={displayListsImageLeft} timeout="auto" unmountOnExit>
+
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.listsDoubleVariationsImageLeft} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.listsDoubleVariationsClickableImageLeft} indent={2} />
                         </List>
                     </Collapse>
                     <LeftNavItem text={"Cards, White"} indent={1} onClick={()=>setDisplayCardsClickable(!displayCardsClickable)}>
@@ -214,7 +247,30 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.imageCardVariations} indent={2} />
                         </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.statCardVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.staticonCardVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.pricingCardVariations} indent={2} />
+                        </List>
+                    </Collapse>
 
+                    <LeftNavItem text={"Cards, White"} indent={1} onClick={()=>setDisplayCardsClickable(!displayCardsClickable)}>
+                        {displayCardsClickable ? <ExpandLess /> : <ExpandMore />}
+                    </LeftNavItem>
+                    <LeftNavItem text={"Other"} indent={1} onClick={()=>setDisplayOther(!displayOther)}>
+                        {displayOther ? <ExpandLess /> : <ExpandMore />}
+                    </LeftNavItem>
+                    <Collapse in={displayOther} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.footerVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.teamVariations} indent={2} />
+                        </List>
                     </Collapse>
                 </List>
             </div>
@@ -244,6 +300,11 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <FullWidthBackgrounds />
                     </ErrorHandler>
                 )}
+                {showTemplate === templates.fullVideo.value && (
+                    <ErrorHandler>
+                        <FullWidthVideo />
+                    </ErrorHandler>
+                )}
                 {showTemplate === templates.listVariations.value && (
                     <ErrorHandler>
                         <ListsSingle />
@@ -252,6 +313,11 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                 {showTemplate === templates.listsDoubleVariations.value && (
                     <ErrorHandler>
                         <ListsDouble />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.listsDoubleVariationsImageLeft.value && (
+                    <ErrorHandler>
+                        <ListsDoubleImageLeft />
                     </ErrorHandler>
                 )}
                 {showTemplate === templates.listsTripleVariations.value && (
@@ -267,6 +333,11 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                 {showTemplate === templates.listsDoubleVariationsClickable.value && (
                     <ErrorHandler>
                         <ListsDoubleClickable />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.listsDoubleVariationsClickableImageLeft.value && (
+                    <ErrorHandler>
+                        <ListsDoubleClickableImageLeft />
                     </ErrorHandler>
                 )}
                 {showTemplate === templates.listsTripleVariationsClickable.value && (
@@ -294,6 +365,21 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <ImageCardsStandard916 />
                     </ErrorHandler>
                 )}
+                {showTemplate === templates.statCardVariations.value && (
+                    <ErrorHandler>
+                        <StatCardSamples />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.staticonCardVariations.value && (
+                    <ErrorHandler>
+                        <StatIconCardSamples />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.pricingCardVariations.value && (
+                    <ErrorHandler>
+                        <PricingCardSamples />
+                    </ErrorHandler>
+                )}
                 {showTemplate === templates.videoVariations.value && (
                     <ErrorHandler>
                         <VideoLayouts />
@@ -301,7 +387,17 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                 )}
                 {showTemplate === templates.youTubeVariations.value && (
                     <ErrorHandler>
-                        <VideoLayouts />
+                        <YouTubeLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.footerVariations.value && (
+                    <ErrorHandler>
+                        <FooterLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.teamVariations.value && (
+                    <ErrorHandler>
+                        <TeamLayouts />
                     </ErrorHandler>
                 )}
             </div>

@@ -15,10 +15,10 @@ interface Props {
 
 export const ListDoubleAvatarClickable: React.FC<Props> = ({className=""}) => {
     return (
-        <section className={className}>
-          <Grid container spacing={2} columns={12} margin={2}>
+        <section className={"centered " + className}>
+          <Grid justifyContent="center" container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
-              <h6>List Items with an image and 2 lines</h6>
+              <h6>Title</h6>
               <div className="body">
                 <ListComponent isClickable={true} hasAvatar type={2} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />

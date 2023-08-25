@@ -9,7 +9,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { LargeBackgroundImage } from "../../mui-a11y-tb/templates/LargeBackgroundImage";
-import { LargeBackgroundVideo } from "../../mui-a11y-tb/templates/LargeBackgroundVideo";
+import { LargeBackgroundImageParalux } from "../../mui-a11y-tb/templates/LargeBackgroundImageParalux";
 
 interface Props {
     colorMode?: string;
@@ -28,7 +28,7 @@ export const FullWidthBackgrounds: React.FC<Props> = ({ }) => {
                   <LargeBackgroundImage className={"top40 " + colorMode} />
                   <p></p>
                   <div className="subtitle1">Section with full width background video, no content</div>
-                  <LargeBackgroundVideo className={"top40 " + colorMode} />
+                  <LargeBackgroundImageParalux className={"top40 " + colorMode} />
                   <p></p>
               </ExampleSection>
           </div>

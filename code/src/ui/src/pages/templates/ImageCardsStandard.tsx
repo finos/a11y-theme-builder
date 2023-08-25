@@ -23,16 +23,19 @@ export const ImageCardsStandard: React.FC<Props> = ({ }) => {
 
       return (
           <div className={colorMode}>
-              <HeadingSection title="Templates" heading="White Cards, with Images 9:21" />
-              <ExampleSection>
-              </ExampleSection>
+              <HeadingSection title="Templates" heading="White Cards, with Images 9:16" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <ImageCards/>
-              <p></p>
-              <ImageCardsCentered />
-              <p></p>
-              <ImageCardsScrolling  />
+              <div className={colorMode}></div>
+              <ExampleSection>
+                <ImageCards/>
+                <p></p>
+                <ImageCardsCentered />
+                <p></p>
+                <ImageCardsScrolling  />
+              </ExampleSection>
+
+
 
 
           </div>

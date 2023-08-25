@@ -18,7 +18,7 @@ export const MdBackgroundImageTextLeft: React.FC<Props> = ({className=""}) => {
             <Grid item spacing={2} className="v-center backgroundImage" lg={6} md={6} sm={12} style={{backgroundImage: "url(/sample.jpg)"}}>
             </Grid>
             <Grid item spacing={2} className="v-center" lg={6} md={6} sm={12}>
-              <h2>Medium Background Image on Left</h2>
+              <h2>Title</h2>
               <div className="body">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
