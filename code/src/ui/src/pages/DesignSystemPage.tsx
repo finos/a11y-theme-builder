@@ -13,7 +13,6 @@ import { MoleculeContent } from './content/molecules/MoleculeContent';
 import { OrganismContent } from './content/organisms/OrganismContent';
 import { PreviewContent } from './content/preview/PreviewContent';
 import { ComponentsContent } from './content/components/ComponentsContent';
-import { TemplatesContent } from './content/templates/TemplatesContent';
 import { CodeContent } from './content/code/CodeContent';
 import './DesignSystemPage.css';
 import { themes, setCssValue, getCssValue } from "../mui-a11y-tb/themes/Theme";
@@ -138,10 +137,11 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                             >
                                 <TopNavTab label="Atoms" value="atoms"/>
                                 <TopNavTab label="Molecules" value="molecules"/>
-                                <TopNavTab label="Organisms" value="organisms"/>
+                                <div className="vertical-line"  />
                                 <TopNavTab label="Components" value="components"/>
+                                <TopNavTab label="Organisms" value="organisms"/>
                                 <TopNavTab label="Templates" value="templates"/>
-                                <TopNavTab label="Preview" value="preview"/>
+                                <div className="vertical-line"  />
                                 <TopNavTab label="Code" value="code"/>
                             </Tabs>
                         </div>
@@ -153,17 +153,15 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                         {tabIndex === "molecules" && (
                             <MoleculeContent user={user} designSystem={designSystem}/>
                         )}
+
+                        {tabIndex === "components" && (
+                            <ComponentsContent user={user} designSystem={designSystem}/>
+                        )}
                         {tabIndex === "organisms" && (
                             <OrganismContent user={user} designSystem={designSystem}/>
                         )}
-                        {tabIndex === "preview" && (
-                            <PreviewContent user={user} designSystem={designSystem}/>
-                        )}
                         {tabIndex === "templates" && (
-                            <TemplatesContent user={user} designSystem={designSystem}/>
-                        )}
-                        {tabIndex === "components" && (
-                            <ComponentsContent user={user} designSystem={designSystem}/>
+                            <PreviewContent user={user} designSystem={designSystem}/>
                         )}
                         {tabIndex === "code" && (
                             <CodeContent user={user} designSystem={designSystem}/>

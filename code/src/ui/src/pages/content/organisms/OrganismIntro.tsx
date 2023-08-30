@@ -11,11 +11,8 @@ const OrganismIntro: React.FC = () => {
         <>
             <h1>Organisms</h1>
             <div>
-                <h5>Getting Started with Organisms</h5>
                 <div>
-                    <p>Next, you will assign atoms and molecules to create more complex components.</p>
-                    <p>There are both desktop and mobile components.</p>
-                    <p>At any point you can preview your designs, the components created and the outputted code.</p>
+                    <p>The the input from the user regaring Atoms and Molecules settings help us create design system styles and components.  These component are combined together to create organisms, which represnt common design paterns with various background colors. We layer the components on the backgrounds to assure accessibility contrast and spacing requirements.</p>
                 </div>
             </div>
         </>

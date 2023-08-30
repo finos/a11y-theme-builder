@@ -4139,6 +4139,7 @@ button.MuiPaginationItem-root:hover {
   width: 1px;
   background: var(--accent) !important;
   opacity: .6;
+  align-self: center;
 }
 .darkmode .vertical-line, .darkmode .colored .vertical-line {
   min-height: 24px;
@@ -4776,6 +4777,9 @@ video {
   gap: 8px;
   padding: 8px 0;
 }
+footer {
+  margin-top: -16px;
+}
 footer .MuiGrid-container {
   align-items: start
 }
@@ -4838,7 +4842,7 @@ footer .MuiGrid-container {
   top: 200px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 80vw;
+  width: 82vw;
   height: 0;
   padding-top: 60%;
 }
@@ -4849,14 +4853,17 @@ footer .MuiGrid-container {
   left: -7%;
 }
 .screen {
-  position: fixed;
+  position: absolute;
   left: 50%;
-  width: 70%;
-  transform: translate(-50%, -2px);
-  background: #fff;
+  width: 71vw;
+  transform: translate(-50%, 0px);
   height: 0;
   border-radius: 1vw;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: calc(calc(calc(100vw -280px) * .76) * 0.615);
+  padding-top: 49% !important;
+  z-index: 999;
+  top: calc(200px + calc(calc(100vw  * .58) * .013));
+  padding-top: calc(calc(100vw  * .58) * .83) !important;
+
 }
