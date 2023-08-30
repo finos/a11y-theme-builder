@@ -5,12 +5,17 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem} from 'a11y-theme-builder-sdk';
-import { List, Collapse, RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup } from '@mui/material';
+import { List, Collapse, RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, Grid, Breadcrumbs, Button, Link, Typography, Divider, Avatar } from '@mui/material';
 import { LeftNavHeader, LeftNavItem, LeftNavText } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { NavSwitch } from '../../../components/NavSwitch';
+import { ResponsiveAppBar } from '../../../pages/components/ResponsiveAppBar';
+import { Hero } from "../../../mui-a11y-tb/components/Hero";
 import { Preferences } from '../../../Preferences';
+import { ListComponent } from '../../../pages/components/ListComponent';
+import { CardSample } from '../../../pages/components/cards/CardSample';
+import { CardPricing } from '../../../pages/components/cards/CardPricing';
 
 interface Props {
     user: any;
@@ -51,115 +56,234 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
 
     return (
         <React.Fragment>
-            <div className="design-system-editor-left-nav">
-            <div className="design-system-editor-left-nav-scrollable">
-                <List 
-                    sx={{
-                        '& ul': {padding:0},
-                        paddingTop: "0px",
-                    }}
-                >
-                    <LeftNavHeader>Settings</LeftNavHeader>
-                    <LeftNavText>Select Colors Palette</LeftNavText>
-                    <div style={divStyle}>
-                        Add selector
-                    </div>
-                    <LeftNavText>Device</LeftNavText>
-                    <div style={divStyle}>
-                        <NavSwitch leftLabel="Desktop" rightLabel="Mobile" inputProps={{ 'aria-label': '' }} />
-                    </div>
-                    <LeftNavText>Mode</LeftNavText>
-                    <div style={divStyle}>
-                        <NavSwitch leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
-                    </div>
-                    <LeftNavItem text={"Desktop Preview Settings"} value="desktopPreview" indent={0} onClick={()=> {setDisplayDesktopPreview(!displayDesktopPreview)}}>
-                        {displayDesktopPreview ? <ExpandLess /> : <ExpandMore />}
-                    </LeftNavItem>
-                    <Collapse in={displayDesktopPreview} timeout="auto" unmountOnExit>
-                        <div style={divStyle}>
-                            <div style={divLabelStyle}>Desktop Top Nav:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Secondary Top Nav:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Hero Coloring:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                                <FormControlLabel value="gradient" control={<Radio size="small"/>} label="gradient"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Hero Style:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="default" control={<Radio size="small"/>} label="Default"/>
-                                <FormControlLabel value="backgroundImage" control={<Radio size="small"/>} label="BackgroundImage"/>
-                                <FormControlLabel value="video" control={<Radio size="small"/>} label="Video"/>
-                                <FormControlLabel value="rightAlignImage" control={<Radio size="small"/>} label="Right Align Image"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Hero Elements:</div>
-                            <FormGroup>
-                                <FormControlLabel control={<Checkbox name="eventDate" size="small"/>} label="Event Date"/>
-                                <FormControlLabel control={<Checkbox name="icon" size="small"/>} label="Icon"/>
-                                <FormControlLabel control={<Checkbox name="primaryButton" size="small"/>} label="Primary Button"/>
-                                <FormControlLabel control={<Checkbox name="secondaryButtons" size="small"/>} label="Secondary Buttons"/>
-                            </FormGroup>
-                            <div style={divLabelStyle}>Hero Alignment:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="left" control={<Radio size="small"/>} label="Left"/>
-                                <FormControlLabel value="centered" control={<Radio size="small"/>} label="Centered"/>
-                            </RadioGroup>
-                        </div>
-                    </Collapse>
-                    <LeftNavItem text={"Mobile Preview Settings"} value="mobilePreview" indent={0} onClick={()=> {setDisplayMobilePreview(!displayMobilePreview)}}>
-                        {displayMobilePreview ? <ExpandLess /> : <ExpandMore />}
-                    </LeftNavItem>
-                    <Collapse in={displayMobilePreview} timeout="auto" unmountOnExit>
-                        <div style={divStyle}>
-                            <div style={divLabelStyle}>Top Nav:</div>
-                            <FormControlLabel control={<Checkbox name="showTopNav" size="small"/>} label="Show top nav"/>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Top Nav Tabs:</div>
-                            <FormControlLabel control={<Checkbox name="showTopNav" size="small"/>} label="Show top tabs"/>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Mobile Bottom Nav:</div>
-                            <FormControlLabel control={<Checkbox name="showTopNav" size="small"/>} label="Show bottom nav"/>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                            <div style={divLabelStyle}>Primary Background:</div>
-                            <RadioGroup>
-                                <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                                <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
-                                <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                            </RadioGroup>
-                        </div>
-                    </Collapse>
-                </List>
-            </div>
-            </div>
             <div className="design-system-editor-right-content">
-                <div className="design-system-editor-right-content-scrollable">
-                TODO
+              <Grid justifyContent="center" className="v-center" container spacing={2} columns={12} >
+                <Grid item  className="v-center" lg={2} md={4} sm={6}>
+                      <NavSwitch leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
+                </Grid>
+              </Grid>
+              <div className="computer"><img src="/computer.png" /></div>
+              <div className="screen">
+                <div className="screenContent">
+
+                    <ResponsiveAppBar/>
+                    <Hero className='black' >
+                      <Grid container spacing={2} columns={12} margin={2}>
+                        <Grid xs={12}>
+                          <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                              <Link>Home</Link>
+                              <Link>Page</Link>
+                              <Typography>Page</Typography>
+                          </Breadcrumbs>
+                        </Grid>
+                        <Grid spacing={2} className="heroBox" lg={8} md={10} sm={12}>
+                          <div className="title">Hero title</div>
+                          <div className="body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            </p>
+                            <Button>Get Started</Button>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </Hero>
+                    <section className="white">
+                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                        <Grid item className="v-center" lg={4} md={6} sm={12}>
+                          <div className="inline-image" style={{ width: '100%', height: 'auto' }}>
+                              <img src="/sample.jpg" />
+                          </div>
+                        </Grid>
+                        <Grid item className="v-center" lg={8} md={6} sm={12}>
+                          <h2>Title</h2>
+                          <div className="body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            </p>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </section>
+                    <section className="centered">
+                      <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
+                        <Grid  justifyContent="center"  item spacing={2} xl={10} sm={12}>
+                          <h2>Title</h2>
+                          <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          </div>
+                        </Grid>
+                        <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
+                          <CardSample icon={true}  stat={true} className="fixed" title="85%"  clickable={false}   hideSecondary={true}>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                              sed do eiusmod tempor incididunt ut labore et dolore
+                              magna aliqua
+                          </CardSample>
+                          <CardSample icon={true}  stat={true} className="fixed"  title="5M"   hideSecondary={true}>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                              sed do eiusmod tempor incididunt ut labore et dolore
+                              magna aliqua
+                          </CardSample>
+                          <CardSample icon={true}  stat={true} className="fixed"  title="130%"   hideSecondary={true}>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                              sed do eiusmod tempor incididunt ut labore et dolore
+                              magna aliqua
+                          </CardSample>
+
+                        </Grid>
+                      </Grid>
+                    </section>
+                    <section className="colored">
+                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                        <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
+                          <h2>Title</h2>
+                          <div className="body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            </p>
+                            <Button>Get Started</Button>
+                          </div>
+                        </Grid>
+                        <Grid item spacing={2} className="v-center" lg={6} sm={12}>
+                           <video src="/video.mp4" controls></video>
+                        </Grid>
+                      </Grid>
+                    </section>
+                    <section className="centered">
+                      <Grid justifyContent="center" container spacing={2} columns={12} margin={2} >
+                        <Grid item spacing={2} lg={8} md={12} sm={12}>
+                          <h2>Title</h2>
+                          <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          </div>
+                        </Grid>
+                      </Grid>
+                      <Grid justifyContent="center" container spacing={2} columns={12} margin={2}  className="pricingSection">
+                        <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
+                          <CardPricing className="black" title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more" color="grey">
+                            <ul>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                            </ul>
+                          </CardPricing>
+                        </Grid>
+                        <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
+                          <CardPricing className="black" title="Pro" cost="$149 Monlth" billing="Billed Annually" button="Get Pro" hotlink="Learn more" color="primary">
+                            <ul>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                              <li>Feature description</li>
+                            </ul>
+                          </CardPricing>
+                        </Grid>
+                        <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
+                          <CardPricing className="black" title="Enterprise" cost="$199 Monlth" billing="Billed Annually" button="Get Enterprise" hotlink="Learn more" color="primary">
+                              <ul>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                              </ul>
+                          </CardPricing>
+                        </Grid>
+                      </Grid>
+                    </section>
+                    <section>
+                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                        <Grid item spacing={2} className="v-center backgroundImage paralux" lg={12} style={{backgroundImage: "url(/sample.jpg)"}}>
+                        </Grid>
+                      </Grid>
+                    </section>
+                    <section>
+                      <Grid justifyContent="center"  container spacing={2} columns={12} margin={2}>
+                          <Grid item className="center" xl={3} lg={4} md={6} sm={12}>
+                            <Avatar className="avatar xxl"  />
+                          </Grid>
+                          <Grid item className="v-center" xl={8} lg={8} md={6} sm={12}>
+                          <div className="body quote">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            </p>
+                            <div className="subtitle1">John Doe</div>
+                            <div className="body2">Job Title</div>
+
+                          </div>
+                          </Grid>
+                      </Grid>
+                    </section>
+                    <footer className='black'>
+                      <Grid className="v-center" container spacing={2} columns={{ lg: 7, md: 5, sm: 3 }} margin={2}>
+                        <Grid item spacing={2}  className="v-center" lg={2} md={5} sm={3}>
+                          <h5>Company Name</h5>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                          <div className="socialIcons">
+                          <Button variant="contained" className="icon"><i className="fa-brands fa-twitter"></i></Button>
+                          <Button variant="contained" className="icon"><i className="fa-brands fa-linkedin"></i></Button>
+                          <Button variant="contained" className="icon"><i className="fa-brands fa-square-facebook"></i></Button>
+                          </div>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                          <div className="subtitle1">Catagory Title</div>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                          <div className="subtitle1">Catagory Title</div>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                          <div className="subtitle1">Catagory Title</div>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                          <div className="subtitle1">Catagory Title</div>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                          <div className="subtitle1">Catagory Title</div>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                        </Grid>
+                        <Grid item spacing={2}  className="v-center" lg={7} md={5} sm={3}>
+                          <Divider/>
+                          <div className="copyright">&#169; Copyright Company Name. All rights reserved.</div>
+                        </Grid>
+                      </Grid>
+                    </footer>
+
                 </div>
+              </div>
+
             </div>
         </React.Fragment>
     );
 }
-

@@ -23,22 +23,22 @@ export const StatIconCardsCenteredClickable: React.FC<Props> = ({className=""}) 
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample stat={true} className="fixed" title="Title" clickable={true}>
+              <CardSample icon={true} stat={true} className="fixed" title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample icon={true} stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample icon={true} stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample icon={true} stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

@@ -11,7 +11,7 @@ interface Props {
     className?: string;
 }
 
-export const Footer5Columns: React.FC<Props> = ({className=""}) => {
+export const Footer5Columns: React.FC<Props> = ({className="black"}) => {
     return (
         <footer className={className}>
           <Grid className="v-center" container spacing={2} columns={{ lg: 7, md: 5, sm: 3 }} margin={2}>

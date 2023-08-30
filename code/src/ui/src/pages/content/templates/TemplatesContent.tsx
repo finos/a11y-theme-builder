@@ -11,6 +11,10 @@ import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Bu
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { TextLayouts } from '../../templates/TextLayouts';
+import { TextIconLayouts } from '../../templates/TextIconLayouts';
+import { DecorativeTextLayouts } from '../../templates/DecorativeTextLayouts';
+import { DecorativeTextIconLayouts } from '../../templates/DecorativeTextIconLayouts';
 import { ImagesOnly } from '../../templates/ImagesOnly';
 import { TemplateExample } from '../../templates/TemplateExample';
 import { BackgroundImageExample } from '../../templates/BackgroundImageExample';
@@ -35,6 +39,10 @@ import { VideoLayouts  } from '../../templates/VideoLayouts';
 import { YouTubeLayouts  } from '../../templates/YouTubeLayouts';
 import { FooterLayouts  } from '../../templates/FooterLayouts';
 import { TeamLayouts  } from '../../templates/TeamLayouts';
+import { FeatureLayouts  } from '../../templates/FeatureLayouts';
+import { TestimonialLayouts  } from '../../templates/TestimonialLayouts';
+import { TestimonialCardLayouts  } from '../../templates/TestimonialCardLayouts';
+
 import { Preferences } from '../../../Preferences';
 
 const name = "TemplatesContent"
@@ -47,6 +55,10 @@ interface templateItem {
 }
 
 const templateList: {[key: string]:templateItem} = {
+    textVariations: {value: "textVariations", label: "Text Only, Centered to Page", template: "textVariations", disabled: false},
+    textIconVariations: {value: "textIconVariations", label: "Text with Icon, Centered to Page", template: "textIconVariations", disabled: false},
+    decoractivetextVariations: {value: "decoractivetextVariations", label: "Decorative Text, Centered to Page", template: "decoractivetextVariations", disabled: false},
+    decoractivetextIconVariations: {value: "decoractivetextIconVariations", label: "Decorative Text with Icon, Centered to Page", template: "decoractivetextIconVariations", disabled: false},
     imageText: {value: "imageText", label: "Image & Text", template: "ImageText", disabled: false},
     backgroundimageText: {value: "backgroundimageText", label: "Background Image & Text", template: "ImageText", disabled: false},
     fullBackground: {value: "fullBackground", label: "Full Width Backgrounds", template: "fullBackground", disabled: false},
@@ -59,7 +71,6 @@ const templateList: {[key: string]:templateItem} = {
     listsTripleVariationsClickable: {value: "listsTripleVariationsClickable", label: "Lists, Clickable - Triple Line", template: "listsTripleVariationsClickable", disabled: false},
     listsDoubleVariationsImageLeft: {value: "listsDoubleVariationsImageLeft", label: "List - Double Line", template: "listsDoubleVariationsImageLeft", disabled: false},
     listsDoubleVariationsClickableImageLeft: {value: "listsDoubleVariationsClickableImageLeft", label: "Lists, Clickable - Double Line", template: "listsDoubleVariationsClickableImageLeft", disabled: false},
-
     cardVariationsStandard: {value: "cardVariationsStandard", label: "Cards, Standard", template: "cardVariationsStandard", disabled: false},
     cardVariationsIcons: {value: "cardVariationsIcons", label: "Cards, with Icons", template: "cardVariationsIcons", disabled: false},
     imageCardVariations: {value: "imageCardVariations", label: "Cards, with Images 9:21", template: "imageCardVariations", disabled: false},
@@ -72,6 +83,9 @@ const templateList: {[key: string]:templateItem} = {
     youTubeVariations: {value: "youTubeVariations", label: "YouTube Videos", template: "youTubeVariations", disabled: false},
     footerVariations: {value: "footerVariations", label: "Footers", template: "footerVariations", disabled: false},
     teamVariations: {value: "teamVariations", label: "Teams", template: "teamVariations", disabled: false},
+    featureVariations: {value: "featureVariations", label: "Feature Highlights", template: "featureVariations", disabled: false},
+    testimonialVariations: {value: "testimonialVariations", label: "Testimonials", template: "testimonialVariations", disabled: false},
+    testimonCardVariations: {value: "testimonCardVariations", label: "Testimonial Cards", template: "testimonCardVariations", disabled: false},
 
 }
 
@@ -125,6 +139,12 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("templates-templates-selected", ""+displayOther)
     }, [displayOther])
 
+    let textSelected = false;
+    const [displayText, setDisplayText] = useState<boolean>(textSelected);
+    useEffect(() => {
+        pref.set("templates-templates-selected", ""+displayText)
+    }, [displayText])
+
     const [templates, setTemplates] = useState<{[key: string]:templateItem}>(templateList);
 
 
@@ -165,6 +185,23 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Templates"} value="templates" indent={1} selected={showTemplate} onClick={()=> {setShowTemplate("templates")}}/>
 
                     <LeftNavHeader>Template Settings</LeftNavHeader>
+                    <LeftNavItem text={"Text"} indent={1} onClick={()=>setDisplayText(!displayText)}>
+                        {displayText ? <ExpandLess /> : <ExpandMore />}
+                    </LeftNavItem>
+                    <Collapse in={displayText} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                          <LeftNavTemplates item={templates.textVariations} indent={2} />
+                      </List>
+                      <List component="div" disablePadding>
+                          <LeftNavTemplates item={templates.textIconVariations} indent={2} />
+                      </List>
+                      <List component="div" disablePadding>
+                          <LeftNavTemplates item={templates.decoractivetextVariations} indent={2} />
+                      </List>
+                      <List component="div" disablePadding>
+                          <LeftNavTemplates item={templates.decoractivetextIconVariations} indent={2} />
+                      </List>
+                    </Collapse>
                     <LeftNavItem text={"Images"} indent={1} onClick={()=>setDisplayGeneral(!displayGeneral)}>
                         {displayGeneral ? <ExpandLess /> : <ExpandMore />}
                     </LeftNavItem>
@@ -256,6 +293,9 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.pricingCardVariations} indent={2} />
                         </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.testimonCardVariations} indent={2} />
+                        </List>
                     </Collapse>
 
                     <LeftNavItem text={"Cards, White"} indent={1} onClick={()=>setDisplayCardsClickable(!displayCardsClickable)}>
@@ -270,6 +310,12 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         </List>
                         <List component="div" disablePadding>
                             <LeftNavTemplates item={templates.teamVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.featureVariations} indent={2} />
+                        </List>
+                        <List component="div" disablePadding>
+                            <LeftNavTemplates item={templates.testimonialVariations} indent={2} />
                         </List>
                     </Collapse>
                 </List>
@@ -390,6 +436,26 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <YouTubeLayouts />
                     </ErrorHandler>
                 )}
+                {showTemplate === templates.textVariations.value && (
+                    <ErrorHandler>
+                        <TextLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.decoractivetextIconVariations.value && (
+                    <ErrorHandler>
+                        <DecorativeTextIconLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.decoractivetextVariations.value && (
+                    <ErrorHandler>
+                        <DecorativeTextLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.textIconVariations.value && (
+                    <ErrorHandler>
+                        <TextIconLayouts />
+                    </ErrorHandler>
+                )}
                 {showTemplate === templates.footerVariations.value && (
                     <ErrorHandler>
                         <FooterLayouts />
@@ -400,6 +466,22 @@ export const TemplatesContent: React.FC<Props> = ({ user, designSystem }) => {
                         <TeamLayouts />
                     </ErrorHandler>
                 )}
+                {showTemplate === templates.featureVariations.value && (
+                    <ErrorHandler>
+                        <FeatureLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.testimonialVariations.value && (
+                    <ErrorHandler>
+                        <TestimonialLayouts />
+                    </ErrorHandler>
+                )}
+                {showTemplate === templates.testimonCardVariations.value && (
+                    <ErrorHandler>
+                        <TestimonialCardLayouts />
+                    </ErrorHandler>
+                )}
+
             </div>
             </div>
         </>

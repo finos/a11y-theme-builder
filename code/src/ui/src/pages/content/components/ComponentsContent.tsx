@@ -51,8 +51,8 @@ import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
 import { ListsDoubleComponent } from '../../components/ListsDoubleComponent';
 import { MultiselectDropdownComponent } from '../../components/MultiselectDropdownComponent';
+import { ResponsiveAppBar } from '../../components/ResponsiveAppBar';
 import { MenusComponent } from '../../components/MenusComponent';
-
 import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
@@ -196,6 +196,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                     <LeftNavHeader>Desktop Components</LeftNavHeader>
                     <LeftNavItem text={"Accordions"} value="accordions" indent={1} selected={showComponent} onClick={()=> {setShowComponent("accordions")}} disabled={disabled}/>
+                    <LeftNavItem text={"App Bar"} value="appbar" indent={1} selected={showComponent} onClick={()=> {setShowComponent("appbar")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Avatars" /* - Single */} value="avatarsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsSingle")}} disabled={disabled}/>
                     { /* <LeftNavItem text={"Avatars - Groups"} value="avatarsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsGroups")}} disabled={disabled}/> */}
@@ -309,6 +310,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "accordions" &&
                         <AccordionComponent />
+                    }
+                    {showComponent === "appbar" &&
+                        <ResponsiveAppBar />
                     }
                     {showComponent === "avatarsSingle" &&
                         <AvatarSingleComponent />

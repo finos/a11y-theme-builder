@@ -52,7 +52,7 @@ export const ListComponent: React.FC<Props> = ({ type, title, overline, body, is
             <div className="list-body">
                 <div className="container-flex">
                     { (!hasAvatar && !hasImg && !hasIcon )
-                    || <div className="list-icon">{listIcon}</div>}
+                    || <div className="inline-icon">{listIcon}</div>}
                     <div className="list-content">{listTitle}</div>
                     {!hasCheckbox
                     || <div className="list-checkbox"><FormControlLabel control={<Checkbox defaultChecked />} label="" /></div>}

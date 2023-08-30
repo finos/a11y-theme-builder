@@ -28,7 +28,6 @@ export const ImageTextLeft: React.FC<Props> = ({className=""}) => {
                 </p>
               </div>
             </Grid>
-
           </Grid>
         </section>
     )
