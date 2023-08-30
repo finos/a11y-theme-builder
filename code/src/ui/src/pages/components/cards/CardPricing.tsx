@@ -23,7 +23,7 @@ export const CardPricing: React.FC<Props> = ({title, className, cost, billing, b
     return (
 
 
-                <Card className={"pricing top-" + color}>
+                <Card className={"elevation-1 pricing top-" + color}>
                     <div className="subtitle1">{title}</div>
                     <h6>{cost}</h6>
                     <div className="subtitle2">{billing}</div>
