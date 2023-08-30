@@ -64,125 +64,113 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
               </Grid>
               <div className="computer"><img src="/computer.png" /></div>
               <div className="screen">
-                <div className="screenContent">
+                <div className="screenHolder">
+                  <div className="screenContent">
 
-                    <ResponsiveAppBar/>
-                    <Hero className='black' >
-                      <Grid container spacing={2} columns={12} margin={2}>
-                        <Grid xs={12}>
-                          <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
-                              <Link>Home</Link>
-                              <Link>Page</Link>
-                              <Typography>Page</Typography>
-                          </Breadcrumbs>
+                      <ResponsiveAppBar/>
+                      <Hero className='black' >
+                        <Grid container spacing={2} columns={12} margin={2}>
+                          <Grid xs={12}>
+                            <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                                <Link>Home</Link>
+                                <Link>Page</Link>
+                                <Typography>Page</Typography>
+                            </Breadcrumbs>
+                          </Grid>
+                          <Grid spacing={2} className="heroBox" lg={8} md={10} sm={12}>
+                            <div className="title">Hero title</div>
+                            <div className="body">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                              </p>
+                              <Button>Get Started</Button>
+                            </div>
+                          </Grid>
                         </Grid>
-                        <Grid spacing={2} className="heroBox" lg={8} md={10} sm={12}>
-                          <div className="title">Hero title</div>
-                          <div className="body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </p>
-                            <Button>Get Started</Button>
-                          </div>
+                      </Hero>
+                      <section className="white">
+                        <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                          <Grid item className="v-center" lg={4} md={6} sm={12}>
+                            <div className="inline-image" style={{ width: '100%', height: 'auto' }}>
+                                <img src="/sample.jpg" />
+                            </div>
+                          </Grid>
+                          <Grid item className="v-center" lg={8} md={6} sm={12}>
+                            <h2>Title</h2>
+                            <div className="body">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                              </p>
+                            </div>
+                          </Grid>
                         </Grid>
-                      </Grid>
-                    </Hero>
-                    <section className="white">
-                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-                        <Grid item className="v-center" lg={4} md={6} sm={12}>
-                          <div className="inline-image" style={{ width: '100%', height: 'auto' }}>
-                              <img src="/sample.jpg" />
-                          </div>
-                        </Grid>
-                        <Grid item className="v-center" lg={8} md={6} sm={12}>
-                          <h2>Title</h2>
-                          <div className="body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </p>
-                          </div>
-                        </Grid>
-                      </Grid>
-                    </section>
-                    <section className="centered">
-                      <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
-                        <Grid  justifyContent="center"  item spacing={2} xl={10} sm={12}>
-                          <h2>Title</h2>
-                          <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          </div>
-                        </Grid>
-                        <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-                          <CardSample icon={true}  stat={true} className="fixed" title="85%"  clickable={false}   hideSecondary={true}>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore
-                              magna aliqua
-                          </CardSample>
-                          <CardSample icon={true}  stat={true} className="fixed"  title="5M"   hideSecondary={true}>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore
-                              magna aliqua
-                          </CardSample>
-                          <CardSample icon={true}  stat={true} className="fixed"  title="130%"   hideSecondary={true}>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                              sed do eiusmod tempor incididunt ut labore et dolore
-                              magna aliqua
-                          </CardSample>
+                      </section>
+                      <section className="centered">
+                        <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
+                          <Grid  justifyContent="center"  item spacing={2} xl={10} sm={12}>
+                            <h2>Title</h2>
+                            <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                          </Grid>
+                          <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
+                            <CardSample icon={true}  stat={true} className="fixed" title="85%"  clickable={false}   hideSecondary={true}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua
+                            </CardSample>
+                            <CardSample icon={true}  stat={true} className="fixed"  title="5M"   hideSecondary={true}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua
+                            </CardSample>
+                            <CardSample icon={true}  stat={true} className="fixed"  title="130%"   hideSecondary={true}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua
+                            </CardSample>
 
+                          </Grid>
                         </Grid>
-                      </Grid>
-                    </section>
-                    <section className="colored">
-                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-                        <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
-                          <h2>Title</h2>
-                          <div className="body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </p>
-                            <Button>Get Started</Button>
-                          </div>
+                      </section>
+                      <section className="colored">
+                        <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                          <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
+                            <h2>Title</h2>
+                            <div className="body">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                              </p>
+                              <Button>Get Started</Button>
+                            </div>
+                          </Grid>
+                          <Grid item spacing={2} className="v-center" lg={6} sm={12}>
+                             <video src="/video.mp4" controls></video>
+                          </Grid>
                         </Grid>
-                        <Grid item spacing={2} className="v-center" lg={6} sm={12}>
-                           <video src="/video.mp4" controls></video>
+                      </section>
+                      <section className="centered">
+                        <Grid justifyContent="center" container spacing={2} columns={12} margin={2} >
+                          <Grid item spacing={2} lg={8} md={12} sm={12}>
+                            <h2>Title</h2>
+                            <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                          </Grid>
                         </Grid>
-                      </Grid>
-                    </section>
-                    <section className="centered">
-                      <Grid justifyContent="center" container spacing={2} columns={12} margin={2} >
-                        <Grid item spacing={2} lg={8} md={12} sm={12}>
-                          <h2>Title</h2>
-                          <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          </div>
-                        </Grid>
-                      </Grid>
-                      <Grid justifyContent="center" container spacing={2} columns={12} margin={2}  className="pricingSection">
-                        <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
-                          <CardPricing className="black" title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more" color="grey">
-                            <ul>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                            </ul>
-                          </CardPricing>
-                        </Grid>
-                        <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-                          <CardPricing className="black" title="Pro" cost="$149 Monlth" billing="Billed Annually" button="Get Pro" hotlink="Learn more" color="primary">
-                            <ul>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                              <li>Feature description</li>
-                            </ul>
-                          </CardPricing>
-                        </Grid>
-                        <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-                          <CardPricing className="black" title="Enterprise" cost="$199 Monlth" billing="Billed Annually" button="Get Enterprise" hotlink="Learn more" color="primary">
+                        <Grid justifyContent="center" container spacing={2} columns={12} margin={2}  className="pricingSection">
+                          <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
+                            <CardPricing className="black" title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more" color="grey">
+                              <ul>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                                <li>Feature description</li>
+                              </ul>
+                            </CardPricing>
+                          </Grid>
+                          <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
+                            <CardPricing className="black" title="Pro" cost="$149 Monlth" billing="Billed Annually" button="Get Pro" hotlink="Learn more" color="primary">
                               <ul>
                                 <li>Feature description</li>
                                 <li>Feature description</li>
@@ -191,97 +179,109 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                                 <li>Feature description</li>
                                 <li>Feature description</li>
                                 <li>Feature description</li>
-                                <li>Feature description</li>
-                                <li>Feature description</li>
                               </ul>
-                          </CardPricing>
-                        </Grid>
-                      </Grid>
-                    </section>
-                    <section>
-                      <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-                        <Grid item spacing={2} className="v-center backgroundImage paralux" lg={12} style={{backgroundImage: "url(/sample.jpg)"}}>
-                        </Grid>
-                      </Grid>
-                    </section>
-                    <section>
-                      <Grid justifyContent="center"  container spacing={2} columns={12} margin={2}>
-                          <Grid item className="center" xl={3} lg={4} md={6} sm={12}>
-                            <Avatar className="avatar xxl"  />
+                            </CardPricing>
                           </Grid>
-                          <Grid item className="v-center" xl={8} lg={8} md={6} sm={12}>
-                          <div className="body quote">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </p>
-                            <div className="subtitle1">John Doe</div>
-                            <div className="body2">Job Title</div>
-
-                          </div>
+                          <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
+                            <CardPricing className="black" title="Enterprise" cost="$199 Monlth" billing="Billed Annually" button="Get Enterprise" hotlink="Learn more" color="primary">
+                                <ul>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                  <li>Feature description</li>
+                                </ul>
+                            </CardPricing>
                           </Grid>
-                      </Grid>
-                    </section>
-                    <footer className='black'>
-                      <Grid className="v-center" container spacing={2} columns={{ lg: 7, md: 5, sm: 3 }} margin={2}>
-                        <Grid item spacing={2}  className="v-center" lg={2} md={5} sm={3}>
-                          <h5>Company Name</h5>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-                          <div className="socialIcons">
-                          <Button variant="contained" className="icon"><i className="fa-brands fa-twitter"></i></Button>
-                          <Button variant="contained" className="icon"><i className="fa-brands fa-linkedin"></i></Button>
-                          <Button variant="contained" className="icon"><i className="fa-brands fa-square-facebook"></i></Button>
-                          </div>
                         </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
-                          <div className="subtitle1">Catagory Title</div>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                      </section>
+                      <section>
+                        <Grid className="v-center" container spacing={2} columns={12} margin={2}>
+                          <Grid item spacing={2} className="v-center backgroundImage paralux" lg={12} style={{backgroundImage: "url(/sample.jpg)"}}>
+                          </Grid>
                         </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
-                          <div className="subtitle1">Catagory Title</div>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                        </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
-                          <div className="subtitle1">Catagory Title</div>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                        </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
-                          <div className="subtitle1">Catagory Title</div>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                        </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
-                          <div className="subtitle1">Catagory Title</div>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                          <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
-                        </Grid>
-                        <Grid item spacing={2}  className="v-center" lg={7} md={5} sm={3}>
-                          <Divider/>
-                          <div className="copyright">&#169; Copyright Company Name. All rights reserved.</div>
-                        </Grid>
-                      </Grid>
-                    </footer>
+                      </section>
+                      <section>
+                        <Grid justifyContent="center"  container spacing={2} columns={12} margin={2}>
+                            <Grid item className="center" xl={3} lg={4} md={6} sm={12}>
+                              <Avatar className="avatar xxl"  />
+                            </Grid>
+                            <Grid item className="v-center" xl={8} lg={8} md={6} sm={12}>
+                            <div className="body quote">
+                              <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                              </p>
+                              <div className="subtitle1">John Doe</div>
+                              <div className="body2">Job Title</div>
 
+                            </div>
+                            </Grid>
+                        </Grid>
+                      </section>
+                      <footer className='black'>
+                        <Grid className="v-center" container spacing={2} columns={{ lg: 7, md: 5, sm: 3 }} margin={2}>
+                          <Grid item spacing={2}  className="v-center" lg={2} md={5} sm={3}>
+                            <h5>Company Name</h5>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            <div className="socialIcons">
+                            <Button variant="contained" className="icon"><i className="fa-brands fa-twitter"></i></Button>
+                            <Button variant="contained" className="icon"><i className="fa-brands fa-linkedin"></i></Button>
+                            <Button variant="contained" className="icon"><i className="fa-brands fa-square-facebook"></i></Button>
+                            </div>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                            <div className="subtitle1">Catagory Title</div>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                            <div className="subtitle1">Catagory Title</div>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                            <div className="subtitle1">Catagory Title</div>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                            <div className="subtitle1">Catagory Title</div>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={1} sm={1}>
+                            <div className="subtitle1">Catagory Title</div>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                            <ListComponent isClickable={true} type={1} title={'Section'}  overline={''}  body={''}  ></ListComponent>
+                          </Grid>
+                          <Grid item spacing={2}  className="v-center" lg={7} md={5} sm={3}>
+                            <Divider/>
+                            <div className="copyright">&#169; Copyright Company Name. All rights reserved.</div>
+                          </Grid>
+                        </Grid>
+                      </footer>
+                  </div>
                 </div>
-
               </div>
               <div className="comingsoon">Sample Template - more coming soon</div>
             </div>
