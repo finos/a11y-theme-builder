@@ -77,6 +77,10 @@
     margin-left: 0px;
 }
 
+.design-system-editor-right-content section:not(.colored):not(.black):not(.white):not(.gradient-1):not(.gradient-2):not(.gradient-3) {
+  box-shadow: inset 0px 0px 0px 1px rgba(200,200,200,.4);
+}
+
 .section-body .subtitle1 {
   margin-bottom: var(--spacing-2)
 }
@@ -463,4 +467,12 @@
 .design-system-editor-right-content.darkmode .hero-color-mode-selector,
 .design-system-editor-right-content.darkmode .color-mode-selector {
     border: 1px dotted var(--dm-border);
+}
+
+.comingsoon {
+  position: absolute;
+  top: 86%;
+  left: 0;
+  right: 0;
+  text-align: center;
 }

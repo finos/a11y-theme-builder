@@ -281,8 +281,9 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     </footer>
 
                 </div>
-              </div>
 
+              </div>
+              <div className="comingsoon">Sample Template - more coming soon</div>
             </div>
         </React.Fragment>
     );
