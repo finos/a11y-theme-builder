@@ -13,7 +13,7 @@ interface Props {
     className?: string;
 }
 
-export const StatIconCardsCenteredHotlink: React.FC<Props> = ({className=""}) => {
+export const IconCardsCenteredClickable: React.FC<Props> = ({className=""}) => {
     return (
         <section className={"centered " +  className}>
           <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
@@ -23,22 +23,22 @@ export const StatIconCardsCenteredHotlink: React.FC<Props> = ({className=""}) =>
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} stat={true} className="fixed" title="Title" hotlink={true}>
+              <CardSample icon={true} className="fixed" title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

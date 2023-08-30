@@ -29,6 +29,14 @@ export const DividerComponent: React.FC<Props> = () => {
                         <Divider className={colorMode} />
                         <br /><br />
                     </List>
+                    <div className="subtitle1">Horizontal and Wide</div>
+                    <List style={{ background: 'transparent' }}>
+                        <br /><br />
+                        <Divider className={"wide " + colorMode} />
+                        <br /><br />
+                        <Divider className={"wide " + colorMode} />
+                        <br /><br />
+                    </List>
                     <div className="subtitle1">Vertical</div>
                     <List style={{ background: 'transparent' }}>
                         <br /><br />

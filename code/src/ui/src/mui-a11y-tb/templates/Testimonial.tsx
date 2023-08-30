@@ -3,30 +3,31 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
-
+import { Breadcrumbs, Button, Link, Typography, Grid} from '@mui/material';
+import { Avatar} from '@mui/material';
 interface Props {
     style?: any;
     children?: React.ReactNode;
     className?: string;
 }
 
-export const VideoRight: React.FC<Props> = ({className=""}) => {
+export const Testimonial: React.FC<Props> = ({className=""}) => {
     return (
         <section className={className}>
-          <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
-              <h2>Title</h2>
-              <div className="body">
+          <Grid justifyContent="center"  container spacing={2} columns={12} margin={2}>
+              <Grid item className="center" xl={3} lg={4} md={6} sm={12}>
+                <Avatar className="avatar xxl"  />
+              </Grid>
+              <Grid item className="v-center" xl={8} lg={8} md={6} sm={12}>
+              <div className="body quote">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>
-                <Button>Get Started</Button>
+                <div className="subtitle1">John Doe</div>
+                <div className="body2">Job Title</div>
+
               </div>
-            </Grid>
-            <Grid item spacing={2} className="v-center" lg={6} sm={12}>
-               <video src="/video.mp4" controls></video>
-            </Grid>
+              </Grid>
           </Grid>
         </section>
     )

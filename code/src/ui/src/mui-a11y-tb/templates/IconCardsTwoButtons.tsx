@@ -13,32 +13,38 @@ interface Props {
     className?: string;
 }
 
-export const StatIconCardsCenteredHotlink: React.FC<Props> = ({className=""}) => {
+export const IconCardsTwoButtons: React.FC<Props> = ({className=""}) => {
     return (
-        <section className={"centered " +  className}>
-          <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
-            <Grid  justifyContent="center"  item spacing={2} xl={10} sm={12}>
-              <h2>Title</h2>
-              <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <section className={className}>
+          <Grid container spacing={2} columns={12} margin={2}>
+            <Grid item spacing={2} lg={12} md={12} sm={12}>
+              <h2>Responsive Cards, Left Aligned, Two Buttons</h2>
+              <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </div>
             </Grid>
-            <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} stat={true} className="fixed" title="Title" hotlink={true}>
+            <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
+              <CardSample icon={true} title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+            </Grid>
+            <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
+              <CardSample icon={true} title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+            </Grid>
+            <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
+              <CardSample icon={true} title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+            </Grid>
+            <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
+              <CardSample icon={true} title="Title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
