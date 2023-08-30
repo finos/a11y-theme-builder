@@ -388,6 +388,11 @@ section:has( .quote) {
 .list-section .MuiGrid-container {
   align-items: center;
 }
+
+.darkmode section {
+  background-color: var(--dm-background);
+  color: var(--dm-on-background)
+}
 /* opacity */
 .quiet {
   opacity: var(--quiet);
@@ -3692,9 +3697,9 @@ button.MuiPaginationItem-root:hover {
     font-size:100px;
     color: var(--accent);
     font-family:Georgia, "Times New Roman", Times, serif;
-    left: -65px;
+    left: 0px;
     position: absolute;
-    top: -40px;
+    top: -100px;
 }
 .quote p:after {
     content: close-quote;
@@ -3703,8 +3708,8 @@ button.MuiPaginationItem-root:hover {
     color: var(--accent);
     font-family:Georgia, "Times New Roman", Times, serif;
     position: absolute;
-    right: -54px;
-    bottom: -56px;
+    right: 0px;
+    bottom: -120px;
 }
 .center .avatar {
   margin: auto;
@@ -4813,7 +4818,7 @@ footer .MuiGrid-container {
   text-decoration: none  !important
 }
 .darkmode .colored .MuiToolbar-root a {
-  color: var(--dm-on-primary) !important;
+  color: var(--dm-on-background-tertiary) !important;
   text-decoration: none  !important
 }
 .darkmode .white .MuiToolbar-root a {
@@ -4834,6 +4839,7 @@ footer .MuiGrid-container {
   overflow: hidden;
   display: block;
   width: 100vw;
+  max-width: 1572px;
   z-index: 2;
   transform: scale(0.71);
 }
@@ -4843,6 +4849,7 @@ footer .MuiGrid-container {
   left: 50%;
   transform: translate(-50%, 0);
   width: 82vw;
+  max-width: 1300px;
   height: 0;
   padding-top: 60%;
 }
@@ -4854,8 +4861,10 @@ footer .MuiGrid-container {
 }
 .screen {
   position: absolute;
+  background: #000;
   left: 50%;
   width: 71vw;
+  max-width: 1115px;
   transform: translate(-50%, 0px);
   height: 0;
   border-radius: 1vw;

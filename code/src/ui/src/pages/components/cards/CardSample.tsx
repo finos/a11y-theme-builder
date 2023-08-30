@@ -45,7 +45,7 @@ export const CardSample: React.FC<Props> = ({title, className, imagePath, imageC
     return (
 
 
-                <Card className={rootClassName || ""}>
+                <Card className={"elevation-1 " +  rootClassName || ""}>
                     {imagePath && <CardMedia className={imageClassName || ""}
                         image={imagePath}
                         title="users working on a tablet"
