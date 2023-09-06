@@ -25,7 +25,7 @@ export const PricingCards: React.FC<Props> = ({className=""}) => {
             </Grid>
           </Grid>
           <Grid justifyContent="center" container spacing={2} columns={12} margin={2}  className="pricingSection">
-            <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
+            <Grid justifyContent="center" className="centerd" item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
               <CardPricing className="black" title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more" color="grey">
                 <ul>
                   <li>Feature description</li>
