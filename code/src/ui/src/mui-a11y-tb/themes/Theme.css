@@ -3792,25 +3792,25 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* on black buttons */
-.black *:not(.white) button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+div.black *:not(.white) button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
   background: var(--buttonOnBlack) !important;
   color: var(--onbuttonOnBlack) !important;
 }
-.black *:not(.white) button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
+div.black *:not(.white) button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack) !important;
 }
-.black *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.black *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnBlack) !important;
   background: var(--buttonOnBlack) !important;
 }
-.black *:not(.white) button.small-btn.MuiButton-outlined {
+div.black *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnBlack) !important;
   background: none !important
 }
-.black *:not(.white) button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
+div.black *:not(.white) button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
   color: var(--buttonOnBlack) !important;
 }
-.black *:not(.white) button:not(.MuiTab-root):not(.black)::after {
+div.black *:not(.white) button:not(.MuiTab-root):not(.black)::after {
   border: var(--focusBorder) solid var(--buttonOnBlack);
 }
 
@@ -4059,28 +4059,28 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* buttons */
-.colored *:not(.white) button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.colored button:not(.white *):not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnTertiary) !important;
   color: var(--onbuttonOnTertiary) !important;
 }
-.colored *:not(.white) button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
+div.colored *:not(.white) button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
 }
-.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
   color: var(--onbuttonOnTertiary) !important;
 }
-.colored *:not(.white) button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
+div.colored *:not(.white) button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
   color: var(--buttonOnTertiary) !important;
   background: none !important
 }
-.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnTertiary) !important;
   background: var(--buttonOnTertiary) !important;
 }
-.colored *:not(.white) button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
+div.colored *:not(.white) button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
   color: var(--buttonOnTertiary) !important;
 }
-.colored *:not(.white) button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
+div.colored *:not(.white) button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
 
@@ -4205,25 +4205,25 @@ button.MuiPaginationItem-root:hover {
     fill: var(--onbuttonOnGradient1);
 }
 /* on gradient-1 buttons */
-.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
   background: var(--buttonOnGradient1) !important;
   color: var(--onbuttonOnGradient1) !important;
 }
-.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient1) !important;
 }
-.gradient-1 *:not(.white) button.small-btn.MuiButton-outlined {
+div.gradient-1 *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnGradient1) !important;
   background: none !important
 }
-.gradient-1 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-1 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient1) !important;
   background: var(--buttonOnGradient1) !important;
 }
-.gradient-1 *:not(.white) button.MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text {
+div.gradient-1 *:not(.white) button.MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient1) !important;
 }
-.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white)::after{
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white)::after{
   border: var(--focusBorder) solid var(--buttonOnGradient1);
 }
 /* clickable */
@@ -4300,25 +4300,25 @@ button.MuiPaginationItem-root:hover {
     fill: var(--onbuttonOnGradient2);
 }
 /*  buttons */
-.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient2) !important;
   color: var(--onbuttonOnGradient2) !important;
 }
-.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before  {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient2) !important;
 }
-.gradient-2 *:not(.white) button.small-btn.MuiButton-outlined {
+div.gradient-2 *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnGradient2) !important;
   background: none !important
 }
-.gradient-2 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-2 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient2) !important;
   background: var(--buttonOnGradient2) !important;
 }
-.gradient-2 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-2 button:not(.white).MuiButton-text  {
+div.gradient-2 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-2 button:not(.white).MuiButton-text  {
   color: var(--buttonOnGradient2) !important;
 }
-.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient2);
 }
 /* clickable */
@@ -4386,25 +4386,25 @@ button.MuiPaginationItem-root:hover {
     fill: var(--onbuttonOnGradient2);
 }
 /* buttons */
-.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient3) !important;
   color: var(--onbuttonOnGradient3) !important;
 }
-.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient3) !important;
 }
-.gradient-3 *:not(.white) button.small-btn.MuiButton-outlined, .white .backgroundTertiary button.small-btn.MuiButton-outlined  {
+div.gradient-3 *:not(.white) button.small-btn.MuiButton-outlined, .white .backgroundTertiary button.small-btn.MuiButton-outlined  {
   color: var(--onbuttonOnGradient3) !important;
   background: none !important
 }
-.gradient-3 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-3 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient3) !important;
   background: var(--buttonOnGradient3) !important;
 }
-.gradient-3 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-3 button:not(.white).MuiButton-text {
+div.gradient-3 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-3 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient3) !important;
 }
-.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient3);
 }
 
@@ -4856,7 +4856,6 @@ footer .MuiGrid-container {
   max-width: 1115px;
   transform: translate(-50%, 0px);
   height: calc(calc(100vw * .58) * .83) !important;
-  border-radius: 1vw;
   overflow-y: hidden;
   overflow-x: hidden;
   z-index: 999;
@@ -4869,7 +4868,7 @@ footer .MuiGrid-container {
   border-radius: 1vw;
   top: 0l;
   height: calc(calc(100vw * .58) * .83) !important;
-  max-height: 921px;
+  max-height: 748px;
   position: absolute;
   top: 0;
   left: 0;
