@@ -22,8 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci --prod
-#       - run: yarn install --production --frozen-lockfile
+      - run: npm install --omit=dev
         working-directory: "./code"
       - run: npm install -g node-license-validator
         working-directory: "./code"
@@ -41,6 +40,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install --omit=dev
+        working-directory: "./code/src/ui"
       - run: npm install -g node-license-validator
         working-directory: "./code/src/ui"
       - run: node-license-validator . --allow-licenses Apache-2.0 MIT BSD-2-Clause BSD BSD-3-Clause Unlicense
