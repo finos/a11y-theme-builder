@@ -45,6 +45,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("preview-mobilePreview-selected", ""+displayMobilePreview)
     }, [displayMobilePreview])
 
+    const [darkMode, setDarkMode] = useState<boolean>(pref.get("preview-mode-selected") == "true" || false);
+    useEffect(() => {
+        pref.set("preview-mode-selected", ""+darkMode);
+    }, [darkMode]);
+
     const divStyle = {
         paddingLeft: "30px"
     }
@@ -59,13 +64,13 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
             <div className="design-system-editor-right-content">
               <Grid justifyContent="center" className="v-center" container spacing={2} columns={12} >
                 <Grid item  className="v-center" lg={2} md={4} sm={6}>
-                      <NavSwitch leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} />
+                      <NavSwitch leftLabel="Light" rightLabel="Dark" inputProps={{ 'aria-label': '' }} checked={darkMode} onChange={()=>setDarkMode(!darkMode)} />
                 </Grid>
               </Grid>
               <div className="computer"><img src="/computer.png" /></div>
               <div className="screen">
                 <div className="screenHolder">
-                  <div className="screenContent">
+                  <div className={"screenContent " + (darkMode ? "darkmode" : "")}>
 
                       <ResponsiveAppBar/>
                       <Hero className='black' >
