@@ -11,6 +11,7 @@ import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Bu
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { NavSwitch } from '../../../components/NavSwitch';
 import { TextLayouts } from '../../organisms/TextLayouts';
 import { TextIconLayouts } from '../../organisms/TextIconLayouts';
 import { DecorativeTextLayouts } from '../../organisms/DecorativeTextLayouts';
@@ -157,6 +158,11 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
         console.log(`${name} - showTemplate=${showTemplate}`)
     }, [showTemplate])
 
+    const [darkMode, setDarkMode] = useState<boolean>(pref.get("organisms-mode-selected") == "true" || false);
+    useEffect(() => {
+        pref.set("organisms-mode-selected", ""+darkMode);
+    }, [darkMode]);
+
     interface LeftNavorganismsProps { item: any, indent?:number, disabled?:boolean };
     const LeftNavorganisms : React.FC<LeftNavorganismsProps> = ({item, indent, disabled}) => {
         return (
@@ -182,6 +188,10 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 >
                     <LeftNavHeader>Introduction</LeftNavHeader>
                     <LeftNavItem text={"organisms"} value="organisms" indent={1} selected={showTemplate} onClick={()=> {setShowTemplate("organisms")}}/>
+                    <LeftNavItem text="Mode" indent={1} />
+                    <div style={{paddingLeft: "50px"}}>
+                        <NavSwitch leftLabel="Light" rightLabel="Dark" checked={darkMode} onChange={()=>setDarkMode(!darkMode)}/>
+                    </div>
 
                     <LeftNavHeader>Template Settings</LeftNavHeader>
                     <LeftNavItem text={"Text"} indent={1} onClick={()=>setDisplayText(!displayText)}>
@@ -324,7 +334,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 </List>
             </div>
             </div>
-            <div className="design-system-editor-right-content">
+            <div className={"design-system-editor-right-content " + (darkMode ? "darkmode" : "")}>
             <div className="design-system-editor-right-content-scrollable">
                 {showTemplate === "organisms" &&
                     <OrganismIntro />
