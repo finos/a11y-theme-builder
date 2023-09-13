@@ -3,11 +3,36 @@
   width: calc(100% - var(--spacing-4)) !important;
   margin: var(--spacing-2);
 }
+.MuiGrid-container.background {
+  margin: 0px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+.backgroundImage {
+  background-size: cover;
+  min-height: 400px;
+}
+
 .MuiGrid-item {
   padding-left: var(--spacing-2);
   padding-top: var(--spacing-2);
 }
+.MuiGrid-item {
+  padding-right: var(--spacing-2);
+}
 
+.centered {
+  text-align: center;
+}
+.centered .avatar, .centered .wide{
+  margin: auto;
+}
+.v-center {
+  align-items: center;
+}
 
 /* Typography */
 /* Headers */
@@ -295,7 +320,7 @@ h6 {
   text-transform: var(--label-smallTextTransform) !important;
   text-decoration:  var(--label-smallTextDecoration) !important;
 }
-.stat {
+.stat, .stat .client-title-area {
   font-family:  var(--statFontFamily);
   font-weight: var(--statFontWeight) !important;
   font-size: var(--statFontSize) !important;
@@ -304,14 +329,70 @@ h6 {
   text-transform: var(--statTextTransform) !important;
   text-decoration:  var(--statTextDecoration) !important;
 }
+.stat .inline-icon {
+  margin-right: var(--spacing-2);
+}
+h1 .inline-icon, h2 .inline-icon, h3 .inline-icon, h4 .inline-icon, h5 .inline-icon, h6 .inline-icon{
+  margin-right: var(--spacing-2);
+  display: inline-block;
+}
+
+.MuiPaper-root:has(> .stat) {
+  padding: var(--spacing-4);
+}
 /* spacing */
 p {
   padding-bottom: calc(var(--p-padding) * var(--baseFont));
 }
 section {
-  padding: calc(var(--section-padding) * var(--baseFont));
+  padding-top: calc(calc(var(--section-padding) - 2) * var(--spacing-1)) !important;
+  padding-bottom: calc(var(--section-padding) * var(--spacing-1)) !important;
+  margin: 0 !important;
+  background-color: var(--background);
+}
+section:has( .backgroundImage) {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  overflow: hidden;
+}
+section:has( .backgroundImage) .MuiGrid-root{
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+section:has( .backgroundImage) .MuiGrid-root video{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translateX(-50%) translateY(-50%);
+   transform: translateX(-50%) translateY(-50%);
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   z-index: -1000;
+   overflow: hidden;
+}
+section:has( .quote) {
+  padding-top: calc(var(--section-padding) * var(--spacing-1) * 2) !important;
+  padding-bottom: calc(var(--section-padding) * var(--spacing-1) * 2) !important;
+
+}
+.paralux {
+   background-attachment: fixed
+}
+.list-section .MuiGrid-container {
+  align-items: center;
 }
 
+.darkmode section {
+  background-color: var(--dm-background);
+  color: var(--dm-on-background)
+}
 /* opacity */
 .quiet {
   opacity: var(--quiet);
@@ -319,6 +400,7 @@ section {
 .disabled {
   opacity: var(--disabled);
 }
+
 
 /* THEME */
 .theme-primary {
@@ -437,6 +519,13 @@ section {
 /* MOLECULES */
 
 /* avatars */
+.MuiGrid-item:has(.avatar) {
+  margin-bottom: var(--spacing-2);
+}
+.MuiGrid-item:has(.avatar) .subtitle1 {
+  margin: var(--spacing-1);
+}
+
 .avatars {
     display: flex;
     justify-content: start;
@@ -764,30 +853,30 @@ button::after  {
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 button:not(.MuiButtonGroup-grouped)::after  {
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
 }
 button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):first-of-type::after  {
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   right: 0;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):last-of-type::after  {
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   left: 0;
 }
 button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:first-of-type::after  {
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   bottom: 0;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
 button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:last-of-type::after  {
-  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.6px);
+  border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   top: 0;
@@ -1065,6 +1154,11 @@ button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-
   background: none !important;
   color: var(--black) !important;
 }
+.black button.MuiButton-outlined, button.MuiButton-text {
+    background: none !important;
+    color: var(--buttonOnBlack) !important;
+}
+
 .darkmode button.MuiButtonBase-root.black.MuiButton-outlined::before {
   border: calc(var(--button-border) * var(--border-1))  solid var(--black);
 }
@@ -1226,6 +1320,7 @@ button.MuiButtonBase-root.white.MuiButton-outlined::after, button.MuiButtonBase-
 .darkmode .MuiList-root.black .MuiDivider-root {
   border-color: var(--dm-white);
 }
+
 
 /* hotlinks */
 a {
@@ -1436,6 +1531,9 @@ button.MuiPaginationItem-root:hover {
   font-size: 1.25em;
   color: var(--icon);
 }
+.MuiCardHeader-title, .MuiCardHeader-root {
+  padding: 0 !important;
+}
 .MuiCardHeader-title h5 {
   overflow-wrap: anywhere;
 }
@@ -1454,33 +1552,39 @@ button.MuiPaginationItem-root:hover {
 .MuiCard-root.clickable::after{
  position: absolute;
  content: '';
- top:    calc(0px - 3px - var(--animation-focus-distance));
- bottom: calc(0px - 3px - var(--animation-focus-distance));
- left:   calc(0px - 3px - var(--animation-focus-distance));
- right:  calc(0px - 3px - var(--animation-focus-distance));
+ top:    calc(0px - 4px - var(--animation-focus-distance));
+ bottom: calc(0px - 4px - var(--animation-focus-distance));
+ left:   calc(0px - 4px - var(--animation-focus-distance));
+ right:  calc(0px - 4px - var(--animation-focus-distance));
  opacity: 0;
  border: var(--focusBorder)  solid var(--button);
- border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.6px);
+ border-radius: calc(calc(var(--radius-1) * var(--card-radius)) + 1.9px);
  box-shadow: 0 0 var(--focusBlur) 0px var(--button);
  transition: var(--animation-speed)  cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
  pointer-events: none;
 }
 .MuiCard-root.clickable:hover::after{
  opacity: .5;
- top:    calc(0px - 3px);
- bottom: calc(0px - 3px);
- left:   calc(0px - 3px);
- right:  calc(0px - 3px);
+ top:    calc(0px - 4px);
+ bottom: calc(0px - 4px);
+ left:   calc(0px - 4px);
+ right:  calc(0px - 4px);
 }
 .MuiCard-root.clickable:focus::after{
  opacity: 1;
- top:    calc(0px - 3px);
- bottom: calc(0px - 3px);
- left:   calc(0px - 3px);
- right:  calc(0px - 3px);
+ top:    calc(0px - 4px);
+ bottom: calc(0px - 4px);
+ left:   calc(0px - 4px);
+ right:  calc(0px - 4px);
+}
+.MuiCard-root .MuiCardContent-root {
+  padding: 0;
+  text-align: left;
 }
 .MuiCard-root .MuiCardActions-root {
-  gap: var(--spacing-1) !important;
+  gap: var(--spacing-2) !important;
+  flex-wrap: wrap;
+  padding: 0;
 }
 .MuiCard-root.centerAligned {
   text-align: center;
@@ -1497,6 +1601,7 @@ button.MuiPaginationItem-root:hover {
   width: var(--spacing-5);
   justify-content: center;
   display: flex;
+  align-items: center;
 }
 .MuiCardMedia-root {
   width: 100%;
@@ -1505,12 +1610,15 @@ button.MuiPaginationItem-root:hover {
   position: relative;
   overflow: hidden;
 }
-.MuiCard-root.cinemascope {
+.MuiCardMedia-root.cinemascope {
   width: 100%;
   height: 0;
-  padding-top: 42.86%;
+  padding-top: 42.86% !important;
   position: relative;
   overflow: hidden;
+}
+.card {
+  flex-direction: column;
 }
 .card.statCard .inline-icon {
   width: var(--spacing-6) !important;
@@ -1522,6 +1630,48 @@ button.MuiPaginationItem-root:hover {
 .card.statCard {
   padding: calc(var(--spacing-1) * var(--card-padding) * 2) calc(var(--spacing-1) * var(--card-padding)) !important;
 }
+.MuiCard-root.pricing {
+  text-align: center;
+  justify-content: stretch;
+  display: flex;
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+.MuiCard-root.pricing button {
+  width: 100%;
+}
+.MuiCard-root.pricing a {
+  margin: auto;
+}
+.feature-card {
+  padding: var(--spacing-6) var(--spacing-4)
+}
+.feature-card h1, .feature-card h2, .feature-card h3, .feature-card h4, .feature-card h5, .feature-card h6{
+  margin: 0;
+}
+.pricingSection {
+  justify-content: stretch;
+  display: flex;
+}
+.pricingSection .MuiGrid-item {
+  justify-content: stretch;
+  display: flex;
+}
+.pricingSection .MuiCardContent-root {
+  flex-grow: 1
+}
+.top-grey {
+  border-top: 8px solid var(--gray-400) !important;
+}
+.top-primary {
+  border-top: 8px solid var(--primary) !important;
+}
+.top-secondary {
+  border-top: 8px solid var(--secondary) !important;
+}
+.top-tertiary {
+  border-top: 8px solid var(--tertiary) !important;
+}
 
 .client-title-area {
   display: flex;
@@ -1531,12 +1681,30 @@ button.MuiPaginationItem-root:hover {
 .MuiCard-root {
   position: relative;
   overflow: visible !important;
+  min-width: 240px;
+  flex-grow: 1;
+  max-width: 500px;
 }
 .MuiCardMedia-root {
   background-color: var(--on-background);
 }
+.MuiCard-root.fixed {
+  min-width: 300px;
+  width: 300px;
+  display: inline-flex;
+  margin: var(--spacing-2)
+}
+
+/* srolling Cards */
+.cardScroll {
+  display: flex;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
 /* darkmode card */
-.darkmode .MuiCard-root {
+.darkmode .MuiCard-root:not(.white):not(.black):not(.colored):not(.gradient-1):not(.gradient-2):not(.gradient-3) {
   background: var(--dm-surface);
   border: 1px solid var(--dm-border) !important;
   color: var(--dm-on-surface) !important;
@@ -1803,7 +1971,7 @@ button.MuiPaginationItem-root:hover {
   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--spacing-1) + 1.6px);
+  border-radius: calc(var(--spacing-1) + 1.9px);
   border: var(--focusBorder) solid var(--button);
   background: transparent !important;
   opacity: 0;
@@ -1842,49 +2010,111 @@ button.MuiPaginationItem-root:hover {
 /* lists */
 .list-content {
   flex-grow: 1;
+  gap: var(--spacing-half);
+  display: flex;
+  flex-direction: column;
 }
 .list {
   padding: var(--spacing-1);
   position: relative;
+  text-align: left;
 }
-.list-clickable, .clickable {
+.list-clickable {
   position: relative;
   z-index: 1;
+  min-height:  var(--min-target);
+  border-left: 4px solid transparent;
+  padding-left: 8px !important;
 }
-.list-clickable::after, .clickable::after {
-  position: absolute;
-  content: '';
-  pointer-events: none;
-  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--radius-1)  + 1.6px);
-  border: var(--focusBorder) solid var(--button);
-  background: transparent !important;
-  opacity: 0;
-  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  z-index: -1;
+
+.list-clickable:hover {
+ border-left: 4px solid var(--button-half)
 }
-.list-clickable:hover::after, .clickable:hover::after  {
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+
+.list-clickable:focus {
+ border-left: 4px solid var(--button)
+}
+
+/* on colored clickable list */
+.colored .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnTertiary) !important;
+}
+
+.colored .list-clickable:focus {
+ border-left: 4px solid var(--buttonOnTertiary) !important;
+}
+
+/* on black clickable list */
+.black .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnBlack) !important;
+}
+
+.black .list-clickable:focus {
+ border-left: 4px solid var(--buttonOnBlack) !important;
+}
+
+/* on white clickable list */
+.white .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnWhite) !important;
+}
+
+.white .list-clickable:focus {
+ border-left: 4px solid var(--buttonOnWhite) !important;
+}
+
+/* on gradient 1 clickable list */
+.gradient-1 .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnGradient1) !important;
+}
+
+.gradient-1 .list-clickable:focus {
+ border-left: 4px solid var(--buttonOnGradient1) !important;
+}
+
+/* on gradient 2 clickable list */
+.gradient-2 .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnGradient2)  !important;
+}
+
+.gradient-2 .list-clickable:focus {
+ border-left: 4px solid var(--dmbuttonOnGradient2) !important;
+}
+
+/* on gradient 3 clickable list */
+.gradient-3 .list-clickable:hover {
+ border-left: 4px solid var(--buttonHalfOnGradient3)
+}
+
+.gradient-3 .list-clickable:focus {
+ border-left: 4px solid var(--buttonOnGradient3)
+}
+
+
+/* clickable */
+.clickable {
+  position: relative;
+  z-index: 1;
+  min-height:  var(--min-target);
+}
+.clickable:hover::after  {
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   opacity: .5;
 }
-.list-clickable:focus::after, .clickable:focus::after  {
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+.clickable:focus::after  {
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   opacity: 1;
 }
 .clickable:has(img):hover::after  {
-  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.6px);
+  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.9px);
 }
 .clickable:has(img):focus::after  {
-  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.6px);
+  border-radius: calc(calc(var(--radius-1) * var(--image-radius)) + 1.9px);
 }
 
 
@@ -2008,7 +2238,7 @@ button.MuiPaginationItem-root:hover {
   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.9px);
   border: var(--focusBorder) solid var(--button);
   background: transparent !important;
   opacity: 0;
@@ -2039,7 +2269,7 @@ button.MuiPaginationItem-root:hover {
   left: calc(var(--spacing-1) + 1px) ;
   right: calc(var(--spacing-1) + 1px) ;
   height: calc(var(--spacing-1) * var(--sliderbarHeight)) ;
-  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.9px);
   background-color: var(--on-background);
   border: none;
   opacity: var(--disabled);
@@ -2091,7 +2321,7 @@ button.MuiPaginationItem-root:hover {
   left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.9px);
   border: var(--focusBorder) solid var(--button);
   background: transparent !important;
   opacity: 1;
@@ -2190,7 +2420,7 @@ button.MuiPaginationItem-root:hover {
   z-index: -1;
   background: transparent;
   pointer-events: none;
-  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px);
+  border-radius: calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.9px);
 }
 .MuiOutlinedInput-root.MuiSwitch-switchBase:hover::after {
   position: absolute;
@@ -2982,7 +3212,7 @@ button.MuiPaginationItem-root:hover {
   right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance)));
   bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-distance)));
   border: var(--focusBorder) solid var(--button);
-  border-radius: calc(var(--spacing-half) + 1.6px);
+  border-radius: calc(var(--spacing-half) + 1.9px);
   z-index: 2;
   pointer-events: none;
   opacity: 0;
@@ -3451,6 +3681,74 @@ button.MuiPaginationItem-root:hover {
   -moz-box-shadow: none !important;
 }
 
+/* Divider Wide */
+.MuiDivider-root.wide {
+  border-bottom-width: 4px;
+}
+/* quotes */
+.quote p{
+  position: relative;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.quote p:before {
+    content: open-quote;
+    font-weight: bold;
+    font-size:100px;
+    color: var(--accent);
+    font-family:Georgia, "Times New Roman", Times, serif;
+    left: 0px;
+    position: absolute;
+    top: -100px;
+}
+.quote p:after {
+    content: close-quote;
+    font-weight: bold;
+    font-size:100px;
+    color: var(--accent);
+    font-family:Georgia, "Times New Roman", Times, serif;
+    position: absolute;
+    right: 0px;
+    bottom: -120px;
+}
+.center .avatar {
+  margin: auto;
+}
+.quote .subtitle1 {
+  margin: 0 0 var(--spacing-1) 0 !important;
+}
+.colored .quote p:before, .colored .quote p:after {
+    color: var(--on-primary);
+}
+.gradient-1 .quote p:before, .gradient-1 .quote p:after {
+    color: var(--on-gradient-1);
+}
+.gradient-2 .quote p:before, .gradient-2 .quote p:after {
+    color: var(--on-gradient-2);
+}
+.gradient-3 .quote p:before, .gradient-3 .quote p:after {
+    color: var(--on-gradient-3);
+}
+.darmode .colored .quote p:before, .darmode .colored .quote p:after {
+    color: var(--dm-on-primary);
+}
+.darmode .gradient-1 .quote p:before, .darmode .gradient-1 .quote p:after {
+    color: var(--dm-on-gradient-1);
+}
+.darmode .gradient-2 .quote p:before, .darmode .gradient-2 .quote p:after {
+    color: var(--dm-on-gradient-2);
+}
+.darmode .gradient-3 .quote p:before, .darmode .gradient-3 .quote p:after {
+    color: var(--dm-on-gradient-3);
+}
+/* Stack */
+.MuiStack-root p {
+  padding: 0
+}
+/* testimonial cards */
+.testimonial-card {
+  padding: var(--spacing-6) var(--spacing-4)  var(--spacing-2)
+}
 /* VARYING BACKGROUND COLORS */
 /*  BLACK  */
 .black:not(.breadcrumbs), .black-bg:not(.breadcrumbs) {
@@ -3494,32 +3792,39 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* on black buttons */
-.black button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+div.black *:not(.white) button:not(.MuiTab-root):not(.black):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
   background: var(--buttonOnBlack) !important;
   color: var(--onbuttonOnBlack) !important;
 }
-.black button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
+div.black *:not(.white) button:not(.black).MuiButton-outlined::before, .black button::not(.MuiTab-root):not(.black).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnBlack) !important;
 }
-.black button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.black *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnBlack) !important;
   background: var(--buttonOnBlack) !important;
 }
-.black button.small-btn.MuiButton-outlined {
+div.black *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnBlack) !important;
   background: none !important
 }
-.black button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
+div.black *:not(.white) button:not(.black).MuiButton-outlined, .black button:not(.black).MuiButton-text {
   color: var(--buttonOnBlack) !important;
 }
-.black button:not(.MuiTab-root):not(.black)::after {
+div.black *:not(.white) button:not(.MuiTab-root):not(.black)::after {
   border: var(--focusBorder) solid var(--buttonOnBlack);
 }
-.black .MuiAvatar-root:not(.black) {
-  background-color: var(--buttonOnBlack)
+
+.black  .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnBlack);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnBlack) !important
 }
-.black .MuiAvatar-root:not(.black) svg path {
-    fill: var(--on-buttonOnBlack);
+.black .MuiAvatar-root:not(.white).xsx, .black  .MuiAvatar-root:not(.white).xs, .black  .MuiAvatar-root:not(.white).sm, .black  .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnBlack);
+  border: solid var(--border-1) var(--buttonOnBlack) !important;
+  color: var(--onbuttonOnBlack);
+}
+.black .MuiAvatar-root:not(.white) svg path {
+    fill: var(--onbuttonOnBlack);
 }
 /* black group buttons */
 .black button.MuiButton-outlined::before {
@@ -3616,7 +3921,7 @@ button.MuiPaginationItem-root:hover {
   color: var(--onbuttonOnWhite) !important;
   background: var(--buttonOnWhite) !important;
 }
-.white button:not(.white).MuiButton-outlined, .white button:not(.white).MuiButton-text {
+.white button.MuiButton-outlined, .white button.MuiButton-text {
   color: var(--buttonOnWhite) !important;
 }
 .white button:not(.MuiTab-root):not(.white)::after{
@@ -3625,18 +3930,32 @@ button.MuiPaginationItem-root:hover {
 
 /* white group buttons */
 .white button.MuiButton-outlined::before {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--black);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnWhite);
 }
 .white button.MuiButton-outlined::after,
 .white button.MuiButton-text::after {
   background: var(--black);
 }
 .white .MuiAvatar-root:not(.white) {
-  background-color: var(--buttonOnBlack)
+  background-color: var(--buttonOnWhite);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnWhite) !important;
+  color: var(--onbuttonOnWhite);
+}
+.white .MuiAvatar-root:not(.white).xsx, .white .MuiAvatar-root:not(.white).xs, .white .MuiAvatar-root:not(.white).sm, .white .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnWhite);
+  border: solid var(--border-1) var(--buttonOnWhite) !important
 }
 .darkmode .white .MuiAvatar-root:not(.white) svg path {
-    fill: var(--on-buttonOnBlack);
+    fill: var(--onbuttonOnBlack);
 }
+/* white icons */
+.white .inline-icon i {
+  color: var(--iconOnWhite) !important;
+}
+.darkmode .white .inline-icon i {
+  color: var(--dm-iconOnWhite) !important;
+}
+
 /* white divider */
 .white .MuiDivider-root, .MuiDivider-root:not(.white),.white .MuiList-root .MuiDivider-root:not(.white) {
   border-color: var(--black);
@@ -3740,37 +4059,38 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* buttons */
-.colored button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.colored button:not(.white *):not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnTertiary) !important;
   color: var(--onbuttonOnTertiary) !important;
 }
-.colored button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
+div.colored *:not(.white) button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
 }
-.colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
   color: var(--onbuttonOnTertiary) !important;
 }
-.colored button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
+div.colored *:not(.white) button.small-btn.MuiButton-outlined, .backgroundTertiary button.small-btn.MuiButton-outlined  {
   color: var(--buttonOnTertiary) !important;
   background: none !important
 }
-.colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.colored *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnTertiary) !important;
   background: var(--buttonOnTertiary) !important;
 }
-.colored button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
+div.colored *:not(.white) button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
   color: var(--buttonOnTertiary) !important;
 }
-.colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
+div.colored *:not(.white) button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
+
 /* darkmode */
 .darkmode .colored button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--dm-white) !important;
   color: var(--black) !important;
 }
 .darkmode .colored button:not(.MuiTab-root).MuiButton-outlined::before, .backgroundTertiary button:not(.MuiTab-root).MuiButton-outlined::before  {
-  border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnTertiary) !important;
+  border: calc(var(--border-1) * var(--button-border)) solid var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text), .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)  {
   color: var(--onbuttonOnTertiary) !important;
@@ -3780,11 +4100,11 @@ button.MuiPaginationItem-root:hover {
   background: none !important
 }
 .darkmode .colored button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before, .backgroundTertiary button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
-  color: var(--onbuttonOnTertiary) !important;
-  background: var(--buttonOnTertiary) !important;
+  color: var(--dmonbuttonOnTertiary) !important;
+  background: var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button.MuiButton-outlined, .colored button.MuiButton-text, .backgroundTertiary button.MuiButton-outlined, .backgroundTertiary button.MuiButton-text  {
-  color: var(--buttonOnTertiary) !important;
+  color: var(--dmbuttonOnTertiary) !important;
 }
 .darkmode .colored button:not(.MuiTab-root)::after,.colored .backgroundTertiary button:not(.MuiTab-root)::after {
   border: var(--focusBorder) solid var(--dm-white);
@@ -3792,15 +4112,25 @@ button.MuiPaginationItem-root:hover {
 
 /* avatars */
 .colored .MuiAvatar-root:not(.white) {
-  background-color: var(--buttonOnTertiary)
+  background-color: var(--buttonOnTertiary);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnTertiary) !important;
+  color: var(--onbuttonOnTertiary);
 }
+.colored .MuiAvatar-root:not(.white).xsx, .colored .MuiAvatar-root:not(.white).xs, .colored .MuiAvatar-root:not(.white).sm, .colored .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnTertiary);
+  border: solid var(--border-1) var(--buttonOnTertiary) !important
+}
+
 .colored .MuiAvatar-root:not(.white) svg path {
-    fill: var(--on-buttonOnTertiary);
+    fill: var(--onbuttonOnTertiary);
 }
 /* clickable */
 .colored.list-clickable::after, .colored .clickable::after {
   border: var(--focusBorder) solid var(--buttonOnTertiary);
 }
+
+
+
 /* colored divider */
 .colored .MuiDivider-root, .MuiDivider-root:not(.black):not(.white){
   border-color: var(--accent);
@@ -3814,6 +4144,7 @@ button.MuiPaginationItem-root:hover {
   width: 1px;
   background: var(--accent) !important;
   opacity: .6;
+  align-self: center;
 }
 .darkmode .vertical-line, .darkmode .colored .vertical-line {
   min-height: 24px;
@@ -3861,32 +4192,38 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* avatars */
-.gradient-1 .MuiAvatar-root {
-  background-color: var(--buttonOnGradient1)
+.gradient-1 .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnGradient1);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnGradient1) !important;
+  color: var(--onbuttonOnGradient1);
 }
-.gradient-1  .MuiAvatar-root svg path {
+.gradient-1.MuiAvatar-root:not(.white).xsx, .gradient-1 .MuiAvatar-root:not(.white).xs, .gradient-1 .MuiAvatar-root:not(.white).sm, .gradient-1 .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnGradient1);
+  border: solid var(--border-1) var(--buttonOnGradient1) !important
+}
+.gradient-1.MuiAvatar-root:not(.white) svg path {
     fill: var(--onbuttonOnGradient1);
 }
-/* on white buttons */
-.gradient-1 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
+/* on gradient-1 buttons */
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text) {
   background: var(--buttonOnGradient1) !important;
   color: var(--onbuttonOnGradient1) !important;
 }
-.gradient-1 button::not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient1) !important;
 }
-.gradient-1 button.small-btn.MuiButton-outlined {
+div.gradient-1 *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnGradient1) !important;
   background: none !important
 }
-.gradient-1 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-1 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient1) !important;
   background: var(--buttonOnGradient1) !important;
 }
-.gradient-1 button:not(.white).MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text {
+div.gradient-1 *:not(.white) button.MuiButton-outlined, .gradient-1 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient1) !important;
 }
-.gradient-1 button:not(.MuiTab-root):not(.white)::after{
+div.gradient-1 *:not(.white) button:not(.MuiTab-root):not(.white)::after{
   border: var(--focusBorder) solid var(--buttonOnGradient1);
 }
 /* clickable */
@@ -3894,8 +4231,8 @@ button.MuiPaginationItem-root:hover {
   border: var(--focusBorder) solid var(--on-gradeint-1);
 }
 /* gradeint 1 divider */
-.gradient-1 .MuiDivider-root, .MuiDivider-root{
-  border-color: var(--on-gradeint-1);
+.gradient-1 .MuiDivider-root{
+  border-color: var(--on-gradient-1);
 }
 .darkmode .gradient-1 .MuiList-root .MuiDivider-root.black {
   border-color: var(--dm-on-gradient-1);
@@ -3950,32 +4287,38 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* avatars */
-.gradient-2 .MuiAvatar-root {
-  background-color: var(--buttonOnGradient2)
+.gradient-2 .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnGradient2);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnGradient2) !important;
+  color: var(--onbuttonOnGradient2);
 }
-.gradient-2  .MuiAvatar-root svg path {
+.gradient-2 .MuiAvatar-root:not(.white).xsx, .gradient-2 .MuiAvatar-root:not(.white).xs, .gradient-2 .MuiAvatar-root:not(.white).sm, .gradient-2 .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnGradient2);
+  border: solid var(--border-1) var(--buttonOnGradient2) !important
+}
+.gradient-2 .MuiAvatar-root:not(.white) svg path {
     fill: var(--onbuttonOnGradient2);
 }
 /*  buttons */
-.gradient-2 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient2) !important;
   color: var(--onbuttonOnGradient2) !important;
 }
-.gradient-2 button:not(.MuiTab-root):not(.white).MuiButton-outlined::before  {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before  {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient2) !important;
 }
-.gradient-2 button.small-btn.MuiButton-outlined {
+div.gradient-2 *:not(.white) button.small-btn.MuiButton-outlined {
   color: var(--onbuttonOnGradient2) !important;
   background: none !important
 }
-.gradient-2 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-2 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient2) !important;
   background: var(--buttonOnGradient2) !important;
 }
-.gradient-2 button:not(.white).MuiButton-outlined, .gradient-2 button:not(.white).MuiButton-text  {
+div.gradient-2 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-2 button:not(.white).MuiButton-text  {
   color: var(--buttonOnGradient2) !important;
 }
-.gradient-2 button:not(.MuiTab-root):not(.white)::after {
+div.gradient-2 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient2);
 }
 /* clickable */
@@ -3983,7 +4326,7 @@ button.MuiPaginationItem-root:hover {
   border: var(--focusBorder) solid var(--on-gradeint-2);
 }
 /* gradeint 2 divider */
-.gradient-2 .MuiDivider-root, .MuiDivider-root{
+.gradient-2 .MuiDivider-root .MuiDivider-root{
   border-color: var(--on-gradeint-2);
 }
 .darkmode .gradient-2 .MuiList-root .MuiDivider-root.black {
@@ -4030,46 +4373,47 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
 }
 /* avatars */
-.gradient-3 .MuiAvatar-root {
-  background-color: var(--buttonOnGradient3)
+.gradient-3 .MuiAvatar-root:not(.white) {
+  background-color: var(--buttonOnGradient3);
+  border: solid calc(var(--border-1) * var(--avatar-border-lg)) var(--buttonOnGradient3) !important;
+  color: var(--onbuttonOnGradient3);
 }
-.gradient-3  .MuiAvatar-root svg path {
-    fill: var(--onbuttonOnGradient3);
+.gradient-3 .MuiAvatar-root:not(.white).xsx, .gradient-3 .MuiAvatar-root:not(.white).xs, .gradient-3 .MuiAvatar-root:not(.white).sm, .gradient-3 .MuiAvatar-root:not(.white).md    {
+  background-color: var(--buttonOnGradient3);
+  border: solid var(--border-1) var(--buttonOnGradient3) !important
+}
+.gradient-3 .MuiAvatar-root:not(.white) svg path {
+    fill: var(--onbuttonOnGradient2);
 }
 /* buttons */
-.gradient-3 button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white):not(.small-btn):not(.MuiButton-outlined):not(.MuiButton-text)  {
   background: var(--buttonOnGradient3) !important;
   color: var(--onbuttonOnGradient3) !important;
 }
-.gradient-3 button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white).MuiButton-outlined::before {
   border: calc(var(--border-1) * var(--button-border)) solid var(--buttonOnGradient3) !important;
 }
-.gradient-3 button.small-btn.MuiButton-outlined, .white .backgroundTertiary button.small-btn.MuiButton-outlined  {
+div.gradient-3 *:not(.white) button.small-btn.MuiButton-outlined, .white .backgroundTertiary button.small-btn.MuiButton-outlined  {
   color: var(--onbuttonOnGradient3) !important;
   background: none !important
 }
-.gradient-3 button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
+div.gradient-3 *:not(.white) button.small-btn:not(.MuiButton-outlined):not(.MuiButton-text)::before {
   color: var(--onbuttonOnGradient3) !important;
   background: var(--buttonOnGradient3) !important;
 }
-.gradient-3 button:not(.white).MuiButton-outlined, .gradient-3 button:not(.white).MuiButton-text {
+div.gradient-3 *:not(.white) button:not(.white).MuiButton-outlined, .gradient-3 button:not(.white).MuiButton-text {
   color: var(--buttonOnGradient3) !important;
 }
-.gradient-3 button:not(.MuiTab-root):not(.white)::after {
+div.gradient-3 *:not(.white) button:not(.MuiTab-root):not(.white)::after {
   border: var(--focusBorder) solid var(--buttonOnGradient3);
 }
-.gradient-3 .MuiAvatar-root {
-  background-color: var(--buttonOnGradient3)
-}
-.gradient-3  .MuiAvatar-root svg path {
-    fill: var(--onbuttonOnGradient3);
-}
+
 /* clickable */
 .gradient-3 .list-clickable::after, .gradient-3  .clickable::after {
   border: var(--focusBorder) solid var(--on-gradeint-3);
 }
 /* gradeint 3 divider */
-.gradient-3 .MuiDivider-root, .MuiDivider-root{
+.gradient-3 .MuiDivider-root{
   border-color: var(--on-gradeint-3);
 }
 .darkmode .gradient-3 .MuiList-root .MuiDivider-root.black {
@@ -4085,6 +4429,9 @@ button.MuiPaginationItem-root:hover {
 .darkmode .black:not(.breadcrumbs):not(.MuiFormControlLabel-root):not(.herowithOverlay) {
     background-color: var(--black) !important;
     color: var(--dm-white) !important;
+}
+.white .inline-icon i {
+  color: var(--iconOnWhite) !important;
 }
 .darkmode .black .fa-regular:not(button *), .black .fa-solid:not(button *) {
   color: var(--dmiconOnBlack) !important;
@@ -4149,7 +4496,7 @@ button.MuiPaginationItem-root:hover {
 .darkmode .white-half {
   background: var(--dm-white-half) !important;
 }
-.darkmode .white .fa-regular:not(button *), .white .fa-solid:not(button *) {
+.darkmode .white .fa-regular:not(button *) {
   color: var(--dmiconOnWhite) !important;
 }
 /* on white hotlinks */
@@ -4408,4 +4755,135 @@ button.MuiPaginationItem-root:hover {
 }
 .darkmode .gradient-3  .MuiAvatar-root svg path {
     fill: var(--dmonbuttonOnGradient3);
+}
+
+/* video */
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* footer */
+.socialIcons {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+footer {
+  margin-top: -16px;
+}
+footer .MuiGrid-container {
+  align-items: start
+}
+.subtitle1 {
+  margin-top: var(--spacing-3);
+  margin-bottom: var(--spacing-1);
+}
+.list-clickable {
+  min-height: 24px !important;
+}
+.copyright {
+  padding: var(--spacing-2) 0;
+}
+/* toolbar */
+.MuiToolbar-root .MuiIconButton-root {
+  margin-right: var(--spacing-half)
+}
+.MuiToolbar-root button {
+  box-shadow: none;
+}
+.colored .MuiToolbar-root a {
+  color: var(--on-primary) !important;
+  text-decoration: none  !important
+}
+.white .MuiToolbar-root a {
+  color: var(--on-white) !important;
+  text-decoration: none  !important
+}
+.black .MuiToolbar-root a {
+  color: var(--on-black) !important;
+  text-decoration: none  !important
+}
+.darkmode .colored .MuiToolbar-root a {
+  color: var(--dm-on-background-tertiary) !important;
+  text-decoration: none  !important
+}
+.darkmode .white .MuiToolbar-root a {
+  color: var(--dm-on-white) !important;
+  text-decoration: none  !important
+}
+.darkmode .black .MuiToolbar-root a {
+  color: var(--dm-on-black) !important;
+  text-decoration: none  !important
+}
+
+/* preview */
+
+.computer {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 82vw;
+  max-width: 1300px;
+  height: 0;
+  padding-top: 60%;
+}
+.computer img {
+  position: absolute;
+  top: 0px;
+  width: 114%;
+  left: -7%;
+}
+.screen {
+  position: absolute;
+  background: #000;
+  left: 50%;
+  width: 71vw;
+  max-width: 1115px;
+  transform: translate(-50%, 0px);
+  height: calc(calc(100vw * .58) * .83) !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: 999;
+  top: calc(200px + calc(calc(100vw * .58) * .013));
+  max-height: 748px;
+
+}
+.screenHolder {
+  overflow-y: scroll;
+  border-radius: 1vw;
+  top: 0l;
+  height: calc(calc(100vw * .58) * .83) !important;
+  max-height: 748px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.screenContent {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  transform-origin: left top;
+  overflow: hidden;
+  display: block;
+  width: 100vw;
+  max-width: 1572px;
+  z-index: 2;
+  transform: scale(0.71);
 }

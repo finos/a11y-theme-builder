@@ -11,11 +11,11 @@
 		"start": "node build/app.js",
 		"dev-ui": "cd src/ui && npm run start",
 		"debug-inspect": "nodemon --exec node --inspect=0.0.0.0:9229 -r ts-node/register src/app.ts",
-        "docker-build": "docker build . -t a11y-theme-builder",
-        "docker-run": "docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder",
-        "docker-stop": "docker stop a11y-theme-builder",
-        "docker-start": "docker start a11y-theme-builder",
-        "docker-rm": "docker rm a11y-theme-builder"
+		"docker-build": "docker build . -t a11y-theme-builder",
+		"docker-run": "docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder",
+		"docker-stop": "docker stop a11y-theme-builder",
+		"docker-start": "docker start a11y-theme-builder",
+		"docker-rm": "docker rm a11y-theme-builder"
 	},
 	"author": "",
 	"license": "MIT",
@@ -39,9 +39,11 @@
 		"express-session": "^1.17.2",
 		"form-data": "4.0.0",
 		"jsonwebtoken": "^9.0.0",
-		"nodemon": "^2.0.15",
 		"tingodb": "^0.6.1",
 		"ts-node": "^10.7.0",
 		"typescript": "^4.6.2"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
 	}
 }

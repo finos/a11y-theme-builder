@@ -12,12 +12,12 @@ const MoleculeIntro: React.FC = () => {
             <h1>Molecules</h1>
             <div>
                 <h5>Getting Started with Molecules</h5>
-                <p>Next, you will assign your atomic design values to the molecules or the core components of your design language.</p>
+                <p>Next, you will assign your atomic design values to the molecules to build the core components of your design language.</p>
                 <p>There are both desktop and mobile components.</p>
                 <p>At any point you can preview your designs, the components created and the outputted code.</p>
             </div>
         </>
-    ) 
+    )
 }
 
 export default MoleculeIntro;

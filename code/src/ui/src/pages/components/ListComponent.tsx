@@ -11,7 +11,9 @@ import './ListComponent.css';
 
 interface Props {
     type: number
+    overline: string
     title: string
+    body: string
     isStyle2?: boolean;
     hasAvatar?: boolean
     hasImg?: boolean
@@ -21,18 +23,14 @@ interface Props {
     isClickable?: boolean
 }
 
-export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvatar,
+export const ListComponent: React.FC<Props> = ({ type, title, overline, body, isStyle2, hasAvatar,
         hasImg, hasIcon, isLarge, hasCheckbox, isClickable }) => {
 
-    const body = <div className="body2">
-        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum.
-    </div>
-
     const listTitle = <>
-        {!(type === 2) || <div className="overline">OVERLINE</div> }
-        {isStyle2 || <div className="body2">List Title</div>}
-        {!isStyle2 || <div className="subtitle1">List Title</div>}
-        {!(type === 3) || body }
+        {!(type === 2) || <div className="overline">{overline}</div> }
+        {isStyle2 || <div className="body2">{title}</div>}
+        {!isStyle2 || <div className="subtitle1">{title}</div>}
+        {!(type === 3) || <div className="body2">{body}</div> }
     </>
 
     const listIcon = <>
@@ -42,27 +40,25 @@ export const ListComponent: React.FC<Props> = ({ type, title, isStyle2, hasAvata
         {!hasImg || !isLarge
         || <img alt='list-style-1' src="/sample.jpg" className='image-lg'/>}
         {!hasIcon  || isLarge
-        || <ErrorIcon color='error'/>}
+        || <ErrorIcon />}
         {!hasIcon  || !isLarge
-        || <ErrorIcon color='error' fontSize='large'/>}
+        || <ErrorIcon fontSize='large'/>}
     </>
 
     const listClass = isClickable ? "list list-clickable" : "list"
 
     return (
-        <div className="sample">
-            <div className="subtitle1">{title}</div>
-            <div className={listClass}>
-                <div className="list-body">
-                    <div className="container-flex">
-                        { (!hasAvatar && !hasImg && !hasIcon )
-                        || <div className="list-icon">{listIcon}</div>}
-                        <div className="list-content">{listTitle}</div>
-                        {!hasCheckbox
-                        || <div className="list-checkbox"><FormControlLabel control={<Checkbox defaultChecked />} label="" /></div>}
-                    </div>
+        <div className={listClass}>
+            <div className="list-body">
+                <div className="container-flex">
+                    { (!hasAvatar && !hasImg && !hasIcon )
+                    || <div className="inline-icon">{listIcon}</div>}
+                    <div className="list-content">{listTitle}</div>
+                    {!hasCheckbox
+                    || <div className="list-checkbox"><FormControlLabel control={<Checkbox defaultChecked />} label="" /></div>}
                 </div>
             </div>
         </div>
+
     )
 }

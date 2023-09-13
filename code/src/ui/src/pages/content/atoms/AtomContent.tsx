@@ -99,6 +99,15 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("atom-other-selected", ""+displayOther)
     }, [displayOther])
 
+    let shadowSelected = false;
+    if (pref.get("atom-shadow-selected") == "true") {
+        shadowSelected = true;
+    }
+    const [displayShadow, setDisplayShadow] = useState<boolean>(shadowSelected);
+    useEffect(() => {
+        pref.set("atom-shadow-selected", ""+displayShadow)
+    }, [displayShadow])
+
     function enableDisableItems() {
         let _atoms = {...atoms};
         for (const [key, node] of Object.entries(designSystem.atoms)) {
@@ -184,6 +193,16 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 <LeftNavAtom atom={atoms.statStyles} indent={2} />
                             </List>
                         </Collapse>
+                        <LeftNavItem text={"Shadow Atoms"} indent={1} onClick={()=>setDisplayShadow(!displayShadow)}>
+                            {displayShadow ? <ExpandLess /> : <ExpandMore />}
+                        </LeftNavItem>
+                        <Collapse in={displayShadow} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                              <LeftNavAtom atom={atoms.elevationSettings} indent={2} />
+                              <LeftNavAtom atom={atoms.bevelSettings} indent={2} />
+                              <LeftNavAtom atom={atoms.glowSettings} indent={2} />
+                            </List>
+                        </Collapse>
                         <LeftNavItem text={"Other Atoms"} indent={1} onClick={()=>setDisplayOther(!displayOther)}>
                             {displayOther ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
@@ -194,13 +213,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 <LeftNavAtom atom={atoms.stateSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.chartColors} indent={2} disabled={true} />
                                 <LeftNavAtom atom={atoms.borderSettings} indent={2} />
-
                                 <LeftNavAtom atom={atoms.focusStates} indent={2} />
                                 <LeftNavAtom atom={atoms.hotlinks} indent={2} />
                                 <LeftNavAtom atom={atoms.inputBackground} indent={2} />
-                                <LeftNavAtom atom={atoms.elevationSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.bevelSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.glowSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.animationSettings} indent={2} />
 
                                 {

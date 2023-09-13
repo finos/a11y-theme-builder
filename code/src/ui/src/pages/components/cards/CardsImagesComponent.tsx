@@ -19,42 +19,48 @@ export const CardsImagesComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Desktop" heading="Cards with Images" />
-            <SettingsSection>
-            <FormControl>
-                <RadioGroup
-                    name="cards-standard-radio-buttons-group"
-                    value={_clickableCards}
-                    onChange={(event) => { _setClickableCards(event.target.value === "true") }}
-                >
-                    <FormControlLabel value="false" control={<Radio />} label="Non-clickable Cards (with buttons)" />
-                    <FormControlLabel value="true" control={<Radio />} label="Clickable Cards" />
-                </RadioGroup>
-            </FormControl>
-            </SettingsSection>
             <ExampleSection>
-            <CardSample label="Left Aligned 9:16 Ratio" title="Title" imagePath="/sample.jpg" clickable={_clickableCards}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt magna aliqua
-            </CardSample>
-            <CardSample label="Left Aligned 9:21 Ratio" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" clickable={_clickableCards}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt magna aliqua
-            </CardSample>
-            <CardSample label="Center Aligned 9:16 Ratio" title="Title" imagePath="/sample.jpg" className="centerAligned" clickable={_clickableCards}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt magna aliqua
-            </CardSample>
-            <CardSample
-                label="Center Aligned 9:21 Ratio"
-                title="Title"
-                imagePath="/sample.jpg"
-                className="centerAligned"
-                imageClassName="cinemascope"
-                clickable={_clickableCards}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt magna aliqua
-            </CardSample>
+              <div className="top40 subtitle1">Left Aligned 9:16 Ratio with two Buttons</div>
+              <CardSample title="Title" imagePath="/sample.jpg">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Left Aligned 9:16 Ratio with one Button</div>
+              <CardSample title="Title" imagePath="/sample.jpg"  hideSecondary={true}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Left Aligned 9:16 Ratio with hotlink</div>
+              <CardSample title="Title" imagePath="/sample.jpg" hotlink={true} hideSecondary={true}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Left Aligned 9:16 Ratio, clickable</div>
+              <CardSample title="Title" imagePath="/sample.jpg" hotlink={true} clickable={true}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Center Aligned 9:16 Ratio with two Buttons</div>
+              <CardSample title="Title" imagePath="/sample.jpg" className="centerAligned">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Center Aligned 9:16 Ratio with one Button</div>
+              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} className="centerAligned">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Center Aligned 9:16 Ratio with hotlink</div>
+              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+              <div className="top40 subtitle1">Center Aligned 9:16 Ratio, clickable</div>
+              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned" clickable={true}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt magna aliqua
+              </CardSample>
+
             </ExampleSection>
         </div>
     )

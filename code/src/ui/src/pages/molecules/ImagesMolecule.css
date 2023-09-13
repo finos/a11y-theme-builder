@@ -31,7 +31,7 @@
 .design-system-editor-right-content .darkmode .image-sq, .darkmode .image-lg {
     background: var(--dm-gray-700);
 }
-  
+
 .design-system-editor-right-content .image-lg img {
     position: absolute;
     top: 50%;
@@ -49,6 +49,30 @@
     justify-content: center;
     align-content: center;
     box-shadow: var(--image-shadow);
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.inline-image.ratio32 {
+  width: 100%;
+  aspect-ratio: 3 / 2 !important;
+}
+
+.inline-image.ratio169 {
+  width: 100%;
+  aspect-ratio: 16 / 9  !important;
+}
+
+.v-center {
+  align-items: center;
+}
+
+.v-top{
+  align-items: flex-start;
+}
+
+.v-top{
+  align-items: flex-end;
 }
 
 .design-system-editor-right-content .example {

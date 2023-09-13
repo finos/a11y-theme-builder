@@ -40,16 +40,19 @@ import { ColorStatesComponent } from '../../components/colors/ColorStatesCompone
 import { PrimaryTabsComponent } from '../../components/PrimaryTabsComponent';
 import { SecondaryTabsComponent } from '../../components/SecondaryTabsComponent';
 import { CardsStandardComponent } from '../../components/cards/CardsStandardComponent';
+import { CardsStandardIconComponent } from '../../components/cards/CardsStandardIconComponent';
 import { CardsImagesComponent } from '../../components/cards/CardsImagesComponent';
+import { CardsImagesComponent921 } from '../../components/cards/CardsImagesComponent921';
 import { CardsStatsComponent } from '../../components/cards/CardsStatsComponent';
+import { CardsStatsIconsComponent } from '../../components/cards/CardsStatsIconsComponent';
 import { CheckboxesComponent } from '../../components/CheckboxesComponent';
 import { PaginationComponent } from '../../components/PaginationComponent';
 import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
 import { ListsDoubleComponent } from '../../components/ListsDoubleComponent';
 import { MultiselectDropdownComponent } from '../../components/MultiselectDropdownComponent';
+import { ResponsiveAppBar } from '../../components/ResponsiveAppBar';
 import { MenusComponent } from '../../components/MenusComponent';
-
 import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
@@ -193,6 +196,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                     <LeftNavHeader>Desktop Components</LeftNavHeader>
                     <LeftNavItem text={"Accordions"} value="accordions" indent={1} selected={showComponent} onClick={()=> {setShowComponent("accordions")}} disabled={disabled}/>
+                    <LeftNavItem text={"App Bar"} value="appbar" indent={1} selected={showComponent} onClick={()=> {setShowComponent("appbar")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Avatars" /* - Single */} value="avatarsSingle" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsSingle")}} disabled={disabled}/>
                     { /* <LeftNavItem text={"Avatars - Groups"} value="avatarsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("avatarsGroups")}} disabled={disabled}/> */}
@@ -204,10 +208,12 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Buttons - Groups"} value="buttonsGroups" indent={1} selected={showComponent} onClick={()=> {setShowComponent("buttonsGroups")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Cards - Standard"} value="cardsStandard" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStandard")}} disabled={disabled}/>
-                    <LeftNavItem text={"Cards - Images"} value="cardsImages" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages")}} disabled={disabled}/>
-                    {/* <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} disabled={disabled}/> */}
-                    <LeftNavItem text={"Cards - Stats"} value="cardsStats" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStats")}} disabled={disabled}/>
-
+                    <LeftNavItem text={"Cards - with Icons"} value="cardsStandardIcons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStandardIcons")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - with Images 9:16 Ratio"} value="cardsImages" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - with Images 9:21 Ratio"} value="cardsImages921" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsImages921")}} disabled={disabled}/>
+                  {/* <LeftNavItem text={"Cards - Videos"} value="cardsVideos" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsVideos")}} disabled={disabled}/> */}
+                    <LeftNavItem text={"Cards - with Stats"} value="cardsStats" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStats")}} disabled={disabled}/>
+                    <LeftNavItem text={"Cards - with Stats & Icons"} value="cardsStatsIcons" indent={1} selected={showComponent} onClick={()=> {setShowComponent("cardsStatsIcons")}} disabled={disabled}/>
                     <LeftNavItem text={"Checkboxes"} value="checkboxes" indent={1} selected={showComponent} onClick={()=> {setShowComponent("checkboxes")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Chips"} value="chips" indent={1} selected={showComponent} onClick={()=> {setShowComponent("chips")}} disabled={disabled}/>
@@ -305,6 +311,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "accordions" &&
                         <AccordionComponent />
                     }
+                    {showComponent === "appbar" &&
+                        <ResponsiveAppBar />
+                    }
                     {showComponent === "avatarsSingle" &&
                         <AvatarSingleComponent />
                     }
@@ -335,11 +344,20 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "cardsStandard" &&
                         <CardsStandardComponent />
                     }
+                    {showComponent === "cardsStandardIcons" &&
+                        <CardsStandardIconComponent />
+                    }
                     {showComponent === "cardsImages" &&
                         <CardsImagesComponent />
                     }
+                    {showComponent === "cardsImages921" &&
+                        <CardsImagesComponent921 />
+                    }
                     {showComponent === "cardsStats" &&
                         <CardsStatsComponent />
+                    }
+                    {showComponent === "cardsStatsIcons" &&
+                        <CardsStatsIconsComponent />
                     }
                     {showComponent === "checkboxes" &&
                         <CheckboxesComponent />

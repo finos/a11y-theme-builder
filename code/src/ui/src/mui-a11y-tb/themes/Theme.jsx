@@ -220,7 +220,7 @@ try {
                 lineHeight: "var(--captionLineHeight)",
                 textDecoration: "var(--captionTextDecoration)",
                 textTransform: "var(--captionTextTransform)",
-            },            
+            },
             // button: {
             //     /* fontStyle: "italic" */
             // },
@@ -327,7 +327,7 @@ try {
                         minHeight: "var(--spacing-3)",
                         display: "flex",
                         flexDirection: "column",
-                        minWidth: "290px",
+                        minWidth: "240px",
                     }
                 }
             },
@@ -496,7 +496,7 @@ try {
             MuiRadio: {
                 styleOverrides: {
                     root: {
-                        color: "var(--on-background)",
+                        color: "inherit",
                         "&.Mui-checked":{
                             color: "var(--button)",
                         },
@@ -591,7 +591,7 @@ try {
                         },
                         "& .MuiInputBase-root.Mui-disabled": {
                             backgroundColor: "var(--input-disabled)",
-            
+
                         },
                         "& .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: '1px solid var(--button)',
@@ -626,7 +626,7 @@ try {
                         letterSpacing: "1.25%",
                         textTransform: "none",
                         marginBottom: "10px",
-                        color: "var(--on-background)",
+                        color: "inherit",
                         [`&.${formLabelClasses.focused}`]: {
                             color: "var(--on-background)",
                         },
@@ -753,12 +753,12 @@ try {
                 styleOverrides: {
                     root: {
                       background: "transparent !important",
-                      color: "var(--on-background)",
+                      color: "inherit",
                       "& .MuiTypography-root": {
-                        color: "var(--on-background)",
+                        color: "inherit",
                       },
                       ".darkmode & .MuiTypography-root": {
-                        color: "var(--dm-on-background)",
+                        color: "inherit",
                       },
                       "&.black": {
                         background: "transparent !important",

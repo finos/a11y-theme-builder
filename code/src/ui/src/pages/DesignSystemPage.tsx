@@ -137,9 +137,11 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                             >
                                 <TopNavTab label="Atoms" value="atoms"/>
                                 <TopNavTab label="Molecules" value="molecules"/>
-                                <TopNavTab label="Organisms" value="organisms"/>
+                                <div className="vertical-line"  />
                                 <TopNavTab label="Components" value="components"/>
-                                <TopNavTab label="Preview" value="preview"/>
+                                <TopNavTab label="Organisms" value="organisms"/>
+                                <TopNavTab label="Templates" value="templates"/>
+                                <div className="vertical-line"  />
                                 <TopNavTab label="Code" value="code"/>
                             </Tabs>
                         </div>
@@ -151,14 +153,15 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                         {tabIndex === "molecules" && (
                             <MoleculeContent user={user} designSystem={designSystem}/>
                         )}
+
+                        {tabIndex === "components" && (
+                            <ComponentsContent user={user} designSystem={designSystem}/>
+                        )}
                         {tabIndex === "organisms" && (
                             <OrganismContent user={user} designSystem={designSystem}/>
                         )}
-                        {tabIndex === "preview" && (
+                        {tabIndex === "templates" && (
                             <PreviewContent user={user} designSystem={designSystem}/>
-                        )}
-                        {tabIndex === "components" && (
-                            <ComponentsContent user={user} designSystem={designSystem}/>
                         )}
                         {tabIndex === "code" && (
                             <CodeContent user={user} designSystem={designSystem}/>
