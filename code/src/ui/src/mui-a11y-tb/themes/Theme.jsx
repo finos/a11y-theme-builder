@@ -692,8 +692,12 @@ try {
             MuiTab: {
                 styleOverrides: {
                     root: {
-                        fontFamily: "var(--navbarPrimary-font)",
-                        fontSize: "var(--baseFont)", //"calc(var(--baseFont)* .875)",
+                        fontFamily: "var(--CTAFontFamily)",
+                        fontWeight: "var(--CTAFontWeight)",
+                        letterSpacing: "(--CTALetterSpacing)",
+                        lineHeight: "(--CTALineHeight)",
+                        textTransform: "(---CTATextTransform)",
+                        fontSize: "--CTAFontSize", //"calc(var(--baseFont)* .875)",
                         background: "var(--button)",
                         opacity: "var(--quiet)",
                         padding: "0 var(--spacing-2)",
