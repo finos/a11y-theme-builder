@@ -16,7 +16,13 @@ interface Props {
 
 export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
 
-    const layersProperty = (designSystem.layers).properties;
+    //TODO until we support color blindness styling, don't offer it as an
+    // accessibility layer option to select from
+    //const layersProperty = (designSystem.layers).properties;
+    const layersProperty = [
+        designSystem.layers.dyslexia,
+        designSystem.layers.motionSensitivity
+    ]
     const getValueFromLayersProperty = () => {
         let r = [];
         for (var i=0; i<layersProperty.length; i++) {
