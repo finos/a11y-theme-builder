@@ -5021,7 +5021,7 @@ footer .MuiGrid-container {
   --tablebodySpacing: var(--body1LetterSpacing);
   --tablebodyTransform: var(--body1TextTransform);
 }
-.motion-sensative {
+.motion-sensitive {
   --animation-speed: 0ms;
   --animation-distance: 0px;
   --animation-focus-distance: 0px;

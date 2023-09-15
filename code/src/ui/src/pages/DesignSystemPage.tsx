@@ -29,6 +29,11 @@ interface Props {
     setThemeName(name: string): void;
 }
 
+interface AccessibleLayerContainerAttributes {
+    "data-typography"?: string;
+    "data-animation"?: string;
+}
+
 let initComplete = false;
 
 const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeName}) => {
@@ -41,6 +46,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
     const [designSystem, setDesignSystem] = useState<DesignSystem>();
     const [designSystemContentClassName, setDesignSystemContentClassName] = useState<string>("design-system-container");
+    const [designSystemContainerAttributes, setDesignSystemContentAttributes] = useState<AccessibleLayerContainerAttributes>({})
 
     const [tabIndex, setTabIndex] = useState<string|null>(null);
     const handleTabChange = (event:any, newTabIndex:string) => {
@@ -99,21 +105,22 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
             // listen for changes in selected accessibility layers so that appropriate
             //  styles can be set
             const layerChangeListener = function (event: EventValueChange<Boolean>) {
-                UpdateContainerClassName();
+                UpdateContainerLayerInfo();
             };
             designSystem.layers.colorBlind.setPropertyListener("colorBlindListener", layerChangeListener);
             designSystem.layers.dyslexia.setPropertyListener("dyslexiaListener", layerChangeListener);
             designSystem.layers.motionSensitivity.setPropertyListener("motionSensativityListener", layerChangeListener);
 
-            UpdateContainerClassName();
+            UpdateContainerLayerInfo();
         }
     }, [designSystem])
 
     // Update the class names on the design system container div
     //  taking into account which accessibility layers have been
     //  selected by the user
-    const UpdateContainerClassName = () => {
+    const UpdateContainerLayerInfo = () => {
         let dsccn = "design-system-container";
+        let attributes: AccessibleLayerContainerAttributes = {};
         if (designSystem) {
             //TODO re-enable when color blindness styling is available
             // and the color blind accessibility layer is
@@ -123,13 +130,16 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
             //}
             if (designSystem.layers.dyslexia.getValue()) {
                 dsccn += " dyslexic";
+                attributes["data-typography"] = "dyslexic";
             }
             if (designSystem.layers.motionSensitivity.getValue()) {
-                dsccn += " motion-sensative";
+                dsccn += " motion-sensitive";
+                attributes["data-animation"] = "sensitive";
             }
         }
 
         setDesignSystemContentClassName(dsccn);
+        setDesignSystemContentAttributes(attributes);
     }
 
     const TopNavTab = styled(Tab)(({ theme }) => ({
@@ -151,9 +161,10 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     }
 
     if (designSystem && themeBuilder && tabIndex)
+
         return (
             <ThemeProvider theme={(themes as any)[themeName]}>
-                <div className={designSystemContentClassName}>
+                <div {...designSystemContainerAttributes} className={designSystemContentClassName}>
                     <MeasureDiv setHeight={setDivHeight}>
                         <DesignSystemTitleBar designSystemNames={designSystemNames} designSystem={designSystem} />
                         <div className="design-system-tab-bar">
@@ -205,7 +216,6 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                 </div>
             </ThemeProvider>
         );
-
     return(<div>No design system loaded</div>)
 }
 
