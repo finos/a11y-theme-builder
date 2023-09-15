@@ -2,12 +2,12 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { DesignSystem, StandardButtons } from 'a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -59,10 +59,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                             <StringSelectable property={molecule.buttonText} defaultValue="" />
                         </div>
                         <div className="formRow">
-                            <StringSelectable property={molecule.buttonElevation} defaultValue="" />
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.buttonBevel} defaultValue="" />
+                            <StringCategorySelectable property={molecule.buttonShadow} defaultValue="" />
                         </div>
                     </div>
                 </div>

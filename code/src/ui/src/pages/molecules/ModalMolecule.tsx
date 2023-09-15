@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { ColorSelect } from '../../components/ColorSelect';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import ModalSample from '../../components/modals/ModalSample';
 import { Modal, Shade } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
@@ -47,7 +47,7 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
                     <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
                 </div>
                 <div className="form-row">
-                    <StringSelectable property={modalMolecule.elevation} defaultValue="No Elevation" />
+                    <StringCategorySelectable property={modalMolecule.shadow} defaultValue="No Shadow" />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={modalMolecule} />

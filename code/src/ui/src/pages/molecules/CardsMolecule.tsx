@@ -5,9 +5,8 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, InputAdornment, InputLabel, TextField, Typography } from '@mui/material';
 import { DesignSystem, Cards } from 'a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -99,12 +98,8 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                             <NumberScaledSelectable property={molecule.contentGap} units="px" scale={grid}/>
                         </div>
                         <div className="formRow">
-                            <StringSelectable property={molecule.elevation} defaultValue="" />
+                            <StringCategorySelectable property={molecule.shadow} defaultValue="" />
                         </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.bevel} defaultValue="" />
-                        </div>
-
                     </div>
                 </div>
             </SettingsSection>

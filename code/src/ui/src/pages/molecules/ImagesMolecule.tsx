@@ -5,7 +5,7 @@
 import React, { useEffect } from 'react';
 import { DesignSystem, Images } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -69,7 +69,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                             <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
                         </div>
                         <div className="formRow">
-                            <StringSelectable property={molecule.imageElevation} defaultValue="" />
+                            <StringCategorySelectable property={molecule.imageShadow} defaultValue="" />
                         </div>
                     </div>
                 </div>

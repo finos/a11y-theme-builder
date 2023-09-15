@@ -10,7 +10,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { NumberProperty } from '../../components/editors/NumberProperty';
 import DeleteIcon from '@mui/icons-material/AutoGraph';
 
@@ -62,10 +62,7 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <StringSelectable property={molecule.text} defaultValue="Caption" />
                 </div> */}
                 <div className="formRow">
-                    <StringSelectable property={molecule.elevation} defaultValue="No Elevation" />
-                </div>
-                <div className="formRow">
-                    <StringSelectable property={molecule.bevel} defaultValue="No Bevel" />
+                    <StringCategorySelectable property={molecule.shadow} defaultValue="No Shadow" />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={molecule} />
