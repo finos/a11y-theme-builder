@@ -91,17 +91,13 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     }, []);
 
     useEffect(() => {
-        console.log(`changed designSystemContentClassName: ${designSystemContentClassName}`)
-    }, [designSystemContentClassName]);
-
-    useEffect(() => {
         if (designSystem) {
             designSystem.code.setCSSVarListener("css", setCssValue);
             const pref = new Preferences(designSystem.name);
             setTabIndex(pref.get("content-selected") || "atoms");
 
-            // Update layers, listen for changes so that appropriate styles can
-            //  be set
+            // listen for changes in selected accessibility layers so that appropriate
+            //  styles can be set
             const layerChangeListener = function (event: EventValueChange<Boolean>) {
                 UpdateContainerClassName();
             };
@@ -113,9 +109,15 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
         }
     }, [designSystem])
 
+    // Update the class names on the design system container div
+    //  taking into account which accessibility layers have been
+    //  selected by the user
     const UpdateContainerClassName = () => {
         let dsccn = "design-system-container";
         if (designSystem) {
+            //TODO re-enable when color blindness styling is available
+            // and the color blind accessibility layer is
+            // re-introduced to the UI
             //if (designSystem.layers.colorBlind.getValue()) {
             //    dsccn += " color-blind";
             //}
