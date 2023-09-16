@@ -59,7 +59,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                             <StringSelectable property={molecule.buttonText} defaultValue="" />
                         </div>
                         <div className="formRow">
-                            <StringCategorySelectable property={molecule.buttonShadow} defaultValue="" />
+                            <StringCategorySelectable property={molecule.buttonShadow} defaultValue="None" />
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                             <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
                         </div>
                         <div className="formRow">
-                            <StringCategorySelectable property={molecule.imageShadow} defaultValue="" />
+                            <StringCategorySelectable property={molecule.imageShadow} defaultValue="None" />
                         </div>
                     </div>
                 </div>

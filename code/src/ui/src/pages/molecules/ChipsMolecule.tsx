@@ -62,7 +62,7 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <StringSelectable property={molecule.text} defaultValue="Caption" />
                 </div> */}
                 <div className="formRow">
-                    <StringCategorySelectable property={molecule.shadow} defaultValue="No Shadow" />
+                    <StringCategorySelectable property={molecule.shadow} defaultValue="None" />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={molecule} />

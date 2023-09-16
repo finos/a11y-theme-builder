@@ -47,7 +47,7 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
                     <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
                 </div>
                 <div className="form-row">
-                    <StringCategorySelectable property={modalMolecule.shadow} defaultValue="No Shadow" />
+                    <StringCategorySelectable property={modalMolecule.shadow} defaultValue="None" />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={modalMolecule} />

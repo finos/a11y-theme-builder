@@ -40,7 +40,7 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
                     <NumberScaledSelectable property={toastsMolecule.padding} units="px" defaultValue={1} scale={grid}/>
                 </div>
                 <div className="form-row">
-                    <StringCategorySelectable property={toastsMolecule.shadow} defaultValue="No Shadow" />
+                    <StringCategorySelectable property={toastsMolecule.shadow} defaultValue="None" />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={toastsMolecule} />

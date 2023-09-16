@@ -98,7 +98,7 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                             <NumberScaledSelectable property={molecule.contentGap} units="px" scale={grid}/>
                         </div>
                         <div className="formRow">
-                            <StringCategorySelectable property={molecule.shadow} defaultValue="" />
+                            <StringCategorySelectable property={molecule.shadow} defaultValue="None" />
                         </div>
                     </div>
                 </div>

@@ -13,8 +13,14 @@ export interface StringProps {
     description?: React.ReactNode;
 }
 
+// Builds a Select component with ListSubheaders for category labels
+//  and MenuItems for each item in each category.  This code will also
+//  create a "None" MenuItem at the beginning of the menu with the
+//  value "None".  When the user selects an item on the menu, this
+//  code will submit that value back to the incoming property.  It
+//  will send "None" if the "None" menu item is selected.
 export const StringCategorySelectable: React.FC<StringProps> = ({ property, defaultValue, variant, description }) => {
-    const [title, setTitle] = useState<string>((property.getValue() || property.getDefaultValue() || defaultValue));
+    const [title, setTitle] = useState<string>((property.getValue() || property.getDefaultValue() || defaultValue || "None"));
     async function handleChange(event: any): Promise<void> {
         const _value = event.target.value;
         setTitle(_value);
@@ -26,6 +32,7 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
             <div>
                 <InputLabel id="stringSelectLabel">{label}</InputLabel>
                 <Select id="stringSelect" labelId="stringSelectLabel" value={title} onChange={handleChange}>
+                    <MenuItem value="None"><em>None</em></MenuItem>
                     {renderCategories(property)}
                 </Select>
             </div>
@@ -46,21 +53,7 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
         }
         return r;
     }
-/*
-    const renderCategories = (property: PropertyStringCategorySelectable, variant?: string) => {
-        var r = [];
-        var selectables = property.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
-            const s = selectables[i];
-            if (!variant || variant === "dropdown") {
-                r.push(<optgroup key={"label-"+s} label={s.display}> {renderSelectableItems(s.members, variant)} </optgroup>)
-            } else {
-                r.push(<div>Unknown Values</div>)
-            }
-        }
-        return r;
-    }
-*/
+
     const renderSelectableItems = (items: string[], variant?: string) => {
         var r = [];
         for (var i=0; i<items.length; i++) {

@@ -40,7 +40,7 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                     <NumberScaledSelectable property={slidersMolecule.visibleHeight} units="px" defaultValue={3} scale={grid}/>
                 </div>
                 <div className="form-row">
-                    <StringCategorySelectable property={slidersMolecule.handleShadow} defaultValue="No Shadow" />
+                    <StringCategorySelectable property={slidersMolecule.handleShadow} defaultValue="None" />
                 </div>
                 <div className="form-row">
                     <NumberScaledSelectable property={slidersMolecule.barHeight} units="px" defaultValue={1} scale={grid}/>

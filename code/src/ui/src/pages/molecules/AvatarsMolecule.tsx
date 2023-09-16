@@ -56,7 +56,7 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
                     <NumberScaledSelectable property={molecule.extraLargeBorder} defaultValue={0} scale={scale} units="px" />
                     </div>
                 <div className="top40">
-                    <StringCategorySelectable property={molecule.shadow} defaultValue={"No Shadow"} />
+                    <StringCategorySelectable property={molecule.shadow} defaultValue={"None"} />
                 </div>
             </SettingsSection>
             <GeneratedCodeSection item={molecule} />

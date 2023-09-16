@@ -28,7 +28,7 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
         setAnchor(null)
     }
 
-    let noShadow = popoversMolecule.shadow.getValue() === "No Shadow"
+    let noShadow = popoversMolecule.shadow.getValue() === undefined;
     let boxShadowString = noShadow ? "none" : "var(--" + popoversMolecule.shadow.getValue()?.toLowerCase() +") !important"
     
     return (
@@ -70,7 +70,7 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                             <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
                         </div>
                         <div className="form-row">
-                            <StringCategorySelectable property={popoversMolecule.shadow} defaultValue="No Shadow" />
+                            <StringCategorySelectable property={popoversMolecule.shadow} defaultValue="None" />
                         </div>
                     </div>
                 </div>
