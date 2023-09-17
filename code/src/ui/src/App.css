@@ -10,10 +10,11 @@
 
 body {
     color: var(--on-background);
-    font-family: var(--bodyFamily);
-    font-weight: var(--fontWeight-2);
-    font-size: calc(var(--zoom) * var(--baseFont));
-    line-height: calc(var(--zoom) * var(--standard-LineHeight));
+    font-family: var(--body1FontFamily);
+    font-weight: var(--body1FontWeight);
+    font-size: calc(var(--zoom) * var(--body1FontSize));
+    line-height: calc(var(--zoom) * var(--body1LineHeight));
+    letter-spacing: var(--body1LetterSpacing)
 }
 
 p {

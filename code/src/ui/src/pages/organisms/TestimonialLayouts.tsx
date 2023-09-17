@@ -24,14 +24,12 @@ export const TestimonialLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Teams" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
                 <div className={colorMode}></div>
-                <div className="subtitle1">Testimonial, Large</div>
-                <Testimonial className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Testimonial, Large</div>
+                <Testimonial className="top40" />
                 <p></p>
-
-              </ExampleSection>
+              </div>
           </div>
       )
   }

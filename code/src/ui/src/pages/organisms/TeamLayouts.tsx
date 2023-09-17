@@ -26,18 +26,17 @@ export const TeamLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Teams" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
                 <div className={colorMode}></div>
-                <div className="subtitle1">Teams with X-Large Avatars</div>
-                <TeamsXLarge className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Teams with X-Large Avatars</div>
+                <TeamsXLarge className="top40" />
                 <p></p>
-                <div className="subtitle1">Teams with Large Avatars</div>
-                <TeamsLarge className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Teams with Large Avatars</div>
+                <TeamsLarge className="top40" />
                 <p></p>
-                <div className="subtitle1">Teams with Medium Avatars</div>
-                <TeamsMedium className={"top40 " + colorMode} />
-              </ExampleSection>
+                <div className="demo-title subtitle1">Teams with Medium Avatars</div>
+                <TeamsMedium className="top40" />
+              </div>
           </div>
       )
   }

@@ -23,28 +23,28 @@ export const StandardCards: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title" >
+              <CardSample color="primary" title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title" >
+              <CardSample color="primary" title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title" >
+              <CardSample color="primary" title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title">
+              <CardSample color="primary" title="Title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -58,28 +58,28 @@ export const StandardCards: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"   hideSecondary={true}>
+              <CardSample color="primary" title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"   hideSecondary={true}>
+              <CardSample color="primary" title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"   hideSecondary={true}>
+              <CardSample color="primary" title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"  hideSecondary={true}>
+              <CardSample color="primary" title="Title"  hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -93,28 +93,28 @@ export const StandardCards: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"  hotlink={true}>
+              <CardSample color="primary" title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"  hotlink={true}>
+              <CardSample color="primary" title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"   hotlink={true}>
+              <CardSample color="primary" title="Title"   hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample title="Title"  hotlink={true}>
+              <CardSample color="primary" title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -127,28 +127,28 @@ export const StandardCards: React.FC<Props> = ({className=""}) => {
                 </div>
               </Grid>
               <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-                <CardSample title="Title"  clickable={true}>
+                <CardSample color="primary" title="Title"  clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
               </Grid>
               <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-                <CardSample title="Title" clickable={true}>
+                <CardSample color="primary" title="Title" clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
               </Grid>
               <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-                <CardSample title="Title"   clickable={true}>
+                <CardSample color="primary" title="Title"   clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua
                 </CardSample>
               </Grid>
               <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-                <CardSample title="Title"  clickable={true}>
+                <CardSample color="primary" title="Title"  clickable={true}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua

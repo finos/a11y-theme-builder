@@ -16,6 +16,7 @@ import { TextIconsCentered } from "../../mui-a11y-tb/organisms/TextIconsCentered
 import { TextIconsWithDividerCentered } from "../../mui-a11y-tb/organisms/TextIconsWithDividerCentered";
 import { TextIconsGradientCentered } from "../../mui-a11y-tb/organisms/TextIconsGradientCentered";
 import { TextIconsDropColorCentered } from "../../mui-a11y-tb/organisms/TextIconsDropColorCentered";
+import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 
 interface Props {
     colorMode?: string;
@@ -29,21 +30,22 @@ export const DecorativeTextIconLayouts: React.FC<Props> = ({ }) => {
       return (
           <div>
               <HeadingSection title="organisms" heading="Teams" />
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Text with Gradient Title, Centered</div>
-                <TextIconsGradient className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Text with Colored Drop Shadow Title, Centered</div>
-                <TextIconsDropColor className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Text with Gradient Title, Centered</div>
-                <TextIconsGradientCentered className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Text with Colored Drop Shadow Title, Centered</div>
-                <TextIconsDropColorCentered className={"top40 " + colorMode} />
-                <p></p>
-              </ExampleSection>
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">Text with Gradient Title, Centered</div>
+                  <TextIconsGradient className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Colored Drop Shadow Title, Centered</div>
+                  <TextIconsDropColor className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Gradient Title, Centered</div>
+                  <TextIconsGradientCentered className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Colored Drop Shadow Title, Centered</div>
+                  <TextIconsDropColorCentered className="top40 "  />
+                  <p></p>
+              </div>
           </div>
       )
   }

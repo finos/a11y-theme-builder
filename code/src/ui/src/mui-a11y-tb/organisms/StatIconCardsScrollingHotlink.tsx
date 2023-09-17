@@ -23,32 +23,32 @@ export const StatIconCardsScrollingHotlink: React.FC<Props> = ({className=""}) =
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample  icon={true} stat={true} className="fixed" title="Title"  hotlink={true}>
+              <CardSample color="primary"  icon={true} stat={true} className="fixed" title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  icon={true} stat={true} className="fixed"  title="Title"  hotlink={true}>
+              <CardSample color="primary"  icon={true} stat={true} className="fixed"  title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  icon={true} stat={true} className="fixed"  title="Title"  hotlink={true}>
+              <CardSample color="primary"  icon={true} stat={true} className="fixed"  title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  icon={true} stat={true} className="fixed"  title="Title" hotlink={true} >
+              <CardSample color="primary"  icon={true} stat={true} className="fixed"  title="Title" hotlink={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  icon={true} stat={true} className="fixed"  title="Title" hotlink={true} >
+              <CardSample color="primary"  icon={true} stat={true} className="fixed"  title="Title" hotlink={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary"  icon={true} stat={true} className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

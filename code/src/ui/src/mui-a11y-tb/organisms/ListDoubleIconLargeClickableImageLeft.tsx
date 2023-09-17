@@ -24,7 +24,7 @@ export const ListDoubleIconLargeClickableImageLeft : React.FC<Props> = ({classNa
             </Grid>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
               <h6>Title</h6>
-              <div className="body">
+              <div className="body1">
                 <ListComponent isClickable={true} hasIcon isLarge type={2} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
                 <ListComponent isClickable={true} hasIcon isLarge type={2} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>

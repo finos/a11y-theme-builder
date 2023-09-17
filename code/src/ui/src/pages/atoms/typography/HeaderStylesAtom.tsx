@@ -102,7 +102,7 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
         header6TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 1)))
     }
 
-    if ( !keyDisplay1 || !keyDisplay2 || !keyHeader1 || !keyHeader2 
+    if ( !keyDisplay1 || !keyDisplay2 || !keyHeader1 || !keyHeader2
         || !keyHeader3 || !keyHeader4 || !keyHeader5 || !keyHeader6) return null;
     return (
         <div className="container">
@@ -129,103 +129,104 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
             </HeadingSection>
             <ExampleSection>
                 None
-            </ExampleSection>
-            <SettingsSection>
-                <div className="form-row top16">
-                    <div className="form-row">
-                        <Grid container spacing={3}>
-                            <Grid item xs={3}>
-                                <InputLabel htmlFor="fontWeight">
-                                    Heading/Display Font Weight
-                                </InputLabel>
-                                <TextField
-                                    id="fontWeight"
-                                    type="number"
-                                    sx={{maxWidth:300}}
-                                    value={isNaN(fontWeight) ? "" : ""+fontWeight }
-                                    onChange={handleFontWeightChange}
-                                />
+                <SettingsSection>
+                    <div className="form-row top16">
+                        <div className="form-row">
+                            <Grid container spacing={3}>
+                                <Grid item xs={3}>
+                                    <InputLabel htmlFor="fontWeight">
+                                        Heading/Display Font Weight
+                                    </InputLabel>
+                                    <TextField
+                                        id="fontWeight"
+                                        type="number"
+                                        sx={{maxWidth:300}}
+                                        value={isNaN(fontWeight) ? "" : ""+fontWeight }
+                                        onChange={handleFontWeightChange}
+                                    />
+                                </Grid>
+                                <Grid item xs={7}>
+                                    {!fontWeightWarningTriggered
+                                    ||
+                                    <Alert severity='warning' sx={{width: 500, marginTop: 1, padding: 1}}>
+                                        The font weight provided is not supported by at least one of the primary and secondary fonts.
+                                    </Alert>}
+                                </Grid>
                             </Grid>
-                            <Grid item xs={7}>
-                                {!fontWeightWarningTriggered
-                                ||
-                                <Alert severity='warning' sx={{width: 500, marginTop: 1, padding: 1}}>
-                                    The font weight provided is not supported by at least one of the primary and secondary fonts.
-                                </Alert>}
-                            </Grid>
-                        </Grid>
-                    </div>
-                </div>
-                <div className="form-row top16">
-                    <div className="label-1">
-                        Percent Change in Header/Display Sizes
-                    </div>
-                    <Slider
-                        aria-label="TypographyChange"
-                        value={typographyChange}
-                        sx={{maxWidth:600}}
-                        onChange={handleTypographyChangeChange}
-                        valueLabelDisplay="auto"
-                    />
-                </div>
-                <div className="top40"/>
-                <TextEditBox
-                    textKey={keyDisplay1}
-                    cssPrefix={display1CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={7}
-                />
-                <TextEditBox
-                    textKey={keyDisplay2}
-                    cssPrefix={display2CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={7}
-                />
-                <div className="row">
-                    <div className="col-12">
-                        <div className="subtitle1 quiet">
-                            Header Styles
                         </div>
                     </div>
-                </div>
-                <TextEditBox
-                    textKey={keyHeader1}
-                    cssPrefix={header1CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={1}
-                />
-                <TextEditBox
-                    textKey={keyHeader2}
-                    cssPrefix={header2CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={2}
-                />
-                <TextEditBox
-                    textKey={keyHeader3}
-                    cssPrefix={header3CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={3}
-                />
-                <TextEditBox
-                    textKey={keyHeader4}
-                    cssPrefix={header4CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={4}
-                />
-                <TextEditBox
-                    textKey={keyHeader5}
-                    cssPrefix={header5CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={5}
-                />
-                <TextEditBox
-                    textKey={keyHeader6}
-                    cssPrefix={header6CssPrefix}
-                    designSystem={designSystem}
-                    headerNo={6}
-                />
-            </SettingsSection>
-            <GeneratedCodeSection item={headerStylesAtom}/>
+                    <div className="form-row top16">
+                        <div className="label-1">
+                            Percent Change in Header/Display Sizes
+                        </div>
+                        <Slider
+                            aria-label="TypographyChange"
+                            value={typographyChange}
+                            sx={{maxWidth:600}}
+                            onChange={handleTypographyChangeChange}
+                            valueLabelDisplay="auto"
+                        />
+                    </div>
+                    <div className="top40"/>
+                    <TextEditBox
+                        textKey={keyDisplay1}
+                        cssPrefix={display1CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={7}
+                    />
+                    <TextEditBox
+                        textKey={keyDisplay2}
+                        cssPrefix={display2CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={7}
+                    />
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="subtitle1 quiet">
+                                Header Styles
+                            </div>
+                        </div>
+                    </div>
+                    <TextEditBox
+                        textKey={keyHeader1}
+                        cssPrefix={header1CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={1}
+                    />
+                    <TextEditBox
+                        textKey={keyHeader2}
+                        cssPrefix={header2CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={2}
+                    />
+                    <TextEditBox
+                        textKey={keyHeader3}
+                        cssPrefix={header3CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={3}
+                    />
+                    <TextEditBox
+                        textKey={keyHeader4}
+                        cssPrefix={header4CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={4}
+                    />
+                    <TextEditBox
+                        textKey={keyHeader5}
+                        cssPrefix={header5CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={5}
+                    />
+                    <TextEditBox
+                        textKey={keyHeader6}
+                        cssPrefix={header6CssPrefix}
+                        designSystem={designSystem}
+                        headerNo={6}
+                    />
+                </SettingsSection>
+                <GeneratedCodeSection item={headerStylesAtom}/>
+            </ExampleSection>
+
         </div>
     )
 }

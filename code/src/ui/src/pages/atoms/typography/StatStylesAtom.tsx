@@ -41,15 +41,16 @@ export const StatStylesAtom: React.FC<Props> = ({ designSystem }) => {
             </HeadingSection>
             <ExampleSection>
                 None
+                <SettingsSection>
+                    <TextEditBox
+                        textKey={keyStat}
+                        cssPrefix={statCssPrefix}
+                        designSystem={designSystem}
+                    />
+                </SettingsSection>
+                <GeneratedCodeSection item={statStylesAtom}/>
             </ExampleSection>
-            <SettingsSection>
-                <TextEditBox
-                    textKey={keyStat}
-                    cssPrefix={statCssPrefix}
-                    designSystem={designSystem}
-                />
-            </SettingsSection>
-            <GeneratedCodeSection item={statStylesAtom}/>
+
         </div>
     )
 

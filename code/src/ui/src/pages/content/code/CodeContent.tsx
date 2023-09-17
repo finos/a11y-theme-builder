@@ -181,7 +181,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                     </>}
 
                     {showItem === "json" && <>
-                        <HeadingSection title="Code Generators" heading="JSON Code" />
+                        <HeadingSection title="Code Generators" heading="JSON test Code" />
                         <div className="top40">
                             <h5>Base Code</h5>
                         </div>

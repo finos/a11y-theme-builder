@@ -53,7 +53,7 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                 <p>Configure settings that affect the appearance of cards.</p>
             </HeadingSection>
             <ExampleSection>
-                <Card>
+                <Card data-background="white">
                     <CardHeader title="Card Title" />
                     <CardContent>
                         <Typography variant="body2">
@@ -61,54 +61,55 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         </Typography>
                     </CardContent>
                 </Card>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-6 top16">
-                        <div className="formRow">
-                            <InputLabel className="label-1">Min Width</InputLabel>
-                            <TextField
-                                id="cards-molecules-min-width"
-                                type="number"
-                                defaultValue={_minWidth}
-                                onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
-                                InputProps={{
-                                    endAdornment: <InputAdornment position="start">px</InputAdornment>,
-                                }}
-                                sx={{ width: 300 }} />
-                        </div>
-                        <div className="formRow">
-                            <InputLabel className="label-1">Min Height</InputLabel>
-                            <TextField
-                                id="cards-molecules-min-height"
-                                type="number"
-                                defaultValue={_minHeight}
-                                onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
-                                InputProps={{
-                                    endAdornment: <InputAdornment position="start">px</InputAdornment>,
-                                }}
-                                sx={{ width: 300 }} />
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.borderRadius} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.padding} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.contentGap} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.elevation} defaultValue="" />
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.bevel} defaultValue="" />
-                        </div>
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-6 top16">
+                            <div className="formRow">
+                                <InputLabel className="label-1">Min Width</InputLabel>
+                                <TextField
+                                    id="cards-molecules-min-width"
+                                    type="number"
+                                    defaultValue={_minWidth}
+                                    onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
+                                    InputProps={{
+                                        endAdornment: <InputAdornment position="start">px</InputAdornment>,
+                                    }}
+                                    sx={{ width: 300 }} />
+                            </div>
+                            <div className="formRow">
+                                <InputLabel className="label-1">Min Height</InputLabel>
+                                <TextField
+                                    id="cards-molecules-min-height"
+                                    type="number"
+                                    defaultValue={_minHeight}
+                                    onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
+                                    InputProps={{
+                                        endAdornment: <InputAdornment position="start">px</InputAdornment>,
+                                    }}
+                                    sx={{ width: 300 }} />
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.borderRadius} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.padding} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.contentGap} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <StringSelectable property={molecule.elevation} defaultValue="" />
+                            </div>
+                            <div className="formRow">
+                                <StringSelectable property={molecule.bevel} defaultValue="" />
+                            </div>
 
+                        </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+
         </div >
     );
 }

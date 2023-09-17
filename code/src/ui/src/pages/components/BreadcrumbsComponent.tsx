@@ -25,18 +25,16 @@ export const BreadcrumbsComponent: React.FC<Props> = () => {
         <div>
             <HeadingSection title="Desktop" heading="Breadcrumbs" />
             <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <div className="subtitle1">Standard Breadcrumbs</div>
-                    <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs ${colorMode}`} style={{margin:"40px"}}>
-                        <Link>Home</Link>
-                        <Link>Page</Link>
-                        <Typography>Page</Typography>
-                    </Breadcrumbs>
-                    <div className="subtitle1">Back Breadcrumbs</div>
-                        <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs back-breadcrumbs ${colorMode}`} style={{margin:"40px"}}>
-                            <Link>{backIcon()}Home</Link>
-                        </Breadcrumbs>
-                </ColorModeSelector>
+                <div className="subtitle1">Standard Breadcrumbs</div>
+                <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs ${colorMode}`} style={{margin:"40px"}}>
+                    <Link>Home</Link>
+                    <Link>Page</Link>
+                    <Typography>Page</Typography>
+                </Breadcrumbs>
+                <div className="subtitle1">Back Breadcrumbs</div>
+                <Breadcrumbs aria-label="breadcrumb" className={`breadcrumbs back-breadcrumbs ${colorMode}`} style={{margin:"40px"}}>
+                    <Link>{backIcon()}Home</Link>
+                </Breadcrumbs>
             </ExampleSection>
 
 

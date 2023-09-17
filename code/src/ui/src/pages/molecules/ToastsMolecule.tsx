@@ -34,16 +34,17 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
                 >
                     Toast Title
                 </Alert>
+                <SettingsSection>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={toastsMolecule.padding} units="px" defaultValue={1} scale={grid}/>
+                    </div>
+                    <div className="form-row">
+                        <StringSelectable property={toastsMolecule.elevation} defaultValue="No Elevation" />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={toastsMolecule} />
             </ExampleSection>
-            <SettingsSection>
-                <div className="form-row">
-                    <NumberScaledSelectable property={toastsMolecule.padding} units="px" defaultValue={1} scale={grid}/>
-                </div>
-                <div className="form-row">
-                    <StringSelectable property={toastsMolecule.elevation} defaultValue="No Elevation" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={toastsMolecule} />
+
         </>
     )
 }

@@ -24,12 +24,14 @@ export const CardColorModeSelector: React.FC<SectionColorModeSelector> = ({ colo
             <InputLabel>Color Variants</InputLabel>
             <Typography variant="caption">View cards in various colors: colored, black, white or gradients</Typography>
             <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
+                <FormControlLabel value="primary" control={<Radio size="small"/>} label="Default"/>
+                <FormControlLabel value="alt" control={<Radio size="small"/>} label="Default Alternate"/>
                 <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
                 <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
                 <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
-                <FormControlLabel value="gradient-1" control={<Radio size="small"/>} label="Gradient 1"/>
-                <FormControlLabel value="gradient-2" control={<Radio size="small"/>} label="Gradient 2"/>
-                <FormControlLabel value="gradient-3" control={<Radio size="small"/>} label="Gradient 3"/>
+                <FormControlLabel value="gradient1" control={<Radio size="small"/>} label="Gradient 1"/>
+                <FormControlLabel value="gradient2" control={<Radio size="small"/>} label="Gradient 2"/>
+                <FormControlLabel value="gradient3" control={<Radio size="small"/>} label="Gradient 3"/>
             </RadioGroup>
             {children &&
                 <div style={style}>

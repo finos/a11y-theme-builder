@@ -24,7 +24,7 @@ export const ListDoubleImageImageLeft: React.FC<Props> = ({className=""}) => {
             </Grid>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
               <h6>Title</h6>
-              <div className="body">
+              <div className="body1">
                 <ListComponent hasImg type={2} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
                 <ListComponent hasImg type={2} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>

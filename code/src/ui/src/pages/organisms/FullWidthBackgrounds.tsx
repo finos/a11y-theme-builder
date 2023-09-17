@@ -23,14 +23,12 @@ export const FullWidthBackgrounds: React.FC<Props> = ({ }) => {
       return (
           <div>
               <HeadingSection title="organisms" heading="Full Width Backgrounds" />
-              <ExampleSection>
-                  <div className="subtitle1">Section with full width background images, no content</div>
-                  <LargeBackgroundImage className={"top40 " + colorMode} />
-                  <p></p>
-                  <div className="subtitle1">Section with full width background video, no content</div>
-                  <LargeBackgroundImageParalux className={"top40 " + colorMode} />
-                  <p></p>
-              </ExampleSection>
+              <div className="demo-title subtitle1">Section with full width background images, no content</div>
+              <LargeBackgroundImage className={"top40 " + colorMode} />
+              <p></p>
+              <div className="demo-title subtitle1">Section with full width background video, no content</div>
+              <LargeBackgroundImageParalux className={"top40 " + colorMode} />
+              <p></p>
           </div>
       )
   }

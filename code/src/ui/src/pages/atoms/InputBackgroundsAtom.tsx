@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const InputBackgroundsAtom: React.FC<Props> = ({ inputBackground }) => {
-    
+
     const defaultText = "Sample input field";
     const [_inputBackgroundColor, _setInputBackgroundColor] = useState<string>("#ffffff");
 
@@ -87,11 +87,12 @@ export const InputBackgroundsAtom: React.FC<Props> = ({ inputBackground }) => {
                             </div>
                         </div>
                     </DarkModeSection>
+                    <SettingsSection>
+                        <ColorSelectTitled value={inputBackground.overlayColor} label="Overlay Color:"></ColorSelectTitled>
+                    </SettingsSection>
+                    <GeneratedCodeSection item={inputBackground}/>
                 </ExampleSection>
-                <SettingsSection>
-                    <ColorSelectTitled value={inputBackground.overlayColor} label="Overlay Color:"></ColorSelectTitled>
-                </SettingsSection>
-                <GeneratedCodeSection item={inputBackground}/>
+
             </div>
         )
 

@@ -22,24 +22,25 @@ export const AnimationAtom: React.FC<Props> = ({ atom }) => {
                 Animation speed and distance for for hover and focus transitions.
             </HeadingSection>
             <ExampleSection>
-            <div className="row">
-                <div className="col-6">
-                    <div className="form-row">
-                        <InputLabel className="label-1" htmlFor="animation-preview">Animate hover and focus</InputLabel>
-                        <TextField id="animation-preview" value="Sample input Field" />
-                    </div>
-                </div>
-            </div>
+              <div className="row">
+                  <div className="col-6">
+                      <div className="form-row">
+                          <InputLabel className="label-1" htmlFor="animation-preview">Animate hover and focus</InputLabel>
+                          <TextField id="animation-preview" value="Sample input Field" />
+                      </div>
+                  </div>
+              </div>
+              <SettingsSection>
+                  <div className="top40">
+                      <NumberProperty property={atom.animationTiming} units="ms" />
+                  </div>
+                  <div className="top40">
+                      <NumberProperty property={atom.hoverAndFocusAnimationDistance} units="px" />
+                  </div>
+              </SettingsSection>
+              <GeneratedCodeSection item={atom}/>
             </ExampleSection>
-            <SettingsSection>
-                <div className="top40">
-                    <NumberProperty property={atom.animationTiming} units="ms" />
-                </div>
-                <div className="top40">
-                    <NumberProperty property={atom.hoverAndFocusAnimationDistance} units="px" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={atom}/>
+
         </div>
     )
 }

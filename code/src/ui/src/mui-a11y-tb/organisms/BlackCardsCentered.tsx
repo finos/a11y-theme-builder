@@ -23,25 +23,25 @@ export const BlackCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={12} className="cardSection">
-              <CardSample className="black fixed" title="Title"  clickable={false}>
+              <CardSample color="primary" className="black fixed" title="Title"  clickable={false}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="black fixed"  title="Title" >
+              <CardSample color="primary" className="black fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="black fixed"  title="Title" >
+              <CardSample color="primary" className="black fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="black fixed"  title="Title" >
+              <CardSample color="primary" className="black fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

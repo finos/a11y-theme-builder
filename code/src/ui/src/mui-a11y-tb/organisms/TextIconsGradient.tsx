@@ -17,7 +17,7 @@ export const TextIconsGradient: React.FC<Props> = ({className=""}) => {
           <Grid justifyContent="center" className="v-center" container spacing={2} columns={12} margin={2}>
             <Grid item className="v-center" lg={8} md={6} sm={12}>
               <h2 className="gradient-title"><div  className="inline-icon"><i  className="fa-solid fa-chart-simple"></i></div>Title</h2>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>

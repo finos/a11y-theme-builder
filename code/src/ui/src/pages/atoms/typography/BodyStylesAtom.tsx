@@ -41,9 +41,9 @@ export const BodyStylesAtom: React.FC<Props> = ({ designSystem }) => {
     const keyBody2Bold      = body2BoldTypographyStyling.key
     const keyBody3          = body3TypographyStyling.key
     const keyBody3Bold      = body3BoldTypographyStyling.key
-    
-    if (!keyBody1 || !keyBody1Bold 
-        || !keyBody2 || !keyBody2Bold 
+
+    if (!keyBody1 || !keyBody1Bold
+        || !keyBody2 || !keyBody2Bold
         || !keyBody3 || !keyBody3Bold) return null;
     return (
         <div className="container">
@@ -67,46 +67,48 @@ export const BodyStylesAtom: React.FC<Props> = ({ designSystem }) => {
             </HeadingSection>
             <ExampleSection>
                 None
+                <SettingsSection>
+                <TextEditBox
+                    textKey={keyBody1}
+                    cssPrefix={body1CssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                <TextEditBox
+                    textKey={keyBody1Bold}
+                    cssPrefix={body1BoldCssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                <TextEditBox
+                    textKey={keyBody2}
+                    cssPrefix={body2CssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                <TextEditBox
+                    textKey={keyBody2Bold}
+                    cssPrefix={body2BoldCssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                <TextEditBox
+                    textKey={keyBody3}
+                    cssPrefix={body3CssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                <TextEditBox
+                    textKey={keyBody3Bold}
+                    cssPrefix={body3BoldCssPrefix}
+                    designSystem={designSystem}
+                    isBody
+                />
+                </SettingsSection>
+                <GeneratedCodeSection item={bodyStylesAtom}/>
             </ExampleSection>
-            <SettingsSection>
-            <TextEditBox
-                textKey={keyBody1}
-                cssPrefix={body1CssPrefix}
-                designSystem={designSystem}
-                isBody
-            />  
-            <TextEditBox
-                textKey={keyBody1Bold}
-                cssPrefix={body1BoldCssPrefix}
-                designSystem={designSystem}
-                isBody
-            />
-            <TextEditBox
-                textKey={keyBody2}
-                cssPrefix={body2CssPrefix}
-                designSystem={designSystem}
-                isBody
-            />  
-            <TextEditBox
-                textKey={keyBody2Bold}
-                cssPrefix={body2BoldCssPrefix}
-                designSystem={designSystem}
-                isBody
-            /> 
-            <TextEditBox
-                textKey={keyBody3}
-                cssPrefix={body3CssPrefix}
-                designSystem={designSystem}
-                isBody
-            />  
-            <TextEditBox
-                textKey={keyBody3Bold}
-                cssPrefix={body3BoldCssPrefix}
-                designSystem={designSystem}
-                isBody
-            /> 
-            </SettingsSection>
-            <GeneratedCodeSection item={bodyStylesAtom}/>
+
+
         </div>
     )
 }

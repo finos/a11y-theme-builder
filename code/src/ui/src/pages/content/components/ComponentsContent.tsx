@@ -20,6 +20,7 @@ import { DisplayComponent } from '../../components/typography/DisplayComponent';
 import { HeadersComponent } from '../../components/typography/HeadersComponent';
 import { BodyComponent } from '../../components/typography/BodyComponent';
 import { SmallFontsStylesComponent } from '../../components/typography/SmallFontsStylesComponent';
+import { StatStylesComponent } from '../../components/typography/StatStylesComponent';
 import { TooltipsComponent } from '../../components/TooltipsComponent';
 import { TextDecorationComponent } from '../../components/TextDecorationComponent';
 import { ImageDecorationsComponent } from '../../components/ImageDecorationsComponent';
@@ -51,13 +52,13 @@ import { ListsSingleComponent } from '../../components/ListsSingleComponent';
 import { ListsTripleComponent } from '../../components/ListsTripleComponent';
 import { ListsDoubleComponent } from '../../components/ListsDoubleComponent';
 import { MultiselectDropdownComponent } from '../../components/MultiselectDropdownComponent';
-import { ResponsiveAppBar } from '../../components/ResponsiveAppBar';
+import { TopAppBars } from '../../components/TopAppBars';
 import { MenusComponent } from '../../components/MenusComponent';
 import { ChipsComponent } from '../../components/ChipsComponent';
 import { DropdownComponent } from '../../components/DropdownComponent';
 import { SlidersComponent } from '../../components/SlidersComponent';
 import { DividerComponent } from '../../components/DividerComponent';
-import { HeroComponent } from '../../components/HeroComponent';
+import { HeroExample } from '../../components/HeroExample';
 import { ElevationComponent } from '../../components/shadows/ElevationComponent';
 import { BevelComponent } from '../../components/shadows/BevelComponent';
 import { InvertedBevelComponent } from '../../components/shadows/InvertedBevelComponent';
@@ -190,8 +191,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         <List component="div" disablePadding>
                             <LeftNavItem text={"Display"} value="typographyPrimary" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyPrimary")}} disabled={disabled}/>
                             <LeftNavItem text={"Headers"} value="typographyHeaders" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyHeaders")}} disabled={disabled}/>
-                            <LeftNavItem text={"Body"} value="typographyBody" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyBody")}} disabled={disabled}/>
-                            <LeftNavItem text={"Small Fonts Styles"} value="typographySmallFontsStyles" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographySmallFontsStyles")}} disabled={disabled}/>
+                            <LeftNavItem text={"Body Styles"} value="typographyBody" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographyBody")}} disabled={disabled}/>
+                            <LeftNavItem text={"Small Text Styles"} value="typographySmallFontsStyles" indent={2} selected={showComponent} onClick={()=> {setShowComponent("typographySmallFontsStyles")}} disabled={disabled}/>
+                            <LeftNavItem text={"Stat Text Styles"} value="statFontsStyles" indent={2} selected={showComponent} onClick={()=> {setShowComponent("statFontsStyles")}} disabled={disabled}/>
                         </List>
                     </Collapse>
                     <LeftNavHeader>Desktop Components</LeftNavHeader>
@@ -312,7 +314,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         <AccordionComponent />
                     }
                     {showComponent === "appbar" &&
-                        <ResponsiveAppBar />
+                        <TopAppBars />
                     }
                     {showComponent === "avatarsSingle" &&
                         <AvatarSingleComponent />
@@ -340,6 +342,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "typographySmallFontsStyles" &&
                         <SmallFontsStylesComponent />
+                    }
+                    {showComponent === "statSmallFontsStyles" &&
+                        <StatStylesComponent />
                     }
                     {showComponent === "cardsStandard" &&
                         <CardsStandardComponent />
@@ -427,7 +432,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         <TooltipsComponent />
                     }
                     {showComponent === "hero" &&
-                        <HeroComponent />
+                        <HeroExample />
                     }
             </div>
             </div>

@@ -35,45 +35,44 @@ export const StatCardSamples: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="White Cards, with Icons" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Responsive, Left Aligned with  Two Buttons</div>
-                <StatCardsTwoButtons className={colorMode}/>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Responsive, Left Aligned with  Two Buttons</div>
+                <StatCardsTwoButtons className="top40" />
                 <p></p>
-                <div className="subtitle1">Responsive, Left Aligned with One Button</div>
-                <StatCardsOneButton className={colorMode}/>
+                <div className="demo-title subtitle1">Responsive, Left Aligned with One Button</div>
+                <StatCardsOneButton className="top40" />
                 <p></p>
-                <div className="subtitle1">Responsive, Left Aligned with Hotlink</div>
-                <StatCardsHotlink className={colorMode}/>
+                <div className="demo-title subtitle1">Responsive, Left Aligned with Hotlink</div>
+                <StatCardsHotlink className="top40" />
                 <p></p>
-                <div className="subtitle1">Responsive, Left Aligned, Clickable</div>
-                <StatCardsClickable className={colorMode}/>
+                <div className="demo-title subtitle1">Responsive, Left Aligned, Clickable</div>
+                <StatCardsClickable className="top40" />
                 <p></p>
-                <div className="subtitle1">Center Aligned with Two Buttons</div>
-                <StatCardsCenteredTwoButtons className={colorMode}/>
+                <div className="demo-title subtitle1">Center Aligned with Two Buttons</div>
+                <StatCardsCenteredTwoButtons className="top40" />
                 <p></p>
-                <div className="subtitle1">Center Aligned  with One Button</div>
-                <StatCardsCenteredOneButton className={colorMode}/>
+                <div className="demo-title subtitle1">Center Aligned  with One Button</div>
+                <StatCardsCenteredOneButton className="top40" />
                 <p></p>
-                <div className="subtitle1">Center Aligned  with Hotlink</div>
-                <StatCardsCenteredHotlink className={colorMode}/>
+                <div className="demo-title subtitle1">Center Aligned  with Hotlink</div>
+                <StatCardsCenteredHotlink className="top40" />
                 <p></p>
-                <div className="subtitle1">Center Aligned,Clickable</div>
-                <StatCardsCenteredClickable className={colorMode}/>
+                <div className="demo-title subtitle1">Center Aligned,Clickable</div>
+                <StatCardsCenteredClickable className="top40" />
                 <p></p>
-                <div className="subtitle1">Horizontal Scrolling Stat Cards with Two Buttons</div>
-                <StatCardsScrollingTwoButtons className={colorMode}/>
+                <div className="demo-title subtitle1">Horizontal Scrolling Stat Cards with Two Buttons</div>
+                <StatCardsScrollingTwoButtons className="top40" />
                 <p></p>
-                <div className="subtitle1">Horizontal Scrolling Stat Cards with One Button</div>
-                <StatCardsScrollingOneButton className={colorMode}/>
+                <div className="demo-title subtitle1">Horizontal Scrolling Stat Cards with One Button</div>
+                <StatCardsScrollingOneButton className="top40" />
                 <p></p>
-                <div className="subtitle1">Horizontal Scrolling Stat Cards with Hotlink</div>
-                <StatCardsScrollingHotlink className={colorMode}/>
+                <div className="demo-title subtitle1">Horizontal Scrolling Stat Cards with Hotlink</div>
+                <StatCardsScrollingHotlink className="top40" />
                 <p></p>
-                <div className="subtitle1">Horizontal Scrolling Stat Cards, Clickable</div>
-                <StatCardsScrollingClickable className={colorMode}/>
+                <div className="demo-title subtitle1">Horizontal Scrolling Stat Cards, Clickable</div>
+                <StatCardsScrollingClickable className="top40" />
                 <p></p>
-              </ExampleSection>
+              </div>
 
 
 

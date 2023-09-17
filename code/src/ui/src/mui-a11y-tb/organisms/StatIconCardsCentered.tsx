@@ -23,25 +23,25 @@ export const StatIconCardsCenteredTwoButtons: React.FC<Props> = ({className=""})
               </div>
             </Grid>
             <Grid justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} stat={true} className="fixed" title="Title"  clickable={false}>
+              <CardSample color="primary" icon={true} stat={true} className="fixed" title="Title"  clickable={false}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true}  stat={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true}  stat={true} className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true}  stat={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true}  stat={true} className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true}  stat={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true}  stat={true} className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -55,22 +55,22 @@ export const StatIconCardsCenteredTwoButtons: React.FC<Props> = ({className=""})
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample stat={true} className="fixed" title="Title"  clickable={false}   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed" title="Title"  clickable={false}   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -84,22 +84,22 @@ export const StatIconCardsCenteredTwoButtons: React.FC<Props> = ({className=""})
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample stat={true} className="fixed" title="Title" hotlink={true}>
+              <CardSample color="primary" stat={true} className="fixed" title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -113,22 +113,22 @@ export const StatIconCardsCenteredTwoButtons: React.FC<Props> = ({className=""})
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample stat={true} className="fixed" title="Title" clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed" title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

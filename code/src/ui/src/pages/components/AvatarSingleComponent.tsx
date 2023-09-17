@@ -19,29 +19,45 @@ export const AvatarSingleComponent: React.FC<Props> = () => {
         <div>
             <HeadingSection title="Desktop" heading="Avatars" />
             <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <div className="subtitle1">Avatars with Icons</div>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                        <Avatar className={`avatar xxs ${colorMode}`} />
-                        <Avatar className={`avatar xs ${colorMode}`} />
-                        <Avatar className={`avatar sm ${colorMode}`} />
-                        <Avatar className={`avatar md ${colorMode}`} />
-                        <Avatar className={`avatar lg ${colorMode}`} />
-                        <Avatar className={`avatar xl ${colorMode}`} />
-                        <Avatar className={`avatar xxl ${colorMode}`} />
-                    </Stack>
+              <h5>Standard Avatars</h5>
+              <div className="subtitle1">Avatars with Icons</div>
+              <Stack direction="row" spacing={1} alignItems="center">
+                  <Avatar className="avatar xxs" />
+                  <Avatar className="avatar xs" />
+                  <Avatar className="avatar sm" />
+                  <Avatar className="avatar md" />
+                  <Avatar className="avatar lg" />
+                  <Avatar className="avatar xl" />
+                  <Avatar className="avatar xxl" />
+              </Stack>
 
-                    <div className="subtitle1">Avatars with Images</div>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                        <Avatar className={`avatar xxs ${colorMode}`} src="/profile.png" />
-                        <Avatar className={`avatar xs ${colorMode}`}  src="/profile.png"/>
-                        <Avatar className={`avatar sm ${colorMode}`}  src="/profile.png"/>
-                        <Avatar className={`avatar md ${colorMode}`}  src="/profile.png"/>
-                        <Avatar className={`avatar lg ${colorMode}`}  src="/profile.png"/>
-                        <Avatar className={`avatar xl ${colorMode}`}  src="/profile.png"/>
-                        <Avatar className={`avatar xxl ${colorMode}`}  src="/profile.png"/>
-                    </Stack>
-                </ColorModeSelector>
+              <div className="subtitle1">Avatars with Images</div>
+              <Stack direction="row" spacing={1} alignItems="center">
+                  <Avatar className="avatar xxs" src="/profile.png" />
+                  <Avatar className="avatar xs" src="/profile.png" />
+                  <Avatar className="avatar sm" src="/profile.png" />
+                  <Avatar className="avatar md" src="/profile.png" />
+                  <Avatar className="avatar lg" src="/profile.png" />
+                  <Avatar className="avatar xl" src="/profile.png" />
+                  <Avatar className="avatar xxl"  src="/profile.png" />
+              </Stack>
+
+              <h5>Clickable Avatars</h5>
+              <div>Note: although these avatars look small they have a target area equal to your min target height.</div>
+              <div className="top40 subtitle1">Avatars with Icons</div>
+              <Stack direction="row" spacing={1} alignItems="center">
+                  <Avatar className="clickable avatar xxs" />
+                  <Avatar className="clickable avatar xs" />
+                  <Avatar className="clickable avatar sm" />
+              </Stack>
+
+              <div className="subtitle1">Avatars with Images</div>
+              <Stack direction="row" spacing={1} alignItems="center">
+                  <Avatar className="clickable avatar xxs" src="/profile.png" />
+                  <Avatar className="clickable avatar xs" src="/profile.png" />
+                  <Avatar className="clickable avatar sm" src="/profile.png" />
+              </Stack>
+
             </ExampleSection>
         </div>
     )

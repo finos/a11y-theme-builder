@@ -24,10 +24,10 @@ export const ToastsSingleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Standard Single Line</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error">Toast Title</Alert>
-                            <Alert severity="warning">Toast Title</Alert>
-                            <Alert severity="success">Toast Title</Alert>
-                            <Alert severity="info">Toast Title</Alert>
+                            <Alert data-background="primary" severity="error">Toast Title</Alert>
+                            <Alert data-background="primary" severity="warning">Toast Title</Alert>
+                            <Alert data-background="primary" severity="success">Toast Title</Alert>
+                            <Alert data-background="primary" severity="info">Toast Title</Alert>
                         </Stack>
                     </div>
                 </div>
@@ -37,11 +37,11 @@ export const ToastsSingleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Single Line with Close</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error"
-                                action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="warning" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="success" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
-                            <Alert severity="info" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert  data-background="primary" severity="error"
+                                action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert  data-background="primary" severity="warning" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert  data-background="primary" severity="success" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
+                            <Alert  data-background="primary" severity="info" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>Toast Title</Alert>
                         </Stack>
                     </div>
                 </div>
@@ -51,15 +51,15 @@ export const ToastsSingleLineComponent: React.FC<Props> = () => {
                     <div className="col-lg-6">
                         <h6>Single Line with Button</h6>
                         <Stack sx={{ width: '100%' }} spacing={2}>
-                            <Alert severity="error"
-                                action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="warning" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="success" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
-                            <Alert severity="info" action={<IconButton className="small-btn MuiButton-text icon"><CloseIcon/></IconButton>}>
-                                Toast Title <br/><Button className="small-btn">Button</Button></Alert>
+                            <Alert  data-background="primary" severity="error"
+                                action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn"><span>Button</span></Button></Alert>
+                            <Alert  data-background="primary"  severity="warning" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn"><span>Button</span></Button></Alert>
+                            <Alert  data-background="primary"  severity="success" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn"><span>Button</span></Button></Alert>
+                            <Alert   data-background="primary" severity="info" action={<IconButton className="small-btn MuiButton-text  icon"><CloseIcon/></IconButton>}>
+                                Toast Title <br/><Button className="small-btn"><span>Button</span></Button></Alert>
                         </Stack>
                     </div>
                 </div>

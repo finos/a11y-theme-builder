@@ -68,22 +68,23 @@ export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
                         </div>
                     </div>
                 </DarkModeSection>
+                <SettingsSection>
+                    <FormControl>
+                        <FormControlLabel
+                            label="Add Focus Blur"
+                            labelPlacement="top"
+                            control={
+                                <Checkbox
+                                    checked={_focusBlur}
+                                    onChange={handleBlurChange}
+                                />
+                            }
+                        />
+                    </FormControl>
+                </SettingsSection>
+                <GeneratedCodeSection item={focusStates} />
             </ExampleSection>
-            <SettingsSection>
-                <FormControl>
-                    <FormControlLabel
-                        label="Add Focus Blur"
-                        labelPlacement="top"
-                        control={
-                            <Checkbox
-                                checked={_focusBlur}
-                                onChange={handleBlurChange}
-                            />
-                        }
-                    />
-                </FormControl>
-            </SettingsSection>
-            <GeneratedCodeSection item={focusStates} />
+
         </div>
     )
 }

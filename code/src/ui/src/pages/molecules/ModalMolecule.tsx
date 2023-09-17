@@ -37,20 +37,21 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
             <ExampleSection>
                 <div className="caption">Sample Modal</div>
                 <Button variant="contained" onClick={() => setSampleModalIsOpen(true)}>Launch Demo Modal</Button>
+                <SettingsSection>
+                    <div className="form-row">
+                        <div className="subtitle1">Modal Overlay</div>
+                        <ColorSelect value={colorProperty} label="Color:" defaultValue={startingColor?.hex} ></ColorSelect>
+                    </div>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
+                    </div>
+                    <div className="form-row">
+                        <StringSelectable property={modalMolecule.elevation} defaultValue="No Elevation" />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={modalMolecule} />
             </ExampleSection>
-            <SettingsSection>
-                <div className="form-row">
-                    <div className="subtitle1">Modal Overlay</div>
-                    <ColorSelect value={colorProperty} label="Color:" defaultValue={startingColor?.hex} ></ColorSelect>
-                </div>
-                <div className="form-row">
-                    <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
-                </div>
-                <div className="form-row">
-                    <StringSelectable property={modalMolecule.elevation} defaultValue="No Elevation" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={modalMolecule} />
+
         </>
     )
 

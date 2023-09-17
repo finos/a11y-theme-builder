@@ -15,9 +15,8 @@
 .design-system-editor-left-nav {
     min-width: 300px;
     width: 300px;
-    background-color: var(--background-secondary) !important;
-    color: var(--on-background-secondary);
-    border: 0px solid green; /* test */
+    background-color: var(--alt-background) !important;
+    color: var(--on-background);
     overflow-y: scroll;
     margin-left: 0px;
     visibility: hidden;
@@ -28,18 +27,14 @@
 .design-system-editor-left-nav:focus {
     visibility: visible;
 }
-
 .design-system-editor-content {
     display: flex;
-    border: 0px solid blue; /* test */
-	/* gap: 10px;  */
-	/* height: calc(100vh - 112px); */
-    background-color: var(--background-secondary) !important;
+    background-color: var(--alt-background) !important;
+    color: var(--on-background)
 }
 
 .design-system-editor-right-content {
     flex-grow: 1;
-    padding: 20px;
     color: var(--on-background);
     background: var(--background);
     vertical-align: top;
@@ -75,14 +70,6 @@
 
 .design-system-editor-right-content .section-body {
     margin-left: 0px;
-}
-
-.design-system-editor-right-content section:not(.colored):not(.black):not(.white):not(.gradient-1):not(.gradient-2):not(.gradient-3) {
-  box-shadow: inset 0px 0px 0px 1px rgba(200,200,200,.4);
-}
-
-.section-body .subtitle1 {
-  margin-bottom: var(--spacing-2)
 }
 
 .form-columns {
@@ -475,4 +462,13 @@
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.standard-image img{
+  width: 300px;
+  display: inline-block;
+}
+
+.demo-title {
+  margin-left: var(--spacing-5)
 }

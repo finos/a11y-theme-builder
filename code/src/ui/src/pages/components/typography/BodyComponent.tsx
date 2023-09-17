@@ -5,6 +5,7 @@
 import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import TypographyBox from '../../../components/TypographyBox';
+import { ExampleSection } from '../../content/ExampleSection';
 
 const body1CssPrefix = "body1"
 const body2CssPrefix = "body2"
@@ -17,9 +18,11 @@ export const BodyComponent: React.FC<Props> = () => {
     return (
         <div className="content">
         <HeadingSection title='Typography' heading='Body'></HeadingSection>
-        <TypographyBox cssPrefix={body1CssPrefix} sampleTitle='Body 1' isBody></TypographyBox>
-        <TypographyBox cssPrefix={body2CssPrefix} sampleTitle='Body 2' isBody></TypographyBox>
-        <TypographyBox cssPrefix={body3CssPrefix} sampleTitle='Body 3' isBody></TypographyBox>
+        <ExampleSection>
+          <TypographyBox cssPrefix={body1CssPrefix} sampleTitle='Body 1' isBody></TypographyBox>
+          <TypographyBox cssPrefix={body2CssPrefix} sampleTitle='Body 2' isBody></TypographyBox>
+          <TypographyBox cssPrefix={body3CssPrefix} sampleTitle='Body 3' isBody></TypographyBox>
+        </ExampleSection>  
         </div>
     )
 }

@@ -19,9 +19,10 @@ interface Props {
     hideSecondary?: boolean,
     clickable?: boolean,
     children?: React.ReactNode,
+    color: string,
 }
 
-export const CardSample: React.FC<Props> = ({title, className, imagePath, imageClassName, icon, centerText, iconButton, hotlink, hideSecondary, clickable, stat,  children }) => {
+export const CardSample: React.FC<Props> = ({title, className, imagePath, imageClassName, icon, centerText, iconButton, hotlink, hideSecondary, clickable, stat,  children, color }) => {
 
     function renderBarGraphIcon() {
         return (
@@ -45,7 +46,7 @@ export const CardSample: React.FC<Props> = ({title, className, imagePath, imageC
     return (
 
 
-                <Card className={"elevation-1 " +  rootClassName || ""}>
+                <Card className={"elevation-1 " +  rootClassName || ""} data-background={color}>
                     {imagePath && <CardMedia className={imageClassName || ""}
                         image={imagePath}
                         title="users working on a tablet"

@@ -41,6 +41,7 @@ interface Props {
     user: any;
 }
 
+
 const App: React.FC<Props> = ({user}) => {
 
     const [themeName, setThemeName] = useState<string>("light");
@@ -85,7 +86,7 @@ const App: React.FC<Props> = ({user}) => {
             { /* </ThemeProvider> */ }
         </BrowserRouter>
     );
-    
+
 }
 
 export default App;

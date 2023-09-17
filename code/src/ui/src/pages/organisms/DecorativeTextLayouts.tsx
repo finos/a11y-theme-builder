@@ -9,12 +9,14 @@ import { ExampleSection } from '../content/ExampleSection';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { Text } from "../../mui-a11y-tb/organisms/Text";
 import { TextWithDivider } from "../../mui-a11y-tb/organisms/TextWithDivider";
+import { TextColored} from "../../mui-a11y-tb/organisms/TextColored";
 import { TextGradient} from "../../mui-a11y-tb/organisms/TextGradient";
 import { TextDropColor} from "../../mui-a11y-tb/organisms/TextDropColor";
 import { TextCentered } from "../../mui-a11y-tb/organisms/TextCentered";
 import { TextWithDividerCentered } from "../../mui-a11y-tb/organisms/TextWithDividerCentered";
 import { TextGradientCentered } from "../../mui-a11y-tb/organisms/TextGradientCentered";
 import { TextDropColorCentered } from "../../mui-a11y-tb/organisms/TextDropColorCentered";
+import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 
 interface Props {
     colorMode?: string;
@@ -28,22 +30,25 @@ export const DecorativeTextLayouts: React.FC<Props> = ({ }) => {
       return (
           <div>
               <HeadingSection title="organisms" heading="Teams" />
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className={colorMode}></div>
-                <div className="subtitle1">ext with Gradient Title</div>
-                <TextGradient className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Text with Colored Drop Shadow Title</div>
-                <TextDropColor className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">ext with Gradient Title, Centered</div>
-                <TextGradientCentered className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Text with Colored Drop Shadow Title, Centered</div>
-                <TextDropColorCentered className={"top40 " + colorMode} />
-                <p></p>
-              </ExampleSection>
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">Text Colored (only on the default background)</div>
+                  <TextColored className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Gradient Title  (only on the default background)</div>
+                  <TextGradient className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Colored Drop Shadow Title</div>
+                  <TextDropColor className="top40 "  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Gradient Title, Centered</div>
+                  <TextGradientCentered className="top40 "  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Text with Colored Drop Shadow Title, Centered</div>
+                  <TextDropColorCentered className="top40 " />
+                  <p></p>
+              </div>
           </div>
       )
   }

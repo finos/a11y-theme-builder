@@ -72,8 +72,8 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                 <div className="screenHolder">
                   <div className={"screenContent " + (darkMode ? "darkmode" : "")}>
 
-                      <ResponsiveAppBar/>
-                      <Hero className='black' >
+                      <ResponsiveAppBar color="colored" />
+                      <Hero color='black' >
                         <Grid container spacing={2} columns={12} margin={2}>
                           <Grid xs={12}>
                             <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
@@ -83,8 +83,8 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                             </Breadcrumbs>
                           </Grid>
                           <Grid spacing={2} className="heroBox" lg={8} md={10} sm={12}>
-                            <div className="title">Hero title</div>
-                            <div className="body">
+                            <h1>Hero title</h1>
+                            <div className="body1">
                               <p>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                               </p>
@@ -93,7 +93,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                         </Grid>
                       </Hero>
-                      <section className="white">
+                      <section data-background="primary">
                         <Grid className="v-center" container spacing={2} columns={12} margin={2}>
                           <Grid item className="v-center" lg={4} md={6} sm={12}>
                             <div className="inline-image" style={{ width: '100%', height: 'auto' }}>
@@ -102,7 +102,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                           <Grid item className="v-center" lg={8} md={6} sm={12}>
                             <h2>Title</h2>
-                            <div className="body">
+                            <div className="body1">
                               <p>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                               </p>
@@ -110,7 +110,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                         </Grid>
                       </section>
-                      <section className="centered">
+                      <section data-background="alt"  className="centered">
                         <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
                           <Grid  justifyContent="center"  item spacing={2} xl={10} sm={12}>
                             <h2>Title</h2>
@@ -118,17 +118,17 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                             </div>
                           </Grid>
                           <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-                            <CardSample icon={true}  stat={true} className="fixed" title="85%"  clickable={false}   hideSecondary={true}>
+                            <CardSample color="primary" icon={true}  stat={true} className="fixed" title="85%"  clickable={false}   hideSecondary={true}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore
                                 magna aliqua
                             </CardSample>
-                            <CardSample icon={true}  stat={true} className="fixed"  title="5M"   hideSecondary={true}>
+                            <CardSample color="primary" icon={true}  stat={true} className="fixed"  title="5M"   hideSecondary={true}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore
                                 magna aliqua
                             </CardSample>
-                            <CardSample icon={true}  stat={true} className="fixed"  title="130%"   hideSecondary={true}>
+                            <CardSample color="primary" icon={true}  stat={true} className="fixed"  title="130%"   hideSecondary={true}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore
                                 magna aliqua
@@ -137,11 +137,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                         </Grid>
                       </section>
-                      <section className="colored">
+                      <section data-background="colored">
                         <Grid className="v-center" container spacing={2} columns={12} margin={2}>
                           <Grid item spacing={2} className="v-center" lg={6}  sm={12}>
                             <h2>Title</h2>
-                            <div className="body">
+                            <div className="body1">
                               <p>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                               </p>
@@ -153,7 +153,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                         </Grid>
                       </section>
-                      <section className="centered">
+                      <section data-background="primary" className="centered">
                         <Grid justifyContent="center" container spacing={2} columns={12} margin={2} >
                           <Grid item spacing={2} lg={8} md={12} sm={12}>
                             <h2>Title</h2>
@@ -204,13 +204,13 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                           </Grid>
                         </Grid>
                       </section>
-                      <section>
+                      <section data-background="alt">
                         <Grid className="v-center" container spacing={2} columns={12} margin={2}>
                           <Grid item spacing={2} className="v-center backgroundImage paralux" lg={12} style={{backgroundImage: "url(/sample.jpg)"}}>
                           </Grid>
                         </Grid>
                       </section>
-                      <section>
+                      <section data-background="primary">
                         <Grid justifyContent="center"  container spacing={2} columns={12} margin={2}>
                             <Grid item className="center" xl={3} lg={4} md={6} sm={12}>
                               <Avatar className="avatar xxl"  />
@@ -227,7 +227,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                             </Grid>
                         </Grid>
                       </section>
-                      <footer className='black'>
+                      <footer data-background='black'>
                         <Grid className="v-center" container spacing={2} columns={{ lg: 7, md: 5, sm: 3 }} margin={2}>
                           <Grid item spacing={2}  className="v-center" lg={2} md={5} sm={3}>
                             <h5>Company Name</h5>

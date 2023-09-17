@@ -23,32 +23,32 @@ export const StatCardsScrollingClickable: React.FC<Props> = ({className=""}) => 
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample stat={true} className="fixed" title="Title"  clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed" title="Title"  clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"  clickable={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"  clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true} >
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" clickable={true} >
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" clickable={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

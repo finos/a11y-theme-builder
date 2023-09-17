@@ -23,32 +23,32 @@ export const StandardCardsScrollingHotlink: React.FC<Props> = ({className=""}) =
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample className="fixed" title="Title"  hotlink={true}>
+              <CardSample color="primary" className="fixed" title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title"  hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title"  hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" hotlink={true} >
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" hotlink={true} >
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

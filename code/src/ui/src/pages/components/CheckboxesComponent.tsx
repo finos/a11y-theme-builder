@@ -23,7 +23,7 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                 they are only available on one color.
             </HeadingSection>
             <ExampleSection>
-              <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+
                 <FormControl component="fieldset">
                     <h6>Small Checkboxes</h6>
                     <FormGroup aria-label="sample small checkbox group">
@@ -32,14 +32,13 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             control={<Checkbox size="small" defaultChecked/>}
                             label="One"
                             labelPlacement="end"
-                            className={colorMode}
+
                         />
                         <FormControlLabel
                             value="Two"
                             control={<Checkbox size="small" />}
                             label="Two"
                             labelPlacement="end"
-                            className={colorMode}
                         />
                         <FormControlLabel
                             value="Three"
@@ -47,7 +46,6 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             label="Three"
                             labelPlacement="end"
                             disabled
-                            className={colorMode}
                         />
                         <FormControlLabel
                             value="Four"
@@ -55,7 +53,6 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             label="Three"
                             labelPlacement="end"
                             disabled
-                            className={colorMode}
                         />
                     </FormGroup>
                     <FormHelperText>Note: the small checkboxes DO have a target area that meets your selected minimum target area.</FormHelperText>
@@ -69,14 +66,12 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             control={<Checkbox defaultChecked/>}
                             label="One"
                             labelPlacement="end"
-                            className={colorMode}
                         />
                         <FormControlLabel
                             value="Two"
                             control={<Checkbox />}
                             label="Two"
                             labelPlacement="end"
-                            className={colorMode}
                         />
                         <FormControlLabel
                             value="Three"
@@ -84,7 +79,6 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             label="Three"
                             labelPlacement="end"
                             disabled
-                            className={colorMode}
                         />
                         <FormControlLabel
                             value="Four"
@@ -92,11 +86,10 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                             label="Three"
                             labelPlacement="end"
                             disabled
-                            className={colorMode}
                         />
                     </FormGroup>
                 </FormControl>
-              </ColorModeSelector>
+
             </ExampleSection>
         </div>
     )
