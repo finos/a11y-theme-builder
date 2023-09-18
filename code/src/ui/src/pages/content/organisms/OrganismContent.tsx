@@ -334,7 +334,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 </List>
             </div>
             </div>
-            <div className={"design-system-editor-right-content " + (darkMode ? "darkmode" : "")}>
+            <div className="design-system-editor-right-content" data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">
                 {showTemplate === "organisms" &&
                     <OrganismIntro />
