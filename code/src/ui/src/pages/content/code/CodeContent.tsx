@@ -187,7 +187,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         </div>
 
                         <div className="top40">
-                            <InputLabel>JSON for both Light and Dark Modes</InputLabel>
+                            <InputLabel>Base JSON Code</InputLabel>
                             <pre style={codeStyle}>
                                 {getJsonCode(true)}
                             </pre>
@@ -195,7 +195,15 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                             <span style={{paddingLeft: "20px"}}> &nbsp;</span>
                             <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
                         </div>
-
+                        <div className="top40">
+                            <InputLabel>Light Mode Theme Layer</InputLabel>
+                            <pre style={codeStyle}>
+                                {getJsonCode(true)}
+                            </pre>
+                            <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
+                            <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                            <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + "-darkmode.json")}>Download</Button>
+                        </div>
                         <div className="top40">
                             <InputLabel>Dark Mode Theme Layer</InputLabel>
                             <pre style={codeStyle}>
