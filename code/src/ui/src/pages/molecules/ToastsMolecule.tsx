@@ -6,7 +6,7 @@ import React from 'react';
 import { Alert } from '@mui/material';
 import { Toasts } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -39,7 +39,7 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
                         <NumberScaledSelectable property={toastsMolecule.padding} units="px" defaultValue={1} scale={grid}/>
                     </div>
                     <div className="form-row">
-                        <StringSelectable property={toastsMolecule.elevation} defaultValue="No Elevation" />
+                        <StringCategorySelectable property={toastsMolecule.shadow} defaultValue="None" />
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={toastsMolecule} />

@@ -94,6 +94,12 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         return JSON.stringify(code,null,2);
     }
 
+    const getJsonBaseCode = () => {
+        const code = designSystem.code.getJSONBase();
+        return JSON.stringify(code,null,2);
+    }
+
+
     const saveFile = (data: string, fileName: string) => {
         var file = new File([data], fileName, {type: "text/plain;charset=utf-8"});
         FileSaver.saveAs(file);
@@ -119,143 +125,116 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
-                  <Grid container spacing={2} columns={12} margin={2}>
-                    <Grid item spacing={2} lg={12} md={12} sm={12}>
+
                       {showItem === "code" && <>
+                      <Grid container spacing={2} columns={12} margin={2}>
+                        <Grid item spacing={2} lg={12} md={12} sm={12}>
                           <h1>Getting Started with Code</h1>
                           Once your design system has been created and you've tweaked all of the parameters for the various atoms, molecules and organisms, you can generate code that can be used to ensure accessibility-compliant applications.
                           <ul>
                               <li>For a web application: <p>CSS is generated.  It can be copied into your application's css file and used style HTML or MUI React components to provide accessibile content.</p></li>
                               <li>For a design tool: <p>JSON tokens are generated.  They can be copied and imported into your design tool such as Figma.</p></li>
                           </ul>
+                        </Grid>
+                      </Grid>    
                       </>}
                       {showItem === "css" && <>
                           <HeadingSection title="Code Generators" heading="CSS Code" />
-                          <div className="top40">
-                              <h5>Base Code</h5>
-                          </div>
-                          <div className="top40">
-                              <InputLabel>CSS for both Light and Dark Modes</InputLabel>
-                              <pre style={codeStyle}>
-                                  {getCssCode()}
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
-                          </div>
+                          <Grid container spacing={2} columns={12} margin={2}>
+                            <Grid item spacing={2} lg={12} md={12} sm={12}>
+                              <div className="top40">
+                                  <h5>Base Code</h5>
+                              </div>
+                              <div className="top40">
+                                  <InputLabel>CSS for both Light and Dark Modes</InputLabel>
+                                  <pre style={codeStyle}>
+                                      {getCssCode()}
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getCssCode())}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getCssCode(), designSystem.name + ".css")}>Download</Button>
+                              </div>
 
-                          <div className="top40">
-                              <InputLabel>Mobile and Tablet CSS</InputLabel>
-                          </div>
+                              <div className="top40">
+                                  <InputLabel>Mobile and Tablet CSS</InputLabel>
+                              </div>
 
-                          <div className="top40">
-                              <pre style={codeStyle}>
-                                  Code goes here
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
-                          </div>
+                              <div className="top40">
+                                  <pre style={codeStyle}>
+                                      Code goes here
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.css")}>Download</Button>
+                              </div>
 
-                          <div className="top40">
-                              <h5>Accessibility CSS</h5>
-                          </div>
+                              <div className="top40">
+                                  <h5>Accessibility CSS</h5>
+                              </div>
 
-                          <div className="top40">
-                              <InputLabel>Motion Sensitive</InputLabel>
-                              <pre style={codeStyle}>
-                                  { getMotionSensitivityCssCode() }
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getMotionSensitivityCssCode())}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getMotionSensitivityCssCode(), designSystem.name + "-motion.css")}>Download</Button>
-                          </div>
+                              <div className="top40">
+                                  <InputLabel>Motion Sensitive</InputLabel>
+                                  <pre style={codeStyle}>
+                                      { getMotionSensitivityCssCode() }
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getMotionSensitivityCssCode())}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getMotionSensitivityCssCode(), designSystem.name + "-motion.css")}>Download</Button>
+                              </div>
 
-                          <div className="top40">
-                              <InputLabel>Dyslexic</InputLabel>
-                              <pre style={codeStyle}>
-                                  { getDyslexiaCssCode() }
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getDyslexiaCssCode())}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getDyslexiaCssCode(), designSystem.name + "-dyslexic.css")}>Download</Button>
-                          </div>
-                      </>}
+                              <div className="top40">
+                                  <InputLabel>Dyslexic</InputLabel>
+                                  <pre style={codeStyle}>
+                                      { getDyslexiaCssCode() }
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getDyslexiaCssCode())}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getDyslexiaCssCode(), designSystem.name + "-dyslexic.css")}>Download</Button>
+                              </div>
+                            </Grid>
+                          </Grid>
+                          </>}
 
                       {showItem === "json" && <>
                           <HeadingSection title="Code Generators" heading="JSON test Code" />
-                          <div className="top40">
-                              <h5>Base Code</h5>
-                          </div>
+                          <Grid container spacing={2} columns={12} margin={2}>
+                            <Grid item spacing={2} lg={12} md={12} sm={12}>
+                              <div className="top40">
+                                  <h5>Base Code</h5>
+                              </div>
 
-                          <div className="top40">
-                              <InputLabel>Base JSON Code</InputLabel>
-                              <pre style={codeStyle}>
-                                  {getJsonCode(true)}
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + ".json")}>Download</Button>
-                          </div>
-                          <div className="top40">
-                              <InputLabel>Light Mode Theme Layer</InputLabel>
-                              <pre style={codeStyle}>
-                                  {getJsonCode(true)}
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + "-darkmode.json")}>Download</Button>
-                          </div>
-                          <div className="top40">
-                              <InputLabel>Dark Mode Theme Layer</InputLabel>
-                              <pre style={codeStyle}>
-                                  {getJsonCode(false)}
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
-                          </div>
-
-                          <div className="top40">
-                              <InputLabel>Mobile and Tablet JSON</InputLabel>
-                          </div>
-
-                          <div className="top40">
-                              <pre style={codeStyle}>
-                                  Code goes here
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText("Code goes here")}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile("Code goes here", designSystem.name + "-mobile.json")}>Download</Button>
-                          </div>
-
-                          <div className="top40">
-                              <h5>Accessibility JSON</h5>
-                          </div>
-
-                          <div className="top40">
-                              <InputLabel>Motion Sensitive</InputLabel>
-                              <pre style={codeStyle}>
-                                  { getMotionSensitivityJsonCode() }
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getMotionSensitivityJsonCode())}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getMotionSensitivityJsonCode(), designSystem.name + "-motion.json")}>Download</Button>
-                          </div>
-
-                          <div className="top40">
-                              <InputLabel>Dyslexic</InputLabel>
-                              <pre style={codeStyle}>
-                                  { getDyslexiaJsonCode() }
-                              </pre>
-                              <Button variant="contained" onClick={() => navigator.clipboard.writeText(getDyslexiaJsonCode())}>Copy</Button>
-                              <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                              <Button variant="outlined" onClick={() => saveFile(getDyslexiaJsonCode(), designSystem.name + "-dyslexic.json")}>Download</Button>
-                          </div>
+                              <div className="top40">
+                                  <InputLabel>Base JSON Code</InputLabel>
+                                  <pre style={codeStyle}>
+                                      {getJsonBaseCode()}
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonBaseCode())}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getJsonBaseCode(), designSystem.name + ".json")}>Download</Button>
+                              </div>
+                              <div className="top40">
+                                  <InputLabel>Light Mode Theme Layer</InputLabel>
+                                  <pre style={codeStyle}>
+                                      {getJsonCode(true)}
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + "-darkmode.json")}>Download</Button>
+                              </div>
+                              <div className="top40">
+                                  <InputLabel>Dark Mode Theme Layer</InputLabel>
+                                  <pre style={codeStyle}>
+                                      {getJsonCode(false)}
+                                  </pre>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
+                                  <span style={{paddingLeft: "20px"}}> &nbsp;</span>
+                                  <Button variant="outlined" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
+                              </div>
+                            </Grid>
+                          </Grid>
                       </>}
 
-                    </Grid>
-                </Grid>
+
               </div>
             </div>
         </>

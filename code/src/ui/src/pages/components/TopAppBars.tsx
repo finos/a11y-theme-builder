@@ -18,8 +18,8 @@ export const TopAppBars: React.FC<Props> = ({ }) => {
       const [colorMode, setColorMode] = useState<string>("colored");
 
       return (
-          <div className={colorMode}>
-              <HeadingSection title="organisms" heading="White Cards, with Icons" />
+          <div>
+              <HeadingSection title="organisms" heading="App Bar" />
               <ExampleSection>
                 <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 </ColorModeSelector>

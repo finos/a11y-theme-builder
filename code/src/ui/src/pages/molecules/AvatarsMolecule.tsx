@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under MIT License. See License.txt in the project root for license information
  */
@@ -9,7 +9,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { HeadingSection } from '../content/HeadingSection';
 import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
@@ -47,19 +47,20 @@ export const AvatarsMolecule: React.FC<Props> = ({ molecule }) => {
                     <Avatar className="avatar xl" src="/profile.png"/>
                     <Avatar className="avatar xxl" src="/profile.png"/>
                 </Stack>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="top40">
-                    <NumberScaledSelectable property={molecule.mediumBorder} defaultValue={0} scale={scale} units="px" />
-                </div>
-                <div className="top40">
-                    <NumberScaledSelectable property={molecule.extraLargeBorder} defaultValue={0} scale={scale} units="px" />
+                <SettingsSection>
+                    <div className="top40">
+                        <NumberScaledSelectable property={molecule.mediumBorder} defaultValue={0} scale={scale} units="px" />
                     </div>
-                <div className="top40">
-                    <StringSelectable property={molecule.elevation} defaultValue={"No Elevation"} />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                    <div className="top40">
+                        <NumberScaledSelectable property={molecule.extraLargeBorder} defaultValue={0} scale={scale} units="px" />
+                        </div>
+                    <div className="top40">
+                        <StringCategorySelectable property={molecule.shadow} defaultValue={"None"} />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+
         </div>
     )
 

@@ -22,7 +22,7 @@ export const ImageCardsStandard: React.FC<Props> = ({ }) => {
       const [colorMode, setColorMode] = useState<string>("colored");
 
       return (
-          <div className={colorMode}>
+          <div>
               <HeadingSection title="organisms" heading="White Cards, with Images 9:16" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
