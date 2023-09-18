@@ -71,13 +71,13 @@ export const CardSample: React.FC<Props> = ({title, className, imagePath, imageC
                         </Typography>
                     </CardContent>
                     {(!clickable) && <CardActions>
-                        {(!iconButton && !hotlink) && <Button variant="contained">Primary</Button>}
+                        {(!iconButton && !hotlink) && <Button className="small-btn" variant="contained">Primary</Button>}
                         {iconButton &&
                             <IconButton aria-label="sample icon button">
                                 {renderBarGraphIcon()}
                             </IconButton>
                         }
-                        {(!hotlink && !hideSecondary) && <Button variant="outlined">Secondary</Button>}
+                        {(!hotlink && !hideSecondary) && <Button className="small-btn" variant="outlined">Secondary</Button>}
                         {hotlink && <a href="#">Learn More</a>}
                     </CardActions>}
                 </Card>
