@@ -19,23 +19,23 @@ export const BackgroundColorsComponent: React.FC<Props> = ({}) => {
                 <div className="theme-colors">
                     <ComputedColorSwatch
                         className={"background"}
-                        label={"Primary BG"}
+                        label={"Primary"}
                     />
                     <ComputedColorSwatch
                         className={"background-secondary"}
-                        label={"Secondary BG"}
+                        label={"Alternate"}
                     />
                     <ComputedColorSwatch
                         className={"background-tertiary"}
-                        label={"Tertiary BG"}
+                        label={"Colored"}
                     />
                     <ComputedColorSwatch
                         className={"black"}
-                        label={"Black BG"}
+                        label={"Black"}
                     />
                     <ComputedColorSwatch
                         className={"white"}
-                        label={"White BG"}
+                        label={"White"}
                     />
                 </div>
             </ExampleSection>
