@@ -53,8 +53,20 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                                         <div className="Hex background">Aa</div>
                                     </div>
                                     <div className="input-col">
-                                        <div className="caption">Secondary</div>
+                                        <div className="caption">Alternate</div>
                                         <div className="Hex background-secondary">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">Colored</div>
+                                        <div className="Hex theme-primary">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">Black</div>
+                                        <div className="Hex black">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">White</div>
+                                        <div className="Hex white">Aa</div>
                                     </div>
                                 </div>
                             </div>
@@ -120,8 +132,20 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                                         <div className="Hex background">Aa</div>
                                     </div>
                                     <div className="input-col">
-                                        <div className="caption">Secondary</div>
+                                        <div className="caption">Alternate</div>
                                         <div className="Hex background-secondary">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">Colored</div>
+                                        <div className="Hex theme-primary">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">Black</div>
+                                        <div className="Hex black">Aa</div>
+                                    </div>
+                                    <div className="input-col">
+                                        <div className="caption">White</div>
+                                        <div className="Hex white">Aa</div>
                                     </div>
                                 </div>
                             </div>
@@ -164,8 +188,9 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             </div>
                         </DarkModeSection>
                     </div>
+                    <GeneratedCodeSection item={atom} />
                 </ExampleSection>
-                <GeneratedCodeSection item={atom} />
+
             </div>
         );
     }
