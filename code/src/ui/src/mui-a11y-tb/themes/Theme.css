@@ -422,7 +422,15 @@ section:has( .quote) {
 .disabled {
   opacity: var(--disabled);
 }
-
+/* core colors */
+.black {
+  background: var(--black) !important;
+  color: var(--white);
+}
+.white {
+  white: var(--white);
+  color: var(--on-white);
+}
 
 /* THEME */
 .theme-primary {

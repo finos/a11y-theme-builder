@@ -38,6 +38,7 @@
   --spacing-half: calc(var(--spacing-1) / 2);
   --negative-size-half: calc(0 - var(--spacing-1) / 2);
   /* Borders */
+  --border-opacity: 15%;
   --border-0: 0px;
   --border-1: 1px;
   --border-2: calc(var(--border-1) * 2);
@@ -1759,6 +1760,8 @@
     --on-accent-800: var(--lm-on-accent-800);
     --accent-900: var(--lm-accent-900);
     --on-accent-900: var(--lm-on-accent-900);
+    /* border opacity */
+    --border-opacity: 15%;
     /* Primary background */
     --primary-background: var(--background);
     --primary-alt-background: var(--alt-background);
@@ -1776,8 +1779,6 @@
     --primary-hotlink-visited: var(--hotlink-visited);
     --primary-hotlink-decoration: var(--hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
-    /* Border */
-    --primary-border: color-mix(in lch, var(--background), var(--on-background) 12%);
     /* Inputs */
     --primary-input: color-mix(in lch, var(--background), var(--on-background) 15%)
     --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
@@ -2207,6 +2208,8 @@
     --on-accent-800: var(--dm-on-accent-800);
     --accent-900: var(--dm-accent-900);
     --on-accent-900: var(--dm-on-accent-900);
+    /* border opacity */
+    --border-opacity: 40%;
     /* Primary background */
     --primary-background: var(--background);
     --primary-alt-background: var(--alt-background);
@@ -2224,8 +2227,6 @@
     --primary-hotlink-visited: var(--hotlink-visited);
     --primary-hotlink-decoration: var(--hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
-    /* Border */
-    --primary-border: color-mix(in lch, var(--background), var(--on-background) 40%);
     /* Inputs */
     --primary-input: color-mix(in lch, var(--background), var(--on-background) 5%);
     --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
@@ -2531,7 +2532,7 @@
     --color-1: var(--primary-background);
     --color-2: var(--primary-background);
     /* Border */
-    --border: var(--primary-border);
+    --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--background), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
@@ -2562,7 +2563,7 @@
     --color-1: var(--primary-alt-background);
     --color-2: var(--primary-alt-background);
     /* Border */
-    --border: var(--primary-border);
+    --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(primary-background), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
@@ -2593,7 +2594,7 @@
     --color-1: var(--white);
     --color-2: var(--white);
     /* Border */
-    --border: var(--primary-border);
+    --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--background), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
@@ -2623,8 +2624,8 @@
     /* overlay values */
     --color-1: var(--black);
     --color-2: var(--black);
-   /* Border */
-    --border: var(--primary-border);
+    /* Border */
+    --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--background), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
@@ -2647,21 +2648,21 @@
     --on-icon: var(--oniconOnTertiary);
     --icon-half: var(--iconHalfOnTertiary);
     /* Hotlink */
-    --hotlink: var(--on-background-on-tertiary);
-    --hotlink-visited: color-mix(in lch, var(--on-background-on-tertiary) 70%);
+    --hotlink: var(--on-background-tertiary);
+    --hotlink-visited: color-mix(in lch, var(--on-background-tertiary) 70%);
     --hotlink-decoration: var(--hotlinkOnTertiary-decoration);
     --hotlink-hover-decoration: var(--hotlinkOnTertiary-hover-decoration);
     /* overlay values */
     --color-1: var(--background-tertiary);
     --color-2: var(--background-tertiary);
     /* Border */
-    --border: color-mix(in lch, var(--background-tertiary), var(--on-background) 20%);
+    --border: color-mix(in lch, var(--background-tertiary), var(--on-background-tertiary) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--background-tertiary), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--background-tertiary), var(--on-background) 20%);
     /* Text Decorations */
-    --text-gradient-a: var(--on-background-on-tertiary);
-    --text-gradient-b: var(--on-background-on-tertiary);
+    --text-gradient-a: var(--on-background-tertiary);
+    --text-gradient-b: var(--on-background-tertiary);
     --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
     --color-drop: var(--gray-200);
   }
@@ -2682,7 +2683,7 @@
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
-    --border: color-mix(in lch, var(--gradient-1a), var(--on-background) 20%);
+    --border: color-mix(in lch, var(--gradient-1a), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--white), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--white), var(--on-background) 20%);
@@ -2713,7 +2714,7 @@
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
-    --border: color-mix(in lch, var(--gradient-2a), var(--on-background) 20%);
+    --border: color-mix(in lch, var(--gradient-2a), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--white), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--white), var(--on-background) 20%);
@@ -2744,7 +2745,7 @@
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
-    --border: color-mix(in lch, var(--gradient-3a), var(--on-background) 20%);
+    --border: color-mix(in lch, var(--gradient-3a), var(--on-background) var(--border-opacity));
     /* Inputs */
     --input: color-mix(in lch, var(--white), var(--on-background) 5%);
     --input-border: color-mix(in lch, var(--white), var(--on-background) 20%);
