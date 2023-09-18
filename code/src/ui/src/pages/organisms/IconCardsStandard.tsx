@@ -20,7 +20,7 @@ export const IconCardsStandard: React.FC<Props> = ({ }) => {
       const [colorMode, setColorMode] = useState<string>("colored");
 
       return (
-          <div className={colorMode}>
+          <div>
               <HeadingSection title="organisms" heading="White Cards, with Icons" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
