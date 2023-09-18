@@ -407,8 +407,8 @@ try {
                         PaperProps: {
                             sx: {
                                 '& .MuiList-root.MuiMenu-list': {
-                                    WebkitBoxShadow: "var(--elevation) !important",
-                                    MozBoxShadow: "var(--elevation) !important",
+                                    WebkitBoxShadow: "var(--elevation-3) !important",
+                                    MozBoxShadow: "var(--elevation-3) !important",
                                     borderRadius: "var(--spacing-half)",
                                     marginLeft: "0",
                                 },
@@ -820,7 +820,7 @@ try {
                         padding: "var(--spacing-1) calc(var(--toast-padding) * var(--spacing-1)) !important",
                         paddingLeft: "calc(calc(var(--toast-padding) * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important",
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
-                        boxShadow: "var(--toast-boxshadow)",
+                        boxShadow: "var(--toast-shadow)",
                         position: "relative",
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
@@ -994,7 +994,7 @@ try {
                             right: "0px",
                             content: '""',
                             background: "var(--transparent)",
-                            boxShadow: "var(--chip-elevation)",
+                            boxShadow: "var(--chip-shadow)",
                             color: "var(--on-button)",
                             borderRadius: "calc(var(--button-radius) * var(--radius-1) + 1.6px)",
                             zIndex: -1,

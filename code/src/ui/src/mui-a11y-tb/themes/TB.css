@@ -963,6 +963,7 @@
   --on-input: #121212;
   --on-input-disabled: #121212;
   /* Primary background */
+  --primary-body-bg: var(--body-bg);
   --primary-background: var(--background);
   --primary-alt-background: var(--alt-background);
   --primary-on-background: var(--on-background);
@@ -1280,7 +1281,7 @@
   --dm-on-background-secondary: var(--dm-white);
   /* Backgrounds */
   --dm-background: var(--primaryDarkBG);
-  --dm-alt-background: var(--secondaryDarkBG);
+  --dm-alt-background: color-mix(in lch, var(--primaryDarkBG), var(--black) 5%);
   --dm-on-background: rgba(255,255,255,0.6);
   /* Gradients */
   --dm-gradient1-a: #D8BAEC;
@@ -1498,6 +1499,9 @@
   --dm-on-tertiary-900: rgba(255,255,255,0.6);
   [data-mode="light"] {
     /* Core Colors */
+    --body-bg: var(--white);
+    --border-opacity: 15%;
+    --alt-adjust: var(--white);
     --white: var(--lm-white);
     --on-white: var(--lm-on-white);
     --on-black: var(--lm-on-black);
@@ -1763,6 +1767,7 @@
     /* border opacity */
     --border-opacity: 15%;
     /* Primary background */
+    --primary-body-bg: var(--body-bg);
     --primary-background: var(--background);
     --primary-alt-background: var(--alt-background);
     --primary-on-background: var(--on-background);
@@ -1950,6 +1955,8 @@
   }
   [data-mode="dark"] {
     --body-bg: var(--black);
+    --border-opacity: 40%;
+    --alt-adjust: var(--black);
     --white: var(--dm-white);
     --on-white: var(--dm-on-white);
     --on-black: var(--dm-on-black);
@@ -2211,25 +2218,26 @@
     /* border opacity */
     --border-opacity: 40%;
     /* Primary background */
-    --primary-background: var(--background);
-    --primary-alt-background: var(--alt-background);
-    --primary-on-background: var(--on-background);
+    --primary-body-bg: var(--body-bg);
+    --primary-background: var(--dm-background);
+    --primary-alt-background: var(--dm-alt-background);
+    --primary-on-background: var(--dm-on-background);
     /* Button */
-    --primary-button: var(--button);
-    --primary-on-button: var(--on-button);
-    --primary-button-half: var(--button-half);
+    --primary-button: var(--dm-button);
+    --primary-on-button: var(--dm-on-button);
+    --primary-button-half: var(--dm-button-half);
     /* Icons */
-    --primary-icon: var(--icon);
-    --primary-on-icon: var(--on-icon);
-    --primary-icon-half: var(--icon-half);
+    --primary-icon: var(--dm-icon);
+    --primary-on-icon: var(--dm-on-icon);
+    --primary-icon-half: var(--dm-icon-half);
     /* Hotlink */
-    --primary-hotlink: var(--hotlink);
-    --primary-hotlink-visited: var(--hotlink-visited);
-    --primary-hotlink-decoration: var(--hotlink-decoration);
-    --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
+    --primary-hotlink: var(--dm-hotlink);
+    --primary-hotlink-visited: var(--dm-hotlink-visited);
+    --primary-hotlink-decoration: var(--dm-hotlink-decoration);
+    --primary-hotlink-hover-decoration: var(--dm-hotlink-hover-decoration);
     /* Inputs */
-    --primary-input: color-mix(in lch, var(--background), var(--on-background) 5%);
-    --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
+    --primary-input: color-mix(in lch, var(--dm-background), var(--dm-on-background) 5%);
+    --primary-input-border: color-mix(in lch, var(--dm-background), var(--dm-on-background) 15%);
     /* Inputs */
     --primary-text-gradient-a: var(--dm-text-gradient-a);
     --primary-text-gradient-b: var(--dm-text-gradient-b);
@@ -2543,8 +2551,8 @@
     --primary-color-drop: var(--primary-color-drop);
   }
   [data-background="alt"] {
-    --background: color-mix(in lch, var(--primary-background), var(--primary-on-background) 8%);
-    --alt-background: color-mix(in lch, var(--primary-background), var(--primary-on-background) 10%);
+    --background: color-mix(in lch, var(--primary-background), var(--black) 5%));
+    --alt-background: color-mix(in lch, var(--primary-background), var(--black) 5%));
     --on-background: var(--primary-on-background);
     /* Button */
     --button: var(--primary-button);
@@ -2574,8 +2582,9 @@
     --color-drop: var(--primary-color-drop);
   }
   [data-background="white"] {
+    --background: color-mix(in lch, var(--alt-adjust),  var(--lm-white) 60%);
+    --alt-background: var(--gray-100);
     --background: var(--white);
-    --alt-background: color-mix(in lch, var(--white), var(--on-white) 5%);
     --on-background: var(--black);
     /* Button */
     --button: var(--buttonOnWhite);
@@ -2637,7 +2646,7 @@
   }
   [data-background="colored"] {
     --background: var(--background-tertiary);
-    --alt-background: color-mix(in lch, var(--background-tertiary), var(--on-background-tertiary) 5%);
+    --alt-background: color-mix(in lch, var(--background-tertiary), var(--alt-adjust) 8%);
     --on-background: var(--on-background-tertiary);
     /* Button */
     --button: var(--buttonOnTertiary);
@@ -2669,6 +2678,7 @@
   [data-background="gradient1"] {
     --background: var(--gradient-1);
     --on-background: var(--on-gradient-1);
+    --alt-background: color-mix(in lch, var(---gradient-1a), var(--alt-adjust) 8%);
     /* Button */
     --button: var(--buttonOnGradient1);
     --on-button: var(--onbuttonOnGradient1);
@@ -2700,6 +2710,7 @@
   [data-background="gradient2"] {
     --background: var(--gradient-2);
     --on-background: var(--on-gradient-2);
+    --alt-background: color-mix(in lch, var(---gradient-2a), var(--alt-adjust) 8%);
     /* Button */
     --button: var(--buttonOnGradient2);
     --on-button: var(--onbuttonOnGradient2);
@@ -2731,6 +2742,7 @@
   [data-background="gradient3"] {
     --background: var(--gradient-3);
     --on-background: var(--on-gradient-3);
+    --alt-background: color-mix(in lch, var(---gradient-3a), var(--alt-adjust) 8%);
     /* Button */
     --button: var(--buttonOnGradient3);
     --on-button: var(--onbuttonOnGradient3);

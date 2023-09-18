@@ -127,19 +127,6 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
                   <div className="container">
                       <div className="row">
                           <div className="col-6">
-                              <div className="subtitle1">Shadow Color</div>
-                              <div className="form-row">
-                              <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
-                              <TextField
-                              sx={{maxWidth: 300}}
-                                  id='hexValue'
-                                  error={_addColorInputErrorTriggered}
-                                  onChange={handleShadowColorChange}
-                                  helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
-                                  value={shadowColor}
-                              />
-                              <ChromePicker color={shadowColor} onChange={handleColorSelected} />
-                              </div>
                               <div className="subtitle1">Based Shadow Settings</div>
                               <div className="form-row">
                                   <label className="label-1">

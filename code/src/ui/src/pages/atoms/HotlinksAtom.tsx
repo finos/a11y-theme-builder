@@ -78,7 +78,7 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
                     <a href="#" className="default-link">Sample Hotlink</a>
                 </LightModeSection>
                 <DarkModeSection>
-                    <div className="row">
+                    <div className="row" data-mode="dark">
                         <div className="col-6">
                             <div className="inputRow">
                                 <div id="hotlink-color-darkmode-preview" className="Hex theme-link" style={{ background: 'var(--dm-hotlink)' }} />

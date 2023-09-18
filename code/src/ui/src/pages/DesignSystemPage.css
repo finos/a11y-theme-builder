@@ -26,6 +26,7 @@
 .design-system-editor-left-nav:hover,
 .design-system-editor-left-nav:focus {
     visibility: visible;
+    background: transparent !important;
 }
 .design-system-editor-content {
     display: flex;
