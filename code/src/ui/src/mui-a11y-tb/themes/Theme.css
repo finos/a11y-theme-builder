@@ -804,20 +804,20 @@ button.icon {
   min-width: calc(var(--spacing-1) * var(--button-height));
   flex: none;
 }
-button::after  {
+button:not(.MuiTab-root)::after  {
   position: absolute;
   top: calc(0px - 3px - var(--animation-focus-distance));
   bottom: calc(0px - 3px - var(--animation-focus-distance));
   right: calc(0px - 3px - var(--animation-focus-distance));
   left: calc(0px - 3px - var(--animation-focus-distance));
-  border: calc(var(--border-1) * var(--button-border)) solid var(--button);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
   background: transparent !important;
   opacity: 0;
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-button:not(.MuiButtonGroup-grouped)::after  {
+button:not(.MuiTab-root):not(.MuiButtonGroup-grouped)::after  {
   border-radius: calc(var(--button-radius) * var(--radius-1) + 1.9px);
 }
 button.MuiButtonGroup-grouped:not(.MuiButtonGroup-groupedVertical):first-of-type::after  {
@@ -856,7 +856,7 @@ button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:not(:first-of-type)
   bottom: 0 !important;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-button:hover::after {
+button:not(.MuiTab-root):hover::after {
   opacity: .5;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -864,7 +864,7 @@ button:hover::after {
   bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-button:focus::after {
+button:not(.MuiTab-root):focus::after {
   opacity: 1;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -1467,6 +1467,18 @@ button.MuiPaginationItem-root:hover {
 .MuiAppBar-root .MuiTabs-root, .MuiAppBar-root .MuiTab-root {
   background: transparent !important;
   color: var(--on-background) !important;
+}
+.MuiTab-root.Mui-selected::after {
+  height: var(--spacing-half);
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  content: '';
+  position: absolute;
+  border: none;
+  top: unset;
+  border-bottom: 4px solid var(--button);
+  border-radius: 0px;
 }
 /* secondary tabs */
 .secondaryTab.MuiTab-root {
