@@ -8,11 +8,14 @@ import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { NavbarExample } from './NavbarExample';
 import { Checkbox, FormControlLabel } from '@mui/material';
+import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
+
 interface Props {
     organism: PrimaryNav;
 }
 
 export const PrimaryNavOrganism: React.FC<Props> = ({ organism }) => {
+  const [colorMode, setColorMode] = useState<string>("");
 
     const [fixed, setFixed] = React.useState(false);
     const handleChange = (event: any) => {
@@ -22,10 +25,9 @@ export const PrimaryNavOrganism: React.FC<Props> = ({ organism }) => {
     return (
         <div>
             <HeadingSection item={organism} title="Apply Styles" />
-            <ExampleSection>
-                <NavbarExample/>
-            </ExampleSection>
-            <SettingsSection>
+            <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+            </SectionColorModeSelector>
+            <div className="section-demos" data-background={colorMode}>
                 <FormControlLabel
                     value="top"
                     control={<Checkbox
@@ -45,7 +47,7 @@ export const PrimaryNavOrganism: React.FC<Props> = ({ organism }) => {
                 <div className="top40">
                     <StringSelectable property={organism.navText} defaultValue={"CTA LARGE"} />
                 </div>
-            </SettingsSection>
+            </div>
             <GeneratedCodeSection item={organism}/>
         </div>
     )

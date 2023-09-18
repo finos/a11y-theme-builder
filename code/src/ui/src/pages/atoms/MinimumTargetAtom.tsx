@@ -24,11 +24,12 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atom }) => {
             </HeadingSection>
             <ExampleSection>
                 None
+                <SettingsSection>
+                    <NumberSelectable property={atom.minHeight} defaultValue={44} units="px" />
+                </SettingsSection>
+                <GeneratedCodeSection item={atom}/>
             </ExampleSection>
-            <SettingsSection>
-                <NumberSelectable property={atom.minHeight} defaultValue={44} units="px" />
-            </SettingsSection>
-            <GeneratedCodeSection item={atom}/>
+
         </div>
     )
 }

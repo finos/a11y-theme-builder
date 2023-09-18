@@ -3,8 +3,6 @@
  * Licensed under MIT License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { DesignSystem, Images } from 'a11y-theme-builder-sdk';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
@@ -26,19 +24,13 @@ export const IconCardsStandard: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="White Cards, with Icons" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <IconCards/>
-                <p></p>
-                <IconCardsCentered />
-                <p></p>
-                <IconCardsScrolling  />
-              </ExampleSection>
-
-
-
-
-
+              <div className="section-demos" data-background={colorMode}>
+                  <IconCards/>
+                  <p></p>
+                  <IconCardsCentered />
+                  <p></p>
+                  <IconCardsScrolling  />
+              </div>
           </div>
       )
   }

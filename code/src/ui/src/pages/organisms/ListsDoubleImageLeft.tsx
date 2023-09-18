@@ -29,26 +29,26 @@ export const ListsDoubleImageLeft: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Lists, Double Line with an Image Left" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <ExampleSection>
-                <div className="subtitle1">List, standard</div>
-                <ListDoubleImageLeft className={"top40 " + colorMode} />
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">List, standard</div>
+                <ListDoubleImageLeft className="top40 " />
                 <p></p>
-                <div className="subtitle1">List, with avatars</div>
-                <ListDoubleAvatarImageLeft className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with avatars</div>
+                <ListDoubleAvatarImageLeft className="top40 " />
                 <p></p>
-                <div className="subtitle1">List, with images</div>
-                <ListDoubleImageImageLeft className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with images</div>
+                <ListDoubleImageImageLeft className="top40 "  />
                 <p></p>
-                <div className="subtitle1">List, with wide images</div>
-                <ListDoubleImageWideImageLeft className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with wide images</div>
+                <ListDoubleImageWideImageLeft className="top40 " />
                 <p></p>
-                <div className="subtitle1">List, with icons</div>
-                <ListDoubleIconSmallImageLeft className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with icons</div>
+                <ListDoubleIconSmallImageLeft className="top40 " />
                 <p></p>
-                <div className="subtitle1">List, with wide icons</div>
-                <ListDoubleIconLargeImageLeft className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with wide icons</div>
+                <ListDoubleIconLargeImageLeft className="top40 "  />
                 <p></p>
-              </ExampleSection>
+              </div>
           </div>
       )
   }

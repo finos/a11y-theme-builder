@@ -61,23 +61,3 @@
     margin-right: auto;
     display: block;
 }
-
-/*
-.modal-footer button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--on-button);
-    color: var(--on-background);
-    border-radius: var(--button-radius);
-    text-align: center;
-    padding: var(--spacing-1) var(--button-padding);
-    border: none;
-    position: relative;
-    align-self: start;
-    font: var(--button-font);
-    letter-spacing: var(--button-character-spacing);
-    text-transform: var(--button-transform) !important;
-    cursor: pointer;
-}
-*/

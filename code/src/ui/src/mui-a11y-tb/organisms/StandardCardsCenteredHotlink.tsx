@@ -23,25 +23,25 @@ export const StandardCardsCenteredHotlink: React.FC<Props> = ({className=""}) =>
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample className="fixed" title="Title" hotlink={true}>
+              <CardSample color="primary" className="fixed" title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" className="fixed"  title="Title" hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

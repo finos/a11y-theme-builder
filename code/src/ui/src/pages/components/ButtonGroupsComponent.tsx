@@ -34,10 +34,10 @@ export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
                     <div className="subtitle1">{title}</div>
                     <div className="buttonDemo">
                         <ButtonGroup orientation={orientation} variant={variant}>
-                            <Button className={"CTA " + colorMode}>No Icon</Button>
-                            <Button className={"CTA " + colorMode} startIcon={barGraphIcon()}>Left Icon</Button>
-                            <Button className={"CTA " + colorMode} endIcon={barGraphIcon()}>Right Icon</Button>
-                            <Button className={"CTA " + colorMode}>{barGraphIcon()}</Button>
+                            <Button >No Icon</Button>
+                            <Button startIcon={barGraphIcon()}>Left Icon</Button>
+                            <Button endIcon={barGraphIcon()}>Right Icon</Button>
+                            <Button>{barGraphIcon()}</Button>
                         </ButtonGroup>
                     </div>
                 </div>
@@ -49,17 +49,16 @@ export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
         <div>
             <HeadingSection heading="Button Groups" title="Desktop" />
             <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <h6>Horizontal Groups</h6>
-                    {renderButtonGroup("primary", "horizontal", "contained")}
-                    {renderButtonGroup("secondary", "horizontal", "outlined")}
-                    {renderButtonGroup("tertiary", "horizontal", "text")}
+                <h6>Horizontal Groups</h6>
+                {renderButtonGroup("primary", "horizontal", "contained")}
+                {renderButtonGroup("secondary", "horizontal", "outlined")}
+                {renderButtonGroup("tertiary", "horizontal", "text")}
 
-                    <h6>Vertical Groups</h6>
-                    {renderButtonGroup("primary", "vertical", "contained")}
-                    {renderButtonGroup("secondary", "vertical", "outlined")}
-                    {renderButtonGroup("tertiary", "vertical", "text")}
-                </ColorModeSelector>
+                <h6>Vertical Groups</h6>
+                {renderButtonGroup("primary", "vertical", "contained")}
+                {renderButtonGroup("secondary", "vertical", "outlined")}
+                {renderButtonGroup("tertiary", "vertical", "text")}
+
             </ExampleSection>
         </div>
     )

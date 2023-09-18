@@ -9,6 +9,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { BasicColorModeSelector } from '../content/BasicColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { PricingCards} from "../../mui-a11y-tb/organisms/PricingCards";
+import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 
 interface Props {
     colorMode?: string;
@@ -24,14 +25,12 @@ export const PricingCardSamples: React.FC<Props> = ({ }) => {
 
           <div>
               <HeadingSection title="organisms" heading="White Cards, with Images 9:21" />
-              <BasicColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-              </BasicColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-
-                <div className="subtitle1">Pricing Cards</div>
-                <PricingCards  className={colorMode}/>
-              </ExampleSection>
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Pricing Cards</div>
+                <PricingCards />
+              </div>
           </div>
       )
   }

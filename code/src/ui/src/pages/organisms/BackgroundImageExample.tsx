@@ -26,29 +26,28 @@ export const BackgroundImageExample: React.FC<Props> = ({ }) => {
 
       return (
           <div>
-              <HeadingSection title="organisms" heading="Image & Text" />
+              <HeadingSection title="organisms" heading="Background Image & Text" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                  <div className="subtitle1">Small Image on Right</div>
-                  <SmBackgroundImageTextRight className={"top40 " + colorMode} />
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">Small Image on Right</div>
+                  <SmBackgroundImageTextRight className="top40 " />
                   <p></p>
                   <div className="subtitle1">Small Image on Left</div>
-                  <SmBackgroundImageTextLeft className={"top40 " + colorMode} />
+                  <SmBackgroundImageTextLeft className="top40 " />
                   <p></p>
                   <div className="subtitle1">Medium Image on Right</div>
-                  <MdBackgroundImageTextRight className={"top40 " + colorMode} />
+                  <MdBackgroundImageTextRight className="top40 "  />
                   <p></p>
                   <div className="subtitle1">Medium Image on Left</div>
-                  <MdBackgroundImageTextLeft className={"top40 " + colorMode} />
+                  <MdBackgroundImageTextLeft className="top40 " />
                   <p></p>
                   <div className="subtitle1">Large Image on Right</div>
-                  <LgBackgroundImageTextRight className={"top40 " + colorMode} />
+                  <LgBackgroundImageTextRight className="top40 " />
                   <p></p>
                   <div className="subtitle1">Large Image on Left</div>
-                  <LgBackgroundImageTextLeft className={"top40 " + colorMode} />
-              </ExampleSection>
+                  <LgBackgroundImageTextLeft className="top40 " />
+              </div>
           </div>
       )
   }

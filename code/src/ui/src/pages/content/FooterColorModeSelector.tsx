@@ -24,9 +24,10 @@ export const FooterColorModeSelector: React.FC<SectionColorModeSelector> = ({ co
             <InputLabel>Color Variants</InputLabel>
             <Typography variant="caption">View footer templates in various colors: black, white, grey or colored</Typography>
             <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
+                <FormControlLabel value="primary" control={<Radio size="small"/>}  label="Default"/>
                 <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
                 <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-                <FormControlLabel value="gray-050-bg" control={<Radio size="small"/>}  label="Grey"/>
+                <FormControlLabel value="alt" control={<Radio size="small"/>}  label="Default Alternate"/>
                 <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
             </RadioGroup>
             {children &&

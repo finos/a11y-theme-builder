@@ -27,20 +27,19 @@ export const ImagesOnly: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Image Only Sections" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Single Image</div>
-                <ImageLarge className={"top40 " + colorMode} />
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Single Image</div>
+                <ImageLarge className="top40 "  />
                 <p></p>
-                <div className="subtitle1">Two Images</div>
-                <TwoImages className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Two Images</div>
+                <TwoImages className="top40 "  />
                 <p></p>
-                <div className="subtitle1">Three Images</div>
-                <ThreeImages className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Three Images</div>
+                <ThreeImages className="top40 "  />
                 <p></p>
-                <div className="subtitle1">Four Images</div>
-                <FourImages className={"top40 " + colorMode} />
-              </ExampleSection>
+                <div className="demo-title subtitle1">Four Images</div>
+                <FourImages className="top40 " />
+              </div>
           </div>
       )
   }

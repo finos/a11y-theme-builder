@@ -52,35 +52,28 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
             <ExampleSection>
                 <div style={sectionStyle}>
                     <h2>Sample</h2>
-                    <div style={pStyle}>
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
-                    </div>
-                    <div style={pStyle}>
+                    </p>
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
-                    </div>
+                    </p>
                 </div>
-                <div style={sectionStyle}>
-                    <h2>Sample</h2>
-                    <div style={pStyle}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip.
+                <SettingsSection>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={spacingMolecule.sectionPadding} units="px" defaultValue={3} scale={scale}/>
                     </div>
-                </div>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={spacingMolecule.paragraphPadding} units="px" defaultValue={2} scale={scale}/>
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={spacingMolecule} />
             </ExampleSection>
-            <SettingsSection>
-                <div className="form-row">
-                    <NumberScaledSelectable property={spacingMolecule.sectionPadding} units="px" defaultValue={3} scale={scale}/>
-                </div>
-                <div className="form-row">
-                    <NumberScaledSelectable property={spacingMolecule.paragraphPadding} units="px" defaultValue={2} scale={scale}/>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={spacingMolecule} />
+
         </>
     )
 }

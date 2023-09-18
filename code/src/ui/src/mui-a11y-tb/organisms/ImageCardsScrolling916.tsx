@@ -23,32 +23,32 @@ export const ImageCardsScrolling916: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample className="fixed" title="Title"  imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed" title="Title"  imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -62,32 +62,32 @@ export const ImageCardsScrolling916: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample  hideSecondary={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -101,32 +101,32 @@ export const ImageCardsScrolling916: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample hotlink={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -140,32 +140,32 @@ export const ImageCardsScrolling916: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample clickable={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed" title="Title"  imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

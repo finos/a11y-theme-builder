@@ -192,7 +192,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                             </Tabs>
                         </div>
                     </MeasureDiv>
-                    <div className="design-system-editor-content" style={divStyle}>
+                    <div className="design-system-editor-content" data-background="primary" style={divStyle}>
                         {tabIndex === "atoms" && (
                             <AtomContent user={user} designSystem={designSystem}/>
                         )}

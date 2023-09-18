@@ -28,24 +28,23 @@ export const YouTubeLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="YouTube Videos" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Small YouTube Video Left</div>
-                <YouTubeLeftSmall className={colorMode}/>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Small YouTube Video Left</div>
+                <YouTubeLeftSmall className="top40" />
                 <p></p>
-                <div className="subtitle1">Medium YouTube Video Left</div>
-                <YouTubeLeft className={colorMode}/>
+                <div className="demo-title subtitle1">Medium YouTube Video Left</div>
+                <YouTubeLeft className="top40" />
                 <p></p>
-                <div className="subtitle1">YouTube Video Centered</div>
-                <YouTubeCentered className={colorMode}/>
+                <div className="demo-title subtitle1">YouTube Video Centered</div>
+                <YouTubeCentered className="top40" />
                 <p></p>
-                <div className="subtitle1">Small YouTube Video Right</div>
-                <YouTubeRightSmall className={colorMode}/>
+                <div className="demo-title subtitle1">Small YouTube Video Right</div>
+                <YouTubeRightSmall className="top40" />
                 <p></p>
-                <div className="subtitle1">Medium YouTube Video Right</div>
-                <YouTubeRight className={colorMode}/>
+                <div className="demo-title subtitle1">Medium YouTube Video Right</div>
+                <YouTubeRight className="top40" />
                 <p></p>
-              </ExampleSection>
+              </div>
 
           </div>
       )

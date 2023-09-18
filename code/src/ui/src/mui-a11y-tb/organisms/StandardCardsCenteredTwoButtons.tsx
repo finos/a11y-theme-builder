@@ -22,25 +22,25 @@ export const StandardCardsCenteredTwoButtons: React.FC<Props> = ({className=""})
               <div className="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </div>
             </Grid>
-            <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">  <CardSample className="fixed" title="Title"  clickable={false}>
+            <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">  <CardSample color="primary" className="fixed" title="Title"  clickable={false}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" >
+              <CardSample color="primary" className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" >
+              <CardSample color="primary" className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" >
+              <CardSample color="primary" className="fixed"  title="Title" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

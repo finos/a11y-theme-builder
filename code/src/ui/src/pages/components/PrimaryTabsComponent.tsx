@@ -31,38 +31,35 @@ export const PrimaryTabsComponent: React.FC<Props> = () => {
             <HeadingSection title='Desktop' heading='Horizontal Primary Tabs'></HeadingSection>
             <ExampleSection>
               <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+
+              </ColorModeSelector>
               <section>
                   <div className="top40" />
                       <h6>Tab Bar</h6>
-                      <Box>
                           <Tabs centered
-                              className={colorMode}
+                              data-background={colorMode}
                               value={tabValue}
                               onChange={handleTabChange}
                               aria-label="tab bar"
                           >
-                              <Tab className={colorMode} label="Tab 1" value="1" />
-                              <Tab className={colorMode} label="Tab 2" value="2" />
-                              <Tab className={colorMode} label="Tab 3" value="3" />
-                              <Tab className={colorMode} label="Tab 4" value="4" />
+                              <Tab label="Tab 1" value="1" />
+                              <Tab label="Tab 2" value="2" />
+                              <Tab label="Tab 3" value="3" />
+                              <Tab label="Tab 4" value="4" />
                           </Tabs>
-                      </Box>
                   <h6>Tab Bar - with Icons</h6>
-                  <Box>
                       <Tabs centered
-                          className={colorMode}
+                          data-background={colorMode}
                           value={tabIconsValue}
                           onChange={handleTabIconsChange}
                           aria-label="tab bar with icons"
                       >
-                          <Tab className={"left-icon " + colorMode}  label={"Tab 1"} value="1" icon={<BarChartIcon />} iconPosition="start"/>
-                          <Tab className={"left-icon " + colorMode}  label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
-                          <Tab className={"left-icon " + colorMode} label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
-                          <Tab className={"left-icon " + colorMode}  label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="left-icon" label={"Tab 1"} value="1" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="left-icon" label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="left-icon" label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="left-icon"  label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
                       </Tabs>
-                  </Box>
               </section>
-              </ColorModeSelector>
             </ExampleSection>
 
         </div>

@@ -29,27 +29,26 @@ export const ListsTriple: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Lists, Triple Line" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">List, Standard</div>
-                <ListTriple className={"top40 " + colorMode} />
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">List, Standard</div>
+                <ListTriple className="top40" />
                 <p></p>
-                <div className="subtitle1">List, with avatars</div>
-                <ListTripleAvatar className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with avatars</div>
+                <ListTripleAvatar className="top40" />
                 <p></p>
-                <div className="subtitle1">List, with images</div>
-                <ListTripleImage className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with images</div>
+                <ListTripleImage className="top40" />
                 <p></p>
-                <div className="subtitle1">List, with wide images</div>
-                <ListTripleImageWide className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with wide images</div>
+                <ListTripleImageWide className="top40" />
                 <p></p>
-                <div className="subtitle1">List, with icons</div>
-                <ListTripleIconSmall className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with icons</div>
+                <ListTripleIconSmall className="top40" />
                 <p></p>
-                <div className="subtitle1">List, with wide icons</div>
-                <ListTripleIconLarge className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">List, with wide icons</div>
+                <ListTripleIconLarge className="top40" />
                 <p></p>
-              </ExampleSection>
+              </div>
           </div>
       )
   }

@@ -16,7 +16,7 @@ interface Props {
 
 export const SecondaryTabsComponent: React.FC<Props> = () => {
 
-    const [colorMode, setColorMode] = useState<string>("default");
+    const [colorMode, setColorMode] = useState<string>("colored");
 
     const [tabValue, setTabValue] = React.useState('1');
     const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -33,38 +33,37 @@ export const SecondaryTabsComponent: React.FC<Props> = () => {
         <div className="content">
             <HeadingSection title='Desktop' heading='Horizontal Secondary Tabs'></HeadingSection>
             <ExampleSection>
-              <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                  <section>
-                      <h6>Tab Bar</h6>
-                      <Box>
-                          <Tabs centered
-                              value={tabValue}
-                              onChange={handleTabChange}
-                              aria-label="tab bar"
-                                className={colorMode}
-                          >
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 1" value="1" />
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 2" value="2" />
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 3" value="3" />
-                              <Tab className={"secondaryTab " + colorMode}  label="Tab 4" value="4" />
-                          </Tabs>
-                      </Box>
-                      <h6>Tab Bar - with Icons</h6>
-                      <Box>
-                          <Tabs centered
-                              value={tabIconsValue}
-                              onChange={handleTabIconsChange}
-                              aria-label="tab bar with icons"
-                              className={colorMode}
-                          >
-                              <Tab className={"secondaryTab left-icon " + colorMode}  label="Tab 1" value="1" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab left-icon  " + colorMode}  label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab left-icon  " + colorMode}  label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
-                              <Tab className={"secondaryTab left-icon  " + colorMode} label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
-                          </Tabs>
-                      </Box>
-                    </section>
-                </ColorModeSelector>
+              <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}></ColorModeSelector>
+              <section>
+                  <h6>Tab Bar</h6>
+
+                      <Tabs centered
+                          value={tabValue}
+                          onChange={handleTabChange}
+                          aria-label="tab bar"
+                          data-background={colorMode}
+                      >
+                          <Tab className="secondaryTab" label="Tab 1" value="1" />
+                          <Tab className="secondaryTab" label="Tab 2" value="2" />
+                          <Tab className="secondaryTab" label="Tab 3" value="3" />
+                          <Tab className="secondaryTab" label="Tab 4" value="4" />
+                      </Tabs>
+
+                  <h6>Tab Bar - with Icons</h6>
+
+                      <Tabs centered
+                          value={tabIconsValue}
+                          onChange={handleTabIconsChange}
+                          aria-label="tab bar with icons"
+                          data-background={colorMode}
+                      >
+                          <Tab className="secondaryTab left-icon" label="Tab 1" value="1" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="secondaryTab left-icon" label="Tab 2" value="2" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="secondaryTab left-icon" label="Tab 3" value="3" icon={<BarChartIcon />} iconPosition="start"/>
+                          <Tab className="secondaryTab left-icon" label="Tab 4" value="4" icon={<BarChartIcon />} iconPosition="start"/>
+                      </Tabs>
+
+                </section>
             </ExampleSection>
         </div>
     )

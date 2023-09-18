@@ -19,16 +19,14 @@ export const RadioButtonsComponent: React.FC<Props> = () => {
         <div className="content">
             <HeadingSection title='Desktop' heading='Radio Buttons'></HeadingSection>
             <ExampleSection>
-              <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
                 <FormControl>
                     <RadioGroup aria-labelledby="demo-radio-buttons-group-label" name="radio-buttons-group">
-                        <FormControlLabel className={colorMode} value="one" control={<Radio />} label="One" checked/>
-                        <FormControlLabel className={colorMode} value="two" control={<Radio />} label="Two"/>
-                        <FormControlLabel className={colorMode} value="three" control={<Radio />} label="Three" disabled/>
-                        <FormControlLabel className={colorMode} value="four" control={<Radio />} label="Four" disabled checked/>
+                        <FormControlLabel value="one" control={<Radio />} label="One" checked/>
+                        <FormControlLabel value="two" control={<Radio />} label="Two"/>
+                        <FormControlLabel value="three" control={<Radio />} label="Three" disabled/>
+                        <FormControlLabel value="four" control={<Radio />} label="Four" disabled checked/>
                     </RadioGroup>
                 </FormControl>
-              </ColorModeSelector>
             </ExampleSection>
 
         </div>

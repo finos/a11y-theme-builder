@@ -23,9 +23,7 @@ export const HeroComponent: React.FC<Props> = ({ }) => {
         <div>
             <HeadingSection title="Desktop" heading="Hero" />
             <ExampleSection>
-                <HeroColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <HeroExample colorMode={colorMode}/>
-                </HeroColorModeSelector>
+                    <HeroExample data-background={colorMode}/>
             </ExampleSection>
         </div>
     )

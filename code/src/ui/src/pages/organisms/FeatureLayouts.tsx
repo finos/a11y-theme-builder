@@ -25,16 +25,16 @@ export const FeatureLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Teams" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className={colorMode}></div>
-                <div className="subtitle1">Features Highlighted Right</div>
-                <FeatureHighlightsRight className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">Features Highlighted Left</div>
-                <FeatureHighlightsLeft className={"top40 " + colorMode} />
-                <p></p>
-              </ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
+                <ExampleSection>
+                  <div className="demo-title subtitle1">Features Highlighted Right</div>
+                  <FeatureHighlightsRight className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">Features Highlighted Left</div>
+                  <FeatureHighlightsLeft className="top40 " />
+                  <p></p>
+                </ExampleSection>
+              </div>
           </div>
       )
   }

@@ -19,7 +19,7 @@ export const FeatureHighlightsRight: React.FC<Props> = ({className=""}) => {
             <Grid item spacing={2} lg={6} sm={12}>
               <div className="overline-large">Features</div>
               <h2>Title</h2>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>
@@ -31,7 +31,7 @@ export const FeatureHighlightsRight: React.FC<Props> = ({className=""}) => {
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>
-                <div className="body">
+                <div className="body1">
                   <ListComponent hasIcon isLarge type={3} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                   <Divider />
                   <ListComponent hasIcon isLarge type={3} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>

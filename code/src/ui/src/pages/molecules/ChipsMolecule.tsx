@@ -19,6 +19,7 @@ interface Props {
     designSystem: DesignSystem
 }
 
+
 export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
     return (
@@ -31,7 +32,7 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <h4>Standard Chip</h4>
                     <div style={{display:"flex", gap:"32px"}}>
                         <Chip label="No Icon" />
-                        <Chip label="No Icon" onDelete={(event) => {}} />                   
+                        <Chip label="No Icon" onDelete={(event) => {}} />
                     </div>
                     <h4>Chip with Icon</h4>
                     <div style={{display:"flex", gap:"32px"}}>
@@ -44,31 +45,32 @@ export const ChipsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         <Chip avatar={<Avatar/>} label="Avatar" onDelete={(event) => {}} />
                     </div>
                 </div>
+                <SettingsSection>
+                    <div className="formRow">
+                        <NumberProperty property={molecule.minWidth} defaultValue={80} units="px"/>
+                    </div>
+                    <div className="formRow">
+                        <NumberScaledSelectable property={molecule.visibleHeight} defaultValue={4} units="px" scale={grid}/>
+                    </div>
+                    <div className="formRow">
+                        <NumberScaledSelectable property={molecule.radius} defaultValue={2} units="px" scale={grid}/>
+                    </div>
+                    <div className="formRow">
+                        <NumberScaledSelectable property={molecule.horizontalPadding} defaultValue={2} units="px" scale={grid}/>
+                    </div>
+                    {/* <div className="formRow">
+                        <StringSelectable property={molecule.text} defaultValue="Caption" />
+                    </div> */}
+                    <div className="formRow">
+                        <StringSelectable property={molecule.elevation} defaultValue="No Elevation" />
+                    </div>
+                    <div className="formRow">
+                        <StringSelectable property={molecule.bevel} defaultValue="No Bevel" />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
             </ExampleSection>
-            <SettingsSection>
-                <div className="formRow">
-                    <NumberProperty property={molecule.minWidth} defaultValue={80} units="px"/>
-                </div>
-                <div className="formRow">
-                    <NumberScaledSelectable property={molecule.visibleHeight} defaultValue={4} units="px" scale={grid}/>
-                </div>
-                <div className="formRow">
-                    <NumberScaledSelectable property={molecule.radius} defaultValue={2} units="px" scale={grid}/>
-                </div>
-                <div className="formRow">
-                    <NumberScaledSelectable property={molecule.horizontalPadding} defaultValue={2} units="px" scale={grid}/>
-                </div>
-                {/* <div className="formRow">
-                    <StringSelectable property={molecule.text} defaultValue="Caption" />
-                </div> */}
-                <div className="formRow">
-                    <StringSelectable property={molecule.elevation} defaultValue="No Elevation" />
-                </div>
-                <div className="formRow">
-                    <StringSelectable property={molecule.bevel} defaultValue="No Bevel" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+
         </div>
     )
 

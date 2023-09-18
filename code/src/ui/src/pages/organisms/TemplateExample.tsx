@@ -27,28 +27,27 @@ export const TemplateExample: React.FC<Props> = ({ }) => {
       return (
           <div>
               <HeadingSection title="organisms" heading="Image & Text" />
-              <div className={colorMode}></div>
-              <ExampleSection>
-                  <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                      <div className="subtitle1">Small Image on Right</div>
-                      <ImageTextRight className={colorMode} />
-                      <p></p>
-                      <div className="subtitle1">Small Image on Left</div>
-                      <ImageTextLeft className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">Medium Image on Right</div>
-                      <MediumImageRight className={colorMode} />
-                      <p></p>
-                      <div className="subtitle1">Medium Image on Left</div>
-                      <MediumImageLeft className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">Large Image on Right</div>
-                      <LargeImageRight className={colorMode} />
-                      <p></p>
-                      <div className="subtitle1">Large Image on Left</div>
-                      <LargeImageLeft className={"top40 " + colorMode} />
-                  </SectionColorModeSelector>
-              </ExampleSection>
+              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+              </SectionColorModeSelector>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Small Image on Right</div>
+                <ImageTextRight className="top40" />
+                <p></p>
+                <div className="demo-title subtitle1">Small Image on Left</div>
+                <ImageTextLeft className="top40" />
+                <p></p>
+                <div className="demo-title subtitle1">Medium Image on Right</div>
+                <MediumImageRight  className="top40"  />
+                <p></p>
+                <div className="demo-title subtitle1">Medium Image on Left</div>
+                <MediumImageLeft className="top40" />
+                <p></p>
+                <div className="demo-title subtitle1">Large Image on Right</div>
+                <LargeImageRight  className="top40"  />
+                <p></p>
+                <div className="demo-title subtitle1">Large Image on Left</div>
+                <LargeImageLeft className="top40" />
+              </div>
           </div>
       )
   }

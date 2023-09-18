@@ -14,6 +14,7 @@ import { Footer3Columns } from "../../mui-a11y-tb/organisms/Footer3Columns";
 
 interface Props {
     colorMode?: string;
+    'data-background'?: string;
 }
 
 
@@ -26,17 +27,16 @@ export const FooterLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Image & Text" />
               <FooterColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </FooterColorModeSelector>
-              <div className={colorMode}></div>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Brand Section and 5 Colums</div>
+                <Footer5Columns />
 
-              <div className="subtitle1">Brand Section and 5 Colums</div>
-              <Footer5Columns className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Brand Section and 4 Colums</div>
+                <Footer4Columns />
 
-              <div className="subtitle1">Brand Section and 4 Colums</div>
-              <Footer4Columns className={"top40 " + colorMode} />
-
-              <div className="subtitle1">Brand Section and 3 Colums</div>
-              <Footer3Columns className={"top40 " + colorMode} />
-
+                <div className="demo-title subtitle1">Brand Section and 3 Colums</div>
+                <Footer3Columns />
+              </div>
           </div>
       )
   }

@@ -28,24 +28,23 @@ export const VideoLayouts: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Videos" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Small Video Left</div>
-                <VideoLeftSmall  className={colorMode}/>
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Small Video Left</div>
+                <VideoLeftSmall  className="top40"/>
                 <p></p>
-                <div className="subtitle1">Medium Video Left</div>
-                <VideoLeft className={colorMode}/>
+                <div className="demo-title subtitle1">Medium Video Left</div>
+                <VideoLeft className="top40" />
                 <p></p>
-                <div className="subtitle1">Video Centered</div>
-                <VideoCentered className={colorMode}/>
+                <div className="demo-title subtitle1">Video Centered</div>
+                <VideoCentered className="top40" />
                 <p></p>
-                <div className="subtitle1">Small Video Right</div>
-                <VideoRightSmall className={colorMode}/>
+                <div className="demo-title subtitle1">Small Video Right</div>
+                <VideoRightSmall className="top40" />
                 <p></p>
-                <div className="subtitle1">Medium Video Right</div>
-                <VideoRight className={colorMode}/>
+                <div className="demo-title subtitle1">Medium Video Right</div>
+                <VideoRight className="top40" />
                 <p></p>
-              </ExampleSection>
+              </div>
           </div>
       )
   }

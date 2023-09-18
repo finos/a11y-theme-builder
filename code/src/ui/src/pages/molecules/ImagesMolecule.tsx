@@ -55,26 +55,27 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         </div>
                     </div>
                 </div>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-12">
-                    <div className="formRow">
-                            <NumberScaledSelectable property={molecule.listImageHeight} units="px" scale={grid}/>
-                        </div>
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-12">
                         <div className="formRow">
-                            <NumberScaledSelectable property={molecule.listImageBorderRadius} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.imageElevation} defaultValue="" />
+                                <NumberScaledSelectable property={molecule.listImageHeight} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.listImageBorderRadius} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <StringSelectable property={molecule.imageElevation} defaultValue="" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+
         </div >
     )
 }

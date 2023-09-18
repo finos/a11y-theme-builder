@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { DesignSystem, StateSettings } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 interface Props {
     designSystem: DesignSystem;
@@ -19,24 +20,26 @@ export const ColorStatesComponent: React.FC<Props> = ({designSystem}) => {
         return (
             <div>
                 <HeadingSection title="Colors" heading="State Colors" />
-                <div className="theme-colors">
-                    <ComputedColorSwatch
-                        className="info"
-                        label="Info"
-                    />
-                    <ComputedColorSwatch
-                        className="success"
-                        label="Success"
-                    />
-                    <ComputedColorSwatch
-                        className="warning"
-                        label="Warning"
-                    />
-                    <ComputedColorSwatch
-                        className="danger"
-                        label="Danger"
-                    />
-                </div>
+                <ExampleSection>
+                  <div className="theme-colors">
+                      <ComputedColorSwatch
+                          className="info"
+                          label="Info"
+                      />
+                      <ComputedColorSwatch
+                          className="success"
+                          label="Success"
+                      />
+                      <ComputedColorSwatch
+                          className="warning"
+                          label="Warning"
+                      />
+                      <ComputedColorSwatch
+                          className="danger"
+                          label="Danger"
+                      />
+                  </div>
+                </ExampleSection>  
             </div>
         );
     } else {

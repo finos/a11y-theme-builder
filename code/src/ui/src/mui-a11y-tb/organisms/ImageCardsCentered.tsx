@@ -23,25 +23,25 @@ export const ImageCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -55,25 +55,25 @@ export const ImageCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample  hideSecondary={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary"  hideSecondary={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary"  hideSecondary={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -87,25 +87,25 @@ export const ImageCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample hotlink={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" hotlink={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" hotlink={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -119,25 +119,25 @@ export const ImageCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample clickable={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" clickable={true} className="fixed" title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
+              <CardSample color="primary" clickable={true} className="fixed"  title="Title" imagePath="/sample.jpg" imageClassName="cinemascope">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

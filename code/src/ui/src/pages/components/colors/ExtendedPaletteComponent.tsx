@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { Color, ColorPalette, DesignSystem } from 'a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ColorSwatch } from '../../../components/ColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 interface Props {
     designSystem: DesignSystem;
@@ -19,6 +20,7 @@ export const ExtendedPaletteComponent: React.FC<Props> = ({designSystem}) => {
         return (
             <div>
                 <HeadingSection title="Colors" heading="Extended Palette Colors" />
+                <ExampleSection>
                 {_colorPalette.getColors().map((color) => {
                     return (
                         <div>
@@ -33,6 +35,7 @@ export const ExtendedPaletteComponent: React.FC<Props> = ({designSystem}) => {
                         </div>
                     );
                 })}
+                </ExampleSection>
             </div>
         );
     } else {

@@ -30,7 +30,7 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
 
     let noElevation = popoversMolecule.elevation.getValue() === "No Elevation"
     let elevationBoxShadowString = noElevation ? "none" : "var(--" + popoversMolecule.elevation.getValue()?.toLowerCase() +") !important"
-    
+
     let noBevel = popoversMolecule.bevel.getValue() === "No Bevel"
     let bevelBoxShadowString = noBevel ? "none" : "var(--" + popoversMolecule.bevel.getValue()?.toLowerCase() +") !important"
 
@@ -65,23 +65,24 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                 >
                     <Typography sx={{ p: 2 }}>Top Popover</Typography>
                 </Popover>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="form-row">
-                            <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
-                        </div>
-                        <div className="form-row">
-                            <StringSelectable property={popoversMolecule.elevation} defaultValue="No Elevation" />
-                        </div>
-                        <div className="form-row">
-                            <StringSelectable property={popoversMolecule.bevel} defaultValue="No Bevel" />
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="form-row">
+                                <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
+                            </div>
+                            <div className="form-row">
+                                <StringSelectable property={popoversMolecule.elevation} defaultValue="No Elevation" />
+                            </div>
+                            <div className="form-row">
+                                <StringSelectable property={popoversMolecule.bevel} defaultValue="No Bevel" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={popoversMolecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={popoversMolecule} />
+            </ExampleSection>
+
         </div>
     )
 }

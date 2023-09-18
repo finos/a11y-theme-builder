@@ -38,23 +38,24 @@ export const ButtonsSmallMolecule: React.FC<Props> = ({ molecule, designSystem }
                     <Button className="small-btn" variant="outlined">Secondary</Button>
                     <Button className="small-btn" variant="text">Tertiary</Button>
                 </div>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-6 top16">
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.visibleHeight} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.horizontalPadding} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.buttonText} defaultValue="" />
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-6 top16">
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.visibleHeight} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.horizontalPadding} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <StringSelectable property={molecule.buttonText} defaultValue="" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+
         </div>
     )
 }
