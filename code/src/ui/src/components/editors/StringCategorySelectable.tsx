@@ -32,7 +32,6 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
             <div>
                 <InputLabel id="stringSelectLabel">{label}</InputLabel>
                 <Select id="stringSelect" labelId="stringSelectLabel" value={title} onChange={handleChange}>
-                    <MenuItem value="None"><em>None</em></MenuItem>
                     {renderCategories(property)}
                 </Select>
             </div>
@@ -45,8 +44,13 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
         for (var i=0; i<selectables.length; i++) {
             const s = selectables[i];
             if (!variant || variant === "dropdown") {
-                r.push(<ListSubheader key={"label-"+s} inset={true}>{s.display}</ListSubheader>)
-                r.push(renderSelectableItems(s.members, variant))
+                if (s.display === "None" && (!s.members || s.members.length === 0)) {
+                    // None supported, add a None menu item
+                    r.push(<MenuItem value="None"><em>None</em></MenuItem>);
+                } else {
+                    r.push(<ListSubheader key={"label-"+s} inset={true}>{s.display}</ListSubheader>)
+                    r.push(renderSelectableItems(s.members, variant))
+                }
             } else {
                 r.push(<div>Unknown Values</div>)
             }
