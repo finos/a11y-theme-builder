@@ -51,29 +51,32 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const fontWeight2Property           = fontSettingsAtom.fontWeights[2]
     const fontWeight3Property           = fontSettingsAtom.fontWeights[3]
     const fontWeight4Property           = fontSettingsAtom.fontWeights[4]
+    const secondaryFontWeightProperty   = fontSettingsAtom.secondaryFontWeight
     const standardLineHeightProperty    = fontSettingsAtom.standardLineHeight
     const headerLineHeightProperty      = fontSettingsAtom.headerLineHeight
     const smallLineHeightProperty       = fontSettingsAtom.smallLineHeight
 
-    const [primaryFont,        setPrimaryFont       ] = useState<string>((primaryFontFamilyProperty.getValue()   || "Open Sans"));
-    const [secondaryFont,      setSecondaryFont     ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Open Sans"));
-    const [fontWeight0,        setFontWeight0       ] = useState<number>((fontWeight0Property.getValue()         || 100));
-    const [fontWeight1,        setFontWeight1       ] = useState<number>((fontWeight1Property.getValue()         || 300));
-    const [fontWeight2,        setFontWeight2       ] = useState<number>((fontWeight2Property.getValue()         || 500));
-    const [fontWeight3,        setFontWeight3       ] = useState<number>((fontWeight3Property.getValue()         || 600));
-    const [fontWeight4,        setFontWeight4       ] = useState<number>((fontWeight4Property.getValue()         || 700));
-    const [standardLineHeight, setStandardLineHeight] = useState<number>((standardLineHeightProperty.getValue()  || 160));
-    const [headerLineHeight,   setHeaderLineHeight  ] = useState<number>((headerLineHeightProperty.getValue()    || 150));
-    const [smallLineHeight,    setSmallLineHeight   ] = useState<number>((smallLineHeightProperty.getValue()     || 110));
+    const [primaryFont,         setPrimaryFont         ] = useState<string>((primaryFontFamilyProperty.getValue()   || "Open Sans"));
+    const [secondaryFont,       setSecondaryFont       ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Open Sans"));
+    const [fontWeight0,         setFontWeight0         ] = useState<number>((fontWeight0Property.getValue()         || 100));
+    const [fontWeight1,         setFontWeight1         ] = useState<number>((fontWeight1Property.getValue()         || 300));
+    const [fontWeight2,         setFontWeight2         ] = useState<number>((fontWeight2Property.getValue()         || 500));
+    const [fontWeight3,         setFontWeight3         ] = useState<number>((fontWeight3Property.getValue()         || 600));
+    const [fontWeight4,         setFontWeight4         ] = useState<number>((fontWeight4Property.getValue()         || 700));
+    const [secondaryFontWeight, setSecondaryFontWeight ] = useState<number>((secondaryFontWeightProperty.getValue() || 400));
+    const [standardLineHeight,  setStandardLineHeight  ] = useState<number>((standardLineHeightProperty.getValue()  || 160));
+    const [headerLineHeight,    setHeaderLineHeight    ] = useState<number>((headerLineHeightProperty.getValue()    || 150));
+    const [smallLineHeight,     setSmallLineHeight     ] = useState<number>((smallLineHeightProperty.getValue()     || 110));
 
-    const [standardLineHeightErrorTriggered, setStandardLineHeightErrorTriggered] = useState<boolean>(false)
-    const [primaryFontUncommon,              setPrimaryFontUncommon             ] = useState<boolean>(!FontWeightsUtil.isFontCommon(primaryFont))
-    const [secondaryFontUncommon,            setSecondaryFontUncommon           ] = useState<boolean>(!FontWeightsUtil.isFontCommon(secondaryFont))
-    const [fontWeight0WarningTriggered,      setFontWeight0WarningTriggered     ] = useState<boolean>(false)
-    const [fontWeight1WarningTriggered,      setFontWeight1WarningTriggered     ] = useState<boolean>(false)
-    const [fontWeight2WarningTriggered,      setFontWeight2WarningTriggered     ] = useState<boolean>(false)
-    const [fontWeight3WarningTriggered,      setFontWeight3WarningTriggered     ] = useState<boolean>(false)
-    const [fontWeight4WarningTriggered,      setFontWeight4WarningTriggered     ] = useState<boolean>(false)
+    const [standardLineHeightErrorTriggered,    setStandardLineHeightErrorTriggered    ] = useState<boolean>(false)
+    const [primaryFontUncommon,                 setPrimaryFontUncommon                 ] = useState<boolean>(!FontWeightsUtil.isFontCommon(primaryFont))
+    const [secondaryFontUncommon,               setSecondaryFontUncommon               ] = useState<boolean>(!FontWeightsUtil.isFontCommon(secondaryFont))
+    const [fontWeight0WarningTriggered,         setFontWeight0WarningTriggered         ] = useState<boolean>(false)
+    const [fontWeight1WarningTriggered,         setFontWeight1WarningTriggered         ] = useState<boolean>(false)
+    const [fontWeight2WarningTriggered,         setFontWeight2WarningTriggered         ] = useState<boolean>(false)
+    const [fontWeight3WarningTriggered,         setFontWeight3WarningTriggered         ] = useState<boolean>(false)
+    const [fontWeight4WarningTriggered,         setFontWeight4WarningTriggered         ] = useState<boolean>(false)
+    const [secondaryFontWeightWarningTriggered, setSecondaryFontWeightWarningTriggered ] = useState<boolean>(false)
 
     const [selectPrimaryFont, setSelectPrimaryFont    ] = useState<boolean>(true)
     const [selectSecondaryFont, setSelectSecondaryFont] = useState<boolean>(true)
@@ -93,6 +96,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
 
     const recheckWeights = () => {
+        //TODO correctly align warnings with new weight logic
         if (primaryFontUncommon || secondaryFontUncommon) {
             setFontWeight0WarningTriggered(false)
             setFontWeight1WarningTriggered(false)
@@ -307,6 +311,20 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         }
         setFontWeight4WarningTriggered(false)
     }
+    async function handleSecondaryFontWeightChange(event: any): Promise<void> {
+        const value = parseInt(event.target.value);
+        setSecondaryFontWeight(value)
+        fontSettingsAtom.secondaryFontWeight.setValue(value)
+        if (primaryFontUncommon || secondaryFontUncommon) {
+            setSecondaryFontWeightWarningTriggered(false)
+            return
+        }
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+            setSecondaryFontWeightWarningTriggered(true)
+            return
+        }
+        setSecondaryFontWeightWarningTriggered(false)
+    }
     async function handleStandardLineHeightChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setStandardLineHeight(value)
@@ -466,7 +484,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                             <NumberProperty property={fontSettingsAtom.baseFontSize} defaultValue={16} units="px"
                                 description={"All typography is multiplied from the base font size."} />
                         </div>
-                        <h4>Primary Font Weights</h4>
+                        <h4>Font Weights</h4>
+                        <h6>Primary</h6>
                         <div className="form-row">
                             <Grid container spacing={textFieldGridSpacing}>
                                 <Grid item xs={textFieldGridWidth}>
@@ -495,7 +514,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                             <Grid container spacing={textFieldGridSpacing}>
                                 <Grid item xs={textFieldGridWidth}>
                                     <InputLabel htmlFor="fontWeight2TextField" id="fontWeight2Label">{fontWeight2Property.name}</InputLabel>
-                                    <div style={{fontWeight:"normal"}}>For headers and small text that is important.</div>
+                                    <div style={{fontWeight:"normal"}}>For labels.</div>
                                     {renderFontWeightSelectables(fontWeight2Property, fontWeight2, handleFontWeight2Change, "2")}
                                 </Grid>
                                 <Grid item xs={alertGridWidth}>
@@ -524,6 +543,19 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 </Grid>
                                 <Grid item xs={alertGridWidth}>
                                     {!fontWeight4WarningTriggered || weightUnsupportedAlert}
+                                </Grid>
+                            </Grid>
+                        </div>
+                        <h6>Secondary</h6>
+                        <div className="form-row">
+                            <Grid container spacing={textFieldGridSpacing}>
+                                <Grid item xs={textFieldGridWidth}>
+                                    <InputLabel htmlFor="fontWeight5TextField" id="fontWeight5Label">{secondaryFontWeightProperty.name}</InputLabel>
+                                    <div style={{fontWeight:"normal"}}>For displays and headers.</div>
+                                    {renderFontWeightSelectables(secondaryFontWeightProperty, secondaryFontWeight, handleSecondaryFontWeightChange, "5")}
+                                </Grid>
+                                <Grid item xs={alertGridWidth}>
+                                    {!secondaryFontWeightWarningTriggered || weightUnsupportedAlert}
                                 </Grid>
                             </Grid>
                         </div>
