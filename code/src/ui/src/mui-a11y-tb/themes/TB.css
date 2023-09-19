@@ -3,6 +3,8 @@
   --zoom: 1;
   --meshSVGfill: rgb(0,102,239);
   /* FIXED */
+  --overlay-opacity: .35;
+  --body-bg: var(--white);
   /* Opacity */
   --quiet: 68%;
   --disabled: 38%;
@@ -695,6 +697,9 @@
   --on-background-tertiary: var(--on-primary);
   --primaryDarkBG: var(--black);
   --secondaryDarkBG: var(--nearblack);
+  /* overlays */
+  --color-1: var(--background);
+  --color-2: var(--background);
   /* glows */
   --glow-1: 0 0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), var(--glow-opacity)  );
   --glow-2: 0 0 var(--glow-blur) var(--glow-spread) rgba(var(--glow-rgb), calc(var(--glow-opacity) * calc(1 + calc(var(--glow-change) * 1)))  );
@@ -1530,6 +1535,7 @@
     /* Core Colors */
     --body-bg: var(--white);
     --border-opacity: 15%;
+    --overlay-opacity: .35;
     --alt-adjust: var(--white);
     --white: var(--lm-white);
     --on-white: var(--lm-on-white);
@@ -1993,6 +1999,7 @@
   [data-mode="dark"] {
     --body-bg: var(--black);
     --border-opacity: 40%;
+    --overlay-opacity: .70;
     --alt-adjust: var(--black);
     --white: var(--dm-white);
     --on-white: var(--dm-on-white);
@@ -2098,9 +2105,9 @@
     --hotlink-decoration: var(--dm-hotlink-decoration);
     --hotlink-hover-decoration: var(--dm-hotlink-hover-decoration);
     /* Hotlink variations based on background color */
-    --hotlinkOnWhite: var(--dm-hotlinkOnWhite);
-    --hotlinkOnWhite-decoration: var(--dm-hotlinkOnWhite-decoration);
-    --hotlinkOnWhite-hover-decoration: var(--dm-hotlinkOnWhite-hover-decoration);
+    --hotlinkOnWhite: var(--black);
+    --hotlinkOnWhite-decoration: underline;
+    --hotlinkOnWhite-hover-decoration: none;
     --hotlinkOnBlack: var(--dm-hotlinkOnBlack);
     --hotlinkOnBlack-decoration: var(--dm-hotlinkOnBlack-decoration);
     --hotlinkOnBlack-hover-decoration: var(--dm-hotlinkOnBlack-hover-decoration);
@@ -2591,6 +2598,9 @@
     --text-gradient-b: var(--primary-text-gradient-b);
     --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
     --primary-color-drop: var(--primary-color-drop);
+    --color-1: var(--primary-background);
+    --color-2: var(--primary-background);
+
   }
   [data-background="alt"] {
     --background: color-mix(in lch, var(--primary-background), var(--black) 5%));
@@ -2623,7 +2633,7 @@
     --color-drop: var(--primary-color-drop);
   }
   [data-background="white"] {
-    --background: color-mix(in lch, var(--alt-adjust),  var(--lm-white) 60%);
+    --background: color-mix(in lch, var(--alt-adjust),  var(--body-bg) 60%);
     --alt-background: var(--gray-100);
     --background: var(--white);
     --on-background: var(--black);
@@ -2652,6 +2662,8 @@
     --text-gradient-b: var(--gray-300);
     --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
     --color-drop: var(--primary-color-drop);
+    --color-1: var(--white);
+    --color-2: var(--white);
   }
   [data-background="black"] {
     --background: var(--nearblack);
@@ -2684,7 +2696,7 @@
     --color-drop: var(--nearblack);
   }
   [data-background="colored"] {
-    --background: var(--dm-primary);
+    --background: var(--primary);
     --alt-background: color-mix(in lch, var(--background-tertiary), var(--alt-adjust) 8%);
     --on-background: var(--on-background-tertiary);
     /* Button */
@@ -2712,6 +2724,8 @@
     --text-gradient-b: var(--on-background-tertiary);
     --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
     --color-drop: var(--gray-200);
+    --color-1: var(--primary);
+    --color-2: var(--primary);
   }
   [data-background="gradient1"] {
     --background: var(--gradient-1);
@@ -2788,7 +2802,7 @@
     --on-icon: var(--oniconOnGradient3);
     --icon-half: var(--iconHalfOnGradient3);
     /* Hotlink */
-    --hotlink: var(--on-gradient3);
+    --hotlink: var(--on-gradient-3);
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */

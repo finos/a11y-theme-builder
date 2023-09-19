@@ -3216,9 +3216,10 @@ footer .MuiGrid-container {
 }
 .hero.backgroundImage {
   background-size: cover !important;
+
 }
 .hero.backgroundImage::before, .hero.backgroundVideo::before  {
-  opacity: .35;
+  opacity: var(--overlay-opacity);
   content: '';
   position: absolute;
   top: 0;
@@ -3226,6 +3227,12 @@ footer .MuiGrid-container {
   right: 0;
   left: 0;
   z-index: 1;
+  background: var(--background);
+}
+
+.hero.backgroundImage .MuiGrid-container, .hero.backgroundVideo .MuiGrid-container {
+  z-index: 3;
+  text-shadow: var(--color-1) 1px 0 8px
 }
 
 /* background image */

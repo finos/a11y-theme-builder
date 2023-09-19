@@ -161,9 +161,9 @@ export const HeroExample: React.FC<Props> = ({ }) => {
                       </linearGradient>
 
                       <pattern id="checkerboard" patternUnits="userSpaceOnUse"
-                      width="2" height="2">
-                          <rect x="0" y="0" width="1" height="1" />
-                          <rect x="1" y="1" width="1" height="1" />
+                      width="3" height="3">
+                          <rect x="0" y="0" width="1.5" height="1.5" />
+                          <rect x="1.5" y="1.5" width="1.5" height="1.5" />
                       </pattern>
 
                       <mask id="mask">
