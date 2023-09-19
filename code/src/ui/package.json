@@ -42,6 +42,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "start-local": "REACT_APP_STORAGE=local react-scripts start",
         "dev-ui": "react-scripts start",
         "build": "npm install && react-scripts build",
         "test": "react-scripts test",
