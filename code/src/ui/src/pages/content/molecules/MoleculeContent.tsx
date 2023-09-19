@@ -177,7 +177,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
 
     return (
         <>
-            <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav" >
             <div className="design-system-editor-left-nav-scrollable">
                 <List
                     sx={{

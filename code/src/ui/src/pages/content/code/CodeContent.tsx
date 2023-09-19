@@ -107,7 +107,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
 
     return (
         <>
-            <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav" >
                 <div className="design-system-editor-left-nav-scrollable">
                 <List
                         sx={{
@@ -136,7 +136,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                               <li>For a design tool: <p>JSON tokens are generated.  They can be copied and imported into your design tool such as Figma.</p></li>
                           </ul>
                         </Grid>
-                      </Grid>    
+                      </Grid>
                       </>}
                       {showItem === "css" && <>
                           <HeadingSection title="Code Generators" heading="CSS Code" />

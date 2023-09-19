@@ -48,7 +48,7 @@ const WelcomePage: React.FC<Props> = ({ user, storage, themeName }) => {
                     <WelcomeNavbar />
                 </MeasureDiv>
                 <div className="design-system-editor-content" style={divStyle}>
-                    <div className="design-system-editor-left-nav">
+                    <div className="design-system-editor-left-nav"  data-background="alt">
                     <div className="design-system-editor-left-nav-scrollable">
                         <List
                             sx={{

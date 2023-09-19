@@ -9,15 +9,14 @@ import { ListSubheader, ListItemButton, ListItemText } from "@mui/material";
 export const LeftNavHeader = styled(ListSubheader)(( {theme }) => ({
     fontWeight: "bold",
     textTransform: "uppercase",
-    background: "var(--leftNav)",
+    background: "transparent",
     fontSize: "1em",
     position: "unset",
 }));
 
 export const LeftNavText = styled(ListSubheader)(( {theme }) => ({
     // textTransform: "uppercase",
-    background: "var(--leftNav)",
-    //color: "var(--on-leftNav)",
+    background: "transparent",
     fontSize: "1em",
 }));
 

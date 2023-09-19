@@ -65,8 +65,8 @@ export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
     }
 
     const tabBar = {
-        backgroundColor: "var(--leftNav)",
-        color: "var(--on-leftNav)",
+        backgroundColor: "var(--transparent)",
+        color: "var(--transparent)",
         display: "flex",
     }
 

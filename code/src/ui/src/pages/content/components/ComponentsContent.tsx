@@ -143,7 +143,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
     return (
         <>
-            <div className="design-system-editor-left-nav">
+            <div className="design-system-editor-left-nav" >
             <div className="design-system-editor-left-nav-scrollable">
                 <List
                     sx={{
@@ -266,7 +266,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                 </List>
             </div>
             </div>
-            <div className={"design-system-editor-right-content " + (darkMode ? "darkmode" : "")}>
+            <div className="design-system-editor-right-content"  data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">
                     {showComponent === "colorsCoreColors" &&
                         <CoreColorsComponent />

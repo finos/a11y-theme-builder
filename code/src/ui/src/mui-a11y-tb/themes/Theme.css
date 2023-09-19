@@ -3,7 +3,7 @@ body {
   background: var(--body-bg);
 }
 .App {
-  background: var(--on-background);
+  background: var(--background);
   color: var(--on-background);
 }
 .MuiGrid-container {
@@ -725,10 +725,10 @@ section:has( .quote) {
   color: var(--hotlink);
   font-family: var(--body2FontFamily) !important;
   font-weight: var(--body2FontWeight) !important;
-  font-size: var(--body2FontWeightFontSize) !important;
-  line-height: var(--body2FontWeightLineHeight) !important;
-  letter-spacing: var(--body2FontWeightLetterSpacing) !important;
-  text-transform: var(--body2FontWeightTextTransform) !important;
+  font-size: var(--body2FontSize) !important;
+  line-height: var(--body2LineHeight) !important;
+  letter-spacing: var(--body2LetterSpacing) !important;
+  text-transform: var(--body2TextTransform) !important;
   text-decoration:  var(--hotlink-decoration);
 }
 
