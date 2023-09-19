@@ -26,8 +26,7 @@ export const ToastsMolecule: React.FC<Props> = ({ toastsMolecule }) => {
                 A Toast is an alert box that informs the user about something important.
             </HeadingSection>
             <ExampleSection>
-                <Alert
-                    severity="error"
+                <Alert severity="error" data-backround="primary" 
                     sx={{
                         width:"fit-content",
                     }}
