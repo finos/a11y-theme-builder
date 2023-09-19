@@ -702,7 +702,7 @@ try {
                           borderBottom: "4px solid transparent",
                           borderRadius: "0px",
                         },
-                        "&:hover::after": {
+                        "&:hover:not(:active)::after": {
                           height: "var(--spacing-half)",
                           left: "0",
                           right: "0",
@@ -795,11 +795,31 @@ try {
             MuiList: {
                 styleOverrides: {
                     root: {
-                        "& .MuiListSubheader-root": {
+                        "& .MuiListSubheader": {
                           fontWeight: "500",
                         },
-                        "& .MuiListItemButton-root:active": {
+                        "& .MuiListItemButton": {
+                            styleOverrides: {
+                              root: {
+                                borderLeft: "4px solid transparent !important" ,
+                              },
+                              "&:hover": {
+                                styleOverrides: {
+                                    root: {
+                                      borderLeft: "4px solid var(--button-half) !important",
+                                    }
+                                }
+                              },
+                              "&:active, &:focus": {
+                                styleOverrides: {
+                                    root: {
+                                      borderLeft: "4px solid var(--button)  !important",
+                                    }
+                                }
+                              }
+                            }
                         }
+
                     }
                 }
             },
@@ -831,7 +851,7 @@ try {
                         borderRadius: "calc(var(--toast-radius) * var(--radius-1))",
                         alignItems: "center",
                         position: "relative",
-                        paddingRight: "vcalc(var(--toast-padding) * var(--spacing-1))",
+                        paddingRight: "calc(calc(var(--toast-padding) * var(--spacing-1)) + var(--spacing-1)) !important",
                         "& .MuiAlert-icon":{
                             marginRight: "calc(var(--toast-padding) * var(--spacing-1))",
                             alignSelf: "center",

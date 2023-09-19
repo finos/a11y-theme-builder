@@ -145,7 +145,7 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                                     </div>
                                     <div className="input-col">
                                         <div className="caption">White</div>
-                                        <div className="Hex white">Aa</div>
+                                        <div className="Hex white whiteHex">Aa</div>
                                     </div>
                                 </div>
                             </div>

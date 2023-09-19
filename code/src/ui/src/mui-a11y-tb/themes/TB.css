@@ -964,7 +964,6 @@
   --primary-input: var(--input);
   --primary-on-input: var(--on-input);
   /* Primary background */
-  --primary-body-bg: var(--body-bg);
   --primary-background: var(--background);
   --primary-alt-background: var(--alt-background);
   --primary-on-background: var(--on-background);
@@ -980,13 +979,9 @@
   --primary-hotlink: var(--hotlink);
   --primary-hotlink-decoration: var(--hotlink-decoration);
   --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
-  /* Border */
-  --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 12%);
-  /* Inputs */
-  --primary-input: color-mix(in lch, var(--background), var(--on-background) 15%);
-  --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
 
   /* Light Mode (hacck until we update the sdk ) */
+  --lm-body-bg: var(--white);
   --lm-white: var(--white);
   --lm-on-white: var(--on-white);
   --lm-on-black: var(--on-black);
@@ -1263,7 +1258,7 @@
   --lm-accent-900: var(--accent-900);
   --lm-on-accent-900: var(--on-accent-900);
   /* Dark mode */
-  --dm-white: rgba(255, 255, 255, 0.6);
+  --dm-white: rgba(255,255,255,0.6);
   --dm-white-bg: var(--dm-midnight-600);
   --dm-on-white: #121212;
   --dm-on-white-bg: var(--dm-on-midnight-600);
@@ -1526,7 +1521,7 @@
 
   [data-mode="light"] {
     /* Core Colors */
-    --body-bg: var(--white);
+    --body-bg: var(--lm-body-bg);
     --border-opacity: 15%;
     --overlay-opacity: .35;
     --alt-adjust: var(--white);
@@ -1804,7 +1799,6 @@
     /* border opacity */
     --border-opacity: 15%;
     /* Primary background */
-    --primary-body-bg: var(--body-bg);
     --primary-background: var(--background);
     --primary-alt-background: var(--alt-background);
     --primary-on-background: var(--on-background);
@@ -1991,7 +1985,7 @@
 
   }
   [data-mode="dark"] {
-    --body-bg: var(--black);
+    --body-bg: var(--dm-body-bg);
     --border-opacity: 40%;
     --overlay-opacity: .70;
     --alt-adjust: var(--black);
@@ -2263,7 +2257,6 @@
     /* border opacity */
     --border-opacity: 40%;
     /* Primary background */
-    --primary-body-bg: var(--body-bg);
     --primary-background: var(--dm-background);
     --primary-alt-background: var(--dm-alt-background);
     --primary-on-background: var(--dm-on-background);
@@ -2712,7 +2705,7 @@
     /* Border */
     --border: color-mix(in lch, var(--background-tertiary), var(--on-background-tertiary) var(--border-opacity));
     /* Inputs */
-    --input: color-mix(in lch, var(--background-tertiary), var(--on-background) 5%);
+    --input: color-mix(in lch, var(--background-tertiary), var(--white) 5%);
     --input-border: color-mix(in lch, var(--background-tertiary), var(--on-background) 20%);
     /* Text Decorations */
     --text-gradient-a: var(--on-background-tertiary);

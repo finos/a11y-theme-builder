@@ -60,10 +60,10 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                             <div className="formRow">
                                 <StringCategorySelectable property={molecule.buttonShadow} defaultValue="None" />
                             </div>
-                        </div>
-                        <div className="overline-XL top40">Secondary Button Styling</div>
-                        <div className="formRow top16">
-                            <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
+                            <div className="overline-XL top40">Outline Button Styling</div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
+                            </div>
                         </div>
                       </div>
                     </SettingsSection>
