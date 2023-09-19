@@ -11,7 +11,6 @@
   --hover: 50%;
  /* Radius */
   --radius-0: 0px;
-  --radius-1: 8px;
   --radius-2: calc(var(--radius-1) * 2);
   --radius-3: calc(var(--radius-1) * 3);
   --radius-4: calc(var(--radius-1) * 4);
@@ -25,7 +24,6 @@
   --radius-half: calc(var(--radius-1) / 2);
   /* Spacing */
   --spacing-0: 0px;
-  --spacing-1: 8px;
   --spacing-2: calc(var(--spacing-1) * 2);
   --spacing-3: calc(var(--spacing-1) * 3);
   --spacing-4: calc(var(--spacing-1) * 4);
@@ -41,7 +39,6 @@
   /* Borders */
   --border-opacity: 15%;
   --border-0: 0px;
-  --border-1: 1px;
   --border-2: calc(var(--border-1) * 2);
   --border-3: calc(var(--border-1) * 3);
   --border-4: calc(var(--border-1) * 4);
@@ -963,9 +960,9 @@
   --dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   /* Input */
   --input: rgba(254,252,254,0.55);
-  --input-disabled: rgba(178,176,179,0.535);
   --on-input: #121212;
-  --on-input-disabled: #121212;
+  --primary-input: var(--input);
+  --primary-on-input: var(--on-input);
   /* Primary background */
   --primary-body-bg: var(--body-bg);
   --primary-background: var(--background);
@@ -1088,8 +1085,6 @@
   /* Inputs */
   --lm-input: var(--input);
   --lm-on-input: var(--on-input);
-  --lm-input-disabled: var(--input-disabled);
-  --lm-input-hover: var(--input-hover);
   /* Hotlinks */
   --lm-hotlink: var(--hotlink);
   --lm-hotlink-visited: var(--hotlink-visited);
@@ -1367,8 +1362,6 @@
   /* Inputs */
   --dm-input: color-mix(in lch, var(--dm-background), var(--white) 4%);
   --dm-on-input: rgba(255,255,255,0.6);
-  --dm-input-disabled: rgba(13,13,13,0.515);
-  --dm-input-hover: rgba(255,255,255,.12);
   /* Hotlinks */
   --dm-hotlink: #3384F2;
   --dm-hotlink-decoration: underline;
@@ -1828,7 +1821,8 @@
     --primary-hotlink-decoration: var(--hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
     /* Inputs */
-    --primary-input: color-mix(in lch, var(--background), var(--on-background) 15%)
+    --primary-input: var(--lm-input);
+    --primary-on-input: var(--lm-on-input);
     --primary-input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
     /* Text Decoration */
     --primary-text-gradient-a: var(--text-gradient-a);
@@ -2097,9 +2091,9 @@
     /* Border */
     --border: color-mix(in lch, var(--background), var(--on-background) 20%);
     /* Inputs */
-    --input: color-mix(in lch, var(--background), var(--on-background) 5%);
-    --input-border: color-mix(in lch, var(--background), var(--on-background) 15%);
-    --on-input: var(--on-background);
+    --input: var(--dm-input);
+    --input-border: color-mix(in lch, var(--dm-background), var(--dm-on-background) 15%);
+    --on-input: var(--dm-on-background);
     /* Hotlinks */
     --hotlink: var(--dm-hotlink);
     --hotlink-decoration: var(--dm-hotlink-decoration);
@@ -2286,7 +2280,8 @@
     --primary-hotlink-decoration: var(--dm-hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--dm-hotlink-hover-decoration);
     /* Inputs */
-    --primary-input: color-mix(in lch, var(--dm-background), var(--dm-on-background) 5%);
+    --primary-input: var(--dm-input);
+    --primary-on-input: var(--dm-on-input);
     --primary-input-border: color-mix(in lch, var(--dm-background), var(--dm-on-background) 15%);
     /* Inputs */
     --primary-text-gradient-a: var(--dm-text-gradient-a);
@@ -2591,7 +2586,7 @@
     /* Border */
     --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
-    --input: color-mix(in lch, var(--background), var(--on-background) 5%);
+    --input: var(--primary-input);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
     /* Text Decorations */
     --text-gradient-a: var(--primary-text-gradient-a);
@@ -2624,7 +2619,7 @@
     /* Border */
     --border: color-mix(in lch, var(--background), var(--on-background) var(--border-opacity));
     /* Inputs */
-    --input: color-mix(in lch, var(primary-background), var(--on-background) 5%);
+    --input: var(--primary-input);
     --input-border: color-mix(in lch, var(--background), var(--on-background) 20%);
     /* Text Decorations */
     --text-gradient-a: var(--primary-text-gradient-a);

@@ -40,7 +40,7 @@ export const InputBackgroundsAtom: React.FC<Props> = ({ inputBackground }) => {
         return (
             <div>
                 <HeadingSection item={inputBackground} title="Surfaces">
-                    Surfaces include input fields and dropdown menu backgrounds. Defining their background color helps distinguish them from your selected background in a subtle and non-obtrusive way.
+                    Input field's backgrounds colors distinguish them from your selected background in a subtle and non-obtrusive way.
                 </HeadingSection>
                 <ExampleSection>
                     <LightModeSection>

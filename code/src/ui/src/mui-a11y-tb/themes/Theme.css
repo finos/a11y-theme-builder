@@ -2597,6 +2597,7 @@ button.MuiPaginationItem-root:hover {
   border-radius: var(--spacing-half);
   position: relative;
   min-height: calc(var(--button-height) * var(--spacing-1));
+  color: var(--on-background);
 }
 .MuiInputBase-root {
   position: relative;
