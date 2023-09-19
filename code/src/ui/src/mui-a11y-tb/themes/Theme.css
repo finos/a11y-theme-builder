@@ -493,8 +493,6 @@ section:has( .quote) {
 }
 .colored-title {
   color: var(--text-gradient-a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 /* MOLECULES */
 /* avatars */
