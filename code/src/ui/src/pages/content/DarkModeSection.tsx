@@ -14,7 +14,7 @@ interface Props {
 export const DarkModeSection: React.FC<Props> = ({children, title, style}) => {
 
     return (
-        <div data-mode="dark" style={style}>
+        <div data-mode="dark" style={style} className="darkholder">
             <h4 style={{marginTop: "10px", marginBottom: "10px"}}>{title || "Dark Mode"}</h4>
             {children}
         </div>

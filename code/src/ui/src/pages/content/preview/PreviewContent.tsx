@@ -68,9 +68,9 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                 </Grid>
               </Grid>
               <div className="computer"><img src="/computer.png" /></div>
-              <div className="screen">
+              <div className="screen"  data-mode={darkMode ? "dark" : "light"}>
                 <div className="screenHolder">
-                  <div className="screenContent" data-mode={darkMode ? "dark" : "light"}>
+                  <div className="screenContent">
 
                       <ResponsiveAppBar color="colored" />
                       <Hero color='black' >

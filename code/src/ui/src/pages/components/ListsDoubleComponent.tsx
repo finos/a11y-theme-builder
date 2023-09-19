@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { FormControlLabel, Radio, RadioGroup, Grid } from '@mui/material';
 import { SettingsSection } from '../content/SettingsSection';
 import { ListComponent } from './ListComponent';
 
@@ -29,17 +29,21 @@ export const ListsDoubleComponent: React.FC<Props> = () => {
     return (
         <div className="content">
             <HeadingSection title='Desktop' heading='Lists - Double Line'></HeadingSection>
-            <SettingsSection>
-                <RadioGroup
-                    aria-labelledby="isClickable-button-group-label"
-                    name="isClickable-buttons-group"
-                    defaultValue="non-clickable"
-                    onChange={handleChange}
-                >
-                    <FormControlLabel value="non-clickable" control={<Radio />} label="Non-Clickable"/>
-                    <FormControlLabel value="clickable" control={<Radio />} label="Clickable List"/>
-                </RadioGroup>
-            </SettingsSection>
+            <Grid container spacing={2} columns={12} margin={2}>
+              <Grid item spacing={2} lg={12} md={12} sm={12}>
+                <SettingsSection>
+                  <RadioGroup
+                      aria-labelledby="isClickable-button-group-label"
+                      name="isClickable-buttons-group"
+                      defaultValue="non-clickable"
+                      onChange={handleChange}
+                  >
+                      <FormControlLabel value="non-clickable" control={<Radio />} label="Non-Clickable"/>
+                      <FormControlLabel value="clickable" control={<Radio />} label="Clickable List"/>
+                  </RadioGroup>
+                </SettingsSection>
+            </Grid>
+          </Grid>
             <ExampleSection>
                 <section>
                     <div className="row">

@@ -428,7 +428,7 @@ section:has( .quote) {
   color: var(--white);
 }
 .white {
-  white: var(--white);
+  background: var(--white) !important;
   color: var(--on-white);
 }
 
@@ -856,7 +856,7 @@ button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:not(:first-of-type)
   bottom: 0 !important;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-button:not(.MuiTab-root):hover::after {
+button:not(.MuiTab-root):hover:not(:active)::after {
   opacity: .5;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -1205,7 +1205,8 @@ button.MuiPaginationItem-root:hover {
   position: relative;
   min-height: var(--min-target);
   border: var(--border);
-  box-shadow: var(--toast-shadow)
+  box-shadow: var(--toast-shadow);
+  background: var(--background);
 }
 .MuiAlert-standardWarning::before {
   position: absolute;
@@ -1563,6 +1564,16 @@ button.MuiPaginationItem-root:hover {
 
 .list-clickable:focus {
  border-left: 4px solid var(--button)
+}
+/* menus */
+.MuiListItemButton-root {
+  border-left: 4px solid transparent !important;
+}
+.MuiListItemButton-root:hover {
+  border-left: 4px solid var(--button-half) !important;
+}
+.MuiListItemButton-root:focus, .MuiListItemButton-root:active{
+  border-left: 4px solid var(--button) !important;
 }
 
 /* clickable */
@@ -2597,6 +2608,7 @@ button.MuiPaginationItem-root:hover {
   border-radius: var(--spacing-half);
   position: relative;
   min-height: calc(var(--button-height) * var(--spacing-1));
+  color: var(--on-background);
 }
 .MuiInputBase-root {
   position: relative;
@@ -3322,31 +3334,4 @@ footer .MuiGrid-container {
   object-fit: cover;
   position: absolute;
   z-index: 0;
-}
-
-/* Dislexic Mode */
-.dyslexic {
-  --primaryFont: 'OpenDyslexic';
-  --secondaryFont: 'OpenDyslexic';
-  --fontWeight-0: 400;
-  --fontWeight-1: 400;
-  --fontWeight-2: 400;
-  --fontWeight-3: 700;
-  --fontWeight-4: 700;
-  --standard-LineHeight: 180%;
-  --sm-LineHeight: 120%;
-  /* User assigned Typography Styles */
-  --buttonTypography: 400 var(--CTAFontSize) / var(--CTALineHeight) 'OpenDyslexic';
-  --sm-buttonTypography: 400 var(--CTA-SmallFontSize) / var(--CTA-SmallLineHeight) 'OpenDyslexic';
-  --chipTypography:400 var(--captionFontSize) / var(--captionLineHeight) 'OpenDyslexic';
-  --hero-heroTitleTypography: 700 var(--Display1FontSize) / var(--Display1LineHeight) 'OpenDyslexic';
-  --hero-heroBodyTypography: 400 var(--body1FontSize) / var(--body1LineHeight) 'OpenDyslexic';
-  --tableheaderTypography: 700 var(--label-1FontSize) / var(--label-1LineHeight) 'OpenDyslexic';
-  --tablebodyTypography: 400 var(--body1FontSize) / var(--body1LineHeight) 'OpenDyslexic';
-
-}
-.motion-sensitive {
-  --animation-speed: 0ms;
-  --animation-distance: 0px;
-  --animation-focus-distance: 0px;
 }

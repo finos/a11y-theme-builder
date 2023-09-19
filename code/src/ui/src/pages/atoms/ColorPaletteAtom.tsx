@@ -129,10 +129,8 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                 <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
 
               <SettingsSection>
-                  <div style={{display:"flex", gap:"40px"}}>
-                    <Grid container spacing={2} columns={12}>
-                      <Grid item xl={4} lg={4} md={4} sm={12}>
-                        <div className="input-col">
+                  <div style={{display:"flex", gap:"var(--spacing-3)", flexWrap:"wrap"}}>
+                      <div className="input-col">
                             <InputLabel htmlFor='colorName'>Color Name</InputLabel>
                             <TextField
                                 id='colorName'
@@ -143,8 +141,6 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                                 value={_colorName}
                             />
                         </div>
-                      </Grid>
-                      <Grid item xl={4} lg={4} md={8} sm={12}>
                         <div className="input-col hexValue">
                             <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
                             <TextField
@@ -162,18 +158,16 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
                             />
                             <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
                         </div>
-                      </Grid>
-                      <Grid item xl={4} lg={4} md={12} sm={12}>
+
                         <div className="input-col">
                             <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
                             {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
                         </div>
-                      </Grid>
-                    </Grid>
+
                   </div>
               </SettingsSection>
               <GeneratedCodeSection item={atom}/>
-            </ExampleSection>  
+            </ExampleSection>
         </div>
     )
 }
