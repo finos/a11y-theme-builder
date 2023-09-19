@@ -34,8 +34,11 @@ const fontNotCommonAlert = <Alert severity='warning' sx={alertStyles}>
     This font is not a common google font.
     <br/> Ensure you only use supported font weights to avoid any later errors.
 </Alert>
-const weightUnsupportedAlert = <Alert severity='warning' sx={{width: 450,  marginTop: 4}}>
-    The font weight provided is not supported by at least one of the primary and secondary fonts.
+const primaryWeightUnsupportedAlert = <Alert severity='warning' sx={{width: 450,  marginTop: 4}}>
+    The font weight provided is not supported by the primary font.
+</Alert>
+const secondaryWeightUnsupportedAlert = <Alert severity='warning' sx={{width: 450,  marginTop: 4}}>
+The font weight provided is not supported by  the secondary font.
 </Alert>
 
 export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
@@ -96,45 +99,54 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
 
     const recheckWeights = () => {
-        //TODO correctly align warnings with new weight logic
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight0WarningTriggered(false)
             setFontWeight1WarningTriggered(false)
             setFontWeight2WarningTriggered(false)
             setFontWeight3WarningTriggered(false)
             setFontWeight4WarningTriggered(false)
-            return
-        }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight0) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight0)) {
-            setFontWeight0WarningTriggered(true)
         } else {
-            setFontWeight0WarningTriggered(false)
+            if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight0)) {
+                setFontWeight0WarningTriggered(true)
+            } else {
+                setFontWeight0WarningTriggered(false)
+            }
+            if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight1)) {
+                setFontWeight1WarningTriggered(true)
+            } else {
+                setFontWeight1WarningTriggered(false)
+            }
+            if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight2)) {
+                setFontWeight2WarningTriggered(true)
+            } else {
+                setFontWeight2WarningTriggered(false)
+            }
+            if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight3)) {
+                setFontWeight3WarningTriggered(true)
+            } else {
+                setFontWeight3WarningTriggered(false)
+            }
+            if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight4)) {
+                setFontWeight4WarningTriggered(true)
+            } else {
+                setFontWeight4WarningTriggered(false)
+            }
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight1) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight1)) {
-            setFontWeight1WarningTriggered(true)
+        if (secondaryFontUncommon) {
+            setSecondaryFontWeightWarningTriggered(false)
         } else {
-            setFontWeight1WarningTriggered(false)
-        }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight2) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight2)) {
-            setFontWeight2WarningTriggered(true)
-        } else {
-            setFontWeight2WarningTriggered(false)
-        }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight3) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight3)) {
-            setFontWeight3WarningTriggered(true)
-        } else {
-            setFontWeight3WarningTriggered(false)
-        }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight4) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight4)) {
-            setFontWeight4WarningTriggered(true)
-        } else {
-            setFontWeight4WarningTriggered(false)
+            if (!FontWeightsUtil.isWeightSupported(secondaryFont, secondaryFontWeight)) {
+                setSecondaryFontWeightWarningTriggered(true)
+            } else {
+                setSecondaryFontWeightWarningTriggered(false)
+            }
         }
     }
 
-    const renderFontWeightSelectables = (fontWeightProperty: PropertyNumber, fontWeight: number, handleFontWeightChange: any, weightNum: string) => {
+    const renderFontWeightSelectables = (fontWeightProperty: PropertyNumber, fontWeight: number, handleFontWeightChange: any, weightNum: string, isSecondary?: boolean) => {
         var r = [];
-        const selectables = primaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(primaryFont);
+        var selectables = primaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(primaryFont);
+        if (isSecondary) selectables = secondaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(secondaryFont);
         if (!selectables) return;
         for (var i=0; i<selectables.length; i++) {
             const s = selectables[i].toString();
@@ -245,11 +257,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight0(value)
         fontSettingsAtom.fontWeights[0].setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight0WarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value)) {
             setFontWeight0WarningTriggered(true)
             return
         }
@@ -259,11 +271,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight1(value)
         fontSettingsAtom.fontWeights[1].setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight1WarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value)) {
             setFontWeight1WarningTriggered(true)
             return
         }
@@ -273,11 +285,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight2(value)
         fontSettingsAtom.fontWeights[2].setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight2WarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value)) {
             setFontWeight2WarningTriggered(true)
             return
         }
@@ -287,11 +299,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight3(value)
         fontSettingsAtom.fontWeights[3].setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight3WarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value)) {
             setFontWeight3WarningTriggered(true)
             return
         }
@@ -301,11 +313,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight4(value)
         fontSettingsAtom.fontWeights[4].setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (primaryFontUncommon) {
             setFontWeight4WarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(primaryFont, value)) {
             setFontWeight4WarningTriggered(true)
             return
         }
@@ -315,11 +327,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setSecondaryFontWeight(value)
         fontSettingsAtom.secondaryFontWeight.setValue(value)
-        if (primaryFontUncommon || secondaryFontUncommon) {
+        if (secondaryFontUncommon) {
             setSecondaryFontWeightWarningTriggered(false)
             return
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, value) || !FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
+        if (!FontWeightsUtil.isWeightSupported(secondaryFont, value)) {
             setSecondaryFontWeightWarningTriggered(true)
             return
         }
@@ -491,7 +503,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 {renderFontWeightSelectables(fontWeight0Property, fontWeight0, handleFontWeight0Change, "0")}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!fontWeight0WarningTriggered || weightUnsupportedAlert}
+                                {!fontWeight0WarningTriggered || primaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
@@ -503,7 +515,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 {renderFontWeightSelectables(fontWeight1Property, fontWeight1, handleFontWeight1Change, "1")}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!fontWeight1WarningTriggered || weightUnsupportedAlert}
+                                {!fontWeight1WarningTriggered || primaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
@@ -515,7 +527,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 {renderFontWeightSelectables(fontWeight2Property, fontWeight2, handleFontWeight2Change, "2")}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!fontWeight2WarningTriggered || weightUnsupportedAlert}
+                                {!fontWeight2WarningTriggered || primaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
@@ -527,7 +539,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 {renderFontWeightSelectables(fontWeight3Property, fontWeight3, handleFontWeight3Change, "3")}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!fontWeight3WarningTriggered || weightUnsupportedAlert}
+                                {!fontWeight3WarningTriggered || primaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
@@ -539,7 +551,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                                 {renderFontWeightSelectables(fontWeight4Property, fontWeight4, handleFontWeight4Change, "4")}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!fontWeight4WarningTriggered || weightUnsupportedAlert}
+                                {!fontWeight4WarningTriggered || primaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
@@ -549,10 +561,10 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
                             <Grid item xs={textFieldGridWidth}>
                                 <InputLabel htmlFor="fontWeight5TextField" id="fontWeight5Label">{secondaryFontWeightProperty.name}</InputLabel>
                                 <div style={{fontWeight:"normal"}}>For displays and headers.</div>
-                                {renderFontWeightSelectables(secondaryFontWeightProperty, secondaryFontWeight, handleSecondaryFontWeightChange, "5")}
+                                {renderFontWeightSelectables(secondaryFontWeightProperty, secondaryFontWeight, handleSecondaryFontWeightChange, "5", true)}
                             </Grid>
                             <Grid item xs={alertGridWidth}>
-                                {!secondaryFontWeightWarningTriggered || weightUnsupportedAlert}
+                                {!secondaryFontWeightWarningTriggered || secondaryWeightUnsupportedAlert}
                             </Grid>
                         </Grid>
                     </div>
