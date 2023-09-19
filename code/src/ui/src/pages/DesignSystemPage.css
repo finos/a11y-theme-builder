@@ -64,11 +64,6 @@
     border-bottom: 1px solid var(--border)
 }
 
-.design-system-editor-right-content.darkmode .section-header {
-    padding: var(--spacing-1);
-    border-bottom: 1px solid var(--dm-border)
-}
-
 .design-system-editor-right-content .section-body {
     margin-left: 0px;
 }
