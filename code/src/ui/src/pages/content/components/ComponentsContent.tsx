@@ -343,7 +343,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showComponent === "typographySmallFontsStyles" &&
                         <SmallFontsStylesComponent />
                     }
-                    {showComponent === "statSmallFontsStyles" &&
+                    {showComponent === "statFontsStyles" &&
                         <StatStylesComponent />
                     }
                     {showComponent === "cardsStandard" &&
