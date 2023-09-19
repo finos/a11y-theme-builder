@@ -1,6 +1,5 @@
 :root {
   /* Core JSON */
-  --body-bg: var(--white);
   --zoom: 1;
   --meshSVGfill: rgb(0,102,239);
   /* FIXED */
@@ -893,7 +892,7 @@
   --buttonOnBlack: var(--primary-500);
   --onbuttonOnBlack: #FFFFFF;
   --buttonHalfOnBlack: var(--primary-500);
-  --buttonOnTertiary: #FFFFFF;
+  --buttonOnTertiary: var(--white);
   --onbuttonOnTertiary: #121212;
   --buttonHalfOnTertiary: rgba(255,255,255,0.5);
   --buttonOnGradient1: #121212;
@@ -977,7 +976,6 @@
   --primary-icon-half: var(--icon-half);
   /* Hotlink */
   --primary-hotlink: var(--hotlink);
-  --primary-hotlink-visited: var(--hotlink-visited);
   --primary-hotlink-decoration: var(--hotlink-decoration);
   --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
   /* Border */
@@ -1092,6 +1090,25 @@
   --lm-hotlink-visited: var(--hotlink-visited);
   --lm-hotlink-decoration: var(--hotlink-decoration);
   --lm-hotlink-hover-decoration: var(--hotlink-hover-decoration);
+  /* Hotlinks */
+  --lm-hotlink: #0066EF;
+  --lm-hotlink-decoration: underline;
+  --lm-hotlink-hover-decoration: none;
+  /* Hotlink variations based on background color */
+  --lm-hotlinkOnWhite: #0066EF;
+  --lm-hotlinkOnWhite-visited: rgba(0,102,239,0.9);
+  --lm-hotlinkOnWhite-decoration: none;
+  --lm-hotlinkOnWhite-hover-decoration: underline;
+  --lm-hotlinkOnBlack: #0066EF;
+  --lm-hotlinkOnBlack-visited: rgba(0,102,239,0.9);
+  --lm-hotlinkOnBlack-decoration: none;
+  --lm-hotlinkOnBlack-hover-decoration: underline;
+  --lm-hotlinkOnTertiary: #FFFFFF;
+  --lm-hotlinkOnTertiary-visited: rgba(255,255,255,0.8);
+  --lm-hotlinkOnTertiary-decoration: none;
+  --lm-hotlinkOnTertiary-hover-decoration: underline;
+  --lm-hotlinkOnGradient3: #121212;
+  --lm-hotlinkOnGradient3-visited: rgba(0,0,0,0.5);
   /* Dropdown */
   --lm-dropdown-focus-theme: var(--dropdown-focus-theme);
   --lm-on-dropdown-focus-bg: var(--on-dropdown-focus-bg);
@@ -1101,24 +1118,24 @@
   --lm-dropdown-focus-bg: var(--dropdown-focus-bg);
   --lm-dropdown-bottom-focus-bg: var(--dropdown-bottom-focus-bg);
   /* Buttons */
-  --lm-buttonOnWhite: var(--dmbuttonOnWhite);
-  --lm-onbuttonOnWhite: var(--dmonbuttonOnWhite);
-  --lm-buttonHalfOnWhite: var(--dmbuttonHalfOnWhite);
-  --lm-buttonOnBlack: var(--dmbuttonOnBlack);
-  --lm-onbuttonOnBlack: var(--dmonbuttonOnBlack);
-  --lm-buttonHalfOnBlack: var(--dmbuttonHalfOnBlack);
-  --lm-buttonOnTertiary: var(--dmbuttonOnTertiary);
-  --lm-onbuttonOnTertiary: var(--dmonbuttonOnTertiary);
-  --lm-buttonHalfOnTertiary: var(--dmbuttonHalfOnTertiary);
-  --lm-buttonOnGradient1: var(--dmbuttonOnGradient1);
-  --lm-onbuttonOnGradient1: var(--dmonbuttonOnGradient1);
-  --lm-buttonHalfOnGradient1: var(--dmbuttonHalfOnGradient1);
-  --lm-buttonOnGradient2: var(--dmbuttonOnGradient2);
-  --lm-onbuttonOnGradient2: var(--dmonbuttonOnGradient2);
-  --lm-buttonHalfOnGradient2: var(--dmbuttonHalfOnGradient2);
-  --lm-buttonOnGradient3: var(--dmbuttonOnGradient3);
-  --lm-onbuttonOnGradient3: var(--dmonbuttonOnGradient3);
-  --lm-buttonHalfOnGradient3: var(--dmbuttonHalfOnGradient3);
+  --lm-buttonOnWhite: var(--buttonOnWhite);
+  --lm-onbuttonOnWhite: var(--onbuttonOnWhite);
+  --lm-buttonHalfOnWhite: var(--buttonHalfOnWhite);
+  --lm-buttonOnBlack: var(--buttonOnBlack);
+  --lm-onbuttonOnBlack: var(--onbuttonOnBlack);
+  --lm-buttonHalfOnBlack: var(--buttonHalfOnBlack);
+  --lm-buttonOnTertiary: var(--buttonOnTertiary);
+  --lm-onbuttonOnTertiary: var(--onbuttonOnTertiary);
+  --lm-buttonHalfOnTertiary: var(--buttonHalfOnTertiary);
+  --lm-buttonOnGradient1: var(--buttonOnGradient1);
+  --lm-onbuttonOnGradient1: var(--onbuttonOnGradient1);
+  --lm-buttonHalfOnGradient1: var(--buttonHalfOnGradient1);
+  --lm-buttonOnGradient2: var(--buttonOnGradient2);
+  --lm-onbuttonOnGradient2: var(--onbuttonOnGradient2);
+  --lm-buttonHalfOnGradient2: var(--buttonHalfOnGradient2);
+  --lm-buttonOnGradient3: var(--buttonOnGradient3);
+  --lm-onbuttonOnGradient3: var(--onbuttonOnGradient3);
+  --lm-buttonHalfOnGradient3: var(--buttonHalfOnGradient3);
   --lm-button: var(--button);
   --lm-on-button: var(--on-button);
   --lm-button-half: var(--button-half);
@@ -1349,9 +1366,18 @@
   --dm-input-hover: rgba(255,255,255,.12);
   /* Hotlinks */
   --dm-hotlink: #3384F2;
-  --dm-hotlink-visited: rgba(51,132,242,0.9);
   --dm-hotlink-decoration: underline;
   --dm-hotlink-hover-decoration: none;
+  /* Hotlink variations based on background color */
+  --dm-hotlinkOnWhite: #0066EF;
+  --dm-hotlinkOnWhite-decoration: none;
+  --dm-hotlinkOnWhite-hover-decoration: underline;
+  --dm-hotlinkOnBlack: #0066EF;
+  --dm-hotlinkOnBlack-decoration: none;
+  --dm-hotlinkOnBlack-hover-decoration: underline;
+  --dm-hotlinkOnTertiary: #FFFFFF;
+  --dm-hotlinkOnTertiary-decoration: none;
+  --dm-hotlinkOnTertiary-hover-decoration: underline;
   /* Dropdown */
   --dm-dropdown-focus-theme: var(--spacing-half);
   --dm-on-dropdown-focus-bg: rgba(255,255,255,0.6);
@@ -1367,9 +1393,9 @@
   --dmbuttonOnBlack: var(--dm-Info-400);
   --dmonbuttonOnBlack: #121212;
   --dmbuttonHalfOnBlack: var(--dm-Info-400);
-  --dmbuttonOnTertiary: rgba(255,255,255,0.6);
-  --dmonbuttonOnTertiary: #121212;
-  --dmbuttonHalfOnTertiary: rgba(255,255,255,0.3);
+  --dmbuttonOnTertiary: var(--lm-buttonOnTertiary);
+  --dmonbuttonOnTertiary: var(--lm-onbuttonOnTertiary);
+  --dmbuttonHalfOnTertiary: var(--lm-buttonHalfOnTertiary));
   --dmbuttonOnGradient1: #121212;
   --dmonbuttonOnGradient1: var(--dm-white);
   --dmbuttonHalfOnGradient1: rgba(18,18,18,0.5);
@@ -1477,6 +1503,8 @@
   --dm-on-accent-800: rgba(255,255,255,0.6);
   --dm-accent-900: #1E0056;
   --dm-on-accent-900: rgba(255,255,255,0.6);
+  --dm-tertiary: #D8BAEC;
+  --dm-on-tertiary: #121212;
   --dm-tertiary-0: #D8BAEC;
   --dm-on-tertiary-0: #121212;
   --dm-tertiary-100: #CCA5E6;
@@ -1497,6 +1525,7 @@
   --dm-on-tertiary-800: rgba(255,255,255,0.6);
   --dm-tertiary-900: #1E0056;
   --dm-on-tertiary-900: rgba(255,255,255,0.6);
+
   [data-mode="light"] {
     /* Core Colors */
     --body-bg: var(--white);
@@ -1607,9 +1636,18 @@
     --input-hover: var(--lm-input-hover);
     /* Hotlinks */
     --hotlink: var(--lm-hotlink);
-    --hotlink-visited: var(--lm-hotlink-visited);
     --hotlink-decoration: var(--lm-hotlink-decoration);
     --hotlink-hover-decoration: var(--lm-hotlink-hover-decoration);
+    /* Hotlink variations based on background color */
+    --hotlinkOnWhite: var(--lm-hotlinkOnWhite);
+    --hotlinkOnWhite-decoration: var(--lm-hotlinkOnWhite-decoration);
+    --hotlinkOnWhite-hover-decoration: var(--lm-hotlinkOnWhite-hover-decoration);
+    --hotlinkOnBlack: var(--lm-hotlinkOnBlack);
+    --hotlinkOnBlack-decoration: var(--lm-hotlinkOnBlack-decoration);
+    --hotlinkOnBlack-hover-decoration: var(--lm-hotlinkOnBlack-hover-decoration);
+    --hotlinkOnTertiary: var(--lm-hotlinkOnTertiary);
+    --hotlinkOnTertiary-decoration: var(--lm-hotlinkOnTertiary-decoration);
+    --hotlinkOnTertiary-hover-decoration: var(--lm-hotlinkOnTertiary-hover-decoration);
     /* Dropdown */
     --dropdown-focus-theme: var(--lm-dropdown-focus-theme);
     --on-dropdown-focus-bg: var(--lm-on-dropdown-focus-bg);
@@ -1625,9 +1663,9 @@
     --buttonOnBlack: var(--lm-buttonOnBlack);
     --onbuttonOnBlack: var(--lm-onbuttonOnBlack);
     --buttonHalfOnBlack: var(--lm-buttonHalfOnBlack);
-    --buttonOnTertiary: var(--lm-buttonOnTertiary);
-    --onbuttonOnTertiary: var(--lm-onbuttonOnTertiary);
-    --buttonHalfOnTertiary: var(--lm-buttonHalfOnTertiary);
+    --buttonOnTertiary: var(--dmbuttonOnTertiary);
+    --onbuttonOnTertiary: var(--dmonbuttonOnTertiary);
+    --buttonHalfOnTertiary: var(--dmonbuttonOnTertiary);
     --buttonOnGradient1: var(--lm-buttonOnGradient1);
     --onbuttonOnGradient1: var(--lm-onbuttonOnGradient1);
     --buttonHalfOnGradient1: var(--lm-buttonHalfOnGradient1);
@@ -1781,7 +1819,6 @@
     --primary-icon-half: var(--icon-half);
     /* Hotlink */
     --primary-hotlink: var(--hotlink);
-    --primary-hotlink-visited: var(--hotlink-visited);
     --primary-hotlink-decoration: var(--hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
     /* Inputs */
@@ -2058,9 +2095,18 @@
     --on-input: var(--on-background);
     /* Hotlinks */
     --hotlink: var(--dm-hotlink);
-    --hotlink-visited: var(--dm-hotlink-visited);
     --hotlink-decoration: var(--dm-hotlink-decoration);
     --hotlink-hover-decoration: var(--dm-hotlink-hover-decoration);
+    /* Hotlink variations based on background color */
+    --hotlinkOnWhite: var(--dm-hotlinkOnWhite);
+    --hotlinkOnWhite-decoration: var(--dm-hotlinkOnWhite-decoration);
+    --hotlinkOnWhite-hover-decoration: var(--dm-hotlinkOnWhite-hover-decoration);
+    --hotlinkOnBlack: var(--dm-hotlinkOnBlack);
+    --hotlinkOnBlack-decoration: var(--dm-hotlinkOnBlack-decoration);
+    --hotlinkOnBlack-hover-decoration: var(--dm-hotlinkOnBlack-hover-decoration);
+    --hotlinkOnTertiary: var(--dm-hotlinkOnTertiary);
+    --hotlinkOnTertiary-decoration: var(--dm-hotlinkOnTertiary-decoration);
+    --hotlinkOnTertiary-hover-decoration: var(--dm-hotlinkOnTertiary-hover-decoration);
     /* Dropdown */
     --dropdown-focus-theme: var(--dm-dropdown-focus-theme);
     --on-dropdown-focus-bg: var(--dm-on-dropdown-focus-bg);
@@ -2076,9 +2122,7 @@
     --buttonOnBlack: var(--dmbuttonOnBlack);
     --onbuttonOnBlack: var(--dmonbuttonOnBlack);
     --buttonHalfOnBlack: var(--dmbuttonHalfOnBlack);
-    --buttonOnTertiary: var(--dm-on-primary)  */ modified until we update sdk */;
-    --onbuttonOnTertiary: var(--dm-on-primary)  */ modified until we update sdk */;
-    --buttonHalfOnTertiary: var(--dm-on-primary)  */ modified until we update sdk */;
+
     --buttonOnGradient1: var(--dmbuttonOnGradient1);
     --onbuttonOnGradient1: var(--dmonbuttonOnGradient1);
     --buttonHalfOnGradient1: var(--dmbuttonHalfOnGradient1);
@@ -2101,9 +2145,9 @@
     --iconOnBlack: var(--dmiconOnBlack);
     --oniconOnBlack: var(--dmoniconOnBlack);
     --iconHalfOnBlack: var(--dmiconHalfOnBlack);
-    --iconOnTertiary: var(--dm-on-primary)  */ modified until we update sdk */;
-    --oniconOnTertiary: var(--dm-on-primary) */ modified until we update sdk */;
-    --iconHalfOnTertiary: var(--dm-on-primary)  */ modified until we update sdk */;
+    --iconOnTertiary: var(--dm-on-primary);
+    --oniconOnTertiary: var(--dm-on-primary);
+    --iconHalfOnTertiary: var(--dm-on-primary);
     --iconOnGradient1: var(--dmiconOnGradient1);
     --oniconOnGradient1: var(--dmoniconOnGradient1);
     --iconHalfOnGradient1: var(--dmiconHalfOnGradient1);
@@ -2232,7 +2276,6 @@
     --primary-icon-half: var(--dm-icon-half);
     /* Hotlink */
     --primary-hotlink: var(--dm-hotlink);
-    --primary-hotlink-visited: var(--dm-hotlink-visited);
     --primary-hotlink-decoration: var(--dm-hotlink-decoration);
     --primary-hotlink-hover-decoration: var(--dm-hotlink-hover-decoration);
     /* Inputs */
@@ -2533,7 +2576,6 @@
     --icon-half: var(--primary-icon-half);
     /* Hotlink */
     --hotlink: var(--primary-hotlink);
-    --hotlink-visited: var(--primary-hotlink-visited);
     --hotlink-decoration: var(--primary-hotlink-decoration);
     --hotlink-hover-decoration: var(--primary-hotlink-hover-decoration);
     /* Gradient Colors */
@@ -2564,7 +2606,6 @@
     --icon-half: var(--primary-icon-half);
     /* Hotlink */
     --hotlink: var(--primary-hotlink);
-    --hotlink-visited: var(--primary-hotlink-visited);
     --hotlink-decoration: var(--primary-hotlink-decoration);
     --hotlink-hover-decoration: var(--primary-hotlink-hover-decoration);
     /* overlay values */
@@ -2596,7 +2637,6 @@
     --icon-half: var(--iconHalfOnWhite);
     /* Hotlink */
     --hotlink: var(--hotlinkOnWhite);
-    --hotlink-visited: var(--hotlinkOnWhite-visited);
     --hotlink-decoration: var(--hotlinkOnWhite-decoration);
     --hotlink-hover-decoration: var(--hotlinkOnWhite-hover-decoration);
     /* overlay values */
@@ -2626,10 +2666,9 @@
     --on-icon: var(--oniconOnBlack);
     --icon-half: var(--iconHalfOnBlack);
     /* Hotlink */
-    --hotlink: var(--hotlinkOnBlack);
-    --hotlink-visited: var(--hotlinkOnBlack-visited);
-    --hotlink-decoration: var(--hotlinkOnBlack-decoration);
-    --hotlink-hover-decoration: var(--hotlinkOnBlack-hover-decoration);
+    --hotlink: var(--on-black);
+    --hotlink-decoration: underline;
+    --hotlink-hover-decoration: none;
     /* overlay values */
     --color-1: var(--black);
     --color-2: var(--black);
@@ -2645,7 +2684,7 @@
     --color-drop: var(--nearblack);
   }
   [data-background="colored"] {
-    --background: var(--background-tertiary);
+    --background: var(--dm-primary);
     --alt-background: color-mix(in lch, var(--background-tertiary), var(--alt-adjust) 8%);
     --on-background: var(--on-background-tertiary);
     /* Button */
@@ -2658,9 +2697,8 @@
     --icon-half: var(--iconHalfOnTertiary);
     /* Hotlink */
     --hotlink: var(--on-background-tertiary);
-    --hotlink-visited: color-mix(in lch, var(--on-background-tertiary) 70%);
-    --hotlink-decoration: var(--hotlinkOnTertiary-decoration);
-    --hotlink-hover-decoration: var(--hotlinkOnTertiary-hover-decoration);
+    --hotlink-decoration: underline;
+    --hotlink-hover-decoration: none;
     /* overlay values */
     --color-1: var(--background-tertiary);
     --color-2: var(--background-tertiary);
@@ -2689,7 +2727,6 @@
     --icon-half: var(--iconHalfOnGradient1);
     /* Hotlink */
     --hotlink: var(--on-gradient1);
-    --hotlink-visited: var(--hotlinkOnTertiary-visited);
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
@@ -2721,7 +2758,6 @@
     --icon-half: var(--iconHalfOnGradient2);
     /* Hotlink */
     --hotlink: var(--on-gradient2);
-    --hotlink-visited: var(--hotlinkOnTertiary-visited);
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
@@ -2753,7 +2789,6 @@
     --icon-half: var(--iconHalfOnGradient3);
     /* Hotlink */
     --hotlink: var(--on-gradient3);
-    --hotlink-visited: var(--hotlinkOnTertiary-visited);
     --hotlink-decoration: underline;
     --hotlink-hover-decoration: none;
     /* Border */
