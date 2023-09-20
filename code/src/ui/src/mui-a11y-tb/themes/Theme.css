@@ -769,7 +769,8 @@ section:has( .quote) {
 
 /* Buttons */
 .MuiButtonBase-root {
-  min-height: var(--min-target)
+  min-height: max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important;
+
 }
 
 button {
@@ -781,7 +782,7 @@ button {
   background: var(--button) !important;
   color: var(--on-button) !important;
   border-radius: calc(var(--radius-1) * var(--button-radius));
-  min-height: min(calc(var(--spacing-1) * var(--button-height)),var(--min-target));
+  min-height: max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important;
   min-width: calc(var(--spacing-1) * var(--button-minwidth));
   text-align: center;
   padding: 0 calc(var(--spacing-1) * var(--button-padding));

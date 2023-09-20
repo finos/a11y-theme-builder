@@ -273,8 +273,7 @@ try {
                         boxShadow: "var(--button-shadow)",
                         font: "var(--buttonTypography)",
                         letterSpacing: "var(--buttonCharcterSpacing)",
-                        minHeight: "var(--min-target)",
-                        minHeight: "calc(var(--spacing-1) * var(--button-height))",
+                        minHeight: "max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
                         marginTop: "var(--spacing-half)",
                         /*
@@ -682,7 +681,7 @@ try {
                         fontSize: "--CTAFontSize", //"calc(var(--baseFont)* .875)",
                         opacity: "var(--quiet)",
                         padding: "0 var(--spacing-2)",
-                        minHeight: "calc(var(--min-target) + 4px)",
+                        minHeight: "max(var(--min-target), calc(calc(var(--button-height) * var(--spacing-1)) + 4px))",
                         "&:hover": {
                             opacity: "1"
                         },
@@ -771,7 +770,7 @@ try {
                     root: {
                       padding: "0",
                       minWidth: "var(--min-target)",
-                      height: "var(--min-target)",
+                      minHeight: "max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important",
                       borderRadius: "calc( var(--radius-1) * var(--button-radius))",
                       background: "var(--transparent) !important",
                       color: "var(--button) !important",
