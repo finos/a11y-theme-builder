@@ -89,8 +89,13 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         return designSystem.code.jsonGenerator.getMotionSensitivityAsString();
     }
 
-    const getJsonCode = (lm: boolean) => {
-        const code = designSystem.code.getJSON(lm);
+    const getJsonCodeDM = () => {
+        const code = designSystem.code.getJSONLM();
+        return JSON.stringify(code,null,2);
+    }
+
+    const getJsonCodeLM = () => {
+        const code = designSystem.code.getJSONLM();
         return JSON.stringify(code,null,2);
     }
 
@@ -98,7 +103,6 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         const code = designSystem.code.getJSONBase();
         return JSON.stringify(code,null,2);
     }
-
 
     const saveFile = (data: string, fileName: string) => {
         var file = new File([data], fileName, {type: "text/plain;charset=utf-8"});
@@ -215,20 +219,20 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                               <div className="top40">
                                   <InputLabel>Light Mode Theme Layer</InputLabel>
                                   <pre style={codeStyle}>
-                                      {getJsonCode(true)}
+                                      {getJsonCodeLM()}
                                   </pre>
-                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(true))}>Copy</Button>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCodeLM())}>Copy</Button>
                                   <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                                  <Button variant="outlined" onClick={() => saveFile(getJsonCode(true), designSystem.name + "-darkmode.json")}>Download</Button>
+                                  <Button variant="outlined" onClick={() => saveFile(getJsonCodeLM(), designSystem.name + "-darkmode.json")}>Download</Button>
                               </div>
                               <div className="top40">
                                   <InputLabel>Dark Mode Theme Layer</InputLabel>
                                   <pre style={codeStyle}>
-                                      {getJsonCode(false)}
+                                      {getJsonCodeDM()}
                                   </pre>
-                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCode(false))}>Copy</Button>
+                                  <Button variant="contained" onClick={() => navigator.clipboard.writeText(getJsonCodeDM())}>Copy</Button>
                                   <span style={{paddingLeft: "20px"}}> &nbsp;</span>
-                                  <Button variant="outlined" onClick={() => saveFile(getJsonCode(false), designSystem.name + "-darkmode.json")}>Download</Button>
+                                  <Button variant="outlined" onClick={() => saveFile(getJsonCodeDM(), designSystem.name + "-darkmode.json")}>Download</Button>
                               </div>
                             </Grid>
                           </Grid>
