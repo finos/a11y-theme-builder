@@ -1657,9 +1657,9 @@
     --buttonOnBlack: var(--lm-buttonOnBlack);
     --onbuttonOnBlack: var(--lm-onbuttonOnBlack);
     --buttonHalfOnBlack: var(--lm-buttonHalfOnBlack);
-    --buttonOnTertiary: var(--dmbuttonOnTertiary);
-    --onbuttonOnTertiary: var(--dmonbuttonOnTertiary);
-    --buttonHalfOnTertiary: var(--dmonbuttonOnTertiary);
+    --buttonOnTertiary: var(--lm-buttonOnTertiary);
+    --onbuttonOnTertiary: var(--lm-onbuttonOnTertiary);
+    --buttonHalfOnTertiary: var(--lm-onbuttonOnTertiary);
     --buttonOnGradient1: var(--lm-buttonOnGradient1);
     --onbuttonOnGradient1: var(--lm-onbuttonOnGradient1);
     --buttonHalfOnGradient1: var(--lm-buttonHalfOnGradient1);
