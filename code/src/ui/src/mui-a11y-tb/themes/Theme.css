@@ -461,6 +461,7 @@ section:has( .quote) {
   background: var(--button) !important;
   color: var(--on-button) !important;
 }
+
 .icon:not(button) {
   background: var(--icon) !important;
   color: var(--on-icon) !important;
@@ -769,6 +770,9 @@ section:has( .quote) {
 }
 
 /* Buttons */
+.MuiButtonBase-root {
+  min-height: var(--min-target)
+}
 
 button {
   flex-shrink: 0;
@@ -779,7 +783,7 @@ button {
   background: var(--button) !important;
   color: var(--on-button) !important;
   border-radius: calc(var(--radius-1) * var(--button-radius));
-  min-height: calc(var(--spacing-1) * var(--button-height));
+  min-height: min(calc(var(--spacing-1) * var(--button-height)),var(--min-target));
   min-width: calc(var(--spacing-1) * var(--button-minwidth));
   text-align: center;
   padding: 0 calc(var(--spacing-1) * var(--button-padding));
@@ -856,7 +860,7 @@ button.MuiButtonGroup-grouped.MuiButtonGroup-groupedVertical:not(:first-of-type)
   bottom: 0 !important;
   min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
 }
-button:not(.MuiTab-root):hover:not(:active)::after {
+button:not(.small-btn):not(.MuiTab-root):hover:not(:active)::after {
   opacity: .5;
   top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
   left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
@@ -907,7 +911,7 @@ button.small-btn {
   background: transparent !important;
   padding: 0 calc(var(--spacing-1) * var(--sm-button-padding));
   z-index: 1;
-  min-height: calc(var(--spacing-1) * var(--button-height));
+  min-height: max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1)));
   font: var(--sm-buttonTypography);
   text-transform: var(--sm-buttonTextTransform) !important;
   letter-spacing: var(--sm-buttonLetterSpacing);
@@ -935,22 +939,25 @@ button.small-btn:hover::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
-  opacity: var(--hover);
-  left: calc(-2px - calc(var(--button-border) * var(--border-1)));
-  right: calc(-2px - calc(var(--button-border) * var(--border-1)));
+  opacity: 1;
+  left: -4px;
+  right: -4px;
   border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
 }
 button.small-btn:focus::after {
-  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  top: min(calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px), 0);
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
   min-height: calc(var(--sm-button-height) + 4px);
   opacity: 1;
   left: -4px;
   right: -4px;
+  border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
 }
 button.small-btn::before {
   position: absolute;
-  top: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
+  top: calc((var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2);
   bottom: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
   left: 0px;
   right: 0px;
@@ -1076,54 +1083,19 @@ button.small-btn.icon:hover::after {
   left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
   right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
 }
-/* COMPONENTS and COLOR VARIANTS */
-/* black buttons */
-button.MuiButtonBase-root.black:not(.MuiButton-outlined):not(.MuiButton-text):not(.small-btn) {
-  background: var(--black) !important;
-  color: var(--white) !important;
-}
-button.MuiButtonBase-root.black::after {
-  border: var(--focusBorder) solid var(--black) !important;
-}
-button.MuiButtonBase-root.black.MuiButton-outlined::after, .MuiButtonBase-root.black.MuiButton-text::after {
-  background: var(--black);
-}
-button.MuiButtonBase-root.black.MuiButton-outlined::before {
-  border: calc(var(--button-border) * var(--border-1)) solid var(--black);
-}
-button.MuiButtonBase-root.black.MuiButton-outlined, button.MuiButtonBase-root.black.MuiButton-text {
-  background: none !important;
-  color: var(--black) !important;
-}
-button.MuiButtonBase-root.black.MuiButton-outlined::before {
-  border: calc(var(--button-border) * var(--border-1))  solid var(--black);
-}
-button.MuiButtonBase-root.black.MuiButton-outlined .inline-icon, button.MuiButtonBase-root.black.MuiButton-text .inline-icon {
-  fill: var(--black) !important;
-}
-button.MuiButtonBase-root.black.MuiButton-outlined::after, button.MuiButtonBase-root.black.MuiButton-txet::after {
-  background: transparent !important;
-  border: var(--focusBorder) solid var(--black) !important;
-}
-button.MuiButtonBase-root.black.small-btn:not(.MuiButton-outlined):not(.MuiButton-text) {
-  background: transparent !important;
-  color: var(--white)
-}
-button.MuiButtonBase-root.small-btn.black:not(.MuiButton-outlined):not(.MuiButton-text)::before {
-  background: var(--black) !important;
-}
+
 /* dropdowns */
 .MuiMenuItem-root, .MuiMenuItem-root .MuiSvgIcon-root{
   background: var(--surface);
   color: var(--on-surface);
 }
 .MuiMenuItem-root:hover {
-  background: var(--dropdown-hover-bg);
-  color: var(--on-dropdown-hover-bg)
+  background: transparent;
+  border-left: 4x solid var(--button-half);
 }
 .MuiMenuItem-root:focus, .Mui-selected {
-  background: var(--dropdown-focus-bg);
-  color: var(--on-dropdown-focus-bg)
+  background: transparent;
+  border-left: 4x solid var(--button);
 }
 .MuiSelect-outlined {
   padding-right: var(--spacing-6) !important
@@ -1568,6 +1540,7 @@ button.MuiPaginationItem-root:hover {
 /* menus */
 .MuiListItemButton-root {
   border-left: 4px solid transparent !important;
+  min-height: var(--min-target);
 }
 .MuiListItemButton-root:hover {
   border-left: 4px solid var(--button-half) !important;
@@ -1674,13 +1647,16 @@ button.MuiPaginationItem-root:hover {
  color: var(--on-surface);
 }
 .MuiButtonBase-root .MuiMenuItem-root.Mui-selected {
-  background: var(--dropdown-focus-bg);
+  background: transparent;
+  border-left: 4x solid var(--button);
 }
 .MuiPopover-paper .MuiMenuItem-root:hover {
-  background: var(--dropdown-hover-bg) !important;
+  background: transparent;
+  border-left: 4x solid var(--button-half);
 }
 .MuiButtonBase-root .MuiMenuItem-root.Mui-selected,  .MuiPaper-root.MuiPopover-paper .MuiMenuItem-root:focus {
-  background: var(--dropdown-focus-bg) !important;
+  background: transparent;
+  border-left: 4x solid var(--button);
 }
 .MuiSelect-multiple {
   border: none !important;

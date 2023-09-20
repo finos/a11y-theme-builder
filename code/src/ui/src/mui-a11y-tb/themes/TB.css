@@ -2591,9 +2591,9 @@
 
   }
   [data-background="alt"] {
-    --background: color-mix(in lch, var(--primary-background), var(--black) 5%));
-    --alt-background: color-mix(in lch, var(--primary-background), var(--black) 5%));
-    --on-background: var(--primary-on-background);
+    --background: var(--background-secondary);
+    --alt-background: color-mix(in lch, var(--background-secondary), var(--black) 5%));
+    --on-background: var(--on-background-secondary);
     /* Button */
     --button: var(--primary-button);
     --on-button: var(--primary-on-button);

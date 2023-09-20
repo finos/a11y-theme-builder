@@ -273,6 +273,7 @@ try {
                         boxShadow: "var(--button-shadow)",
                         font: "var(--buttonTypography)",
                         letterSpacing: "var(--buttonCharcterSpacing)",
+                        minHeight: "var(--min-target)",
                         minHeight: "calc(var(--spacing-1) * var(--button-height))",
                         minWidth: "calc(var(--spacing-1) * var(--button-minwidth))",
                         marginTop: "var(--spacing-half)",
@@ -660,6 +661,7 @@ try {
                 styleOverrides: {
                     root: {
                         background: "var(--transparent)",
+                        padding: "var(-spacing-1) 0",
                         "& .MuiTabs-indicator": {
                             background: "var(--on-background)" ,
                             height: "4px",
@@ -680,6 +682,7 @@ try {
                         fontSize: "--CTAFontSize", //"calc(var(--baseFont)* .875)",
                         opacity: "var(--quiet)",
                         padding: "0 var(--spacing-2)",
+                        minHeight: "calc(var(--min-target) + 4px)",
                         "&:hover": {
                             opacity: "1"
                         },
@@ -802,6 +805,7 @@ try {
                             styleOverrides: {
                               root: {
                                 borderLeft: "4px solid transparent !important" ,
+                                minHeight: "var(--min-target) !important" ,
                               },
                               "&:hover": {
                                 styleOverrides: {
@@ -996,7 +1000,8 @@ try {
                         textDecoration: "var(--chipTextDecoration)",
                         textTransform: "var(--chipTextTransform)",
                         minWidth: "var(--chip-minwidth)",
-                        minHeight: "var(--min-target)",
+                        minHeight: "max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1)))",
+
                         "&::after": {
                             position: "absolute",
                             top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance))",
