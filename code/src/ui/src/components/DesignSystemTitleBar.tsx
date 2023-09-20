@@ -163,12 +163,12 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                     <Button size="small" onClick={saveDesignSystem}>Save</Button>
 
                     <Snackbar open={showToast} autoHideDuration={3000} onClose={handleSaveClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} sx={{width: '25%'}}>
-                        <Alert severity="success" sx={{ width: '100%', top: '120px'}}>
+                        <Alert data-background="primary" severity="success" sx={{ width: '100%', top: '120px'}}>
                             <div className='subtitle' style={{margin: '12px 0'}}>Design System Saved</div>
                         </Alert>
                     </Snackbar>
                     <Snackbar open={showFail} autoHideDuration={3000} onClose={handleSaveClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} sx={{width: '25%'}}>
-                        <Alert severity="error" sx={{ width: '100%', top: '120px'}}>
+                        <Alert data-background="primary" severity="error" sx={{ width: '100%', top: '120px'}}>
                             <div className='subtitle' style={{margin: '12px 0'}}>Error Saving Design System</div>
                         </Alert>
                     </Snackbar>
