@@ -39,8 +39,8 @@ export const LeftNavItem : React.FC<LeftNavItemProps> = (props) => {
     return(
         <ListItemButton sx={{
             pl: 2 + (props.indent ? 2*props.indent : 0),
-            background: selected ? "var(--transparent)" : null,
-            color: selected ? "var(--on-background)" : null,
+            background: selected ? "var(--dropdown-focus-bg)" : null,
+            color: selected ? "var(--on-dropdown-focus-bg)" : null,
             marginLeft: "8px",
             ':hover': {
                 backgroundColor: selected ? "var(--dropdown-hover-bg)" : null,
