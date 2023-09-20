@@ -252,7 +252,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.minimumTarget.value && (
                         <ErrorHandler>
-                            <MinimumTargetAtom atom={designSystem.atoms.minimumTarget}/>
+                            <MinimumTargetAtom atoms={designSystem.atoms}/>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.stateSettings.value && (
