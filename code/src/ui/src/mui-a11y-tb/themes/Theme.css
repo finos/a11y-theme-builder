@@ -1142,6 +1142,10 @@ button.MuiButtonBase-root.small-btn.black:not(.MuiButton-outlined):not(.MuiButto
   border: 1px solid var(--border);
 }
 
+.MuiList-root .MuiCollapse-root .MuiList-root {
+  border: none;
+}
+
 /* hotlinks */
 a {
   color: var(--hotlink);
