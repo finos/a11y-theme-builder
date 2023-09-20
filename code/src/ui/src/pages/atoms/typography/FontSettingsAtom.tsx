@@ -257,6 +257,10 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight0(value)
         fontSettingsAtom.fontWeights[0].setValue(value)
+        atoms.smallTextStyles.caption.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.callToAction.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.callToActionSmall.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.small.fontWeight.setValue(value ? value : undefined)
         if (primaryFontUncommon) {
             setFontWeight0WarningTriggered(false)
             return
@@ -271,6 +275,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight1(value)
         fontSettingsAtom.fontWeights[1].setValue(value)
+        atoms.bodyStyles.body1.fontWeight.setValue(value ? value : undefined)
+        atoms.bodyStyles.body2.fontWeight.setValue(value ? value : undefined)
+        atoms.bodyStyles.body3.fontWeight.setValue(value ? value : undefined)
         if (primaryFontUncommon) {
             setFontWeight1WarningTriggered(false)
             return
@@ -285,6 +292,18 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight2(value)
         fontSettingsAtom.fontWeights[2].setValue(value)
+        atoms.smallTextStyles.subtitle1.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.subtitle2.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.captionBold.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.overline.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.overlineLarge.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.overlineExtraLarge.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.label1.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.label1AllCaps.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.label2.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.label2AllCaps.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.labelSmall.fontWeight.setValue(value ? value : undefined)
+        atoms.smallTextStyles.smallSemibold.fontWeight.setValue(value ? value : undefined)
         if (primaryFontUncommon) {
             setFontWeight2WarningTriggered(false)
             return
@@ -299,6 +318,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight3(value)
         fontSettingsAtom.fontWeights[3].setValue(value)
+        atoms.bodyStyles.body1Bold.fontWeight.setValue(value ? value : undefined)
+        atoms.bodyStyles.body2Bold.fontWeight.setValue(value ? value : undefined)
+        atoms.bodyStyles.body3Bold.fontWeight.setValue(value ? value : undefined)
         if (primaryFontUncommon) {
             setFontWeight3WarningTriggered(false)
             return
@@ -313,6 +335,7 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setFontWeight4(value)
         fontSettingsAtom.fontWeights[4].setValue(value)
+        atoms.statStyles.stat.fontWeight.setValue(value ? value : undefined)
         if (primaryFontUncommon) {
             setFontWeight4WarningTriggered(false)
             return
@@ -327,6 +350,15 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         const value = parseInt(event.target.value);
         setSecondaryFontWeight(value)
         fontSettingsAtom.secondaryFontWeight.setValue(value)
+        atoms.displayAndHeaderStyles.headingDisplayFontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.displayStyles[0].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.displayStyles[1].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[0].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[1].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[2].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[3].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[4].fontWeight.setValue(value ? value : undefined)
+        atoms.displayAndHeaderStyles.headerStyles[5].fontWeight.setValue(value ? value : undefined)
         if (secondaryFontUncommon) {
             setSecondaryFontWeightWarningTriggered(false)
             return
