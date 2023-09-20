@@ -1085,9 +1085,9 @@
   --lm-hotlink-decoration: var(--hotlink-decoration);
   --lm-hotlink-hover-decoration: var(--hotlink-hover-decoration);
   /* Hotlinks */
-  --lm-hotlink: #0066EF;
-  --lm-hotlink-decoration: underline;
-  --lm-hotlink-hover-decoration: none;
+  --lm-hotlink: var(--hotlink);
+  --lm-hotlink-decoration: var(--lm-hotlink-decoration:);
+  --lm-hotlink-hover-decoration: var(--lm-hotlink-hover-decoration);
   /* Hotlink variations based on background color */
   --lm-hotlinkOnWhite: #0066EF;
   --lm-hotlinkOnWhite-visited: rgba(0,102,239,0.9);
@@ -1811,9 +1811,9 @@
     --primary-on-icon: var(--on-icon);
     --primary-icon-half: var(--icon-half);
     /* Hotlink */
-    --primary-hotlink: var(--hotlink);
-    --primary-hotlink-decoration: var(--hotlink-decoration);
-    --primary-hotlink-hover-decoration: var(--hotlink-hover-decoration);
+    --primary-hotlink: var(--lm-hotlink);
+    --primary-hotlink-decoration: var(--lm-hotlink-decoration);
+    --primary-hotlink-hover-decoration: var(--lm-hotlink-hover-decoration);
     /* Inputs */
     --primary-input: var(--lm-input);
     --primary-on-input: var(--lm-on-input);
