@@ -715,6 +715,10 @@ section:has( .quote) {
 .breadcrumbs .MuiBreadcrumbs-li {
     gap: var(--spacing-1);
     background: transparent !important;
+    min-height: var(--min-target);
+    min-width: var(--min-target);
+    display: flex;
+    align-items: center;
 }
 .MuiBreadcrumbs-ol {
   background: transparent !important;
@@ -729,10 +733,17 @@ section:has( .quote) {
   letter-spacing: var(--body2LetterSpacing) !important;
   text-transform: var(--body2TextTransform) !important;
   text-decoration:  var(--hotlink-decoration);
+  align-items: center;
+}
+.breadcrumbs .MuiBreadcrumbs-li i {
+  align-items: center;
 }
 
 .breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
   margin-right: var(--spacing-1);
+  margin-top: var(--spacing-1);
+  text-align: center;
+  justify-content: center;
 }
 
 .breadcrumbs .MuiBreadcrumbs-li a.MuiLink-root, .breadcrumbs .MuiBreadcrumbs-li:focus a.MuiLink-root, .breadcrumbs .MuiBreadcrumbs-li:active a.MuiLink-root {
@@ -743,6 +754,9 @@ section:has( .quote) {
 .MuiBreadcrumbs-separator {
   color: var(--on-background);
   opacity: var(--quiet);
+  min-height: var(--min-target);
+  display: flex;
+  align-items: center;
 }
 .breadcrumbs .MuiBreadcrumbs-li:hover a{
     text-decoration: var(--hotlink-hover-decoration);
@@ -770,7 +784,6 @@ section:has( .quote) {
 /* Buttons */
 .MuiButtonBase-root {
   min-height: max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important;
-
 }
 
 button {
