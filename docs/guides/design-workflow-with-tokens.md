@@ -12,5 +12,5 @@ Try this yourself by following a few simple steps:
 | 2 | Sign up / Sign in to [Figma](http://www.figma.com).  You will need a Professional, Organization or Enterprise Account. |
 | 3 | Make sure you are using [Figma Beta](https://help.figma.com/hc/en-us/articles/4406787442711-Figma-beta-features) |
 | 4 | Install [Tokens Studio Pro](https://tokens.studio/) |
-| 5 | Create a duplicate of our sample [Theme Builder - Figma Component Library](https://www.figma.com/community/file/1286011856011555550/theme-builder-library-with-figma-beta-community) file. |
+| 5 | Create a duplicate of our sample [Theme Builder - Figma Component Library](https://www.figma.com/community/file/1286383628590387700/Theme-Builder---With-Figma-Beta-(Community)) file. |
 | 6 | Apply your theme to the Figma Theme Builder File | 
