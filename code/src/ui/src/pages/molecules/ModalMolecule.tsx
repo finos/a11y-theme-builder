@@ -35,7 +35,7 @@ export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
                 A modal is a window within an application that disables the main window but keeps it visible, with the modal window as a child window in front of it.
             </HeadingSection>
             <ExampleSection>
-                <div className="caption">Sample Modal</div>
+                <div className="subtitle1">Sample Modal</div>
                 <Button variant="contained" onClick={() => setSampleModalIsOpen(true)}>Launch Demo Modal</Button>
                 <SettingsSection>
                     <div className="form-row">

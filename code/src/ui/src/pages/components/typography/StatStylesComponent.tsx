@@ -31,7 +31,7 @@ interface Props {
 export const StatStylesComponent: React.FC<Props> = () => {
     return (
         <div className="content">
-        <HeadingSection title='Typography' heading='Small Text Styles'></HeadingSection>
+        <HeadingSection title='Typography' heading='STAT Text Styles'></HeadingSection>
         <ExampleSection>
           <TypographyBox cssPrefix={statCssPrefix} sampleTitle='STAT'></TypographyBox>
         </ExampleSection>

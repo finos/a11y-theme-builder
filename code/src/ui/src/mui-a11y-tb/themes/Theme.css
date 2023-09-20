@@ -493,8 +493,6 @@ section:has( .quote) {
 }
 .colored-title {
   color: var(--text-gradient-a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 /* MOLECULES */
 /* avatars */
@@ -1142,6 +1140,10 @@ button.MuiButtonBase-root.small-btn.black:not(.MuiButton-outlined):not(.MuiButto
 /* list  */
 .MuiList-root {
   border: 1px solid var(--border);
+}
+
+.MuiList-root .MuiCollapse-root .MuiList-root {
+  border: none;
 }
 
 /* hotlinks */
