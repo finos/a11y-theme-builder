@@ -387,10 +387,10 @@
   --dropdown-shadow: var(--elevation-2);
   --dropdown-radius: 1;
   --dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--background), var(--transparent) var(--background));
-  --dm-dropdown-focus-bg: linear-gradient(90deg, var(--dm-button) var(--background), var(--transparent) var(--background));
+  --dm-dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--background), var(--transparent) var(--background));
   --dropdown-hover-style: 100%;
   --dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button-half) var(--background), var(--transparent) var(--background)) !important;
-  --dm-dropdown-bottom-hover-bg: linear-gradient(0deg, var(--dm-button) var(--background), var(--transparent) var(--background)) !important;
+  --dm-dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button) var(--background), var(--transparent) var(--background)) !important;
   /* Buttons */
   --button-padding: 3;
   --button-border: 2;
@@ -460,6 +460,16 @@
   --popoverElevation: var(--elevation-0);
   --popoverBevel: var(--bevel-0);
   --popover-shadow: var(--popoverElevation), var(--popoverBevel);
+  /* Dropdown */
+  --dropdown-focus-theme: 4px;
+  --dropdown-focus-bg: var(--background);
+  --dropdown-hover-bg: var(--background);
+  --on-dropdown-focus-bg: var(--background);
+  --on-dropdown-hover-bg: var(--background);
+  --dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
+  --dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
+  --dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
+  --dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   /* Section and Paragraph Spacing */
   --section-padding: 3;
   --p-padding: 2;
@@ -953,11 +963,6 @@
   --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
   --text-gradient-a: #9C4FCF;
   --text-gradient-b: #0066EF;
-  /* Dropdowns */
-  --dropdown-focus-theme: var(--spacing-half);
-  --on-dropdown-focus-bg: rgba(18,18,18,1);
-  --on-dropdown-hover-bg: var(--on-surface);
-  --dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   /* Input */
   --input: rgba(254,252,254,0.55);
   --on-input: #121212;
@@ -1067,7 +1072,7 @@
   /* Surface */
   --lm-on-surface: var(--on-surface);
   --lm-on-surface: var(--on-surface);
-  /* States */
+/* States */
   --lm-info: var(--info);
   --lm-on-info: var(--on-info);
   --lm-success: var(--success);
@@ -1103,15 +1108,7 @@
   --lm-hotlinkOnTertiary-hover-decoration: underline;
   --lm-hotlinkOnGradient3: #121212;
   --lm-hotlinkOnGradient3-visited: rgba(0,0,0,0.5);
-  /* Dropdown */
-  --lm-dropdown-focus-theme: var(--dropdown-focus-theme);
-  --lm-on-dropdown-focus-bg: var(--on-dropdown-focus-bg);
-  --lm-on-dropdown-hover-bg: var(--on-dropdown-hover-bg);
-  --lm-dropdown-hover-bg: var(--dropdown-hover-bg);
-  --lm-dropdown-bottom-hover-bg: var(--dropdown-bottom-hover-bg);
-  --lm-dropdown-focus-bg: var(--dropdown-focus-bg);
-  --lm-dropdown-bottom-focus-bg: var(--dropdown-bottom-focus-bg);
-  /* Buttons */
+ /* Buttons */
   --lm-buttonOnWhite: var(--buttonOnWhite);
   --lm-onbuttonOnWhite: var(--onbuttonOnWhite);
   --lm-buttonHalfOnWhite: var(--buttonHalfOnWhite);
@@ -1371,14 +1368,6 @@
   --dm-hotlinkOnTertiary: #FFFFFF;
   --dm-hotlinkOnTertiary-decoration: none;
   --dm-hotlinkOnTertiary-hover-decoration: underline;
-  /* Dropdown */
-  --dm-dropdown-focus-theme: var(--spacing-half);
-  --dm-on-dropdown-focus-bg: rgba(255,255,255,0.6);
-  --dm-on-dropdown-hover-bg: var(--dm-on-surface);
-  --dm-dropdown-hover-bg: linear-gradient(90deg, var(--dm-button-half) var(--dm-dropdown-focus-theme), var(--transparent) var(--dm-dropdown-focus-theme)) !important;
-  --dm-dropdown-bottom-hover-bg: linear-gradient(0deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
-  --dm-dropdown-focus-bg: linear-gradient(90deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
-  --dm-dropdown-bottom-hover-bg: linear-gradient(0deg, var(--dm-button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   /* Buttons */
   --dmbuttonOnWhite: #121212;
   --dmonbuttonOnWhite: var(--dm-white);
@@ -1642,15 +1631,7 @@
     --hotlinkOnTertiary: var(--lm-hotlinkOnTertiary);
     --hotlinkOnTertiary-decoration: var(--lm-hotlinkOnTertiary-decoration);
     --hotlinkOnTertiary-hover-decoration: var(--lm-hotlinkOnTertiary-hover-decoration);
-    /* Dropdown */
-    --dropdown-focus-theme: var(--lm-dropdown-focus-theme);
-    --on-dropdown-focus-bg: var(--lm-on-dropdown-focus-bg);
-    --on-dropdown-hover-bg: var(--lm-on-dropdown-hover-bg);
-    --dropdown-hover-bg: var(--lm-dropdown-hover-bg);
-    --dropdown-bottom-hover-bg: var(--lm-dropdown-bottom-hover-bg);
-    --dropdown-focus-bg: var(--lm-dropdown-focus-bg);
-    --dropdown-bottom-focus-bg: var(--lm-dropdown-bottom-focus-bg);
-    /* Buttons */
+  /* Buttons */
     --buttonOnWhite: var(--lm-buttonOnWhite);
     --onbuttonOnWhite: var(--lm-onbuttonOnWhite);
     --buttonHalfOnWhite: var(--lm-buttonHalfOnWhite);
@@ -2021,7 +2002,6 @@
     --primary-background: var(--dm-background);
     --primary-alt-background: var(--dm-alt-background);
     --primary-on-background: var(--dm-on-background);
-
     --background: var(--primaryDarkBG);
     --alt-background: var(--secondaryDarkBG);
     --backround-secondary: var(--secondaryDarkBG);
@@ -2076,7 +2056,7 @@
     /* Surface */
     --on-surface: var(--dm-on-surface);
     --on-surface: var(--dm-on-surface);
-    /* States */
+   /* States */
     --info: var(--dm-info);
     --on-info: var(--dm-on-info);
     --success: var(--dm-success);
@@ -2107,15 +2087,7 @@
     --hotlinkOnTertiary: var(--dm-hotlinkOnTertiary);
     --hotlinkOnTertiary-decoration: var(--dm-hotlinkOnTertiary-decoration);
     --hotlinkOnTertiary-hover-decoration: var(--dm-hotlinkOnTertiary-hover-decoration);
-    /* Dropdown */
-    --dropdown-focus-theme: var(--dm-dropdown-focus-theme);
-    --on-dropdown-focus-bg: var(--dm-on-dropdown-focus-bg);
-    --on-dropdown-hover-bg: var(--dm-on-dropdown-hover-bg);
-    --dropdown-hover-bg: var(--dm-dropdown-hover-bg);
-    --dropdown-bottom-hover-bg: var(--dm-dropdown-bottom-hover-bg);
-    --dropdown-focus-bg: var(--dm-dropdown-focus-bg);
-    --dropdown-bottom-focus-bg: var(--dm-dropdown-bottom-focus-bg);
-    /* Buttons */
+   /* Buttons */
     --buttonOnWhite: var(--dmbuttonOnWhite);
     --onbuttonOnWhite: var(--dmonbuttonOnWhite);
     --buttonHalfOnWhite: var(--dmbuttonHalfOnWhite);

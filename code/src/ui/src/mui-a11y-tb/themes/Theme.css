@@ -741,7 +741,6 @@ section:has( .quote) {
 
 .breadcrumbs .MuiBreadcrumbs-li a .fa-solid, .breadcrumbs .MuiBreadcrumbs-li a .fa-default {
   margin-right: var(--spacing-1);
-  margin-top: var(--spacing-1);
   text-align: center;
   justify-content: center;
 }
@@ -1545,24 +1544,25 @@ button.MuiPaginationItem-root:hover {
   border-left: 4px solid var(--transparent);
   padding-left: 8px !important;
 }
-
 .list-clickable:hover {
  border-left: 4px solid var(--button-half)
 }
-
 .list-clickable:focus {
  border-left: 4px solid var(--button)
 }
 /* menus */
 .MuiListItemButton-root {
-  border-left: 4px solid transparent !important;
+  background: transparent;
+  color: var(--on-background);
   min-height: var(--min-target);
 }
 .MuiListItemButton-root:hover {
-  border-left: 4px solid var(--button-half) !important;
+  background: var(--dropdown-hover-bg) !important;
+  color: var(--on-background);
 }
 .MuiListItemButton-root:focus, .MuiListItemButton-root:active{
-  border-left: 4px solid var(--button) !important;
+  background: var(--dropdown-focus-bg) !important;
+  color: var(--on-background);
 }
 
 /* clickable */
@@ -1671,14 +1671,14 @@ button.MuiPaginationItem-root:hover {
   border-left: 4x solid var(--button-half);
 }
 .MuiButtonBase-root .MuiMenuItem-root.Mui-selected,  .MuiPaper-root.MuiPopover-paper .MuiMenuItem-root:focus {
-  background: transparent;
+  background: var(--dropdown-focus-bg) !important;
   border-left: 4x solid var(--button);
 }
 .MuiSelect-multiple {
   border: none !important;
 }
 .MuiPaper-root.MuiPopover-paper .MuiMenuItem-root:hover {
-  background: var(--dm-dropdown-hover-bg) !important;
+  background: var(--dropdown-hover-bg) !important;
 }
 /* switchBase */
 .MuiSwitch-root {
