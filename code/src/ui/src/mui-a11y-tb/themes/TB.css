@@ -2784,7 +2784,7 @@
     --text-gradient: linear-gradient(45deg, var(--text-gradient-a) 0%, var(--text-gradient-b) 100%);
     --color-drop: rgba(0,0,0,.2);
   }
-  [data-device="table"] {
+  [data-device="tablet"] {
     --min-target: 44px;
     --h1FontSize: 40px;
     --h2FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 4) +  var(--h6FontSize));

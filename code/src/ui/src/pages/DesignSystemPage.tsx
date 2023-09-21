@@ -32,6 +32,7 @@ interface Props {
 interface AccessibleLayerContainerAttributes {
     "data-typography"?: string;
     "data-animation"?: string;
+    "data-device"?: string;
 }
 
 let initComplete = false;
@@ -107,9 +108,13 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
             const layerChangeListener = function (event: EventValueChange<Boolean>) {
                 UpdateContainerLayerInfo();
             };
+            const deviceTargetListener = function (event: EventValueChange<String>) {
+                UpdateContainerLayerInfo();
+            };
             designSystem.layers.colorBlind.setPropertyListener("colorBlindListener", layerChangeListener);
             designSystem.layers.dyslexia.setPropertyListener("dyslexiaListener", layerChangeListener);
             designSystem.layers.motionSensitivity.setPropertyListener("motionSensativityListener", layerChangeListener);
+            designSystem.layers.deviceTarget.setPropertyListener("deviceTargetListener", deviceTargetListener);
 
             UpdateContainerLayerInfo();
         }
@@ -135,6 +140,9 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
             if (designSystem.layers.motionSensitivity.getValue()) {
                 dsccn += " motion-sensitive";
                 attributes["data-animation"] = "sensitive";
+            }
+            if (designSystem.layers.deviceTarget.getValue()) {
+                attributes["data-device"] = designSystem.layers.deviceTarget.getValue();
             }
         }
 
@@ -164,7 +172,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
 
         return (
             <ThemeProvider theme={(themes as any)[themeName]}>
-                <div {...designSystemContainerAttributes} className={designSystemContentClassName}>
+                <div {...designSystemContainerAttributes} className="design-system-container">
                     <MeasureDiv setHeight={setDivHeight}>
                         <DesignSystemTitleBar designSystemNames={designSystemNames} designSystem={designSystem} />
                         <div className="design-system-tab-bar">
