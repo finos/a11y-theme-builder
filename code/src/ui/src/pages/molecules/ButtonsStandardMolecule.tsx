@@ -46,7 +46,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                                 <NumberScaledSelectable property={molecule.minWidth} units="px" scale={grid}/>
                             </div>
                             <div className="formRow top16">
-                                {/*<NumberScaledSelectable property={molecule.height} units="px" scale={grid}/>*/}
+                                <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/>
                             </div>
                             <div className="formRow">
                                 <NumberScaledSelectable property={molecule.radius} units="px" scale={grid} />
