@@ -781,10 +781,6 @@ section:has( .quote) {
 }
 
 /* Buttons */
-.MuiButtonBase-root {
-  min-height: max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important;
-}
-
 button {
   flex-shrink: 0;
   display: flex;
@@ -1553,8 +1549,9 @@ button.MuiPaginationItem-root:hover {
 /* menus */
 .MuiListItemButton-root {
   background: transparent;
-  color: var(--on-background);
-  min-height: var(--min-target);
+  color: var(--on-background) !important;
+  min-height: max(var(--min-target), calc(var(--button-height) * var(--spacing-1))) !important;
+
 }
 .MuiListItemButton-root:hover {
   background: var(--dropdown-hover-bg) !important;

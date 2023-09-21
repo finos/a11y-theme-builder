@@ -462,14 +462,10 @@
   --popover-shadow: var(--popoverElevation), var(--popoverBevel);
   /* Dropdown */
   --dropdown-focus-theme: 4px;
-  --dropdown-focus-bg: var(--background);
-  --dropdown-hover-bg: var(--background);
   --on-dropdown-focus-bg: var(--background);
   --on-dropdown-hover-bg: var(--background);
   --dropdown-hover-bg: linear-gradient(90deg, var(--button-half) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
-  --dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   --dropdown-focus-bg: linear-gradient(90deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme));
-  --dropdown-bottom-hover-bg: linear-gradient(0deg, var(--button) var(--dropdown-focus-theme), var(--transparent) var(--dropdown-focus-theme)) !important;
   /* Section and Paragraph Spacing */
   --section-padding: 3;
   --p-padding: 2;

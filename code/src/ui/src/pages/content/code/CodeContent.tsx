@@ -200,7 +200,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                           </>}
 
                       {showItem === "json" && <>
-                          <HeadingSection title="Code Generators" heading="JSON test Code" />
+                          <HeadingSection title="Code Generators" heading="JSON Code" />
                           <Grid container spacing={2} columns={12} margin={2}>
                             <Grid item spacing={2} lg={12} md={12} sm={12}>
                               <div className="top40">
