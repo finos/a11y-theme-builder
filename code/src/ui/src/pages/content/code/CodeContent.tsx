@@ -90,7 +90,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     }
 
     const getJsonCodeDM = () => {
-        const code = designSystem.code.getJSONLM();
+        const code = designSystem.code.getJSONDM();
         return JSON.stringify(code,null,2);
     }
 
