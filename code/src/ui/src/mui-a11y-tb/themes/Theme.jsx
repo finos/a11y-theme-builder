@@ -999,7 +999,7 @@ try {
                         textDecoration: "var(--chipTextDecoration)",
                         textTransform: "var(--chipTextTransform)",
                         minWidth: "var(--chip-minwidth)",
-                        minHeight: "max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1)))",
+                        minHeight: "max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1))) !important",
 
                         "&::after": {
                             position: "absolute",

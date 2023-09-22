@@ -918,7 +918,7 @@ button.small-btn {
   background: transparent !important;
   padding: 0 calc(var(--spacing-1) * var(--sm-button-padding));
   z-index: 1;
-  min-height: max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1)));
+  min-height: max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1))) !important;
   font: var(--sm-buttonTypography);
   text-transform: var(--sm-buttonTextTransform) !important;
   letter-spacing: var(--sm-buttonLetterSpacing);
@@ -935,7 +935,7 @@ button.small-btn.icon::before {
 button.small-btn::after {
   top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
   bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
-  min-height: calc(var(--sm-button-height) + 4px + calc(var(--animation-focus-distance) * 2));
+  min-height: calc(var(--sm-button-height) + 4px + calc(var(--animation-focus-distance) * 2)) !important;
   height: calc(var(--sm-button-height) + 4px);
   opacity: 0;
   left: calc(0px - 2px - var(--animation-focus-distance));
