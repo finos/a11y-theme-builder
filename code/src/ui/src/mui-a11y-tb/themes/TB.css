@@ -2799,5 +2799,9 @@
     --h5FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 1) +  var(--h6FontSize));
     --h6FontSize: 16px;
   }
+  [data-animation="sensitive"] {
+    --animation-speed: 0;
+    --animation-focus-distance: 0px;
+  }
 
 }
