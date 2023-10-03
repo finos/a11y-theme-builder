@@ -12,4 +12,6 @@ The success of this project is the direct result of contributions across two (2)
 | [evangk6](https://github.com/evangk6) | Maintainer | Maintainer |
 | [aaronreed708](https://github.com/aaronreed708) | Maintainer | Maintainer |
 | [lwnoble](https://github.com/lwnoble) | Contributor | Contributor |
+| [paulapaul](https://github.com/paulapaul) | Maintainer | Maintainer |
+| [codyzu] (https://github.com/codyzu) | Maintainer | Maintainer |
  
