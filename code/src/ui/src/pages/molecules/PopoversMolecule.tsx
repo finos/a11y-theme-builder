@@ -6,7 +6,7 @@ import { Button, Popover, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DesignSystem, Popovers } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -28,11 +28,8 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
         setAnchor(null)
     }
 
-    let noElevation = popoversMolecule.elevation.getValue() === "No Elevation"
-    let elevationBoxShadowString = noElevation ? "none" : "var(--" + popoversMolecule.elevation.getValue()?.toLowerCase() +") !important"
-    
-    let noBevel = popoversMolecule.bevel.getValue() === "No Bevel"
-    let bevelBoxShadowString = noBevel ? "none" : "var(--" + popoversMolecule.bevel.getValue()?.toLowerCase() +") !important"
+    let noShadow = popoversMolecule.shadow.getValue() === undefined;
+    let boxShadowString = noShadow ? "none" : "var(--" + popoversMolecule.shadow.getValue()?.toLowerCase() +") !important"
 
     return (
         <div>
@@ -59,29 +56,27 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                     PaperProps={{
                         sx: {
                             borderRadius: "calc(var(--popoverRadius) * var(--radius-1))",
-                            boxShadow: noElevation ? bevelBoxShadowString : elevationBoxShadowString
+                            boxShadow: boxShadowString
                         }
                     }}
                 >
                     <Typography sx={{ p: 2 }}>Top Popover</Typography>
                 </Popover>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="form-row">
-                            <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
-                        </div>
-                        <div className="form-row">
-                            <StringSelectable property={popoversMolecule.elevation} defaultValue="No Elevation" />
-                        </div>
-                        <div className="form-row">
-                            <StringSelectable property={popoversMolecule.bevel} defaultValue="No Bevel" />
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="form-row">
+                                <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
+                            </div>
+                            <div className="form-row">
+                                <StringCategorySelectable property={popoversMolecule.shadow} defaultValue="None" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={popoversMolecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={popoversMolecule} />
+            </ExampleSection>
+
         </div>
     )
 }

@@ -2,7 +2,6 @@
 .design-system-editor-right-content .image-sq {
     width: calc(var(--spacing-1) * var(--inline-image-height));
     height: calc(var(--spacing-1) * var(--inline-image-height));
-    background: var(--gray-200);
     border-radius: calc(var(--radius-1) * var(--inline-image-radius));
     flex: none;
     display: flex;
@@ -16,7 +15,6 @@
 }
 
 .design-system-editor-right-content .image-lg {
-    background: var(--gray-200);
     border-radius: calc(var(--radius-1) * var(--inline-image-radius));
     flex: none;
     overflow: hidden;

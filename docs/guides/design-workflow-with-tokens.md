@@ -9,7 +9,8 @@ Try this yourself by following a few simple steps:
 | Step | Action |
 | --- | --- | 
 | 1 | Build your theme using the *Theme Builder* and REMEMBER to click SAVE! |
-| 2 | Sign up / Sign in to [Figma](http://www.figma.com) |
-| 3 | Install [Tokens Studio Pro](https://tokens.studio/) |
-| 4 | Create a duplicate of our sample [Theme Builder - Figma Component Library](https://www.figma.com/community/file/1228341192167108876) file. |
-| 5 | Apply your theme to the Figma Theme Builder File | 
+| 2 | Sign up / Sign in to [Figma](http://www.figma.com).  You will need a Professional, Organization or Enterprise Account. |
+| 3 | Make sure you are using [Figma Beta](https://help.figma.com/hc/en-us/articles/4406787442711-Figma-beta-features) |
+| 4 | Install [Tokens Studio Pro](https://tokens.studio/) |
+| 5 | Create a duplicate of our sample [Theme Builder - Figma Component Library](https://www.figma.com/community/file/1286753516542391531/Theme-Builder) file. |
+| 6 | Apply your theme to the Figma Theme Builder File | 

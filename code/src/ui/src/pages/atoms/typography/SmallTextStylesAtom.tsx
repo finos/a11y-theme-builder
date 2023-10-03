@@ -73,9 +73,9 @@ export const SmallTextStylesAtom: React.FC<Props> = ({ designSystem }) => {
     const keySmallSemibold          = smallSemiboldTypographyStyling.key
 
     if ( !keySubtitle1 || !keySubtitle2
-        || !keyCaption || !keyCaptionBold 
-        || !keyOverline || !keyOverlineLarge || !keyOverlineExtraLarge 
-        || !keyLabel1 || !keyLabel1Caps || !keyLabel2 || !keyLabel2Caps || !KeyLabelSmall 
+        || !keyCaption || !keyCaptionBold
+        || !keyOverline || !keyOverlineLarge || !keyOverlineExtraLarge
+        || !keyLabel1 || !keyLabel1Caps || !keyLabel2 || !keyLabel2Caps || !KeyLabelSmall
         || !keyCallToAction || !keyCallToActionSmall
         || !keySmall || !keySmallSemibold)
         return null;
@@ -111,90 +111,91 @@ export const SmallTextStylesAtom: React.FC<Props> = ({ designSystem }) => {
             </HeadingSection>
             <ExampleSection>
                 None
+                <SettingsSection>
+                    <TextEditBox
+                        textKey={keySubtitle1}
+                        cssPrefix={subtitle1CssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keySubtitle2}
+                        cssPrefix={subtitle2CssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyCaption}
+                        cssPrefix={captionCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyCaptionBold}
+                        cssPrefix={captionBoldCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyOverline}
+                        cssPrefix={overlineCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyOverlineLarge}
+                        cssPrefix={overlineLargeCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyOverlineExtraLarge}
+                        cssPrefix={overlineXLCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyLabel1}
+                        cssPrefix={label1CssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyLabel1Caps}
+                        cssPrefix={label1CapsCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyLabel2}
+                        cssPrefix={label2CssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyLabel2Caps}
+                        cssPrefix={label2CapsCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={KeyLabelSmall}
+                        cssPrefix={labelSmallCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyCallToAction}
+                        cssPrefix={callToActionCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keyCallToActionSmall}
+                        cssPrefix={callToActionSmallCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keySmall}
+                        cssPrefix={smallCssPrefix}
+                        designSystem={designSystem}
+                    />
+                    <TextEditBox
+                        textKey={keySmallSemibold}
+                        cssPrefix={smallSemiboldCssPrefix}
+                        designSystem={designSystem}
+                    />
+                </SettingsSection>
+                <GeneratedCodeSection item={smallTextStylesAtom}/>    
             </ExampleSection>
-            <SettingsSection>
-                <TextEditBox
-                    textKey={keySubtitle1}
-                    cssPrefix={subtitle1CssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={keySubtitle2}
-                    cssPrefix={subtitle2CssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyCaption}
-                    cssPrefix={captionCssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={keyCaptionBold}
-                    cssPrefix={captionBoldCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyOverline}
-                    cssPrefix={overlineCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyOverlineLarge}
-                    cssPrefix={overlineLargeCssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={keyOverlineExtraLarge}
-                    cssPrefix={overlineXLCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyLabel1}
-                    cssPrefix={label1CssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={keyLabel1Caps}
-                    cssPrefix={label1CapsCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyLabel2}
-                    cssPrefix={label2CssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyLabel2Caps}
-                    cssPrefix={label2CapsCssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={KeyLabelSmall}
-                    cssPrefix={labelSmallCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyCallToAction}
-                    cssPrefix={callToActionCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keyCallToActionSmall}
-                    cssPrefix={callToActionSmallCssPrefix}
-                    designSystem={designSystem}
-                />
-                <TextEditBox
-                    textKey={keySmall}
-                    cssPrefix={smallCssPrefix}
-                    designSystem={designSystem}
-                />                
-                <TextEditBox
-                    textKey={keySmallSemibold}
-                    cssPrefix={smallSemiboldCssPrefix}
-                    designSystem={designSystem}
-                />
-            </SettingsSection>
-            <GeneratedCodeSection item={smallTextStylesAtom}/>
+
         </div>
     )
 

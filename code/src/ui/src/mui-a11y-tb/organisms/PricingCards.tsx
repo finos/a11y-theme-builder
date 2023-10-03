@@ -26,7 +26,7 @@ export const PricingCards: React.FC<Props> = ({className=""}) => {
           </Grid>
           <Grid justifyContent="center" container spacing={2} columns={12} margin={2}  className="pricingSection">
             <Grid justifyContent="center" className="centerd" item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12}>
-              <CardPricing className="black" title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more" color="grey">
+              <CardPricing title="Standard" cost="Free" billing="No Bill" button="Get Standard" hotlink="Learn more"  color="primary">
                 <ul>
                   <li>Feature description</li>
                   <li>Feature description</li>
@@ -38,7 +38,7 @@ export const PricingCards: React.FC<Props> = ({className=""}) => {
               </CardPricing>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardPricing className="black" title="Pro" cost="$149 Monlth" billing="Billed Annually" button="Get Pro" hotlink="Learn more" color="primary">
+              <CardPricing title="Pro" cost="$149 Monlth" billing="Billed Annually" button="Get Pro" hotlink="Learn more"  color="primary">
                 <ul>
                   <li>Feature description</li>
                   <li>Feature description</li>
@@ -51,7 +51,7 @@ export const PricingCards: React.FC<Props> = ({className=""}) => {
               </CardPricing>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardPricing className="black" title="Enterprise" cost="$199 Monlth" billing="Billed Annually" button="Get Enterprise" hotlink="Learn more" color="primary">
+              <CardPricing title="Enterprise" cost="$199 Monlth" billing="Billed Annually" button="Get Enterprise" hotlink="Learn more" color="primary">
                   <ul>
                     <li>Feature description</li>
                     <li>Feature description</li>

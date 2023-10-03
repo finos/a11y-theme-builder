@@ -23,32 +23,32 @@ export const StatCardsScrollingOneButton: React.FC<Props> = ({className=""}) => 
               </div>
             </Grid>
             <div className="cardScroll">
-              <CardSample stat={true} className="fixed" title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed" title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"  hideSecondary={true} >
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"  hideSecondary={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"  hideSecondary={true} >
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"  hideSecondary={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"  hideSecondary={true} >
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"  hideSecondary={true} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample stat={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" stat={true} className="fixed"  title="Title"   hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

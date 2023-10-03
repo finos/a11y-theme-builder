@@ -19,11 +19,13 @@
  import { Tab, Tabs } from '@mui/material';
 
  interface Props {
+      color: string;
  }
+
  const pages = ['Products', 'Pricing', 'Blog'];
  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
- export const ResponsiveAppBar: React.FC<Props> = () => {
+ export const ResponsiveAppBar: React.FC<Props> = ({color=""}) => {
 
     const [colorMode, setColorMode] = useState<string>("colored");
 
@@ -55,7 +57,8 @@
    };
 
    return (
-     <AppBar position="static" className={colorMode}>
+
+     <AppBar position="static" data-background={color}>
        <Container maxWidth="xl">
          <Toolbar disableGutters>
            <AdbIcon sx={{ display: { sm: 'none', xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -90,7 +93,6 @@
              </IconButton>
 
              <Tabs centered
-                 className={colorMode}
                  value={tabValue}
                  onChange={handleTabChange}
                  aria-label="tab bar"
@@ -99,11 +101,11 @@
                  }}
              >
                {pages.map((page) => (
-                 <Tab className={colorMode} key={page} label={page} value={page} />
-
-
+                 <Tab key={page} label={page} value={page} />
                ))}
              </Tabs>
+
+
            </Box>
            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
            <Typography

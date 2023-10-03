@@ -5,6 +5,7 @@
 import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 interface Props {
 }
@@ -14,30 +15,30 @@ export const BackgroundColorsComponent: React.FC<Props> = ({}) => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Background Colors" />
-            <div>
+            <ExampleSection>
                 <div className="theme-colors">
                     <ComputedColorSwatch
                         className={"background"}
-                        label={"Primary BG"}
+                        label={"Primary"}
                     />
                     <ComputedColorSwatch
                         className={"background-secondary"}
-                        label={"Secondary BG"}
+                        label={"Alternate"}
                     />
                     <ComputedColorSwatch
                         className={"background-tertiary"}
-                        label={"Tertiary BG"}
+                        label={"Colored"}
                     />
                     <ComputedColorSwatch
                         className={"black"}
-                        label={"Black BG"}
+                        label={"Black"}
                     />
                     <ComputedColorSwatch
                         className={"white"}
-                        label={"White BG"}
+                        label={"White"}
                     />
                 </div>
-            </div>
+            </ExampleSection>
         </div>
     );
 }

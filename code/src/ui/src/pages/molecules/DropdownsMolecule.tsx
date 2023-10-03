@@ -70,11 +70,12 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                         <div ref={refContainer} ></div>
                     </div>
                 </DarkModeSection>
+                <SettingsSection>
+                    <StringSelectable property={molecule.menuFocusState} defaultValue="true" variant="radio" />
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
             </ExampleSection>
-            <SettingsSection>
-                <StringSelectable property={molecule.menuFocusState} defaultValue="true" variant="radio" />
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+
         </div >
     )
 }

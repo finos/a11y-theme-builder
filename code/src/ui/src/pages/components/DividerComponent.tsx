@@ -20,32 +20,20 @@ export const DividerComponent: React.FC<Props> = () => {
             <HeadingSection title="Desktop" heading="Divider" />
 
             <ExampleSection>
-            <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                    <div className="subtitle1">Horizontal</div>
-                    <List style={{ background: 'transparent' }}>
-                        <br /><br />
-                        <Divider className={colorMode} />
-                        <br /><br />
-                        <Divider className={colorMode} />
-                        <br /><br />
-                    </List>
-                    <div className="subtitle1">Horizontal and Wide</div>
-                    <List style={{ background: 'transparent' }}>
-                        <br /><br />
-                        <Divider className={"wide " + colorMode} />
-                        <br /><br />
-                        <Divider className={"wide " + colorMode} />
-                        <br /><br />
-                    </List>
-                    <div className="subtitle1">Vertical</div>
-                    <List style={{ background: 'transparent' }}>
-                        <br /><br />
-                        <div className={"vertical-line " + colorMode}  />
-                        <br /><br />
-                        <div className={"vertical-line " + colorMode}/>
-                        <br /><br />
-                    </List>
-                </ColorModeSelector>
+              <div className="subtitle1">Horizontal</div>
+              <Divider  />
+              <br /><br />
+              <br /><br />
+
+              <div className="subtitle1">Horizontal and Wide</div>
+              <Divider className="wide" />
+              <br /><br />
+              <br /><br />
+              <div className="subtitle1">Vertical</div>
+              <div className="vertical-line"  />
+              <br /><br />
+              <br /><br />
+
             </ExampleSection>
         </div>
     )

@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
-    
+
     const [_underlineHotlinksLightmode, _setUnderlineHotlinksLightmode] = useState<boolean>(true);
     const [_underlineHotlinksLightmodeRequired, _setUnderlineHotlinksLightmodeRequired] = useState<boolean>(true);
     const [_underlineHotlinksDarkmodeRequired, _setUnderlineHotlinksDarkmodeRequired] = useState<boolean>(true);
@@ -78,7 +78,7 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
                     <a href="#" className="default-link">Sample Hotlink</a>
                 </LightModeSection>
                 <DarkModeSection>
-                    <div className="row">
+                    <div className="row" data-mode="dark">
                         <div className="col-6">
                             <div className="inputRow">
                                 <div id="hotlink-color-darkmode-preview" className="Hex theme-link" style={{ background: 'var(--dm-hotlink)' }} />
@@ -93,24 +93,24 @@ export const HotlinksAtom: React.FC<Props> = ({ hotlinks }) => {
                         </div>
                     </div>
                 </DarkModeSection>
+                <SettingsSection>
+                    <FormControl>
+                        <FormLabel id="underline-hotlinks-lightmode-radio-buttons-group">Underline hotlinks in lightmode</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="underline-hotlinks-lightmode-radio-buttons-group"
+                            name="controlled-radio-buttons-group"
+                            value={_underlineHotlinksLightmode}
+                            onChange={(event) => { handleUnderlineChange(event.target.value === "true") }}
+                        >
+                            <FormControlLabel value="true" control={<Radio />} label="Yes (Recommended)" disabled={_hotlinksError} />
+                            <FormControlLabel value="false" control={<Radio />} label="No" disabled={_hotlinksError || _underlineHotlinksLightmodeRequired} />
+                        </RadioGroup>
+                        {_underlineHotlinksLightmodeRequired && <FormHelperText>"no underline" does not meet WCAG AA requirements</FormHelperText>}
+                        {_hotlinksError && <Alert severity='error'>{_hotlinksErrorMessage}</Alert>}
+                    </FormControl>
+                </SettingsSection>
+                <GeneratedCodeSection item={hotlinks}/>
             </ExampleSection>
-            <SettingsSection>
-                <FormControl>
-                    <FormLabel id="underline-hotlinks-lightmode-radio-buttons-group">Underline hotlinks in lightmode</FormLabel>
-                    <RadioGroup
-                        aria-labelledby="underline-hotlinks-lightmode-radio-buttons-group"
-                        name="controlled-radio-buttons-group"
-                        value={_underlineHotlinksLightmode}
-                        onChange={(event) => { handleUnderlineChange(event.target.value === "true") }}
-                    >
-                        <FormControlLabel value="true" control={<Radio />} label="Yes (Recommended)" disabled={_hotlinksError} />
-                        <FormControlLabel value="false" control={<Radio />} label="No" disabled={_hotlinksError || _underlineHotlinksLightmodeRequired} />
-                    </RadioGroup>
-                    {_underlineHotlinksLightmodeRequired && <FormHelperText>"no underline" does not meet WCAG AA requirements</FormHelperText>}
-                    {_hotlinksError && <Alert severity='error'>{_hotlinksErrorMessage}</Alert>}
-                </FormControl>
-            </SettingsSection>
-            <GeneratedCodeSection item={hotlinks}/>
         </div>
     )
 

@@ -5,6 +5,7 @@
 import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 interface Props {
 }
@@ -20,6 +21,7 @@ export const ThemeColorsComponent: React.FC<Props> = ({}) => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Theme Colors" />
+            <ExampleSection>
             {swatchesObj.labels.map((swatchLabel) => {
                 return (
                     <div>
@@ -37,6 +39,7 @@ export const ThemeColorsComponent: React.FC<Props> = ({}) => {
                     </div>
                 );
             })}
+            </ExampleSection>
         </div>
     );
 }

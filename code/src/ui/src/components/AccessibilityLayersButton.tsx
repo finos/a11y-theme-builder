@@ -7,6 +7,7 @@ import { Checkbox, FormControl, InputLabel,
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { DesignSystem } from 'a11y-theme-builder-sdk';
 import './AccessibilityLayersButton.css';
+import { StringSelectable } from './editors/StringSelectable';
 
 const name = "AccessibilityLayersButton";
 
@@ -16,7 +17,13 @@ interface Props {
 
 export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
 
-    const layersProperty = (designSystem.layers).properties;
+    //TODO until we support color blindness styling, don't offer it as an
+    // accessibility layer option to select from
+    //const layersProperty = (designSystem.layers).properties;
+    const layersProperty = [
+        designSystem.layers.dyslexia,
+        designSystem.layers.motionSensitivity
+    ]
     const getValueFromLayersProperty = () => {
         let r = [];
         for (var i=0; i<layersProperty.length; i++) {
@@ -49,7 +56,7 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
 
     return (
             <div>
-                <div id="a11y-layers-multiple-checkbox-label" className="label">Accessibility Layers:</div>
+                <div id="a11y-layers-multiple-checkbox-label" className="label">Theme Layers:</div>
                 <FormControl sx={{ width: 400, paddingRight: "4px" }}>
 
                     <Select
@@ -83,6 +90,9 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
                                 <ListItemText primary={prop.name} />
                             </MenuItem>
                         ))}
+                        <MenuItem key={designSystem.layers.deviceTarget.name} value={designSystem.layers.deviceTarget.name}>
+                            <StringSelectable property={designSystem.layers.deviceTarget} variant='radio' defaultValue='desktop' />
+                        </MenuItem>
                     </Select>
                 </FormControl>
             </div>

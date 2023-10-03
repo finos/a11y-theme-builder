@@ -49,7 +49,7 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
             borderBottom: `1px solid ${_color}`,
             borderRight: `1px solid ${_color}`,
         }
-    
+
         return(<div style={{position:"relative"}}><div style={style}></div></div>)
     }
 
@@ -73,23 +73,25 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
                 <div className="top24" style={{height: "304px"}}>
                     {renderGridLines()}
                 </div>
+                <SettingsSection>
+                    <FormControl>
+                        <FormLabel id="gridSettingsLabel">Grid Setting</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="gridSettingsLabel"
+                            name="controlled-radio-buttons-group"
+                            value={grid}
+                            onChange={handleChanged}
+                        >
+                            {
+                                renderSelectables()
+                            }
+                        </RadioGroup>
+                    </FormControl>
+                </SettingsSection>
+                <GeneratedCodeSection item={atom}/>
             </ExampleSection>
-            <SettingsSection>
-                <FormControl>
-                    <FormLabel id="gridSettingsLabel">Grid Setting</FormLabel>
-                    <RadioGroup
-                        aria-labelledby="gridSettingsLabel"
-                        name="controlled-radio-buttons-group"
-                        value={grid}
-                        onChange={handleChanged}
-                    >
-                        {
-                            renderSelectables()
-                        }
-                    </RadioGroup>
-                </FormControl>
-            </SettingsSection>
-            <GeneratedCodeSection item={atom}/>
+
+
         </div>
     )
 

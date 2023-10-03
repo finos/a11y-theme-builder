@@ -29,24 +29,22 @@ export const TextIconLayouts: React.FC<Props> = ({ }) => {
 
       return (
           <div>
-              <HeadingSection title="organisms" heading="Teams" />
+              <HeadingSection title="organisms" heading="Text with Icons Sections" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className={colorMode}></div>
-                <div className="subtitle1">Text with Title, Centered, Left Aligned</div>
-                <TextIcons className={"top40 " + colorMode} />
+              <div className="section-demos" data-background={colorMode}>
+                <div className="demo-title subtitle1">Text with Title, Centered, Left Aligned</div>
+                <TextIcons className="top40"  />
                 <p></p>
-                <div className="subtitle1">Text with Divider, Centered, Left Aligned</div>
-                <TextIconsWithDivider className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Text with Divider, Centered, Left Aligned</div>
+                <TextIconsWithDivider  className="top40"  />
                 <p></p>
-                <div className="subtitle1">Text with Title, Centered, Center Aligned</div>
-                <TextIconsCentered className={"top40 " + colorMode} />
+                <div className="demo-title subtitle1">Text with Title, Centered, Center Aligned</div>
+                <TextIconsCentered  className="top40"  />
                 <p></p>
-                <div className="subtitle1">Text with Divider, Centered, Center Aligned</div>
-                <TextIconsWithDividerCentered className={"top40 " + colorMode} />
-              </ExampleSection>
+                <div className="demo-title subtitle1">Text with Divider, Centered, Center Aligned</div>
+                <TextIconsWithDividerCentered  className="top40"  />
+              </div>
           </div>
       )
   }

@@ -63,7 +63,7 @@ export const ExampleAtom: React.FC<Props> = ({ atom }) => {
             //          There are many examples in other atoms/molecules, you should look at for inspiration.
             }
             <SettingsSection>
-                <NumberSelectable property={atom.minHeight} defaultValue={44} units="px" />
+                {/* <NumberSelectable property={atom.minHeight} defaultValue={44} units="px" /> */}
             </SettingsSection>
 
             {

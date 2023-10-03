@@ -20,7 +20,7 @@ export const VideoCentered: React.FC<Props> = ({className=""}) => {
             </Grid>
             <Grid justifyContent="center"  item spacing={2} className="v-center" lg={8}  sm={12}>
               <h2>Video Centered</h2>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>

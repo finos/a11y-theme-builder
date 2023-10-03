@@ -3,7 +3,7 @@
 ![logo](./_images/tb-logo-sm.png) A system for generating machine readable asset types allowing design systems to publish products that are accessibly inclusive.
 
 ### Concept
-Accessibility compliance is difficult. All too often accessibility is addressed late in the development and testing cycle. What if systems were designed upfront with accessible inclusion as a design principle? What the workflow between designers and developers produced accessible components before teh assembling of applications?
+Accessibility compliance is difficult. All too often accessibility is addressed late in the development and testing cycle. What if systems were designed upfront with accessible inclusion as a design principle? What if the workflow between designers and developers produced accessible components before the assembling of applications?
 
 ![workflow](./_images/gaad-a11y-e2e.png)
 

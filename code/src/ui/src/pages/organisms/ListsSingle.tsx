@@ -29,27 +29,26 @@ export const ListsSingle: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Lists, Single Line" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                      <div className="subtitle1">List, Standard</div>
-                      <ListSingle className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">List, with avatars</div>
-                      <ListSingleAvatar className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">List, with images</div>
-                      <ListSingleImage className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">List, with wide images</div>
-                      <ListSingleImageWide className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">List, with icons</div>
-                      <ListSingleIconSmall className={"top40 " + colorMode} />
-                      <p></p>
-                      <div className="subtitle1">List, with wide icons</div>
-                      <ListSingleIconLarge className={"top40 " + colorMode} />
-                      <p></p>
-              </ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">List, Standard</div>
+                  <ListSingle className="top40 "/>
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with avatars</div>
+                  <ListSingleAvatar className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with images</div>
+                  <ListSingleImage className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with wide images</div>
+                  <ListSingleImageWide className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with icons</div>
+                  <ListSingleIconSmall className="top40 " />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with wide icons</div>
+                  <ListSingleIconLarge className="top40 " />
+                  <p></p>
+              </div>
           </div>
       )
   }

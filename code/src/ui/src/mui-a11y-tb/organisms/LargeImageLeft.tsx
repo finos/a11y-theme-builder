@@ -22,7 +22,7 @@ export const LargeImageLeft: React.FC<Props> = ({className=""}) => {
             </Grid>
             <Grid item spacing={2} className="v-center" lg={4} sm={12}>
               <h2>Title</h2>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>

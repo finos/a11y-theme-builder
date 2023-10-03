@@ -17,7 +17,7 @@ export const TeamsLarge: React.FC<Props> = ({className=""}) => {
           <Grid justifyContent="center" container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} className="centered" lg={10} sm={12}>
               <h2>Title</h2>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>

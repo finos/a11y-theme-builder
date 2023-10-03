@@ -98,7 +98,7 @@ export const GlowAtom: React.FC<Props> = ({ glowSettings }) => {
                           onChange={handleColorChange}
                           helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
                           value={color}
-                      />          
+                      />
                       <ChromePicker color={color} onChange={handleColorSelected} />
                       </div>
                         <div className="form-row">
@@ -171,9 +171,9 @@ export const GlowAtom: React.FC<Props> = ({ glowSettings }) => {
                         <ExampleGlow className="glow-9" label="Glow 9"/>
                     </div>
                   </div>
-
+                <GeneratedCodeSection item={glowSettings}/>
             </ExampleSection>
-            <GeneratedCodeSection item={glowSettings}/>
+
         </div>
     )
 }

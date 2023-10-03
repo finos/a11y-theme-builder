@@ -27,9 +27,9 @@ export const HeroColorModeSelector: React.FC<HeroColorModeSelector> = ({ colorMo
             <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
             <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
             <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
-            <FormControlLabel value="gradient-1" control={<Radio size="small"/>} label="Gradient 1"/>
-            <FormControlLabel value="gradient-2" control={<Radio size="small"/>} label="Gradient 2"/>
-            <FormControlLabel value="gradient-3" control={<Radio size="small"/>} label="Gradient 3"/>
+            <FormControlLabel value="gradient1" control={<Radio size="small"/>} label="Gradient 1"/>
+            <FormControlLabel value="gradient2" control={<Radio size="small"/>} label="Gradient 2"/>
+            <FormControlLabel value="gradient3" control={<Radio size="small"/>} label="Gradient 3"/>
         </RadioGroup>
         {children &&
             <div className="hero-color-mode-selector" style={style}>

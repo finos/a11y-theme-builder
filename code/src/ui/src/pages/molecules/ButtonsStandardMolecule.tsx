@@ -2,12 +2,12 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { DesignSystem, StandardButtons } from 'a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -26,7 +26,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
 
     const grid = designSystem.atoms.gridSettings.grid.getValue();
     const border = designSystem.atoms.borderSettings.baseBorderWidth.getValue();
-    
+
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
@@ -38,40 +38,37 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                     <Button variant="outlined">Secondary</Button>
                     <Button variant="text">Tertiary</Button>
                 </div>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-6 top16">
-                        <div className="overline-XL">General Button Styling</div>
-                        <div className="formRow top16">
-                            <NumberScaledSelectable property={molecule.minWidth} units="px" scale={grid}/>
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-6 top16">
+                            <div className="overline-XL">General Button Styling</div>
+                            <div className="formRow top16">
+                                <NumberScaledSelectable property={molecule.minWidth} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow top16">
+                                <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.radius} units="px" scale={grid} />
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.horizontalPadding} units="px" scale={grid}/>
+                            </div>
+                            <div className="formRow">
+                                <StringSelectable property={molecule.buttonText} defaultValue="" />
+                            </div>
+                            <div className="formRow">
+                                <StringCategorySelectable property={molecule.buttonShadow} defaultValue="None" />
+                            </div>
+                            <div className="overline-XL top40">Outline Button Styling</div>
+                            <div className="formRow">
+                                <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
+                            </div>
                         </div>
-                        <div className="formRow top16">
-                            <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.radius} units="px" scale={grid} />
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.horizontalPadding} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.buttonText} defaultValue="" />
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.buttonElevation} defaultValue="" />
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.buttonBevel} defaultValue="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="overline-XL top40">Secondary Button Styling</div>
-                <div className="formRow top16">
-                    <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                      </div>
+                    </SettingsSection>
+                  <GeneratedCodeSection item={molecule} />
+               </ExampleSection>
         </div>
     )
 }

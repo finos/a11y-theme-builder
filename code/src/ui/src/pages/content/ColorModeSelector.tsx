@@ -22,7 +22,9 @@ export const ColorModeSelector: React.FC<ColorModeSelector> = ({ colorMode, setC
         <InputLabel>Color Variants</InputLabel>
         <Typography variant="caption">View components as default, black or white variants</Typography>
         <RadioGroup onChange={(event) => setColorMode(event.target.value)} defaultValue={colorMode} value={colorMode}>
-            <FormControlLabel value="default" control={<Radio size="small"/>} label="Default"/>
+            <FormControlLabel value="primary" control={<Radio size="small"/>} label="Default"/>
+            <FormControlLabel value="alt" control={<Radio size="small"/>} label="Default Alternate"/>
+            <FormControlLabel value="colored" control={<Radio size="small"/>} label="Colored"/>
             <FormControlLabel value="black" control={<Radio size="small"/>} label="Black"/>
             <FormControlLabel value="white" control={<Radio size="small"/>} label="White"/>
         </RadioGroup>

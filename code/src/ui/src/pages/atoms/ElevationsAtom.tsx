@@ -11,6 +11,7 @@ import { SettingsSection } from '../content/SettingsSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { DarkModeSection } from '../content/DarkModeSection';
 import { LightModeSection } from '../content/LightModeSection';
+import { ExampleSection } from '../content/ExampleSection';
 
 interface SampleProps {
     className: string;
@@ -121,196 +122,186 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
             <HeadingSection item={elevationSettings} title="Elevations">
                 Elevations create a senses of depth and replicated items places along the z-axis farther and father away from the surface.
             </HeadingSection>
-            <SettingsSection>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-6">
-                            <div className="subtitle1">Shadow Color</div>
-                            <div className="form-row">
-                            <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
-                            <TextField
-                            sx={{maxWidth: 300}}
-                                id='hexValue'
-                                error={_addColorInputErrorTriggered}
-                                onChange={handleShadowColorChange}
-                                helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
-                                value={shadowColor}
-                            />
-                            <ChromePicker color={shadowColor} onChange={handleColorSelected} />
-                            </div>
-                            <div className="subtitle1">Based Shadow Settings</div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Base Blur Radius
-                                </label>
-                                <Slider
-                                    aria-label="BaseBlurRadius"
-                                    value={baseBlurRadius}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleBaseBlurRadiusChange}
-                                    valueLabelDisplay="auto"
-                                    min={baseBlurRadiusProperty.min}
-                                    max={baseBlurRadiusProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Base Spread Radius
-                                </label>
-                                <Slider
-                                    aria-label="BaseSpreadRadius"
-                                    value={baseSpreadRadius}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleBaseSpreadRadiusChange}
-                                    valueLabelDisplay="auto"
-                                    min={baseSpreadRadiusProperty.min}
-                                    max={baseSpreadRadiusProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Base Color Opacity
-                                </label>
-                                <Slider
-                                    aria-label="BaseColorOpacity"
-                                    value={baseColorOpacity}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleBaseColorOpacityChange}
-                                    valueLabelDisplay="auto"
-                                    min={baseColorOpacityProperty.min}
-                                    max={baseColorOpacityProperty.max}
-                                />
-                            </div>
+            <ExampleSection>
+              <SettingsSection>
+                  <div className="container">
+                      <div className="row">
+                          <div className="col-6">
+                              <div className="subtitle1">Based Shadow Settings</div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Base Blur Radius
+                                  </label>
+                                  <Slider
+                                      aria-label="BaseBlurRadius"
+                                      value={baseBlurRadius}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleBaseBlurRadiusChange}
+                                      valueLabelDisplay="auto"
+                                      min={baseBlurRadiusProperty.min}
+                                      max={baseBlurRadiusProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Base Spread Radius
+                                  </label>
+                                  <Slider
+                                      aria-label="BaseSpreadRadius"
+                                      value={baseSpreadRadius}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleBaseSpreadRadiusChange}
+                                      valueLabelDisplay="auto"
+                                      min={baseSpreadRadiusProperty.min}
+                                      max={baseSpreadRadiusProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Base Color Opacity
+                                  </label>
+                                  <Slider
+                                      aria-label="BaseColorOpacity"
+                                      value={baseColorOpacity}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleBaseColorOpacityChange}
+                                      valueLabelDisplay="auto"
+                                      min={baseColorOpacityProperty.min}
+                                      max={baseColorOpacityProperty.max}
+                                  />
+                              </div>
 
-                            <div className="subtitle1 top16">Angled Elevation Settings</div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Horizontal Shadow Length
-                                </label>
-                                <Slider
-                                    aria-label="HorizontalShadowLength"
-                                    value={horizontalShadowLength}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleHorizontalShadowLengthChange}
-                                    valueLabelDisplay="auto"
-                                    min={horizontalShadowLengthProperty.min}
-                                    max={horizontalShadowLengthProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Vertical Shadow Length
-                                </label>
-                                <Slider
-                                    aria-label="VerticalShadowLength"
-                                    value={verticalShadowLength}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleVerticalShadowLengthChange}
-                                    valueLabelDisplay="auto"
-                                    min={verticalShadowLengthProperty.min}
-                                    max={verticalShadowLengthProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Blur Radius
-                                </label>
-                                <Slider
-                                    aria-label="BlurRadius"
-                                    value={blurRadius}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleBlurRadiusChange}
-                                    valueLabelDisplay="auto"
-                                    min={blurRadiusProperty.min}
-                                    max={blurRadiusProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Spread Radius
-                                </label>
-                                <Slider
-                                    aria-label="SpreadRadius"
-                                    value={spreadRadius}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleSpreadRadiusChange}
-                                    valueLabelDisplay="auto"
-                                    min={spreadRadiusProperty.min}
-                                    max={spreadRadiusProperty.max}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Color Opacity
-                                </label>
-                                <Slider
-                                    aria-label="ColorOpacity"
-                                    value={colorOpacity}
-                                    sx={{maxWidth:600}}
-                                    onChange={handleColorOpacityChange}
-                                    valueLabelDisplay="auto"
-                                    min={colorOpacityProperty.min}
-                                    max={colorOpacityProperty.max}
-                                />
-                            </div>
-                            <div className="subtitle1 top16">Percent change between elevations</div>
-                            <div className="form-row">
-                                <label className="label-1">
-                                    Percent change
-                                </label>
-                                <Slider
-                                    aria-label="PercentChange"
-                                    value={percentChange}
-                                    sx={{maxWidth:600}}
-                                    onChange={handlePercentChangeChange}
-                                    valueLabelDisplay="auto"
-                                    min={percentChangeProperty.min}
-                                    max={percentChangeProperty.max}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-6">
-                            <div style={{display:"flex", gap:"20px"}}>
-                                <div style={{flex:"1 1 0", width:"0"}}>
-                                    <LightModeSection>
-                                        Light mode elvations are created by layering an angled shadow over a base shadow that becomes increasingly heavy as the elevation rises.
-                                        <div className="subtitle1 top24">Sample Elevations</div>
-                                        <div className="top24"/>
-                                        <ExampleElevation className="elevation-0" label="Elevation 0" />
-                                        <ExampleElevation className="elevation-1" label="Elevation 1" />
-                                        <ExampleElevation className="elevation-2" label="Elevation 2" />
-                                        <ExampleElevation className="elevation-3" label="Elevation 3" />
-                                        <ExampleElevation className="elevation-4" label="Elevation 4" />
-                                        <ExampleElevation className="elevation-5" label="Elevation 5" />
-                                        <ExampleElevation className="elevation-6" label="Elevation 6" />
-                                        <ExampleElevation className="elevation-7" label="Elevation 7" />
-                                        <ExampleElevation className="elevation-8" label="Elevation 8" />
-                                        <ExampleElevation className="elevation-9" label="Elevation 9" />
-                                    </LightModeSection>
-                                </div>
-                                <div style={{flex:"1 1 0", width:"0"}}>
-                                    <DarkModeSection>
-                                        In darkmode elevations are represented by a backgrounds with increasingly brightness. Drop shadows are hard to see in darkmode.  All shadows in darkmode are converted to black.
-                                        <div className="subtitle1 top24">Sample Elevations</div>
-                                        <div className="top24"/>
-                                        <ExampleElevation className="elevation-0" label="Elevation 0" />
-                                        <ExampleElevation className="elevation-1" label="Elevation 1" />
-                                        <ExampleElevation className="elevation-2" label="Elevation 2" />
-                                        <ExampleElevation className="elevation-3" label="Elevation 3" />
-                                        <ExampleElevation className="elevation-4" label="Elevation 4" />
-                                        <ExampleElevation className="elevation-5" label="Elevation 5" />
-                                        <ExampleElevation className="elevation-6" label="Elevation 6" />
-                                        <ExampleElevation className="elevation-7" label="Elevation 7" />
-                                        <ExampleElevation className="elevation-8" label="Elevation 8" />
-                                        <ExampleElevation className="elevation-9" label="Elevation 9" />
-                                    </DarkModeSection>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={elevationSettings}/>
+                              <div className="subtitle1 top16">Angled Elevation Settings</div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Horizontal Shadow Length
+                                  </label>
+                                  <Slider
+                                      aria-label="HorizontalShadowLength"
+                                      value={horizontalShadowLength}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleHorizontalShadowLengthChange}
+                                      valueLabelDisplay="auto"
+                                      min={horizontalShadowLengthProperty.min}
+                                      max={horizontalShadowLengthProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Vertical Shadow Length
+                                  </label>
+                                  <Slider
+                                      aria-label="VerticalShadowLength"
+                                      value={verticalShadowLength}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleVerticalShadowLengthChange}
+                                      valueLabelDisplay="auto"
+                                      min={verticalShadowLengthProperty.min}
+                                      max={verticalShadowLengthProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Blur Radius
+                                  </label>
+                                  <Slider
+                                      aria-label="BlurRadius"
+                                      value={blurRadius}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleBlurRadiusChange}
+                                      valueLabelDisplay="auto"
+                                      min={blurRadiusProperty.min}
+                                      max={blurRadiusProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Spread Radius
+                                  </label>
+                                  <Slider
+                                      aria-label="SpreadRadius"
+                                      value={spreadRadius}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleSpreadRadiusChange}
+                                      valueLabelDisplay="auto"
+                                      min={spreadRadiusProperty.min}
+                                      max={spreadRadiusProperty.max}
+                                  />
+                              </div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Color Opacity
+                                  </label>
+                                  <Slider
+                                      aria-label="ColorOpacity"
+                                      value={colorOpacity}
+                                      sx={{maxWidth:600}}
+                                      onChange={handleColorOpacityChange}
+                                      valueLabelDisplay="auto"
+                                      min={colorOpacityProperty.min}
+                                      max={colorOpacityProperty.max}
+                                  />
+                              </div>
+                              <div className="subtitle1 top16">Percent change between elevations</div>
+                              <div className="form-row">
+                                  <label className="label-1">
+                                      Percent change
+                                  </label>
+                                  <Slider
+                                      aria-label="PercentChange"
+                                      value={percentChange}
+                                      sx={{maxWidth:600}}
+                                      onChange={handlePercentChangeChange}
+                                      valueLabelDisplay="auto"
+                                      min={percentChangeProperty.min}
+                                      max={percentChangeProperty.max}
+                                  />
+                              </div>
+                          </div>
+                          <div className="col-6">
+                              <div data-mode="light" style={{display:"flex", gap:"20px"}}>
+                                  <div style={{flex:"1 1 0", width:"0"}}>
+                                      <LightModeSection>
+                                          Light mode elvations are created by layering an angled shadow over a base shadow that becomes increasingly heavy as the elevation rises.
+                                          <div className="subtitle1 top24">Sample Elevations</div>
+                                          <div className="top24"/>
+                                          <ExampleElevation data-mode="light" className="elevation-0" label="Elevation 0" />
+                                          <ExampleElevation data-mode="light"  className="elevation-1" label="Elevation 1" />
+                                          <ExampleElevation data-mode="light"  className="elevation-2" label="Elevation 2" />
+                                          <ExampleElevation data-mode="light"  className="elevation-3" label="Elevation 3" />
+                                          <ExampleElevation data-mode="light"  className="elevation-4" label="Elevation 4" />
+                                          <ExampleElevation data-mode="light"  className="elevation-5" label="Elevation 5" />
+                                          <ExampleElevation data-mode="light"  className="elevation-6" label="Elevation 6" />
+                                          <ExampleElevation data-mode="light"  className="elevation-7" label="Elevation 7" />
+                                          <ExampleElevation data-mode="light"  className="elevation-8" label="Elevation 8" />
+                                          <ExampleElevation data-mode="light"  className="elevation-9" label="Elevation 9" />
+                                      </LightModeSection>
+                                  </div>
+                                  <div data-mode="dark" style={{flex:"1 1 0", width:"0"}}>
+                                      <DarkModeSection>
+                                          In darkmode elevations are represented by a backgrounds with increasingly brightness. Drop shadows are hard to see in darkmode.  All shadows in darkmode are converted to black.
+                                          <div className="subtitle1 top24">Sample Elevations</div>
+                                          <div className="top24"/>
+                                          <ExampleElevation data-mode="dark" className="elevation-0" label="Elevation 0" />
+                                          <ExampleElevation data-mode="dark" className="elevation-1" label="Elevation 1" />
+                                          <ExampleElevation data-mode="dark" className="elevation-2" label="Elevation 2" />
+                                          <ExampleElevation data-mode="dark" className="elevation-3" label="Elevation 3" />
+                                          <ExampleElevation data-mode="dark" className="elevation-4" label="Elevation 4" />
+                                          <ExampleElevation data-mode="dark" className="elevation-5" label="Elevation 5" />
+                                          <ExampleElevation data-mode="dark" className="elevation-6" label="Elevation 6" />
+                                          <ExampleElevation data-mode="dark" className="elevation-7" label="Elevation 7" />
+                                          <ExampleElevation data-mode="dark" className="elevation-8" label="Elevation 8" />
+                                          <ExampleElevation data-mode="dark" className="elevation-9" label="Elevation 9" />
+                                      </DarkModeSection>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </SettingsSection>
+              <GeneratedCodeSection item={elevationSettings}/>
+              </ExampleSection>
+
         </div>
     )
 

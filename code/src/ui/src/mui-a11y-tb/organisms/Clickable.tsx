@@ -19,7 +19,7 @@ export const ListTripleAvatarClickable: React.FC<Props> = ({className=""}) => {
           <Grid container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
               <h6>List Items with an image and 2 lines</h6>
-              <div className="body">
+              <div className="body1">
                 <ListComponent hasAvatar type={3} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
                 <ListComponent hasAvatar type={3} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>

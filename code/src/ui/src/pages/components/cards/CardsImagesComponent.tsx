@@ -8,55 +8,60 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 import { CardSample } from './CardSample';
+import { CardColorModeSelector } from '../../content/CardColorModeSelector';
 
 interface Props {
 }
 
 export const CardsImagesComponent: React.FC<Props> = () => {
 
-    const [_clickableCards, _setClickableCards] = useState<boolean>(false);
+  const [colorMode, setColorMode] = useState<string>("colored");
+
+  const [_clickableCards, _setClickableCards] = useState<boolean>(false);
 
     return (
         <div>
             <HeadingSection title="Desktop" heading="Cards with Images" />
+            <CardColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
+            </CardColorModeSelector>
             <ExampleSection>
               <div className="top40 subtitle1">Left Aligned 9:16 Ratio with two Buttons</div>
-              <CardSample title="Title" imagePath="/sample.jpg">
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Left Aligned 9:16 Ratio with one Button</div>
-              <CardSample title="Title" imagePath="/sample.jpg"  hideSecondary={true}>
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg"  hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Left Aligned 9:16 Ratio with hotlink</div>
-              <CardSample title="Title" imagePath="/sample.jpg" hotlink={true} hideSecondary={true}>
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" hotlink={true} hideSecondary={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Left Aligned 9:16 Ratio, clickable</div>
-              <CardSample title="Title" imagePath="/sample.jpg" hotlink={true} clickable={true}>
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" hotlink={true} clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Center Aligned 9:16 Ratio with two Buttons</div>
-              <CardSample title="Title" imagePath="/sample.jpg" className="centerAligned">
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" className="centerAligned">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Center Aligned 9:16 Ratio with one Button</div>
-              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} className="centerAligned">
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" hideSecondary={true} className="centerAligned">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Center Aligned 9:16 Ratio with hotlink</div>
-              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned">
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>
               <div className="top40 subtitle1">Center Aligned 9:16 Ratio, clickable</div>
-              <CardSample title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned" clickable={true}>
+              <CardSample color={colorMode} title="Title" imagePath="/sample.jpg" hideSecondary={true} hotlink={true} className="centerAligned" clickable={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt magna aliqua
               </CardSample>

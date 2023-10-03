@@ -36,7 +36,7 @@ export const HeadingSection: React.FC<Props> = ({item, children, title, heading}
           <Grid item spacing={2} lg={12} md={12} sm={12}>
             <div className="overline-large">{title || item?.name}</div>
             <h1>{heading || item?.name}</h1>
-            <div className="section-body">
+            <div>
                 {children}
                 {(!children && item) && <div>
                     TODO: Add description for {item?.name || heading} {getType()}.

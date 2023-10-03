@@ -19,7 +19,7 @@ export const ListDoubleImageWide: React.FC<Props> = ({className=""}) => {
           <Grid justifyContent="center" container spacing={2} columns={12} margin={2}>
             <Grid item spacing={2} lg={8} md={12} sm={12}>
               <h6>Title</h6>
-              <div className="body">
+              <div className="body1">
                 <ListComponent hasImg isLarge type={2} title={'Episode 1'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>
                 <Divider />
                 <ListComponent hasImg isLarge type={2} title={'Episode 2'}  overline={'Season 1'}  body={'testing'}  ></ListComponent>

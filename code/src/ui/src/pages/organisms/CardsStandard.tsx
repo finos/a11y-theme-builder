@@ -35,44 +35,43 @@ export const CardsStandard: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="White Cards, Standard" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">Responsive, Left Aligned with Two Buttons</div>
-                <StandardCardsTwoButtons  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Responsive,  Left Aligned with One Button</div>
-                <StandardCardsOneButton  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Responsive,  Left Aligned  with Hotlink</div>
-                <StandardCardsHotlink  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Responsive,  Left Aligned  Clickable</div>
-                <StandardCardsClickable  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Center Aligned, Two Buttons</div>
-                <StandardCardsCenteredTwoButtons  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Center Aligned, One Button</div>
-                <StandardCardsCenteredOneButton  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Center Aligned, Hotlink</div>
-                <StandardCardsCenteredHotlink  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Center Aligned, Clickable</div>
-                <StandardCardsCenteredClickable  className={colorMode}/>
-                <p></p>
-                <div className="subtitle1">Horizontal Scrolling Cards, Left Aligned with Two Buttons</div>
-                <StandardCardsScrollingTwoButtons  className={colorMode} />
-                <p></p>
-                <div className="subtitle1">Horizontal Scrolling Cards, Left Aligned with One Button</div>
-                <StandardCardsScrollingOneButton  className={colorMode} />
-                <p></p>
-                <div className="subtitle1">Horizontal Scrolling Cards, Left Aligned with Hotlink</div>
-                <StandardCardsScrollingHotlink  className={colorMode} />
-                <p></p>
-                <div className="subtitle1">Horizontal Scrolling Cards, Left Aligned with Clickable</div>
-                <StandardCardsScrollingClickable  className={colorMode} />
-              </ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">Responsive, Left Aligned with Two Buttons</div>
+                  <StandardCardsTwoButtons />
+                  <p></p>
+                  <div className="demo-title subtitle1">Responsive,  Left Aligned with One Button</div>
+                  <StandardCardsOneButton />
+                  <p></p>
+                  <div className="demo-title subtitle1">Responsive,  Left Aligned  with Hotlink</div>
+                  <StandardCardsHotlink />
+                  <p></p>
+                  <div className="demo-title subtitle1">Responsive,  Left Aligned  Clickable</div>
+                  <StandardCardsClickable />
+                  <p></p>
+                  <div className="demo-title subtitle1">Center Aligned, Two Buttons</div>
+                  <StandardCardsCenteredTwoButtons />
+                  <p></p>
+                  <div className="demo-title subtitle1">Center Aligned, One Button</div>
+                  <StandardCardsCenteredOneButton  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Center Aligned, Hotlink</div>
+                  <StandardCardsCenteredHotlink />
+                  <p></p>
+                  <div className="demo-title subtitle1">Center Aligned, Clickable</div>
+                  <StandardCardsCenteredClickable  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Horizontal Scrolling Cards, Left Aligned with Two Buttons</div>
+                  <StandardCardsScrollingTwoButtons />
+                  <p></p>
+                  <div className="demo-title subtitle1">Horizontal Scrolling Cards, Left Aligned with One Button</div>
+                  <StandardCardsScrollingOneButton  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Horizontal Scrolling Cards, Left Aligned with Hotlink</div>
+                  <StandardCardsScrollingHotlink  />
+                  <p></p>
+                  <div className="demo-title subtitle1">Horizontal Scrolling Cards, Left Aligned with Clickable</div>
+                  <StandardCardsScrollingClickable />
+              </div>
 
 
 

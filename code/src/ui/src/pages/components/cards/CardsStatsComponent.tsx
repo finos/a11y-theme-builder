@@ -22,42 +22,42 @@ export const CardsStatsComponent: React.FC<Props> = () => {
             </CardColorModeSelector>
             <ExampleSection>
             <div className="subtitle1 top40">Left Aligned Stat Card with two Buttons</div>
-            <CardSample title="90%"  stat={true}  className={colorMode} >
+            <CardSample color={colorMode} title="90%"  stat={true}  className={colorMode} >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Left Aligned Stat Card with Button</div>
-            <CardSample title="90%" stat={true} hideSecondary={true}  className={colorMode}>
+            <CardSample color={colorMode} title="90%" stat={true} hideSecondary={true}  className={colorMode}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Left Aligned Stat Card with Hotlink</div>
-            <CardSample title="90%" stat={true} hotlink={true}  className={colorMode} >
+            <CardSample color={colorMode} title="90%" stat={true} hotlink={true}  className={colorMode} >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Left Aligned Stat Card, Clickable</div>
-            <CardSample title="90%" stat={true} hotlink={true} clickable={true}  className={colorMode}>
+            <CardSample color={colorMode} title="90%" stat={true} hotlink={true} clickable={true}  className={colorMode}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Center Aligned Stat Card with two Buttons</div>
-            <CardSample title="90%"  stat={true}  className={"centerAligned " + colorMode}>
+            <CardSample color={colorMode} title="90%"  stat={true}  className={"centerAligned " + colorMode}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Center Aligned Stat Card with Button</div>
-            <CardSample title="90%"  className={"centerAligned " + colorMode} stat={true}  hideSecondary={true}  >
+            <CardSample color={colorMode} title="90%"  className={"centerAligned " + colorMode} stat={true}  hideSecondary={true}  >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Center Aligned Stat Card with Hotlink</div>
-            <CardSample  title="90%"   className={"centerAligned " + colorMode} stat={true} hotlink={true}  >
+            <CardSample color={colorMode}  title="90%"   className={"centerAligned " + colorMode} stat={true} hotlink={true}  >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>
             <div className="subtitle1 top40">Center Aligned Stat Card, Clickable</div>
-            <CardSample  title="90%"   className={"centerAligned " + colorMode} stat={true} hotlink={true} clickable={true}>
+            <CardSample color={colorMode}  title="90%"   className={"centerAligned " + colorMode} stat={true} hotlink={true} clickable={true}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt magna aliqua
             </CardSample>

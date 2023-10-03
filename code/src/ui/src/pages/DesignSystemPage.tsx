@@ -6,7 +6,7 @@ import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { ThemeBuilder, DesignSystem, Storage } from 'a11y-theme-builder-sdk';
+import { ThemeBuilder, DesignSystem, EventValueChange, Layers, Storage } from 'a11y-theme-builder-sdk';
 import { DesignSystemTitleBar } from '../components/DesignSystemTitleBar';
 import { AtomContent } from './content/atoms/AtomContent';
 import { MoleculeContent } from './content/molecules/MoleculeContent';
@@ -29,6 +29,12 @@ interface Props {
     setThemeName(name: string): void;
 }
 
+interface AccessibleLayerContainerAttributes {
+    "data-typography"?: string;
+    "data-animation"?: string;
+    "data-device"?: string;
+}
+
 let initComplete = false;
 
 const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeName}) => {
@@ -40,6 +46,8 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
     const [designSystemNames, setDesignSystemNames] = useState<string[]>([]);
     const [designSystem, setDesignSystem] = useState<DesignSystem>();
+    const [designSystemContentClassName, setDesignSystemContentClassName] = useState<string>("design-system-container");
+    const [designSystemContainerAttributes, setDesignSystemContentAttributes] = useState<AccessibleLayerContainerAttributes>({})
 
     const [tabIndex, setTabIndex] = useState<string|null>(null);
     const handleTabChange = (event:any, newTabIndex:string) => {
@@ -94,8 +102,53 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
             designSystem.code.setCSSVarListener("css", setCssValue);
             const pref = new Preferences(designSystem.name);
             setTabIndex(pref.get("content-selected") || "atoms");
+
+            // listen for changes in selected accessibility layers so that appropriate
+            //  styles can be set
+            const layerChangeListener = function (event: EventValueChange<Boolean>) {
+                UpdateContainerLayerInfo();
+            };
+            const deviceTargetListener = function (event: EventValueChange<String>) {
+                UpdateContainerLayerInfo();
+            };
+            designSystem.layers.colorBlind.setPropertyListener("colorBlindListener", layerChangeListener);
+            designSystem.layers.dyslexia.setPropertyListener("dyslexiaListener", layerChangeListener);
+            designSystem.layers.motionSensitivity.setPropertyListener("motionSensativityListener", layerChangeListener);
+            designSystem.layers.deviceTarget.setPropertyListener("deviceTargetListener", deviceTargetListener);
+
+            UpdateContainerLayerInfo();
         }
     }, [designSystem])
+
+    // Update the class names on the design system container div
+    //  taking into account which accessibility layers have been
+    //  selected by the user
+    const UpdateContainerLayerInfo = () => {
+        let dsccn = "design-system-container";
+        let attributes: AccessibleLayerContainerAttributes = {};
+        if (designSystem) {
+            //TODO re-enable when color blindness styling is available
+            // and the color blind accessibility layer is
+            // re-introduced to the UI
+            //if (designSystem.layers.colorBlind.getValue()) {
+            //    dsccn += " color-blind";
+            //}
+            if (designSystem.layers.dyslexia.getValue()) {
+                dsccn += " dyslexic";
+                attributes["data-typography"] = "dyslexic";
+            }
+            if (designSystem.layers.motionSensitivity.getValue()) {
+                dsccn += " motion-sensitive";
+                attributes["data-animation"] = "sensitive";
+            }
+            if (designSystem.layers.deviceTarget.getValue()) {
+                attributes["data-device"] = designSystem.layers.deviceTarget.getValue();
+            }
+        }
+
+        setDesignSystemContentClassName(dsccn);
+        setDesignSystemContentAttributes(attributes);
+    }
 
     const TopNavTab = styled(Tab)(({ theme }) => ({
         ":hover": {
@@ -116,9 +169,10 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
     }
 
     if (designSystem && themeBuilder && tabIndex)
+
         return (
             <ThemeProvider theme={(themes as any)[themeName]}>
-                <div className="design-system-container">
+                <div {...designSystemContainerAttributes} className="design-system-container">
                     <MeasureDiv setHeight={setDivHeight}>
                         <DesignSystemTitleBar designSystemNames={designSystemNames} designSystem={designSystem} />
                         <div className="design-system-tab-bar">
@@ -146,7 +200,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                             </Tabs>
                         </div>
                     </MeasureDiv>
-                    <div className="design-system-editor-content" style={divStyle}>
+                    <div className="design-system-editor-content" data-background="primary" style={divStyle}>
                         {tabIndex === "atoms" && (
                             <AtomContent user={user} designSystem={designSystem}/>
                         )}
@@ -170,7 +224,6 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
                 </div>
             </ThemeProvider>
         );
-
     return(<div>No design system loaded</div>)
 }
 

@@ -27,15 +27,6 @@ li .Hex {
     margin: 8px auto !important;
 }
 
-
-.caption {
-    font-family: var(--primaryFont);
-    font-weight: var(--fontWeight-3);
-    font-size: calc(var(--baseFont) * .75);
-    line-height: var(--standard-LineHeight);
-    letter-spacing: 0.5%;
-}
-
 .text-center {
     text-align: center!important;
 }

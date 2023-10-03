@@ -13,32 +13,19 @@ interface Props {
 
 export const ImageDecorationsComponent: React.FC<Props> = (clickable) => {
 
-  const [_clickableImages, _setClickableImages] = useState<boolean>(false);
-
-  let className = ("");
-  if (clickable) className = ("clickable");
 
     return (
         <div className="content">
         <HeadingSection title='Desktop' heading='Images'></HeadingSection>
-        <SettingsSection>
-        <FormControl>
-            <RadioGroup
-                name="cards-standard-radio-buttons-group"
-                value={_clickableImages}
-                onChange={(event) => { _setClickableImages(event.target.value === "true") }}
-            >
-                <FormControlLabel value="false" control={<Radio />} label="Non-clickable Images" />
-                <FormControlLabel value="true" control={<Radio />} label="Clickable Images" />
-            </RadioGroup>
-        </FormControl>
-        </SettingsSection>
         <ExampleSection>
           <div className="subtitle1">Default</div>
-          <div className={"sample-image top16 " + className} >
+          <div className="standard-image top16 ">
             <img src="/sample.jpg" />
           </div>
-
+          <div className="subtitle1">Clickable</div>
+          <div className="standard-image clickable top16 ">
+            <img  src="/sample.jpg" />
+          </div>
         </ExampleSection>
 
 

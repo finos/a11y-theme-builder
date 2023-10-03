@@ -69,7 +69,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                 </DarkModeSection>
             </div>
         )
-    } 
+    }
     else {
         return (
             <div className="row">

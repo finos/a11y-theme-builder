@@ -306,10 +306,6 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                             <LeftNavorganisms item={organisms.testimonCardVariations} indent={2} />
                         </List>
                     </Collapse>
-
-                    <LeftNavItem text={"Cards, White"} indent={1} onClick={()=>setDisplayCardsClickable(!displayCardsClickable)}>
-                        {displayCardsClickable ? <ExpandLess /> : <ExpandMore />}
-                    </LeftNavItem>
                     <LeftNavItem text={"Other"} indent={1} onClick={()=>setDisplayOther(!displayOther)}>
                         {displayOther ? <ExpandLess /> : <ExpandMore />}
                     </LeftNavItem>
@@ -334,7 +330,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                 </List>
             </div>
             </div>
-            <div className={"design-system-editor-right-content " + (darkMode ? "darkmode" : "")}>
+            <div className="design-system-editor-right-content" data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">
                 {showTemplate === "organisms" &&
                     <OrganismIntro />

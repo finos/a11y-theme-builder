@@ -5,6 +5,7 @@
 import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedTextColorSwatch } from '../../../components/ComputedTextColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 const sampleText: string = "Sample Text";
 interface Props {
@@ -15,7 +16,7 @@ export const TextComponent: React.FC<Props> = ({}) => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Text Colors" />
-            <div>
+            <ExampleSection>
                 <div className="subtitle1 top40">Dark Text</div>
                 <div className="theme-colors">
                     <ComputedTextColorSwatch
@@ -86,7 +87,7 @@ export const TextComponent: React.FC<Props> = ({}) => {
                         showHex={true}
                     />
                 </div>
-            </div>
+            </ExampleSection>
         </div>
     );
 }

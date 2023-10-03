@@ -18,7 +18,7 @@ export const TextWithDividerCentered: React.FC<Props> = ({className=""}) => {
             <Grid item className="centered v-center" lg={8} md={6} sm={12}>
               <h2>Title</h2>
               <Divider className="wide"/>
-              <div className="body">
+              <div className="body1">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                 </p>

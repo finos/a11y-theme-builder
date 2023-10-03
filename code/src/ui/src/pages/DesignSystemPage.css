@@ -15,9 +15,8 @@
 .design-system-editor-left-nav {
     min-width: 300px;
     width: 300px;
-    background-color: var(--background-secondary) !important;
-    color: var(--on-background-secondary);
-    border: 0px solid green; /* test */
+    background-color: var(--alt-background) !important;
+    color: var(--on-background);
     overflow-y: scroll;
     margin-left: 0px;
     visibility: hidden;
@@ -27,19 +26,16 @@
 .design-system-editor-left-nav:hover,
 .design-system-editor-left-nav:focus {
     visibility: visible;
+    background: transparent !important;
 }
-
 .design-system-editor-content {
     display: flex;
-    border: 0px solid blue; /* test */
-	/* gap: 10px;  */
-	/* height: calc(100vh - 112px); */
-    background-color: var(--background-secondary) !important;
+    background-color: var(--alt-background) !important;
+    color: var(--on-background)
 }
 
 .design-system-editor-right-content {
     flex-grow: 1;
-    padding: 20px;
     color: var(--on-background);
     background: var(--background);
     vertical-align: top;
@@ -68,21 +64,13 @@
     border-bottom: 1px solid var(--border)
 }
 
-.design-system-editor-right-content.darkmode .section-header {
-    padding: var(--spacing-1);
-    border-bottom: 1px solid var(--dm-border)
-}
-
 .design-system-editor-right-content .section-body {
     margin-left: 0px;
 }
 
-.design-system-editor-right-content section:not(.colored):not(.black):not(.white):not(.gradient-1):not(.gradient-2):not(.gradient-3) {
-  box-shadow: inset 0px 0px 0px 1px rgba(200,200,200,.4);
-}
-
-.section-body .subtitle1 {
-  margin-bottom: var(--spacing-2)
+.section-body .subtitle1,
+.section-demos .subtitle1 {
+    margin-bottom: var(--spacing-2)
 }
 
 .form-columns {
@@ -240,38 +228,6 @@
     cursor: pointer;
     position: relative;
 }
-
-.color-swatch::after {
-  position: absolute;
-  top: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  left: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  right: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  bottom: calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)));
-  border-radius: calc(var(--spacing-1) + 1.6px);
-  border: var(--focusBorder) solid var(--button);
-  background: transparent !important;
-  opacity: 0;
-  content: '';
-  transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  z-index: 1;
-  pointer-events: none;
-}
-.color-swatch:hover::after {
-  opacity: .5;
-  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
-}
-.color-swatch:focus::after {
-  opacity: 1;
-  top: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  left: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  right: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  bottom: calc(0px - calc(calc(var(--border-1) * var(--button-border)) + 2px));
-  min-height: calc(var(--button-height) * var(--spacing-1) + var(--border-1) * var(--button-border) * 2px + 4px);
-}
 .windowOverlay {
   position: fixed;
   top:0;
@@ -395,9 +351,7 @@
 .design-system-editor-right-content .black .hotlink {
     color: var(--white);
 }
-.design-system-editor-right-content .white .color-box {
-    background: var(--black);
-}
+
 .design-system-editor-right-content .white .hotlink {
     color: var(--black);
 }
@@ -475,4 +429,34 @@
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.standard-image img{
+  width: 300px;
+  display: inline-block;
+}
+
+.demo-title {
+  margin-left: var(--spacing-5)
+}
+
+.lightholder {
+  background: var(--background);
+  color: var(--on-background);
+  padding: var(--spacing-2);
+  border: 1px solid var(--border);
+  border-radius:  calc(var(--radius-1) * var(--card-radius));
+}
+
+.darkholder {
+  background: var(--background);
+  color: var(--on-background);
+  padding: var(--spacing-2);
+  border-radius:  calc(var(--radius-1) * var(--card-radius));
+}
+
+.Sample {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }

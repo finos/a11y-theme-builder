@@ -5,7 +5,7 @@
 import { Slider } from '@mui/material';
 import React from 'react';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { Sliders } from 'a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -31,25 +31,25 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                 <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
                 <div className="caption top40">Sample Range Slider</div>
                 <Slider defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="form-row">
-                    <NumberScaledSelectable property={slidersMolecule.handleBorderRadius} units="px" defaultValue={1} scale={radius}/>
-                </div>
-                <div className="form-row">
-                    <NumberScaledSelectable property={slidersMolecule.visibleHeight} units="px" defaultValue={3} scale={grid}/>
-                </div>
-                <div className="form-row">
-                    <StringSelectable property={slidersMolecule.handleElevation} defaultValue="No Elevation" />
-                </div>
-                <div className="form-row">
-                    <NumberScaledSelectable property={slidersMolecule.barHeight} units="px" defaultValue={1} scale={grid}/>
-                </div>
-                <div className="form-row">
-                    <StringSelectable property={slidersMolecule.barInsetShadow} defaultValue="None" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={slidersMolecule} />
+                <SettingsSection>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={slidersMolecule.handleBorderRadius} units="px" defaultValue={1} scale={radius}/>
+                    </div>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={slidersMolecule.visibleHeight} units="px" defaultValue={3} scale={grid}/>
+                    </div>
+                    <div className="form-row">
+                        <StringCategorySelectable property={slidersMolecule.handleShadow} defaultValue="None" />
+                    </div>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={slidersMolecule.barHeight} units="px" defaultValue={1} scale={grid}/>
+                    </div>
+                    <div className="form-row">
+                        <StringCategorySelectable property={slidersMolecule.barShadow} defaultValue="None" />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={slidersMolecule} />
+            </ExampleSection>    
         </>
     )
 

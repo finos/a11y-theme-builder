@@ -80,18 +80,18 @@ export const StatesAtom: React.FC<Props> = ({ atom }) => {
                     {renderExample(false)}
                 </DarkModeSection>
                 </div>
+                <SettingsSection>
+                    Click on the color to edit:
+                    <div className="top16"/>
+                    <div style={{display:"flex", gap:"40px"}}>
+                        <ColorProperty property={atom.info} label="Information" />
+                        <ColorProperty property={atom.success} label="Success" />
+                        <ColorProperty property={atom.warning} label="Warning" />
+                        <ColorProperty property={atom.danger} label="Danger" />
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={atom}/>
             </ExampleSection>
-            <SettingsSection>
-                Click on the color to edit:
-                <div className="top16"/>
-                <div style={{display:"flex", gap:"40px"}}>
-                    <ColorProperty property={atom.info} label="Information" />
-                    <ColorProperty property={atom.success} label="Success" />
-                    <ColorProperty property={atom.warning} label="Warning" />
-                    <ColorProperty property={atom.danger} label="Danger" />
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={atom}/>
         </div>
     )
 }

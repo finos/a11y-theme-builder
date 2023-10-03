@@ -11,9 +11,10 @@ interface Props {
     style?: any;
     children?: React.ReactNode;
     className?: string;
+    colorMode?: string;
 }
 
-export const IconCardsCentered: React.FC<Props> = ({className=""}) => {
+export const IconCardsCentered: React.FC<Props> = ({className="", colorMode}) => {
     return (
         <section className={"centered " +  className}>
         <Grid  justifyContent="center"  container spacing={2} columns={12} margin={2}>
@@ -23,25 +24,25 @@ export const IconCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} className="fixed" title="Title"  clickable={false}>
+              <CardSample color="primary" icon={true} className="fixed" title="Title"  clickable={false} data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true} className="fixed"  title="Title"  data-background={colorMode} >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true} className="fixed"  title="Title"  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
 
-              <CardSample icon={true} className="fixed"  title="Title" >
+              <CardSample color="primary" icon={true} className="fixed"  title="Title"  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -55,22 +56,22 @@ export const IconCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} className="fixed" title="Title"  clickable={false}   hideSecondary={true}>
+              <CardSample color="primary" icon={true} className="fixed" title="Title"  clickable={false}   hideSecondary={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title"   hideSecondary={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title"   hideSecondary={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample className="fixed"  title="Title"   hideSecondary={true}>
+              <CardSample color="primary" className="fixed"  title="Title"   hideSecondary={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -84,22 +85,22 @@ export const IconCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} className="fixed" title="Title" hotlink={true}>
+              <CardSample color="primary" icon={true} className="fixed" title="Title" hotlink={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" hotlink={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" hotlink={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" hotlink={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" hotlink={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
@@ -113,22 +114,22 @@ export const IconCardsCentered: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid  justifyContent="center" item spacing={2} xl={10} sm={12} className="cardSection">
-              <CardSample icon={true} className="fixed" title="Title" clickable={true}>
+              <CardSample color="primary" icon={true} className="fixed" title="Title" clickable={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" clickable={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" clickable={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
-              <CardSample icon={true} className="fixed"  title="Title" clickable={true}>
+              <CardSample color="primary" icon={true} className="fixed"  title="Title" clickable={true}  data-background={colorMode}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

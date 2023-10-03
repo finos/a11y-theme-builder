@@ -5,6 +5,7 @@
 import React from 'react';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedHotlinkColorSwatch } from '../../../components/ComputedHotlinkColorSwatch';
+import { ExampleSection } from '../../content/ExampleSection';
 
 const sampleText: string = "Sample Text";
 interface Props {
@@ -15,7 +16,7 @@ export const HotlinksComponent: React.FC<Props> = ({}) => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Hotlink Colors" />
-            <div>
+            <ExampleSection>
                 <div className="subtitle1 top40">Colored Hotlinks</div>
                 <div className="theme-colors">
                     <ComputedHotlinkColorSwatch
@@ -76,7 +77,7 @@ export const HotlinksComponent: React.FC<Props> = ({}) => {
                         label={"Visited"}
                     />
                 </div>
-            </div>
+            </ExampleSection>
         </div>
     );
 }

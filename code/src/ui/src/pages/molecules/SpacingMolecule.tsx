@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Switch } from '@mui/material';
+import { FormControlLabel, FormGroup, Grid, Switch } from '@mui/material';
 import { Spacing } from 'a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
@@ -44,43 +44,47 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
             <HeadingSection item={spacingMolecule} title="Assign Spacing">
                 The Spacing Molecule controls the amount of space between lines of text within a paragraph, and the paragraphs themselves.
             </HeadingSection>
-            <Switch
-                checked={showGuidelines}
-                onChange={() => setShowGuidelines(!showGuidelines)}
-                inputProps={{ 'aria-label': 'controlled' }}
-            />
+            <Grid container spacing={2} columns={12} margin={2}>
+                <Grid item spacing={2} lg={12} md={12} sm={12}>
+                    <FormGroup>
+                        <FormControlLabel
+                            control={
+                                <Switch
+                                    checked={showGuidelines}
+                                    onChange={() => setShowGuidelines(!showGuidelines)}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />
+                            }
+                            label={<div className="overline-large">Show Guidelines</div>}
+                        />
+                    </FormGroup>
+                </Grid>
+            </Grid>
             <ExampleSection>
                 <div style={sectionStyle}>
                     <h2>Sample</h2>
-                    <div style={pStyle}>
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
-                    </div>
-                    <div style={pStyle}>
+                    </p>
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip.
-                    </div>
+                    </p>
                 </div>
-                <div style={sectionStyle}>
-                    <h2>Sample</h2>
-                    <div style={pStyle}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip.
+                <SettingsSection>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={spacingMolecule.sectionPadding} units="px" defaultValue={3} scale={scale}/>
                     </div>
-                </div>
+                    <div className="form-row">
+                        <NumberScaledSelectable property={spacingMolecule.paragraphPadding} units="px" defaultValue={2} scale={scale}/>
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={spacingMolecule} />
             </ExampleSection>
-            <SettingsSection>
-                <div className="form-row">
-                    <NumberScaledSelectable property={spacingMolecule.sectionPadding} units="px" defaultValue={3} scale={scale}/>
-                </div>
-                <div className="form-row">
-                    <NumberScaledSelectable property={spacingMolecule.paragraphPadding} units="px" defaultValue={2} scale={scale}/>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={spacingMolecule} />
+
         </>
     )
 }

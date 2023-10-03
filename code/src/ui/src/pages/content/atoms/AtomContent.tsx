@@ -213,7 +213,6 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 <LeftNavAtom atom={atoms.stateSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.chartColors} indent={2} disabled={true} />
                                 <LeftNavAtom atom={atoms.borderSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.focusStates} indent={2} />
                                 <LeftNavAtom atom={atoms.hotlinks} indent={2} />
                                 <LeftNavAtom atom={atoms.inputBackground} indent={2} />
                                 <LeftNavAtom atom={atoms.animationSettings} indent={2} />
@@ -253,7 +252,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.minimumTarget.value && (
                         <ErrorHandler>
-                            <MinimumTargetAtom atom={designSystem.atoms.minimumTarget}/>
+                            <MinimumTargetAtom atoms={designSystem.atoms}/>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.stateSettings.value && (

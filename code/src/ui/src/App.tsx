@@ -41,6 +41,7 @@ interface Props {
     user: any;
 }
 
+
 const App: React.FC<Props> = ({user}) => {
 
     const [themeName, setThemeName] = useState<string>("light");
@@ -58,8 +59,9 @@ const App: React.FC<Props> = ({user}) => {
         }
     }
 
-    //const storage = new LocalStorage();
-    const storage = new ServerStorage();
+    console.log("storage=", process.env["REACT_APP_STORAGE"]);
+    const storage = (process.env["REACT_APP_STORAGE"] == "local") ? new LocalStorage() : new ServerStorage();
+    // const storage = new ServerStorage();
 
     useEffect(() => {
         WebFont.load({
@@ -85,7 +87,7 @@ const App: React.FC<Props> = ({user}) => {
             { /* </ThemeProvider> */ }
         </BrowserRouter>
     );
-    
+
 }
 
 export default App;

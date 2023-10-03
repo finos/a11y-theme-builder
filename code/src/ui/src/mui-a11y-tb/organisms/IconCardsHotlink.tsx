@@ -23,28 +23,28 @@ export const IconCards: React.FC<Props> = ({className=""}) => {
               </div>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample icon={true} title="Title"  hotlink={true}>
+              <CardSample color="primary" icon={true} title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4} md={6} sm={12} xs={12} className="cardSection">
-              <CardSample icon={true} title="Title"  hotlink={true}>
+              <CardSample color="primary" icon={true} title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample icon={true} title="Title"   hotlink={true}>
+              <CardSample color="primary" icon={true} title="Title"   hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua
               </CardSample>
             </Grid>
             <Grid item spacing={2} xl={3} lg={4}  md={6} sm={12} xs={12} className="cardSection">
-              <CardSample icon={true} title="Title"  hotlink={true}>
+              <CardSample color="primary" icon={true} title="Title"  hotlink={true}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore
                   magna aliqua

@@ -5,7 +5,7 @@
 import React, { useEffect } from 'react';
 import { DesignSystem, Images } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
-import { StringSelectable } from '../../components/editors/StringSelectable';
+import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';
@@ -55,26 +55,24 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         </div>
                     </div>
                 </div>
-            </ExampleSection>
-            <SettingsSection>
-                <div className="row">
-                    <div className="col-12">
-                    <div className="formRow">
-                            <NumberScaledSelectable property={molecule.listImageHeight} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.listImageBorderRadius} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
-                        </div>
-                        <div className="formRow">
-                            <StringSelectable property={molecule.imageElevation} defaultValue="" />
+                <SettingsSection>
+                    <div className="row">
+                        <div className="col-12">
+                          <div className="formRow">
+                              <NumberScaledSelectable property={molecule.listImageBorderRadius} units="px" scale={grid}/>
+                          </div>
+                          <div className="formRow">
+                              <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
+                          </div>
+                          <div className="formRow">
+                              <StringCategorySelectable property={molecule.imageShadow} defaultValue="None" />
+                          </div>
                         </div>
                     </div>
-                </div>
-            </SettingsSection>
-            <GeneratedCodeSection item={molecule} />
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+
         </div >
     )
 }

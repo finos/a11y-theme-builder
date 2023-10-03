@@ -29,27 +29,26 @@ export const ListsDoubleClickable: React.FC<Props> = ({ }) => {
               <HeadingSection title="organisms" heading="Lists, Double Line" />
               <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
               </SectionColorModeSelector>
-              <div className={colorMode}></div>
-              <ExampleSection>
-                <div className="subtitle1">List, Standard</div>
-                <ListDoubleClickable className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">List, with avatars</div>
-                <ListDoubleAvatarClickable className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">List, with images</div>
-                <ListDoubleImageClickable className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">List, with wide images</div>
-                <ListDoubleImageWideClickable className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">List, with icons</div>
-                <ListDoubleIconSmallClickable className={"top40 " + colorMode} />
-                <p></p>
-                <div className="subtitle1">List, with wide icons</div>
-                <ListDoubleIconLargeClickable className={"top40 " + colorMode} />
-                <p></p>
-              </ExampleSection>
+              <div className="section-demos" data-background={colorMode}>
+                  <div className="demo-title subtitle1">List, Standard</div>
+                  <ListDoubleClickable className="top40"  />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with avatars</div>
+                  <ListDoubleAvatarClickable className="top40"  />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with images</div>
+                  <ListDoubleImageClickable className="top40"  />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with wide images</div>
+                  <ListDoubleImageWideClickable className="top40" />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with icons</div>
+                  <ListDoubleIconSmallClickable className="top40"  />
+                  <p></p>
+                  <div className="demo-title subtitle1">List, with wide icons</div>
+                  <ListDoubleIconLargeClickable className="top40"  />
+                  <p></p>
+              </div>
           </div>
       )
   }
