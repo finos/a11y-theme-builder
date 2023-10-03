@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18.18-bookworm-slim
 RUN node -v
 # Copy source
 RUN mkdir $HOME/code
