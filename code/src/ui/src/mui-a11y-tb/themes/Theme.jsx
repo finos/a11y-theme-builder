@@ -998,8 +998,8 @@ try {
                         letterSpacing: "var(--chipLetterSpacing)",
                         textDecoration: "var(--chipTextDecoration)",
                         textTransform: "var(--chipTextTransform)",
-                        minWidth: "var(--chip-minwidth)",
-                        minHeight: "max(var(--min-target), calc(var(--sm-button-height) * var(--spacing-1))) !important",
+                        minWidth: "max(var(--min-target), var(--chip-minwidth)) !important",
+                        minHeight: "max(var(--min-target), calc(var(--chip-height) * var(--spacing-1))) !important",
 
                         "&::after": {
                             position: "absolute",
@@ -1030,7 +1030,7 @@ try {
                             zIndex: -1,
                             border: "calc(var(--border-1) * var(--button-border)) solid var(--button)",
                             boxShadow: "var(--chip-shadow) !important",
-                            minHeight: "calc( calc(var(--spacing-1) * var(--chip-height)) - calc(var(--border-1) * var(--button-border) * 2) )",
+                            minHeight: "calc(var(--chip-height)) - calc(var(--spacing-1))",
                         },
                         "&:hover::after": {
                             opacity: "var(--button-half)",
