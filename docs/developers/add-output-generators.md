@@ -4,19 +4,19 @@ Each output generator in the Theme Builder application has the goal of represent
 
 The Theme Builder application is designed to be extensible with regard to code generators.  To get a feel for what a code generator implementation may look like, have a look at our base code generators:
 
-* [CSS code generator](https://github.com/discoverfinancial/a11y-theme-builder-sdk/blobmain/src/code/cssGenerator.ts#L1)
-* [JSON code generator](https://github.com/discoverfinancial/a11y-theme-builder-sdkblob/main/src/code/jsonGenerator.ts#L1)
+* [CSS code generator](https://github.com/finos/a11y-theme-builder-sdk/blobmain/src/code/cssGenerator.ts#L1)
+* [JSON code generator](https://github.com/finos/a11y-theme-builder-sdkblob/main/src/code/jsonGenerator.ts#L1)
 
 
 ## Adding an Output Generator to the SDK
 
-See [How To Add a New Code Generator](https://github.com/discoverfinancial/a11y-theme-builder-sdk/blob/main/DEV-GUIDE.md#how-to-add-a-new-code-generator) in the SDK documentation.
+See [How To Add a New Code Generator](https://github.com/finos/a11y-theme-builder-sdk/blob/main/DEV-GUIDE.md#how-to-add-a-new-code-generator) in the SDK documentation.
 
 ## Adding an Output Generator to the User Interface
 
 Once a new output generator has been added to the SDK, it can be added to the `Code` page in the UI.  
 
-The left nav lists all Output Generators (labeled as Code Generators).  To add a new tab, edit [CodeContext.tsx](https://github.com/discoverfinancial/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/code/CodeContent.tsx#L1).
+The left nav lists all Output Generators (labeled as Code Generators).  To add a new tab, edit [CodeContext.tsx](https://github.com/finos/a11y-theme-builder/blob/main/code/src/ui/src/pages/content/code/CodeContent.tsx#L1).
 
 Add a `<LeftNavItem>` for your output generator to the `<List>` element
 

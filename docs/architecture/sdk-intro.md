@@ -12,8 +12,8 @@ In particular, the SDK provides the following:
 
 ## SDK Tutorial
 
-The best way to learn how to use the SDK APIs directly is to use the [SDK Tutorial](https://github.com/discoverfinancial/a11y-theme-builder-sdk/blob/main/TUTORIAL.md#accessibility-theme-builder-sdk-tutorial).  This tutorial provides specific examples of how to use the APIs for the most common tasks, in the order in which you will typically perform these tasks.
+The best way to learn how to use the SDK APIs directly is to use the [SDK Tutorial](https://github.com/finos/a11y-theme-builder-sdk/blob/main/TUTORIAL.md#accessibility-theme-builder-sdk-tutorial).  This tutorial provides specific examples of how to use the APIs for the most common tasks, in the order in which you will typically perform these tasks.
 
 ## SDK Reference API documentation
 
-In addition, for more detailed information, you may [visit the online SDK API docs](https://discoverfinancial.github.io/a11y-theme-builder-sdk/modules.html) which are generated using [TypeDoc](TypeDoc) and provide reference documentation for each of the APIs provided by the SDK.
+In addition, for more detailed information, you may [visit the online SDK API docs](https://finos.github.io/a11y-theme-builder-sdk/modules.html) which are generated using [TypeDoc](TypeDoc) and provide reference documentation for each of the APIs provided by the SDK.
