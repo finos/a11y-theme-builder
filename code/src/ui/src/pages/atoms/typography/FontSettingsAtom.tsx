@@ -61,8 +61,8 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
     const [primaryFont,         setPrimaryFont         ] = useState<string>((primaryFontFamilyProperty.getValue()   || "Open Sans"));
     const [secondaryFont,       setSecondaryFont       ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Open Sans"));
-    const [fontWeight0,         setFontWeight0         ] = useState<number>((fontWeight0Property.getValue()         || 100));
-    const [fontWeight1,         setFontWeight1         ] = useState<number>((fontWeight1Property.getValue()         || 300));
+    const [fontWeight0,         setFontWeight0         ] = useState<number>((fontWeight0Property.getValue()         || 300));
+    const [fontWeight1,         setFontWeight1         ] = useState<number>((fontWeight1Property.getValue()         || 400));
     const [fontWeight2,         setFontWeight2         ] = useState<number>((fontWeight2Property.getValue()         || 500));
     const [fontWeight3,         setFontWeight3         ] = useState<number>((fontWeight3Property.getValue()         || 600));
     const [fontWeight4,         setFontWeight4         ] = useState<number>((fontWeight4Property.getValue()         || 700));
