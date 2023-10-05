@@ -22,7 +22,7 @@ In order to simplify the installation dependencies associated with preparing the
 
     ```
     cd TARGET_WORK_FOLDER
-    git clone https://github.com/discoverfinancial/a11y-theme-builder.git
+    git clone https://github.com/finos/a11y-theme-builder.git
     git remote
     ```
 
@@ -64,7 +64,7 @@ To complete the development process, follow normal **git commit** and **git push
 The great thing about hosting project documentation in a GitHub repository is the ability to deploy it automatically when new changes are pushed. MkDocs makes this ridiculously simple. This repository contains a GitHub Action workflow that will automatically build and deploy updated documentation for each code commit. Online documentation is available here:
 
 ```
-https://discoverfinancial.github.io/a11y-theme-builder
+https://finos.github.io/a11y-theme-builder
 ```
 
 #### Resync with Upstream

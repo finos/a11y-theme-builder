@@ -3,7 +3,7 @@
 Perform the following steps to run a local version of the Theme Builder application.  
 
 ## Fetch Latest Code
-These instructions assume you have a forked instance of [discoverfinancial/a11y-theme-builder](https://github.com/discoverfinancial/a11y-theme-builder) in your personal GitHub account.
+These instructions assume you have a forked instance of [finos/a11y-theme-builder](https://github.com/finos/a11y-theme-builder) in your personal GitHub account.
 
 ```
 mkdir <WORKSPACE>

@@ -1,7 +1,7 @@
 The success of this project is the direct result of contributions across two (2)project related repositories:
 
-1. [a11y-theme-builder](https://github.com/discoverfinancial/a11y-theme-builder) (TB)
-2. [a11y-theme-builder-sdk](https://github.com/discoverfinancial/a11y-theme-builder-sdk) (SDK)
+1. [a11y-theme-builder](https://github.com/finos/a11y-theme-builder) (TB)
+2. [a11y-theme-builder-sdk](https://github.com/finos/a11y-theme-builder-sdk) (SDK)
 
 | Individual | TB | SDK |
 | --- | --- | --- | 
