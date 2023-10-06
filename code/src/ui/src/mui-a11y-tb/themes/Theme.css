@@ -350,6 +350,7 @@ h1 .inline-icon, h2 .inline-icon, h3 .inline-icon, h4 .inline-icon, h5 .inline-i
 /* all text in buttons, chips, tabs, accordion titles should have a line heigh of only 100% */
 .button .CTA, button .CTA-Small, .chip .CTA, .chip .CTA-Small, .MuiAccordionSummary-content .subtitle1 {
   line-height: 100% !important;
+  margin-bottom: 0px !important;
 }
 
 .MuiPaper-root:has(> .stat) {
@@ -1141,7 +1142,7 @@ a:hover {
   text-decoration: var(--hotlink-hover-decoration) !important;
 }
 a:active {
-  text-decoration: var(--hotlink-hover-decoration)
+  text-decoration: var(--hotlink-hover-decoration) !important;
 }
 /* pagination */
 button.MuiPaginationItem-root {

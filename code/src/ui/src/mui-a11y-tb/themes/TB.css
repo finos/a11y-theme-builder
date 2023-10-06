@@ -1085,10 +1085,6 @@
   --lm-hotlink-visited: var(--hotlink-visited);
   --lm-hotlink-decoration: var(--hotlink-decoration);
   --lm-hotlink-hover-decoration: var(--hotlink-hover-decoration);
-  /* Hotlinks */
-  --lm-hotlink: var(--hotlink);
-  --lm-hotlink-decoration: var(--lm-hotlink-decoration:);
-  --lm-hotlink-hover-decoration: var(--lm-hotlink-hover-decoration);
   /* Hotlink variations based on background color */
   --lm-hotlinkOnWhite: #0066EF;
   --lm-hotlinkOnWhite-visited: rgba(0,102,239,0.9);
@@ -2545,7 +2541,7 @@
     /* Hotlink */
     --hotlink: var(--primary-hotlink);
     --hotlink-decoration: var(--primary-hotlink-decoration);
-    --hotlink-hover-decoration: var(--primary-hotlink-hover-decoration);
+    --hotlink-hover-decoration: var(--primary-hotlink-decoration);
     /* Gradient Colors */
     --color-1: var(--primary-background);
     --color-2: var(--primary-background);
