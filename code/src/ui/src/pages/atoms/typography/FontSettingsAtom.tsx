@@ -63,9 +63,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     const [secondaryFont,       setSecondaryFont       ] = useState<string>((secondaryFontFamilyProperty.getValue() || "Open Sans"));
     const [fontWeight0,         setFontWeight0         ] = useState<number>((fontWeight0Property.getValue()         || 300));
     const [fontWeight1,         setFontWeight1         ] = useState<number>((fontWeight1Property.getValue()         || 400));
-    const [fontWeight2,         setFontWeight2         ] = useState<number>((fontWeight2Property.getValue()         || 500));
-    const [fontWeight3,         setFontWeight3         ] = useState<number>((fontWeight3Property.getValue()         || 600));
-    const [fontWeight4,         setFontWeight4         ] = useState<number>((fontWeight4Property.getValue()         || 700));
+    const [fontWeight2,         setFontWeight2         ] = useState<number>((fontWeight2Property.getValue()         || 600));
+    const [fontWeight3,         setFontWeight3         ] = useState<number>((fontWeight3Property.getValue()         || 700));
+    const [fontWeight4,         setFontWeight4         ] = useState<number>((fontWeight4Property.getValue()         || 800));
     const [secondaryFontWeight, setSecondaryFontWeight ] = useState<number>((secondaryFontWeightProperty.getValue() || 400));
     const [standardLineHeight,  setStandardLineHeight  ] = useState<number>((standardLineHeightProperty.getValue()  || 160));
     const [headerLineHeight,    setHeaderLineHeight    ] = useState<number>((headerLineHeightProperty.getValue()    || 150));
