@@ -1,14 +1,14 @@
 # Project information
 site_name: Accessibility Theme Builder
-site_url: https://discoverfinancial.github.io/a11y-theme-builder/
+site_url: https://finos.github.io/a11y-theme-builder/
 site_author: Discover Technology Academy
 site_description: >-
   A system for generating machine readable asset types allowing design
   systems to publish products that are accessibly inclusive.
 
 # Repository information
-repo_name: discoverfinancial/a11y-theme-builder
-repo_url: https://github.com/discoverfinancial/a11y-theme-builder
+repo_name: finos/a11y-theme-builder
+repo_url: https://github.com/finos/a11y-theme-builder
 
 # Content Generator Settings
 docs_dir: 'docs'
@@ -155,10 +155,10 @@ nav:
     - Running Theme Builder: setup/start-builder.md
   - Contribute:
     - contribute/index.md
-    - Reporting a bug: https://github.com/discoverfinancial/a11y-theme-builder/issues
-    - Reporting a docs issue: https://github.com/discoverfinancial/a11y-theme-builder/issues
-    - Requesting a change: https://github.com/discoverfinancial/a11y-theme-builder/issues
-    - Asking a question: https://github.com/discoverfinancial/a11y-theme-builder/discussions
+    - Reporting a bug: https://github.com/finos/a11y-theme-builder/issues
+    - Reporting a docs issue: https://github.com/finos/a11y-theme-builder/issues
+    - Requesting a change: https://github.com/finos/a11y-theme-builder/issues
+    - Asking a question: https://github.com/finos/a11y-theme-builder/discussions
   - Designers:
     - designers/index.md
     - What is a design system: designers/what-is-a-design-system.md
