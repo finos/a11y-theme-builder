@@ -35,7 +35,7 @@ We encourage designers, developers, technical writers and testers to read about 
 
 We are happy to listen to ideas, to learn where we can improve and would love to help you become involved in our project.  If you would like to help us to refine Theme Builder by reporting issues or suggesting enhancements, please begin the dialog by capturing your thoughts and observations in a [GitHub Issue](https://github.com/finos/a11y-theme-builder/issues).
 
-If you would like to discuss our ambitions and vision, or to reach out to learn more about Theme Builder, please [reach out to us through GitHub Discussions](https://github.com/discoverfinancial/a11y-theme-builder/discussions).
+If you would like to discuss our ambitions and vision, or to reach out to learn more about Theme Builder, please [reach out to us through GitHub Discussions](https://github.com/finos/a11y-theme-builder/discussions).
 
 We encourage the community to join us in our [weekly meetings](https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings) to understand where our current focus lies, what events we will be participating in, and what opportunities are on the horizon.  And, of course, please [join us on Slack](https://a11y-l464962.slack.com) if we can be of any additional help.
 
