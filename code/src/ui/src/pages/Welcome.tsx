@@ -30,7 +30,7 @@ const Welcome: React.FC<Props> = ({ user, changeTab }) => {
                 <p>
                     More information on the Theme Builder and its usage
                     can be found in the &nbsp;
-                    <a href="https://discoverfinancial.github.io/a11y-theme-builder/"
+                    <a href="https://finos.github.io/a11y-theme-builder/"
                         target="_blank" rel="noreferrer noopener">
                         Docs
                     </a>.
