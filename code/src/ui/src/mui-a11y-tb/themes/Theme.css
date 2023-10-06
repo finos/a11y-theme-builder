@@ -700,7 +700,6 @@ section:has( .quote) {
   display: none;
 }
 
-
 /* chip avatar */
 .MuiChip-root .MuiAvatar-root{
   background: transparent;
