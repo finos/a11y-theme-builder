@@ -78,11 +78,11 @@
   --primaryFont: Open Sans;
   --secondaryFont: Open Sans;
   --baseFont: 16px;
-  --fontWeight-0: unset;
-  --fontWeight-1: unset;
-  --fontWeight-2: unset;
-  --fontWeight-3: unset;
-  --fontWeight-4: unset;
+  --fontWeight-0: 300;
+  --fontWeight-1: 400;
+  --fontWeight-2: 500;
+  --fontWeight-3: 600;
+  --fontWeight-4: 700;
   --standard-LineHeight: 160%;
   --header-LineHeight: 110%;
   --sm-LineHeight: 110%;
