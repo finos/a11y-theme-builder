@@ -18,7 +18,7 @@
 		"docker-rm": "docker rm a11y-theme-builder"
 	},
 	"author": "",
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"proxy": "http://localhost:3001",
 	"homepage": ".",
 	"dependencies": {
