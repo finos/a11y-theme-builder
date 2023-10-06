@@ -1015,6 +1015,7 @@
   --lm-background: var(--background);
   --lm-alt-background: var(--background-secondary);
   --lm-background-secondary: var(--background-secondary);
+  --lm-on-background-secondary: var(--on-background-secondary);
   --lm-on-background: var(--on-background);
   --lm-background-tertiary: var(--background-tertiary);
   --lm-on-background-tertiary: var(--on-background-tertiary);
@@ -1311,9 +1312,10 @@
   --dm-text-gradient: linear-gradient(45deg, var(--dm-text-gradient-a) 0%, var(--dm-text-gradient-b) 100%);
   --dm-color-drop: var(--black);
   /* Backgrounds */
-  --dm-background: var(--background);
+  --dm-background: var(--primaryDarkBG);
   --dm-alt-background: var(--background-secondary);
   --dm-background-secondary: var(--background-secondary);
+  --dm-on-background-secondary: var(--on-background-secondary);
   /* Surface */
   --dm-on-surface: var(--dm-white);
   --dm-on-surface: var(--dm-on-white);
@@ -2566,7 +2568,7 @@
   [data-background="alt"] {
     --background: var(--alt-background);
     --alt-background: color-mix(in lch, var(--alt-background)), var(--black) 5%));
-    --on-background: var(--on-background-secondary);
+    --on-background: var(--on-background);
     /* Button */
     --button: var(--primary-button);
     --on-button: var(--primary-on-button);

@@ -986,8 +986,9 @@ try {
             MuiChip: {
                 styleOverrides: {
                     root: {
+                        height: "unset",
                         background: "transparent !important",
-                        padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
+                        padding: "calc(calc(calc(var(--min-target) - calc(var(--chip-height) * var(--spacing-1)))/2)  + calc(var(--border-1) * var(--button-border))) calc(var(--spacing-1) * var(--chip-padding))",
                         zIndex: 1,
                         position: "relative",
                         display: "flex",
@@ -1003,8 +1004,8 @@ try {
 
                         "&::after": {
                             position: "absolute",
-                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance))",
-                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px - var(--animation-focus-distance))",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 3px - var(--animation-focus-distance) - 2px)",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - (var(--border-1) * 2) - 1px - var(--animation-focus-distance) - 2px)",
                             padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
                             left: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
                             right: "calc(-2px - calc(var(--border-1) * 2) - var(--animation-focus-distance))",
@@ -1017,8 +1018,8 @@ try {
                         },
                         "&::before": {
                             position: "absolute",
-                            top:    "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2)",
-                            bottom: "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2)",
+                            top:    "calc(calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 2px);",
+                            bottom: "calc(calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 2px);",
                             padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
                             left: "0px",
                             right: "0px",
@@ -1030,19 +1031,26 @@ try {
                             zIndex: -1,
                             border: "calc(var(--border-1) * var(--button-border)) solid var(--button)",
                             boxShadow: "var(--chip-shadow) !important",
+<<<<<<< Updated upstream
                             minHeight: "calc(var(--chip-height)) - calc(var(--spacing-1))",
+=======
+                            minHeight: "calc( var(--chip-height) * var(--spacing-1) )",
+                        },
+                        "&.MuiButtonBase": {
+                            minHeight: "calc( var(--chip-height) * var(--spacing-1) )",
+>>>>>>> Stashed changes
                         },
                         "&:hover::after": {
                             opacity: "var(--button-half)",
-                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
-                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 6px)",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 6px)",
                             left: "calc(-2px - calc(var(--border-1) * 2))",
                             right: "calc(-2px - calc(var(--border-1) * 2))",
                         },
                         "&:focus::after": {
                             opacity: "var(--button)",
-                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
-                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 4px)",
+                            top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 6px)",
+                            bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 6px)",
                             left: "calc(-2px - calc(var(--border-1) * 2))",
                             right: "calc(-2px - calc(var(--border-1) * 2))",
                         },
