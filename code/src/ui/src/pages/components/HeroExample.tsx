@@ -148,48 +148,7 @@ export const HeroExample: React.FC<Props> = ({ }) => {
                 </Grid>
               </Grid>
             </HeroVideo>
-            <div className="herowithOverlay" >
-              <div className="demo-title subtitle1 backgroundVideo top40">Full Page Hero with Background Video</div>
-              <HeroBackgroundVideo className="backgroundVideo"  data-background={colorMode}>
-                <video className="bgVideo" src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov" autoPlay loop playsInline muted></video>
-                <div className="overlay-holder">
-                  <svg className="image-overlay" width="100%" height="100%">
-                    <defs>
-                      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="var(--color-1)"></stop>
-                        <stop offset="100%" stop-color="var(--color-2)"></stop>
-                      </linearGradient>
-
-                      <pattern id="checkerboard" patternUnits="userSpaceOnUse"
-                      width="3" height="3">
-                          <rect x="0" y="0" width="1.5" height="1.5" />
-                          <rect x="1.5" y="1.5" width="1.5" height="1.5" />
-                      </pattern>
-
-                      <mask id="mask">
-                        <rect width="100%" height="100%" fill="url(#checkerboard)" />
-                      </mask>
-                    </defs>
-                    <rect x={0} y={0} width="100%" height="100%" fill="url(#grad)" mask="url(#mask)"/>
-                  </svg>
-                </div>
-                <Grid className="videoHeader" container spacing={2} columns={12} margin={2}>
-                  <Grid lg={8} md={12}>
-                    <h1>Hero title</h1>
-                  </Grid>
-                  <Grid lg={8} md={12}>
-                    <div className="body1">
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                      </p>
-                    </div>
-                  </Grid>
-                  <Grid sm={12}>
-                    <Button>Get Started</Button>
-                  </Grid>
-                </Grid>
-              </HeroBackgroundVideo>
-            </div>
+            
         </div>
       </div>
 
