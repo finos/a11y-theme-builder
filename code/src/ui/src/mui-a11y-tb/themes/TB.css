@@ -78,11 +78,11 @@
   --primaryFont: Open Sans;
   --secondaryFont: Open Sans;
   --baseFont: 16px;
-  --fontWeight-0: 300;
-  --fontWeight-1: 400;
-  --fontWeight-2: 500;
-  --fontWeight-3: 600;
-  --fontWeight-4: 700;
+  --fontWeight-0: unset;
+  --fontWeight-1: unset;
+  --fontWeight-2: unset;
+  --fontWeight-3: unset;
+  --fontWeight-4: unset;
   --standard-LineHeight: 160%;
   --header-LineHeight: 110%;
   --sm-LineHeight: 110%;
@@ -1015,6 +1015,7 @@
   --lm-background: var(--background);
   --lm-alt-background: var(--background-secondary);
   --lm-background-secondary: var(--background-secondary);
+  --lm-on-background-secondary: var(--on-background-secondary);
   --lm-on-background: var(--on-background);
   --lm-background-tertiary: var(--background-tertiary);
   --lm-on-background-tertiary: var(--on-background-tertiary);
@@ -1085,10 +1086,6 @@
   --lm-hotlink-visited: var(--hotlink-visited);
   --lm-hotlink-decoration: var(--hotlink-decoration);
   --lm-hotlink-hover-decoration: var(--hotlink-hover-decoration);
-  /* Hotlinks */
-  --lm-hotlink: var(--hotlink);
-  --lm-hotlink-decoration: var(--lm-hotlink-decoration:);
-  --lm-hotlink-hover-decoration: var(--lm-hotlink-hover-decoration);
   /* Hotlink variations based on background color */
   --lm-hotlinkOnWhite: #0066EF;
   --lm-hotlinkOnWhite-visited: rgba(0,102,239,0.9);
@@ -1311,9 +1308,10 @@
   --dm-text-gradient: linear-gradient(45deg, var(--dm-text-gradient-a) 0%, var(--dm-text-gradient-b) 100%);
   --dm-color-drop: var(--black);
   /* Backgrounds */
-  --dm-background: var(--background);
+  --dm-background: var(--primaryDarkBG);
   --dm-alt-background: var(--background-secondary);
   --dm-background-secondary: var(--background-secondary);
+  --dm-on-background-secondary: var(--on-background-secondary);
   /* Surface */
   --dm-on-surface: var(--dm-white);
   --dm-on-surface: var(--dm-on-white);
@@ -2530,6 +2528,7 @@
     --animation-distance: 0px;
     --animation-focus-distance: 0px;
   }
+  
   [data-background="primary"] {
     --background: var(--primary-background);
     --alt-background: var(--primary-alt-background);
@@ -2545,7 +2544,7 @@
     /* Hotlink */
     --hotlink: var(--primary-hotlink);
     --hotlink-decoration: var(--primary-hotlink-decoration);
-    --hotlink-hover-decoration: var(--primary-hotlink-hover-decoration);
+    --hotlink-hover-decoration: var(--primary-hotlink-decoration);
     /* Gradient Colors */
     --color-1: var(--primary-background);
     --color-2: var(--primary-background);
@@ -2566,7 +2565,7 @@
   [data-background="alt"] {
     --background: var(--alt-background);
     --alt-background: color-mix(in lch, var(--alt-background)), var(--black) 5%));
-    --on-background: var(--on-background-secondary);
+    --on-background: var(--on-background);
     /* Button */
     --button: var(--primary-button);
     --on-button: var(--primary-on-button);
@@ -2578,7 +2577,7 @@
     /* Hotlink */
     --hotlink: var(--primary-hotlink);
     --hotlink-decoration: var(--primary-hotlink-decoration);
-    --hotlink-hover-decoration: var(--primary-hotlink-hover-decoration);
+    --hotlink-hover-decoration: var(--hotlink-hover-decoration);
     /* overlay values */
     --color-1: var(--primary-alt-background);
     --color-2: var(--primary-alt-background);
