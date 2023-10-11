@@ -18,7 +18,7 @@ Adhering to an [Atomic Accessibility Design Methodology](https://finos.github.io
 
 ### Theme Builder Capabilities
 
-Visit the [project docs](https://finos.github.io/a11y-theme-builder) to view an introductory video and to explore Theme Builder's features.
+Visit the [project docs](https://finos.github.io/a11y-theme-builder) to view an introductory video and to learn about Theme Builder's features.
 
 ### Using the Application
 
