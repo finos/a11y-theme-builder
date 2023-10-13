@@ -935,8 +935,8 @@ button.small-btn.icon::before {
   min-width: calc(var(--sm-button-height) + 2px);
 }
 button.small-btn::after {
-  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
-  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px - var(--animation-focus-distance));
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px - var(--animation-focus-distance));
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px - var(--animation-focus-distance));
   min-height: calc(var(--sm-button-height) + 4px + calc(var(--animation-focus-distance) * 2)) !important;
   height: calc(var(--sm-button-height) + 4px);
   opacity: 0;
@@ -945,22 +945,42 @@ button.small-btn::after {
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 button.small-btn:hover::after {
-  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
-  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
   min-height: calc(var(--sm-button-height) + 4px);
-  opacity: 1;
-  left: -4px;
-  right: -4px;
+  opacity: .5;
+  left: -3px;
+  right: -3px;
   border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
 }
 button.small-btn:focus::after {
-  top: min(calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px), 0);
-  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
   min-height: calc(var(--sm-button-height) + 4px);
   opacity: 1;
-  left: -4px;
-  right: -4px;
+  left: -3px;
+  right: -3px;
+  border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
+}
+button.small-btn.icon:hover::after {
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  min-height: calc(var(--sm-button-height) + 4px);
+  opacity: .5;
+  left: 3px;
+  right: 3px;
+  border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
+  border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
+}
+button.small-btn.icon:focus::after {
+  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 1px);
+  min-height: calc(var(--sm-button-height) + 4px);
+  opacity: 1;
+  left: 3px;
+  right: 3px;
   border-radius: calc(calc(var(--radius-1) * var(--button-radius)) + calc(var(--button-border) * var(--border-1)) + 3px);
   border: calc(var(--border-1) * var(--button-border)) solid var(--button) !important;
 }
@@ -1084,15 +1104,6 @@ button.small-btn.icon::before {
   left: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
   right: calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2);
 }
-button.small-btn.icon:hover::after {
-  top: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
-  bottom: calc(calc(var(--min-target) - calc(var(--spacing-1) * var(--sm-button-height)))/2 - calc(var(--border-1) * var(--button-border)) - 2px);
-  min-height: calc(var(--sm-button-height) + 4px);
-  opacity: var(--hover);
-  left: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
-  right: calc(calc(calc( var(--min-target) - calc(var(--sm-button-height) * var(--spacing-1)) )/2) - 4px);
-}
-
 /* dropdowns */
 .MuiMenuItem-root, .MuiMenuItem-root .MuiSvgIcon-root{
   background: var(--backround);
@@ -1528,7 +1539,7 @@ button.MuiPaginationItem-root:hover {
   gap: var(--spacing-half);
   display: flex;
   flex-direction: column;
-  margin-top: var(--spacing-1);
+
 }
 .list {
   padding: var(--spacing-1);
@@ -2648,7 +2659,6 @@ button.MuiPaginationItem-root:hover {
 .MuiInputBase-root {
   min-height: var(--min-target);
 }
-
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
   color: inherit !important;
   background: var(--input);
@@ -2656,11 +2666,20 @@ button.MuiPaginationItem-root:hover {
 .MuiFormControl-root svg path {
   fill: var(--on-background);
 }
+.Mui-checked svg path {
+  fill: var(--button) !important;
+}
 .hexValue .MuiOutlinedInput-root {
   background: none !important;
 }
 .Mui-disabled {
   -webkit-text-fill-color: inherit;
+}
+.MuiFormControlLabel-root.Mui-disabled  {
+    opacity: .5
+}
+.MuiFormControlLabel-label.Mui-disabled {
+  color: inherit !important;
 }
 /* input error */
 .MuiFormHelperText-root.Mui-error {
