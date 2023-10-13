@@ -2691,7 +2691,7 @@ button.MuiPaginationItem-root:hover {
 /* Modal */
 .overlay {
   background: var(--modal-overlay);
-  opacity: .5
+  opacity: .85
 }
 .modal {
   height: auto;
