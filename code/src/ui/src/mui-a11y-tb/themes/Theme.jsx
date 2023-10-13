@@ -1017,8 +1017,8 @@ try {
                         },
                         "&::before": {
                             position: "absolute",
-                            top:    "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2);",
-                            bottom: "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2);",
+                            top:    "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2)",
+                            bottom: "calc((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2)",
                             padding: "0 calc(var(--spacing-1) * var(--chip-padding))",
                             left: "0px",
                             right: "0px",
