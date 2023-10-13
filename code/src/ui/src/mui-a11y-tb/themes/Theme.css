@@ -1539,7 +1539,7 @@ button.MuiPaginationItem-root:hover {
   gap: var(--spacing-half);
   display: flex;
   flex-direction: column;
-  margin-top: var(--spacing-1);
+
 }
 .list {
   padding: var(--spacing-1);
