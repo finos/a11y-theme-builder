@@ -27,6 +27,8 @@ Before making a contribution, please take the following steps:
 4. Respond to any questions or suggestions raised in the issue by other developers.
 5. Fork the project repository and prepare your proposed contribution.
     1. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
+    2. When code is ready, be sure to update your branch with the latest upstream code to ensure code will merge correctly.
+    3. Retest your contribution with latest updates.
 7. Submit a pull request.
 
 NOTE: All contributors must have a contributor license agreement (CLA) on file with FINOS before their pull requests will be merged. Please review the FINOS [contribution requirements](https://community.finos.org/docs/governance/Software-Projects/contribution-compliance-requirements) and submit (or have your employer submit) the required CLA before submitting a pull request.
