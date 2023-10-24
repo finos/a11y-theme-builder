@@ -5,14 +5,31 @@ This document provides guidance for how YOU can collaborate with our project com
 
 This document describes the contribution process and governance policies of the FINOS Accessibility Theme Builder project. The project is also governed by the [Linux Foundation Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy/), and the FINOS [IP Policy](https://community.finos.org/assets/files/IP-Policy-9b1cd5f6c1d682e073c3c15224fc6d86.pdf), [Code of Conduct](https://community.finos.org/docs/governance/code-of-conduct), [Collaborative Principles](https://community.finos.org/docs/governance/collaborative-principles/), and [Meeting Procedures](https://community.finos.org/docs/governance/meeting-procedures/).
 
+## Reporting Issues
+
+We welcome any feedback on the quality, stability or performance of Theme Builder.  If you see incorrect behavior or would like to suggest ways to improve Theme Builder, please use these guidelines to create an issue in GitHub.
+1. Please [check](https://github.com/finos/a11y-theme-builder/issues) whether there is already an open issue related to your experience/feedback. If there is, join the discussion and contribute any observations or information that may not already be present in the issue.
+2. If there isn't already a relevant issue, create one, describing your experience with Theme Builder.
+    1. Add appropriate tag for project -> [`SDK`, `theme builder app`]
+        * SDK - performs calculations, creates and populates CSS variables, generates CSS and JSON output
+        * theme builder app - the application that the user interacts with
+    3. Add appropriate tag for type of issue -> [`bug`, `enhancement`]
+    4. (optional) Add tag for required specialties -> [`design thinking`, `project management`, `question`, `documentation`]
+    5. Set `Projects` field to `ThemeBuilder`
+4. If you would like to contribute designs, code, testing or resources toward resolving the issue, please note that in the issue.
+5. Respond to any questions or suggestions raised in the issue by other community members.
+6. We will triage all new issues at our next community meeting if you would like to offer more information as we prioritize your issue.  Click to see more [meeting information](https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings).
+
 ## Contribution Process
 
 Before making a contribution, please take the following steps:
-1. Check whether there's already an open issue related to your proposed contribution. If there is, join the discussion and propose your contribution there.
-2. If there isn't already a relevant issue, create one, describing your contribution and the problem you're trying to solve.
-3. Respond to any questions or suggestions raised in the issue by other developers.
-4. Fork the project repository and prepare your proposed contribution.
-5. Submit a pull request.
+1. Check whether there's already an open issue related to your proposed contribution as described above.  If not, follow instructions above to create an issue with all relevant information.
+4. Respond to any questions or suggestions raised in the issue by other developers.
+5. Fork the project repository and prepare your proposed contribution.
+    1. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
+    2. When code is ready, be sure to update your branch with the latest upstream code to ensure code will merge correctly.
+    3. Retest your contribution with latest updates.
+7. Submit a pull request.
 
 NOTE: All contributors must have a contributor license agreement (CLA) on file with FINOS before their pull requests will be merged. Please review the FINOS [contribution requirements](https://community.finos.org/docs/governance/Software-Projects/contribution-compliance-requirements) and submit (or have your employer submit) the required CLA before submitting a pull request.
 
