@@ -3175,7 +3175,7 @@ footer .MuiGrid-container {
   left: -7%;
 }
 .screen {
-  position: absolute;
+  position: fixed;
   background: #000;
   left: 50%;
   width: 71vw;
@@ -3188,7 +3188,7 @@ footer .MuiGrid-container {
   top: calc(200px + calc(calc(100vw * .58) * .013));
   max-height: 748px;
   background: var(--body-bg);
-  border-radius: 24px;
+  border-radius: calc(100vw * .001)
 }
 .screenHolder {
   overflow-y: scroll;
