@@ -2658,6 +2658,10 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiInputBase-root {
   min-height: var(--min-target);
+  border-color: hsl(var(--on-background),50%) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+
 }
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
   color: inherit !important;

@@ -333,7 +333,7 @@
   --tablebodyTransform: var(--body1TextTransform);
   /* Targets */
   --min-target: 44px;
-  --mobile-target: 44px;
+  --mobile-min-target: 48px;
   /* Animation */
   --animation-speed: 600ms;
   --animation-distance: 8px;
@@ -2251,7 +2251,27 @@
     --primary-text-gradient-a: var(--dm-text-gradient-a);
     --primary-text-gradient-b: var(--dm-text-gradient-b);
     --primary-color-drop: var(--dm-color-drop);
-
+    /* charting colors */
+    --chart-1: #000000;
+    --chart-2: #000000;
+    --chart-3: #000000;
+    --chart-4: #000000;
+    --chart-5: #000000;
+    --chart-6: #000000;
+    --chart-7: #000000;
+    --chart-8: #000000;
+    --chart-9: #000000;
+    --chart-10: #000000;
+    --dm-chart-1: #000000;
+    --dm-chart-2: #000000;
+    --dm-chart-3: #000000;
+    --dm-chart-4: #000000;
+    --dm-chart-5: #000000;
+    --dm-chart-6: #000000;
+    --dm-chart-7: #000000;
+    --dm-chart-8: #000000;
+    --dm-chart-9: #000000;
+    --dm-chart-10: #000000;
     /* bevel */
     --bevel-1: inset var(--bevel-horizontal) var(--bevel-vertical) var(--bevel-blur) var(--bevel-spread) rgba(255,255,255, calc(var(--bevel-light-opacity) * calc(1 + calc(var(--bevel-change) * 1)))),
      inset calc(0px - calc(var(--bevel-horizontal) * calc(1 + calc(var(--bevel-change) * 1)))) calc(0px - calc(var(--bevel-vertical) * calc(1 + calc(var(--bevel-change) * 1)))) var(--bevel-blur) var(--bevel-spread)
@@ -2780,7 +2800,7 @@
     --color-drop: rgba(0,0,0,.2);
   }
   [data-device="tablet"] {
-    --min-target: 44px;
+    --min-target: var(--mobile-min-target);
     --h1FontSize: 40px;
     --h2FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 4) +  var(--h6FontSize));
     --h3FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 3) +  var(--h6FontSize));
@@ -2790,7 +2810,7 @@
 
   }
   [data-device="mobile"] {
-    --min-target: 44px;
+    --min-target: var(--mobile-min-target);
     --h1FontSize: 32px;
     --h2FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 4) +  var(--h6FontSize));
     --h3FontSize: calc(calc(calc( calc(var(--h1FontSize) - var(--h6FontSize))/5) * 3) +  var(--h6FontSize));
@@ -2801,6 +2821,18 @@
   [data-animation="sensitive"] {
     --animation-speed: 0;
     --animation-focus-distance: 0px;
+  }
+  [data-color="standard"] {
+    --cc-1: var(--chart-1);
+    --cc-2: var(--chart-2);
+    --cc-3: var(--chart-3);
+    --cc-4: var(--chart-4);
+    --cc-5: var(--chart-5);
+    --cc-6: var(--chart-6);
+    --cc-7: var(--chart-7);
+    --cc-8: var(--chart-8);
+    --cc-9: var(--chart-9);
+    --cc-10: var(--chart-10);
   }
 
 }
