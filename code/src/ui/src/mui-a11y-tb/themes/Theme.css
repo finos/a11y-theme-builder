@@ -3211,12 +3211,12 @@ footer .MuiGrid-container {
   z-index: 999;
   top: calc(200px + calc(calc(100vw * .58) * .013));
   max-height: 748px;
-  background: var(--body-bg);
-  border-radius: calc(100vw * .001)
+  background: var(--black);
+  border-radius: .5vw;
 }
 .screenHolder {
   overflow-y: scroll;
-  border-radius: 1vw;
+
   top: 0l;
   height: calc(calc(100vw * .58) * .83) !important;
   max-height: 748px;
@@ -3225,6 +3225,7 @@ footer .MuiGrid-container {
   left: 0;
   right: 0;
   position: absolute;
+  background: var(--body-bg);
 }
 .screenContent {
   position: absolute;
