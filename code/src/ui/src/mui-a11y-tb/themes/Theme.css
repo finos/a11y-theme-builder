@@ -1674,8 +1674,10 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--on-background) !important;
- height: var(--min-target);
- width: var(--min-target);
+}
+.MuiCheckbox-root, .MuiRadio-root{
+ height: var(--min-target) !important;
+ width: var(--min-target) !important;
 }
 .MuiButtonBase-root .MuiMenuItem-root.Mui-selected {
   background: transparent;
@@ -1779,7 +1781,19 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
   box-shadow: var(--sliderbar-shadow);
 }
+.MuiSlider-root:not(.range) .MuiSlider-track{
+  padding-left: calc(var(--min-target) - calc( var(--sliderhandleHeight) * var(--spacing-1) ));
+}
+.MuiSlider-root.range .MuiSlider-track {
+  margin-left: calc(var(--min-target) - calc( var(--sliderhandleHeight) * var(--spacing-1) ));
+  padding-left: none;
+}
 .MuiSlider-root .MuiSlider-thumb {
+  height: var(--min-target) !important;
+  width: var(--min-target)  !important;
+  background: transparent !important;
+}
+.MuiSlider-root .MuiSlider-thumb::before {
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   width: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
@@ -1801,6 +1815,9 @@ button.MuiPaginationItem-root:hover {
   content: '';
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   z-index: -1;
+ }
+ .MuiSlider-thumb:hover, .MuiSlider-thumb.Mui-focusVisible{
+   box-shadow: none !important;
  }
 
 /* popovers */
