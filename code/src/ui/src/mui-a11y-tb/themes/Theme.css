@@ -1532,6 +1532,9 @@ button.MuiPaginationItem-root:hover {
   bottom: calc(0px - calc(var(--focusBorder) + 3px));
   opacity: 1;
 }
+.MuiAccordion-root .subtitle1 {
+  margin-bottom: 0 !important;
+}
 
 /* lists */
 .list-content {
