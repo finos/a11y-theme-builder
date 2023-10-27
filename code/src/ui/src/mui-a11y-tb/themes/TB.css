@@ -700,6 +700,10 @@
   --on-background-tertiary: var(--on-primary);
   --primaryDarkBG: var(--black);
   --secondaryDarkBG: var(--nearblack);
+  /* Button Coloring */
+  --button: var(--primary-500);
+  --on-button: #FFFFFF;
+  --button-half: rgba(0,102,239,0.5);
   /* overlays */
   --color-1: var(--background);
   --color-2: var(--background);
@@ -889,10 +893,7 @@
    calc(1.5px * calc(1 + var(--bevel-change) * 6)) rgba(0,0,0,.3);
   --recessed-9:  inset calc(1.5px * calc(1 + var(--bevel-change) * 8)) calc(1.5px * calc(1 + var(--bevel-change) * 7)) calc(1.5px * calc(1 + var(--bevel-change) * 7))
    calc(1.5px * calc(1 + var(--bevel-change) * 7)) rgba(0,0,0,.3);
-  /* Button Coloring */
-  --button: var(--primary-500);
-  --on-button: #FFFFFF;
-  --button-half: rgba(0,102,239,0.5);
+
   /* Button variations based on background color */
   --buttonOnWhite: var(--primary-500);
   --onbuttonOnWhite: #FFFFFF;
@@ -965,9 +966,9 @@
   --primary-input: var(--input);
   --primary-on-input: var(--on-input);
   /* Primary background */
-  --primary-background: var(--background);
-  --primary-alt-background: var(--alt-background);
-  --primary-on-background: var(--on-background);
+  --primary-background: var(--background) !important;
+  --primary-alt-background: var(--alt-background) !important;
+  --primary-on-background: var(--on-background) !important;
   /* Button */
   --primary-button: var(--button);
   --primary-on-button: var(--on-button);
@@ -1012,8 +1013,8 @@
   --lm-on-gray-800: var(--on-gray-800);
   --lm-on-gray-900: var(--on-gray-900);
   /* Backgrounds */
-  --lm-background: var(--background);
-  --lm-alt-background: var(--background-secondary);
+  --lm-background: var(--background-secondary);
+  --lm-alt-background: var(--background);
   --lm-background-secondary: var(--background-secondary);
   --lm-on-background-secondary: var(--on-background-secondary);
   --lm-on-background: var(--on-background);
@@ -2550,8 +2551,8 @@
   }
 
   [data-background="primary"] {
-    --background: var(--primary-background);
-    --alt-background: var(--primary-alt-background);
+    --background: var(--primary-alt-background);
+    --alt-background: var(--primary-background);
     --on-background: var(--primary-on-background);
     /* Button */
     --button: var(--primary-button);
@@ -2613,7 +2614,6 @@
     --color-drop: var(--primary-color-drop);
   }
   [data-background="white"] {
-    --background: color-mix(in lch, var(--alt-adjust),  var(--body-bg) 60%);
     --alt-background: var(--gray-100);
     --background: var(--white);
     --on-background: var(--black);
