@@ -37,7 +37,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
         buttonHeightProperty.setValue(value)
     }
 
-    const renderMinTargetSelectables = () => {
+    const renderButtonHeightSelectables = () => {
         var r = [];
         var selectables = [44/grid, 48/grid];
         for (var j=3; j<=7; j++) {
@@ -76,9 +76,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                                 <NumberScaledSelectable property={molecule.minWidth} units="px" scale={grid}/>
                             </div>
                             <div className="formRow top16">
-                                {/* --- Button Height Placeholder --- {buttonHeight} */}
-                                {/* <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/> */}
-                                {renderMinTargetSelectables()}
+                                {renderButtonHeightSelectables()}
                             </div>
                             <div className="formRow">
                                 <NumberScaledSelectable property={molecule.radius} units="px" scale={grid} />
