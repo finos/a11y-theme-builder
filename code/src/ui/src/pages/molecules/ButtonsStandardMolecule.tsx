@@ -2,8 +2,8 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useEffect } from 'react';
-import { Button } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Button, FormControl, MenuItem, Select } from '@mui/material';
 import { DesignSystem, StandardButtons } from 'a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
@@ -24,8 +24,38 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
         console.log("ButtonsStandardMolecule mounted");
     }, [])
 
-    const grid = designSystem.atoms.gridSettings.grid.getValue();
+    const grid = designSystem.atoms.gridSettings.grid.getValue() || 8;
     const border = designSystem.atoms.borderSettings.baseBorderWidth.getValue();
+    const minTarget = designSystem.atoms.minimumTarget.minHeight.getValue();
+
+    const buttonHeightProperty = molecule.height
+    const [buttonHeight, setButtonHeight] = useState<number>((buttonHeightProperty.getValue() || 44/8));
+
+    async function handleButtonHeightChange(event: any): Promise<void> {
+        const value = parseFloat(event.target.value);
+        setButtonHeight(value);
+        buttonHeightProperty.setValue(value)
+    }
+
+    const renderMinTargetSelectables = () => {
+        var r = [];
+        var selectables = [44/grid, 48/grid];
+        for (var j=3; j<=7; j++) {
+            if (j !== 44/grid && j !== 48/grid) selectables.push(j)
+        }
+        selectables = selectables.sort()
+        if (!selectables) return;
+        for (var i=0; i<selectables.length; i++) {
+            var s = (selectables[i] * grid).toString() + "px";
+            r.push(<MenuItem key={s} value={selectables[i]}> {s} </MenuItem>)
+        }
+        return (
+            <FormControl sx={{m: 2, minWidth: 120}}>
+                <div className='subtitle'>{buttonHeightProperty.name}</div>
+                <Select sx={{width: "100px"}} label={buttonHeightProperty.name} labelId={`minHeightLabel`} value={buttonHeight} onChange={handleButtonHeightChange}>{r}</Select>
+            </FormControl>
+        )
+    }
 
     return (
         <div>
@@ -46,7 +76,9 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                                 <NumberScaledSelectable property={molecule.minWidth} units="px" scale={grid}/>
                             </div>
                             <div className="formRow top16">
-                                <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/>
+                                {/* --- Button Height Placeholder --- {buttonHeight} */}
+                                {/* <NumberScaledSelectable property={molecule.height} units="px" scale={grid}/> */}
+                                {renderMinTargetSelectables()}
                             </div>
                             <div className="formRow">
                                 <NumberScaledSelectable property={molecule.radius} units="px" scale={grid} />
