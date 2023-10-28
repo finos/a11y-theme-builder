@@ -47,7 +47,7 @@ This section includes ways to get started with your open source project. Include
   * Link: https://github.com/finos/a11y-theme-builder/discussions
 * Slack
   * Used for questions to project maintainers or for private chat.
-  * Link: https://a11y-l464962.slack.com
+  * Link: https://join.slack.com/t/finos-lf/shared_invite/zt-24pxubwxi-vKczbM0pWYnltCRoOCDpFQ
 * Blog/Wiki
   * Link: https://github.com/finos/a11y-theme-builder/wiki
 
