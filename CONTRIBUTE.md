@@ -24,12 +24,13 @@ We welcome any feedback on the quality, stability or performance of Theme Builde
 
 Before making a contribution, please take the following steps:
 1. Check whether there's already an open issue related to your proposed contribution as described above.  If not, follow instructions above to create an issue with all relevant information.
-4. Respond to any questions or suggestions raised in the issue by other developers.
-5. Fork the project repository and prepare your proposed contribution.
+2. Respond to any questions or suggestions raised in the issue by other developers.
+3. Fork the project repository and prepare your proposed contribution.  All contributions should be created using the latest code from the upstream dev branch.
     1. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
-    2. When code is ready, be sure to update your branch with the latest upstream code to ensure code will merge correctly.
+    2. When your changes are ready, be sure to update your branch with the latest upstream dev branch to ensure code will merge correctly.
     3. Retest your contribution with latest updates.
-7. Submit a pull request.
+4. Submit a pull request.
+    * All pull requests should be made to merge into the upstream dev branch.
 
 NOTE: All contributors must have a contributor license agreement (CLA) on file with FINOS before their pull requests will be merged. Please review the FINOS [contribution requirements](https://community.finos.org/docs/governance/Software-Projects/contribution-compliance-requirements) and submit (or have your employer submit) the required CLA before submitting a pull request.
 
