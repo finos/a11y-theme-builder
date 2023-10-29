@@ -26,7 +26,7 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
 
     const grid = designSystem.atoms.gridSettings.grid.getValue() || 8;
     const border = designSystem.atoms.borderSettings.baseBorderWidth.getValue();
-    const minTarget = designSystem.atoms.minimumTarget.minHeight.getValue();
+    const minTarget = designSystem.atoms.minimumTarget.minHeight.getValue() || 44;
 
     const buttonHeightProperty = molecule.height
     const [buttonHeight, setButtonHeight] = useState<number>((buttonHeightProperty.getValue() || 44/8));
@@ -46,6 +46,9 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
         selectables = selectables.sort()
         if (!selectables) return;
         for (var i=0; i<selectables.length; i++) {
+            if (selectables[i] * grid < minTarget) {
+                continue;
+            }
             var s = (selectables[i] * grid).toString() + "px";
             r.push(<MenuItem key={s} value={selectables[i]}> {s} </MenuItem>)
         }
