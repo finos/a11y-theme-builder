@@ -37,6 +37,12 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
         buttonHeightProperty.setValue(value)
     }
 
+    // The selectables vary according to the gridSize and minHeight and so must be calculated here:
+    //  minHeight restricts the selectables to above that value
+    //  gridSize defines the values based on multiples of 3-7
+    //  44 and 48 must always be included
+    // Note: the value required is a float, which is then multiplied by the grid size to get the
+    //  value we see in the UI
     const renderButtonHeightSelectables = () => {
         var r = [];
         var selectables = [44/grid, 48/grid];
@@ -98,10 +104,10 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
                                 <NumberScaledSelectable property={molecule.secondaryBorder} units="px" scale={border}/>
                             </div>
                         </div>
-                      </div>
-                    </SettingsSection>
-                  <GeneratedCodeSection item={molecule} />
-               </ExampleSection>
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
         </div>
     )
 }
