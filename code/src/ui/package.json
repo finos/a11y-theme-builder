@@ -6,7 +6,7 @@
     "dependencies": {
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
-        "@finos/a11y-theme-builder-sdk": "^0.0.23",
+        "@finos/a11y-theme-builder-sdk": "^1.0.0",
         "@mui/icons-material": "^5.11.9",
         "@mui/material": "^5.11.10",
         "@mui/x-data-grid": "^6.12.0",
