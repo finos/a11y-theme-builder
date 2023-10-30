@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react'
 import './Modals.css';
 import '../../pages/WelcomePage.css'
-import { DesignSystem, TypographyStyling } from 'a11y-theme-builder-sdk';
+import { DesignSystem, TypographyStyling } from '@finos/a11y-theme-builder-sdk';
 import { Alert, Button, FormControl, Grid, InputLabel, MenuItem, Select, Slider } from '@mui/material';
 import { FontWeightsUtil } from '../../pages/atoms/typography/FontWeightsUtil'
 import { HeadingSection } from '../../pages/content/HeadingSection';

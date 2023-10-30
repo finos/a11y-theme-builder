@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { Atoms } from 'a11y-theme-builder-sdk';
+import { Atoms } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';

@@ -1,5 +1,5 @@
 {
-	"name": "a11y-theme-builder",
+	"name": "@finos/a11y-theme-builder",
 	"version": "1.0.0",
 	"description": "Accessibility Theme Builder Application",
 	"scripts": {

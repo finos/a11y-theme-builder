@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { Chip, Avatar } from '@mui/material';
-import { Chips, DesignSystem } from 'a11y-theme-builder-sdk';
+import { Chips, DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

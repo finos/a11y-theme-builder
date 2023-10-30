@@ -8,7 +8,7 @@ import { ColorSelect } from '../../components/ColorSelect';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import ModalSample from '../../components/modals/ModalSample';
-import { Modal, Shade } from 'a11y-theme-builder-sdk';
+import { Modal, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';

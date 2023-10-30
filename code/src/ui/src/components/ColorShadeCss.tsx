@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from "react";
-import { Shade, Util } from 'a11y-theme-builder-sdk';
+import { Shade, Util } from '@finos/a11y-theme-builder-sdk';
 import './ColorShade.css';
 import { getCssValue } from "../mui-a11y-tb/themes/Theme";
 

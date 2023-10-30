@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import { Box, MenuItem, Select } from '@mui/material';
-import { DesignSystem, Dropdowns } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Dropdowns } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 //import './DropdownsMolecule.css';

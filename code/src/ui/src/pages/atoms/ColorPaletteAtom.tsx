@@ -5,7 +5,7 @@
 import React from 'react';
 import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette, Shade } from 'a11y-theme-builder-sdk';
+import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';

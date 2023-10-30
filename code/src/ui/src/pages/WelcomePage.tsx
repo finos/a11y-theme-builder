@@ -14,7 +14,7 @@ import { themes } from "../mui-a11y-tb/themes/Theme";
 import { ThemeProvider } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../components/LeftNavTabs';
 import { MeasureDiv } from './MeasureDiv';
-import { Storage } from 'a11y-theme-builder-sdk';
+import { Storage } from '@finos/a11y-theme-builder-sdk';
 
 interface Props {
     user: any;
