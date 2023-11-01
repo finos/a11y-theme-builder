@@ -30,7 +30,7 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                 <div className="caption">Sample Slider</div>
                 <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
                 <div className="caption top40">Sample Range Slider</div>
-                <Slider defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
+                <Slider className="range" defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
                 <SettingsSection>
                     <div className="form-row">
                         <NumberScaledSelectable property={slidersMolecule.handleBorderRadius} units="px" defaultValue={1} scale={radius}/>
@@ -49,7 +49,7 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={slidersMolecule} />
-            </ExampleSection>    
+            </ExampleSection>
         </>
     )
 
