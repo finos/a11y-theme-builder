@@ -30,7 +30,7 @@ export const ButtonsSmallMolecule: React.FC<Props> = ({ molecule, designSystem }
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
                 <p>Configure settings that affect the appearance of small-size buttons</p>
-                <p>The height of the target area of the small button is set to the minimum target area you defined, but the visble button height can be set to your preference.</p>
+                <p>The height of the target area of the small button is set to the minimum target area you defined, but the visible button height can be set to your preference.</p>
             </HeadingSection>
             <ExampleSection>
                 <div className="buttonDemo">
