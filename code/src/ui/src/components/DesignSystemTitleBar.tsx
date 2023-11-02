@@ -49,6 +49,15 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
         }
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log('Auto Saving');
+            saveDesignSystem();
+        }, 60000);
+
+        return () => clearInterval(interval);
+    }, [])
+
     const handleSaveClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;
