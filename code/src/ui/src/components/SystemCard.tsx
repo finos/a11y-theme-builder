@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider
 import React, { useState, MouseEvent, ReactNode } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
-import { ThemeBuilder } from "a11y-theme-builder-sdk";
+import { ThemeBuilder } from "@finos/a11y-theme-builder-sdk";
 import ModalSystemName from '../components/modals/ModalSystemName';
 import FileSaver from 'file-saver';
 

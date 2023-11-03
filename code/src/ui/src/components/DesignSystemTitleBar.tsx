@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, {useState, useEffect } from 'react';
-import {DesignSystem} from 'a11y-theme-builder-sdk';
+import {DesignSystem} from '@finos/a11y-theme-builder-sdk';
 import {Select, SelectChangeEvent, InputLabel, FormControl, FormControlLabel, Button, Snackbar, Alert } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import { AccessibilityLayersButton } from './AccessibilityLayersButton';

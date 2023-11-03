@@ -17,7 +17,7 @@ import { HeadingSection } from '../content/HeadingSection';
 
 // DEMO:    Import the atom class you created in the SDK.
 //          Ours is called "MinimumTarget".
-import { MinimumTarget } from 'a11y-theme-builder-sdk';
+import { MinimumTarget } from '@finos/a11y-theme-builder-sdk';
 
 // DEMO:    We have prebuild editor components that can be used for some property types..
 //          If you require more functionality, you must create your own within the atom.

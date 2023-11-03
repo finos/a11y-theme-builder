@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import SystemCard from '../components/SystemCard';
 import ModalSystemName from '../components/modals/ModalSystemName';
-import { Storage, ThemeBuilder } from 'a11y-theme-builder-sdk';
+import { Storage, ThemeBuilder } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from './content/HeadingSection';
 import { ExampleSection } from './content/ExampleSection';
 import { Preferences } from '../Preferences';

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import SystemCard from '../components/SystemCard';
 import { ExampleSection } from './content/ExampleSection';
 import { HeadingSection } from './content/HeadingSection';
-import { Storage, ThemeBuilder } from 'a11y-theme-builder-sdk';
+import { Storage, ThemeBuilder } from '@finos/a11y-theme-builder-sdk';
 
 interface Props {
     user: any;

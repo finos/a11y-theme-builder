@@ -4,7 +4,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import { FormControlLabel, FormGroup, Grid, Switch } from '@mui/material';
-import { Spacing } from 'a11y-theme-builder-sdk';
+import { Spacing } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';

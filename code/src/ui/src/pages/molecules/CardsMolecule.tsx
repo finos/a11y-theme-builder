@@ -4,7 +4,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, InputAdornment, InputLabel, TextField, Typography } from '@mui/material';
-import { DesignSystem, Cards } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Cards } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';
