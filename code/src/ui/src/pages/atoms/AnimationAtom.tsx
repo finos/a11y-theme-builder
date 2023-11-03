@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { InputLabel, TextField } from '@mui/material';
-import { AnimationSettings } from 'a11y-theme-builder-sdk';
+import { AnimationSettings } from '@finos/a11y-theme-builder-sdk';
 import { NumberProperty } from '../../components/editors/NumberProperty';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

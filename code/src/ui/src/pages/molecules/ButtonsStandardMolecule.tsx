@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import { Button, FormControl, MenuItem, Select } from '@mui/material';
-import { DesignSystem, StandardButtons } from 'a11y-theme-builder-sdk';
+import { DesignSystem, StandardButtons } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';

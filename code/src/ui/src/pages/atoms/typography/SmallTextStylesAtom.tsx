@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { DesignSystem } from 'a11y-theme-builder-sdk';
+import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import TextEditBox from '../../../components/TextEditBox';
 import { HeadingSection } from '../../content/HeadingSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';

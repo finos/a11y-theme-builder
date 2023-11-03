@@ -5,7 +5,7 @@
 import React, {useState, useEffect } from 'react';
 import { Checkbox, FormControl, InputLabel,
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { DesignSystem } from 'a11y-theme-builder-sdk';
+import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import './AccessibilityLayersButton.css';
 import { StringSelectable } from './editors/StringSelectable';
 

@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect, useState } from 'react';
-import { Atoms, PropertyNumber } from 'a11y-theme-builder-sdk';
+import { Atoms, PropertyNumber } from '@finos/a11y-theme-builder-sdk';
 import ModalFontHelp from '../../../components/modals/ModalFontHelp';
 import { NumberProperty } from '../../../components/editors/NumberProperty';
 import { ExampleSection } from '../../content/ExampleSection';

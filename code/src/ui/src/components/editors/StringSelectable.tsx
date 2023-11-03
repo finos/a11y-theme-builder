@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select } from '@mui/material';
-import { PropertyStringSelectable } from 'a11y-theme-builder-sdk';
+import { PropertyStringSelectable } from '@finos/a11y-theme-builder-sdk';
 
 export interface StringProps {
     property: PropertyStringSelectable;

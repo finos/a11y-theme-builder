@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { Slider } from '@mui/material';
-import { BevelSettings } from 'a11y-theme-builder-sdk';
+import { BevelSettings } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

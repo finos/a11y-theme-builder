@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { Alert } from '@mui/material';
-import { Toasts } from 'a11y-theme-builder-sdk';
+import { Toasts } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { ExampleSection } from '../content/ExampleSection';

@@ -4,7 +4,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import { InputLabel, TextField, InputAdornment } from '@mui/material';
-import { Property } from 'a11y-theme-builder-sdk';
+import { Property } from '@finos/a11y-theme-builder-sdk';
 
 export interface NumberProps {
     property: Property<string>;

@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import { InputLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
-import { DesignSystem, Hero } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Hero } from '@finos/a11y-theme-builder-sdk';
 import { HeroExample } from '../../pages/organisms/HeroExample';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

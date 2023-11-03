@@ -4,7 +4,7 @@
  */
 import React, { ChangeEvent, useState } from "react";
 import { InputLabel, Switch } from "@mui/material";
-import { Color, ColorPalette } from 'a11y-theme-builder-sdk';
+import { Color, ColorPalette } from '@finos/a11y-theme-builder-sdk';
 import { ColorShadeCss } from './ColorShadeCss';
 import { LightModeSection } from "../pages/content/LightModeSection";
 import { DarkModeSection } from "../pages/content/DarkModeSection";

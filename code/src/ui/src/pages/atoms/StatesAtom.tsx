@@ -4,7 +4,7 @@
  */
 import React, { ReactElement, useEffect, useState } from 'react';
 import { InputLabel, TextField } from '@mui/material';
-import { StateSettings } from 'a11y-theme-builder-sdk';
+import { StateSettings } from '@finos/a11y-theme-builder-sdk';
 import './StatesAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

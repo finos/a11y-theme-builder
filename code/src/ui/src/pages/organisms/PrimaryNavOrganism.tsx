@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PrimaryNav } from 'a11y-theme-builder-sdk';
+import { PrimaryNav } from '@finos/a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

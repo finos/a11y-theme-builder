@@ -6,7 +6,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { List, Button, InputLabel, Grid } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
-import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 import FileSaver from 'file-saver';
 import { Preferences } from '../../../Preferences';
