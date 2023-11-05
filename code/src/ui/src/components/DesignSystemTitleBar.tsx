@@ -30,6 +30,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
 
     const createNewDesignSystem = "New design system";
     const designSystemUrl = "designSystem";
+    const autoSaveDelay = 60000;
 
     useEffect(() => {
     }, []);
@@ -58,7 +59,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
         const interval = setInterval(() => {
             console.log('Auto Saving');
             saveDesignSystem();
-        }, 60000);
+        }, autoSaveDelay);
 
         return () => clearInterval(interval);
     }, [])
