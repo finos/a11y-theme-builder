@@ -3,6 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, {useState, useEffect } from 'react';
+import {useLocation} from "react-router-dom";
 import {DesignSystem} from '@finos/a11y-theme-builder-sdk';
 import {Select, SelectChangeEvent, InputLabel, FormControl, FormControlLabel, Button, Snackbar, Alert } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -28,6 +29,8 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
     const [showFail,  setShowFail]  = useState(false);
 
     const createNewDesignSystem = "New design system";
+    const designSystemUrl = "designSystem";
+    const autoSaveDelay = 60000;
 
     useEffect(() => {
     }, []);
@@ -36,18 +39,30 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
         window.location.href = `/`;
     }
 
+    const location = useLocation();
     const saveDesignSystem = async () => {
-        console.log(`Save Design System`);
+        if (location.pathname.includes(designSystemUrl)) {
+            console.log(`Save Design System`);
 
-        try {
-            await designSystem.store();
-            setShowToast(true);
-            setShowFail(false);
-        } catch (e) {
-            setShowFail(true);
-            console.log(`Save Design System FAILED`);
+            try {
+                await designSystem.store();
+                setShowToast(true);
+                setShowFail(false);
+            } catch (e) {
+                setShowFail(true);
+                console.log(`Save Design System FAILED`);
+            }
         }
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log('Auto Saving');
+            saveDesignSystem();
+        }, autoSaveDelay);
+
+        return () => clearInterval(interval);
+    }, [])
 
     const handleSaveClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
