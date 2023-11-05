@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from "react";
-import { ElevationSettings, Util } from 'a11y-theme-builder-sdk';
+import { ElevationSettings, Util } from '@finos/a11y-theme-builder-sdk';
 
 
 interface Props {

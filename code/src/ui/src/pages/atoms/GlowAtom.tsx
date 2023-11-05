@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { InputLabel, TextField, Slider } from '@mui/material';
-import { GlowSettings } from 'a11y-theme-builder-sdk';
+import { GlowSettings } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';

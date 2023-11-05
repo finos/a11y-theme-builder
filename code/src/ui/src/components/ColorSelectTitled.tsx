@@ -4,7 +4,7 @@
  */
 import React, { MouseEvent, useEffect, useState } from "react";
 import { Alert, Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { Event, EventType, PropertyColorShade, PropertyTitledShade, Shade, TitledShade } from 'a11y-theme-builder-sdk';
+import { Event, EventType, PropertyColorShade, PropertyTitledShade, Shade, TitledShade } from '@finos/a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';
 import './ColorSelectTitled.css';
 

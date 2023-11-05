@@ -6,7 +6,7 @@ import { Slider } from '@mui/material';
 import React from 'react';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
-import { Sliders } from 'a11y-theme-builder-sdk';
+import { Sliders } from '@finos/a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';

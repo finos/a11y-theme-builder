@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SecondaryNav } from 'a11y-theme-builder-sdk';
+import { SecondaryNav } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';

@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { BorderSettings } from 'a11y-theme-builder-sdk';
+import { BorderSettings } from '@finos/a11y-theme-builder-sdk';
 import { NumberProperty } from '../../components/editors/NumberProperty';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

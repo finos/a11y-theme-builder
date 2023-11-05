@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Atom, Molecule, Organism } from 'a11y-theme-builder-sdk';
+import { Atom, Molecule, Organism } from '@finos/a11y-theme-builder-sdk';
 
 interface Props {
     item?: Atom | Molecule | Organism;

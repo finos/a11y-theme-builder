@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { InputLabel, TextField, Slider } from '@mui/material';
-import { ElevationSettings } from 'a11y-theme-builder-sdk';
+import { ElevationSettings } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';

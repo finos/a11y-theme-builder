@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { DesignSystem} from 'a11y-theme-builder-sdk';
+import { DesignSystem} from '@finos/a11y-theme-builder-sdk';
 import { List, Collapse, RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, Grid, Breadcrumbs, Button, Link, Typography, Divider, Avatar } from '@mui/material';
 import { LeftNavHeader, LeftNavItem, LeftNavText } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';

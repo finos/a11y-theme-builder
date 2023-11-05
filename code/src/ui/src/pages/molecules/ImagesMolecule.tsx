@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect } from 'react';
-import { DesignSystem, Images } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Images } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

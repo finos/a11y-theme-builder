@@ -12,5 +12,6 @@ git pull --rebase --autostash
 npm run build-lib
 cd $SCRIPT_DIR
 rm -rf src/ui/node_modules/.cache
-rm -rf src/ui/node_modules/$SDK
-cp -R ../../$SDK src/ui/node_modules
+rm -rf src/ui/node_modules/@finos/$SDK
+mkdir -p src/ui/node_modules/@finos
+cp -R ../../$SDK src/ui/node_modules/@finos
