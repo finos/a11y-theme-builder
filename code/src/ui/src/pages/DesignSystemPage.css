@@ -19,10 +19,18 @@
     color: var(--on-background);
     overflow-y: scroll;
     margin-left: 0px;
-    visibility: hidden;
+    visibility: hidden;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.design-system-editor-left-nav-footer {
+    padding-left: 1em;
 }
 
 .design-system-editor-left-nav-scrollable,
+.design-system-editor-left-nav-footer,
 .design-system-editor-left-nav:hover,
 .design-system-editor-left-nav:focus {
     visibility: visible;
