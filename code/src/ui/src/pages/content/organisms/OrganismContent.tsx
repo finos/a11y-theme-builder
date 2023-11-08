@@ -9,6 +9,7 @@ import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
+import {LeftNavFooter} from "../../../components/LeftNavFooter";
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { NavSwitch } from '../../../components/NavSwitch';
@@ -329,6 +330,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Collapse>
                 </List>
             </div>
+                <LeftNavFooter />
             </div>
             <div className="design-system-editor-right-content" data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">

@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 8px
 }
 
 .design-system-editor-left-nav-footer {
@@ -62,7 +63,7 @@
 }
 
 .darkmode.design-system-editor-right-content {
-    background-color: var(--dm-background) !;
+    background-color: var(--dm-background) !important;
     color: var(--dm-on-background);
     min-height: 80vh;
 }

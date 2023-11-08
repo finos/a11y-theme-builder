@@ -13,6 +13,7 @@ import {themes} from "../mui-a11y-tb/themes/Theme";
 import {LeftNavHeader, LeftNavItem} from '../components/LeftNavTabs';
 import {MeasureDiv} from './MeasureDiv';
 import {Storage} from '@finos/a11y-theme-builder-sdk';
+import { LeftNavFooter } from "../components/LeftNavFooter";
 
 interface Props {
     user: any;
@@ -69,14 +70,7 @@ const WelcomePage: React.FC<Props> = ({user, storage, themeName}) => {
                                 }}/>
                             </List>
                         </div>
-                        {/* Netlify Badge  */}
-                        <div className="design-system-editor-left-nav-footer">
-                            <a href="https://www.netlify.com">
-                                <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg"
-                                     alt="Deploys by Netlify"/>
-                            </a>
-                        </div>
-                        {/* End Netlify Badge */}
+                        <LeftNavFooter />
                     </div>
                     <div className="design-system-editor-right-content">
                         <div className="design-system-editor-right-content-scrollable">
