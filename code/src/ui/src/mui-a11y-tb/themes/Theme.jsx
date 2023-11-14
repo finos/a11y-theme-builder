@@ -942,7 +942,6 @@ try {
                         height: "calc(var(--sliderhandleHeight) * var(--spacing-1))",
                         width: "calc(var(--sliderhandleHeight) * var(--spacing-1) )",
                         borderRadius: "calc(var(--sliderhandleRadius) * var(--radius-1))",
-                       boxShadow: "var(--sliderhandle-shadow)",
                        backgroundColor: "var(--button)",
                        position: "absolute",
                        top: "50%",
@@ -1033,7 +1032,7 @@ try {
                             minHeight: "calc( calc( var(--chip-height) * var(--spacing-1) ) - calc( var(--border-1) * var(--button-border) * 2 ))",
                         },
                         "&:hover::after": {
-                            opacity: "var(--button-half)",
+                            opacity: ".5",
                             top:    "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 3px)",
                             bottom: "calc(((var(--min-target) - (var(--spacing-1) * var(--chip-height)))/2) - 3px)",
                             left: "calc(-1px - calc(var(--border-1) * 2))",

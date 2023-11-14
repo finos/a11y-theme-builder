@@ -400,6 +400,7 @@
   --button-shadow: var(--elevation-1);
   --sm-button-height: 4;
   --sm-button-padding: 2;
+  --mobile-button-radius: calc(calc( calc(var(--button-radius) * var(--radius-1)) / calc(var(--button-height) * var(--spacing-1)) ) * var(--mobile-min-target));
   /* Chips */
   --chip-minwidth: 80px;
   --chip-height: 5;
@@ -2551,8 +2552,8 @@
   }
 
   [data-background="primary"] {
-    --background: var(--primary-alt-background);
-    --alt-background: var(--primary-background);
+    --background: var(--primary-background);
+    --alt-background: var(--primary-alt-background);
     --on-background: var(--primary-on-background);
     /* Button */
     --button: var(--primary-button);

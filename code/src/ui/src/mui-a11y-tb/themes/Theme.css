@@ -1723,6 +1723,9 @@ button.MuiPaginationItem-root:hover {
   position: relative;
   box-shadow: var(--sliderhandle-shadow);
 }
+.MuiSwitch-root:hover .MuiSwitch-switchBase:hover {
+  box-shadow: none;
+}
 .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb::after {
   position: absolute;
   pointer-events: none;
@@ -1795,6 +1798,7 @@ button.MuiPaginationItem-root:hover {
   height: var(--min-target) !important;
   width: var(--min-target)  !important;
   background: transparent !important;
+  box-shadow: none !important;
 }
 .MuiSlider-root .MuiSlider-thumb::before {
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
@@ -1822,6 +1826,8 @@ button.MuiPaginationItem-root:hover {
  .MuiSlider-thumb:hover, .MuiSlider-thumb.Mui-focusVisible{
    box-shadow: none !important;
  }
+
+
 
 /* popovers */
 .MuiPopover-paper {
@@ -1936,6 +1942,9 @@ button.MuiPaginationItem-root:hover {
   right: calc(0px - calc(var(--focusBorder) + 2px));
   bottom: calc(0px - calc(var(--focusBorder) + 2px));
   opacity: 1;
+}
+.MuiSwitch-switchBase:hover {
+  background-color: transparent !important;
 }
 /* icons */
 .icon-body {
