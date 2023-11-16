@@ -30,7 +30,8 @@ jobs:
     name: Push Docker image to Docker Hub
     needs: docker-scan
     runs-on: ubuntu-latest
-    # save forks from having issue
+    # save forks from having issue trying to publish to Docker
+    #  without the correct credentials
     #if: github.repository_owner == 'finos'
     outputs:
       digest: ${{ steps.build_publish.outputs.digest }}
