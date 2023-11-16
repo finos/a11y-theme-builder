@@ -6,7 +6,7 @@ import { Slider } from '@mui/material';
 import React from 'react';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
-import { Sliders } from 'a11y-theme-builder-sdk';
+import { Sliders } from '@finos/a11y-theme-builder-sdk';
 import { ExampleSection } from '../content/ExampleSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
@@ -30,7 +30,7 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                 <div className="caption">Sample Slider</div>
                 <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
                 <div className="caption top40">Sample Range Slider</div>
-                <Slider defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
+                <Slider className="range" defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
                 <SettingsSection>
                     <div className="form-row">
                         <NumberScaledSelectable property={slidersMolecule.handleBorderRadius} units="px" defaultValue={1} scale={radius}/>
@@ -49,7 +49,7 @@ export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={slidersMolecule} />
-            </ExampleSection>    
+            </ExampleSection>
         </>
     )
 

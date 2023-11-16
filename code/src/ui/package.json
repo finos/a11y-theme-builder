@@ -6,6 +6,7 @@
     "dependencies": {
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
+        "@finos/a11y-theme-builder-sdk": "^1.0.0",
         "@mui/icons-material": "^5.11.9",
         "@mui/material": "^5.11.10",
         "@mui/x-data-grid": "^6.12.0",
@@ -24,8 +25,7 @@
         "@types/react-router-dom": "5.3.3",
         "@types/uuid": "^8.3.4",
         "@types/webfontloader": "^1.6.35",
-        "a11y-theme-builder-sdk": "^0.0.22",
-        "axios": "^0.26.1",
+        "axios": "^1.6.0",
         "buffer": "^6.0.3",
         "chroma-js": "^2.4.2",
         "colord": "^2.9.3",

@@ -1532,6 +1532,9 @@ button.MuiPaginationItem-root:hover {
   bottom: calc(0px - calc(var(--focusBorder) + 3px));
   opacity: 1;
 }
+.MuiAccordion-root .subtitle1 {
+  margin-bottom: 0 !important;
+}
 
 /* lists */
 .list-content {
@@ -1674,8 +1677,10 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiPaper-root.MuiPopover-paper .MuiCheckbox-root{
  color: var(--on-background) !important;
- height: var(--min-target);
- width: var(--min-target);
+}
+.MuiCheckbox-root, .MuiRadio-root{
+ height: var(--min-target) !important;
+ width: var(--min-target) !important;
 }
 .MuiButtonBase-root .MuiMenuItem-root.Mui-selected {
   background: transparent;
@@ -1717,6 +1722,9 @@ button.MuiPaginationItem-root:hover {
   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1)) !important;
   position: relative;
   box-shadow: var(--sliderhandle-shadow);
+}
+.MuiSwitch-root:hover .MuiSwitch-switchBase:hover {
+  box-shadow: none;
 }
 .MuiSwitch-root .MuiSwitch-switchBase .MuiSwitch-thumb::after {
   position: absolute;
@@ -1779,7 +1787,20 @@ button.MuiPaginationItem-root:hover {
   opacity: var(--quiet);
   box-shadow: var(--sliderbar-shadow);
 }
+.MuiSlider-root:not(.range) .MuiSlider-track{
+  padding-left: calc(var(--min-target) - calc( var(--sliderhandleHeight) * var(--spacing-1) ));
+}
+.MuiSlider-root.range .MuiSlider-track {
+  margin-left: calc(var(--min-target) - calc( var(--sliderhandleHeight) * var(--spacing-1) ));
+  padding-left: none;
+}
 .MuiSlider-root .MuiSlider-thumb {
+  height: var(--min-target) !important;
+  width: var(--min-target)  !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.MuiSlider-root .MuiSlider-thumb::before {
   height: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   width: calc( var(--sliderhandleHeight) * var(--spacing-1) );
   border-radius: calc(var(--sliderhandleRadius) * var(--radius-1));
@@ -1802,6 +1823,11 @@ button.MuiPaginationItem-root:hover {
   transition: var(--animation-speed) cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   z-index: -1;
  }
+ .MuiSlider-thumb:hover, .MuiSlider-thumb.Mui-focusVisible{
+   box-shadow: none !important;
+ }
+
+
 
 /* popovers */
 .MuiPopover-paper {
@@ -1916,6 +1942,9 @@ button.MuiPaginationItem-root:hover {
   right: calc(0px - calc(var(--focusBorder) + 2px));
   bottom: calc(0px - calc(var(--focusBorder) + 2px));
   opacity: 1;
+}
+.MuiSwitch-switchBase:hover {
+  background-color: transparent !important;
 }
 /* icons */
 .icon-body {
@@ -2658,6 +2687,10 @@ button.MuiPaginationItem-root:hover {
 }
 .MuiInputBase-root {
   min-height: var(--min-target);
+  border-color: hsl(var(--on-background),50%) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+
 }
 .MuiFormControl-root:not(.info):not(.success):not(.warning):not(.danger):not(hexValue)  .MuiOutlinedInput-root {
   color: inherit !important;
@@ -3175,7 +3208,7 @@ footer .MuiGrid-container {
   left: -7%;
 }
 .screen {
-  position: absolute;
+  position: fixed;
   background: #000;
   left: 50%;
   width: 71vw;
@@ -3187,12 +3220,12 @@ footer .MuiGrid-container {
   z-index: 999;
   top: calc(200px + calc(calc(100vw * .58) * .013));
   max-height: 748px;
-  background: var(--body-bg);
-  border-radius: 24px;
+  background: var(--black);
+  border-radius: .5vw;
 }
 .screenHolder {
   overflow-y: scroll;
-  border-radius: 1vw;
+
   top: 0l;
   height: calc(calc(100vw * .58) * .83) !important;
   max-height: 748px;
@@ -3201,6 +3234,7 @@ footer .MuiGrid-container {
   left: 0;
   right: 0;
   position: absolute;
+  background: var(--body-bg);
 }
 .screenContent {
   position: absolute;

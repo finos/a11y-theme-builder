@@ -4,7 +4,7 @@
  */
 import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
-import { SmallButtons, DesignSystem } from 'a11y-theme-builder-sdk';
+import { SmallButtons, DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
@@ -30,7 +30,7 @@ export const ButtonsSmallMolecule: React.FC<Props> = ({ molecule, designSystem }
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
                 <p>Configure settings that affect the appearance of small-size buttons</p>
-                <p>The height of the target area of the small button is set to the minimum target area you defined, but the visble button height can be set to your preference.</p>
+                <p>The height of the target area of the small button is set to the minimum target area you defined, but the visible button height can be set to your preference.</p>
             </HeadingSection>
             <ExampleSection>
                 <div className="buttonDemo">

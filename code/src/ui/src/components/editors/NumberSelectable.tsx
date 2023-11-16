@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { InputLabel, MenuItem, Select } from '@mui/material';
-import { PropertyPixelSelectable } from 'a11y-theme-builder-sdk';
+import { PropertyPixelSelectable } from '@finos/a11y-theme-builder-sdk';
 
 export interface PixelProps {
     property: PropertyPixelSelectable;

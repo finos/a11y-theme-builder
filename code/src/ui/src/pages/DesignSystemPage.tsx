@@ -6,7 +6,7 @@ import React, { useRef, useLayoutEffect, ReactNode } from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { ThemeBuilder, DesignSystem, EventValueChange, Layers, Storage } from 'a11y-theme-builder-sdk';
+import { ThemeBuilder, DesignSystem, EventValueChange, Layers, Storage } from '@finos/a11y-theme-builder-sdk';
 import { DesignSystemTitleBar } from '../components/DesignSystemTitleBar';
 import { AtomContent } from './content/atoms/AtomContent';
 import { MoleculeContent } from './content/molecules/MoleculeContent';

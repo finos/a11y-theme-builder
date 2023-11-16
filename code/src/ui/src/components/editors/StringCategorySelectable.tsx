@@ -4,7 +4,7 @@
  */
 import React, { useState } from 'react';
 import { InputLabel, ListSubheader, MenuItem, Select } from '@mui/material';
-import { PropertyStringCategorySelectable } from 'a11y-theme-builder-sdk';
+import { PropertyStringCategorySelectable } from '@finos/a11y-theme-builder-sdk';
 
 export interface StringProps {
     property: PropertyStringCategorySelectable;

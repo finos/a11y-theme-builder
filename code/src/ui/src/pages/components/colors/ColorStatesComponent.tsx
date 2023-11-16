@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { DesignSystem, StateSettings } from 'a11y-theme-builder-sdk';
+import { DesignSystem, StateSettings } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
 import { ExampleSection } from '../../content/ExampleSection';

@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from "react";
-import { EventValueChange, GradientColors2, Shade } from 'a11y-theme-builder-sdk';
+import { EventValueChange, GradientColors2, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import './ColorGradientHeader.css';
 

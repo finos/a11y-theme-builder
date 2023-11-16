@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { useEffect, useState, ReactNode } from 'react';
-import { DesignSystem, Event, EventType, Popovers } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType, Popovers } from '@finos/a11y-theme-builder-sdk';
 import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';

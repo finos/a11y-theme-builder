@@ -21,7 +21,7 @@ import { StatesAtom } from '../../atoms/StatesAtom';
 import { InputBackgroundsAtom } from '../../atoms/InputBackgroundsAtom';
 import { HotlinksAtom } from '../../atoms/HotlinksAtom';
 import { FocusStateAtom } from '../../atoms/FocusStateAtom';
-import { DesignSystem, Event, EventType, Atom } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType, Atom } from '@finos/a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, Collapse } from '@mui/material';

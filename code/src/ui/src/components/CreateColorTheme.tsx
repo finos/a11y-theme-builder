@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Grid } from '@mui/material';
-import { ColorTheme, ColorThemes, Event, EventType, Shade } from 'a11y-theme-builder-sdk';
+import { ColorTheme, ColorThemes, Event, EventType, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import { ColorPairSelect } from './ColorPairSelect';
 import { ColorGradient } from './ColorGradient';

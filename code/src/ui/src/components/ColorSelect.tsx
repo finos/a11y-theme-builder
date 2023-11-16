@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from "react";
 import {Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { Event, EventType, PropertyColorShade, Shade } from 'a11y-theme-builder-sdk';
+import { Event, EventType, PropertyColorShade, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ColorShade } from '../components/ColorShade';
 import './ColorSelect.css';
 

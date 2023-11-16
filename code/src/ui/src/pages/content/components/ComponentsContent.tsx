@@ -4,7 +4,7 @@
  */
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
-import { DesignSystem, Event, EventType } from 'a11y-theme-builder-sdk';
+import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
 import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
