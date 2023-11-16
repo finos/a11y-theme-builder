@@ -26,7 +26,7 @@ jobs:
         uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
         with:
           image: user/app:latest
-  push_to_registry:
+  push-to-registry:
     name: Push Docker image to Docker Hub
     needs: docker-scan
     runs-on: ubuntu-latest
