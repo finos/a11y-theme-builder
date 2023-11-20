@@ -22,10 +22,10 @@ jobs:
       - name: Build
         run: docker build -f Dockerfile -t user/app:latest .
         working-directory: code
-      #- name: Scan for vulnerabilities
-      #  uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
-      #  with:
-      #    image: user/app:latest
+      - name: Scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
+        with:
+          image: user/app:latest
   push-to-registry:
     name: Push Docker image to Docker Hub
     needs: docker-scan
