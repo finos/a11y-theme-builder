@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     # save forks from having issue trying to publish to Docker
     #  without the correct credentials
-    #if: github.repository_owner == 'finos'
+    if: github.repository_owner == 'finos'
     outputs:
       digest: ${{ steps.build_publish.outputs.digest }}
     steps:
