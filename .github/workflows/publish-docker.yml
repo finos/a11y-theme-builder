@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - 'main'
+      - 'dev'
+      - 'github-action-docker-scanner'
     paths:
       - 'code/src/**'
       - 'code/package.json'
@@ -25,6 +27,7 @@ jobs:
         uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
         with:
           image: user/app:latest
+          severity_threshold: HIGH
   push-to-registry:
     name: Push Docker image to Docker Hub
     needs: docker-scan
