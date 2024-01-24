@@ -6,6 +6,7 @@ on:
     branches:
       - 'main'
       - 'dev'
+      - 'fix-docker-scans'
     paths:
       - 'code/src/**'
       - 'code/package.json'
