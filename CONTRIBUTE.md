@@ -55,7 +55,10 @@ This section includes ways to get started with your open source project. Include
 Participating in our project community spans a variety of activities:
 
 * Reporting bugs and enhancements requests
-* Contributing bug/feature solutions
+* Contributing bug/feature solutions and ideas for community content (see issues tagged with the 'community' tag for examples)
+* Joining Community Collaboration Space calls, held every other week at 11am ET (details on the [FINOS Calendar](https://www.finos.org/calendar))
+* Speaking at conferences and meetups to build awareness and community
+* Participating in Collaboration Summits
 * [Improving documentation](https://finos.github.io/a11y-theme-builder/)
 * [Identifying and tracking new use cases](https://finos.github.io/a11y-theme-builder/contribute)
 * Create an example of the project in real world by building something or showing what others have built.
