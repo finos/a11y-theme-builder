@@ -23,6 +23,7 @@ import { HotlinksAtom } from '../../atoms/HotlinksAtom';
 import { FocusStateAtom } from '../../atoms/FocusStateAtom';
 import { DesignSystem, Event, EventType, Atom } from '@finos/a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
+import {LeftNavFooter} from "../../../components/LeftNavFooter";
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, Collapse } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -226,6 +227,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
 
                     </List>
                 </div>
+                <LeftNavFooter />
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">

@@ -6,6 +6,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { List, Button, InputLabel, Grid } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
+import {LeftNavFooter} from "../../../components/LeftNavFooter";
 import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../HeadingSection';
 import FileSaver from 'file-saver';
@@ -126,6 +127,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
                         <LeftNavItem text={"JSON"} value="json" indent={1} selected={showItem} onClick={()=> {setShowItem("json")}} disabled={disabled}/>
                 </List>
                 </div>
+                <LeftNavFooter />
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
