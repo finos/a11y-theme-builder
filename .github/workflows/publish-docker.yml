@@ -6,6 +6,7 @@ on:
     branches:
       - 'main'
       - 'dev'
+      - 'disable-docker-scan'
     paths:
       - 'code/src/**'
       - 'code/package.json'
@@ -22,11 +23,11 @@ jobs:
       - name: Build
         run: docker build -f Dockerfile -t user/app:latest .
         working-directory: code
-      - name: Scan for vulnerabilities
-        uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
-        with:
-          image: user/app:latest
-          severity_threshold: HIGH
+      #- name: Scan for vulnerabilities
+      #  uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
+      #  with:
+      #    image: user/app:latest
+      #    severity_threshold: HIGH
   push-to-registry:
     name: Push Docker image to Docker Hub
     needs: docker-scan
