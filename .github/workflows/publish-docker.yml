@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: docker-practice/actions-setup-docker@v1.0.11
+      - uses: docker-practice/actions-setup-docker@1.0.9
       - name: Build
         run: docker build -f Dockerfile -t user/app:latest .
         working-directory: code
