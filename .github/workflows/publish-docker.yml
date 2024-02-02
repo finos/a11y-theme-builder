@@ -18,8 +18,8 @@ jobs:
     name: ${{ github.event.repository.name }}-docker-scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: docker-practice/actions-setup-docker@321477a1e481dd60b05f9b489cf4b9be467aa15c
+      - uses: actions/checkout@v4
+      - uses: docker-practice/actions-setup-docker@v1
       - name: Build
         run: docker build -f Dockerfile -t user/app:latest .
         working-directory: code
@@ -34,22 +34,22 @@ jobs:
     runs-on: ubuntu-latest
     # save forks from having issue trying to publish to Docker
     #  without the correct credentials
-    if: github.repository_owner == 'finos'
+    #if: github.repository_owner == 'finos'
     outputs:
       digest: ${{ steps.build_publish.outputs.digest }}
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2.1.0
+        uses: docker/login-action@v3.0.0
         with:
           username: finos
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v4.1.1
+        uses: docker/metadata-action@v5.5.1
         with:
           images: finos/a11y-theme-builder
           tags: |
@@ -57,7 +57,7 @@ jobs:
             type=sha
       - name: Build and push Docker image
         id: build_publish
-        uses: docker/build-push-action@v3.2.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: code
           push: true
