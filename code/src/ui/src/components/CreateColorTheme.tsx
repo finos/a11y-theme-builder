@@ -154,7 +154,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                               </div>
                               <div className="formRow">
                                   <div className="subtitle1">Button Color</div>
-                                  <div className="small">Note: The "To Color" will be limited to those colors with the same "On Color" or text color to make sure the gradiemt meets WCAG 2.1 AA contrast guidelines.</div>
+                                  <div className="small">Note: Buttons limited to colors with a contrast against your primary and secondary backgrounds of 3.1: 1 to meet WCAG 2.1 AA Guidelines.</div>
                                   <div className="form-columns top16">
                                       <ColorSelect value={_colorTheme.button} label="Color:"></ColorSelect>
                                   </div>

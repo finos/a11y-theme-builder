@@ -2,6 +2,7 @@
 .html,body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .top40 {
@@ -47,7 +48,7 @@ p a:hover {
   display: flex;
   border-radius: 16px;
   gap: 16px;
-  background: "white";
+  background: white;
   border: 1px solid rgba(0,0,0,.15);
   min-height: 24px;
 }
@@ -90,14 +91,14 @@ p a:hover {
     height: 24px;
     margin: 10px;
     float: left;
-    border: 1px solid gray;
+    border: 1px solid rgb(128, 128, 128); /*replaced deprecated gray with rgb equivalent*/
 }
 
 .input-1 {
     width: 100%;
     height: 30px;
     font-size: var(--baseFont);
-    margin: 8px 0px;
+    margin: 8px 0;
 }
 
 .darkmode .background, .darkmode.background {
