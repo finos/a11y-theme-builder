@@ -24,6 +24,7 @@
   "proxy": "http://localhost:3001",
   "homepage": ".",
   "dependencies": {
+    "@mui/material": "^5.15.13",
     "@types/body-parser": "^1.19.2",
     "@types/chroma-js": "^2.1.5",
     "@types/cookie-parser": "^1.4.2",
