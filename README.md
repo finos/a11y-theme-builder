@@ -1,3 +1,4 @@
+[![FINOS Hosted Platform - Try A11y Theme Builder](https://img.shields.io/badge/FINOS%20Hosted%20Platform-Try%20A11y%20Theme%20Builder-blue)](https://try.a11y-theme-builder.finos.org/)
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://community.finos.org/docs/governance/Software-Projects/stages/incubating) [![Maintainers-Invited](https://img.shields.io/badge/Maintainers-Wanted-blueviolet)](./CONTRIBUTE.md) [![Contributors-Invited](https://img.shields.io/badge/Contributors-Wanted-blue)](./CONTRIBUTE.md)
 # Accessibility Theme Builder
 
