@@ -9,16 +9,27 @@ This document describes the contribution process and governance policies of the 
 
 We welcome any feedback on the quality, stability or performance of Theme Builder.  If you see incorrect behavior or would like to suggest ways to improve Theme Builder, please use these guidelines to create an issue in GitHub.
 1. Please [check](https://github.com/finos/a11y-theme-builder/issues) whether there is already an open issue related to your experience/feedback. If there is, join the discussion and contribute any observations or information that may not already be present in the issue.
-2. If there isn't already a relevant issue, create one, describing your experience with Theme Builder.
+2. If there isn't already a relevant issue, create one using one of the provided templates.  Please provide the following information:
     1. Add appropriate tag for project -> [`SDK`, `theme builder app`]
         * SDK - performs calculations, creates and populates CSS variables, generates CSS and JSON output
         * theme builder app - the application that the user interacts with
     3. Add appropriate tag for type of issue -> [`bug`, `enhancement`]
     4. (optional) Add tag for required specialties -> [`design thinking`, `project management`, `question`, `documentation`]
     5. Set `Projects` field to `ThemeBuilder`
+3. If you are reporting a problem that exists in Theme Builder, try to convey answers for the following:
+    * Is the bug reproducible as explained?
+    * Is it reproducible in other environments (for instance, on different browsers or devices)?
+    * Are the steps to reproduce the bug clear? If not, can you describe how you might reproduce it?  Please provide as much relevant information as possible and break the instructions for reproducing the problem into clear, simple steps.
+    * Is this bug something you have run into?  Is it blocking you?  Would you appreciate it being looked into faster?
 4. If you would like to contribute designs, code, testing or resources toward resolving the issue, please note that in the issue.
 5. Respond to any questions or suggestions raised in the issue by other community members.
 6. We will triage all new issues at our next community meeting if you would like to offer more information as we prioritize your issue.  Click to see more [meeting information](https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings).
+
+### Asking for features/enhancements
+
+Similar to reporting issues, a user wishing to create a feature request should first [check](https://github.com/finos/a11y-theme-builder/issues) whether a similar request has already been made in the system.  Searching for features should include looking for issues with the `enhancement` label.  Additionally, searching on issues with `[EPIC]` in the title may prove useful.
+
+If there isn't already a similar feature request, please create one using the appropriate `Feature Request Form` template.  After questions and suggestions from the community have been considered by the author and any resulting updates to the request have been made, we will triage the feature request.  If we determine the request to be sufficiently complex that we need to break work items into their own issues, the feature request will likely become an EPIC.  We will work with the author to ensure that no insights or information will be lost.
 
 ## Contribution Process
 
@@ -82,15 +93,6 @@ Logistics for Project Triage Sessions:
 
 Project Management:
 * [Project Kanban Dashboard](https://github.com/orgs/finos/projects/1/views/1)
-
-### Contributing Issue/Feature Reports
-When submitting [Issue/Feature Reports](https://github.com/finos/a11y-theme-builder/issues), please use the provided templates and try to convey answers for the following:
-
-* Is the bug reproducible as explained?
-* Is it reproducible in other environments (for instance, on different browsers or devices)?
-* Are the steps to reproduce the bug clear? If not, can you describe how you might reproduce it?
-* What tags should the bug have?
-* Is this bug something you have run into? Would you appreciate it being looked into faster?
 
 ### Contributing Code
 
