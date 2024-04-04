@@ -27,6 +27,7 @@ extra_css:
 # Theme Configuration
 theme:
   name: material
+  custom_dir: overrides
   features:
     - announce.dismiss
     - content.action.edit
@@ -194,6 +195,3 @@ nav:
     - glossary/index.md
   - References:
     - references/index.md
-  - Demo:
-    - https://try.a11y-theme-builder.finos.org/
-    
