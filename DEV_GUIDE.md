@@ -6,6 +6,7 @@ This document serves as a getting started guide for working with the Accessibili
 - [Install and Use](#install-and-use)
 - [Development](#development)
 - [Understanding Server APIs](#understanding-server-apis)
+- [Creating Epics](#creating-epics)
 
 ## Install Dependencies
 The Theme Builder application can be built and run locally using two variations (Quick and Easy, Javascript Runtime Environment) that differ on complexity of setup (devops).
@@ -222,4 +223,22 @@ The APIs are under the `/api/` endpoint, with the following apis available:
 - **Return Errors**: 404 document :id was not found, 500
 - **Example**: DELETE /api/themes/theme5 => { id:"theme5", key1:themeData}
 
+## Creating Epics
+
+In general terms, an Epic is a reasonably large piece of work that is built from smaller pieces of work on which it depends.  These smaller pieces of work may themselves be Epics that have their own dependencies.  So if you think of an individual, well-defined, self-contained piece of work as being represented as an issue in an issue tracking system, an Epic is comprised of such issues.  The issues contained in an Epic may need to be completed in a general order and that order should be defined in the Epic.  In practice, Epics are usually feature/enhancement requests that summarize a piece of functionality that a user would like to see implemented in a project.  The Epic would describe the problem, the potential solution, and a plan for how that work could be achieved.  After the plan is formed, issues would be created in order to track each individual piece of work of which the plan consists.  The issues would then be assigned owners to complete the work.
+
+In Theme Builder, we prefer that Epics be created with the help of maintainers.  A maintainer creating an epic should prepend the key string `[EPIC]` to the Epic's title.  The maintainer should make sure that Tasks are defined in the Epic as individual pieces of work are defined.  Each Task should be tracked using an issue.  In that issue, all pieces of work on which the issue depends should be defined and, where possible, linked to.  The overall result, once this is accomplished, is that a user should be able to go to an Epic, see a summary of the work that the Epic represents, should be able to see the tasks that, when put together, achieve the end goal of the Epic, the order in which the tasks need to be undertaken, and what dependencies each task has.
+
+As an example, if an Epic is created to add a new user action to a user interface, it should define:
+
+* The goal behind the new action
+* A rough idea how the action could be implemented and any dependencies the acction may have
+* A list of tasks including:
+    * A design thinking task to define the user scenarios and personas
+    * A task to create the wireframes dependent on the design thinking task depicting any new components that may need to be created that the user would use to trigger the action.
+    * A task for each deliverable identified in the wireframe and design thinking tasks
+        * It is possible that such a deliverable could, itself, be an Epic if it is a significant piece of work with its own dependencies.
+    * A task for testing each deliverable
+
+If you have any questions about Epics, please [reach out to the community](README.md#learn-more-give-feedback) for assistance.
 
