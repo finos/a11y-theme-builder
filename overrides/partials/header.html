@@ -52,8 +52,9 @@
       </label>
       {% include "partials/search.html" %}
       <a class="md-header__button__LiveDemo" href="https://try.a11y-theme-builder.finos.org/" target="_blank">
-        <span class="twemoji">
-          {% include ".icons/youtube.svg" %} 
+        <span class="md-source__icon md-icon">
+            {% set icon = config.theme.icon.launch or "material/launch" %}
+            {% include ".icons/" ~ icon ~ ".svg" %}
         </span>
         Live Demo
     </a<>

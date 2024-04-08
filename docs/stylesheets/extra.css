@@ -5,9 +5,5 @@
 .md-header__button__LiveDemo {
     color: red;
     margin-left: 10px;
-}
-.md-header__button__LiveDemo svg {
-    margin: auto;
-    vertical-align: middle;
-    display: inline-block;
+    font-size: 0.65rem;
 }
