@@ -6,6 +6,7 @@ on:
     branches:
       - 'main'
       - 'dev'
+      - 'fix-dockerbuild-error'
     paths:
       - 'code/src/**'
       - 'code/package.json'
