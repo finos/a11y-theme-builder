@@ -4,41 +4,41 @@
     "license": "Apache-2.0",
     "private": true,
     "dependencies": {
-        "@emotion/react": "^11.8.2",
-        "@emotion/styled": "^11.8.1",
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
         "@finos/a11y-theme-builder-sdk": "^1.0.0",
         "@mui/icons-material": "^5.15.15",
         "@mui/material": "^5.15.15",
         "@mui/x-data-grid": "^7.1.1",
         "@mui/system": "^5.15.15",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^14.4.3",
-        "@types/chroma-js": "^2.1.5",
-        "@types/file-saver": "^2.0.5",
-        "@types/jest": "^27.4.1",
-        "@types/node": "^16.11.26",
-        "@types/react": "18.0.27",
-        "@types/react-color": "3.0.6",
-        "@types/react-dom": "18.0.10",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^15.0.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/chroma-js": "^2.4.4",
+        "@types/file-saver": "^2.0.7",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.12.7",
+        "@types/react": "18.2.75",
+        "@types/react-color": "3.0.12",
+        "@types/react-dom": "18.2.24",
         "@types/react-icons": "3.0.0",
         "@types/react-router-dom": "5.3.3",
-        "@types/uuid": "^8.3.4",
-        "@types/webfontloader": "^1.6.35",
-        "axios": "^1.6.0",
+        "@types/uuid": "^9.0.8",
+        "@types/webfontloader": "^1.6.38",
+        "axios": "^1.6.8",
         "buffer": "^6.0.3",
         "chroma-js": "^2.4.2",
         "colord": "^2.9.3",
         "file-saver": "^2.0.5",
-        "html-react-parser": "^1.4.8",
+        "html-react-parser": "^5.1.10",
         "react": "18.2.0",
         "react-color": "^2.19.3",
         "react-dom": "18.2.0",
-        "react-icons": "4.7.1",
-        "react-intl": "6.3.1",
-        "react-router-dom": "6.9.0",
-        "typescript": "^4.5.5",
-        "uuid": "^8.3.2",
+        "react-icons": "5.0.1",
+        "react-intl": "6.6.5",
+        "react-router-dom": "6.22.3",
+        "typescript": "^4.9.3",
+        "uuid": "^9.0.1",
         "webfontloader": "^1.6.28"
     },
     "scripts": {
@@ -82,7 +82,7 @@
         ]
     },
     "overrides": {
-        "react-refresh": "0.11.0"
+        "react-refresh": "0.14.0"
     },
     "devDependencies1": {
         "@storybook/addon-actions": "^6.4.19",
@@ -95,10 +95,10 @@
         "@storybook/preset-create-react-app": "^4.0.1",
         "@storybook/react": "^6.4.19",
         "@storybook/testing-library": "^0.0.9",
-        "webpack": "^5.69.1"
+        "webpack": "^5.91.0"
     },
     "devDependencies": {
         "react-scripts": "5.0.1",
-        "webpack": "^5.69.1"
+        "webpack": "^5.91.0"
     }
 }
