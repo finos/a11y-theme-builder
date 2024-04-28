@@ -1,4 +1,4 @@
-Web Accessibility (or e- Accessibility) pertains to the design of websites and mobile applications that do not present barriers of access to people with disabilities or disorders. The development of these digital solutions need to consider accessibility compliance along the entire production workflow from design, to development, to printing/rendering. 
+Web Accessibility (or e- Accessibility) pertains to the design of websites and mobile applications that do not present barriers of access to people needing accommodations or disorders. The development of these digital solutions need to consider accessibility compliance along the entire production workflow from design, to development, to printing/rendering. 
 
 Enterprises and Governments (herein, "Institutions") need to manage the balance between risk compliance, user experience, and accessibility inclusion when developing digital solutions (mobile, web). However, several end-to-end collaboration challenges exist between designers and developers as it relates to the creation of risk compliant accessibility solutions:
 
