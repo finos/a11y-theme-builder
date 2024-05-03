@@ -32,6 +32,7 @@ git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
 cd a11y-theme-builder
 git pull upstream dev
 ```
+*always pull from the `dev` branch.
 
 where:
 
@@ -170,6 +171,19 @@ Note that the build directory is not updated with these changes until an `npm ru
 One problem you might run into on a Windows system is that themes may not appear, load, or be created.
 If this is the case, it most likely means there is a problem with your [themes file](https://github.com/finos/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
 
+## Create a Pull Request
+
+After making changes, don't forget to commit with the sign-off flag (-s)
+
+```
+$ git commit -s -m “my commit message w/signoff”
+```
+Once all changes have been committed, push the changes.
+
+```
+$ git push origin <branch-name>
+```
+Then on Github, navigate to the `finos/a11y-theme-builder` repository and create a pull request from your recently pushed changes to the `dev` branch.
 
 ## Understanding Server APIs
 
