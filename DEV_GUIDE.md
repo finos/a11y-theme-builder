@@ -185,6 +185,11 @@ $ git push origin <branch-name>
 ```
 Then on Github, navigate to the `finos/a11y-theme-builder` repository and create a pull request from your recently pushed changes to the `dev` branch.
 
+### Registration for LFX EasyCLA
+
+after first pull-request register for EasyCLA. We suggest to proceed as individual contributor as some companies may requrie their legal departments to review their open source contribution. 
+
+
 ## Understanding Server APIs
 
 The Theme Builder server serves the React application at the `/` endpoint.
