@@ -22,6 +22,7 @@
 }
 li .Hex {
   margin-right: 8px;
+  margin-bottom: 50px;
 }
 .color-block .Hex {
     margin: 8px auto !important;
@@ -34,4 +35,22 @@ li .Hex {
 >>>>>>> Stashed changes
 .swatch-details.active {
     display: block;
+}
+
+.inserted-item {
+    /* position: absolute; */
+    padding-bottom:-15px;
+    /* display: none; */
+    /* top: 50%; Adjust as needed */
+    /* left: 50%; Adjust as needed */
+    /* transform: translate(-50%, -50%); */
+}
+#color-id{
+    margin-bottom: -13px;
+    margin-top: -13px;
+    /* color: azure; */
+    
+}
+#hexBlock{
+    margin-bottom: 50px;
 }

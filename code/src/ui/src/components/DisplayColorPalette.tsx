@@ -36,13 +36,23 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                 <div className="top40"></div>
                 <LightModeSection title={lightLabel}>
                     {colorPalette.getColors().map((color, i) => {
+                        // {console.log("color are here",color.hex.getValue());}
+                        // {console.log("color name -",color.name);}
                         return (
                             <div key={color.name}>
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
-                                    {color.light.shades.map((shade, i) => {
+                                    {
+                                    
+                                    color.light.shades.map((shade, i) => {
+                                        if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color",color.name);
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId baseColor={true}/> 
+                                            )
+                                        }
                                         return (
-                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId/>
+                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId baseColor={false}/>
                                         );
                                     })}
                                 </div>
@@ -58,6 +68,12 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
                                     {color.dark.shades.map((shade, i) => {
+                                        console.log("shadetolowercase",shade.hex.toLowerCase())
+                                        if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color");
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId baseColor={true}/> 
+                                            )}
                                         return (
                                             <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={false} showDetails={_showDetails} showId/>
                                         );

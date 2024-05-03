@@ -177,9 +177,13 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                       }}
                 >
                     {_selectableValues && _selectableValues.map((gridShade, i) => {
+                        
                         return(
                             <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
+                                <div>
                                 <ColorShade shade={gridShade.shade} />
+                                <p>base</p>
+                                </div>
                             </MenuItem>
                         );
                     })}

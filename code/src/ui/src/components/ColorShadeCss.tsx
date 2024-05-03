@@ -59,10 +59,11 @@ interface Props {
     label?: string;
     showId?: boolean;
     showDetails?: boolean;
+    baseColor?:boolean;
 
 }
 
-export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, showId, showDetails}) => {
+export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, showId, showDetails,baseColor}) => {
 
     const [_shade, _setShade] = useState<Shade>();
     let base = name+"-"+id;
@@ -72,6 +73,7 @@ export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, 
     const style = {
         color: `var(${color})`,
         backgroundColor: `var(${background})`,
+        // marginBottom:"50px"
     }
 
     const [colorValue, setColorValue] = useState<string>();
@@ -104,8 +106,11 @@ export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, 
     return (
         <div className={className ?? ""}>
             {label && <div className="caption text-center">{label}</div>}
-            {showId && <div className="subtitle1 text-center">{id}</div>}
+            {showId && <div className=" subtitle1 text-center " >{id}</div>}
+            {/* {baseColor&&<div className="subtitle1 text-center" style={{marginBottom:0}}>{id}</div>} */}
+            {/* {(!baseColor)&&<div className="inserted-item text-center " style={{fontWeight:"bold"}}></div>} */}
             <div className="Hex" style={style}>Aa</div>
+            {baseColor&&<div className="inserted-item text-center " id="color-id" style={{fontWeight:"bold"}}>Base</div>}
             {showDetails && <div className="swatch-details active">
                 Color: <span>{backgroundValue}</span>
             </div>}

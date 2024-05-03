@@ -9,6 +9,7 @@ import { ColorSelect } from './ColorSelect';
 import { ColorPairSelect } from './ColorPairSelect';
 import { ColorGradient } from './ColorGradient';
 import { ColorGradientHeader } from './ColorGradientHeader';
+import { Color, ColorPalette } from '@finos/a11y-theme-builder-sdk';
 import './CreateColorTheme.css';
 import ModalConfirmation from './modals/ModalConfirmation';
 import { HeadingSection } from '../pages/content/HeadingSection';
@@ -99,7 +100,15 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
             handleDefaultThemeInitialized(_colorTheme?.name || "");
         }
     }
-
+    if(_colorTheme!=undefined){
+        const _colorPalette=atom.atoms.colorPalette;
+        console.log("color theme is =");
+    }else{
+        console.log("colortheme is undeffined")
+    }
+    if(_colorTheme){
+        console.log(_colorTheme);
+    }
     if (_colorTheme) {
     return (
         <div className="content theme-page active" id="buildThemes">
