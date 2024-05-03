@@ -23,13 +23,14 @@ If you desire to extend or enhance the application, a local development environm
 ## Install and Use
 Perform the following steps to run a local version of the application.
 
-### Fetch Latest Code
+### Fetch Latest Code from branch:dev
 These instructions assume you have a local copy of a forked instance of [finos/a11y-theme-builder](https://github.com/finos/a11y-theme-builder).
 
 ```
 cd <WORKSPACE>
 git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
 cd a11y-theme-builder
+git pull upstream dev
 ```
 
 where:
