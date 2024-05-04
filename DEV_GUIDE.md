@@ -167,9 +167,12 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
-#### Potential Windows Issue
+## Potential Windows Issue
 One problem you might run into on a Windows system is that themes may not appear, load, or be created.
 If this is the case, it most likely means there is a problem with your [themes file](https://github.com/finos/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
+
+### Our Recommendation
+We suggest you to use WSL (Windows Subsytem For Linux).`Use it from the very start of cloning the Repo` in your local system than you will not face the issue mentioned above 
 
 ## Create a Pull Request
 
@@ -188,6 +191,10 @@ Then on Github, navigate to the `finos/a11y-theme-builder` repository and create
 ### Registration for LFX EasyCLA
 
 after first pull-request register for EasyCLA. We suggest to proceed as individual contributor as some companies may requrie their legal departments to review their open source contribution. 
+
+### Mention for Review
+
+Please mention your mentor or any maintainer (working on similar issue) tag them in the comments so that they get the notification about your pull-request.
 
 
 ## Understanding Server APIs
