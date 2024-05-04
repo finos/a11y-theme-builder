@@ -3,16 +3,17 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect, useState } from 'react';
-import { ColorThemes } from '@finos/a11y-theme-builder-sdk';
+import { ColorThemes ,ColorPalette} from '@finos/a11y-theme-builder-sdk';
 import { CreateColorTheme } from '../../components/CreateColorTheme';
 import { DisplayColorTheme } from '../../components/DisplayColorTheme';
 
 interface Props {
     atom: ColorThemes;
+    colorPalette:ColorPalette;
     defaultColor?: string;
 }
 
-export const ColorThemeAtom: React.FC<Props> = ({ atom }) => {
+export const ColorThemeAtom: React.FC<Props> = ({ atom ,colorPalette}) => {
 
     const [_themeInitialized, _setThemeInitialized] = useState<boolean>(false);
 
@@ -30,7 +31,7 @@ export const ColorThemeAtom: React.FC<Props> = ({ atom }) => {
         );
     }
     return (
-        <CreateColorTheme atom={atom} handleDefaultThemeInitialized={handleDefaultThemeInitialized} />
+        <CreateColorTheme atom={atom} colorPalette={colorPalette} handleDefaultThemeInitialized={handleDefaultThemeInitialized} />
     );
 }
 

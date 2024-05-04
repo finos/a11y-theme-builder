@@ -41,6 +41,12 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
                                     {color.light.shades.map((shade, i) => {
+                                         if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color",color.name);
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
+                                            )
+                                        }
                                         return (
                                             <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId/>
                                         );
@@ -58,6 +64,11 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
                                     {color.dark.shades.map((shade, i) => {
+                                        if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color");
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
+                                            )}
                                         return (
                                             <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={false} showDetails={_showDetails} showId/>
                                         );

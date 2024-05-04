@@ -59,10 +59,11 @@ interface Props {
     label?: string;
     showId?: boolean;
     showDetails?: boolean;
+    isBaseColor?:boolean;
 
 }
 
-export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, showId, showDetails}) => {
+export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, showId, showDetails,isBaseColor}) => {
 
     const [_shade, _setShade] = useState<Shade>();
     let base = name+"-"+id;
@@ -106,6 +107,9 @@ export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, 
             {label && <div className="caption text-center">{label}</div>}
             {showId && <div className="subtitle1 text-center">{id}</div>}
             <div className="Hex" style={style}>Aa</div>
+            {isBaseColor&&<div className="inserted-item text-center " id="color-id" style={{fontWeight:"bold"}}>Base</div>}
+            {/* just to fix uppermargin */}
+            {!isBaseColor&&<div style={{height:"25px"}}></div>}
             {showDetails && <div className="swatch-details active">
                 Color: <span>{backgroundValue}</span>
             </div>}
