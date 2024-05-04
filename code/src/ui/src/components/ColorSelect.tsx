@@ -33,6 +33,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
     const [_selectableValuesGrid, _setSelectableValuesGrid] = useState<Shade[][]>();
     const [_longestRow, _setLongestRow] = useState<number>(0);
     const [_disabled, _setDisabled] = useState<boolean>(false);
+    const [_shadeLabel, _setShadeLabel] = useState<string>("");
 
     useEffect(() => {
         if (value) {
@@ -121,6 +122,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
             value.setValue(newSelectedValue);
             _setSelectedValue(selectedValue);
             console.log(`Color changed by UI to ${value}`);
+            _setShadeLabel(_getShadeLabel(newSelectedValue));
         }
     };
 
@@ -140,6 +142,11 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
         return _selectableValues[parseInt(index)].shade;
     }
 
+    const _getShadeLabel = (shade: Shade): string => {
+        const label =  `${shade.getMode().color.name} (${shade.getLabel()})`;
+        return label.charAt(0).toUpperCase() + label.slice(1);
+    } 
+
     // this code will turn the unordered list (<ul />) internally used by
     //  Mui Select into a grid.  Each menu item in the list will be positioned
     //  in the grid based on where that shade was in the selectableValuesGrid
@@ -154,7 +161,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                     disabled={_disabled}
                     renderValue={(selected) => (
                         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                            <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
+                            <ColorShade label={_shadeLabel} shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
                         </Box>
                     )}
                     MenuProps={{
@@ -179,7 +186,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                     {_selectableValues && _selectableValues.map((gridShade, i) => {
                         return(
                             <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
-                                <ColorShade shade={gridShade.shade} />
+                                <ColorShade label={_getShadeLabel(gridShade.shade)} shade={gridShade.shade} />    
                             </MenuItem>
                         );
                     })}
