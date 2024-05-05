@@ -38,8 +38,7 @@ where:
 
 ### Set Upstream Branch
 
-After cloning the repository, it's recommended to set the `dev` branch as the upstream branch for development. 
-This is a common practice in many development workflows where all the development happens in the `dev` branch and then it's merged into the `main` branch when it's ready for production. 
+After cloning the repository, it's recommended to set the `dev` branch as the upstream branch for development.
 
 Here's how you can do it:
 
@@ -47,6 +46,8 @@ Here's how you can do it:
 git checkout dev
 git branch --set-upstream-to=origin/dev
 ```
+
+This is a common practice in many development workflows where all the development happens in the `dev` branch and then it's merged into the `main` branch when it's ready for production.
 
 ### Quick and Easy
 Building and running the application using `Docker` can be achieved in a few simple steps, which all assume a `/code` as the working directory.
