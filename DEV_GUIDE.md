@@ -30,6 +30,7 @@ These instructions assume you have a local copy of a forked instance of [finos/a
 cd <WORKSPACE>
 git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
 cd a11y-theme-builder
+git remote add upstream https://github.com/finos/a11y-theme-builder
 git pull upstream dev
 ```
 *always pull from the `dev` branch.
