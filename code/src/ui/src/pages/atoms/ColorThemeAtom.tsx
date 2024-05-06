@@ -13,7 +13,7 @@ interface Props {
     defaultColor?: string;
 }
 
-export const ColorThemeAtom: React.FC<Props> = ({ atom ,colorPalette}) => {
+export const ColorThemeAtom: React.FC<Props> = ({ atom, colorPalette}) => {
 
     const [_themeInitialized, _setThemeInitialized] = useState<boolean>(false);
 
