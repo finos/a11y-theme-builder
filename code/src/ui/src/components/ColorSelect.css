@@ -3,6 +3,6 @@ div.MuiPopover-paper > ul.MuiMenu-list > div.shade-row {
     overflow: hidden;
 }
 .baseLabel{
-    font-size: 12px;
-    font-weight: bold;
+    font-size: var(--caption-boldFontSize);
+    font-weight: var(--caption-boldFontWeight);
 }
