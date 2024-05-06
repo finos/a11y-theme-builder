@@ -37,6 +37,17 @@ where:
 * `<WORKSPACE>` is path to the local folder where you have created a copy of the GitHub repository.
 * `<YOUR-ORG>` is the name of your GitHub account or personal GitHub organization.
 
+### Set Upstream Branch
+
+After cloning the repository, it's recommended to set the `dev` branch as the upstream branch for development.
+
+Here's how you can do it:
+
+```bash
+git checkout dev
+git branch --set-upstream-to=origin/dev
+```
+
 ### Quick and Easy
 Building and running the application using `Docker` can be achieved in a few simple steps, which all assume a `/code` as the working directory.
 
