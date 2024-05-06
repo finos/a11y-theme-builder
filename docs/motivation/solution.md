@@ -61,7 +61,7 @@ The Theme Builder is a tool that combines brand design input + the structure of 
 ![pub-workflow](../../_images/publication-workflow.png)
 ![process-workflow](../../_images/process-workflow.png)
 
-For each of the following steps, a theme builder *User* may be a *Designer* or *Impaired Person*.
+For each of the following steps, a theme builder *User* may be a *Designer* or *Person Needing Accommodations*.
 
 1. *User* opens Theme Building Tool.
 2. *User* creates a new design system project within the Theme Building Tool.
