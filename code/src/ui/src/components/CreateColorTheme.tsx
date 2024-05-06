@@ -106,7 +106,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
       colorPalette.getColors().map((color)=>{
         const hexValue = color.hex?.getValue();
         if (hexValue) {
-        baseColorsHex.add(hexValue);
+            baseColorsHex.add(hexValue);
         }
       });
       _setBaseColorsHex(baseColorsHex);
