@@ -10,6 +10,7 @@ import './ColorSelect.css';
 
 interface Props {
     value: PropertyColorShade;
+    //this property is used to pass the set of baseColorHex values it is used to check if a shade color is base-color or not by using Set.has() function
     baseColorHex?: Set<string>;
     label?: string;
     defaultValue?: string;
