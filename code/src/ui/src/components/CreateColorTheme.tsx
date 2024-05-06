@@ -30,7 +30,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
     const [_themeInitialized, _setThemeInitialized] = useState<boolean>(false);
     const [_iconColor, _setIconColor] = useState<Shade>(defaultIconShade);
     const [_openConfirmation, _setOpenConfirmation] = useState<boolean>(false);
-    const [_baseColorsHex, set_baseColorsHex] = useState<Set<string>>();
+    const [_baseColorsHex, _setBaseColorsHex] = useState<Set<string>>();
 
     const colorIconRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +109,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
         baseColorsHex.add(hexValue);
         }
       });
-      set_baseColorsHex(baseColorsHex);
+      _setBaseColorsHex(baseColorsHex);
     }, [colorPalette])
     
     if (_colorTheme) {
