@@ -8,9 +8,11 @@ import { Event, EventType, PropertyColorShade, Shade } from '@finos/a11y-theme-b
 import { ColorShade } from '../components/ColorShade';
 import './ColorSelect.css';
 
+// baseColorHex is an optional property that allows the caller to specify a set of hex color values
+//  which this component will label as "base" if they appear in the selectable shades list.  A "base" color is 
+//  one of the actual colors that the user manually added to the color palette and not a calculated shade.
 interface Props {
     value: PropertyColorShade;
-    //this property is used to pass the set of baseColorHex values it is used to check if a shade color is base-color or not by using Set.has() function
     baseColorHex?: Set<string>;
     label?: string;
     defaultValue?: string;
