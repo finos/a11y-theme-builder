@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Grid } from '@mui/material';
-import { ColorTheme, ColorThemes, Event, EventType, Shade } from '@finos/a11y-theme-builder-sdk';
+import { ColorPalette, ColorTheme, ColorThemes, Event, EventType, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import { ColorPairSelect } from './ColorPairSelect';
 import { ColorGradient } from './ColorGradient';
@@ -18,10 +18,11 @@ import { GeneratedCodeSection } from '../pages/content/GeneratedCodeSection'
 
 interface Props {
     atom: ColorThemes;
+    colorPalette: ColorPalette;
     handleDefaultThemeInitialized: (newDefaultThemeName: string) => void;
 }
 
-export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeInitialized}) => {
+export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefaultThemeInitialized}) => {
 
     const defaultIconShade = Shade.fromHex("#ffffff");
 
@@ -29,6 +30,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
     const [_themeInitialized, _setThemeInitialized] = useState<boolean>(false);
     const [_iconColor, _setIconColor] = useState<Shade>(defaultIconShade);
     const [_openConfirmation, _setOpenConfirmation] = useState<boolean>(false);
+    const [_baseColorsHex, _setBaseColorsHex] = useState<Set<string>>();
 
     const colorIconRef = useRef<HTMLDivElement>(null);
 
@@ -99,7 +101,17 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
             handleDefaultThemeInitialized(_colorTheme?.name || "");
         }
     }
-
+    useEffect(() => {
+      const baseColorsHex= new Set<string>;
+      colorPalette.getColors().map((color)=>{
+        const hexValue = color.hex?.getValue();
+        if (hexValue) {
+            baseColorsHex.add(hexValue);
+        }
+      });
+      _setBaseColorsHex(baseColorsHex);
+    }, [colorPalette])
+    
     if (_colorTheme) {
     return (
         <div className="content theme-page active" id="buildThemes">
@@ -120,9 +132,9 @@ export const CreateColorTheme: React.FC<Props> = ({atom, handleDefaultThemeIniti
                               <div className="formRow">
                                   <div className="subtitle1">Theme Colors</div>
                                   <div className="form-columns top16">
-                                      <ColorSelect value={_colorTheme.primary} label="Primary"></ColorSelect>
-                                      <ColorSelect value={_colorTheme.secondary} label="Secondary"></ColorSelect>
-                                      <ColorSelect value={_colorTheme.tertiary} label="Tertiary"></ColorSelect>
+                                      <ColorSelect value={_colorTheme.primary} baseColorHex={_baseColorsHex} label="Primary"></ColorSelect>
+                                      <ColorSelect value={_colorTheme.secondary} baseColorHex={_baseColorsHex} label="Secondary"></ColorSelect>
+                                      <ColorSelect value={_colorTheme.tertiary} baseColorHex={_baseColorsHex} label="Tertiary"></ColorSelect>
                                   </div>
                               </div>
                               <div className="formRow">
