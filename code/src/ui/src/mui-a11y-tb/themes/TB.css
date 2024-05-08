@@ -962,7 +962,7 @@
   --text-gradient-a: #9C4FCF;
   --text-gradient-b: #0066EF;
   /* Input */
-  --input: rgba(254,252,254,0.55);
+  --input: rgba(254,252,254,0.05);
   --on-input: #121212;
   --primary-input: var(--input);
   --primary-on-input: var(--on-input);
