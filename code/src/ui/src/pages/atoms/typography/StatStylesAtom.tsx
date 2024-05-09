@@ -10,48 +10,45 @@ import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 
-const statCssPrefix = "stat"
+const statCssPrefix = 'stat';
 
 interface Props {
-    designSystem: DesignSystem;
+  designSystem: DesignSystem;
 }
 
 export const StatStylesAtom: React.FC<Props> = ({ designSystem }) => {
+  const statStylesAtom = designSystem.atoms.statStyles;
 
-    const statStylesAtom = designSystem.atoms.statStyles
+  const statTypographyStyling = statStylesAtom.stat;
 
-    const statTypographyStyling = statStylesAtom.stat
+  const keyStat = statTypographyStyling.key;
 
-    const keyStat = statTypographyStyling.key
-
-    return (
-        <div className="container">
-            <HeadingSection item={statStylesAtom} title="Typography">
-            The Stat Styles Atom sets Typography settings for the 1 Stat types:
-                <ul>
-                    <li>Stat</li>
-                </ul>
-                The Settings that can be changed for each are:
-                <ul>
-                    <li>Font Family</li>
-                    <li>Font Size</li>
-                    <li>Font Weight</li>
-                    <li>Character Spacing</li>
-                </ul>
-            </HeadingSection>
-            <ExampleSection>
-                None
-                <SettingsSection>
-                    <TextEditBox
-                        textKey={keyStat}
-                        cssPrefix={statCssPrefix}
-                        designSystem={designSystem}
-                    />
-                </SettingsSection>
-                <GeneratedCodeSection item={statStylesAtom}/>
-            </ExampleSection>
-
-        </div>
-    )
-
-}
+  return (
+    <div className="container">
+      <HeadingSection item={statStylesAtom} title="Typography">
+        The Stat Styles Atom sets Typography settings for the 1 Stat types:
+        <ul>
+          <li>Stat</li>
+        </ul>
+        The Settings that can be changed for each are:
+        <ul>
+          <li>Font Family</li>
+          <li>Font Size</li>
+          <li>Font Weight</li>
+          <li>Character Spacing</li>
+        </ul>
+      </HeadingSection>
+      <ExampleSection>
+        None
+        <SettingsSection>
+          <TextEditBox
+            textKey={keyStat}
+            cssPrefix={statCssPrefix}
+            designSystem={designSystem}
+          />
+        </SettingsSection>
+        <GeneratedCodeSection item={statStylesAtom} />
+      </ExampleSection>
+    </div>
+  );
+};

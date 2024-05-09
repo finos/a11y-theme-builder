@@ -8,27 +8,29 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { LargeBackgroundImage } from "../../mui-a11y-tb/organisms/LargeBackgroundImage";
-import { LargeBackgroundImageParalux } from "../../mui-a11y-tb/organisms/LargeBackgroundImageParalux";
+import { LargeBackgroundImage } from '../../mui-a11y-tb/organisms/LargeBackgroundImage';
+import { LargeBackgroundImageParalux } from '../../mui-a11y-tb/organisms/LargeBackgroundImageParalux';
 
 interface Props {
-    colorMode?: string;
+  colorMode?: string;
 }
 
+export const FullWidthBackgrounds: React.FC<Props> = ({}) => {
+  const [colorMode, setColorMode] = useState<string>('colored');
 
-export const FullWidthBackgrounds: React.FC<Props> = ({ }) => {
-
-      const [colorMode, setColorMode] = useState<string>("colored");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="Full Width Backgrounds" />
-              <div className="demo-title subtitle1">Section with full width background images, no content</div>
-              <LargeBackgroundImage className={"top40 " + colorMode} />
-              <p></p>
-              <div className="demo-title subtitle1">Section with full width background video, no content</div>
-              <LargeBackgroundImageParalux className={"top40 " + colorMode} />
-              <p></p>
-          </div>
-      )
-  }
+  return (
+    <div>
+      <HeadingSection title="organisms" heading="Full Width Backgrounds" />
+      <div className="demo-title subtitle1">
+        Section with full width background images, no content
+      </div>
+      <LargeBackgroundImage className={'top40 ' + colorMode} />
+      <p></p>
+      <div className="demo-title subtitle1">
+        Section with full width background video, no content
+      </div>
+      <LargeBackgroundImageParalux className={'top40 ' + colorMode} />
+      <p></p>
+    </div>
+  );
+};

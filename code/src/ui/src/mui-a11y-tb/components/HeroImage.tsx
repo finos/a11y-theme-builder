@@ -3,18 +3,25 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import "./Hero.css";
+import './Hero.css';
 
 interface Props {
-    style?: any;
-    children?: React.ReactNode;
-    className?: string;
+  style?: any;
+  children?: React.ReactNode;
+  className?: string;
 }
 
-export const HeroImage: React.FC<Props> = ({style, children, className=""}) => {
-    return (
-      <div className={"hero " + className} style={{...style, backgroundImage: "url(/sample.jpg)"}}>
-          {children}
-      </div>
-    )
-}
+export const HeroImage: React.FC<Props> = ({
+  style,
+  children,
+  className = '',
+}) => {
+  return (
+    <div
+      className={'hero ' + className}
+      style={{ ...style, backgroundImage: 'url(/sample.jpg)' }}
+    >
+      {children}
+    </div>
+  );
+};

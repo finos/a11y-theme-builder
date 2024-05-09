@@ -1,18 +1,18 @@
 .theme-page .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x)/ -2);
-    margin-left: calc(var(--bs-gutter-x)/ -2);
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
 }
 
 .theme-page h5 {
-    margin-top: 0px;
-    margin-bottom: 0.5rem;
+  margin-top: 0px;
+  margin-bottom: 0.5rem;
 }
 
 .default-gradient {
-    padding: var(--spacing-1);
+  padding: var(--spacing-1);
 }

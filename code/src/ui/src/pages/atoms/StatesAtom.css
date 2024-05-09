@@ -1,33 +1,33 @@
 .design-system-editor-right-content .statesListItem {
-    border-radius: var(--radius-half);
-    border: 1px solid rgba(0, 0, 0, .2);
-    /* padding: var(--spacing-1); */
-    box-shadow: none;
+  border-radius: var(--radius-half);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* padding: var(--spacing-1); */
+  box-shadow: none;
 }
 
 .design-system-editor-right-content .statesListItem .Hex {
-    margin-top: 21px;
+  margin-top: 21px;
 }
 
 .design-system-editor-right-content .statesListItem .information {
-    margin-top: 21px;
+  margin-top: 21px;
 }
 
 .design-system-editor-right-content .darkmode .statesListItem input {
-    background: var(--dm-background) !important;
-    color: var(--dm-on-background);
-    border: 1px solid var(--dm-border)
+  background: var(--dm-background) !important;
+  color: var(--dm-on-background);
+  border: 1px solid var(--dm-border);
 }
 
 .design-system-editor-right-content .darkmode label {
-    background: var(--dm-background) !important;
-    color: var(--dm-on-background);
+  background: var(--dm-background) !important;
+  color: var(--dm-on-background);
 }
 
 .design-system-editor-right-content section {
-    padding: var(--section-padding) 0;
-    position: relative;
-    z-index: 0;
+  padding: var(--section-padding) 0;
+  position: relative;
+  z-index: 0;
 }
 
 /* .design-system-editor-right-content .container {

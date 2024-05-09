@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/ui/**"]

@@ -17,65 +17,72 @@ import { DarkModeSection } from '../content/DarkModeSection';
 import { Dropdown } from '../../mui-a11y-tb/components/Dropdown';
 
 interface Props {
-    molecule: Dropdowns;
-    designSystem: DesignSystem;
+  molecule: Dropdowns;
+  designSystem: DesignSystem;
 }
 
-export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
-    const [sample, setSample] = useState<string>("option1");
-    const refContainer = React.useRef(null);
-    const [container, setContainer] = useState<any>();
+export const DropdownsMolecule: React.FC<Props> = ({
+  molecule,
+  designSystem,
+}) => {
+  const [sample, setSample] = useState<string>('option1');
+  const refContainer = React.useRef(null);
+  const [container, setContainer] = useState<any>();
 
-    useEffect(() => {
-        if (refContainer && refContainer.current) {
-            setContainer(refContainer.current);
-        }
-    }, [refContainer]);
+  useEffect(() => {
+    if (refContainer && refContainer.current) {
+      setContainer(refContainer.current);
+    }
+  }, [refContainer]);
 
-    return (
-        <div>
-            <HeadingSection item={molecule} title="Apply Styles">
-                You can stylize your dropdown menu items in their hover and focus states.
-            </HeadingSection>
-            <ExampleSection>
-                <LightModeSection>
-                    <div className="form-row">
-                        <Dropdown
-                            className="dropdownFocus"
-                            value={sample}
-                            sx={{ width: "300px" }}
-                            onChange={(event:any) => setSample(event.target.value)}
-                        >
-                            <MenuItem value="option1">Option 1</MenuItem>
-                            <MenuItem value="option2">Option 2</MenuItem>
-                            <MenuItem value="option3">Option 3</MenuItem>
-                        </Dropdown>
-                    </div>
-                </LightModeSection>
-                <DarkModeSection>
-                    <div className="form-row">
-                        <Dropdown
-                            className="dropdown-toggle dropdownFocus darkmode"
-                            value={sample}
-                            sx={{ width: "300px" }}
-                            MenuProps={{
-                                container: container
-                            }}
-                            onChange={(event:any) => setSample(event.target.value)}
-                        >
-                            <MenuItem value="option1">Option 1</MenuItem>
-                            <MenuItem value="option2">Option 2</MenuItem>
-                            <MenuItem value="option3">Option 3</MenuItem>
-                        </Dropdown>
-                        <div ref={refContainer} ></div>
-                    </div>
-                </DarkModeSection>
-                <SettingsSection>
-                    <StringSelectable property={molecule.menuFocusState} defaultValue="true" variant="radio" />
-                </SettingsSection>
-                <GeneratedCodeSection item={molecule} />
-            </ExampleSection>
-
-        </div >
-    )
-}
+  return (
+    <div>
+      <HeadingSection item={molecule} title="Apply Styles">
+        You can stylize your dropdown menu items in their hover and focus
+        states.
+      </HeadingSection>
+      <ExampleSection>
+        <LightModeSection>
+          <div className="form-row">
+            <Dropdown
+              className="dropdownFocus"
+              value={sample}
+              sx={{ width: '300px' }}
+              onChange={(event: any) => setSample(event.target.value)}
+            >
+              <MenuItem value="option1">Option 1</MenuItem>
+              <MenuItem value="option2">Option 2</MenuItem>
+              <MenuItem value="option3">Option 3</MenuItem>
+            </Dropdown>
+          </div>
+        </LightModeSection>
+        <DarkModeSection>
+          <div className="form-row">
+            <Dropdown
+              className="dropdown-toggle dropdownFocus darkmode"
+              value={sample}
+              sx={{ width: '300px' }}
+              MenuProps={{
+                container: container,
+              }}
+              onChange={(event: any) => setSample(event.target.value)}
+            >
+              <MenuItem value="option1">Option 1</MenuItem>
+              <MenuItem value="option2">Option 2</MenuItem>
+              <MenuItem value="option3">Option 3</MenuItem>
+            </Dropdown>
+            <div ref={refContainer}></div>
+          </div>
+        </DarkModeSection>
+        <SettingsSection>
+          <StringSelectable
+            property={molecule.menuFocusState}
+            defaultValue="true"
+            variant="radio"
+          />
+        </SettingsSection>
+        <GeneratedCodeSection item={molecule} />
+      </ExampleSection>
+    </div>
+  );
+};

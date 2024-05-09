@@ -15,43 +15,62 @@ import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
-const name = "ModalMolecule";
+const name = 'ModalMolecule';
 
 interface Props {
-    modalMolecule: Modal;
+  modalMolecule: Modal;
 }
 
 export const ModalMolecule: React.FC<Props> = ({ modalMolecule }) => {
-    const scale = parseInt(getCssValue("--radius-1"));
+  const scale = parseInt(getCssValue('--radius-1'));
 
-    const colorProperty         = modalMolecule.color
-    const startingColor = (colorProperty.getValue() || "#FFFFFF") as Shade
-    const [sampleModalIsOpen, setSampleModalIsOpen] = useState(false);
+  const colorProperty = modalMolecule.color;
+  const startingColor = (colorProperty.getValue() || '#FFFFFF') as Shade;
+  const [sampleModalIsOpen, setSampleModalIsOpen] = useState(false);
 
-    return (
-        <>
-            <ModalSample isOpen={sampleModalIsOpen} onClose={ () => setSampleModalIsOpen(false)} modalMolecule={modalMolecule}/>
-            <HeadingSection item={modalMolecule} title="Apply Styles">
-                A modal is a window within an application that disables the main window but keeps it visible, with the modal window as a child window in front of it.
-            </HeadingSection>
-            <ExampleSection>
-                <div className="subtitle1">Sample Modal</div>
-                <Button variant="contained" onClick={() => setSampleModalIsOpen(true)}>Launch Demo Modal</Button>
-                <SettingsSection>
-                    <div className="form-row">
-                        <div className="subtitle1">Modal Overlay</div>
-                        <ColorSelect value={colorProperty} label="Color:" defaultValue={startingColor?.hex} ></ColorSelect>
-                    </div>
-                    <div className="form-row">
-                        <NumberScaledSelectable property={modalMolecule.borderRadius} units="px" defaultValue={3} scale={scale}/>
-                    </div>
-                    <div className="form-row">
-                        <StringCategorySelectable property={modalMolecule.shadow} defaultValue="None" />
-                    </div>
-                </SettingsSection>
-                <GeneratedCodeSection item={modalMolecule} />
-            </ExampleSection>    
-        </>
-    )
-
-}
+  return (
+    <>
+      <ModalSample
+        isOpen={sampleModalIsOpen}
+        onClose={() => setSampleModalIsOpen(false)}
+        modalMolecule={modalMolecule}
+      />
+      <HeadingSection item={modalMolecule} title="Apply Styles">
+        A modal is a window within an application that disables the main window
+        but keeps it visible, with the modal window as a child window in front
+        of it.
+      </HeadingSection>
+      <ExampleSection>
+        <div className="subtitle1">Sample Modal</div>
+        <Button variant="contained" onClick={() => setSampleModalIsOpen(true)}>
+          Launch Demo Modal
+        </Button>
+        <SettingsSection>
+          <div className="form-row">
+            <div className="subtitle1">Modal Overlay</div>
+            <ColorSelect
+              value={colorProperty}
+              label="Color:"
+              defaultValue={startingColor?.hex}
+            ></ColorSelect>
+          </div>
+          <div className="form-row">
+            <NumberScaledSelectable
+              property={modalMolecule.borderRadius}
+              units="px"
+              defaultValue={3}
+              scale={scale}
+            />
+          </div>
+          <div className="form-row">
+            <StringCategorySelectable
+              property={modalMolecule.shadow}
+              defaultValue="None"
+            />
+          </div>
+        </SettingsSection>
+        <GeneratedCodeSection item={modalMolecule} />
+      </ExampleSection>
+    </>
+  );
+};

@@ -1,37 +1,34 @@
-<<<<<<< Updated upstream
-=======
-.color-block {
-    display: inline-block;
-    font-size: 11px;
-    width: 96px;
-    /* margin-bottom: 24px; changing to use side margins to provide some separation */
-    margin: 0px 5px 24px 5px;
-    vertical-align: top;
+<<<<<<< Updated upstream ======= .color-block {
+  display: inline-block;
+  font-size: 11px;
+  width: 96px;
+  /* margin-bottom: 24px; changing to use side margins to provide some separation */
+  margin: 0px 5px 24px 5px;
+  vertical-align: top;
 }
 .Hex {
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--border);
-    border-radius:8px;
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 8px auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
 }
 li .Hex {
   margin-right: 8px;
 }
 .color-block .Hex {
-    margin: 8px auto !important;
+  margin: 8px auto !important;
 }
 
 .text-center {
-    text-align: center!important;
+  text-align: center !important;
 }
 
->>>>>>> Stashed changes
-.swatch-details.active {
-    display: block;
+>>>>>>>Stashed changes .swatch-details.active {
+  display: block;
 }

@@ -1,15 +1,15 @@
 .container-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
 }
 
 .list-link {
-    color: inherit;
-    text-decoration: none
+  color: inherit;
+  text-decoration: none;
 }
 
 .list-clickable {
-    cursor: pointer
+  cursor: pointer;
 }

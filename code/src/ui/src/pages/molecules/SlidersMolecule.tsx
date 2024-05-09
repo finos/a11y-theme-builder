@@ -14,43 +14,73 @@ import { SettingsSection } from '../content/SettingsSection';
 import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
 
 interface Props {
-    slidersMolecule: Sliders;
+  slidersMolecule: Sliders;
 }
 
 export const SlidersMolecule: React.FC<Props> = ({ slidersMolecule }) => {
-    const grid = parseInt(getCssValue("--spacing-1"));
-    const radius = parseInt(getCssValue("--radius-1"));
+  const grid = parseInt(getCssValue('--spacing-1'));
+  const radius = parseInt(getCssValue('--radius-1'));
 
-    return (
-        <>
-            <HeadingSection item={slidersMolecule} title="Apply Styles">
-                A Slider is an interface that allows a numerical value to be changed by dragging a thumb along an axis.
-            </HeadingSection>
-            <ExampleSection>
-                <div className="caption">Sample Slider</div>
-                <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
-                <div className="caption top40">Sample Range Slider</div>
-                <Slider className="range" defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
-                <SettingsSection>
-                    <div className="form-row">
-                        <NumberScaledSelectable property={slidersMolecule.handleBorderRadius} units="px" defaultValue={1} scale={radius}/>
-                    </div>
-                    <div className="form-row">
-                        <NumberScaledSelectable property={slidersMolecule.visibleHeight} units="px" defaultValue={3} scale={grid}/>
-                    </div>
-                    <div className="form-row">
-                        <StringCategorySelectable property={slidersMolecule.handleShadow} defaultValue="None" />
-                    </div>
-                    <div className="form-row">
-                        <NumberScaledSelectable property={slidersMolecule.barHeight} units="px" defaultValue={1} scale={grid}/>
-                    </div>
-                    <div className="form-row">
-                        <StringCategorySelectable property={slidersMolecule.barShadow} defaultValue="None" />
-                    </div>
-                </SettingsSection>
-                <GeneratedCodeSection item={slidersMolecule} />
-            </ExampleSection>
-        </>
-    )
-
-}
+  return (
+    <>
+      <HeadingSection item={slidersMolecule} title="Apply Styles">
+        A Slider is an interface that allows a numerical value to be changed by
+        dragging a thumb along an axis.
+      </HeadingSection>
+      <ExampleSection>
+        <div className="caption">Sample Slider</div>
+        <Slider
+          defaultValue={30}
+          valueLabelDisplay="auto"
+          sx={{ maxWidth: 400 }}
+        />
+        <div className="caption top40">Sample Range Slider</div>
+        <Slider
+          className="range"
+          defaultValue={[20, 40]}
+          valueLabelDisplay="auto"
+          sx={{ maxWidth: 400 }}
+        />
+        <SettingsSection>
+          <div className="form-row">
+            <NumberScaledSelectable
+              property={slidersMolecule.handleBorderRadius}
+              units="px"
+              defaultValue={1}
+              scale={radius}
+            />
+          </div>
+          <div className="form-row">
+            <NumberScaledSelectable
+              property={slidersMolecule.visibleHeight}
+              units="px"
+              defaultValue={3}
+              scale={grid}
+            />
+          </div>
+          <div className="form-row">
+            <StringCategorySelectable
+              property={slidersMolecule.handleShadow}
+              defaultValue="None"
+            />
+          </div>
+          <div className="form-row">
+            <NumberScaledSelectable
+              property={slidersMolecule.barHeight}
+              units="px"
+              defaultValue={1}
+              scale={grid}
+            />
+          </div>
+          <div className="form-row">
+            <StringCategorySelectable
+              property={slidersMolecule.barShadow}
+              defaultValue="None"
+            />
+          </div>
+        </SettingsSection>
+        <GeneratedCodeSection item={slidersMolecule} />
+      </ExampleSection>
+    </>
+  );
+};

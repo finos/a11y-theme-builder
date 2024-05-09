@@ -1,59 +1,59 @@
 .titleBarDiv {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--background);
-    color: var(--on-background);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--background);
+  color: var(--on-background);
 }
 
 .titleBarDiv .MuiSelect-select {
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .MuiSelect-select span {
-  padding-right: var(--min-target)
+  padding-right: var(--min-target);
 }
 
 .titleBarDiv .left-titlebar {
-    display: flex;
-    align-items: center;
-    margin: 8px;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  flex-direction: column;
 }
 
 .titleBarDiv .center-titlebar {
-    display: flex;
-    align-items: left;
-    margin: var(--spacing-1);
-    gap: var(--spacing-2);
+  display: flex;
+  align-items: left;
+  margin: var(--spacing-1);
+  gap: var(--spacing-2);
 }
-.titleBarDiv .center-titlebar button{
-    align-self: end;
+.titleBarDiv .center-titlebar button {
+  align-self: end;
 }
 
 .titleBarDiv .center-titlebar .input-titlebar {
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    gap: var(--spacing-1);
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  gap: var(--spacing-1);
 }
 
 .titleBarDiv .right-titlebar {
-    display: flex;
-    align-items: left;
-    margin: 8px;
-    flex-direction: column;
-    gap: var(--spacing-1);
+  display: flex;
+  align-items: left;
+  margin: 8px;
+  flex-direction: column;
+  gap: var(--spacing-1);
 }
 
 .titleBarDiv .label {
-    padding-right: 30px;
-    font-size: var(--label-smallFontSize);
-    font-family: var(--label-smallFontFamily);
-    font-weight: var(--label-smallFontWeight);
-    line-height: var(--label-smallLineHeight);
-    letter-spacing: var(--label-smallCharcterSpacing);
+  padding-right: 30px;
+  font-size: var(--label-smallFontSize);
+  font-family: var(--label-smallFontFamily);
+  font-weight: var(--label-smallFontWeight);
+  line-height: var(--label-smallLineHeight);
+  letter-spacing: var(--label-smallCharcterSpacing);
 }

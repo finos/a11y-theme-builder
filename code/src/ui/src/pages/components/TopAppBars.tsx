@@ -6,29 +6,28 @@ import React, { useState } from 'react';
 import { ExampleSection } from '../content/ExampleSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { ResponsiveTopAppBar} from "../../mui-a11y-tb/organisms/ResponsiveTopAppBar";
+import { ResponsiveTopAppBar } from '../../mui-a11y-tb/organisms/ResponsiveTopAppBar';
 
 interface Props {
-    colorMode?: string;
+  colorMode?: string;
 }
 
+export const TopAppBars: React.FC<Props> = ({}) => {
+  const [colorMode, setColorMode] = useState<string>('colored');
 
-export const TopAppBars: React.FC<Props> = ({ }) => {
+  return (
+    <div>
+      <HeadingSection title="organisms" heading="App Bar" />
+      <ExampleSection>
+        <ColorModeSelector
+          colorMode={colorMode}
+          setColorMode={setColorMode}
+        ></ColorModeSelector>
 
-      const [colorMode, setColorMode] = useState<string>("colored");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="App Bar" />
-              <ExampleSection>
-                <ColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-                </ColorModeSelector>
-
-                <div className="top40 section-demos" data-background={colorMode}>
-                    <ResponsiveTopAppBar color={colorMode} />
-
-                </div>
-              </ExampleSection>
-          </div>
-      )
-  }
+        <div className="top40 section-demos" data-background={colorMode}>
+          <ResponsiveTopAppBar color={colorMode} />
+        </div>
+      </ExampleSection>
+    </div>
+  );
+};

@@ -6,40 +6,47 @@ import React from 'react';
 import { styled, Switch, Stack, Typography } from '@mui/material';
 
 interface Props {
-    leftLabel?: string;
-    rightLabel?: string;
-    leftColor?: string;
-    rightColor?: string;
-    size?: number;
-    inputProps?: any;
-    checked?: boolean;
-    onChange?: Function;
+  leftLabel?: string;
+  rightLabel?: string;
+  leftColor?: string;
+  rightColor?: string;
+  size?: number;
+  inputProps?: any;
+  checked?: boolean;
+  onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
-    const handleOnChange = (event:any) => {
-        const value = event.target.value;
-        if (onChange) {
-            onChange();
-        }
+export const NavSwitch: React.FC<Props> = ({
+  leftLabel,
+  rightLabel,
+  leftColor,
+  rightColor,
+  size,
+  checked,
+  onChange,
+}) => {
+  const handleOnChange = (event: any) => {
+    const value = event.target.value;
+    if (onChange) {
+      onChange();
     }
+  };
 
-    const sz = size || 1.5;
-    const MySwitch = styled(Switch)(({ theme }) => ({
-        padding: 0,
-        display: 'flex',
-    }))
+  const sz = size || 1.5;
+  const MySwitch = styled(Switch)(({ theme }) => ({
+    padding: 0,
+    display: 'flex',
+  }));
 
-    return (
-        <Stack direction="row" spacing={1} alignItems="center">
-            {leftLabel && <Typography>{leftLabel}</Typography>}
-            <MySwitch
-                checked={checked}
-                onChange={handleOnChange}
-                inputProps={{ 'aria-label': '' }}
-            />
-            {rightLabel && <Typography>{rightLabel}</Typography>}
-         </Stack>
-    )
-
-}
+  return (
+    <Stack direction="row" spacing={1} alignItems="center">
+      {leftLabel && <Typography>{leftLabel}</Typography>}
+      <MySwitch
+        checked={checked}
+        onChange={handleOnChange}
+        inputProps={{ 'aria-label': '' }}
+      />
+      {rightLabel && <Typography>{rightLabel}</Typography>}
+    </Stack>
+  );
+};
