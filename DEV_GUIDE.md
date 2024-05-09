@@ -18,7 +18,7 @@ The Theme Builder application can be built and run locally using two variations 
 ### Quick and Easy 
 If you simply desire to run the application and do not require to perform any development enhancements, the easiest approach for running the application locally is to install [Docker Desktop](https://www.docker.com/).
 ### Javascript Runtime Environment
-If you desire to extend or enhance the application, a local development environment will need to be configured. This requires the installation of Node.js prerequisites, specifically NodeJS 16+ and npm 8+. Visit [nodejs downloads](https://nodejs.org/en/download/) for latest versions.
+If you desire to extend or enhance the application, a local development environment will need to be configured. This requires the installation of Node.js prerequisites, specifically NodeJS 18+ and npm 8+. Visit [nodejs downloads](https://nodejs.org/en/download/) for latest versions.
 
 ## Install and Use
 Perform the following steps to run a local version of the application.
@@ -33,7 +33,7 @@ cd a11y-theme-builder
 git remote add upstream https://github.com/finos/a11y-theme-builder
 git pull upstream dev
 ```
-*always pull from the `dev` branch.
+**Note:** Always pull from the `dev` branch.  Development should always be done on the `dev` branch.
 
 where:
 
@@ -168,34 +168,34 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
-## Potential Windows Issue
+### Potential Windows Issue
 One problem you might run into on a Windows system is that themes may not appear, load, or be created.
 If this is the case, it most likely means there is a problem with your [themes file](https://github.com/finos/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
 
-### Our Recommendation
+#### Our Recommendation
 We suggest you to use WSL (Windows Subsytem For Linux).`Use it from the very start of cloning the Repo` in your local system than you will not face the issue mentioned above 
 
 ## Create a Pull Request
 
-After making changes, don't forget to commit with the sign-off flag (-s)
-
+After making changes, commit your changes, we recommend using the below format.
 ```
-$ git commit -s -m “my commit message w/signoff”
+$ git commit -m "finos/a11y-theme-builder < issue no.> : <heading of the issue solved>"
 ```
 Once all changes have been committed, push the changes.
 
 ```
+$ git pull origin <branch-name>
 $ git push origin <branch-name>
 ```
 Then on Github, navigate to the `finos/a11y-theme-builder` repository and create a pull request from your recently pushed changes to the `dev` branch.
 
 ### Registration for LFX EasyCLA
 
-after first pull-request register for EasyCLA. We suggest to proceed as individual contributor as some companies may requrie their legal departments to review their open source contribution. 
+When you create your first pull request for FINOS A11y Theme Builder, you will be asked to agree to a Contributors License Agreement. You can find more information on this topic [here](https://github.com/finos/a11y-theme-builder/blob/main/CONTRIBUTE.md#finos-restrictions) 
 
 ### Mention for Review
 
-Please mention your mentor or any maintainer (working on similar issue) tag them in the comments so that they get the notification about your pull-request.
+In Theme Builder, all pull requests must be reviewed by at least one maintainer. In general, you should try to select a reviewer that is either very familiar with the issue that you are working on or very familiar with the code or functionality that you are changing. If in doubt, tag your mentor in a comment in the PR asking for guidance so that they will be notified of your question. You can find more information on this topic [here](https://github.com/finos/a11y-theme-builder/blob/main/CONTRIBUTE.md#contribution-rules)
 
 
 ## Understanding Server APIs
