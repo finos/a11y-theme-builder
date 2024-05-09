@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import { Card, CardContent, CardHeader, IconButton, Box, Menu, MenuItem, Divider, Button } from "@mui/material";
-import React, { useState, MouseEvent, ReactNode } from "react";
+import React, { useState, MouseEvent } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { FormattedTime, FormattedDate } from "react-intl";
 import { ThemeBuilder } from "@finos/a11y-theme-builder-sdk";
@@ -22,6 +22,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: MouseEvent<HTMLElement>) => {
+        event.stopPropagation();
         setAnchorEl(event.currentTarget);
     };
     const [doCopy, setDoCopy] = useState(false);
@@ -173,7 +174,10 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
 
     return (
         <div className="system-card">
-            <Card>
+            <Card 
+                className= "clickable"
+                onClick={() => handleClose("load")}
+            >
                 <CardHeader
                     action={
                         <IconButton
@@ -189,10 +193,7 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
                         </IconButton>
                     }
                     title={
-                        <h5
-                            onClick={() => handleClose("load")}
-                            style={{cursor: "pointer"}}
-                        >{name}</h5>
+                        <h5>{name}</h5>
                     }
                     subheader={
                         <div className="date caption quiet">
