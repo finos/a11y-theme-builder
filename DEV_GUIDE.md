@@ -46,6 +46,14 @@ cd <WORKSPACE>/a11y-theme-builder/code
 #### Embedded Database
 The Theme Builder application requires the use of a  persisted embedded database. This requirement is satisfied by attaching a local host directory, `/code/src/data`, to the running docker container. 
 
+#### Use Docker Compose for easier setup in one command
+```
+docker compose up
+```
+your webiste is live on localhost:8080
+
+OR
+
 #### Build image
 
 ```
