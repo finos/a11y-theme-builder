@@ -1,0 +1,27 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "header"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "header/header": [2, "block", [
+        "*",
+        " * Copyright (c) 2023 Discover Financial Services",
+        " * Licensed under Apache-2.0 License. See License.txt in the project root for license information",
+        " "
+      ]],
+      "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars-experimental": "error"
+    }
+  }
+  
