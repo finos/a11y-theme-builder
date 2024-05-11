@@ -1,8 +1,8 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Select, SelectProps } from '@mui/material';
 
-interface Props extends SelectProps {
-    children?: ReactNode
+type Props = SelectProps & {
+    children?:ReactNode
 }
 
 export const Dropdown: React.FC<Props> = ({children, MenuProps, ...rest}) => {
