@@ -24,6 +24,7 @@ import { StatStylesComponent } from '../../components/typography/StatStylesCompo
 import { TooltipsComponent } from '../../components/TooltipsComponent';
 import { TextDecorationComponent } from '../../components/TextDecorationComponent';
 import { ImageDecorationsComponent } from '../../components/ImageDecorationsComponent';
+import { ImagesList } from '../../components/ImagesList';
 import { ToastsSingleLineComponent } from '../../components/ToastsSingleLineComponent';
 import { ToastsDoubleLineComponent } from '../../components/ToastsDoubleLineComponent';
 import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComponent';
@@ -227,6 +228,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Dropdown"} value="dropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("dropdown")}} disabled={disabled}/>
                     <LeftNavItem text={"Hero"} value="hero" indent={1} selected={showComponent} onClick={()=> {setShowComponent("hero")}} disabled={disabled}/>
                     <LeftNavItem text={"Images"} value="imageDecorations" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageDecorations")}} disabled={disabled}/>
+                    <LeftNavItem text={"Image List"} value="imageList" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageList")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
 
@@ -378,6 +380,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "imageDecorations" &&
                         <ImageDecorationsComponent/>
+                    }
+                    {showComponent === "imageList" &&
+                        <ImagesList/>
                     }
                     {showComponent === "listsSingle" &&
                         <ListsSingleComponent/>
