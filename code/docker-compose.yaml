@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:3001"
+    volumes:
+      - A11yThemeBuilder:/code/src/data
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    container_name: a11y-theme-builder
+    restart: unless-stopped
+
+volumes:
+  A11yThemeBuilder:
