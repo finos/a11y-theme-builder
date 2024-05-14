@@ -47,7 +47,26 @@ cd <WORKSPACE>/a11y-theme-builder/code
 #### Embedded Database
 The Theme Builder application requires the use of a  persisted embedded database. This requirement is satisfied by attaching a local host directory, `/code/src/data`, to the running docker container. 
 
+#### Use Docker Compose for a quick start
+Docker Compose allows you to do simple orchestration of Docker artifacts. With one command you can build and start containers and their dependencies in the proper order, establish volumes for persistence, and even establish a network so that the containers can communicate with each other. To build and start Theme Builder in a Docker environment, simply run:
+
+```
+docker compose up
+```
+
+Once the container is up and running, you may load Theme Builder in a web browser by navigating to `http://localhost:8080`.
+
+you can bring down the containers by using
+
+```
+docker compose down
+```
+
+This command gracefully shuts down the containers and cleans up the resources they used
+
 #### Build image
+
+While Docker Compose may quickly and easily start an application in a Docker environment, you may find that you need to manage your Docker environment at a more granular level. This section can help you do just that.
 
 ```
 docker build . -t a11y-theme-builder
