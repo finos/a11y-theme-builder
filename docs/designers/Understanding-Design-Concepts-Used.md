@@ -1,14 +1,14 @@
 #  Understanding Design Concepts Used In A11Y Theme Builder
 
-**Design tokens** are named variables that store design decisions like colors, fonts, spacing, border styles, and more. Think of them as reusable building blocks for your visual interface. Built on Brad Frost's Atomic Design, this a11y theme builder generates design tokens in **CSS** and **JSON** formats.
+**Design tokens** are named variables that store design decisions like colors, fonts, spacing, border styles, and more. Think of them as reusable building blocks for your visual interface. Built on Brad Frost's Atomic Design, A11y Theme Builder generates each design system in JSON, containing design tokens categorized in the appropriate atomic design elements. Theme Builder also generates each design system in CSS.
 
 # Atomic Design 
 
-Atomic Design is a design system methodology created by Brad Frost. It offers a structured approach to building user interfaces by breaking them down into their smallest, reusable components. This promotes consistency, scalability, and improves collaboration between designers and developers.
+Atomic Design offers a structured approach to building user interfaces by breaking them down into their smallest, reusable components. This promotes consistency, scalability, and improves collaboration between designers and developers.
 
 ## Atoms
 
- Atoms are the fundamental building blocks of this design system. They represent the most basic visual elements that can't be further broken down. Here's a breakdown of atom categories provided:
+ Atoms are the fundamental building blocks of this design system. They represent the most basic visual elements that can't be further broken down. Here's a breakdown of the atoms defined by Theme Builder:
 
 -   **Color Palette:**
     
