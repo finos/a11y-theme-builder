@@ -28,9 +28,15 @@ export class MeasureDiv extends React.Component {
 
     public render(): JSX.Element {
         return (
-            <div className={this.props.className} style={this.props.style} ref={(divElement) => { this.divElement = divElement }}>
+            <div
+                className={this.props.className}
+                style={this.props.style}
+                ref={(divElement) => {
+                    this.divElement = divElement;
+                }}
+            >
                 {this.props.children}
             </div>
-        )
+        );
     }
 }

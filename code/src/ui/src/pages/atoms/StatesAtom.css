@@ -1,6 +1,6 @@
 .design-system-editor-right-content .statesListItem {
     border-radius: var(--radius-half);
-    border: 1px solid rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     /* padding: var(--spacing-1); */
     box-shadow: none;
 }
@@ -16,7 +16,7 @@
 .design-system-editor-right-content .darkmode .statesListItem input {
     background: var(--dm-background) !important;
     color: var(--dm-on-background);
-    border: 1px solid var(--dm-border)
+    border: 1px solid var(--dm-border);
 }
 
 .design-system-editor-right-content .darkmode label {

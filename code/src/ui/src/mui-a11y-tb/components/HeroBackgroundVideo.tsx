@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import "./Hero.css";
+import './Hero.css';
 
 interface Props {
     style?: any;
@@ -11,10 +11,14 @@ interface Props {
     className?: string;
 }
 
-export const HeroBackgroundVideo: React.FC<Props> = ({style, children, className=""}) => {
+export const HeroBackgroundVideo: React.FC<Props> = ({
+    style,
+    children,
+    className = '',
+}) => {
     return (
-        <div className={"hero backgroundVideo " + className} style={style}>
+        <div className={'hero backgroundVideo ' + className} style={style}>
             {children}
         </div>
-    )
-}
+    );
+};

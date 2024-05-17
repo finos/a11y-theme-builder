@@ -21,8 +21,11 @@ interface Props {
     designSystem: DesignSystem;
 }
 
-export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
-    const [sample, setSample] = useState<string>("option1");
+export const DropdownsMolecule: React.FC<Props> = ({
+    molecule,
+    designSystem,
+}) => {
+    const [sample, setSample] = useState<string>('option1');
     const refContainer = React.useRef(null);
     const [container, setContainer] = useState<any>();
 
@@ -35,7 +38,8 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
     return (
         <div>
             <HeadingSection item={molecule} title="Apply Styles">
-                You can stylize your dropdown menu items in their hover and focus states.
+                You can stylize your dropdown menu items in their hover and
+                focus states.
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>
@@ -43,8 +47,10 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                         <Dropdown
                             className="dropdownFocus"
                             value={sample}
-                            sx={{ width: "300px" }}
-                            onChange={(event:any) => setSample(event.target.value)}
+                            sx={{ width: '300px' }}
+                            onChange={(event: any) =>
+                                setSample(event.target.value)
+                            }
                         >
                             <MenuItem value="option1">Option 1</MenuItem>
                             <MenuItem value="option2">Option 2</MenuItem>
@@ -57,25 +63,30 @@ export const DropdownsMolecule: React.FC<Props> = ({ molecule, designSystem }) =
                         <Dropdown
                             className="dropdown-toggle dropdownFocus darkmode"
                             value={sample}
-                            sx={{ width: "300px" }}
+                            sx={{ width: '300px' }}
                             MenuProps={{
-                                container: container
+                                container: container,
                             }}
-                            onChange={(event:any) => setSample(event.target.value)}
+                            onChange={(event: any) =>
+                                setSample(event.target.value)
+                            }
                         >
                             <MenuItem value="option1">Option 1</MenuItem>
                             <MenuItem value="option2">Option 2</MenuItem>
                             <MenuItem value="option3">Option 3</MenuItem>
                         </Dropdown>
-                        <div ref={refContainer} ></div>
+                        <div ref={refContainer}></div>
                     </div>
                 </DarkModeSection>
                 <SettingsSection>
-                    <StringSelectable property={molecule.menuFocusState} defaultValue="true" variant="radio" />
+                    <StringSelectable
+                        property={molecule.menuFocusState}
+                        defaultValue="true"
+                        variant="radio"
+                    />
                 </SettingsSection>
                 <GeneratedCodeSection item={molecule} />
             </ExampleSection>
-
-        </div >
-    )
-}
+        </div>
+    );
+};

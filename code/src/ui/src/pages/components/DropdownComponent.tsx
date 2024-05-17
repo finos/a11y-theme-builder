@@ -4,11 +4,9 @@ import { ExampleSection } from '../content/ExampleSection';
 import { FormControl, InputLabel, MenuItem } from '@mui/material';
 import { Dropdown } from '../../mui-a11y-tb/components/Dropdown';
 
-interface Props {
-}
+interface Props {}
 
 export const DropdownComponent: React.FC<Props> = () => {
-
     const [age, setAge] = React.useState('');
     const handleChange = (event: any) => {
         setAge(event.target.value as string);
@@ -16,7 +14,7 @@ export const DropdownComponent: React.FC<Props> = () => {
 
     return (
         <div className="content">
-            <HeadingSection title='Desktop' heading='Dropdown'></HeadingSection>
+            <HeadingSection title="Desktop" heading="Dropdown"></HeadingSection>
             <ExampleSection>
                 <FormControl sx={{ m: 2, minWidth: 80 }}>
                     <InputLabel id="demo-simple-select-label">Age</InputLabel>
@@ -34,5 +32,5 @@ export const DropdownComponent: React.FC<Props> = () => {
                 </FormControl>
             </ExampleSection>
         </div>
-    )
-}
+    );
+};
