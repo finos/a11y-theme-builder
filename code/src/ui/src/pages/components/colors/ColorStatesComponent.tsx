@@ -12,39 +12,35 @@ interface Props {
     designSystem: DesignSystem;
 }
 
-export const ColorStatesComponent: React.FC<Props> = ({designSystem}) => {
-
-    const [_stateSettings, _setStateSettings] = useState<StateSettings>(designSystem.atoms.stateSettings);
+export const ColorStatesComponent: React.FC<Props> = ({ designSystem }) => {
+    const [_stateSettings, _setStateSettings] = useState<StateSettings>(
+        designSystem.atoms.stateSettings
+    );
 
     if (_stateSettings) {
         return (
             <div>
                 <HeadingSection title="Colors" heading="State Colors" />
                 <ExampleSection>
-                  <div className="theme-colors">
-                      <ComputedColorSwatch
-                          className="info"
-                          label="Info"
-                      />
-                      <ComputedColorSwatch
-                          className="success"
-                          label="Success"
-                      />
-                      <ComputedColorSwatch
-                          className="warning"
-                          label="Warning"
-                      />
-                      <ComputedColorSwatch
-                          className="danger"
-                          label="Danger"
-                      />
-                  </div>
-                </ExampleSection>  
+                    <div className="theme-colors">
+                        <ComputedColorSwatch className="info" label="Info" />
+                        <ComputedColorSwatch
+                            className="success"
+                            label="Success"
+                        />
+                        <ComputedColorSwatch
+                            className="warning"
+                            label="Warning"
+                        />
+                        <ComputedColorSwatch
+                            className="danger"
+                            label="Danger"
+                        />
+                    </div>
+                </ExampleSection>
             </div>
         );
     } else {
-        return (
-            <div>No ColorStatesComponent</div>
-        );
+        return <div>No ColorStatesComponent</div>;
     }
-}
+};

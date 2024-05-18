@@ -8,33 +8,37 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { FeatureHighlightsRight } from "../../mui-a11y-tb/organisms/FeatureHighlightsRight";
-import { FeatureHighlightsLeft } from "../../mui-a11y-tb/organisms/FeatureHighlightsLeft";
+import { FeatureHighlightsRight } from '../../mui-a11y-tb/organisms/FeatureHighlightsRight';
+import { FeatureHighlightsLeft } from '../../mui-a11y-tb/organisms/FeatureHighlightsLeft';
 
 interface Props {
     colorMode?: string;
 }
 
+export const FeatureLayouts: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('');
 
-export const FeatureLayouts: React.FC<Props> = ({ }) => {
-
-      const [colorMode, setColorMode] = useState<string>("");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="Teams" />
-              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-              </SectionColorModeSelector>
-              <div className="section-demos" data-background={colorMode}>
+    return (
+        <div>
+            <HeadingSection title="organisms" heading="Teams" />
+            <SectionColorModeSelector
+                colorMode={colorMode}
+                setColorMode={setColorMode}
+            ></SectionColorModeSelector>
+            <div className="section-demos" data-background={colorMode}>
                 <ExampleSection>
-                  <div className="demo-title subtitle1">Features Highlighted Right</div>
-                  <FeatureHighlightsRight className="top40 " />
-                  <p></p>
-                  <div className="demo-title subtitle1">Features Highlighted Left</div>
-                  <FeatureHighlightsLeft className="top40 " />
-                  <p></p>
+                    <div className="demo-title subtitle1">
+                        Features Highlighted Right
+                    </div>
+                    <FeatureHighlightsRight className="top40 " />
+                    <p></p>
+                    <div className="demo-title subtitle1">
+                        Features Highlighted Left
+                    </div>
+                    <FeatureHighlightsLeft className="top40 " />
+                    <p></p>
                 </ExampleSection>
-              </div>
-          </div>
-      )
-  }
+            </div>
+        </div>
+    );
+};

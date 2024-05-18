@@ -3,7 +3,11 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { Color, ColorPalette, DesignSystem } from '@finos/a11y-theme-builder-sdk';
+import {
+    Color,
+    ColorPalette,
+    DesignSystem,
+} from '@finos/a11y-theme-builder-sdk';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ColorSwatch } from '../../../components/ColorSwatch';
 import { ExampleSection } from '../../content/ExampleSection';
@@ -12,35 +16,42 @@ interface Props {
     designSystem: DesignSystem;
 }
 
-export const ExtendedPaletteComponent: React.FC<Props> = ({designSystem}) => {
-
-    const [_colorPalette, _setColorPalette] = useState<ColorPalette>(designSystem.atoms.colorPalette);
+export const ExtendedPaletteComponent: React.FC<Props> = ({ designSystem }) => {
+    const [_colorPalette, _setColorPalette] = useState<ColorPalette>(
+        designSystem.atoms.colorPalette
+    );
 
     if (_colorPalette && _colorPalette.getColors().length > 0) {
         return (
             <div>
-                <HeadingSection title="Colors" heading="Extended Palette Colors" />
+                <HeadingSection
+                    title="Colors"
+                    heading="Extended Palette Colors"
+                />
                 <ExampleSection>
-                {_colorPalette.getColors().map((color) => {
-                    return (
-                        <div>
-                            <div className="subtitle1 top40">{color.name}</div>
-                            <div className="theme-colors">
-                                {color.light.shades.map((shade) => {
-                                    return (
-                                        <ColorSwatch shade={shade} label={shade.id}></ColorSwatch>
-                                    );
-                                })}
+                    {_colorPalette.getColors().map((color) => {
+                        return (
+                            <div>
+                                <div className="subtitle1 top40">
+                                    {color.name}
+                                </div>
+                                <div className="theme-colors">
+                                    {color.light.shades.map((shade) => {
+                                        return (
+                                            <ColorSwatch
+                                                shade={shade}
+                                                label={shade.id}
+                                            ></ColorSwatch>
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
                 </ExampleSection>
             </div>
         );
     } else {
-        return (
-            <div>No ColorStatesComponent</div>
-        );
+        return <div>No ColorStatesComponent</div>;
     }
-}
+};
