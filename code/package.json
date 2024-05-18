@@ -15,7 +15,9 @@
 		"docker-run": "docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder",
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
-		"docker-rm": "docker rm a11y-theme-builder"
+		"docker-rm": "docker rm a11y-theme-builder",
+		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+ 		"format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\""
 	},
 	"author": "",
 	"license": "Apache-2.0",
@@ -44,6 +46,7 @@
 		"typescript": "^4.9.3"
 	},
 	"devDependencies": {
-		"nodemon": "^3.1.0"
+		"nodemon": "^3.1.0",
+		"prettier": "^3.2.5"
 	}
 }
