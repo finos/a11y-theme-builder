@@ -177,9 +177,9 @@ We suggest you to use WSL (Windows Subsytem For Linux).`Use it from the very sta
 
 ## Create a Pull Request
 
-After making changes, commit your changes, we recommend using the below format.
+After making changes and doing a `git add` to stage them, you'll need to commit them. We recommend using the below format.
 ```
-$ git commit -m "finos/a11y-theme-builder < issue no.> : <heading of the issue solved>"
+$ git commit -m "finos/a11y-theme-builder#< issue no.> : <commit message>"
 ```
 Once all changes have been committed, push the changes.
 
