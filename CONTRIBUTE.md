@@ -39,10 +39,11 @@ Before making a contribution, please take the following steps:
 1. Check whether there's already an open issue related to your proposed contribution as described above.  If not, follow instructions above to create an issue with all relevant information.
 2. Respond to any questions or suggestions raised in the issue by other developers.
 3. Fork the project repository and prepare your proposed contribution.  All contributions should be created using the latest code from the upstream dev branch.
-    1. Create and checkout a new branch to make changes within `git checkout -b "thisBranchFixesIssue<issue no.>"`
-    2. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
-    3. When your changes are ready, be sure to update your branch with the latest upstream dev branch to ensure code will merge correctly.
-    4. Retest your contribution with latest updates.
+    1. Create and checkout a new branch to make changes within: `git checkout -b "thisBranchFixesIssue#<issue no.>"`
+    2. Update your new branch with the latest upstream dev branch.
+    3. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
+    4. When your changes are ready, be sure to update your branch with the latest upstream dev branch to ensure code will merge correctly.
+    5. Retest your contribution with latest updates.
 4. Submit a pull request.
     * All pull requests should be made to merge into the upstream dev branch.
 
