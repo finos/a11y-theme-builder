@@ -16,8 +16,8 @@
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
 		"docker-rm": "docker rm a11y-theme-builder",
-		"lint": "npx eslint .",
-		"lint:fix": "npx eslint . --fix"
+		"lint": "npx eslint \"**/*.{ts,tsx}\"",
+		"lint:fix": "npx eslint \"**/*.{ts,tsx}\" --fix"
 	},
 	"author": "",
 	"license": "Apache-2.0",
@@ -46,8 +46,8 @@
 		"typescript": "^4.9.3"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^7.8.0",
-		"@typescript-eslint/parser": "^7.8.0",
+		"@typescript-eslint/eslint-plugin": "^7.10.0",
+		"@typescript-eslint/parser": "^7.10.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-header": "^3.1.1",
 		"eslint-plugin-import": "^2.29.1",
