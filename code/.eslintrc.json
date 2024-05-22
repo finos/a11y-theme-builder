@@ -8,7 +8,8 @@
   "plugins": [
     "@typescript-eslint",
     "header",
-    "import"
+    "import",
+    "unused-imports"
   ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
@@ -24,9 +25,13 @@
       " "
     ]],
     "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-    "@typescript-eslint/no-unused-vars-experimental": "error",
     "no-unused-vars": "off",
-    "import/no-unused-modules": [1, { "unusedExports": true }]
+    "import/no-unused-modules": [1, { "unusedExports": true }],
+    "unused-imports/no-unused-imports-ts": "error",
+    "unused-imports/no-unused-vars-ts": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   },
   "ignorePatterns": ["dist/", "node_modules/", "build/"]
 }
