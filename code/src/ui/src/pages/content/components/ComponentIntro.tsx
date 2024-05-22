@@ -13,9 +13,9 @@ const ComponentIntro: React.FC = () => {
             <Grid item spacing={2} lg={12} md={12} sm={12}>
               <h1>Components</h1>
                 <div>
-                      <p> These are the core-Components of your design language, the most popular widgets used in web and mobile applications.
-                          The input that we gather from you for Atom and Molecule settings help us create design system 
-                          styles and components. However, this section is meant only to reflect the 
+                      <p> These are the core components of your design language, the most common widgets used in web and mobile applications.
+                          The input that we gather from you for Atom and Molecule settings help us define design system styles that will be 
+                          applied to components. This section is meant only to reflect the 
                          values that have already been chosen and does not allow you to further configure the design system.
                       </p>
                  </div>
