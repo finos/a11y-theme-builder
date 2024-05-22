@@ -5,7 +5,6 @@
 import React from 'react';
 import { Avatar, Checkbox, FormControlLabel } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-import { Link } from 'react-router-dom';
 import './ListComponent.css';
 
 

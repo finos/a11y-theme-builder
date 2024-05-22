@@ -4,10 +4,9 @@
  */
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
-import { SettingsSection } from '../content/SettingsSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { ExampleSection } from '../content/ExampleSection';
-import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Tab, Tabs } from '@mui/material';
+import { Tab, Tabs } from '@mui/material';
 import BarChartIcon from '@mui/icons-material/BarChart';
 
 

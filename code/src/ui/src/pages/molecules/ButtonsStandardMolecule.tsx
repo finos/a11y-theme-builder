@@ -44,18 +44,18 @@ export const ButtonsStandardMolecule: React.FC<Props> = ({ molecule, designSyste
     // Note: the value required is a float, which is then multiplied by the grid size to get the
     //  value we see in the UI
     const renderButtonHeightSelectables = () => {
-        var r = [];
-        var selectables = [44/grid, 48/grid];
-        for (var j=3; j<=7; j++) {
+        const r = [];
+        let selectables = [44/grid, 48/grid];
+        for (let j=3; j<=7; j++) {
             if (j !== 44/grid && j !== 48/grid) selectables.push(j)
         }
         selectables = selectables.sort()
         if (!selectables) return;
-        for (var i=0; i<selectables.length; i++) {
+        for (let i=0; i<selectables.length; i++) {
             if (selectables[i] * grid < minTarget) {
                 continue;
             }
-            var s = (selectables[i] * grid).toString() + "px";
+            const s = (selectables[i] * grid).toString() + "px";
             r.push(<MenuItem key={s} value={selectables[i]}> {s} </MenuItem>)
         }
         return (

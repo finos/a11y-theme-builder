@@ -3,9 +3,9 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { InputLabel, TextField, Slider } from '@mui/material';
+import { Slider } from '@mui/material';
 import { ElevationSettings } from '@finos/a11y-theme-builder-sdk';
-import { ChromePicker, ColorResult } from 'react-color';
+import { ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';

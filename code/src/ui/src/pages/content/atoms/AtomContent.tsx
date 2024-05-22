@@ -33,7 +33,6 @@ import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
 
 // DEMO:    Import your atom
-import { ExampleAtom } from '../../atoms/ExampleAtom';
 
 //import { TestAtom } from '../pages/atoms/TestAtom';
 
@@ -109,7 +108,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayShadow])
 
     function enableDisableItems() {
-        let _atoms = {...atoms};
+        const _atoms = {...atoms};
         for (const [key, node] of Object.entries(designSystem.atoms)) {
             if (node instanceof Atom) {
                 if (notImplemented.indexOf(key) == -1) {
@@ -151,7 +150,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("atom-content-selected", showAtom)
     }, [showAtom])
 
-    interface LeftNavAtomProps { atom: any, indent?:number, disabled?:boolean };
+    interface LeftNavAtomProps { atom: any, indent?:number, disabled?:boolean }
     const LeftNavAtom : React.FC<LeftNavAtomProps> = ({atom, indent, disabled}) => {
         return (
             <LeftNavItem

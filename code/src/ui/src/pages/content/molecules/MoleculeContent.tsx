@@ -3,11 +3,11 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
-import { DesignSystem, Event, EventType, Molecule, Popovers } from '@finos/a11y-theme-builder-sdk';
+import { useEffect, useState } from 'react';
+import { DesignSystem, Event, EventType, Molecule } from '@finos/a11y-theme-builder-sdk';
 import MoleculeIntro from './MoleculeIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -76,7 +76,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("molecule-general-selected", ""+displayGeneral)
     }, [displayGeneral])
 
-    let chartsSelected = false;
+    const chartsSelected = false;
     if (pref.get("molecule-charts-selected") == "true") {
         generalSelected = true;
     }
@@ -86,7 +86,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayCharts])
 
     function enableDisableItems() {
-        let _molecules = {...molecules};
+        const _molecules = {...molecules};
         const isDisabled = !designSystem.molecules.isEnabled();
         for (const [key, node] of Object.entries(designSystem.molecules)) {
             if (node instanceof Molecule) {
@@ -130,7 +130,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         console.log(`${name} - showMolecule=${showMolecule}`)
     }, [showMolecule])
 
-    interface LeftNavMoleculeProps { item: any, indent?:number, disabled?:boolean };
+    interface LeftNavMoleculeProps { item: any, indent?:number, disabled?:boolean }
     const LeftNavMolecule : React.FC<LeftNavMoleculeProps> = ({item, indent, disabled}) => {
         return (
             <LeftNavItem

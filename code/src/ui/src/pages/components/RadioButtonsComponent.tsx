@@ -4,9 +4,8 @@
  */
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
-import { Button, FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup, Tooltip } from '@mui/material';
+import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 
 interface Props {
 }

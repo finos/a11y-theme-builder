@@ -39,9 +39,9 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
     }
 
     const renderCategories = (property: PropertyStringCategorySelectable, variant?: string) => {
-        var r = [];
-        var selectables = property.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
+        const r = [];
+        const selectables = property.getSelectableValues();
+        for (let i=0; i<selectables.length; i++) {
             const s = selectables[i];
             if (!variant || variant === "dropdown") {
                 if (s.display === "None" && (!s.members || s.members.length === 0)) {
@@ -59,8 +59,8 @@ export const StringCategorySelectable: React.FC<StringProps> = ({ property, defa
     }
 
     const renderSelectableItems = (items: string[], variant?: string) => {
-        var r = [];
-        for (var i=0; i<items.length; i++) {
+        const r = [];
+        for (let i=0; i<items.length; i++) {
             const s = items[i];
             if (!variant || variant === "dropdown") {
                 r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)

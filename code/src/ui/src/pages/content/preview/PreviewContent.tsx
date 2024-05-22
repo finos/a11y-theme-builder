@@ -5,10 +5,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem} from '@finos/a11y-theme-builder-sdk';
-import { List, Collapse, RadioGroup, Radio, FormControlLabel, Checkbox, FormGroup, Grid, Breadcrumbs, Button, Link, Typography, Divider, Avatar } from '@mui/material';
-import { LeftNavHeader, LeftNavItem, LeftNavText } from '../../../components/LeftNavTabs';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Grid, Breadcrumbs, Button, Link, Typography, Divider, Avatar } from '@mui/material';
 import { NavSwitch } from '../../../components/NavSwitch';
 import { ResponsiveAppBar } from '../../../pages/components/ResponsiveAppBar';
 import { Hero } from "../../../mui-a11y-tb/components/Hero";

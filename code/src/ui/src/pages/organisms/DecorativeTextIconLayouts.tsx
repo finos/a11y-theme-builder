@@ -3,17 +3,9 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { DesignSystem, Images } from '@finos/a11y-theme-builder-sdk';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
-import { ExampleSection } from '../content/ExampleSection';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { Text } from "../../mui-a11y-tb/organisms/Text";
-import { TextIcons } from "../../mui-a11y-tb/organisms/TextIcons";
-import { TextIconsWithDivider } from "../../mui-a11y-tb/organisms/TextIconsWithDivider";
 import { TextIconsGradient} from "../../mui-a11y-tb/organisms/TextIconsGradient";
 import { TextIconsDropColor} from "../../mui-a11y-tb/organisms/TextIconsDropColor";
-import { TextIconsCentered } from "../../mui-a11y-tb/organisms/TextIconsCentered";
-import { TextIconsWithDividerCentered } from "../../mui-a11y-tb/organisms/TextIconsWithDividerCentered";
 import { TextIconsGradientCentered } from "../../mui-a11y-tb/organisms/TextIconsGradientCentered";
 import { TextIconsDropColorCentered } from "../../mui-a11y-tb/organisms/TextIconsDropColorCentered";
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';

@@ -34,18 +34,18 @@ export class Preferences {
 
     public deleteAll() {
         const keys = this.listKeys();
-        for (var i in keys) {
+        for (const i in keys) {
             this.delete(keys[i]);
         }
     }
 
     public listKeys(): string[] {
         console.log(`Preferences.listKeys()`);
-        let keys = Object.keys(window.localStorage);
+        const keys = Object.keys(window.localStorage);
         const path = prefix + (this.designSystemName ? `${this.designSystemName}-` : "");
         const data = [];
         const start = path.length;
-        for (var i in keys) {
+        for (const i in keys) {
             //console.log(keys[i]+"="+localStorage.getItem(keys[i]))
             if (keys[i].startsWith(path)) {
                 data.push(keys[i].substring(start));

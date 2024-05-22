@@ -18,7 +18,7 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
     const [themeBuilder, setThemeBuilder] = useState<ThemeBuilder>();
 
     const getDesignSystemNames = async () => {
-        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
+        const _themeBuilder = await ThemeBuilder.create({ storage: storage });
         setThemeBuilder(_themeBuilder);
     };
 
@@ -38,7 +38,7 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
     const renderDesignSystems = () => {
         if (!designSystems) { return (null) }
         const r = [];
-        for (var i=0; i<designSystems.length; i++) {
+        for (let i=0; i<designSystems.length; i++) {
             const ds = designSystems[i];
             if (ds.metadata && ds.metadata.sample) {
                 r.push(

@@ -3,11 +3,11 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
-import { DesignSystem, Event, EventType, Popovers } from '@finos/a11y-theme-builder-sdk';
+import { useEffect, useState } from 'react';
+import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
-import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -118,31 +118,31 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("organisms-organisms-selected", ""+displayVideo)
     }, [displayVideo])
 
-    let listSelected = false;
+    const listSelected = false;
     const [displayLists, setDisplayList] = useState<boolean>(listSelected);
     useEffect(() => {
         pref.set("organisms-organisms-selected", ""+displayLists)
     }, [displayLists])
 
-    let listSelectedImageLeft = false;
+    const listSelectedImageLeft = false;
     const [displayListsImageLeft, setDisplayListImageLeft] = useState<boolean>(listSelectedImageLeft);
     useEffect(() => {
         pref.set("organisms-organisms-selected", ""+displayListsImageLeft)
     }, [displayListsImageLeft])
 
-    let cardsClickable = false;
+    const cardsClickable = false;
     const [displayCardsClickable, setDisplayCardsClickable] = useState<boolean>(cardsClickable);
     useEffect(() => {
         pref.set("organisms-organisms-selected", ""+displayCardsClickable)
     }, [displayCardsClickable])
 
-    let otherSelected = false;
+    const otherSelected = false;
     const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
     useEffect(() => {
         pref.set("organisms-organisms-selected", ""+displayOther)
     }, [displayOther])
 
-    let textSelected = false;
+    const textSelected = false;
     const [displayText, setDisplayText] = useState<boolean>(textSelected);
     useEffect(() => {
         pref.set("organisms-organisms-selected", ""+displayText)
@@ -163,7 +163,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("organisms-mode-selected", ""+darkMode);
     }, [darkMode]);
 
-    interface LeftNavorganismsProps { item: any, indent?:number, disabled?:boolean };
+    interface LeftNavorganismsProps { item: any, indent?:number, disabled?:boolean }
     const LeftNavorganisms : React.FC<LeftNavorganismsProps> = ({item, indent, disabled}) => {
         return (
             <LeftNavItem

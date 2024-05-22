@@ -49,9 +49,9 @@ export const StringSelectable: React.FC<StringProps> = ({ property, defaultValue
     }
 
     const renderSelectableItems = (property: PropertyStringSelectable, variant?: string) => {
-        var r = [];
-        var selectables = property.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
+        const r = [];
+        const selectables = property.getSelectableValues();
+        for (let i=0; i<selectables.length; i++) {
             const s = selectables[i];
             if (!variant || variant === "dropdown") {
                 r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
