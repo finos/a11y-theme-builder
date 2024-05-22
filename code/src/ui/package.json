@@ -51,7 +51,9 @@
         "storybook": "start-storybook -p 6006 -s public",
         "update-sdk": "npm update a11y-theme-builder-sdk",
         "build-storybook": "build-storybook -s public",
-        "webpack": "^5.69.1"
+        "webpack": "^5.69.1",
+		"lint": "npx eslint .",
+		"lint:fix": "npx eslint . --fix"
     },
     "eslintConfig": {
         "extends": [

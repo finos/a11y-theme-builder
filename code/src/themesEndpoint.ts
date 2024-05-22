@@ -14,9 +14,9 @@ export class DocError extends Error {
 }
 
 const DB_NAME = "themes";
-var Engine = require('tingodb')();
-var db = new Engine.Db(__dirname + '/../src/data', {});
-var collection = db.collection(DB_NAME);
+const Engine = require('tingodb')();
+const db = new Engine.Db(__dirname + '/../src/data', {});
+let collection = db.collection(DB_NAME);
 collection.compactCollection(function(a:any, b:any) {
     console.log(`compactCollection a=${a} b=${b}`);
 });
@@ -41,7 +41,7 @@ async function getDocs(match?: any): Promise<any[]> {
             if (items) {
                 //console.log("  items=",items);
                 const rtn: any = [];
-                for (let doc of items) {
+                for (const doc of items) {
                     delete doc["_id"];
                     rtn.push(doc);
                 }
@@ -63,7 +63,7 @@ async function getMetadata(match?: any): Promise<any[]> {
         collection.find(match, fields).toArray(function(err:any, items:any) {
             if (items) {
                 const rtn: any = [];
-                for (let doc of items) {
+                for (const doc of items) {
                     delete doc["_id"];
                     rtn.push(doc);
                 }
@@ -85,7 +85,7 @@ async function getDocNames(match?: any): Promise<any[]> {
             if (items) {
                 console.log("  items=",items);
                 const rtn: any = [];
-                for (let doc of items) {
+                for (const doc of items) {
                     rtn.push(doc.id);
                 }
                 return success(rtn);
@@ -105,7 +105,7 @@ async function getDoc(id: string, fields?: string[]): Promise<any> {
     let _fields:any = null;
     if (fields) {
         _fields = {};
-        for (var _field of fields) {
+        for (const _field of fields) {
             _fields[_field] = true;
         }
     }
@@ -134,7 +134,7 @@ async function updateDoc(id: string, doc: any, returnDoc?: boolean): Promise<any
         }
         else {
             let found = false;
-            for (var key of Object.keys(doc)) {
+            for (const key of Object.keys(doc)) {
                 if (key.startsWith("$")) {
                     found = true;
                     break;
@@ -321,7 +321,7 @@ export function registerThemesEndpoint(app: express.Application) {
                 //console.log("data=",typeof data);
                 const r = fs.readFileSync("./src/ui/src/locales/data.json", "utf8");
                 const json = JSON.parse(r);
-                for (var key in data) {
+                for (const key in data) {
                     json[key] = data[key];
                 }
                 //console.log("json=",JSON.stringify(json,null,4));
