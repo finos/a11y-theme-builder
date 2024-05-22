@@ -163,7 +163,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                             horizontal: "left",
                         },
                         transformOrigin: {
-                            vertical: "top",
+                            vertical: "bottom",
                             horizontal: "left",
                         },
                         PaperProps: {
