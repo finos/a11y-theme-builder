@@ -46,7 +46,7 @@ export const ComputedColorSwatch: React.FC<Props> = ({className, label, style}) 
 
     // returns the hex and rgb value strings from the given color
     const processColorIntoHexRGB = (color: string) : {hex: string, RGB: string} => {
-        let retArray = {hex: "", RGB: ""};
+        const retArray = {hex: "", RGB: ""};
         if (!color) return retArray;
         const colorObj = colord(color);
         if (colorObj) {

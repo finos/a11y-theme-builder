@@ -15,9 +15,7 @@
 		"docker-run": "docker run -p 8080:3001 --name a11y-theme-builder -d a11y-theme-builder",
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
-		"docker-rm": "docker rm a11y-theme-builder",
-		"lint": "npx eslint .",
-		"lint:fix": "npx eslint . --fix"
+		"docker-rm": "docker rm a11y-theme-builder"
 	},
 	"author": "",
 	"license": "Apache-2.0",

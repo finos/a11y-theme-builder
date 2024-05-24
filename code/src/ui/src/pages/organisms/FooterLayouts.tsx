@@ -3,9 +3,6 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { DesignSystem, Images } from '@finos/a11y-theme-builder-sdk';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
-import { ExampleSection } from '../content/ExampleSection';
 import { FooterColorModeSelector } from '../content/FooterColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { Footer5Columns } from "../../mui-a11y-tb/organisms/Footer5Columns";

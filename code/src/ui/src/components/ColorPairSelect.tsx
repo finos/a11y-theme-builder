@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from "react";
-import {Box, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
+import {Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { ColorPair, Event, EventType, PropertyColorPair } from '@finos/a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';
 import './ColorPairSelect.css';

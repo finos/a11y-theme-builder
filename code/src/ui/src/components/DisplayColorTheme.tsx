@@ -4,9 +4,6 @@
  */
 import React from 'react';
 import { ColorThemes } from '@finos/a11y-theme-builder-sdk';
-import { ColorShade } from './ColorShade';
-import { ColorGradient } from './ColorGradient';
-import { ColorGradientHeader } from './ColorGradientHeader';
 import './DisplayColorTheme.css';
 import { GeneratedCodeSection } from '../pages/content/GeneratedCodeSection'
 import { ExampleSection } from '../pages/content/ExampleSection';

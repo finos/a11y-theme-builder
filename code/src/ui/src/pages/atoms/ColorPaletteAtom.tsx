@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
+import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";

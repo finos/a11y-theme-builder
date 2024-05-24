@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SecondaryNav } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

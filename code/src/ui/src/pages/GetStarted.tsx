@@ -24,7 +24,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
     const [designSystems, setDesignSystems] = useState<any>([]);
 
     const getDesignSystemNames = async () => {
-        let _themeBuilder = await ThemeBuilder.create({ storage: storage });
+        const _themeBuilder = await ThemeBuilder.create({ storage: storage });
         setThemeBuilder(_themeBuilder);
     }
 
@@ -73,7 +73,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
     const renderDesignSystems = () => {
         if (!designSystems) { return (null) }
         const r = [];
-        for (var i=0; i<designSystems.length; i++) {
+        for (let i=0; i<designSystems.length; i++) {
             const ds = designSystems[i];
             r.push(
                 <SystemCard
@@ -90,7 +90,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
 
     const isDesignSystemExist = (name: string) => {
         if (!designSystems) return false;
-        for (var i=0; i<designSystems.length; i++) {
+        for (let i=0; i<designSystems.length; i++) {
             const ds = designSystems[i];
             if (ds.id == name) {
                 return true;

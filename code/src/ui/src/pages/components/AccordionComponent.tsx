@@ -7,7 +7,6 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 
 interface Props {
 }

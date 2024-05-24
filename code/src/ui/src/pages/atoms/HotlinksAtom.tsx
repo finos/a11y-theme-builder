@@ -3,8 +3,8 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Alert, FormControl, FormControlLabel, FormHelperText, FormLabel, InputLabel, Radio, RadioGroup } from '@mui/material';
-import { ColorTheme, DesignSystem, Hotlinks, HotlinkModeVariables } from '@finos/a11y-theme-builder-sdk';
+import { Alert, FormControl, FormControlLabel, FormHelperText, FormLabel, Radio, RadioGroup } from '@mui/material';
+import { Hotlinks } from '@finos/a11y-theme-builder-sdk';
 import './BordersAtom.css'
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
