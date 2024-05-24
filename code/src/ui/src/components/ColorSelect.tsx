@@ -153,10 +153,12 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                     value={_selectedValue}
                     disabled={_disabled}
                     renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                            <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
-                        </Box>
-                    )}
+                        <div>hello</div>
+                        // <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                        //     <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
+                        // </Box>
+                    )
+                }
                     MenuProps={{
                         anchorOrigin: {
                             vertical: "bottom",
@@ -175,7 +177,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                           },
                         },
                       }}
-                >
+                >   
                     {_selectableValues && _selectableValues.map((gridShade, i) => {
                         return(
                             <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
