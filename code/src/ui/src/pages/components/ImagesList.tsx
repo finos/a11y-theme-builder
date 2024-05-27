@@ -2,6 +2,14 @@
  * SPDX-License-Identifier: Apache-2.0
  * Copyright 2024 FINOS A11y Theme Builder contributors - see NOTICE file
  */
+
+/*
+ Code borrowed from MUI project
+ * Source: https://github.com/mui/material-ui/blob/aae4ecc0f48c2a8ea47b9532ed1b721472dc96a8/docs/data/material/components/image-list/TitlebarImageList.tsx
+ * License: MIT License - see NOTICE file
+ * Original Author: MUI Contributors
+*/
+
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
@@ -37,6 +45,7 @@ export const ImagesList: React.FC<Props> = () => {
                         <div className="col-6">
                             <h6>Image List with title bars</h6>
                             <div className="Sample">
+                                // START of borrowed code 1
                                 <ImageList sx={{ width: 500, height: 450 }}>
                                     <ImageListItem key="Subheader" cols={2}>
                                         <ListSubheader component="div">December</ListSubheader>
@@ -64,6 +73,7 @@ export const ImagesList: React.FC<Props> = () => {
                                         </ImageListItem>
                                     ))}
                                 </ImageList>
+                                //END of borrowed code 1
                             </div>
                         </div>
                     </div>
@@ -73,6 +83,7 @@ export const ImagesList: React.FC<Props> = () => {
                         <div className="col-6">
                             <h6>Image List with Title bar below image</h6>
                             <div className="Sample">
+                                // START of borrowed code 2
                                 <ImageList sx={{ width: 500, height: 450 }}>
                                     {itemData.map((item) => (
                                         <ImageListItem key={item.img}>
@@ -90,6 +101,7 @@ export const ImagesList: React.FC<Props> = () => {
                                         </ImageListItem>
                                     ))}
                                 </ImageList>
+                                // END of borrowed code 2
                             </div>
                         </div>
                     </div>
@@ -99,7 +111,7 @@ export const ImagesList: React.FC<Props> = () => {
         </div>
     )
 }
-
+// START of borrowed code 3
 const itemData = [
     {
         img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
@@ -173,3 +185,4 @@ const itemData = [
         cols: 2,
     },
 ];
+// END of borrowed code 3
