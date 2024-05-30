@@ -1,7 +1,7 @@
 a11y-theme-builder - FINOS
 Copyright 2024-2024 Omesh Kumawat kumawatomesh4022@gmail.com
 
-This product includes software developed at the Fintech Open Source Foundation (https://www.finos.org/).
+This product includes software developed by Discover Financial Services (https://www.discover.com/).
 
 This project includes code from mui/material-ui TitlebarImageList.tsx, which is licensed under the MIT license. For details, see code/src/ui/src/pages/components/ImagesList.tsx.
  
