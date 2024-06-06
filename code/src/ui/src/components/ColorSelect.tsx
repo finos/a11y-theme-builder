@@ -162,30 +162,32 @@ export const ColorSelect: React.FC<Props> = ({value,baseColorHex, label, default
                     displayEmpty={true}
                     value={_selectedValue}
                     disabled={_disabled}
-                    renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                            <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
-                        </Box>
-                    )}
+                    // renderValue={(selected) => (
+                    //     <div>hello</div>
+                    //     // <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                    //     //     <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
+                    //     // </Box>
+                    // )
+                // }
                     MenuProps={{
                         anchorOrigin: {
                             vertical: "bottom",
                             horizontal: "left",
                         },
                         transformOrigin: {
-                            vertical: "top",
+                            vertical: "bottom",
                             horizontal: "left",
                         },
                         PaperProps: {
                           sx: {
                             '& .MuiList-root.MuiMenu-list': {
                               display: 'grid',
-                              gridTemplateColumns: `${buildGridColumnValue()}`,
+                              gridTemplateColumns: '10',
                             },
                           },
                         },
                       }}
-                >
+                >   
                     {_selectableValues && _selectableValues.map((gridShade, i) => {
                         return(
                             <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
