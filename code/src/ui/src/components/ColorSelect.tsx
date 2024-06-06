@@ -33,6 +33,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
     const [_selectableValuesGrid, _setSelectableValuesGrid] = useState<Shade[][]>();
     const [_longestRow, _setLongestRow] = useState<number>(0);
     const [_disabled, _setDisabled] = useState<boolean>(false);
+    const 
 
     useEffect(() => {
         if (value) {
@@ -180,9 +181,10 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                 >   
                     {_selectableValues && _selectableValues.map((gridShade, i) => {
                         return(
-                            <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
-                                <ColorShade shade={gridShade.shade} />
-                            </MenuItem>
+                            <div>hello</div>
+                            // <MenuItem key={`shade${i}`} value={`${gridShade.shade.hex};${i}`} sx={{gridArea: `${gridShade.row+1}/${gridShade.column+1}`}}>
+                            //     <ColorShade shade={gridShade.shade} />
+                            // </MenuItem>
                         );
                     })}
                 </Select>
