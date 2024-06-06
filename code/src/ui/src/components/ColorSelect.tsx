@@ -33,7 +33,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
     const [_selectableValuesGrid, _setSelectableValuesGrid] = useState<Shade[][]>();
     const [_longestRow, _setLongestRow] = useState<number>(0);
     const [_disabled, _setDisabled] = useState<boolean>(false);
-    const 
+    
 
     useEffect(() => {
         if (value) {
