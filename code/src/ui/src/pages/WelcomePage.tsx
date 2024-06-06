@@ -54,9 +54,15 @@ const WelcomePage: React.FC<Props> = ({ user, storage, themeName }) => {
                             sx={{
                                 '& ul': { padding: 0 },
                                 paddingTop: "0px",
+
                             }}
+                            component="nav"
+                            aria-labelledby="nested-list-subheader"
+                            subheader={
+                                <LeftNavHeader component="div" id="nested-list-subheader">Design Systems</LeftNavHeader>
+                            }
                         >
-                            <LeftNavHeader>Design Systems</LeftNavHeader>
+
                             <LeftNavItem text={"Welcome"} value="welcome" indent={1} selected={showItem} onClick={() => { setShowItem("welcome") }} />
                             <LeftNavItem text={"Sample and Template Design Systems"} value="jumpStart" indent={1} selected={showItem} onClick={() => { setShowItem("jumpStart") }} />
                             <LeftNavItem text={"Your Design Systems"} value="getStarted" indent={1} selected={showItem} onClick={() => { setShowItem("getStarted") }} />

@@ -6,7 +6,7 @@ import React, { ReactNode } from 'react';
 import { styled } from '@mui/material';
 import { ListSubheader, ListItemButton, ListItemText } from "@mui/material";
 
-export const LeftNavHeader = styled(ListSubheader)(( {theme }) => ({
+export const LeftNavHeader = styled(ListSubheader)<{component?:React.ElementType}>(( {theme }) => ({
     fontWeight: "bold",
     textTransform: "uppercase",
     background: "transparent",
