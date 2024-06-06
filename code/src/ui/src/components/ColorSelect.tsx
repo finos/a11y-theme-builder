@@ -152,13 +152,13 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                     displayEmpty={true}
                     value={_selectedValue}
                     disabled={_disabled}
-                    renderValue={(selected) => (
-                        <div>hello</div>
-                        // <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                        //     <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
-                        // </Box>
-                    )
-                }
+                    // renderValue={(selected) => (
+                    //     <div>hello</div>
+                    //     // <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                    //     //     <ColorShade shade={selected ? getShadeByIndex(selected.split(';')[1]) : "" || ""} />
+                    //     // </Box>
+                    // )
+                // }
                     MenuProps={{
                         anchorOrigin: {
                             vertical: "bottom",
