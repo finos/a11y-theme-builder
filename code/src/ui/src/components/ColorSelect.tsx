@@ -172,7 +172,7 @@ export const ColorSelect: React.FC<Props> = ({value, label, defaultValue}) => {
                           sx: {
                             '& .MuiList-root.MuiMenu-list': {
                               display: 'grid',
-                              gridTemplateColumns: `${buildGridColumnValue()}`,
+                              gridTemplateColumns: '10',
                             },
                           },
                         },
