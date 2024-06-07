@@ -1,4 +1,4 @@
-Since [Atomic Design](./methodology.md) enables designers and developers to establish a round-trip workflow process that traverses from abstract concepts to concrete details; and given the challenges associated with risk compliance for people with disabilities (Visual, Motion, Motor, Auditory, Cognitive/Learning), **what if**:
+Since [Atomic Design](./methodology.md) enables designers and developers to establish a round-trip workflow process that traverses from abstract concepts to concrete details; and given the challenges associated with risk compliance for people needing accommodations (Visual, Motion, Motor, Auditory, Cognitive/Learning), **what if**:
 
 * We applied *Atomic Design* concepts towards the development of accessibly compliant solutions, yielding consistency and scalability while mitigating regulatory risk?
 * An atomic design system could allow us to apply reuse, scaling, Continuous Integration and Continuous Delivery in the creation of user experiences?

@@ -3,22 +3,35 @@ This document provides guidance for how YOU can collaborate with our project com
 
 # Accessibility Theme Builder Contribution and Governance Policies
 
-This document describes the contribution process and governance policies of the FINOS Accessibility Theme Builder project. The project is also governed by the [Linux Foundation Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy/), and the FINOS [IP Policy](https://community.finos.org/assets/files/IP-Policy-9b1cd5f6c1d682e073c3c15224fc6d86.pdf), [Code of Conduct](https://community.finos.org/docs/governance/code-of-conduct), [Collaborative Principles](https://community.finos.org/docs/governance/collaborative-principles/), and [Meeting Procedures](https://community.finos.org/docs/governance/meeting-procedures/).
+This document describes the contribution process and governance policies of the FINOS Accessibility Theme Builder project. The project is also governed by the [Linux 
+Foundation Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy/), and the FINOS [IP Policy](https://community.finos.org/assets/files/IP-Policy-9b1cd5f6c1d682e073c3c15224fc6d86.pdf), [Code of Conduct](https://community.finos.org/docs/governance/code-of-conduct), [Collaborative Principles](https://community.finos.org/docs/governance/collaborative-principles/), and [Meeting Procedures](https://community.finos.org/docs/governance/meeting-procedures/).
 
 ## Reporting Issues
 
 We welcome any feedback on the quality, stability or performance of Theme Builder.  If you see incorrect behavior or would like to suggest ways to improve Theme Builder, please use these guidelines to create an issue in GitHub.
 1. Please [check](https://github.com/finos/a11y-theme-builder/issues) whether there is already an open issue related to your experience/feedback. If there is, join the discussion and contribute any observations or information that may not already be present in the issue.
-2. If there isn't already a relevant issue, create one, describing your experience with Theme Builder.
+2. If there isn't already a relevant issue, create one using one of the provided templates.  Please provide the following information:
     1. Add appropriate tag for project -> [`SDK`, `theme builder app`]
         * SDK - performs calculations, creates and populates CSS variables, generates CSS and JSON output
         * theme builder app - the application that the user interacts with
     3. Add appropriate tag for type of issue -> [`bug`, `enhancement`]
     4. (optional) Add tag for required specialties -> [`design thinking`, `project management`, `question`, `documentation`]
     5. Set `Projects` field to `ThemeBuilder`
+3. If you are reporting a problem that exists in Theme Builder, try to convey answers for the following:
+    * Is the bug reproducible as explained?
+    * Is it reproducible in other environments (for instance, on different browsers or devices)?
+    * Are the steps to reproduce the bug clear? If not, can you describe how you might reproduce it?  Please provide as much relevant information as possible and break the instructions for reproducing the problem into clear, simple steps.
+    * Is this bug something you have run into?  Is it blocking you?  Would you appreciate it being looked into faster?
 4. If you would like to contribute designs, code, testing or resources toward resolving the issue, please note that in the issue.
 5. Respond to any questions or suggestions raised in the issue by other community members.
-6. We will triage all new issues at our next community meeting if you would like to offer more information as we prioritize your issue.  Click to see more [meeting information](https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings).
+6. We will triage all new issues at our next community meeting if you would like to offer more information as we prioritize your issue.  Click to see more [meeting 
+information](https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings).
+
+### Asking for features/enhancements
+
+Similar to reporting issues, a user wishing to create a feature request should first [check](https://github.com/finos/a11y-theme-builder/issues) whether a similar request has already been made in the system.  Searching for features should include looking for issues with the `enhancement` label.  Additionally, searching on issues with the string `[EPIC]`in the title may prove useful.
+
+If there isn't already a similar feature request, please create one using the appropriate `Feature Request Form` template.  After questions and suggestions from the community have been considered by the author and any resulting updates to the request have been made, we will triage the feature request.  If we determine the request to be sufficiently complex that we need to break work items into their own issues, the feature request will likely become an EPIC.  We will work with the author to ensure that no insights or information will be lost.
 
 ## Contribution Process
 
@@ -26,9 +39,11 @@ Before making a contribution, please take the following steps:
 1. Check whether there's already an open issue related to your proposed contribution as described above.  If not, follow instructions above to create an issue with all relevant information.
 2. Respond to any questions or suggestions raised in the issue by other developers.
 3. Fork the project repository and prepare your proposed contribution.  All contributions should be created using the latest code from the upstream dev branch.
-    1. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
-    2. When your changes are ready, be sure to update your branch with the latest upstream dev branch to ensure code will merge correctly.
-    3. Retest your contribution with latest updates.
+    1. Create and checkout a new branch to make changes within: `git checkout -b "thisBranchFixesIssue#<issue no.>"`
+    2. Update your new branch with the latest upstream dev branch.
+    3. In commit messages, reference associated issue.  For example, `commit -m "finos/a11y-theme-builder#111: corrected button behavior"`
+    4. When your changes are ready, be sure to update your branch with the latest upstream dev branch to ensure code will merge correctly.
+    5. Retest your contribution with latest updates.
 4. Submit a pull request.
     * All pull requests should be made to merge into the upstream dev branch.
 
@@ -83,20 +98,13 @@ Logistics for Project Triage Sessions:
 Project Management:
 * [Project Kanban Dashboard](https://github.com/orgs/finos/projects/1/views/1)
 
-### Contributing Issue/Feature Reports
-When submitting [Issue/Feature Reports](https://github.com/finos/a11y-theme-builder/issues), please use the provided templates and try to convey answers for the following:
-
-* Is the bug reproducible as explained?
-* Is it reproducible in other environments (for instance, on different browsers or devices)?
-* Are the steps to reproduce the bug clear? If not, can you describe how you might reproduce it?
-* What tags should the bug have?
-* Is this bug something you have run into? Would you appreciate it being looked into faster?
-
 ### Contributing Code
 
 #### FINOS restrictions
 
-FINOS requires that all contributors be covered by a Contributor's License Agreement (CLA).  If you are not contributing under a current CLA, you may be an individual contributor under an Easy CLA.  For more information on contributing to this project see the [FINOS Contributor Cheatsheet](https://community.finos.org/docs/finos-contributors-cheatsheet/).  For more procedural detail on how the contribution process flows, see the [Contribution Rules](#contribution-rules) section below.
+FINOS requires that all contributors be covered by a Contributor's License Agreement (CLA).  If you are not contributing under a current CLA, you may be an individual 
+contributor under an Easy CLA.  For more information on contributing to this project see the [FINOS Contributor Cheatsheet](https://community.finos.org/docs/finos-contributors-cheatsheet/).  For more procedural detail on how the contribution process flows, see the [Contribution 
+Rules](#contribution-rules) section below.
 
 
 #### Coding Conventions
@@ -122,7 +130,8 @@ References:
 
 
 ## Testing
-Testing new releases and/or features is a great way to contribute to the community. If you find issues, please submit an [Issue/Feature Report](https://github.com/finos/a11y-theme-builder/issues).
+Testing new releases and/or features is a great way to contribute to the community. If you find issues, please submit an [Issue/Feature 
+Report](https://github.com/finos/a11y-theme-builder/issues).
 
 ## Documentation
 [Learn](./DEVELOP_DOCS.md) how to develop, build, test, and contribute to the online docs.
@@ -140,7 +149,8 @@ Our project aspires to be globally applicable but that requires internationaliza
 The project community consists of Contributors and Maintainers:
 * A **Contributor** is anyone who submits a contribution to the project. (Contributions may include code, issues, comments, documentation, media, or any combination of the above.)
 * A **Maintainer** is a Contributor who, by virtue of their contribution history, has been given write access to project repositories and may merge approved contributions.
-* The **Lead Maintainer** is the project's interface with the FINOS team and Board. They are responsible for approving [quarterly project reports](https://community.finos.org/docs/governance/#project-governing-board-reporting) and communicating on behalf of the project. The Lead Maintainer is elected by a vote of the Maintainers.
+* The **Lead Maintainer** is the project's interface with the FINOS team and Board. They are responsible for approving [quarterly project 
+reports](https://community.finos.org/docs/governance/#project-governing-board-reporting) and communicating on behalf of the project. The Lead Maintainer is elected by a vote of the Maintainers.
 
 ### Contribution Rules
 
@@ -173,4 +183,5 @@ Any Contributor who has made a substantial contribution to the project MAY apply
 ### Changes to this Document
 
 This document MAY be amended by a vote of the Maintainers according to the Maintainer Voting process above.
+
 

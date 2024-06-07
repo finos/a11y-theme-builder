@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react';
-import { Select, SelectProps } from '@mui/material';
+import { Select, BaseSelectProps } from '@mui/material';
 
-interface Props extends SelectProps {
+interface Props extends BaseSelectProps {
     children?: ReactNode
 }
 

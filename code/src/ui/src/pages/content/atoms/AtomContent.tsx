@@ -239,7 +239,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.colorThemes.value && (
                         <ErrorHandler>
-                            <ColorThemeAtom atom={designSystem.atoms.colorThemes}></ColorThemeAtom>
+                            <ColorThemeAtom atom={designSystem.atoms.colorThemes} colorPalette={designSystem.atoms.colorPalette}></ColorThemeAtom>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.subcolorThemes.value && (
