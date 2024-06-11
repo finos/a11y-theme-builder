@@ -78,7 +78,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
             <div className="titleBarDiv" data-background="colored">
                 <div className="left-titlebar">
                     <div  className="tb-logo" onClick={handleLogoClick}>
-                        <svg width="48" height="48" viewBox="0 0 130 130" fill="none">
+                        <svg width="40" height="40" viewBox="0 0 130 130" fill="none">
                             <mask id="path-1-inside-1_8016_33240" fill="var(--on-background)">
                             <path fillRule="evenodd" clipRule="evenodd" d="M106 41.5C106 64.4198 87.4198 83 64.5 83C59.4677 83 54.6446 82.1043 50.1815 80.4636C48.1319 75.5495 47 70.1569 47 64.5C47 41.5802 65.5802 23 88.5 23C93.5323 23 98.3554 23.8957 102.819 25.5364C104.868 30.4505 106 35.8431 106 41.5ZM64.5 81C60.0163 81 55.7108 80.2537 51.6986 78.88C49.9569 74.4262 49 69.5771 49 64.5C49 59.8562 49.8005 55.4035 51.2696 51.2696C55.4035 49.8005 59.8562 49 64.5 49C69.5771 49 74.4262 49.9569 78.88 51.6986C80.2537 55.7108 81 60.0163 81 64.5C81 69.4189 80.1018 74.1236 78.4621 78.4621C74.1236 80.1018 69.4189 81 64.5 81Z"/>
                             </mask>
@@ -137,10 +137,29 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                             <path fillRule="evenodd" clipRule="evenodd" d="M50.1736 80.4719L49.8359 79.6084C48.0049 74.9262 47 69.8303 47 64.5C47 59.6248 47.8406 54.9457 49.3851 50.5999L49.7036 49.7036L50.5999 49.3851C54.9457 47.8406 59.6248 47 64.5 47C69.2027 47 73.723 47.7822 77.9376 49.2238C71.9648 34.994 57.8995 25 41.5 25C19.6848 25 2 42.6848 2 64.5C2 86.3152 19.6848 104 41.5 104C57.4454 104 71.184 94.5518 77.4229 80.9484C73.3557 82.28 69.0118 83 64.5 83C59.793 83 55.2687 82.2163 51.0507 80.7722L50.1736 80.4719ZM78.4614 78.4624C78.4616 78.4623 78.4619 78.4622 78.4621 78.4621C79.8745 74.725 80.7367 70.7161 80.9486 66.5327C80.9827 65.8594 81 65.1817 81 64.5C81 63.711 80.9769 62.9273 80.9312 62.1497C80.7178 58.5098 80.0119 55.0046 78.88 51.6986C78.8798 51.6985 78.8796 51.6984 78.8794 51.6983C74.4257 49.9568 69.5769 49 64.5 49C59.8562 49 55.4035 49.8005 51.2696 51.2696C49.8005 55.4035 49 59.8562 49 64.5C49 69.5771 49.9569 74.4262 51.6986 78.88C55.7108 80.2537 60.0163 81 64.5 81C69.4186 81 74.1231 80.1019 78.4614 78.4624ZM80.0012 80.0185C73.8557 95.2507 58.9332 106 41.5 106C18.5802 106 0 87.4198 0 64.5C0 41.5802 18.5802 23 41.5 23C59.3827 23 74.6236 34.3108 80.4589 50.1685C80.5638 50.4537 80.6657 50.7403 80.7645 51.0284C80.7671 51.0358 80.7696 51.0433 80.7722 51.0507C82.2163 55.2687 83 59.793 83 64.5C83 69.6641 82.0568 74.6082 80.3329 79.1692C80.3311 79.1741 80.3292 79.179 80.3274 79.1839C80.2215 79.4636 80.1128 79.7418 80.0012 80.0185Z" fill="var(--on-background)"/>
                         </svg>
                 </div>
+                <div className="input-titlebar">
+                        {/* <div id="design-system-title-current-select-label" className="label">Current Design System:</div> */}
+                        <Select
+                            labelId="design-system-title-current-select-label"
+                            onChange={handleDSChange}
+                            value={designSystem.name}
+                            size="small"
+                            sx={{
+                                width: "fit-content",
+                                minWidth: "200px",
+                            }}
+                        >
+                            {designSystemNames.map((item) => {
+                                return <MenuItem key={"key" + item} value={item}>{item}</MenuItem>
+                            })}
+                            <Divider />
+                            <MenuItem value={createNewDesignSystem}>{createNewDesignSystem}</MenuItem>
+                        </Select>
+                        </div>
 
                 </div>
 
-                <div className="center-titlebar">
+                {/* <div className="center-titlebar">
                     <div className="input-titlebar">
                         <div id="design-system-title-current-select-label" className="label">Current Design System:</div>
                         <Select
@@ -172,7 +191,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
                             <div className='subtitle' style={{margin: '12px 0'}}>Error Saving Design System</div>
                         </Alert>
                     </Snackbar>
-                </div>
+                </div> */}
 
                 <div className="right-titlebar">
                     <AccessibilityLayersButton designSystem={designSystem} />
