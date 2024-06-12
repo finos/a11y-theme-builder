@@ -206,13 +206,15 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                             </Alert>}
                             <br/>
                             <FormControl sx={{m: 2, minWidth: 500}}>
-                                <label className="label-1">
+                                <label id="fontSizeLabel" className="label-1">
                                     Font Size:
                                 </label>
                                 <div className="caption">
                                     Size:&nbsp;<span>{fontSize}px</span>
                                 </div>
                                 <Slider
+                                    aria-labelledby="fontSizeLabel"
+                                    aria-valuetext={`${fontSize}px`}
                                     value={fontSize}
                                     onChange={handleFontSizeChange}
                                     min={fontSizeProperty.min}
@@ -233,13 +235,14 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
                             </div>
                             <br/>
                             <FormControl sx={{m: 2, minWidth: 500}}>
-                                <label className="label-1">
+                                <label id="characterSpacingLabel" className="label-1">
                                     Character Spacing:
                                 </label>
                                 <div className="caption">
                                     Spacing: <span>{charSpacing}</span>
                                 </div>
                                 <Slider
+                                    aria-labelledby='characterSpacingLabel'
                                     value={charSpacing}
                                     onChange={handleCharSpacingChange}
                                     min={charSpacingProperty.min}
