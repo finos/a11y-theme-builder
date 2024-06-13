@@ -19,10 +19,19 @@
     color: var(--on-background);
     overflow-y: scroll;
     margin-left: 0px;
-    visibility: hidden;
+    visibility: hidden;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px
+}
+
+.design-system-editor-left-nav-footer {
+    padding-left: 1em;
 }
 
 .design-system-editor-left-nav-scrollable,
+.design-system-editor-left-nav-footer,
 .design-system-editor-left-nav:hover,
 .design-system-editor-left-nav:focus {
     visibility: visible;
@@ -54,7 +63,7 @@
 }
 
 .darkmode.design-system-editor-right-content {
-    background-color: var(--dm-background) !;
+    background-color: var(--dm-background) !important;
     color: var(--dm-on-background);
     min-height: 80vh;
 }

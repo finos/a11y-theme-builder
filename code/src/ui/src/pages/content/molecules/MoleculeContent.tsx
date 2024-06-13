@@ -9,6 +9,7 @@ import MoleculeIntro from './MoleculeIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, ListItemButton, ListItemText, ListSubheader, styled, Collapse, Button, InputLabel, TextField, InputAdornment } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
+import {LeftNavFooter} from "../../../components/LeftNavFooter";
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { AvatarsMolecule } from '../../molecules/AvatarsMolecule';
@@ -178,7 +179,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav" >
-            <div className="design-system-editor-left-nav-scrollable">
+                <div className="design-system-editor-left-nav-scrollable">
                 <List
                     sx={{
                         '& ul': {padding:0},
@@ -223,6 +224,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+                <LeftNavFooter />
             </div>
             <div className="design-system-editor-right-content">
             <div className="design-system-editor-right-content-scrollable">

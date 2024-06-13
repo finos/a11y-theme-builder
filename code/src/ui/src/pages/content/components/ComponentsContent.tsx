@@ -8,6 +8,7 @@ import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
 import ComponentsIntro from './ComponentIntro';
 import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
+import {LeftNavFooter} from "../../../components/LeftNavFooter";
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { NavSwitch } from '../../../components/NavSwitch';
@@ -147,7 +148,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
     return (
         <>
             <div className="design-system-editor-left-nav" >
-            <div className="design-system-editor-left-nav-scrollable">
+                <div className="design-system-editor-left-nav-scrollable">
                 <List
                     sx={{
                         '& ul': {padding:0},
@@ -272,6 +273,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
 
                 </List>
             </div>
+                <LeftNavFooter/>
             </div>
             <div className="design-system-editor-right-content"  data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">
