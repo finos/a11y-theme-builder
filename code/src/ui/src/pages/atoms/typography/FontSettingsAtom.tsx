@@ -227,9 +227,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
         return (
             <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
-                <div className='subtitle'><b>{primaryFontFamilyProperty.name}</b></div>
-                <div className='body1' style={{fontWeight:"normal"}}>{primaryFontDescription}</div>
-                <Select id="primaryFontSelect" value={primaryFont} onChange={handlePrimaryFontChange}>
+                <div id="primaryFontLabel" className='subtitle'><b>{primaryFontFamilyProperty.name}</b></div>
+                <div id="primaryFontDescription" className='body1' style={{fontWeight:"normal"}}>{primaryFontDescription}</div>
+                <Select id="primaryFontSelect" labelId="primaryFontLabel" aria-describedby="primaryFontDescription" value={primaryFont} onChange={handlePrimaryFontChange}>
                     {r}
                 </Select>
             </FormControl>
@@ -245,9 +245,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
 
         return (
             <FormControl sx={{m: textFieldMb, minWidth: textFieldWidth}}>
-                <div className='subtitle'><b>{secondaryFontFamilyProperty.name}</b></div>
-                <div className='body1' style={{fontWeight:"normal"}}>{secondaryFontDescription}</div>
-                <Select id="secondaryFontSelect" value={secondaryFont} onChange={handleSecondaryFontChange}>
+                <div id="secondaryFontLabel" className='subtitle'><b>{secondaryFontFamilyProperty.name}</b></div>
+                <div id="secondaryFontDescription" className='body1' style={{fontWeight:"normal"}}>{secondaryFontDescription}</div>
+                <Select id="secondaryFontSelect" labelId="secondaryFontLabel" aria-describedby="secondaryFontDescription" value={secondaryFont} onChange={handleSecondaryFontChange}>
                     {r}
                 </Select>
             </FormControl>
