@@ -2,10 +2,8 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
-import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
-import { SettingsSection } from '../content/SettingsSection';
 import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {

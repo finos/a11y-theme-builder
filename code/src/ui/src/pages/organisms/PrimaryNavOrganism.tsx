@@ -3,10 +3,7 @@ import { PrimaryNav } from '@finos/a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
-import { ExampleSection } from '../content/ExampleSection';
-import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
-import { NavbarExample } from './NavbarExample';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 

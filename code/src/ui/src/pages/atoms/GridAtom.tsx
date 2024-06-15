@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FormControl, Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material';
 import { GridSettings } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -54,9 +54,9 @@ export const GridAtom: React.FC<Props> = ({ atom }) => {
     }
 
     const renderSelectables = () => {
-        var r = [];
-        var selectables = gridProperty.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
+        const r = [];
+        const selectables = gridProperty.getSelectableValues();
+        for (let i=0; i<selectables.length; i++) {
             const s = selectables[i].toString();
             r.push(<FormControlLabel key={s} value={s} control={<Radio />} label={s+"px"} />)
         }

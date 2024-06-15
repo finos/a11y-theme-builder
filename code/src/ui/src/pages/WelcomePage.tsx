@@ -3,15 +3,15 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs, List } from "@mui/material";
-import { styled } from '@mui/material';
+import { List ,  ThemeProvider } from "@mui/material";
+
 import Welcome from './Welcome';
 import JumpStart from './JumpStart';
 import GetStarted from './GetStarted';
 import './WelcomePage.css';
 import WelcomeNavbar from '../components/WelcomeNavbar';
 import { themes } from "../mui-a11y-tb/themes/Theme";
-import { ThemeProvider } from '@mui/material';
+
 import { LeftNavHeader, LeftNavItem } from '../components/LeftNavTabs';
 import { MeasureDiv } from './MeasureDiv';
 import { Storage } from '@finos/a11y-theme-builder-sdk';

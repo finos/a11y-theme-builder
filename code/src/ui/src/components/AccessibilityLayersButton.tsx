@@ -2,8 +2,8 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, {useState, useEffect } from 'react';
-import { Checkbox, FormControl, InputLabel,
+import React, {useState } from 'react';
+import { Checkbox, FormControl,
     ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import './AccessibilityLayersButton.css';
@@ -13,7 +13,7 @@ const name = "AccessibilityLayersButton";
 
 interface Props {
     designSystem: DesignSystem;
-};
+}
 
 export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
 
@@ -25,8 +25,8 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
         designSystem.layers.motionSensitivity
     ]
     const getValueFromLayersProperty = () => {
-        let r = [];
-        for (var i=0; i<layersProperty.length; i++) {
+        const r = [];
+        for (let i=0; i<layersProperty.length; i++) {
             let v = layersProperty[i].getValue();
             if (v === undefined) {
                 v = layersProperty[i].getDefaultValue();
@@ -42,7 +42,7 @@ export const AccessibilityLayersButton: React.FC<Props> = ({ designSystem}) => {
     const handleChange = async (event: SelectChangeEvent<string[]>) => {
         const value = event.target.value as string[];
         console.log(`${name} - Changed by UI to ${value}`);
-        for (var i=0; i<layersProperty.length; i++) {
+        for (let i=0; i<layersProperty.length; i++) {
             const p = layersProperty[i];
             const selectedValue = value.indexOf(p.name) > -1;
             const propValue = p.getValue();

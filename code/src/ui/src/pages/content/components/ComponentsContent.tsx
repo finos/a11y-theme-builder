@@ -2,10 +2,9 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
-import ComponentsIntro from './ComponentIntro';
 import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';

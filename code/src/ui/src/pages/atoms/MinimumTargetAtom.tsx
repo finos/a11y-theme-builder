@@ -35,8 +35,8 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
         mobileMinHeightProperty.setValue(value)
     }
     const renderMinTargetSelectables = () => {
-        var r = [];
-        var selectables = [44, 48];
+        const r = [];
+        let selectables = [44, 48];
         for (var i=3; i<=7; i++) {
             const newVal = (atoms.gridSettings.grid.getValue() || 8) * i
             if (newVal !== 44 && newVal !== 48) selectables.push(newVal)
@@ -55,8 +55,8 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
         )
     }
     const renderMobileMinTargetSelectables = () => {
-        var r = [];
-        var selectables = [44,48];
+        const r = [];
+        let selectables = [44,48];
         for (var i=3; i<=7; i++) {
             const newVal = (atoms.gridSettings.grid.getValue() || 8) * i
             if (newVal !== 44 && newVal !== 48) selectables.push(newVal)

@@ -7,7 +7,7 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedHotlinkColorSwatch } from '../../../components/ComputedHotlinkColorSwatch';
 import { ExampleSection } from '../../content/ExampleSection';
 
-const sampleText: string = "Sample Text";
+const sampleText = "Sample Text";
 interface Props {
 }
 

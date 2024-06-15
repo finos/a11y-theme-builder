@@ -6,7 +6,6 @@ import React, { useState } from 'react';
 import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { ExampleSection } from '../content/ExampleSection';
 import { Hero } from "../../mui-a11y-tb/components/Hero";
 import { HeroImage } from "../../mui-a11y-tb/components/HeroImage";
 import { HeroVideo } from "../../mui-a11y-tb/components/HeroVideo";

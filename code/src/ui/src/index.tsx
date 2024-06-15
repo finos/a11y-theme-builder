@@ -16,7 +16,7 @@ import { IntlProvider } from 'react-intl';
 console.log("Document cookie=",document.cookie);
 
 function getCookie(key:string): any {
-    var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
+    const b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
     return b ? b.pop() : "";
 }
 
@@ -31,7 +31,7 @@ function getUser(): any {
     return "Unknown";
 }
 
-let user = getUser();
+const user = getUser();
 console.log("Authenticated user =", user);
 document.title = "A11y ThemeBuilder"
 

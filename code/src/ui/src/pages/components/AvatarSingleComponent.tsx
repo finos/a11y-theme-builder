@@ -4,7 +4,6 @@
  */
 import React, { useState } from 'react';
 import { Avatar, Stack } from '@mui/material';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 

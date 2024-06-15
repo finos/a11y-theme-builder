@@ -17,8 +17,8 @@ interface Props {
 }
 
 const codeStyle = {
-    overflowY: "auto" as "auto",
-    overflowX: "auto" as "auto",
+    overflowY: "auto" as const,
+    overflowX: "auto" as const,
     maxHeight: "400px",
     maxWidth: "calc(100vw - 400px)",
     padding: "20px",
@@ -105,7 +105,7 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
     }
 
     const saveFile = (data: string, fileName: string) => {
-        var file = new File([data], fileName, {type: "text/plain;charset=utf-8"});
+        const file = new File([data], fileName, {type: "text/plain;charset=utf-8"});
         FileSaver.saveAs(file);
     }
 

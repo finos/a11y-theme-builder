@@ -62,14 +62,14 @@ export const SystemCard: React.FC<Props> = ({themeBuilder, designSystems, design
             else if (value == "download") {
                 const s = await themeBuilder?.storage.get(name);
                 const data = JSON.stringify(s,null,4);
-                var file = new File([data], name + "-design-system.json", {type: "text/plain;charset=utf-8"});
+                const file = new File([data], name + "-design-system.json", {type: "text/plain;charset=utf-8"});
                 FileSaver.saveAs(file);
 
             }
         }
     }
     const isDesignSystem = (name: string) => {
-        for (var i in designSystems) {
+        for (const i in designSystems) {
             if (designSystems[i].id == name) {
                 return true;
             }

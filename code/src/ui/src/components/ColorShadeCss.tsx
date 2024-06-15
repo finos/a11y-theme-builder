@@ -17,10 +17,10 @@ function luminance(rgb:Array<number>): number {
 }
 
 function contrast(rgb1:Array<number>, rgb2:Array<number>) {
-  var lum1 = luminance(rgb1);
-  var lum2 = luminance(rgb2);
-  var brightest = Math.max(lum1, lum2);
-  var darkest = Math.min(lum1, lum2);
+  const lum1 = luminance(rgb1);
+  const lum2 = luminance(rgb2);
+  const brightest = Math.max(lum1, lum2);
+  const darkest = Math.min(lum1, lum2);
   return (brightest + 0.05) / (darkest + 0.05);
 }
 
@@ -66,7 +66,7 @@ interface Props {
 export const ColorShadeCss: React.FC<Props> = ({className, name, id, lm, label, showId, showDetails,isBaseColor}) => {
 
     const [_shade, _setShade] = useState<Shade>();
-    let base = name+"-"+id;
+    const base = name+"-"+id;
     const background = lm ? `--${base}` : `--dm-${base}`
     const color = lm ? `--on-${base}` : `--dm-on-${base}`
 

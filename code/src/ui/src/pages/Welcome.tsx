@@ -4,8 +4,7 @@
  */
 import React from 'react';
 import { Button , Grid} from '@mui/material';
-import { useEffect, useState } from 'react';
-import ModalInclusive from '../components/modals/ModalInclusive';
+import { useState } from 'react';
 import { HeadingSection } from './content/HeadingSection';
 
 

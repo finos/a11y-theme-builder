@@ -22,9 +22,9 @@ export const NumberSelectable: React.FC<PixelProps> = ({ property, defaultValue,
         setValue(_value);
         property.setValue(_value ? _value : undefined);
     }
-    var r = [];
-    var selectables = property.getSelectableValues();
-    for (var i=0; i<selectables.length; i++) {
+    const r = [];
+    const selectables = property.getSelectableValues();
+    for (let i=0; i<selectables.length; i++) {
         const s = selectables[i].toString() + (units || "");
         r.push(<MenuItem key={s} value={selectables[i]}> {s} </MenuItem>)
     }

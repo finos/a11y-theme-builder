@@ -161,9 +161,9 @@ const ModalFontEdit: React.FC<Props> = ({isOpen, onCancel, designSystem, textKey
         )
     }
     const renderFontWeightSelectables = () => {
-        var r = [];
-        var selectables = fontWeightProperty.getSelectableValues();
-        for (var i=0; i<selectables.length; i++) {
+        const r = [];
+        const selectables = fontWeightProperty.getSelectableValues();
+        for (let i=0; i<selectables.length; i++) {
             const s = selectables[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }

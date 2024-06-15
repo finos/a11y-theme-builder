@@ -4,7 +4,6 @@
  */
 import React, { useState } from 'react';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 

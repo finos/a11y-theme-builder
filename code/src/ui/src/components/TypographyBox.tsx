@@ -2,10 +2,8 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import { Grid, Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import { DesignSystem, TypographyStyling } from '@finos/a11y-theme-builder-sdk';
-import ModalFontEdit from "./modals/ModalFontEdit";
 
 const sampleBody = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna 

@@ -9,8 +9,8 @@
         "@finos/a11y-theme-builder-sdk": "^1.0.0",
         "@mui/icons-material": "^5.15.15",
         "@mui/material": "^5.15.15",
-        "@mui/x-data-grid": "^7.1.1",
         "@mui/system": "^5.15.15",
+        "@mui/x-data-grid": "^7.1.1",
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^15.0.1",
         "@testing-library/user-event": "^14.5.2",
@@ -51,7 +51,9 @@
         "storybook": "start-storybook -p 6006 -s public",
         "update-sdk": "npm update a11y-theme-builder-sdk",
         "build-storybook": "build-storybook -s public",
-        "webpack": "^5.69.1"
+        "webpack": "^5.69.1",
+        "lint": "npx eslint .",
+        "lint:fix": "npx eslint . --fix"
     },
     "eslintConfig": {
         "extends": [
@@ -98,6 +100,12 @@
         "webpack": "^5.91.0"
     },
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.10.0",
+        "@typescript-eslint/parser": "^7.10.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-header": "^3.1.1",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-unused-imports": "^3.2.0",
         "react-scripts": "5.0.1",
         "webpack": "^5.91.0"
     }

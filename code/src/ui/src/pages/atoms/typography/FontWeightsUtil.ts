@@ -152,7 +152,7 @@ export class FontWeightsUtil {
     }
 
     public static listCommonFonts(): string[] {
-        var r = [] as string[];
+        let r = [] as string[];
         r = Array.from( CommonFontsSupportedWeights.keys() );
         return r.sort();
     }

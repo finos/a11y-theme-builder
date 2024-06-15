@@ -28,8 +28,8 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
         setAnchor(null)
     }
 
-    let noShadow = popoversMolecule.shadow.getValue() === undefined;
-    let boxShadowString = noShadow ? "none" : "var(--" + popoversMolecule.shadow.getValue()?.toLowerCase() +") !important"
+    const noShadow = popoversMolecule.shadow.getValue() === undefined;
+    const boxShadowString = noShadow ? "none" : "var(--" + popoversMolecule.shadow.getValue()?.toLowerCase() +") !important"
 
     return (
         <div>

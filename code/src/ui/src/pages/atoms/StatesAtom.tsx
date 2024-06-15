@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { InputLabel, TextField } from '@mui/material';
 import { StateSettings } from '@finos/a11y-theme-builder-sdk';
 import './StatesAtom.css'

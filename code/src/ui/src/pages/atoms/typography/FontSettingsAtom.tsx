@@ -144,11 +144,11 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     }
 
     const renderFontWeightSelectables = (fontWeightProperty: PropertyNumber, fontWeight: number, handleFontWeightChange: any, weightNum: string, isSecondary?: boolean) => {
-        var r = [];
-        var selectables = primaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(primaryFont);
+        const r = [];
+        let selectables = primaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(primaryFont);
         if (isSecondary) selectables = secondaryFontUncommon ? allWeights : FontWeightsUtil.getFontWeights(secondaryFont);
         if (!selectables) return;
-        for (var i=0; i<selectables.length; i++) {
+        for (let i=0; i<selectables.length; i++) {
             const s = selectables[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }
@@ -218,9 +218,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
     }
 
     const renderPrimaryCommonFontSelectables = () => {
-        var r = [];
+        const r = [];
         const commonFontsList = FontWeightsUtil.listCommonFonts()
-        for (var i=0; i<commonFontsList.length; i++) {
+        for (let i=0; i<commonFontsList.length; i++) {
             const s = commonFontsList[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }
@@ -236,9 +236,9 @@ export const FontSettingsAtom: React.FC<Props> = ({ atoms }) => {
         )
     }
     const renderSecondaryCommonFontSelectables = () => {
-        var r = [];
+        const r = [];
         const commonFontsList = FontWeightsUtil.listCommonFonts()
-        for (var i=0; i<commonFontsList.length; i++) {
+        for (let i=0; i<commonFontsList.length; i++) {
             const s = commonFontsList[i].toString();
             r.push(<MenuItem key={s} value={s}> {s} </MenuItem>)
         }

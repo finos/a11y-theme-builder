@@ -40,10 +40,10 @@ export class LocalStorage implements Storage {
 
     public async listKeys(): Promise<string[]> {
         //console.log(`LocalStorage.listKeys()`);
-        let keys = Object.keys(window.localStorage);
+        const keys = Object.keys(window.localStorage);
         const data = [];
         const start = path.length;
-        for (var i in keys) {
+        for (const i in keys) {
             //console.log(keys[i]+"="+localStorage.getItem(keys[i]))
             if (keys[i].startsWith(path)) {
                 data.push(keys[i].substring(start));
@@ -55,7 +55,7 @@ export class LocalStorage implements Storage {
     public async listMetadata(key?: string): Promise<StorageElement[]> {
         const metadata = [];
         const keys = await this.listKeys();
-        for (var i=0; i<keys.length; i++) {
+        for (let i=0; i<keys.length; i++) {
             const item = await this.get(keys[i]) as any;
             metadata.push({id: keys[i], metadata: item.metadata});
         }
