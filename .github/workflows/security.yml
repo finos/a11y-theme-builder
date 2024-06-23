@@ -62,6 +62,6 @@ jobs:
         run: docker build -f Dockerfile -t user/app:latest .
         working-directory: code
       - name: Scan for vulnerabilities
-        uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
+        uses: crazy-max/ghaction-container-scan@9f06fdcbc188e9acb5976721cc98dc91e0cc4dd8
         with:
           image: user/app:latest
