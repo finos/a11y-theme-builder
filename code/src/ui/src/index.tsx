@@ -6,6 +6,7 @@ import './index.css';
 import './fontawesome.css';
 import './solid.css';
 import './brands.css';
+import 'normalize.css';
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
