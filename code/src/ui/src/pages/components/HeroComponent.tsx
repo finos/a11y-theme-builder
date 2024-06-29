@@ -12,19 +12,17 @@ import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeroColorModeSelector } from '../content/HeroColorModeSelector';
-interface Props {
-}
+interface Props {}
 
-export const HeroComponent: React.FC<Props> = ({ }) => {
-
-    const [colorMode, setColorMode] = useState<string>("colored");
+export const HeroComponent: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('colored');
 
     return (
         <div>
             <HeadingSection title="Desktop" heading="Hero" />
             <ExampleSection>
-                    <HeroExample data-background={colorMode}/>
+                <HeroExample data-background={colorMode} />
             </ExampleSection>
         </div>
-    )
-}
+    );
+};

@@ -16,6 +16,8 @@
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
 		"docker-rm": "docker rm a11y-theme-builder",
+		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+		"format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
 		"lint": "npx eslint .",
 		"lint:fix": "npx eslint . --fix"
 	},
@@ -50,6 +52,7 @@
 		"@typescript-eslint/parser": "^7.8.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-header": "^3.1.1",
-		"nodemon": "^3.1.0"
+		"nodemon": "^3.1.0",
+		"prettier": "^3.3.2"
 	}
 }

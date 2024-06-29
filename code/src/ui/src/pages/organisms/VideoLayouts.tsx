@@ -8,29 +8,29 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { VideoLeftSmall} from "../../mui-a11y-tb/organisms/VideoLeftSmall";
-import { VideoLeft} from "../../mui-a11y-tb/organisms/VideoLeft";
-import { VideoCentered} from "../../mui-a11y-tb/organisms/VideoCentered";
-import { VideoRightSmall} from "../../mui-a11y-tb/organisms/VideoRightSmall";
-import { VideoRight} from "../../mui-a11y-tb/organisms/VideoRight";
+import { VideoLeftSmall } from '../../mui-a11y-tb/organisms/VideoLeftSmall';
+import { VideoLeft } from '../../mui-a11y-tb/organisms/VideoLeft';
+import { VideoCentered } from '../../mui-a11y-tb/organisms/VideoCentered';
+import { VideoRightSmall } from '../../mui-a11y-tb/organisms/VideoRightSmall';
+import { VideoRight } from '../../mui-a11y-tb/organisms/VideoRight';
 
 interface Props {
     colorMode?: string;
 }
 
+export const VideoLayouts: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('');
 
-export const VideoLayouts: React.FC<Props> = ({ }) => {
-
-      const [colorMode, setColorMode] = useState<string>("");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="Videos" />
-              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-              </SectionColorModeSelector>
-              <div className="section-demos" data-background={colorMode}>
+    return (
+        <div>
+            <HeadingSection title="organisms" heading="Videos" />
+            <SectionColorModeSelector
+                colorMode={colorMode}
+                setColorMode={setColorMode}
+            ></SectionColorModeSelector>
+            <div className="section-demos" data-background={colorMode}>
                 <div className="demo-title subtitle1">Small Video Left</div>
-                <VideoLeftSmall  className="top40"/>
+                <VideoLeftSmall className="top40" />
                 <p></p>
                 <div className="demo-title subtitle1">Medium Video Left</div>
                 <VideoLeft className="top40" />
@@ -44,7 +44,7 @@ export const VideoLayouts: React.FC<Props> = ({ }) => {
                 <div className="demo-title subtitle1">Medium Video Right</div>
                 <VideoRight className="top40" />
                 <p></p>
-              </div>
-          </div>
-      )
-  }
+            </div>
+        </div>
+    );
+};

@@ -2,12 +2,12 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { ChangeEvent, useState } from "react";
-import { InputLabel, Switch } from "@mui/material";
+import React, { ChangeEvent, useState } from 'react';
+import { InputLabel, Switch } from '@mui/material';
 import { Color, ColorPalette } from '@finos/a11y-theme-builder-sdk';
 import { ColorShadeCss } from './ColorShadeCss';
-import { LightModeSection } from "../pages/content/LightModeSection";
-import { DarkModeSection } from "../pages/content/DarkModeSection";
+import { LightModeSection } from '../pages/content/LightModeSection';
+import { DarkModeSection } from '../pages/content/DarkModeSection';
 
 interface Props {
     colorPalette: ColorPalette;
@@ -16,13 +16,20 @@ interface Props {
     darkLabel: string;
 }
 
-export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lightLabel, darkLabel }) => {
-
+export const DisplayColorPalette: React.FC<Props> = ({
+    colorPalette,
+    colors,
+    lightLabel,
+    darkLabel,
+}) => {
     const [_showDetails, _setShowDetails] = useState<boolean>(false);
 
-    const handleShowDetailsChange = (event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
+    const handleShowDetailsChange = (
+        event: ChangeEvent<HTMLInputElement>,
+        checked: boolean
+    ) => {
         _setShowDetails(checked);
-    }
+    };
 
     //TODO: we should be using the colors from the color palette once
     //  we have listener support there
@@ -30,8 +37,14 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
         return (
             <div>
                 <div className="detail-info">
-                    <InputLabel htmlFor='showPaletteDetails'>Show Details</InputLabel>
-                    <Switch id="showPaletteDetails" checked={_showDetails} onChange={handleShowDetailsChange} />
+                    <InputLabel htmlFor="showPaletteDetails">
+                        Show Details
+                    </InputLabel>
+                    <Switch
+                        id="showPaletteDetails"
+                        checked={_showDetails}
+                        onChange={handleShowDetailsChange}
+                    />
                 </div>
                 <div className="top40"></div>
                 <LightModeSection title={lightLabel}>
@@ -41,14 +54,37 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
                                     {color.light.shades.map((shade, i) => {
-                                         if(shade.hex.toLowerCase()==color.hex.getValue()){
-                                            console.log("found base color",color.name);
-                                            return(
-                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
-                                            )
+                                        if (
+                                            shade.hex.toLowerCase() ==
+                                            color.hex.getValue()
+                                        ) {
+                                            console.log(
+                                                'found base color',
+                                                color.name
+                                            );
+                                            return (
+                                                <ColorShadeCss
+                                                    className="color-block"
+                                                    key={'ColorShade' + i}
+                                                    name={color.name}
+                                                    id={shade.id}
+                                                    lm={true}
+                                                    showDetails={_showDetails}
+                                                    showId
+                                                    isBaseColor={true}
+                                                />
+                                            );
                                         }
                                         return (
-                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId/>
+                                            <ColorShadeCss
+                                                className="color-block"
+                                                key={'ColorShade' + i}
+                                                name={color.name}
+                                                id={shade.id}
+                                                lm={true}
+                                                showDetails={_showDetails}
+                                                showId
+                                            />
                                         );
                                     })}
                                 </div>
@@ -64,13 +100,34 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <div className="subtitle1">{color.name}</div>
                                 <div className="colorRow">
                                     {color.dark.shades.map((shade, i) => {
-                                        if(shade.hex.toLowerCase()==color.hex.getValue()){
-                                            console.log("found base color");
-                                            return(
-                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
-                                            )}
+                                        if (
+                                            shade.hex.toLowerCase() ==
+                                            color.hex.getValue()
+                                        ) {
+                                            console.log('found base color');
+                                            return (
+                                                <ColorShadeCss
+                                                    className="color-block"
+                                                    key={'ColorShade' + i}
+                                                    name={color.name}
+                                                    id={shade.id}
+                                                    lm={true}
+                                                    showDetails={_showDetails}
+                                                    showId
+                                                    isBaseColor={true}
+                                                />
+                                            );
+                                        }
                                         return (
-                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={false} showDetails={_showDetails} showId/>
+                                            <ColorShadeCss
+                                                className="color-block"
+                                                key={'ColorShade' + i}
+                                                name={color.name}
+                                                id={shade.id}
+                                                lm={false}
+                                                showDetails={_showDetails}
+                                                showId
+                                            />
                                         );
                                     })}
                                 </div>
@@ -79,13 +136,12 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                     })}
                 </DarkModeSection>
             </div>
-        )
-    }
-    else {
+        );
+    } else {
         return (
             <div className="row">
                 Add a color in the Settings section to add colors to palette.
             </div>
-        )
+        );
     }
-}
+};

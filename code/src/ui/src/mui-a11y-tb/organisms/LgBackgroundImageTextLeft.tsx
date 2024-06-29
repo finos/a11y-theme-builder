@@ -11,22 +11,36 @@ interface Props {
     className?: string;
 }
 
-export const LgBackgroundImageTextLeft: React.FC<Props> = ({className=""}) => {
+export const LgBackgroundImageTextLeft: React.FC<Props> = ({
+    className = '',
+}) => {
     return (
-
-          <Grid className={"v-center background " + className}  container spacing={2} columns={12}>
-            <Grid item spacing={2} className="v-center backgroundImage" lg={8} md={6} sm={12} style={{backgroundImage: "url(/sample.jpg)"}}>
-            </Grid>
+        <Grid
+            className={'v-center background ' + className}
+            container
+            spacing={2}
+            columns={12}
+        >
+            <Grid
+                item
+                spacing={2}
+                className="v-center backgroundImage"
+                lg={8}
+                md={6}
+                sm={12}
+                style={{ backgroundImage: 'url(/sample.jpg)' }}
+            ></Grid>
             <Grid item spacing={2} className="v-center" lg={4} md={6} sm={12}>
-              <h2>Title</h2>
-              <div className="body1">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
+                <h2>Title</h2>
+                <div className="body1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip.
+                    </p>
+                </div>
             </Grid>
-          </Grid>
-
-
-    )
-}
+        </Grid>
+    );
+};

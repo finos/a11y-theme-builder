@@ -7,20 +7,27 @@ import { HeadingSection } from '../content/HeadingSection';
 import { Slider } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 
-
-interface Props {
-}
+interface Props {}
 
 export const SlidersComponent: React.FC<Props> = () => {
     return (
         <div className="content">
-            <HeadingSection title='Desktop' heading='Switch'></HeadingSection>
+            <HeadingSection title="Desktop" heading="Switch"></HeadingSection>
             <ExampleSection>
                 <div className="caption">Slider</div>
-                <Slider defaultValue={30} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
+                <Slider
+                    defaultValue={30}
+                    valueLabelDisplay="auto"
+                    sx={{ maxWidth: 400 }}
+                />
                 <div className="caption top40">Range Slider</div>
-                <Slider className="range" defaultValue={[20,40]} valueLabelDisplay="auto" sx={{maxWidth:400}}/>
+                <Slider
+                    className="range"
+                    defaultValue={[20, 40]}
+                    valueLabelDisplay="auto"
+                    sx={{ maxWidth: 400 }}
+                />
             </ExampleSection>
         </div>
-    )
-}
+    );
+};
