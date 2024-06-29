@@ -11,12 +11,24 @@ interface Props {
     className?: string;
 }
 
-export const LargeBackgroundVideo: React.FC<Props> = ({className=""}) => {
+export const LargeBackgroundVideo: React.FC<Props> = ({ className = '' }) => {
     return (
         <section className={className}>
-          <Grid className="v-center backgroundImage " container spacing={2} columns={12} margin={2}>
-            <video src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov" autoPlay loop playsInline muted></video>
-          </Grid>
+            <Grid
+                className="v-center backgroundImage "
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <video
+                    src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                ></video>
+            </Grid>
         </section>
-    )
-}
+    );
+};

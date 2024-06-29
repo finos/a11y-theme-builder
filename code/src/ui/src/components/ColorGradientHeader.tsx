@@ -2,8 +2,12 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from "react";
-import { EventValueChange, GradientColors2, Shade } from '@finos/a11y-theme-builder-sdk';
+import React, { useState, useEffect } from 'react';
+import {
+    EventValueChange,
+    GradientColors2,
+    Shade,
+} from '@finos/a11y-theme-builder-sdk';
 import { ColorSelect } from './ColorSelect';
 import './ColorGradientHeader.css';
 
@@ -17,8 +21,15 @@ interface Props {
     readonly?: boolean;
 }
 
-export const ColorGradientHeader: React.FC<Props> = ({className, value, fromLabel, toLabel, sampleLabel, sampleText, readonly}) => {
-
+export const ColorGradientHeader: React.FC<Props> = ({
+    className,
+    value,
+    fromLabel,
+    toLabel,
+    sampleLabel,
+    sampleText,
+    readonly,
+}) => {
     const [_fromShade, _setFromShade] = useState<Shade>();
     const [_toShade, _setToShade] = useState<Shade>();
     useEffect(() => {
@@ -28,28 +39,47 @@ export const ColorGradientHeader: React.FC<Props> = ({className, value, fromLabe
             const fromListener = function (event: EventValueChange<Shade>) {
                 _setFromShade(event.newValue);
             };
-            value.from.setPropertyListener("fromListener", fromListener);
+            value.from.setPropertyListener('fromListener', fromListener);
             const toListener = function (event: EventValueChange<Shade>) {
                 _setToShade(event.newValue);
             };
-            value.to.setPropertyListener("toListener", toListener);
+            value.to.setPropertyListener('toListener', toListener);
         }
-    }, [])
+    }, []);
 
     if (value && value.from && value.to) {
         return (
             <div className={className}>
-                {!readonly && <ColorSelect value={value.from} label={fromLabel ?? "From Color:"}></ColorSelect>}
-                {!readonly && <ColorSelect value={value.to} label={toLabel ?? "To Color:"}></ColorSelect>}
-                {_fromShade && _toShade && <div className="caption">{sampleLabel ?? "Sample Gradient:"}<h1 className="gradient-title" style={{backgroundImage: `linear-gradient(15deg, ${_fromShade.hex}, ${_toShade.hex})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>{sampleText}</h1></div>}
-            </div >
+                {!readonly && (
+                    <ColorSelect
+                        value={value.from}
+                        label={fromLabel ?? 'From Color:'}
+                    ></ColorSelect>
+                )}
+                {!readonly && (
+                    <ColorSelect
+                        value={value.to}
+                        label={toLabel ?? 'To Color:'}
+                    ></ColorSelect>
+                )}
+                {_fromShade && _toShade && (
+                    <div className="caption">
+                        {sampleLabel ?? 'Sample Gradient:'}
+                        <h1
+                            className="gradient-title"
+                            style={{
+                                backgroundImage: `linear-gradient(15deg, ${_fromShade.hex}, ${_toShade.hex})`,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        >
+                            {sampleText}
+                        </h1>
+                    </div>
+                )}
+            </div>
         );
-
     } else {
-
-    return (
-        <div className="row">No ColorGradientHeader available</div>
-    );
-
-}
-}
+        return <div className="row">No ColorGradientHeader available</div>;
+    }
+};

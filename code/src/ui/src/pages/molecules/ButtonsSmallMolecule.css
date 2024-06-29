@@ -10,10 +10,15 @@
     position: relative;
 }
 
-.design-system-editor-right-content button.MuiButton-contained.small-btn::before {
+.design-system-editor-right-content
+    button.MuiButton-contained.small-btn::before {
     position: absolute;
-    top: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
-    bottom: calc((var(--min-target) - (var(--spacing-1) * var(--sm-button-height)))/2);
+    top: calc(
+        (var(--min-target) - (var(--spacing-1) * var(--sm-button-height))) / 2
+    );
+    bottom: calc(
+        (var(--min-target) - (var(--spacing-1) * var(--sm-button-height))) / 2
+    );
     left: 0px;
     right: 0px;
     content: '';
@@ -37,13 +42,18 @@
     content: '';
 }
 
-.design-system-editor-right-content button.MuiButton-outlined.small-btn::before {
-    top: calc( (var(--min-target) - (var(--spacing-1) * var(--sm-button-height)) )/2);
-    bottom: calc( (var(--min-target) - (var(--spacing-1) * var(--sm-button-height)) )/2);
+.design-system-editor-right-content
+    button.MuiButton-outlined.small-btn::before {
+    top: calc(
+        (var(--min-target) - (var(--spacing-1) * var(--sm-button-height))) / 2
+    );
+    bottom: calc(
+        (var(--min-target) - (var(--spacing-1) * var(--sm-button-height))) / 2
+    );
     left: 0;
     right: 0;
     background: transparent !important;
     box-shadow: var(--button-elevation), var(--button-bevel);
     height: calc(var(--sm-button-height) + 2px);
-    border: calc(var(--border-1) * var(--button-border)) solid var(--button)
+    border: calc(var(--border-1) * var(--button-border)) solid var(--button);
 }

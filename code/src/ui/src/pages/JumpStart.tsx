@@ -24,8 +24,8 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
 
     useEffect(() => {
         if (themeBuilder) {
-            themeBuilder.listMetadata().then(function(_designSystems:any) {
-                console.log("_designSystems=", _designSystems);
+            themeBuilder.listMetadata().then(function (_designSystems: any) {
+                console.log('_designSystems=', _designSystems);
                 setDesignSystems(_designSystems);
             });
         }
@@ -36,9 +36,11 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
     }, []);
 
     const renderDesignSystems = () => {
-        if (!designSystems) { return (null) }
+        if (!designSystems) {
+            return null;
+        }
         const r = [];
-        for (var i=0; i<designSystems.length; i++) {
+        for (var i = 0; i < designSystems.length; i++) {
             const ds = designSystems[i];
             if (ds.metadata && ds.metadata.sample) {
                 r.push(
@@ -49,26 +51,27 @@ const JumpStart: React.FC<Props> = ({ user, storage }) => {
                         designSystem={ds}
                         refresh={getDesignSystemNames}
                     />
-                )
+                );
             }
         }
         return r;
-    }
+    };
 
     return (
         <div>
-            <HeadingSection title="Sample and Template Design System" heading="Jump Start">
-                Explore our sample design systems.  You can duplicate theme
-                to make your own or start from scratch to build your own systems.
+            <HeadingSection
+                title="Sample and Template Design System"
+                heading="Jump Start"
+            >
+                Explore our sample design systems. You can duplicate theme to
+                make your own or start from scratch to build your own systems.
             </HeadingSection>
             <div className="top40" />
             <ExampleSection title="Sample Design Systems">
-            <div className="card-container">
-                {renderDesignSystems()}
-            </div>
+                <div className="card-container">{renderDesignSystems()}</div>
             </ExampleSection>
         </div>
     );
-}
+};
 
 export default JumpStart;

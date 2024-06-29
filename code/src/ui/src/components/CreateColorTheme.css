@@ -1,6 +1,6 @@
 .small {
     font-family: var(--primaryFont);
-    font-size: calc(var(--baseFont) * .675);
+    font-size: calc(var(--baseFont) * 0.675);
     line-height: var(--standard-LineHeight) !important;
     letter-spacing: 0.4%;
     font-weight: var(--fontWeight-2);

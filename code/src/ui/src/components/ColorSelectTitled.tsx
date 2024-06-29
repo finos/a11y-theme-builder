@@ -2,9 +2,23 @@
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { MouseEvent, useEffect, useState } from "react";
-import { Alert, Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { Event, EventType, PropertyColorShade, PropertyTitledShade, Shade, TitledShade } from '@finos/a11y-theme-builder-sdk';
+import React, { MouseEvent, useEffect, useState } from 'react';
+import {
+    Alert,
+    Box,
+    InputLabel,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
+} from '@mui/material';
+import {
+    Event,
+    EventType,
+    PropertyColorShade,
+    PropertyTitledShade,
+    Shade,
+    TitledShade,
+} from '@finos/a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';
 import './ColorSelectTitled.css';
 
@@ -13,11 +27,11 @@ interface Props {
     label?: string;
 }
 
-export const ColorSelectTitled: React.FC<Props> = ({value, label}) => {
-
+export const ColorSelectTitled: React.FC<Props> = ({ value, label }) => {
     const [_selectableValues, _setSelectableValues] = useState<TitledShade[]>();
     const [_selectColorError, _setSelectColorError] = useState<boolean>(false);
-    const [_selectColorErrorMessage, _setSelectColorErrorMessage] = useState<string>("");
+    const [_selectColorErrorMessage, _setSelectColorErrorMessage] =
+        useState<string>('');
     const [_disabled, _setDisabled] = useState<boolean>(false);
 
     useEffect(() => {
@@ -26,7 +40,9 @@ export const ColorSelectTitled: React.FC<Props> = ({value, label}) => {
             syncSelectableValues(value);
             const colorSelectListener = function (event: Event) {
                 if (event.type === EventType.SelectablesChanged) {
-                    console.log(`Notified of default color theme value changing, event: ${event}`);
+                    console.log(
+                        `Notified of default color theme value changing, event: ${event}`
+                    );
                     syncSelectableValues(value);
                     return;
                 }
@@ -35,36 +51,39 @@ export const ColorSelectTitled: React.FC<Props> = ({value, label}) => {
                     return;
                 }
             };
-            value.setListener("colorSelect", colorSelectListener);
+            value.setListener('colorSelect', colorSelectListener);
         }
-    }, [])
+    }, []);
 
     const syncSelectableValues = (value: PropertyTitledShade) => {
         try {
             if (value) {
-                const selectableValues: TitledShade[] = value.getSelectableValues();
+                const selectableValues: TitledShade[] =
+                    value.getSelectableValues();
                 _setSelectableValues(selectableValues);
             }
         } catch (error) {
             // It is possible that getSelectableValues may throw an error
             //  before there are selectable values.  Log the error in case
             //  it turns out to be important.
-            let message = "";
-            if (error instanceof Error){
+            let message = '';
+            if (error instanceof Error) {
                 message = error.message;
             } else {
                 message = String(error);
             }
             console.log(`ColorSelectTitled initialization, error: ${message}`);
         }
-    }
+    };
 
     const handleColorChange = (event: SelectChangeEvent) => {
         const selectedValue = event.target.value;
         try {
             if (selectedValue && _selectableValues) {
                 _setSelectColorError(false);
-                const indexOfSelectedItem = parseInt(selectedValue.split(';')[1]);
+                const indexOfSelectedItem = parseInt(
+                    selectedValue.split(';')[1]
+                );
                 value.setValue(_selectableValues[indexOfSelectedItem]);
                 console.log(`Color changed by UI to ${value}`);
             }
@@ -80,12 +99,16 @@ export const ColorSelectTitled: React.FC<Props> = ({value, label}) => {
             return;
         }
         return _selectableValues[parseInt(index)];
-    }
+    };
 
     if (value) {
         return (
             <div>
-                {label && <InputLabel className="caption" htmlFor="outlined-select">{label}</InputLabel>}
+                {label && (
+                    <InputLabel className="caption" htmlFor="outlined-select">
+                        {label}
+                    </InputLabel>
+                )}
                 <Select
                     label="Primary"
                     onChange={handleColorChange}
@@ -93,26 +116,42 @@ export const ColorSelectTitled: React.FC<Props> = ({value, label}) => {
                     defaultValue=""
                     disabled={_disabled}
                     renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                            <ColorShade shade={selected ? getTitledShadeByIndex(selected.split(';')[1])?.shade : "" || ""} />
+                        <Box
+                            sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}
+                        >
+                            <ColorShade
+                                shade={
+                                    selected
+                                        ? getTitledShadeByIndex(
+                                              selected.split(';')[1]
+                                          )?.shade
+                                        : '' || ''
+                                }
+                            />
                         </Box>
                     )}
                 >
-                    {_selectableValues && _selectableValues.map((shade, i) => {
-                        return(
-                            <MenuItem key={`shade${i}`} value={`${shade.shade.hex};${i}`}><ColorShade shade={shade.shade} /><span className="color-name">{shade.title}</span></MenuItem>
-                        );
-                    })}
+                    {_selectableValues &&
+                        _selectableValues.map((shade, i) => {
+                            return (
+                                <MenuItem
+                                    key={`shade${i}`}
+                                    value={`${shade.shade.hex};${i}`}
+                                >
+                                    <ColorShade shade={shade.shade} />
+                                    <span className="color-name">
+                                        {shade.title}
+                                    </span>
+                                </MenuItem>
+                            );
+                        })}
                 </Select>
-                {_selectColorError && <Alert severity='error'>{_selectColorErrorMessage}</Alert>}
-            </div >
+                {_selectColorError && (
+                    <Alert severity="error">{_selectColorErrorMessage}</Alert>
+                )}
+            </div>
         );
-
     } else {
-
-    return (
-        <div className="row">No ColorSelect available</div>
-    );
-
-}
-}
+        return <div className="row">No ColorSelect available</div>;
+    }
+};

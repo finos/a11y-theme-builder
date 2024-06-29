@@ -5,11 +5,16 @@
 import React from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { Checkbox, FormControl, ListItemText, MenuItem, OutlinedInput } from '@mui/material';
+import {
+    Checkbox,
+    FormControl,
+    ListItemText,
+    MenuItem,
+    OutlinedInput,
+} from '@mui/material';
 import { Dropdown } from '../../mui-a11y-tb/components/Dropdown';
 
-interface Props {
-}
+interface Props {}
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -29,20 +34,24 @@ const toppings = [
     'Mushrooms',
     'Pepperoni',
     'Onions',
-    ];
+];
 
 export const MultiselectDropdownComponent: React.FC<Props> = () => {
-
     const [topping, setTopping] = React.useState<string[]>([]);
 
     const handleChange = (event: any) => {
-        const { target: { value }} = event;
-        setTopping( typeof value === 'string' ? value.split(',') : value );
+        const {
+            target: { value },
+        } = event;
+        setTopping(typeof value === 'string' ? value.split(',') : value);
     };
 
     return (
         <div className="content">
-            <HeadingSection title='Desktop' heading='Multiselect Dropdown'></HeadingSection>
+            <HeadingSection
+                title="Desktop"
+                heading="Multiselect Dropdown"
+            ></HeadingSection>
             <ExampleSection>
                 <FormControl sx={{ m: 1, width: 300 }}>
                     <Dropdown
@@ -52,8 +61,8 @@ export const MultiselectDropdownComponent: React.FC<Props> = () => {
                         displayEmpty
                         value={topping}
                         onChange={handleChange}
-                        input={<OutlinedInput/>}
-                        renderValue={(selected:any) => {
+                        input={<OutlinedInput />}
+                        renderValue={(selected: any) => {
                             if (selected.length === 0) {
                                 return <em>None Selected</em>;
                             }
@@ -74,5 +83,5 @@ export const MultiselectDropdownComponent: React.FC<Props> = () => {
                 </FormControl>
             </ExampleSection>
         </div>
-    )
-}
+    );
+};

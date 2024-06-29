@@ -3,36 +3,39 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel } from '@mui/material';
+import {
+    Checkbox,
+    FormControl,
+    FormControlLabel,
+    FormGroup,
+    FormHelperText,
+    FormLabel,
+} from '@mui/material';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 
-interface Props {
-}
+interface Props {}
 
-export const CheckboxesComponent: React.FC<Props> = ({ }) => {
-
-    const [colorMode, setColorMode] = useState<string>("default");
+export const CheckboxesComponent: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('default');
 
     return (
         <div>
             <HeadingSection title="Desktop" heading="Checkboxes">
-                Checkboxes and all form elements should only ever be placed on the
-                primary or secondary background, on a standard card or modal. Therefore
-                they are only available on one color.
+                Checkboxes and all form elements should only ever be placed on
+                the primary or secondary background, on a standard card or
+                modal. Therefore they are only available on one color.
             </HeadingSection>
             <ExampleSection>
-
                 <FormControl component="fieldset">
                     <h6>Small Checkboxes</h6>
                     <FormGroup aria-label="sample small checkbox group">
                         <FormControlLabel
                             value="One"
-                            control={<Checkbox size="small" defaultChecked/>}
+                            control={<Checkbox size="small" defaultChecked />}
                             label="One"
                             labelPlacement="end"
-
                         />
                         <FormControlLabel
                             value="Two"
@@ -49,13 +52,16 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                         />
                         <FormControlLabel
                             value="Four"
-                            control={<Checkbox size="small" defaultChecked/>}
+                            control={<Checkbox size="small" defaultChecked />}
                             label="Three"
                             labelPlacement="end"
                             disabled
                         />
                     </FormGroup>
-                    <FormHelperText>Note: the small checkboxes DO have a target area that meets your selected minimum target area.</FormHelperText>
+                    <FormHelperText>
+                        Note: the small checkboxes DO have a target area that
+                        meets your selected minimum target area.
+                    </FormHelperText>
                 </FormControl>
                 <div className="top40"></div>
                 <FormControl component="fieldset">
@@ -63,7 +69,7 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                     <FormGroup aria-label="sample standard checkbox group">
                         <FormControlLabel
                             value="One"
-                            control={<Checkbox defaultChecked/>}
+                            control={<Checkbox defaultChecked />}
                             label="One"
                             labelPlacement="end"
                         />
@@ -82,15 +88,14 @@ export const CheckboxesComponent: React.FC<Props> = ({ }) => {
                         />
                         <FormControlLabel
                             value="Four"
-                            control={<Checkbox defaultChecked/>}
+                            control={<Checkbox defaultChecked />}
                             label="Three"
                             labelPlacement="end"
                             disabled
                         />
                     </FormGroup>
                 </FormControl>
-
             </ExampleSection>
         </div>
-    )
-}
+    );
+};

@@ -3,10 +3,9 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 
-const prefix = "themebuilder-pref-";
+const prefix = 'themebuilder-pref-';
 
 export class Preferences {
-    
     public designSystemName: string;
 
     constructor(designSystemName: string) {
@@ -17,7 +16,7 @@ export class Preferences {
         const n = `${prefix}${this.designSystemName}-${key}`;
         const r = window.localStorage.getItem(n);
         console.log(`Preferences.get(${key}): ${n}=${r}`);
-        return r || "";
+        return r || '';
     }
 
     public set(key: string, data: string) {
@@ -42,7 +41,8 @@ export class Preferences {
     public listKeys(): string[] {
         console.log(`Preferences.listKeys()`);
         let keys = Object.keys(window.localStorage);
-        const path = prefix + (this.designSystemName ? `${this.designSystemName}-` : "");
+        const path =
+            prefix + (this.designSystemName ? `${this.designSystemName}-` : '');
         const data = [];
         const start = path.length;
         for (var i in keys) {

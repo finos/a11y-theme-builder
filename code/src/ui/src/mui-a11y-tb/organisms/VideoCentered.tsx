@@ -11,24 +11,48 @@ interface Props {
     className?: string;
 }
 
-export const VideoCentered: React.FC<Props> = ({className=""}) => {
+export const VideoCentered: React.FC<Props> = ({ className = '' }) => {
     return (
         <section className={className}>
-          <Grid justifyContent="center" className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid justifyContent="center" item spacing={2} className="v-center" lg={8} sm={12}>
-               <video src="/video.mp4" controls></video>
+            <Grid
+                justifyContent="center"
+                className="v-center"
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <Grid
+                    justifyContent="center"
+                    item
+                    spacing={2}
+                    className="v-center"
+                    lg={8}
+                    sm={12}
+                >
+                    <video src="/video.mp4" controls></video>
+                </Grid>
+                <Grid
+                    justifyContent="center"
+                    item
+                    spacing={2}
+                    className="v-center"
+                    lg={8}
+                    sm={12}
+                >
+                    <h2>Video Centered</h2>
+                    <div className="body1">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut
+                            aliquip.
+                        </p>
+                        <Button>Get Started</Button>
+                    </div>
+                </Grid>
             </Grid>
-            <Grid justifyContent="center"  item spacing={2} className="v-center" lg={8}  sm={12}>
-              <h2>Video Centered</h2>
-              <div className="body1">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                </p>
-                <Button>Get Started</Button>
-              </div>
-            </Grid>
-
-          </Grid>
         </section>
-    )
-}
+    );
+};

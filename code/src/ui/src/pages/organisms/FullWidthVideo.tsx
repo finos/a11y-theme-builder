@@ -8,26 +8,28 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { LargeBackgroundImage } from "../../mui-a11y-tb/organisms/LargeBackgroundImage";
-import { LargeBackgroundVideo } from "../../mui-a11y-tb/organisms/LargeBackgroundVideo";
+import { LargeBackgroundImage } from '../../mui-a11y-tb/organisms/LargeBackgroundImage';
+import { LargeBackgroundVideo } from '../../mui-a11y-tb/organisms/LargeBackgroundVideo';
 
 interface Props {
     colorMode?: string;
 }
 
+export const FullWidthVideo: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('colored');
 
-export const FullWidthVideo: React.FC<Props> = ({ }) => {
+    return (
+        <div>
+            <HeadingSection
+                title="organisms"
+                heading="Full Width Backgrounds"
+            />
 
-      const [colorMode, setColorMode] = useState<string>("colored");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="Full Width Backgrounds" />
-
-              <div className="demo-title subtitle1">Section with full width background video, no content</div>
-              <LargeBackgroundVideo className={"top40 " + colorMode} />
-              <p></p>
-
-          </div>
-      )
-  }
+            <div className="demo-title subtitle1">
+                Section with full width background video, no content
+            </div>
+            <LargeBackgroundVideo className={'top40 ' + colorMode} />
+            <p></p>
+        </div>
+    );
+};

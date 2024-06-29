@@ -11,13 +11,26 @@ interface Props {
     className?: string;
 }
 
-export const LargeBackgroundImageParalux: React.FC<Props> = ({className=""}) => {
+export const LargeBackgroundImageParalux: React.FC<Props> = ({
+    className = '',
+}) => {
     return (
         <section className={className}>
-          <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid item spacing={2} className="v-center backgroundImage paralux" lg={12} style={{backgroundImage: "url(/sample.jpg)"}}>
+            <Grid
+                className="v-center"
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <Grid
+                    item
+                    spacing={2}
+                    className="v-center backgroundImage paralux"
+                    lg={12}
+                    style={{ backgroundImage: 'url(/sample.jpg)' }}
+                ></Grid>
             </Grid>
-          </Grid>
         </section>
-    )
-}
+    );
+};

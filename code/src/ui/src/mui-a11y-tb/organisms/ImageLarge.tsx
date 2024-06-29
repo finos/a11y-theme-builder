@@ -11,16 +11,35 @@ interface Props {
     className?: string;
 }
 
-export const ImageLarge: React.FC<Props> = ({className=""}) => {
+export const ImageLarge: React.FC<Props> = ({ className = '' }) => {
     return (
         <section className={className}>
-          <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid item spacing={2} justifyContent="center" className="v-center" lg={12} >
-              <div className="inline-image" style={{ width: '100%', height: 'auto', maxHeight: '500px' }}>
-                  <img src="/sample.jpg" />
-              </div>
+            <Grid
+                className="v-center"
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <Grid
+                    item
+                    spacing={2}
+                    justifyContent="center"
+                    className="v-center"
+                    lg={12}
+                >
+                    <div
+                        className="inline-image"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxHeight: '500px',
+                        }}
+                    >
+                        <img src="/sample.jpg" />
+                    </div>
+                </Grid>
             </Grid>
-          </Grid>
         </section>
-    )
-}
+    );
+};

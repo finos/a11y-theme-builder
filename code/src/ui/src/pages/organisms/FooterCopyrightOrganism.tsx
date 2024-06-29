@@ -11,22 +11,29 @@ interface Props {
 }
 
 export const FooterCopyrightOrganism: React.FC<Props> = ({ organism }) => {
-
     return (
         <div>
             <HeadingSection item={organism} title="Apply Styles" />
             <ExampleSection>
-                <FooterCopyrightExample/>
+                <FooterCopyrightExample />
             </ExampleSection>
             <SettingsSection>
-            <div className="top40">
-                    <NumberSelectable property={organism.footerVerticalPadding} defaultValue={40} units="px" />
+                <div className="top40">
+                    <NumberSelectable
+                        property={organism.footerVerticalPadding}
+                        defaultValue={40}
+                        units="px"
+                    />
                 </div>
                 <div className="top40">
-                    <NumberSelectable property={organism.copyrightVerticalPadding} defaultValue={8} units="px" />
+                    <NumberSelectable
+                        property={organism.copyrightVerticalPadding}
+                        defaultValue={8}
+                        units="px"
+                    />
                 </div>
             </SettingsSection>
-            <GeneratedCodeSection item={organism}/>
+            <GeneratedCodeSection item={organism} />
         </div>
-    )
-}
+    );
+};

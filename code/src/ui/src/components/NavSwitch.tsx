@@ -16,19 +16,27 @@ interface Props {
     onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
-    const handleOnChange = (event:any) => {
+export const NavSwitch: React.FC<Props> = ({
+    leftLabel,
+    rightLabel,
+    leftColor,
+    rightColor,
+    size,
+    checked,
+    onChange,
+}) => {
+    const handleOnChange = (event: any) => {
         const value = event.target.value;
         if (onChange) {
             onChange();
         }
-    }
+    };
 
     const sz = size || 1.5;
     const MySwitch = styled(Switch)(({ theme }) => ({
         padding: 0,
         display: 'flex',
-    }))
+    }));
 
     return (
         <Stack direction="row" spacing={1} alignItems="center">
@@ -39,7 +47,6 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
                 inputProps={{ 'aria-label': '' }}
             />
             {rightLabel && <Typography>{rightLabel}</Typography>}
-         </Stack>
-    )
-
-}
+        </Stack>
+    );
+};

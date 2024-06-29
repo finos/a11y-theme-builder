@@ -1,7 +1,7 @@
-.label-1  {
+.label-1 {
     font-family: var(--primaryFont);
     font-weight: var(--fontWeight-4);
-    font-size: calc(var(--baseFont) * .875);
+    font-size: calc(var(--baseFont) * 0.875);
     line-height: var(--standard-LineHeight);
     letter-spacing: 1.25%;
     text-transform: none;

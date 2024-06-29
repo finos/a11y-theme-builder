@@ -17,32 +17,33 @@ interface Props {
 }
 
 export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
-    const scale = parseInt(getCssValue("--baseFont"));
+    const scale = parseInt(getCssValue('--baseFont'));
 
-    const [showGuidelines, setShowGuidelines] = useState<boolean>(true)
-    const [guideColor, setGuideColor] = useState("#FFFFFF")
+    const [showGuidelines, setShowGuidelines] = useState<boolean>(true);
+    const [guideColor, setGuideColor] = useState('#FFFFFF');
 
-    useEffect( () => {
+    useEffect(() => {
         if (showGuidelines) {
-            setGuideColor("#FC7EFF40")
+            setGuideColor('#FC7EFF40');
         } else {
-            setGuideColor("#FFFFFF")
+            setGuideColor('#FFFFFF');
         }
     }, [showGuidelines]);
 
     const sectionStyle = {
-        padding: "calc(var(--section-padding)*var(--baseFont))",
+        padding: 'calc(var(--section-padding)*var(--baseFont))',
         background: guideColor,
-    }
+    };
     const pStyle = {
-        padding: "calc(var(--p-padding)*var(--baseFont))",
+        padding: 'calc(var(--p-padding)*var(--baseFont))',
         background: guideColor,
-    }
+    };
 
     return (
         <>
             <HeadingSection item={spacingMolecule} title="Assign Spacing">
-                The Spacing Molecule controls the amount of space between lines of text within a paragraph, and the paragraphs themselves.
+                The Spacing Molecule controls the amount of space between lines
+                of text within a paragraph, and the paragraphs themselves.
             </HeadingSection>
             <Grid container spacing={2} columns={12} margin={2}>
                 <Grid item spacing={2} lg={12} md={12} sm={12}>
@@ -51,11 +52,17 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
                             control={
                                 <Switch
                                     checked={showGuidelines}
-                                    onChange={() => setShowGuidelines(!showGuidelines)}
+                                    onChange={() =>
+                                        setShowGuidelines(!showGuidelines)
+                                    }
                                     inputProps={{ 'aria-label': 'controlled' }}
                                 />
                             }
-                            label={<div className="overline-large">Show Guidelines</div>}
+                            label={
+                                <div className="overline-large">
+                                    Show Guidelines
+                                </div>
+                            }
                         />
                     </FormGroup>
                 </Grid>
@@ -64,27 +71,38 @@ export const SpacingMolecule: React.FC<Props> = ({ spacingMolecule }) => {
                 <div style={sectionStyle}>
                     <h2>Sample</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip.
                     </p>
                 </div>
                 <SettingsSection>
                     <div className="form-row">
-                        <NumberScaledSelectable property={spacingMolecule.sectionPadding} units="px" defaultValue={3} scale={scale}/>
+                        <NumberScaledSelectable
+                            property={spacingMolecule.sectionPadding}
+                            units="px"
+                            defaultValue={3}
+                            scale={scale}
+                        />
                     </div>
                     <div className="form-row">
-                        <NumberScaledSelectable property={spacingMolecule.paragraphPadding} units="px" defaultValue={2} scale={scale}/>
+                        <NumberScaledSelectable
+                            property={spacingMolecule.paragraphPadding}
+                            units="px"
+                            defaultValue={2}
+                            scale={scale}
+                        />
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={spacingMolecule} />
             </ExampleSection>
-
         </>
-    )
-}
+    );
+};

@@ -8,32 +8,34 @@ import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { TestimonialCards } from "../../mui-a11y-tb/organisms/TestimonialCards";
-import { TestimonialCardsCentered } from "../../mui-a11y-tb/organisms/TestimonialCardsCentered";
+import { TestimonialCards } from '../../mui-a11y-tb/organisms/TestimonialCards';
+import { TestimonialCardsCentered } from '../../mui-a11y-tb/organisms/TestimonialCardsCentered';
 
 interface Props {
     colorMode?: string;
 }
 
+export const TestimonialCardLayouts: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('');
 
-export const TestimonialCardLayouts: React.FC<Props> = ({ }) => {
-
-      const [colorMode, setColorMode] = useState<string>("");
-
-      return (
-          <div>
-              <HeadingSection title="organisms" heading="Teams" />
-              <SectionColorModeSelector colorMode={colorMode} setColorMode={setColorMode}>
-              </SectionColorModeSelector>
-              <div className="section-demos" data-background={colorMode}>
+    return (
+        <div>
+            <HeadingSection title="organisms" heading="Teams" />
+            <SectionColorModeSelector
+                colorMode={colorMode}
+                setColorMode={setColorMode}
+            ></SectionColorModeSelector>
+            <div className="section-demos" data-background={colorMode}>
                 <div className={colorMode}></div>
                 <div className="demo-title subtitle1">Testimonial Cards</div>
                 <TestimonialCards className="top40" />
                 <p></p>
-                <div className="demo-title subtitle1">Testimonial Cards, Centered</div>
+                <div className="demo-title subtitle1">
+                    Testimonial Cards, Centered
+                </div>
                 <TestimonialCardsCentered className="top40" />
                 <p></p>
-              </div>
-          </div>
-      )
-  }
+            </div>
+        </div>
+    );
+};

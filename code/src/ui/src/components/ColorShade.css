@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
-=======
-.color-block {
+<<<<<<< Updated upstream ======= .color-block {
     display: inline-block;
     font-size: 11px;
     width: 96px;
@@ -12,7 +10,7 @@
     width: 44px;
     height: 44px;
     border: 1px solid var(--border);
-    border-radius:8px;
+    border-radius: 8px;
     text-align: center;
     font-weight: bold;
     display: flex;
@@ -21,17 +19,16 @@
     margin: 8px auto;
 }
 li .Hex {
-  margin: 2px;
+    margin: 2px;
 }
 .color-block .Hex {
     margin: 8px auto !important;
 }
 
 .text-center {
-    text-align: center!important;
+    text-align: center !important;
 }
 
->>>>>>> Stashed changes
-.swatch-details.active {
+>>>>>>>Stashed changes .swatch-details.active {
     display: block;
 }

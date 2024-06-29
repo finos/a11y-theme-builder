@@ -20,33 +20,53 @@ interface Props {
 
 export const HeroOrganism: React.FC<Props> = ({ organism, designSystem }) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
-    const [colorMode, setColorMode] = useState<string>("default");
+    const [colorMode, setColorMode] = useState<string>('default');
 
     return (
         <div>
             <HeadingSection item={organism} title="Apply Styles">
-                <p>Configure settings that affect the appearance of Hero organisms.  Heros are a common content-pattern that is located in a prominant location and may contain introductory text for a website and may contain breadcrumbs, buttons and other components.</p>
+                <p>
+                    Configure settings that affect the appearance of Hero
+                    organisms. Heros are a common content-pattern that is
+                    located in a prominant location and may contain introductory
+                    text for a website and may contain breadcrumbs, buttons and
+                    other components.
+                </p>
             </HeadingSection>
 
             <ExampleSection>
-                <HeroExample/>
+                <HeroExample />
             </ExampleSection>
 
             <SettingsSection>
                 <div className="top40">
-                    <NumberScaledSelectable property={organism.verticalPadding} units="px" scale={grid}/>
+                    <NumberScaledSelectable
+                        property={organism.verticalPadding}
+                        units="px"
+                        scale={grid}
+                    />
                 </div>
                 <div className="top40">
-                    <NumberScaledSelectable property={organism.verticalGap} units="px" scale={grid}/>
+                    <NumberScaledSelectable
+                        property={organism.verticalGap}
+                        units="px"
+                        scale={grid}
+                    />
                 </div>
                 <div className="top40">
-                    <StringSelectable property={organism.title} defaultValue={"Display 1"} />
+                    <StringSelectable
+                        property={organism.title}
+                        defaultValue={'Display 1'}
+                    />
                 </div>
                 <div className="top40">
-                    <StringSelectable property={organism.body} defaultValue={"Body 1"} />
+                    <StringSelectable
+                        property={organism.body}
+                        defaultValue={'Body 1'}
+                    />
                 </div>
             </SettingsSection>
-            <GeneratedCodeSection item={organism}/>
+            <GeneratedCodeSection item={organism} />
         </div>
-    )
-}
+    );
+};

@@ -12,7 +12,6 @@ import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
 import './ImagesMolecule.css';
 
-
 interface Props {
     molecule: Images;
     designSystem: DesignSystem;
@@ -22,12 +21,16 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
 
     useEffect(() => {
-        console.log("ImagesMolecule mounted");
+        console.log('ImagesMolecule mounted');
     }, []);
 
     return (
         <div>
-            <HeadingSection item={molecule} title="Apply Styles" heading="Images">
+            <HeadingSection
+                item={molecule}
+                title="Apply Styles"
+                heading="Images"
+            >
                 <p>Configure settings that affect the appearance of images.</p>
             </HeadingSection>
             <ExampleSection>
@@ -35,13 +38,17 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <div className="col-12">
                         <h4>List Images</h4>
                         <div className="example">
-                            <div className="caption">Sample Square List Image</div>
+                            <div className="caption">
+                                Sample Square List Image
+                            </div>
                             <div className="image-sq">
                                 <img src="/sample.jpg" />
                             </div>
                         </div>
                         <div className="example">
-                            <div className="caption">Sample Wide List Image</div>
+                            <div className="caption">
+                                Sample Wide List Image
+                            </div>
                             <div className="image-lg">
                                 <img src="/sample.jpg" />
                             </div>
@@ -49,7 +56,10 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                         <h4>General Images</h4>
                         <div className="example">
                             <div className="caption">Sample Square Image</div>
-                            <div className="inline-image" style={{ width: '300px', height: '200px' }}>
+                            <div
+                                className="inline-image"
+                                style={{ width: '300px', height: '200px' }}
+                            >
                                 <img src="/sample.jpg" />
                             </div>
                         </div>
@@ -58,21 +68,31 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                 <SettingsSection>
                     <div className="row">
                         <div className="col-12">
-                          <div className="formRow">
-                              <NumberScaledSelectable property={molecule.listImageBorderRadius} units="px" scale={grid}/>
-                          </div>
-                          <div className="formRow">
-                              <NumberScaledSelectable property={molecule.generalImageBorderRadius} units="px" scale={grid}/>
-                          </div>
-                          <div className="formRow">
-                              <StringCategorySelectable property={molecule.imageShadow} defaultValue="None" />
-                          </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable
+                                    property={molecule.listImageBorderRadius}
+                                    units="px"
+                                    scale={grid}
+                                />
+                            </div>
+                            <div className="formRow">
+                                <NumberScaledSelectable
+                                    property={molecule.generalImageBorderRadius}
+                                    units="px"
+                                    scale={grid}
+                                />
+                            </div>
+                            <div className="formRow">
+                                <StringCategorySelectable
+                                    property={molecule.imageShadow}
+                                    defaultValue="None"
+                                />
+                            </div>
                         </div>
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={molecule} />
             </ExampleSection>
-
-        </div >
-    )
-}
+        </div>
+    );
+};

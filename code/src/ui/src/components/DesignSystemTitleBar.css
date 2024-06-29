@@ -14,7 +14,7 @@
 }
 
 .MuiSelect-select span {
-  padding-right: var(--min-target)
+    padding-right: var(--min-target);
 }
 
 .titleBarDiv .left-titlebar {
@@ -30,7 +30,7 @@
     margin: var(--spacing-1);
     gap: var(--spacing-2);
 }
-.titleBarDiv .center-titlebar button{
+.titleBarDiv .center-titlebar button {
     align-self: end;
 }
 
