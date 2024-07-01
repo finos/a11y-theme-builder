@@ -1,8 +1,8 @@
-﻿/*
+﻿  /*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useRef, useLayoutEffect, ReactNode } from 'react';
+import React from 'react';
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';

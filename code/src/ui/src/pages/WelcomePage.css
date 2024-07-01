@@ -1,15 +1,16 @@
+/* WelcomePage.css */
 .welcome-navbar-container {
     background-color: var(--background);
     color: black;
     display: flex;
-    /*position: fixed;*/
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    opacity: 1;
     height: 90px;
-    /*z-index: 1;*/
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add some shadow for better visual separation */
 }
 
 .tb-logo {
@@ -19,55 +20,74 @@
     padding: 0 var(--spacing-2);
 }
 
-.welcome-left-nav {
-    align-items: flex-start;
-    flex: 20% 0 0;
-    min-width: 250px;
+.hamburger-icon {
+    display: none; /* Hide by default */
+}
+
+.design-system-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.design-system-editor-content {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.design-system-editor-left-nav {
+    flex: 0 0 250px;
     padding: 20px;
     background-color: var(--nav-color) !important;
-    /* border: 0px solid green; test */
-}
-.welcome-left-nav button::after {
-    border: 0;
 }
 
-.welcome-content {
-    display: flex;
-    /* border: 0px solid blue; test */
-}
-
-.welcome-right-content {
+.design-system-editor-right-content {
     flex-grow: 1;
     padding: 20px;
     color: var(--on-background);
     background: var(--background);
     vertical-align: top;
     font-family: var(--primaryFont);
-    border: 0px solid red; /* test */
+    box-sizing: border-box;
 }
 
-video {
-  /* override other styles to make responsive */
-  width: 100%    !important;
-  height: auto   !important;
+.design-system-editor-right-content-scrollable {
+    overflow-y: auto;
+    max-height: calc(100vh - 180px); /* Ensure the content doesn't overflow the viewport */
+    box-sizing: border-box;
 }
 
-/*
-.welcome-right-content button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--on-button);
-    color: var(--on-background);
-    border-radius: var(--button-radius);
-    text-align: center;
-    padding: var(--spacing-1) var(--button-padding);
-    border: none;
-    position: relative;
-    align-self: start;
-    font: var(--button-font);
-    letter-spacing: var(--button-character-spacing);
-    text-transform: var(--button-transform) !important;
-    cursor: pointer;
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: block; /* Show hamburger icon on mobile */
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        z-index: 11;
+    }
+
+    .design-system-editor-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .design-system-editor-right-content {
+        width: 100%;
+        max-width: 800px; /* Limit the max width */
+        margin: 0 auto; /* Center the content */
+        padding: 20px;
+        padding-bottom: 40px; /* Add padding at the bottom */
+    }
+
+    .design-system-editor-left-nav {
+        display: none; /* Hide left nav on mobile */
+    }
+
+    .design-system-editor-right-content-scrollable {
+        max-height: calc(100vh - 130px); /* Adjust for header height */
+    }
 }
-*/

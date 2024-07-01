@@ -14,7 +14,7 @@ export interface SectionColorModeSelector {
 export const BasicColorModeSelector: React.FC<SectionColorModeSelector> = ({ colorMode, setColorMode, children }) => {
 
     const style = {
-        marginTop: "40px",
+        marginTop: "20px",
     }
 
     return (
