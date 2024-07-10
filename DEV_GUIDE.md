@@ -18,19 +18,22 @@ The Theme Builder application can be built and run locally using two variations 
 ### Quick and Easy 
 If you simply desire to run the application and do not require to perform any development enhancements, the easiest approach for running the application locally is to install [Docker Desktop](https://www.docker.com/).
 ### Javascript Runtime Environment
-If you desire to extend or enhance the application, a local development environment will need to be configured. This requires the installation of Node.js prerequisites, specifically NodeJS 16+ and npm 8+. Visit [nodejs downloads](https://nodejs.org/en/download/) for latest versions.
+If you desire to extend or enhance the application, a local development environment will need to be configured. This requires the installation of Node.js prerequisites, specifically NodeJS 18+ and npm 8+. Visit [nodejs downloads](https://nodejs.org/en/download/) for latest versions.
 
 ## Install and Use
 Perform the following steps to run a local version of the application.
 
-### Fetch Latest Code
+### Fetch Latest Code from branch:dev
 These instructions assume you have a local copy of a forked instance of [finos/a11y-theme-builder](https://github.com/finos/a11y-theme-builder).
 
 ```
 cd <WORKSPACE>
 git clone https://github.com/<YOUR-ORG>/a11y-theme-builder
 cd a11y-theme-builder
+git remote add upstream https://github.com/finos/a11y-theme-builder
+git pull upstream dev
 ```
+**Note:** Always pull from the `dev` branch.  Development should always be done on the `dev` branch.
 
 where:
 
@@ -47,7 +50,26 @@ cd <WORKSPACE>/a11y-theme-builder/code
 #### Embedded Database
 The Theme Builder application requires the use of a  persisted embedded database. This requirement is satisfied by attaching a local host directory, `/code/src/data`, to the running docker container. 
 
+#### Use Docker Compose for a quick start
+Docker Compose allows you to do simple orchestration of Docker artifacts. With one command you can build and start containers and their dependencies in the proper order, establish volumes for persistence, and even establish a network so that the containers can communicate with each other. To build and start Theme Builder in a Docker environment, simply run:
+
+```
+docker compose up
+```
+
+Once the container is up and running, you may load Theme Builder in a web browser by navigating to `http://localhost:8080`.
+
+you can bring down the containers by using
+
+```
+docker compose down
+```
+
+This command gracefully shuts down the containers and cleans up the resources they used
+
 #### Build image
+
+While Docker Compose may quickly and easily start an application in a Docker environment, you may find that you need to manage your Docker environment at a more granular level. This section can help you do just that.
 
 ```
 docker build . -t a11y-theme-builder
@@ -165,9 +187,34 @@ Any changes made to the React source code will automatically be updated in the b
 
 Note that the build directory is not updated with these changes until an `npm run build` or `npm run build-ui` is performed.
 
-#### Potential Windows Issue
+### Potential Windows Issue
 One problem you might run into on a Windows system is that themes may not appear, load, or be created.
 If this is the case, it most likely means there is a problem with your [themes file](https://github.com/finos/a11y-theme-builder/blob/main/code/src/data/themes), which acts as the database. The most common explanation is that your environment has automatically changed the line endings of this file to `CRLF`. To fix this either use your editor to change the line endings to `LF`, or better, follow [this guide](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings) to ensure git does not do this in the future by running the command `git config --global core.autocrlf false`, and reseting the repo.
+
+#### Our Recommendation
+We suggest you to use WSL (Windows Subsytem For Linux).`Use it from the very start of cloning the Repo` in your local system than you will not face the issue mentioned above 
+
+## Create a Pull Request
+
+After making changes and doing a `git add` to stage them, you'll need to commit them. We recommend using the below format.
+```
+$ git commit -m "finos/a11y-theme-builder#< issue no.> : <commit message>"
+```
+Once all changes have been committed, push the changes.
+
+```
+$ git pull origin <branch-name>
+$ git push origin <branch-name>
+```
+Then on Github, navigate to the `finos/a11y-theme-builder` repository and create a pull request from your recently pushed changes to the `dev` branch.
+
+### Registration for LFX EasyCLA
+
+When you create your first pull request for FINOS A11y Theme Builder, you will be asked to agree to a Contributors License Agreement. You can find more information on this topic [here](https://github.com/finos/a11y-theme-builder/blob/main/CONTRIBUTE.md#finos-restrictions) 
+
+### Mention for Review
+
+In Theme Builder, all pull requests must be reviewed by at least one maintainer. In general, you should try to select a reviewer that is either very familiar with the issue that you are working on or very familiar with the code or functionality that you are changing. If in doubt, tag your mentor in a comment in the PR asking for guidance so that they will be notified of your question. You can find more information on this topic [here](https://github.com/finos/a11y-theme-builder/blob/main/CONTRIBUTE.md#contribution-rules)
 
 
 ## Understanding Server APIs

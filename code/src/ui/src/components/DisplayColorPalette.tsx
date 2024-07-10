@@ -30,6 +30,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
     //  we have listener support there
     if (colors && colors.length > 0) {
         return (
+<<<<<<< HEAD
             <div className="collapsable-Container">
                 <Accordion >
                     <AccordionSummary
@@ -103,6 +104,58 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                     </AccordionDetails>
                 </Accordion>
 
+=======
+            <div>
+                <div className="detail-info">
+                    <InputLabel htmlFor='showPaletteDetails'>Show Details</InputLabel>
+                    <Switch id="showPaletteDetails" checked={_showDetails} onChange={handleShowDetailsChange} />
+                </div>
+                <div className="top40"></div>
+                <LightModeSection title={lightLabel}>
+                    {colorPalette.getColors().map((color, i) => {
+                        return (
+                            <div key={color.name}>
+                                <div className="subtitle1">{color.name}</div>
+                                <div className="colorRow">
+                                    {color.light.shades.map((shade, i) => {
+                                         if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color",color.name);
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
+                                            )
+                                        }
+                                        return (
+                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId/>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </LightModeSection>
+                <DarkModeSection title={darkLabel}>
+                    {colorPalette.getColors().map((color, i) => {
+                        //console.log("comment=",comment)
+                        return (
+                            <div key={color.name}>
+                                <div className="subtitle1">{color.name}</div>
+                                <div className="colorRow">
+                                    {color.dark.shades.map((shade, i) => {
+                                        if(shade.hex.toLowerCase()==color.hex.getValue()){
+                                            console.log("found base color");
+                                            return(
+                                                <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={true} showDetails={_showDetails} showId isBaseColor={true}/> 
+                                            )}
+                                        return (
+                                            <ColorShadeCss className="color-block" key={"ColorShade" + i} name={color.name} id={shade.id} lm={false} showDetails={_showDetails} showId/>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </DarkModeSection>
+>>>>>>> 38305aa03345434d3ed762a3a20765278ff54180
             </div>
         )
     }

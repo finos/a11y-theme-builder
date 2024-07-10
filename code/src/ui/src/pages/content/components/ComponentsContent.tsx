@@ -5,6 +5,7 @@
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem, Event, EventType } from '@finos/a11y-theme-builder-sdk';
+import ComponentsIntro from './ComponentIntro';
 import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -24,6 +25,7 @@ import { StatStylesComponent } from '../../components/typography/StatStylesCompo
 import { TooltipsComponent } from '../../components/TooltipsComponent';
 import { TextDecorationComponent } from '../../components/TextDecorationComponent';
 import { ImageDecorationsComponent } from '../../components/ImageDecorationsComponent';
+import { ImagesList } from '../../components/ImagesList';
 import { ToastsSingleLineComponent } from '../../components/ToastsSingleLineComponent';
 import { ToastsDoubleLineComponent } from '../../components/ToastsDoubleLineComponent';
 import { ToastsTripleLineComponent } from '../../components/ToastsTripleLineComponent';
@@ -67,6 +69,7 @@ import { GrooveComponent } from '../../components/shadows/GrooveComponent';
 import { GlowComponent } from '../../components/shadows/GlowComponent';
 
 import { Preferences } from '../../../Preferences';
+import ComponentIntro from './ComponentIntro';
 
 interface Props {
     user: any;
@@ -151,6 +154,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                         paddingTop: "0px",
                     }}
                 >
+                    <LeftNavHeader>Introduction</LeftNavHeader>
+                    <LeftNavItem text={"Components"} value="Components" indent={1} selected={showComponent} onClick={()=> {setShowComponent("Components")}}/>
+                    
                     <LeftNavHeader>Styles</LeftNavHeader>
                     <LeftNavItem text="Mode" indent={1} />
                     <div style={{paddingLeft: "50px"}}>
@@ -227,6 +233,7 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     <LeftNavItem text={"Dropdown"} value="dropdown" indent={1} selected={showComponent} onClick={()=> {setShowComponent("dropdown")}} disabled={disabled}/>
                     <LeftNavItem text={"Hero"} value="hero" indent={1} selected={showComponent} onClick={()=> {setShowComponent("hero")}} disabled={disabled}/>
                     <LeftNavItem text={"Images"} value="imageDecorations" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageDecorations")}} disabled={disabled}/>
+                    <LeftNavItem text={"Image List"} value="imageList" indent={1} selected={showComponent} onClick={()=> {setShowComponent("imageList")}} disabled={disabled}/>
 
                     <LeftNavItem text={"Menus"} value="menus" indent={1} selected={showComponent} onClick={()=> {setShowComponent("menus")}} disabled={disabled}/>
 
@@ -268,6 +275,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content"  data-mode={darkMode ? "dark" : "light"}>
             <div className="design-system-editor-right-content-scrollable">
+                    {showComponent === "Components" &&
+                        <ComponentIntro />
+                    }
                     {showComponent === "colorsCoreColors" &&
                         <CoreColorsComponent />
                     }
@@ -378,6 +388,9 @@ export const ComponentsContent: React.FC<Props> = ({ user, designSystem }) => {
                     }
                     {showComponent === "imageDecorations" &&
                         <ImageDecorationsComponent/>
+                    }
+                    {showComponent === "imageList" &&
+                        <ImagesList/>
                     }
                     {showComponent === "listsSingle" &&
                         <ListsSingleComponent/>
