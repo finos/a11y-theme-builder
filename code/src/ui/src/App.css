@@ -73,6 +73,7 @@ p a:hover {
 */
 
 .button-area {
+
     justify-content: flex-start;
     display: flex;
     padding-top: 20px;
@@ -101,6 +102,15 @@ p a:hover {
     margin: 8px 0;
 }
 
+.collapsable-Container{
+    margin-left: 32px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #91919F;
+
+
+}
 .darkmode .background, .darkmode.background {
     background: var(--dm-background) !important;
     color: var(--dm-on-background)  !important;

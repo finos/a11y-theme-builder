@@ -31,6 +31,8 @@ import { ElevationsAtom } from '../../atoms/ElevationsAtom';
 import { GlowAtom } from '../../atoms/GlowAtom';
 import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
+import { CoreSettings } from '../../atoms/CoreSettings';
+import {BuildColorPalette} from '../../atoms/BuildColorPalette';
 
 // DEMO:    Import your atom
 import { ExampleAtom } from '../../atoms/ExampleAtom';
@@ -89,7 +91,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     useEffect(() => {
         pref.set("atom-typography-selected", ""+displayTypography)
     }, [displayTypography])
-
+    const [displayBuildTheme, setDisplayBuildTheme] = useState<boolean>(false);
     let otherSelected = false;
     if (pref.get("atom-other-selected") == "true") {
         otherSelected = true;
@@ -178,6 +180,36 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         <LeftNavHeader>Introduction</LeftNavHeader>
                         <LeftNavItem text={"Atoms"} value="atoms" indent={1} selected={showAtom} onClick={()=> {setShowAtom("atoms")}}/>
                         <LeftNavHeader>Atomic Settings</LeftNavHeader>
+
+                        <LeftNavItem text={"Build Theme"} indent={1} onClick={()=>setDisplayBuildTheme(!displayBuildTheme)}>
+                            {displayBuildTheme ? <ExpandLess /> : <ExpandMore />}
+                        </LeftNavItem>
+                        <Collapse in={displayBuildTheme} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                            <LeftNavItem
+                            selected={showAtom}
+                            value={'CoreSettings'}
+                            text={'Step 1 Core Settings'}
+                            indent={2}                        
+                            onClick={()=> {setShowAtom('CoreSettings')}}
+                        />
+                        <LeftNavItem
+                            selected={showAtom}
+                            value={'BuildColorPalette'}
+                            text={'Step 2 Build Color Palette'}
+                            indent={2}                        
+                            onClick={()=> {setShowAtom('BuildColorPalette')}}
+                        />
+                        <LeftNavItem
+                            selected={showAtom}
+                            value={'CoreSettings'}
+                            text={'Step 3 Light and Dark Modes'}
+                            indent={2}                        
+                            onClick={()=> {setShowAtom('CoreSettings')}}
+                        />
+                            </List>
+                        </Collapse>
+                        
                         <LeftNavAtom atom={atoms.colorPalette} indent={1} />
                         <LeftNavAtom atom={atoms.colorThemes} indent={1} />
                         <LeftNavAtom atom={atoms.subcolorThemes} indent={1}/>
@@ -235,6 +267,16 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showAtom === atoms.colorPalette.value && (
                         <ErrorHandler>
                             <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
+                        </ErrorHandler>
+                    )}
+                    {showAtom === 'CoreSettings' && (
+                        <ErrorHandler>
+                            <CoreSettings atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
+                        </ErrorHandler>
+                    )}
+                    {showAtom === 'BuildColorPalette' && (
+                        <ErrorHandler>
+                            <BuildColorPalette atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.colorThemes.value && (
