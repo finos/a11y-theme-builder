@@ -16,6 +16,7 @@ async function main() {
         myAssert(r.data, 'Delete database failed');
     }
 
+    console.log('testing Theme APIs');
     try {
         r = await axios.delete(cfg.baseUrl + '/api/themes/abc');
     } catch (e) {}
