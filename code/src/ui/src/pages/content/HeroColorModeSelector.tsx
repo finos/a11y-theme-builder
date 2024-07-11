@@ -11,13 +11,13 @@ import {
     Typography,
 } from '@mui/material';
 
-export interface HeroColorModeSelector {
+export interface Props {
     colorMode: string;
     setColorMode: React.Dispatch<React.SetStateAction<string>>;
     children?: React.ReactNode;
 }
 
-export const HeroColorModeSelector: React.FC<HeroColorModeSelector> = ({
+export const HeroColorModeSelector: React.FC<Props> = ({
     colorMode,
     setColorMode,
     children,

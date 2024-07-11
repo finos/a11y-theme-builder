@@ -13,13 +13,13 @@ import {
     Divider,
 } from '@mui/material';
 
-export interface SectionColorModeSelector {
+export interface Props {
     colorMode: string;
     setColorMode: React.Dispatch<React.SetStateAction<string>>;
     children?: React.ReactNode;
 }
 
-export const SectionColorModeSelector: React.FC<SectionColorModeSelector> = ({
+export const SectionColorModeSelector: React.FC<Props> = ({
     colorMode,
     setColorMode,
     children,

@@ -12,10 +12,10 @@ import { YouTubeRightSmall } from '../../mui-a11y-tb/organisms/YouTubeRightSmall
 import { YouTubeRight } from '../../mui-a11y-tb/organisms/YouTubeRight';
 
 interface Props {
-    colorMode?: string;
+    //colorMode?: string;
 }
 
-export const YouTubeLayouts: React.FC<Props> = ({}) => {
+export const YouTubeLayouts: React.FC<Props> = () => {
     const [colorMode, setColorMode] = useState<string>('');
 
     return (

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -14,8 +14,6 @@ import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { getCssValue } from '../../mui-a11y-tb/themes/Theme';
-
-const name = 'ModalMolecule';
 
 interface Props {
     modalMolecule: Modal;

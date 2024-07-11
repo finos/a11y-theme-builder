@@ -1,29 +1,13 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
-import {
-    DesignSystem,
-    Event,
-    EventType,
-    Popovers,
-} from '@finos/a11y-theme-builder-sdk';
+import { useEffect, useState } from 'react';
+import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import OrganismIntro from './OrganismIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
-import {
-    List,
-    ListItemButton,
-    ListItemText,
-    ListSubheader,
-    styled,
-    Collapse,
-    Button,
-    InputLabel,
-    TextField,
-    InputAdornment,
-} from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -276,7 +260,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
     let generalSelected = false;
-    if (pref.get('organisms-general-selected') == 'true') {
+    if (pref.get('organisms-general-selected') === 'true') {
         generalSelected = true;
     }
     const [displayGeneral, setDisplayGeneral] =
@@ -286,7 +270,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayGeneral]);
 
     let videoSelected = false;
-    if (pref.get('organisms-organisms-selected') == 'true') {
+    if (pref.get('organisms-organisms-selected') === 'true') {
         videoSelected = true;
     }
     const [displayVideo, setDisplayVideo] = useState<boolean>(videoSelected);
@@ -341,7 +325,7 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [showTemplate]);
 
     const [darkMode, setDarkMode] = useState<boolean>(
-        pref.get('organisms-mode-selected') == 'true' || false
+        pref.get('organisms-mode-selected') === 'true' || false
     );
     useEffect(() => {
         pref.set('organisms-mode-selected', '' + darkMode);

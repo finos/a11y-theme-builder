@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -38,7 +38,7 @@ import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
 
 // DEMO:    Import your atom
-import { ExampleAtom } from '../../atoms/ExampleAtom';
+//import { ExampleAtom } from '../../atoms/ExampleAtom';
 
 //import { TestAtom } from '../pages/atoms/TestAtom';
 
@@ -187,7 +187,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
     let typographySelected = false;
-    if (pref.get('atom-typography-selected') == 'true') {
+    if (pref.get('atom-typography-selected') === 'true') {
         typographySelected = true;
     }
     const [displayTypography, setDisplayTypography] =
@@ -197,7 +197,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayTypography]);
 
     let otherSelected = false;
-    if (pref.get('atom-other-selected') == 'true') {
+    if (pref.get('atom-other-selected') === 'true') {
         otherSelected = true;
     }
     const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
@@ -206,7 +206,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayOther]);
 
     let shadowSelected = false;
-    if (pref.get('atom-shadow-selected') == 'true') {
+    if (pref.get('atom-shadow-selected') === 'true') {
         shadowSelected = true;
     }
     const [displayShadow, setDisplayShadow] = useState<boolean>(shadowSelected);
@@ -218,7 +218,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         let _atoms = { ...atoms };
         for (const [key, node] of Object.entries(designSystem.atoms)) {
             if (node instanceof Atom) {
-                if (notImplemented.indexOf(key) == -1) {
+                if (notImplemented.indexOf(key) === -1) {
                     if (_atoms[key]) {
                         console.log(
                             'Atom enabled:' +
@@ -239,9 +239,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         designSystem.setListener(
             'AtomContent-isEditable',
             function (event: Event) {
-                if (event.type == EventType.NodeDisabled) {
+                if (event.type === EventType.NodeDisabled) {
                     enableDisableItems();
-                } else if (event.type == EventType.NodeEnabled) {
+                } else if (event.type === EventType.NodeEnabled) {
                     enableDisableItems();
                 }
             }
