@@ -22,9 +22,9 @@ interface Props {
 
 export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
     const [tabIndex, setTabIndex] = useState<string>('css');
-    const handleTabChange = (event: any, newTabIndex: string) => {
-        setTabIndex(newTabIndex);
-    };
+    //const handleTabChange = (event: any, newTabIndex: string) => {
+    //    setTabIndex(newTabIndex);
+    //};
 
     const name = item.name;
     const getType = () => {
@@ -73,11 +73,11 @@ export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
         paddingRight: '20px',
     };
 
-    const tabBar = {
-        backgroundColor: 'var(--transparent)',
-        color: 'var(--transparent)',
-        display: 'flex',
-    };
+    //const tabBar = {
+    //    backgroundColor: 'var(--transparent)',
+    //    color: 'var(--transparent)',
+    //    display: 'flex',
+    //};
 
     return (
         <div className="top40">

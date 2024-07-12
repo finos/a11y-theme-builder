@@ -1,19 +1,12 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
-import { SettingsSection } from '../content/SettingsSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { ExampleSection } from '../content/ExampleSection';
 import {
-    Box,
-    FormControl,
-    FormControlLabel,
-    FormLabel,
-    Radio,
-    RadioGroup,
     Tab,
     Tabs,
 } from '@mui/material';

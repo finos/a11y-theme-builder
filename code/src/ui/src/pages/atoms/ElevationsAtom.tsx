@@ -1,11 +1,11 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { InputLabel, TextField, Slider } from '@mui/material';
+import { Slider } from '@mui/material';
 import { ElevationSettings } from '@finos/a11y-theme-builder-sdk';
-import { ChromePicker, ColorResult } from 'react-color';
+import { ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -44,12 +44,6 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
     const colorOpacityProperty = elevationSettings.colorOpacity;
     const percentChangeProperty = elevationSettings.percentageChange;
 
-    const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] =
-        useState<boolean>(false);
-
-    const [shadowColor, setShadowColor] = useState<string>(
-        shadowColorProperty.getValue() || '#000000'
-    );
     const [baseBlurRadius, setBaseBlurRadius] = useState<number>(
         baseBlurRadiusProperty.getValue() || 0
     );
@@ -77,20 +71,20 @@ export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
         percentChangeProperty.getValue() || 0
     );
 
-    const handleShadowColorChange = (event: any) => {
-        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
-            _setAddColorInputErrorTriggered(true);
-            setShadowColor(event.target.value);
-            return;
-        }
-        _setAddColorInputErrorTriggered(false);
-        setShadowColor(event.target.value);
-        shadowColorProperty.setValue(event.target.value);
-    };
-    const handleColorSelected = (color: ColorResult) => {
-        setShadowColor(color.hex);
-        shadowColorProperty.setValue(color.hex);
-    };
+    //const handleShadowColorChange = (event: any) => {
+    //    if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
+    //        _setAddColorInputErrorTriggered(true);
+    //        setShadowColor(event.target.value);
+    //        return;
+    //    }
+    //    _setAddColorInputErrorTriggered(false);
+    //    setShadowColor(event.target.value);
+    //    shadowColorProperty.setValue(event.target.value);
+    //};
+    //const handleColorSelected = (color: ColorResult) => {
+    //    setShadowColor(color.hex);
+    //    shadowColorProperty.setValue(color.hex);
+    //};
     async function handleBaseBlurRadiusChange(event: any): Promise<void> {
         const value = Number(event.target.value);
         setBaseBlurRadius(value);

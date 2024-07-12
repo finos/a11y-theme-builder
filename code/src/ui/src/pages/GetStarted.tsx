@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -41,7 +41,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
         for (var i in keys) {
             const name = keys[i].split('-')[0];
             //console.log("Looking at pref",keys[i],"name=",name);
-            if (names.indexOf(name) == -1) {
+            if (names.indexOf(name) === -1) {
                 if (!deleteNames[name]) {
                     console.log(
                         `Design system ${name} not found - Deleting local storage objects`
@@ -96,7 +96,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
         if (!designSystems) return false;
         for (var i = 0; i < designSystems.length; i++) {
             const ds = designSystems[i];
-            if (ds.id == name) {
+            if (ds.id === name) {
                 return true;
             }
         }
@@ -104,7 +104,7 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
     };
 
     const onImportClose = async (cmd: string, dest: string, data: string) => {
-        if (cmd == 'import') {
+        if (cmd === 'import') {
             console.log('Importing design system: name=', dest, 'data=', data);
             if (data !== undefined) {
                 document.body.style.cursor = 'wait';

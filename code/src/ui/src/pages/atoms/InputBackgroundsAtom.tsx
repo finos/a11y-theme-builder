@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { InputLabel, TextField } from '@mui/material';
 import { InputBackground } from '@finos/a11y-theme-builder-sdk';
 import { ColorSelectTitled } from '../../components/ColorSelectTitled';
@@ -20,21 +20,12 @@ interface Props {
 
 export const InputBackgroundsAtom: React.FC<Props> = ({ inputBackground }) => {
     const defaultText = 'Sample input field';
-    const [_inputBackgroundColor, _setInputBackgroundColor] =
-        useState<string>('#ffffff');
 
     useEffect(() => {
         if (inputBackground && inputBackground.overlayColor) {
             //inputBackground.background.getSelectableValues()
         }
     }, []);
-
-    // Called when user clicks on one of the state controls.
-    //  Should set the picker to the color reflected by
-    //  the selected State control
-    const handleValueChange = (key: string, value: number) => {
-        console.log(`handling value change key: ${key}, value: ${value}`);
-    };
 
     return (
         <div>

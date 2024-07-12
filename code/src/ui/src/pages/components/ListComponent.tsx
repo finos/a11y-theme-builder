@@ -1,11 +1,10 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
 import { Avatar, Checkbox, FormControlLabel } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-import { Link } from 'react-router-dom';
 import './ListComponent.css';
 
 interface Props {

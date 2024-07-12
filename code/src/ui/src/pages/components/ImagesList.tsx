@@ -13,12 +13,7 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import { SettingsSection } from '../content/SettingsSection';
-import { ListComponent } from './ListComponent';
 import {
-    Divider,
-    Grid,
     ImageList,
     ImageListItem,
     ImageListItemBar,

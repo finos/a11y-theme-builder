@@ -1,10 +1,9 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs, List } from '@mui/material';
-import { styled } from '@mui/material';
+import { List } from '@mui/material';
 import Welcome from './Welcome';
 import JumpStart from './JumpStart';
 import GetStarted from './GetStarted';

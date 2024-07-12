@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -8,7 +8,7 @@ import { ExampleSection } from '../content/ExampleSection';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { SettingsSection } from '../content/SettingsSection';
 import { ListComponent } from './ListComponent';
-import { Divider, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 
 interface Props {}
 

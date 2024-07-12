@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Button,
     Card,
@@ -10,15 +10,9 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
-    FormControl,
-    FormControlLabel,
     IconButton,
-    Radio,
-    RadioGroup,
-    SvgIcon,
     Typography,
 } from '@mui/material';
-import { HeadingSection } from '../../content/HeadingSection';
 
 interface Props {
     title: string;

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -10,7 +10,6 @@ import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 
-const name = 'SmallTextStylesAtom';
 
 const subtitle1CssPrefix = 'subtitle1';
 const subtitle2CssPrefix = 'subtitle2';

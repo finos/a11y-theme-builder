@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -44,10 +44,10 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
         }
         selectables = selectables.sort();
         if (!selectables) return;
-        for (var i = 0; i < selectables.length; i++) {
+        for (var j = 0; j < selectables.length; i++) {
             const s = selectables[i].toString() + 'px';
             r.push(
-                <MenuItem key={s} value={selectables[i]}>
+                <MenuItem key={s} value={selectables[j]}>
                     {' '}
                     {s}{' '}
                 </MenuItem>
@@ -77,10 +77,10 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
         }
         selectables = selectables.sort();
         if (!selectables) return;
-        for (var i = 0; i < selectables.length; i++) {
+        for (var k = 0; k < selectables.length; k++) {
             const s = selectables[i].toString() + 'px';
             r.push(
-                <MenuItem key={s} value={selectables[i]}>
+                <MenuItem key={s} value={selectables[k]}>
                     {' '}
                     {s}{' '}
                 </MenuItem>

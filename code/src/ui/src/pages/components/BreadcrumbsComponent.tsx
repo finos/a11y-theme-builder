@@ -1,10 +1,9 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 

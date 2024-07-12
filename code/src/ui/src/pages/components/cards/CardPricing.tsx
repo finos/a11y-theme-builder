@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -8,17 +8,8 @@ import {
     Card,
     CardActions,
     CardContent,
-    CardHeader,
-    CardMedia,
-    FormControl,
-    FormControlLabel,
-    IconButton,
-    Radio,
-    RadioGroup,
-    SvgIcon,
     Typography,
 } from '@mui/material';
-import { HeadingSection } from '../../content/HeadingSection';
 
 interface Props {
     title: string;
@@ -41,7 +32,6 @@ export const CardPricing: React.FC<Props> = ({
     color,
     children,
 }) => {
-    let rootClassName = className || '';
     return (
         <Card data-background={color} className="elevation-1 pricing top-40">
             <div className="subtitle1">{title}</div>

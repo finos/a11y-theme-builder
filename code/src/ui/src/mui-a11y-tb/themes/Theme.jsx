@@ -19,7 +19,7 @@ export const getCssValue = (prop) => {
     if (typeof v == 'string') {
         v = v.trim();
         if (v.indexOf('var(') > -1) {
-            v = v.replace(/var\(([a-zA-Z0-9\-]+)\)/g, function (m, p1) {
+            v = v.replace(/var\(([a-zA-Z0-9-]+)\)/g, function (m, p1) {
                 const val = getCssValue(p1);
                 return val;
             });
@@ -63,24 +63,24 @@ export const getStyleSheet = (selector) => {
     }
 };
 
-const getStyleValue = (selector, prop) => {
-    for (var i = 0; i < document.styleSheets.length; i++) {
-        var sheet = document.styleSheets[i];
-        var rules = sheet.cssRules ? sheet.cssRules : sheet.rules;
-        for (var j = 0; j < rules.length; j++) {
-            if (
-                rules[j].selectorText &&
-                rules[j].selectorText.toLowerCase() === selector
-            ) {
-                //console.log("rules=", rules[j]);
-                var value = rules[j].style.getPropertyValue(prop).trim();
-                // NOTE: could use setPropertyValue(prop, newValue) instead of setting :root on document
-                console.log(`getStyleRuleValue ${selector} ${prop} = ${value}`);
-                return value;
-            }
-        }
-    }
-};
+//const getStyleValue = (selector, prop) => {
+//    for (var i = 0; i < document.styleSheets.length; i++) {
+//        var sheet = document.styleSheets[i];
+//        var rules = sheet.cssRules ? sheet.cssRules : sheet.rules;
+//        for (var j = 0; j < rules.length; j++) {
+//            if (
+//                rules[j].selectorText &&
+//                rules[j].selectorText.toLowerCase() === selector
+//            ) {
+//                //console.log("rules=", rules[j]);
+//                var value = rules[j].style.getPropertyValue(prop).trim();
+//                // NOTE: could use setPropertyValue(prop, newValue) instead of setting :root on document
+//                console.log(`getStyleRuleValue ${selector} ${prop} = ${value}`);
+//                return value;
+//            }
+//        }
+//    }
+//};
 
 export const themes = {};
 
@@ -331,24 +331,6 @@ try {
                     },
                 },
             },
-            MuiCheckbox: {
-                styleOverrides: {
-                    root: {
-                        padding: '0 calc(var(--min-target) + var(--spacing-1))',
-                        margin: 'var(--spacing-half) 0',
-                        height: 'var(--min-target)',
-                        width: 'var(--min-target)',
-                        padding: 0,
-                        '&.MuiCheckbox-root': {
-                            backgroundColor: 'var(--input)',
-                            color: 'var(--on-background)',
-                        },
-                        '&.Mui-checked': {
-                            color: 'var(--button) !important',
-                        },
-                    },
-                },
-            },
             MuiDivider: {
                 styleOverrides: {
                     root: {
@@ -361,57 +343,6 @@ try {
                 styleOverrides: {
                     root: {
                         marginTop: '2px',
-                    },
-                },
-            },
-            MuiOutlinedInput: {
-                styleOverrides: {
-                    root: {
-                        borderRadius: 'var(--spacing-1)',
-                        minHeight:
-                            'calc(var(--spacing-1) * var(--button-height))',
-                        padding: '0',
-                        border: '1px solid var(--borrder)',
-                        '& input': {
-                            padding: '0 var(--spacing-2)',
-                        },
-                        '&.dropdownFocus': {
-                            borderRadius: 'var(--spacing-1)',
-                            '&.Mui-focused fieldset': {
-                                border: '1px auto var(--button)',
-                                boxShadow:
-                                    '0 0 var(--focusBlur) 1px var(--button-half)',
-                            },
-                        },
-                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                            border: '1px solid var(--button)',
-                            boxShadow:
-                                '0 0 var(--focusBlur) 1px var(--button-half)',
-                        },
-                        '& fieldset': {
-                            border: '1px solid var(--border)',
-                            borderRadius: 'var(--spacing-1)',
-                            borderColor: 'var(--border)',
-                            boxShadow: 'none',
-                            //   background: "var(--surface)",
-                            //  color: "var(--on-surface)",
-                        },
-                        '.info &': {
-                            color: 'var(--on-info)',
-                            backgroundColor: 'var(--info)',
-                        },
-                        '.success &': {
-                            color: 'var(--on-success)',
-                            backgroundColor: 'var(--success)',
-                        },
-                        '.warning &': {
-                            color: 'var(--on-warning)',
-                            backgroundColor: 'var(--warning)',
-                        },
-                        '.danger &': {
-                            color: 'var(--on-danger)',
-                            backgroundColor: 'var(--danger)',
-                        },
                     },
                 },
             },
@@ -471,8 +402,6 @@ try {
                 styleOverrides: {
                     root: {
                         borderRadius: 'var(--spacing-half)',
-                        minHeight:
-                            'calc(var(--spacing-1) * var(--button-height))',
                         minWidth:
                             'calc(var(--spacing-1) * var(--button-minwidth))',
                         background: 'var(--input)',
@@ -639,13 +568,6 @@ try {
                     },
                 },
             },
-            MuiInputAdornment: {
-                styleOverrides: {
-                    root: {
-                        marginRight: 'var(--spacing-2)',
-                    },
-                },
-            },
             '& .MuiTab-wrapper': {
                 flexDirection: 'row',
                 justifyContent: 'flex-start',
@@ -654,7 +576,6 @@ try {
             MuiAccordion: {
                 styleOverrides: {
                     root: {
-                        margin: '0',
                         marginBottom: 'var(--spacing-1)',
                         border: '1px solid var(--border)',
                         background: 'var(--white)',
@@ -875,10 +796,7 @@ try {
                             'var(--spacing-1) calc(var(--toast-padding) * var(--spacing-1)) !important',
                         paddingLeft:
                             'calc(calc(var(--toast-padding) * var(--spacing-1)) + var(--spacing-1) + var(--spacing-half)) !important',
-                        borderRadius:
-                            'calc(var(--toast-radius) * var(--radius-1))',
                         boxShadow: 'var(--toast-shadow)',
-                        position: 'relative',
                         borderRadius:
                             'calc(var(--toast-radius) * var(--radius-1))',
                         alignItems: 'center',
@@ -988,7 +906,6 @@ try {
                                 right: 'calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)))',
                                 bottom: 'calc(0px - calc(var(--focusBorder) + 2px + var(--animation-focus-distance)))',
                                 content: "''",
-                                background: '#000000',
                                 pointerEvents: 'none',
                                 borderRadius:
                                     'calc(calc(var(--sliderhandleRadius) * var(--radius-1))  + 1.6px)',
@@ -1067,7 +984,6 @@ try {
                             right: '0px',
                             content: '""',
                             background: 'var(--transparent)',
-                            boxShadow: 'var(--chip-shadow)',
                             color: 'var(--on-button)',
                             borderRadius:
                                 'calc(var(--button-radius) * var(--radius-1) + 1.6px)',
@@ -1099,7 +1015,6 @@ try {
                                 opacity: 1,
                             },
                         '& .MuiChip-label': {
-                            paddingLeft: 'var(--spacing-half)',
                             paddingLeft: 'var(--spacing-half)',
                         },
                         '&.inline-icon path': {

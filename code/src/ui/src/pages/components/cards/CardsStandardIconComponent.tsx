@@ -1,14 +1,8 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import {
-    FormControl,
-    FormControlLabel,
-    Radio,
-    RadioGroup,
-} from '@mui/material';
 import { HeadingSection } from '../../content/HeadingSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { CardColorModeSelector } from '../../content/CardColorModeSelector';
@@ -18,8 +12,6 @@ interface Props {}
 
 export const CardsStandardIconComponent: React.FC<Props> = () => {
     const [colorMode, setColorMode] = useState<string>('colored');
-
-    const [_clickableCards, _setClickableCards] = useState<boolean>(false);
 
     return (
         <div>

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -31,7 +31,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
     let desktopPreviewSelected = false;
-    if (pref.get('preview-desktopPreview-selected') == 'true') {
+    if (pref.get('preview-desktopPreview-selected') === 'true') {
         desktopPreviewSelected = true;
     }
     const [displayDesktopPreview, setDisplayDesktopPreview] = useState<boolean>(
@@ -55,7 +55,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayMobilePreview]);
 
     const [darkMode, setDarkMode] = useState<boolean>(
-        pref.get('preview-mode-selected') == 'true' || false
+        pref.get('preview-mode-selected') === 'true' || false
     );
     useEffect(() => {
         pref.set('preview-mode-selected', '' + darkMode);

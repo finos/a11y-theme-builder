@@ -1,17 +1,15 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { Avatar, Stack } from '@mui/material';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 
 interface Props {}
 
 export const AvatarSingleComponent: React.FC<Props> = () => {
-    const [colorMode, setColorMode] = useState<string>('default');
 
     return (
         <div>

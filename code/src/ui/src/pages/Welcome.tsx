@@ -1,11 +1,9 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
 import { Button, Grid } from '@mui/material';
-import { useEffect, useState } from 'react';
-import ModalInclusive from '../components/modals/ModalInclusive';
 import { HeadingSection } from './content/HeadingSection';
 
 interface Props {
@@ -14,7 +12,6 @@ interface Props {
 }
 
 const Welcome: React.FC<Props> = ({ user, changeTab }) => {
-    const [inclusiveIsOpen, setInclusiveIsOpen] = useState(false);
 
     return (
         <div>
