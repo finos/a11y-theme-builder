@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
 import React, { useEffect, useState, ChangeEvent, FocusEvent } from 'react';
 import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChromePicker, ColorResult } from 'react-color';
