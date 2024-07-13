@@ -105,7 +105,7 @@ const DesignSystemPage: React.FC<Props> = ({user, storage, themeName, setThemeNa
 
             // listen for changes in selected accessibility layers so that appropriate
             //  styles can be set
-            const layerChangeListener = function (event: EventValueChange<Boolean>) {
+              const layerChangeListener = function (event: EventValueChange<Boolean>) {
                 UpdateContainerLayerInfo();
             };
             const deviceTargetListener = function (event: EventValueChange<String>) {
