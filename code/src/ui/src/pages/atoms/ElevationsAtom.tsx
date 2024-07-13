@@ -5,7 +5,6 @@
 import React, { useState } from 'react';
 import { Slider } from '@mui/material';
 import { ElevationSettings } from '@finos/a11y-theme-builder-sdk';
-import { ColorResult } from 'react-color';
 import { HeadingSection } from '../content/HeadingSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
@@ -32,7 +31,6 @@ interface Props {
 }
 
 export const ElevationsAtom: React.FC<Props> = ({ elevationSettings }) => {
-    const shadowColorProperty = elevationSettings.shadowColor;
     const baseBlurRadiusProperty = elevationSettings.baseBlurRadius;
     const baseSpreadRadiusProperty = elevationSettings.baseSpreadRadius;
     const baseColorOpacityProperty = elevationSettings.baseColorOpacity;

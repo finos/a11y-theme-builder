@@ -38,8 +38,8 @@ const GetStarted: React.FC<Props> = ({ user, storage }) => {
         const pref = new Preferences('');
         const keys = pref.listKeys();
         const deleteNames: any = {};
-        for (var i in keys) {
-            const name = keys[i].split('-')[0];
+        for (var j in keys) {
+            const name = keys[j].split('-')[0];
             //console.log("Looking at pref",keys[i],"name=",name);
             if (names.indexOf(name) === -1) {
                 if (!deleteNames[name]) {
