@@ -75,7 +75,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({ designSystemNames, desig
 
     return (
         <>
-            <div className="titleBarDiv" data-background="colored">
+            <div className="titleBarDiv " data-background="colored">
                 <div className="left-titlebar">
                     <div  className="tb-logo" onClick={handleLogoClick}>
                         <svg width="48" height="48" viewBox="0 0 130 130" fill="none">
