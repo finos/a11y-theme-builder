@@ -3,7 +3,14 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Breadcrumbs, Button, Link, Typography, Grid, Divider } from '@mui/material';
+import {
+    Breadcrumbs,
+    Button,
+    Link,
+    Typography,
+    Grid,
+    Divider,
+} from '@mui/material';
 
 interface Props {
     style?: any;
@@ -11,21 +18,36 @@ interface Props {
     className?: string;
 }
 
-export const TextIconsWithDivider: React.FC<Props> = ({className=""}) => {
+export const TextIconsWithDivider: React.FC<Props> = ({ className = '' }) => {
     return (
         <section className={className}>
-          <Grid justifyContent="center" className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid item className="v-center" lg={8} md={6} sm={12}>
-              <h2><div  className="inline-icon"><i  className="fa-solid fa-chart-simple"></i></div>Title</h2>
-              <Divider className="wide"/>
-              <div className="body1">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
+            <Grid
+                justifyContent="center"
+                className="v-center"
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <Grid item className="v-center" lg={8} md={6} sm={12}>
+                    <h2>
+                        <div className="inline-icon">
+                            <i className="fa-solid fa-chart-simple"></i>
+                        </div>
+                        Title
+                    </h2>
+                    <Divider className="wide" />
+                    <div className="body1">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut
+                            aliquip.
+                        </p>
+                    </div>
+                </Grid>
             </Grid>
-
-          </Grid>
         </section>
-    )
-}
+    );
+};

@@ -8,34 +8,41 @@ import { ColorModeSelector } from '../content/ColorModeSelector';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
 
-interface Props {
-}
+interface Props {}
 
-export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
-
-    const [colorMode, setColorMode] = useState<string>("default");
+export const ButtonGroupsComponent: React.FC<Props> = ({}) => {
+    const [colorMode, setColorMode] = useState<string>('default');
 
     useEffect(() => {
-        console.log("ButtonsStandardComponent mounted");
-    }, [])
+        console.log('ButtonsStandardComponent mounted');
+    }, []);
 
     function barGraphIcon(props?: any) {
         return (
             <div className="inline-icon">
-              <i className="fa-solid fa-chart-simple"></i>
+                <i className="fa-solid fa-chart-simple"></i>
             </div>
-        )
+        );
     }
 
-    const renderButtonGroup = (title: string, orientation: "horizontal" | "vertical", variant: "contained" | "outlined" | "text") => {
+    const renderButtonGroup = (
+        title: string,
+        orientation: 'horizontal' | 'vertical',
+        variant: 'contained' | 'outlined' | 'text'
+    ) => {
         return (
             <div className="row">
                 <div className="col-12">
                     <div className="subtitle1">{title}</div>
                     <div className="buttonDemo">
-                        <ButtonGroup orientation={orientation} variant={variant}>
-                            <Button >No Icon</Button>
-                            <Button startIcon={barGraphIcon()}>Left Icon</Button>
+                        <ButtonGroup
+                            orientation={orientation}
+                            variant={variant}
+                        >
+                            <Button>No Icon</Button>
+                            <Button startIcon={barGraphIcon()}>
+                                Left Icon
+                            </Button>
                             <Button endIcon={barGraphIcon()}>Right Icon</Button>
                             <Button>{barGraphIcon()}</Button>
                         </ButtonGroup>
@@ -43,23 +50,22 @@ export const ButtonGroupsComponent: React.FC<Props> = ({ }) => {
                 </div>
             </div>
         );
-    }
+    };
 
     return (
         <div>
             <HeadingSection heading="Button Groups" title="Desktop" />
             <ExampleSection>
                 <h6>Horizontal Groups</h6>
-                {renderButtonGroup("primary", "horizontal", "contained")}
-                {renderButtonGroup("secondary", "horizontal", "outlined")}
-                {renderButtonGroup("tertiary", "horizontal", "text")}
+                {renderButtonGroup('primary', 'horizontal', 'contained')}
+                {renderButtonGroup('secondary', 'horizontal', 'outlined')}
+                {renderButtonGroup('tertiary', 'horizontal', 'text')}
 
                 <h6>Vertical Groups</h6>
-                {renderButtonGroup("primary", "vertical", "contained")}
-                {renderButtonGroup("secondary", "vertical", "outlined")}
-                {renderButtonGroup("tertiary", "vertical", "text")}
-
+                {renderButtonGroup('primary', 'vertical', 'contained')}
+                {renderButtonGroup('secondary', 'vertical', 'outlined')}
+                {renderButtonGroup('tertiary', 'vertical', 'text')}
             </ExampleSection>
         </div>
-    )
-}
+    );
+};
