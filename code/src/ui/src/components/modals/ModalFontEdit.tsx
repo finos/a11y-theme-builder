@@ -21,8 +21,6 @@ import { HeadingSection } from '../../pages/content/HeadingSection';
 import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
 
-const name = 'ModalFontEdit';
-
 const PRIMARY_PREFIX = 'Primary Font: ';
 const SECONDARY_PREFIX = 'Secondary Font: ';
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -55,7 +55,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                 <div className="colorRow">
                                     {color.light.shades.map((shade, i) => {
                                         if (
-                                            shade.hex.toLowerCase() ==
+                                            shade.hex.toLowerCase() ===
                                             color.hex.getValue()
                                         ) {
                                             console.log(
@@ -101,7 +101,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                 <div className="colorRow">
                                     {color.dark.shades.map((shade, i) => {
                                         if (
-                                            shade.hex.toLowerCase() ==
+                                            shade.hex.toLowerCase() ===
                                             color.hex.getValue()
                                         ) {
                                             console.log('found base color');

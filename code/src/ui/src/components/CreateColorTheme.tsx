@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -88,7 +88,7 @@ export const CreateColorTheme: React.FC<Props> = ({
             colorTheme.icon.setListener(
                 'ColorThemeAtom-iconColor',
                 function (event: Event) {
-                    if (event.type == EventType.ValueChanged) {
+                    if (event.type === EventType.ValueChanged) {
                         console.log(
                             `Notified of default color theme icon color value changing, event: ${event}`
                         );
@@ -132,6 +132,7 @@ export const CreateColorTheme: React.FC<Props> = ({
             if (hexValue) {
                 baseColorsHex.add(hexValue);
             }
+            return color; // returning a value just to get rid of warning
         });
         _setBaseColorsHex(baseColorsHex);
     }, [colorPalette]);

@@ -35,7 +35,7 @@ export const LeftNavItem: React.FC<LeftNavItemProps> = (props) => {
     if (props.indent && props.indent > 1) {
         fontSize = `calc(${1 - props.indent * 0.05} * var(--baseFont))`;
     }
-    const selected = props.value && props.selected == props.value;
+    const selected = props.value && props.selected === props.value;
     return (
         <ListItemButton
             sx={{

@@ -26,7 +26,7 @@ export const MediumImageLeft: React.FC<Props> = ({ className = '' }) => {
                         className="inline-image"
                         style={{ width: '100%', height: 'auto' }}
                     >
-                        <img src="/sample.jpg" />
+                        <img src="/sample.jpg" alt="inline sample"/>
                     </div>
                 </Grid>
                 <Grid item spacing={2} className="v-center" lg={6} sm={12}>

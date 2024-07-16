@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -84,37 +84,37 @@ export const TextEditBox: React.FC<Props> = ({
                             </div>
                         </>
                     )}
-                    {headerNo == 7 && (
+                    {headerNo === 7 && (
                         <h1 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h1>
                     )}
-                    {headerNo == 1 && (
+                    {headerNo === 1 && (
                         <h1 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h1>
                     )}
-                    {headerNo == 2 && (
+                    {headerNo === 2 && (
                         <h2 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h2>
                     )}
-                    {headerNo == 3 && (
+                    {headerNo === 3 && (
                         <h3 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h3>
                     )}
-                    {headerNo == 4 && (
+                    {headerNo === 4 && (
                         <h4 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h4>
                     )}
-                    {headerNo == 5 && (
+                    {headerNo === 5 && (
                         <h5 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h5>
                     )}
-                    {headerNo == 6 && (
+                    {headerNo === 6 && (
                         <h6 ref={sampleRef} style={sampleStyle}>
                             {typographyStyling.name}
                         </h6>

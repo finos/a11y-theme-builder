@@ -32,12 +32,12 @@ const ModalSystemName: React.FC<Props> = ({
 
     const handleSubmit = async () => {
         if (cmd) {
-            if (cmd == 'copy' || cmd == 'rename') {
+            if (cmd === 'copy' || cmd === 'rename') {
                 console.log(
                     cmd + ' Design System ' + source + ' to ' + systemName
                 );
                 await onClose(cmd, systemName);
-            } else if (cmd == 'import') {
+            } else if (cmd === 'import') {
                 console.log(cmd + ' Design System as ' + systemName);
                 if (fileName || fileContent) {
                     await onClose(cmd, systemName, fileContent);
@@ -119,7 +119,7 @@ const ModalSystemName: React.FC<Props> = ({
                                 }}
                                 onChange={(e) => setSystemName(e.target.value)}
                             />
-                            {cmd == 'import' && (
+                            {cmd === 'import' && (
                                 <div className="top40">
                                     Copy & paste design system data <br />
                                     <span style={{ paddingLeft: '20px' }}>

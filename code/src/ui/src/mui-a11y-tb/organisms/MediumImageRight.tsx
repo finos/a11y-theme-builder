@@ -38,7 +38,7 @@ export const MediumImageRight: React.FC<Props> = ({ className = '' }) => {
                         className="inline-image"
                         style={{ width: '100%', height: 'auto' }}
                     >
-                        <img src="/sample.jpg" />
+                        <img src="/sample.jpg" alt="inline sample"/>
                     </div>
                 </Grid>
             </Grid>

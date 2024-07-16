@@ -1,8 +1,8 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { MouseEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Alert,
     Box,
@@ -14,9 +14,7 @@ import {
 import {
     Event,
     EventType,
-    PropertyColorShade,
     PropertyTitledShade,
-    Shade,
     TitledShade,
 } from '@finos/a11y-theme-builder-sdk';
 import { ColorShade } from './ColorShade';

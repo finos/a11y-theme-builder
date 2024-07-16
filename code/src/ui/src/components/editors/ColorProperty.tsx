@@ -1,12 +1,12 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
-import { Property, StateSetting } from '@finos/a11y-theme-builder-sdk';
+import { StateSetting } from '@finos/a11y-theme-builder-sdk';
 import { ColorSwatch } from '../ColorSwatch';
-import { ChromePicker, ColorResult } from 'react-color';
+import { ChromePicker } from 'react-color';
 
 export interface ColorProps {
     property: StateSetting;

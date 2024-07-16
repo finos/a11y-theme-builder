@@ -1,11 +1,9 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import { Grid, Button } from '@mui/material';
+import { Grid } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
-import { DesignSystem, TypographyStyling } from '@finos/a11y-theme-builder-sdk';
-import ModalFontEdit from './modals/ModalFontEdit';
 
 const sampleBody = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna 
@@ -64,37 +62,37 @@ export const TextEditBox: React.FC<Props> = ({
                             </div>
                         </>
                     )}
-                    {headerNo == 7 && (
+                    {headerNo === 7 && (
                         <h1 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h1>
                     )}
-                    {headerNo == 1 && (
+                    {headerNo === 1 && (
                         <h1 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h1>
                     )}
-                    {headerNo == 2 && (
+                    {headerNo === 2 && (
                         <h2 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h2>
                     )}
-                    {headerNo == 3 && (
+                    {headerNo === 3 && (
                         <h3 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h3>
                     )}
-                    {headerNo == 4 && (
+                    {headerNo === 4 && (
                         <h4 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h4>
                     )}
-                    {headerNo == 5 && (
+                    {headerNo === 5 && (
                         <h5 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h5>
                     )}
-                    {headerNo == 6 && (
+                    {headerNo === 6 && (
                         <h6 ref={sampleRef} style={sampleStyle}>
                             {sampleTitle}
                         </h6>

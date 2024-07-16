@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -26,13 +26,13 @@ export const NavSwitch: React.FC<Props> = ({
     onChange,
 }) => {
     const handleOnChange = (event: any) => {
-        const value = event.target.value;
+        //const value = event.target.value;
         if (onChange) {
             onChange();
         }
     };
 
-    const sz = size || 1.5;
+    //const sz = size || 1.5;
     const MySwitch = styled(Switch)(({ theme }) => ({
         padding: 0,
         display: 'flex',
