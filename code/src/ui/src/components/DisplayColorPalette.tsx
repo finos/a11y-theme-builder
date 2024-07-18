@@ -31,7 +31,18 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
         _setAnchorEl(event.currentTarget);
     };
 
-    const handleMenuButtonClose = () => {
+    const handleMenuButtonClose = (event: any) => {
+        // colorPalette.removeColor(colorName);
+        _setAnchorEl(null);
+    };
+    const handleMenuButtonDeleteColor = (colorName : string) => {
+        if(colorPalette.getColors().length>=2){
+
+            console.log(colorPalette.removeColor(colorName),`deleting color ${colorName}`);
+        }
+        else{
+            console.log("this is the only color you have cannot delete it");
+        }
         _setAnchorEl(null);
     };
     const handleShowDetailsChange = (event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
@@ -108,7 +119,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                                 >
                                                     <MenuItem sx={{ minWidth: 400 }} onClick={handleMenuButtonClose}>Edit {color.name} Base Color</MenuItem>
                                                     <MenuItem onClick={handleRenameBaseColor}>Rename Base Color</MenuItem>
-                                                    <MenuItem onClick={handleMenuButtonClose}>Delete {color.name} (all shades, light and dark)</MenuItem>
+                                                    <MenuItem onClick={()=>handleMenuButtonDeleteColor (color.name)}>Delete {color.name} (all shades, light and dark)</MenuItem>
                                                 </Menu>
                                             </div>
                                         </div>
