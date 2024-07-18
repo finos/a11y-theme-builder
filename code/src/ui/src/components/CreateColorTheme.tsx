@@ -208,7 +208,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
                           <Button onClick={() => {handleShowTheme();}} disabled={!_themeInitialized}>Show Theme</Button>
                       </div>
                   </div>
-                <GeneratedCodeSection item={atom} />
+                {/* <GeneratedCodeSection item={atom} /> */}
               </Grid>
             </Grid>
               <ModalConfirmation isOpen={_openConfirmation} onClose={handleConfirmation} title="Theme Initialized">

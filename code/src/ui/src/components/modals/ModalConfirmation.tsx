@@ -10,10 +10,11 @@ interface Props {
     title?: string;
     isOpen: any;
     onClose: (confirmed: boolean) => void;
+    cancelButton?: Boolean;
     children?: React.ReactNode;
 }
 
-const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose, children }) => {
+const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButton, children }) => {
 
     const handleSubmit = () => {
         onClose(true);
@@ -36,8 +37,8 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose, children }
                         {children}
                     </div>
                     <div className="modal-footer" style={{ display: "flex", gap:"var(--spacing-2)" }}>
-                        <Button onClick={handleSubmit}>OK</Button>
-                        <Button className="MuiButton-outlined" onClick={handleCancel}>Cancel</Button>
+                        <Button onClick={handleSubmit}>Okay</Button>
+                        {cancelButton &&<Button className="MuiButton-outlined" onClick={handleCancel}>Cancel</Button>}
                     </div>
                 </div>
             </div>

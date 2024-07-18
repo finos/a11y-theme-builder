@@ -12,6 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { ColorPaletteSummary } from '../pages/content/ColorPaletteSummary';
 import { grey } from "@mui/material/colors";
+import  ModalConfirmation  from './modals/ModalConfirmation';
 
 interface Props {
     colorPalette: ColorPalette;
@@ -25,6 +26,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
     const [_showDetails, _setShowDetails] = useState<boolean>(false);
     const [_expandPalette, _setExpandPalette] = useState<boolean>(false);
     const [_anchorEl, _setAnchorEl] = useState<null | HTMLElement>(null);
+    const [_deleteColorConfirmationModalIsOpen, _setDeleteColorConfirmationModalIsOpen] = useState<boolean>(false);
     const openMenu = Boolean(_anchorEl);
 
     const handleMenuButtonClick = (event: any) => {
@@ -37,7 +39,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
     };
     const handleMenuButtonDeleteColor = (colorName : string) => {
         if(colorPalette.getColors().length>=2){
-
+            _setDeleteColorConfirmationModalIsOpen(true);
             console.log(colorPalette.removeColor(colorName),`deleting color ${colorName}`);
         }
         else{
@@ -81,10 +83,11 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 <Switch id="showPaletteDetails" checked={_showDetails} onChange={handleShowDetailsChange} />
                             </div>
                             <div className="top40"></div>
-
+                            <h4>Light Mode Colors:</h4>
                             {colorPalette.getColors().map((color, i) => {
                                 return (
                                     <div key={color.name}>
+                                        <ModalConfirmation  title={`${color.name} Color Deleted`} isOpen={_deleteColorConfirmationModalIsOpen} onClose={()=>_setDeleteColorConfirmationModalIsOpen(false)} >The {color.name} Color has been deleted</ModalConfirmation>
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "8px", paddingTop: "4px" }}>
                                             <div className="subtitle1" style={{ fontSize: "24px" }}>{color.name}</div>
                                             <div style={{ borderRadius: "4px" }}>  
@@ -119,7 +122,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                                 >
                                                     <MenuItem sx={{ minWidth: 400 }} onClick={handleMenuButtonClose}>Edit {color.name} Base Color</MenuItem>
                                                     <MenuItem onClick={handleRenameBaseColor}>Rename Base Color</MenuItem>
-                                                    <MenuItem onClick={()=>handleMenuButtonDeleteColor (color.name)}>Delete {color.name} (all shades, light and dark)</MenuItem>
+                                                    <MenuItem onClick={()=>handleMenuButtonDeleteColor (color.name)}>Delete {color.name} Color (all shades, light and dark)</MenuItem>
                                                 </Menu>
                                             </div>
                                         </div>
@@ -140,7 +143,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                 );
                             })}
 
-
+                            <h4>Dark Mode Colors:</h4>
                             {colorPalette.getColors().map((color, i) => {
                                 //console.log("comment=",comment)
                                 return (
@@ -167,7 +170,6 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                         </div>
                     </AccordionDetails>
                 </Accordion>
-
             </div>
         )
     }

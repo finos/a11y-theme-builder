@@ -203,7 +203,7 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
             >
 
 
-                <Button variant="outlined" color="primary" onClick={() => { }} style={{ marginRight: '8px' }}>
+                <Button variant="outlined" color="primary" onClick={() => {changeTab("BuildColorPalette") }} style={{ marginRight: '8px' }}>
                     BACK
                 </Button>
                 <Button variant="contained" color="secondary" onClick={() => { }}>
