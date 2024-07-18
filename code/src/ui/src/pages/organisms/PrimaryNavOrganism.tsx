@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
 import React, { useState } from 'react';
 import { PrimaryNav } from '@finos/a11y-theme-builder-sdk';
 import { NumberSelectable } from '../../components/editors/NumberSelectable';
