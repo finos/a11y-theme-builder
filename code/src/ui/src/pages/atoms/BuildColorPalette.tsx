@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
+import { Alert, Button, InputLabel, TextField, Grid, Checkbox } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
@@ -14,6 +14,8 @@ import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
 import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
+import { BottomStrip } from '../../components/BottomStrip'
+
 
 interface Props {
     atom: ColorPalette;
@@ -21,9 +23,9 @@ interface Props {
     changeTab(newTabIndex: string): void;
 }
 
-export const BuildColorPalette: React.FC<Props> = ({atom, defaultColor, changeTab}) => {
+export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeTab }) => {
 
-    const [_defaultColor, _setDefaultColor] =  useState<string>("#ffffff");
+    const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
     const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
     const [_colorName, _setColorName] = useState("");
@@ -32,6 +34,11 @@ export const BuildColorPalette: React.FC<Props> = ({atom, defaultColor, changeTa
     const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] = useState<boolean>(false)
     const [_addColorError, _setAddColorError] = useState<boolean>(false)
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
+    const [_chromaLevelCheck, _setChromaLevelCheck] = useState<boolean>(true);
+    const [_lightModeMaxChroma, _setLightModeMaxChroma] = useState("80");
+    const [_darkModeMaxChroma, _setDarkModeMaxChroma] = useState("40");
+    const [_addDarkModeMaxChromaErrorTriggered, _setAddDarkModeMaxChromaErrorTriggered ]= useState<boolean> (false);
+    const [_addLightModeMaxChromaErrorTriggered, _setAddLightModeMaxChromaErrorTriggered ]= useState<boolean> (false);
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -120,83 +127,120 @@ export const BuildColorPalette: React.FC<Props> = ({atom, defaultColor, changeTa
         }
     }
 
+    const handleLightModeMaxChromaChange =(event:any)=>{
+        const value =event.target.value;
+        if ((/^\d+$/.test(value) && parseInt(value) >= 1 && parseInt(value) <= 100)) {
+            _setLightModeMaxChroma(value);
+        }else{
+            _setAddLightModeMaxChromaErrorTriggered(!_setAddLightModeMaxChromaErrorTriggered);
+        }
+
+    }
+
+    const handleDarkModeMaxChromaChange =(event:any)=>{
+        const value =event.target.value;
+        if (/^\d+$/.test(value) && parseInt(value) >= 0 && parseInt(value) <= 100 ) {
+            _setDarkModeMaxChroma(value);
+        }else{
+            _setAddDarkModeMaxChromaErrorTriggered(!_setAddDarkModeMaxChromaErrorTriggered);
+        }
+
+
+    }
+
     return (
         <div className="container color-palette-right-content">
-            <HeadingSection  heading="Build Theme/s">
-            <ProgressBarSection activeStep={1} ></ProgressBarSection>
+            <HeadingSection heading="Build Theme/s">
+                <ProgressBarSection activeStep={1} ></ProgressBarSection>
             </HeadingSection>
-            <HeadingSection  heading="Step 2. Build Color Palette">
+            <HeadingSection heading="Step 2. Build Color Palette">
             </HeadingSection>
-            
-            
-            <div style={{display:"flex",flexDirection:"row", gap:"var(--spacing-3)", paddingLeft:"32px",flexWrap:"wrap"}}>
-                <div style={{display:"flex",flexDirection:"column", gap:"var(--spacing-3)",flexWrap:"wrap"}}>
-                      <div className="input-col">
-                            <InputLabel htmlFor='colorName'>Color Name</InputLabel>
-                            <TextField
-                                id='colorName'
-                                error={_addColorErrorTriggered}
-                                onChange={handleColorChange}
-                                onBlur={handleColorNameBlur}
-                                helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
-                                value={_colorName}
-                            />
-                        </div>
-                        <div className="input-col">
-                            <InputLabel htmlFor='lightModeMaxChroma'>Light Mode Max Chroma:</InputLabel>
-                            <TextField
-                                id='lightModeMaxChroma'
-                                error={_addColorErrorTriggered}
-                                onChange={handleColorChange}
-                                onBlur={handleColorNameBlur}
-                                helperText="Recommend between 70-85"
-                                value={_colorName}
-                            />
-                        </div>
-                        <div className="input-col">
-                            <InputLabel htmlFor='darkModeMaxChroma'>Dark Mode Max Chroma</InputLabel>
-                            <TextField
-                                id='darkModeMaxChroma'
-                                error={_addColorErrorTriggered}
-                                onChange={handleColorChange}
-                                onBlur={handleColorNameBlur}
-                                helperText="Recommend between 30-60"
-                                value={_colorName}
-                            />
-                        </div>
-                </div>
-                        <div className="input-col hexValue">
-                            <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
-                            <TextField
-                                id='hexValue'
-                                error={_addColorInputErrorTriggered}
-                                onChange={handleColorValueInputChange}
-                                helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
-                                value={_blockPickerColor}
-                                sx={{
-                                    backgroundColor: `${_blockPickerColor}`,
-                                    input: {
-                                        color: `${_blockPickerOnColor}`
-                                    }
-                                }}
-                            />
-                            <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
-                        </div>
 
-                        <div className="input-col">
-                            <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
-                            {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
+
+            <div style={{ display: "flex", flexDirection: "row", gap: "var(--spacing-3)", paddingLeft: "32px", flexWrap: "wrap" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-3)", flexWrap: "wrap" }}>
+                    <div className="input-col">
+                        <InputLabel htmlFor='colorName'>Color Name</InputLabel>
+                        <TextField
+                            id='colorName'
+                            error={_addColorErrorTriggered}
+                            onChange={handleColorChange}
+                            onBlur={handleColorNameBlur}
+                            helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
+                            value={_colorName}
+                        />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'top' }}>
+                        <Checkbox
+                            checked={_chromaLevelCheck}
+                            onChange={() => {
+                                console.log("hello",_setChromaLevelCheck);
+                                return _setChromaLevelCheck(!_chromaLevelCheck)}}
+                            size='small'
+                        />
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <p style={{ fontSize: '12px', fontWeight: '700', margin: '0px', padding: '0px',paddingTop:'8px', paddingBottom: '0px' }}>
+                                Set a max Chroma level.
+                            </p>
+                            <p style={{ fontSize: '12px', fontWeight: '700', margin: '0px', padding: '0px', paddingBottom: '0px' }}>
+                                Learn more about Chroma
+                            </p>
                         </div>
                     </div>
-                    
-            
-                <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
-                  
-              
-              
 
 
-            
+
+                    {_chromaLevelCheck && <div className="input-col">
+                        <InputLabel htmlFor='lightModeMaxChroma'>Light Mode Max Chroma:</InputLabel>
+                        <TextField
+                            id='lightModeMaxChroma'
+                            error={_addColorErrorTriggered}
+                            onChange={handleLightModeMaxChromaChange}
+                            // onBlur={handleColorNameBlur}
+                            helperText="Recommend between 70-85"
+                            value={_lightModeMaxChroma}
+                        />
+                    </div>
+                    }
+                    {_chromaLevelCheck&&<div className="input-col">
+                        <InputLabel htmlFor='darkModeMaxChroma'>Dark Mode Max Chroma</InputLabel>
+                        <TextField
+                            id='darkModeMaxChroma'
+                            error={_addColorErrorTriggered}
+                            onChange={handleDarkModeMaxChromaChange}
+                            // onBlur={handleColorNameBlur}
+                            helperText="Recommend between 30-60"
+                            value={_darkModeMaxChroma}
+                        />
+                    </div>}
+                </div>
+                <div className="input-col hexValue">
+                    <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
+                    <TextField
+                        id='hexValue'
+                        error={_addColorInputErrorTriggered}
+                        onChange={handleColorValueInputChange}
+                        helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
+                        value={_blockPickerColor}
+                        sx={{
+                            backgroundColor: `${_blockPickerColor}`,
+                            input: {
+                                color: `${_blockPickerOnColor}`
+                            }
+                        }}
+                    />
+                    <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
+                </div>
+
+                <div className="input-col">
+                    <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
+                    {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
+                </div>
+            </div>
+
+
+            <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
+            <BottomStrip onBack={()=>{}} onSave={()=>{}} onSaveAndContinue={()=>{}}></BottomStrip>
         </div>
     )
 }

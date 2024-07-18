@@ -33,6 +33,7 @@ import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
 import { CoreSettings } from '../../atoms/CoreSettings';
 import {BuildColorPalette} from '../../atoms/BuildColorPalette';
+import { LightAndDarkModes } from '../../atoms/LightAndDarkModes';
 
 // DEMO:    Import your atom
 import { ExampleAtom } from '../../atoms/ExampleAtom';
@@ -178,7 +179,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         }}
                     >
                         <LeftNavHeader>Introduction</LeftNavHeader>
-                        <LeftNavItem text={"Atoms"} value="atoms" indent={1} selected={showAtom} onClick={()=> {setShowAtom("atoms")}}/>
+                        <LeftNavItem text={"Atoms"} value="atoms" indent={1} selected={showAtom} onClick={()=> {
+                            console.log("default theme",designSystem.atoms);
+                            return setShowAtom("atoms")}}/>
                         <LeftNavHeader>Atomic Settings</LeftNavHeader>
 
                         <LeftNavItem text={"Build Theme"} indent={1} onClick={()=>setDisplayBuildTheme(!displayBuildTheme)}>
@@ -202,10 +205,10 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         />
                         <LeftNavItem
                             selected={showAtom}
-                            value={'CoreSettings'}
+                            value={'LightAndDarkModes'}
                             text={'Step 3 Light and Dark Modes'}
                             indent={2}                        
-                            onClick={()=> {setShowAtom('CoreSettings')}}
+                            onClick={()=> {setShowAtom('LightAndDarkModes')}}
                         />
                             </List>
                         </Collapse>
@@ -277,6 +280,11 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showAtom === 'BuildColorPalette' && (
                         <ErrorHandler>
                             <BuildColorPalette atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom}/>
+                        </ErrorHandler>
+                    )}
+                    {showAtom === 'LightAndDarkModes' && (
+                        <ErrorHandler>
+                            <LightAndDarkModes atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" colorThemes={designSystem.atoms.colorThemes} changeTab={setShowAtom}/>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.colorThemes.value && (

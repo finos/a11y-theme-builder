@@ -3,9 +3,9 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
+import { Alert, Button, InputLabel, TextField, Grid, Checkbox, Tabs, Tab } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
+import { Color, ColorPalette, ColorThemes, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';
@@ -14,16 +14,48 @@ import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
 import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
-import { BottomStrip } from '../../components/BottomStrip'
+import { ColorThemeAtom } from './ColorThemeAtom';
 
 interface Props {
     atom: ColorPalette;
+    colorThemes: ColorThemes;
     defaultColor?: string;
     changeTab(newTabIndex: string): void;
 }
+interface TabPanelProps {
+    children?: React.ReactNode;
+    index: number;
+    value: number;
+  }
+function TabPanel(props: TabPanelProps) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <div style={{ padding: '16px' }}>
+            <p>{children}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
 
-export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab }) => {
-    const [systemName, setSystemName] = useState('');
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+    };
+  }
+  
+export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultColor, changeTab }) => {
+
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
     const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
@@ -33,6 +65,8 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
     const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] = useState<boolean>(false)
     const [_addColorError, _setAddColorError] = useState<boolean>(false)
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
+    const [_chromaLevelCheck, _setChromaLevelCheck] = useState<boolean>(true);
+    const [_tabNumber,_setTabNumber]= useState<number>(0);
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -122,67 +156,35 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
     }
 
     return (
-        <div className="container color-palette-right-content" style={{ display: "flex", flexDirection: "column" }}>
+        <div className="container color-palette-right-content">
             <HeadingSection heading="Build Theme/s">
-                <ProgressBarSection activeStep={0} ></ProgressBarSection>
+                <ProgressBarSection activeStep={2} ></ProgressBarSection>
             </HeadingSection>
-            <HeadingSection heading="Step 1. Core Settings">
-                <p>These setting  lay the foundation for the rest of your Design System.</p>
+            <HeadingSection heading="Step 3. Light And Dark Modes">
             </HeadingSection>
 
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-3)", paddingLeft: "32px", flexWrap: "wrap" }}>
-                <div className="input-col">
-                    <InputLabel htmlFor='designSystemName'>Design System Name</InputLabel>
-                    <TextField
-                        type="text"
-                        id='new-name'
-                        placeholder='Enter design system name'
-                        // className='input-1'
-                        required
-                        value={systemName}
-                        sx={{ pb: 2 }}
-                        // style={{
-                        //     width: "100%",
-                        //     boxSizing: "border-box",
-                        // }}
-                        onChange={(e) => setSystemName(e.target.value)}
-                    />
-                    <InputLabel htmlFor='darkTextColor'>Dark Text Color</InputLabel>
-                    <TextField
-                        id='darkTextColor'
-                        error={_addColorErrorTriggered}
-                        onChange={handleColorChange}
-                        helperText={_addColorErrorTriggered ? "Please provide a name for your Design System" : ""}
-                        value={_colorName}
-                        defaultValue='#121212'
-                        sx={{ pb: 2 }}
-                    />
-                    <InputLabel htmlFor='lightTextColor'>Light Text Color</InputLabel>
-                    <div>
-                        <TextField
-                            id='lightTextColor'
-                            error={_addColorErrorTriggered}
-                            onChange={handleColorChange}
-                            helperText="we recommend pure white"
-                            value={_colorName}
-                            defaultValue='#121212'
-                        />
-                    </div>
-                    <InputLabel htmlFor='darkModeLightTextOpacity'>Dark Mode Light Text Opacity</InputLabel>
-                    <div>
-                        <TextField
-                            id='darkModeLightTextOpacity'
-                            error={_addColorErrorTriggered}
-                            onChange={handleColorChange}
-                            helperText="We recommend a number between .6 and .7"
-                            value={_colorName}
-                            defaultValue='.6'
-                        />
-                    </div>
+            <div style={{ paddingLeft:"36px" ,width: '100%' }}>
+                <div >
+                    <Tabs value={_tabNumber} onChange={(event,value)=>{_setTabNumber(value)}} aria-label="WCAG tabs">
+                        <Tab label="WCAG AA" {...a11yProps(0)} />
+                        <Tab label="WCAG AAA" {...a11yProps(1)} />
+                    </Tabs>
                 </div>
-
+                <TabPanel value={_tabNumber} index={0}>
+                    <ColorThemeAtom atom={colorThemes} colorPalette={atom} ></ColorThemeAtom>
+                </TabPanel>
+                <TabPanel value={_tabNumber} index={1}>
+                    Content for WCAG AAA
+                </TabPanel>
             </div>
+
+
+
+
+
+
+            
             <div
                 style={{
                     position: 'sticky',
@@ -201,20 +203,17 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
             >
 
 
-                <Button variant="outlined" color="primary" onClick={() => {
-                    console.log("Creating new Design System:", systemName);
-                    // TODO: Check for name already exist
-                    window.location.href = `/designSystem/${systemName}`;
-                }} style={{ marginRight: '8px' }}>
-                    Save
+                <Button variant="outlined" color="primary" onClick={() => { }} style={{ marginRight: '8px' }}>
+                    BACK
                 </Button>
                 <Button variant="contained" color="secondary" onClick={() => { }}>
-                    SAVE & CONTINUE
+                    SAVE
                 </Button>
 
             </div>
 
 
-        </div >
+
+        </div>
     )
 }
