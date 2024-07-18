@@ -240,7 +240,8 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
 
 
             <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
-            <BottomStrip onBack={()=>{}} onSave={()=>{}} onSaveAndContinue={()=>{}}></BottomStrip>
+            <BottomStrip onBack={()=>{changeTab("CoreSettings")}} onSave={()=>{}} onSaveAndContinue={()=>{
+                console.log("hello"); changeTab("LightAndDarkModes")}}></BottomStrip>
         </div>
     )
 }

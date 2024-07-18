@@ -5,7 +5,7 @@
 import React from 'react';
 import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
+import { Color, ColorPalette, DesignSystem, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';
@@ -17,13 +17,13 @@ import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
 import { BottomStrip } from '../../components/BottomStrip'
 
 interface Props {
-    atom: ColorPalette;
+    atom: DesignSystem;
     defaultColor?: string;
     changeTab(newTabIndex: string): void;
 }
 
 export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab }) => {
-    const [systemName, setSystemName] = useState('');
+    const [systemName, setSystemName] = useState(atom.key);
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
     const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
@@ -35,11 +35,7 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
 
     useEffect(() => {
-        if (defaultColor && defaultColor.length > 0) {
-            _setDefaultColor(defaultColor);
-            reflectColorPickerChangeInUI(defaultColor);
-        }
-        _setColors(atom.getColors());
+       
     }, [])
 
     const resetUI = () => {
@@ -62,30 +58,7 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
         }
     }
 
-    const handleAddColor = (event: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(`add color name: ${_colorName} hex value: ${_blockPickerColor}`);
-        if (_colorName === "") {
-            _setAddColorErrorTriggered(true);
-            return;
-        }
-        //TODO: we need to switch this to use a listener (from the SDK)
-        //  to handle changes to the color palette rather than the
-        //  _colors state.
-        try {
-            const newColor = atom.addColor(_colorName, _blockPickerColor);
-            _setAddColorError(false);
-            console.log(`created new color: `, newColor); //${JSON.stringify(newColor)}`);
-            console.log(`resulting color palette:`, atom.getColors()); // ${JSON.stringify(designSystem.atoms.colorPalette.getColors())}`);
-            const colors = _colors;
-            colors.push(newColor);
-            _setColors(colors);
-            // reset the color input field
-            resetUI();
-        } catch (error: any) {
-            _setAddColorErrorMessage(`${error.message}`);
-            _setAddColorError(true);
-        }
-    }
+
 
     const handleColorNameBlur = (event: FocusEvent<HTMLInputElement>) => {
         if (event.target.value === "") {
@@ -137,7 +110,7 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                     <TextField
                         type="text"
                         id='new-name'
-                        placeholder='Enter design system name'
+                        placeholder={atom.key}
                         // className='input-1'
                         required
                         value={systemName}
@@ -151,6 +124,7 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                     <InputLabel htmlFor='darkTextColor'>Dark Text Color</InputLabel>
                     <TextField
                         id='darkTextColor'
+                        placeholder='#121212'
                         error={_addColorErrorTriggered}
                         onChange={handleColorChange}
                         helperText={_addColorErrorTriggered ? "Please provide a name for your Design System" : ""}
@@ -162,17 +136,19 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                     <div>
                         <TextField
                             id='lightTextColor'
+                            placeholder='#FFFFFF'
                             error={_addColorErrorTriggered}
                             onChange={handleColorChange}
                             helperText="we recommend pure white"
                             value={_colorName}
-                            defaultValue='#121212'
+                            defaultValue='#FFFFFF'
                         />
                     </div>
                     <InputLabel htmlFor='darkModeLightTextOpacity'>Dark Mode Light Text Opacity</InputLabel>
                     <div>
                         <TextField
                             id='darkModeLightTextOpacity'
+                            placeholder='.6'
                             error={_addColorErrorTriggered}
                             onChange={handleColorChange}
                             helperText="We recommend a number between .6 and .7"
@@ -203,12 +179,23 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
 
                 <Button variant="outlined" color="primary" onClick={() => {
                     console.log("Creating new Design System:", systemName);
-                    // TODO: Check for name already exist
-                    window.location.href = `/designSystem/${systemName}`;
+                    // TODO: Check for if name already exist
+                    console.log(atom);
+                    // changeTab("CoreSettings")
+                    // window.location.href = `/designSystem/${systemName}`;
                 }} style={{ marginRight: '8px' }}>
                     Save
                 </Button>
-                <Button variant="contained" color="secondary" onClick={() => { }}>
+                <Button variant="contained" color="secondary" onClick={() => {
+                    console.log("Creating new Design System:", systemName);
+                    // TODO: Check for if name already exist
+                    const handleAsyncOperation = async () => {
+                        changeTab("BuildColorPalette");
+                        window.location.href = `/designSystem/${systemName}`;
+                        // The line above will navigate away from the current page, so the line below may not execute
+                      };
+                      handleAsyncOperation();
+                }}>
                     SAVE & CONTINUE
                 </Button>
 

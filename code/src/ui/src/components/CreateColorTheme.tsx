@@ -119,7 +119,6 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
 
             <Grid container spacing={2} columns={12} margin={2}>
               <Grid item spacing={2} lg={12} md={12} sm={12}>
-                <SettingsSection>
                   <div className="container">
                       <div className="row">
                           <div className="col-12">
@@ -209,7 +208,6 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
                           <Button onClick={() => {handleShowTheme();}} disabled={!_themeInitialized}>Show Theme</Button>
                       </div>
                   </div>
-                  </SettingsSection>
                 <GeneratedCodeSection item={atom} />
               </Grid>
             </Grid>
