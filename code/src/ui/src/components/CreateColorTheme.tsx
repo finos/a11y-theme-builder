@@ -130,6 +130,7 @@ export const CreateColorTheme: React.FC<Props> = ({atom,colorPalette, handleDefa
                                       <ColorSelect value={_colorTheme.tertiary} baseColorHex={_baseColorsHex} label="Tertiary"></ColorSelect>
                                   </div>
                               </div>
+                              <div className="subtitle1">Advanced Settings</div>
                               <div className="formRow">
                                   <div className="subtitle1">Light Mode Backgrounds</div>
                                   <div className="form-columns top16">
