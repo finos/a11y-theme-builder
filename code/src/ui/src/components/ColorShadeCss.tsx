@@ -1,9 +1,9 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Shade, Util } from '@finos/a11y-theme-builder-sdk';
+import { Util } from '@finos/a11y-theme-builder-sdk';
 import './ColorShade.css';
 import { getCssValue } from '../mui-a11y-tb/themes/Theme';
 
@@ -69,7 +69,6 @@ export const ColorShadeCss: React.FC<Props> = ({
     showDetails,
     isBaseColor,
 }) => {
-    const [_shade, _setShade] = useState<Shade>();
     let base = name + '-' + id;
     const background = lm ? `--${base}` : `--dm-${base}`;
     const color = lm ? `--on-${base}` : `--dm-on-${base}`;

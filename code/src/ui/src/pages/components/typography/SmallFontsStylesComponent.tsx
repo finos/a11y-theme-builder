@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -23,7 +23,6 @@ const callToActionCssPrefix = 'CTA';
 const callToActionSmallCssPrefix = 'CTA-Small';
 const smallCssPrefix = 'small';
 const smallSemiboldCssPrefix = 'small-semibold';
-const statCssPrefix = 'stat';
 
 interface Props {}
 

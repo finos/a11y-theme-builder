@@ -1,9 +1,8 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useEffect, useState } from 'react';
-import { InputLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import React, { useState } from 'react';
 import { DesignSystem, Hero } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
@@ -12,7 +11,6 @@ import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
 import { SettingsSection } from '../content/SettingsSection';
 import { HeadingSection } from '../content/HeadingSection';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 interface Props {
     organism: Hero;
     designSystem: DesignSystem;
@@ -20,7 +18,6 @@ interface Props {
 
 export const HeroOrganism: React.FC<Props> = ({ organism, designSystem }) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
-    const [colorMode, setColorMode] = useState<string>('default');
 
     return (
         <div>

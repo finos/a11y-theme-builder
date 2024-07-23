@@ -1,4 +1,4 @@
-/*
+/**
  * SPDX-License-Identifier: Apache-2.0
  * Copyright 2024 FINOS A11y Theme Builder contributors - see NOTICE file
  */
@@ -13,12 +13,7 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import { SettingsSection } from '../content/SettingsSection';
-import { ListComponent } from './ListComponent';
 import {
-    Divider,
-    Grid,
     ImageList,
     ImageListItem,
     ImageListItemBar,
@@ -126,9 +121,7 @@ export const ImagesList: React.FC<Props> = () => {
         </div>
     );
 };
-{
-    /* START of borrowed code 3 */
-}
+{ /* START of borrowed code 3 */ } // eslint-disable-line no-lone-blocks
 const itemData = [
     {
         img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
@@ -202,6 +195,4 @@ const itemData = [
         cols: 2,
     },
 ];
-{
-    /* END of borrowed code 3 */
-}
+{ /* END of borrowed code 3 */ }  // eslint-disable-line no-lone-blocks

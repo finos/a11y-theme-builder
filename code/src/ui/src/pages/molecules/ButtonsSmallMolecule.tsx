@@ -1,11 +1,10 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { SmallButtons, DesignSystem } from '@finos/a11y-theme-builder-sdk';
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringSelectable } from '../../components/editors/StringSelectable';
 import { ExampleSection } from '../content/ExampleSection';

@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -7,9 +7,6 @@ import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import {
     Select,
     SelectChangeEvent,
-    InputLabel,
-    FormControl,
-    FormControlLabel,
     Button,
     Snackbar,
     Alert,
@@ -32,7 +29,6 @@ export const DesignSystemTitleBar: React.FC<Props> = ({
     designSystem,
 }) => {
     // list of names of design systems in ThemeBuilder
-    const [_designSystemsList, _setDesignSystemsList] = useState<string[]>([]);
     const [systemNameIsOpen, setSystemNameIsOpen] = useState(false);
 
     const [showToast, setShowToast] = useState(false);
@@ -74,7 +70,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({
         const value = event.target.value;
         console.log(`${name} - Changed by UI to ${value}`);
 
-        if (value == createNewDesignSystem) {
+        if (value === createNewDesignSystem) {
             setSystemNameIsOpen(true);
         } else {
             setTimeout(function () {

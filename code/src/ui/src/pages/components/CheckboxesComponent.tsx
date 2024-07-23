@@ -1,24 +1,21 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Checkbox,
     FormControl,
     FormControlLabel,
     FormGroup,
     FormHelperText,
-    FormLabel,
 } from '@mui/material';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 
 interface Props {}
 
-export const CheckboxesComponent: React.FC<Props> = ({}) => {
-    const [colorMode, setColorMode] = useState<string>('default');
+export const CheckboxesComponent: React.FC<Props> = () => {
 
     return (
         <div>
