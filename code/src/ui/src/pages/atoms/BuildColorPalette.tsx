@@ -3,9 +3,9 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid, Checkbox } from '@mui/material';
+import { Alert, Button, InputLabel, TextField, Grid, Checkbox, Link } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
-import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
+import { Atom, Color, ColorPalette, DesignSystem, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';
@@ -14,17 +14,20 @@ import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
 import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
-import { BottomStrip } from '../../components/BottomStrip'
+import { BottomStrip } from '../../components/BottomStrip';
+import { Preferences } from '../../Preferences';
+
 
 
 interface Props {
     atom: ColorPalette;
     defaultColor?: string;
     changeTab(newTabIndex: string): void;
+    saveDesignSystem(): void;
 }
 
-export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeTab }) => {
-
+export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeTab,saveDesignSystem }) => {
+    const pref = new Preferences(atom.getDesignSystem().key);
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
     const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
@@ -129,7 +132,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
 
     const handleLightModeMaxChromaChange =(event:any)=>{
         const value =event.target.value;
-        if ((/^\d+$/.test(value) && parseInt(value) >= 1 && parseInt(value) <= 100)) {
+        if (value===""||(/^\d+$/.test(value) && parseInt(value) >= 0 && parseInt(value) <= 100)) {
             _setLightModeMaxChroma(value);
         }else{
             _setAddLightModeMaxChromaErrorTriggered(!_setAddLightModeMaxChromaErrorTriggered);
@@ -139,7 +142,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
 
     const handleDarkModeMaxChromaChange =(event:any)=>{
         const value =event.target.value;
-        if (/^\d+$/.test(value) && parseInt(value) >= 0 && parseInt(value) <= 100 ) {
+        if (value===""||/^\d+$/.test(value) && parseInt(value) >= 0 && parseInt(value) <= 100 ) {
             _setDarkModeMaxChroma(value);
         }else{
             _setAddDarkModeMaxChromaErrorTriggered(!_setAddDarkModeMaxChromaErrorTriggered);
@@ -183,7 +186,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
                                 Set a max Chroma level.
                             </p>
                             <p style={{ fontSize: '12px', fontWeight: '700', margin: '0px', padding: '0px', paddingBottom: '0px' }}>
-                                Learn more about Chroma
+                                Learn more about <Link href='https://sites.harding.edu/gclayton/Color/Topics/001_HueValueChroma.html'>Chroma</Link>
                             </p>
                         </div>
                     </div>
@@ -240,8 +243,10 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
 
 
             <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
-            <BottomStrip onBack={()=>{changeTab("CoreSettings");localStorage.setItem( "step" ,"1");}} onSave={()=>{}} onSaveAndContinue={()=>{
-                console.log("hello"); changeTab("LightAndDarkModes"); localStorage.setItem( "step" ,"3");}}></BottomStrip>
+            <BottomStrip onBack={()=>{changeTab("CoreSettings");localStorage.setItem( "step" ,"1");}} onSave={()=>{saveDesignSystem()}} onSaveAndContinue={()=>{
+                console.log("hello"); changeTab("LightAndDarkModes"); 
+                pref.set( "step" ,"3");
+                }}></BottomStrip>
         </div>
     )
 }

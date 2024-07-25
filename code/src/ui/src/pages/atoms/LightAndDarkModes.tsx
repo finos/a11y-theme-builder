@@ -15,12 +15,15 @@ import { SettingsSection } from '../../pages/content/SettingsSection';
 import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
 import { ColorThemeAtom } from './ColorThemeAtom';
+import { Preferences } from '../../Preferences';
+
 
 interface Props {
     atom: ColorPalette;
     colorThemes: ColorThemes;
     defaultColor?: string;
     changeTab(newTabIndex: string): void;
+    saveDesignSystem(): void;
 }
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -54,8 +57,9 @@ function TabPanel(props: TabPanelProps) {
     };
   }
   
-export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultColor, changeTab }) => {
+export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultColor, changeTab, saveDesignSystem }) => {
 
+    const pref = new Preferences(atom.getDesignSystem().key);
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
     const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
@@ -203,10 +207,10 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
             >
 
 
-                <Button variant="outlined" color="primary" onClick={() => {changeTab("BuildColorPalette") ;localStorage.setItem( "step" ,"2");}} style={{ marginRight: '8px' }}>
+                <Button variant="outlined" color="primary" onClick={() => {changeTab("BuildColorPalette") ;pref.set( "step" ,"2");}} style={{ marginRight: '8px' }}>
                     BACK
                 </Button>
-                <Button variant="contained" color="secondary" onClick={() => { }}>
+                <Button variant="contained" color="secondary" onClick={() => { saveDesignSystem();}}>
                     SAVE
                 </Button>
 

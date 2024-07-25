@@ -14,15 +14,18 @@ import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
 import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
-import { BottomStrip } from '../../components/BottomStrip'
+import { BottomStrip } from '../../components/BottomStrip';
+import { Preferences } from '../../Preferences';
 
 interface Props {
     atom: DesignSystem;
     defaultColor?: string;
     changeTab(newTabIndex: string): void;
+    saveDesignSystem(): void;
 }
 
-export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab }) => {
+export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab ,saveDesignSystem}) => {
+    const pref = new Preferences(atom.name);
     const [systemName, setSystemName] = useState(atom.key);
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
@@ -203,25 +206,28 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
 
 
                 <Button variant="outlined" color="primary" onClick={() => {
+                    saveDesignSystem();
                     console.log("Creating new Design System:", systemName);
                     // TODO: Check for if name already exist
                     console.log(atom);
+                    const pref2 = new Preferences(systemName);
+                    pref2.set( "step" ,"1");
                     // changeTab("CoreSettings")
-                    // window.location.href = `/designSystem/${systemName}`;
+                    window.location.href = `/designSystem/${systemName}`;
                 }} style={{ marginRight: '8px' }}>
                     Save
                 </Button>
                 <Button variant="contained" color="secondary" onClick={(e) => {
                     console.log("Creating new Design System:", systemName);
                     e.preventDefault();
-                    localStorage.setItem( "step" ,"2");
+                    pref.set( "step" ,"2");
                     // TODO: Check for if name already exist
-                    const handleAsyncOperation = async () => {
+                    
                         window.location.href = `/designSystem/${systemName}`;
                         // changeTab("BuildColorPalette");
                         // The line above will navigate away from the current page, so the line below may not execute
-                      };
-                      handleAsyncOperation();
+                      
+                    
                 }}>
                     SAVE & CONTINUE
                 </Button>

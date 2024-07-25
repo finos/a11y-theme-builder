@@ -12,7 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { ColorPaletteSummary } from '../pages/content/ColorPaletteSummary';
 import { grey } from "@mui/material/colors";
-import  ModalConfirmation  from './modals/ModalConfirmation';
+import ModalConfirmation from './modals/ModalConfirmation';
 
 interface Props {
     colorPalette: ColorPalette;
@@ -27,22 +27,24 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
     const [_expandPalette, _setExpandPalette] = useState<boolean>(false);
     const [_anchorEl, _setAnchorEl] = useState<null | HTMLElement>(null);
     const [_deleteColorConfirmationModalIsOpen, _setDeleteColorConfirmationModalIsOpen] = useState<boolean>(false);
+    const [_currentBaseColor, _setCurrentBaseColor] = useState<string>("");
     const openMenu = Boolean(_anchorEl);
 
-    const handleMenuButtonClick = (event: any) => {
+    const handleMenuButtonClick = (event: any,color : string) => {
         _setAnchorEl(event.currentTarget);
+        _setCurrentBaseColor(color);
     };
 
     const handleMenuButtonClose = (event: any) => {
         // colorPalette.removeColor(colorName);
         _setAnchorEl(null);
     };
-    const handleMenuButtonDeleteColor = (colorName : string) => {
-        if(colorPalette.getColors().length>=2){
+    const handleMenuButtonDeleteColor = (colorName: string) => {
+        if (colorPalette.getColors().length >= 2) {
             _setDeleteColorConfirmationModalIsOpen(true);
-            console.log(colorPalette.removeColor(colorName),`deleting color ${colorName}`);
+            console.log(colorPalette.removeColor(colorName), `deleting color ${colorName}`);
         }
-        else{
+        else {
             console.log("this is the only color you have cannot delete it");
         }
         _setAnchorEl(null);
@@ -74,6 +76,21 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
 
                     </AccordionSummary>
                     <AccordionDetails>
+
+                        {/* <div style={{ paddingLeft: "36px", width: '100%' }}>
+                            <div >
+                                <Tabs value={_tabNumber} onChange={(event, value) => { _setTabNumber(value) }} aria-label="WCAG tabs">
+                                    <Tab label="WCAG AA (6)" {...a11yProps(0)} />
+                                    <Tab label="WCAG AAA (6) " {...a11yProps(1)} />
+                                </Tabs>
+                            </div>
+                            <TabPanel value={_tabNumber} index={0}>
+                                <ColorThemeAtom atom={colorThemes} colorPalette={atom} ></ColorThemeAtom>
+                            </TabPanel>
+                            <TabPanel value={_tabNumber} index={1}>
+                                Content for WCAG AAA
+                            </TabPanel>
+                        </div> */}
                         <div style={{ padding: "0px" }}>
 
                             {/* <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px" }}>Your Color Palette</p> */}
@@ -86,14 +103,14 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                             <h4>Light Mode Colors:</h4>
                             {colorPalette.getColors().map((color, i) => {
                                 return (
-                                    <div key={color.name}>
-                                        <ModalConfirmation  title={`${color.name} Color Deleted`} isOpen={_deleteColorConfirmationModalIsOpen} onClose={()=>_setDeleteColorConfirmationModalIsOpen(false)} >The {color.name} Color has been deleted</ModalConfirmation>
+                                    <div key={i}>
+                                        <ModalConfirmation title={`${_currentBaseColor} Color Deleted`} isOpen={_deleteColorConfirmationModalIsOpen} onClose={() => _setDeleteColorConfirmationModalIsOpen(false)} >The {_currentBaseColor} Color has been deleted</ModalConfirmation>
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "8px", paddingTop: "4px" }}>
                                             <div className="subtitle1" style={{ fontSize: "24px" }}>{color.name}</div>
-                                            <div style={{ borderRadius: "4px" }}>  
-                                               
-                                                <IconButton
+                                            <div style={{ borderRadius: "4px" }}>
                                                 
+                                                <IconButton
+
                                                     sx={{
                                                         borderRadius: 4,
                                                         border: "2px solid grey",
@@ -101,7 +118,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                                     }}
                                                     aria-controls={openMenu ? 'simple-menu' : undefined}
                                                     aria-haspopup="true"
-                                                    onClick={handleMenuButtonClick} aria-label="delete" size="large">
+                                                    onClick={(e)=>{handleMenuButtonClick (e,color.name)}} aria-label="delete" size="large">
                                                     <ArrowDropDownIcon />
                                                 </IconButton>
 
@@ -120,9 +137,9 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                                                     }}
                                                     sx={{ minWidth: 400 }}
                                                 >
-                                                    <MenuItem sx={{ minWidth: 400 }} onClick={handleMenuButtonClose}>Edit {color.name} Base Color</MenuItem>
+                                                    <MenuItem sx={{ minWidth: 400 }} onClick={handleMenuButtonClose}>Edit {_currentBaseColor} Base Color</MenuItem>
                                                     <MenuItem onClick={handleRenameBaseColor}>Rename Base Color</MenuItem>
-                                                    <MenuItem onClick={()=>handleMenuButtonDeleteColor (color.name)}>Delete {color.name} Color (all shades, light and dark)</MenuItem>
+                                                    <MenuItem onClick={() => handleMenuButtonDeleteColor(_currentBaseColor)}>Delete {_currentBaseColor} Color (all shades, light and dark)</MenuItem>
                                                 </Menu>
                                             </div>
                                         </div>
