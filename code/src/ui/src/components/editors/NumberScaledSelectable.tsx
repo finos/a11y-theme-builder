@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { InputLabel, MenuItem, Select } from '@mui/material';
 import { PropertyPixelSelectable } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface PixelProps {
     property: PropertyPixelSelectable;
@@ -49,17 +50,20 @@ export const NumberScaledSelectable: React.FC<PixelProps> = ({
             </MenuItem>
         );
     }
+    const idSuffix = uuidv4();
+    const labelId = `pixelSelectLabel-${idSuffix}`;
+    const selectId = `pixelSelect-${idSuffix}`;
     return (
         <div>
-            <InputLabel id="pixelSelectLabel">
+            <InputLabel id={labelId}>
                 {children || property.name}
             </InputLabel>
             {description && (
                 <div style={{ fontWeight: 'normal' }}>{description}</div>
             )}
             <Select
-                id="pixelSelect"
-                labelId="pixelSelectLabel"
+                id={selectId}
+                labelId={labelId}
                 value={value}
                 onChange={handleChange}
             >
