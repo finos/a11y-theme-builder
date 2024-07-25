@@ -193,7 +193,7 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
     else {
         return (
             <div className="row">
-                <p style={{ fontSize: "18px", fontWeight: "700", marginLeft: "32px" }}>Your Color Palette</p>
+               
             </div>
         )
     }
