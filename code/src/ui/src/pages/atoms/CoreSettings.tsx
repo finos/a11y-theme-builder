@@ -33,6 +33,9 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
     const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] = useState<boolean>(false)
     const [_addColorError, _setAddColorError] = useState<boolean>(false)
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
+    const [_darkTextColor, _setDarkTextColor] = useState<string>("#121212")
+    const [_lightTextColor, _setLightTextColor] = useState<string>("#FFFFFF")
+    const [_darkModeLightTextOpacity, _setDarkModeLightTextOpacity] =useState<string> (".6")
 
     useEffect(() => {
        
@@ -114,11 +117,13 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                         // className='input-1'
                         required
                         value={systemName}
-                        sx={{ pb: 2 }}
-                        // style={{
-                        //     width: "100%",
-                        //     boxSizing: "border-box",
-                        // }}
+                        sx={{
+                            pb: 2,
+                            width: 350,
+                            '& .MuiFormHelperText-root': {
+                              fontSize: '11px', // Adjust the font size as needed
+                            },
+                          }}
                         onChange={(e) => setSystemName(e.target.value)}
                     />
                     <InputLabel htmlFor='darkTextColor'>Dark Text Color</InputLabel>
@@ -126,11 +131,18 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                         id='darkTextColor'
                         placeholder='#121212'
                         error={_addColorErrorTriggered}
-                        onChange={handleColorChange}
+                        onChange={(e)=>{_setDarkTextColor(e.target.value)}}
                         helperText={_addColorErrorTriggered ? "Please provide a name for your Design System" : ""}
-                        value={_colorName}
+                        value={_darkTextColor}
                         defaultValue='#121212'
-                        sx={{ pb: 2 }}
+                        sx={{
+                            pb: 2,
+                            width: '350px',
+                            '& .MuiFormHelperText-root': {
+                              fontSize: '11px', // Adjust the font size as needed
+                            },
+                          }}
+                        
                     />
                     <InputLabel htmlFor='lightTextColor'>Light Text Color</InputLabel>
                     <div>
@@ -138,10 +150,17 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                             id='lightTextColor'
                             placeholder='#FFFFFF'
                             error={_addColorErrorTriggered}
-                            onChange={handleColorChange}
+                            onChange={(e)=>{_setLightTextColor(e.target.value)}}
                             helperText="we recommend pure white"
-                            value={_colorName}
+                            value={_lightTextColor}
                             defaultValue='#FFFFFF'
+                            sx={{
+                                width: 350,
+                                '& .MuiFormHelperText-root': {
+                                  fontSize: '11px', // Adjust the font size as needed
+                                },
+                              }}
+                            
                         />
                     </div>
                     <InputLabel htmlFor='darkModeLightTextOpacity'>Dark Mode Light Text Opacity</InputLabel>
@@ -149,11 +168,17 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                         <TextField
                             id='darkModeLightTextOpacity'
                             placeholder='.6'
-                            error={_addColorErrorTriggered}
-                            onChange={handleColorChange}
+                            // error={_addColorErrorTriggered}
+                            onChange={(e)=>{_setDarkModeLightTextOpacity(e.target.value)}}
                             helperText="We recommend a number between .6 and .7"
-                            value={_colorName}
+                            value={_darkModeLightTextOpacity}
                             defaultValue='.6'
+                            sx={{
+                                width: 350,
+                                '& .MuiFormHelperText-root': {
+                                  fontSize: '11px', // Adjust the font size as needed
+                                },
+                              }}
                         />
                     </div>
                 </div>
@@ -186,12 +211,14 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab })
                 }} style={{ marginRight: '8px' }}>
                     Save
                 </Button>
-                <Button variant="contained" color="secondary" onClick={() => {
+                <Button variant="contained" color="secondary" onClick={(e) => {
                     console.log("Creating new Design System:", systemName);
+                    e.preventDefault();
+                    localStorage.setItem( "step" ,"2");
                     // TODO: Check for if name already exist
                     const handleAsyncOperation = async () => {
-                        changeTab("BuildColorPalette");
                         window.location.href = `/designSystem/${systemName}`;
+                        // changeTab("BuildColorPalette");
                         // The line above will navigate away from the current page, so the line below may not execute
                       };
                       handleAsyncOperation();

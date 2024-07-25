@@ -83,6 +83,8 @@ interface Props {
 
 export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
+    const [_currentStep,_setCurrentStep] = useState<string|null>(localStorage.getItem('step'));
+    
 
     let typographySelected = false;
     if (pref.get("atom-typography-selected") == "true") {
@@ -91,6 +93,18 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     const [displayTypography, setDisplayTypography] = useState<boolean>(typographySelected);
     useEffect(() => {
         pref.set("atom-typography-selected", ""+displayTypography)
+        if(_currentStep!=null){
+            if(_currentStep=='1'){
+                setDisplayBuildTheme(!displayBuildTheme)
+                setShowAtom('CoreSettings');
+            }else if (_currentStep=='2'){
+                setDisplayBuildTheme(!displayBuildTheme)
+                setShowAtom('BuildColorPalette');
+            }else if (_currentStep=='3'){
+                setDisplayBuildTheme(!displayBuildTheme)
+                setShowAtom('LightAndDarkModes');
+            }
+        }
     }, [displayTypography])
     const [displayBuildTheme, setDisplayBuildTheme] = useState<boolean>(false);
     let otherSelected = false;
