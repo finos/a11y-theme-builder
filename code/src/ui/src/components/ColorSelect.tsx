@@ -16,6 +16,7 @@ import {
     PropertyColorShade,
     Shade,
 } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 import { ColorShade } from '../components/ColorShade';
 import './ColorSelect.css';
 
@@ -178,14 +179,19 @@ export const ColorSelect: React.FC<Props> = ({
     //  Mui Select into a grid.  Each menu item in the list will be positioned
     //  in the grid based on where that shade was in the selectableValuesGrid
     if (value) {
+        const idSuffix = uuidv4();
+        const selectId = `outlined-select-${idSuffix}`
+        const labelId = `outlined-select-label-${idSuffix}`
         return (
             <div>
                 {label && (
-                    <InputLabel className="caption" htmlFor="outlined-select">
+                    <InputLabel className="caption" id={labelId} htmlFor={selectId}>
                         {label}
                     </InputLabel>
                 )}
                 <Select
+                    labelId={label && labelId}
+                    id={selectId}
                     onChange={handleColorChange}
                     displayEmpty={true}
                     value={_selectedValue}
