@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -31,6 +31,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
     const [_expandPalette, _setExpandPalette] = useState<boolean>(false);
     const [_anchorEl, _setAnchorEl] = useState<null | HTMLElement>(null);
     const [_deleteColorConfirmationModalIsOpen, _setDeleteColorConfirmationModalIsOpen] = useState<boolean>(false);
+    const [_unableToDeleteColorModalIsOpen, _setUnableToDeleteColorModalIsOpen] = useState<boolean>(false);
     const [_currentBaseColor, _setCurrentBaseColor] = useState<string>("");
     const openMenu = Boolean(_anchorEl);
 
@@ -49,6 +50,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
             console.log(colorPalette.removeColor(colorName), `deleting color ${colorName}`);
         }
         else {
+            _setUnableToDeleteColorModalIsOpen(true);
             console.log("this is the only color you have cannot delete it");
         }
         _setAnchorEl(null);
@@ -109,6 +111,8 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                 return (
                                     <div key={i}>
                                         <ModalConfirmation title={`${_currentBaseColor} Color Deleted`} isOpen={_deleteColorConfirmationModalIsOpen} onClose={() => _setDeleteColorConfirmationModalIsOpen(false)} >The {_currentBaseColor} Color has been deleted</ModalConfirmation>
+                                        <ModalConfirmation title={`Unable To Delete`} isOpen={_unableToDeleteColorModalIsOpen} onClose={() => _setUnableToDeleteColorModalIsOpen(false)} ><div>This the only color in your Design System</div> <div>You can However edit "{`${_currentBaseColor}`}"</div></ModalConfirmation>
+
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "8px", paddingTop: "4px" }}>
                                             <div className="subtitle1" style={{ fontSize: "24px" }}>{color.name}</div>
                                             <div style={{ borderRadius: "4px" }}>

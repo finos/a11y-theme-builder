@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -244,7 +244,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                   able to make changes and will be presented with a readonly representation
                   of this theme.
               </ModalConfirmation>
-          </div>
+          
 
 
                 <Grid container spacing={2} columns={12} margin={2}>
@@ -494,7 +494,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                     will be presented with a readonly representation of this
                     theme.
                 </ModalConfirmation>
-            </div>
+                </div>
         );
     } else {
         return (
