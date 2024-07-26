@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -16,7 +16,15 @@ export interface PixelProps {
     scale?: number;
 }
 
-export const NumberScaledSelectable: React.FC<PixelProps> = ({ property, defaultValue=0, children, units, style, description, scale=1 }) => {
+export const NumberScaledSelectable: React.FC<PixelProps> = ({
+    property,
+    defaultValue = 0,
+    children,
+    units,
+    style,
+    description,
+    scale = 1,
+}) => {
     let initValue = property.getValue();
     if (initValue === undefined) {
         initValue = property.getDefaultValue();
@@ -32,17 +40,31 @@ export const NumberScaledSelectable: React.FC<PixelProps> = ({ property, default
     }
     var r = [];
     var selectables = property.getSelectableValues();
-    for (var i=0; i<selectables.length; i++) {
-        const s = (selectables[i]*scale).toString() + (units || "");
-        r.push(<MenuItem key={s} value={selectables[i]}> {s} </MenuItem>)
+    for (var i = 0; i < selectables.length; i++) {
+        const s = (selectables[i] * scale).toString() + (units || '');
+        r.push(
+            <MenuItem key={s} value={selectables[i]}>
+                {' '}
+                {s}{' '}
+            </MenuItem>
+        );
     }
     return (
         <div>
-            <InputLabel id="pixelSelectLabel">{children || property.name}</InputLabel>
-            {description && <div style={{fontWeight:"normal"}}>{description}</div>}
-            <Select id="pixelSelect" labelId="pixelSelectLabel" value={value} onChange={handleChange}>
+            <InputLabel id="pixelSelectLabel">
+                {children || property.name}
+            </InputLabel>
+            {description && (
+                <div style={{ fontWeight: 'normal' }}>{description}</div>
+            )}
+            <Select
+                id="pixelSelect"
+                labelId="pixelSelectLabel"
+                value={value}
+                onChange={handleChange}
+            >
                 {r}
             </Select>
         </div>
-    )
-}
+    );
+};

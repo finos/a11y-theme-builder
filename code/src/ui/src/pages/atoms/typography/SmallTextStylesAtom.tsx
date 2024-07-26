@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -10,24 +10,23 @@ import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 
-const name = "SmallTextStylesAtom";
 
-const subtitle1CssPrefix = "subtitle1";
-const subtitle2CssPrefix = "subtitle2";
-const captionCssPrefix = "caption";
-const captionBoldCssPrefix = "caption-bold";
-const overlineCssPrefix = "overline";
-const overlineLargeCssPrefix = "overline-large";
-const overlineXLCssPrefix = "overline-XL";
-const label1CssPrefix = "label-1";
-const label1CapsCssPrefix = "label-1-allCaps";
-const label2CssPrefix = "label-2";
-const label2CapsCssPrefix = "label-2-allCaps";
-const labelSmallCssPrefix = "label-small";
-const callToActionCssPrefix = "CTA";
-const callToActionSmallCssPrefix = "CTA-Small";
-const smallCssPrefix = "small";
-const smallSemiboldCssPrefix = "small-semibold";
+const subtitle1CssPrefix = 'subtitle1';
+const subtitle2CssPrefix = 'subtitle2';
+const captionCssPrefix = 'caption';
+const captionBoldCssPrefix = 'caption-bold';
+const overlineCssPrefix = 'overline';
+const overlineLargeCssPrefix = 'overline-large';
+const overlineXLCssPrefix = 'overline-XL';
+const label1CssPrefix = 'label-1';
+const label1CapsCssPrefix = 'label-1-allCaps';
+const label2CssPrefix = 'label-2';
+const label2CapsCssPrefix = 'label-2-allCaps';
+const labelSmallCssPrefix = 'label-small';
+const callToActionCssPrefix = 'CTA';
+const callToActionSmallCssPrefix = 'CTA-Small';
+const smallCssPrefix = 'small';
+const smallSemiboldCssPrefix = 'small-semibold';
 
 interface Props {
     designSystem: DesignSystem;
@@ -38,51 +37,66 @@ export const SmallTextStylesAtom: React.FC<Props> = ({ designSystem }) => {
 
     const smallTextStylesAtom = designSystem.atoms.smallTextStyles;
 
-    const subtitle1TypographyStyling            = smallTextStylesAtom.subtitle1
-    const subtitle2TypographyStyling            = smallTextStylesAtom.subtitle2
-    const captionTypographyStyling              = smallTextStylesAtom.caption
-    const captionBoldTypographyStyling          = smallTextStylesAtom.captionBold
-    const overlineTypographyStyling             = smallTextStylesAtom.overline
-    const overlineLargeTypographyStyling        = smallTextStylesAtom.overlineLarge
-    const overlineExtraLargeTypographyStyling   = smallTextStylesAtom.overlineExtraLarge
-    const label1TypographyStyling               = smallTextStylesAtom.label1
-    const label1CapsTypographyStyling           = smallTextStylesAtom.label1AllCaps
-    const label2TypographyStyling               = smallTextStylesAtom.label2
-    const label2CapsTypographyStyling           = smallTextStylesAtom.label2AllCaps
-    const labelSmallTypographyStyling           = smallTextStylesAtom.labelSmall
-    const callToActionTypographyStyling         = smallTextStylesAtom.callToAction
-    const callToActionSmallTypographyStyling    = smallTextStylesAtom.callToActionSmall
-    const smallTypographyStyling                = smallTextStylesAtom.small
-    const smallSemiboldTypographyStyling        = smallTextStylesAtom.smallSemibold
+    const subtitle1TypographyStyling = smallTextStylesAtom.subtitle1;
+    const subtitle2TypographyStyling = smallTextStylesAtom.subtitle2;
+    const captionTypographyStyling = smallTextStylesAtom.caption;
+    const captionBoldTypographyStyling = smallTextStylesAtom.captionBold;
+    const overlineTypographyStyling = smallTextStylesAtom.overline;
+    const overlineLargeTypographyStyling = smallTextStylesAtom.overlineLarge;
+    const overlineExtraLargeTypographyStyling =
+        smallTextStylesAtom.overlineExtraLarge;
+    const label1TypographyStyling = smallTextStylesAtom.label1;
+    const label1CapsTypographyStyling = smallTextStylesAtom.label1AllCaps;
+    const label2TypographyStyling = smallTextStylesAtom.label2;
+    const label2CapsTypographyStyling = smallTextStylesAtom.label2AllCaps;
+    const labelSmallTypographyStyling = smallTextStylesAtom.labelSmall;
+    const callToActionTypographyStyling = smallTextStylesAtom.callToAction;
+    const callToActionSmallTypographyStyling =
+        smallTextStylesAtom.callToActionSmall;
+    const smallTypographyStyling = smallTextStylesAtom.small;
+    const smallSemiboldTypographyStyling = smallTextStylesAtom.smallSemibold;
 
-    const keySubtitle1              = subtitle1TypographyStyling.key
-    const keySubtitle2              = subtitle2TypographyStyling.key
-    const keyCaption                = captionTypographyStyling.key
-    const keyCaptionBold            = captionBoldTypographyStyling.key
-    const keyOverline               = overlineTypographyStyling.key
-    const keyOverlineLarge          = overlineLargeTypographyStyling.key
-    const keyOverlineExtraLarge     = overlineExtraLargeTypographyStyling.key
-    const keyLabel1                 = label1TypographyStyling.key
-    const keyLabel1Caps             = label1CapsTypographyStyling.key
-    const keyLabel2                 = label2TypographyStyling.key
-    const keyLabel2Caps             = label2CapsTypographyStyling.key
-    const KeyLabelSmall             = labelSmallTypographyStyling.key
-    const keyCallToAction           = callToActionTypographyStyling.key
-    const keyCallToActionSmall      = callToActionSmallTypographyStyling.key
-    const keySmall                  = smallTypographyStyling.key
-    const keySmallSemibold          = smallSemiboldTypographyStyling.key
+    const keySubtitle1 = subtitle1TypographyStyling.key;
+    const keySubtitle2 = subtitle2TypographyStyling.key;
+    const keyCaption = captionTypographyStyling.key;
+    const keyCaptionBold = captionBoldTypographyStyling.key;
+    const keyOverline = overlineTypographyStyling.key;
+    const keyOverlineLarge = overlineLargeTypographyStyling.key;
+    const keyOverlineExtraLarge = overlineExtraLargeTypographyStyling.key;
+    const keyLabel1 = label1TypographyStyling.key;
+    const keyLabel1Caps = label1CapsTypographyStyling.key;
+    const keyLabel2 = label2TypographyStyling.key;
+    const keyLabel2Caps = label2CapsTypographyStyling.key;
+    const KeyLabelSmall = labelSmallTypographyStyling.key;
+    const keyCallToAction = callToActionTypographyStyling.key;
+    const keyCallToActionSmall = callToActionSmallTypographyStyling.key;
+    const keySmall = smallTypographyStyling.key;
+    const keySmallSemibold = smallSemiboldTypographyStyling.key;
 
-    if ( !keySubtitle1 || !keySubtitle2
-        || !keyCaption || !keyCaptionBold
-        || !keyOverline || !keyOverlineLarge || !keyOverlineExtraLarge
-        || !keyLabel1 || !keyLabel1Caps || !keyLabel2 || !keyLabel2Caps || !KeyLabelSmall
-        || !keyCallToAction || !keyCallToActionSmall
-        || !keySmall || !keySmallSemibold)
+    if (
+        !keySubtitle1 ||
+        !keySubtitle2 ||
+        !keyCaption ||
+        !keyCaptionBold ||
+        !keyOverline ||
+        !keyOverlineLarge ||
+        !keyOverlineExtraLarge ||
+        !keyLabel1 ||
+        !keyLabel1Caps ||
+        !keyLabel2 ||
+        !keyLabel2Caps ||
+        !KeyLabelSmall ||
+        !keyCallToAction ||
+        !keyCallToActionSmall ||
+        !keySmall ||
+        !keySmallSemibold
+    )
         return null;
     return (
         <div className="container">
             <HeadingSection item={smallTextStylesAtom} title="Typography">
-            The Small Text Styles Atom sets Typography settings for the 16 Small Text types:
+                The Small Text Styles Atom sets Typography settings for the 16
+                Small Text types:
                 <ul>
                     <li>Subtitle 1</li>
                     <li>Subtitle 2</li>
@@ -193,10 +207,8 @@ export const SmallTextStylesAtom: React.FC<Props> = ({ designSystem }) => {
                         designSystem={designSystem}
                     />
                 </SettingsSection>
-                <GeneratedCodeSection item={smallTextStylesAtom}/>    
+                <GeneratedCodeSection item={smallTextStylesAtom} />
             </ExampleSection>
-
         </div>
-    )
-
-}
+    );
+};

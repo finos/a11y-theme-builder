@@ -1,7 +1,15 @@
+/**
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
 import React, { useEffect, useState } from 'react';
 import { Tooltip as MuiTooltip, TooltipProps } from '@mui/material';
 
-export const Tooltip: React.FC<TooltipProps> = ({children, PopperProps, ...rest}) => {
+export const Tooltip: React.FC<TooltipProps> = ({
+    children,
+    PopperProps,
+    ...rest
+}) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const refContainer = React.useRef(null);
 
@@ -17,12 +25,12 @@ export const Tooltip: React.FC<TooltipProps> = ({children, PopperProps, ...rest}
                 {...rest}
                 PopperProps={{
                     container: anchorEl,
-                    ...PopperProps
+                    ...PopperProps,
                 }}
             >
                 {children}
             </MuiTooltip>
             <div ref={refContainer}></div>
-        </div >
-    )
-}
+        </div>
+    );
+};

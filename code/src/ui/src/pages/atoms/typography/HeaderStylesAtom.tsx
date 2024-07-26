@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -12,16 +12,15 @@ import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 
-const name = "HeaderStylesAtom";
 
-const display1CssPrefix = "Display1"
-const display2CssPrefix = "Display2"
-const header1CssPrefix = "h1"
-const header2CssPrefix = "h2"
-const header3CssPrefix = "h3"
-const header4CssPrefix = "h4"
-const header5CssPrefix = "h5"
-const header6CssPrefix = "h6"
+const display1CssPrefix = 'Display1';
+const display2CssPrefix = 'Display2';
+const header1CssPrefix = 'h1';
+const header2CssPrefix = 'h2';
+const header3CssPrefix = 'h3';
+const header4CssPrefix = 'h4';
+const header5CssPrefix = 'h5';
+const header6CssPrefix = 'h6';
 
 interface Props {
     designSystem: DesignSystem;
@@ -32,82 +31,123 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
 
     const headerStylesAtom = designSystem.atoms.displayAndHeaderStyles;
 
-    const fontWeightProperty            = headerStylesAtom.headingDisplayFontWeight
-    const typographyChangeProperty      = headerStylesAtom.percentChangeInHeaderDisplaySizes
-    const display1TypographyStyling     = headerStylesAtom.displayStyles[0]
-    const display2TypographyStyling     = headerStylesAtom.displayStyles[1]
-    const header1TypographyStyling      = headerStylesAtom.headerStyles[0]
-    const header2TypographyStyling      = headerStylesAtom.headerStyles[1]
-    const header3TypographyStyling      = headerStylesAtom.headerStyles[2]
-    const header4TypographyStyling      = headerStylesAtom.headerStyles[3]
-    const header5TypographyStyling      = headerStylesAtom.headerStyles[4]
-    const header6TypographyStyling      = headerStylesAtom.headerStyles[5]
+    const fontWeightProperty = headerStylesAtom.headingDisplayFontWeight;
+    const typographyChangeProperty =
+        headerStylesAtom.percentChangeInHeaderDisplaySizes;
+    const display1TypographyStyling = headerStylesAtom.displayStyles[0];
+    const display2TypographyStyling = headerStylesAtom.displayStyles[1];
+    const header1TypographyStyling = headerStylesAtom.headerStyles[0];
+    const header2TypographyStyling = headerStylesAtom.headerStyles[1];
+    const header3TypographyStyling = headerStylesAtom.headerStyles[2];
+    const header4TypographyStyling = headerStylesAtom.headerStyles[3];
+    const header5TypographyStyling = headerStylesAtom.headerStyles[4];
+    const header6TypographyStyling = headerStylesAtom.headerStyles[5];
 
-    const keyDisplay1   = display1TypographyStyling.key
-    const keyDisplay2   = display2TypographyStyling.key
-    const keyHeader1    = header1TypographyStyling.key
-    const keyHeader2    = header2TypographyStyling.key
-    const keyHeader3    = header3TypographyStyling.key
-    const keyHeader4    = header4TypographyStyling.key
-    const keyHeader5    = header5TypographyStyling.key
-    const keyHeader6    = header6TypographyStyling.key
+    const keyDisplay1 = display1TypographyStyling.key;
+    const keyDisplay2 = display2TypographyStyling.key;
+    const keyHeader1 = header1TypographyStyling.key;
+    const keyHeader2 = header2TypographyStyling.key;
+    const keyHeader3 = header3TypographyStyling.key;
+    const keyHeader4 = header4TypographyStyling.key;
+    const keyHeader5 = header5TypographyStyling.key;
+    const keyHeader6 = header6TypographyStyling.key;
 
-    const primaryFont          = designSystem.atoms.fontsSettings.primaryFont.getValue()   || "Open Sans"
-    const secondaryFont        = designSystem.atoms.fontsSettings.secondaryFont.getValue() || "Open Sans"
-    const isOneOfFontsUncommon = !FontWeightsUtil.isFontCommon(primaryFont) || !FontWeightsUtil.isFontCommon(secondaryFont)
+    const primaryFont =
+        designSystem.atoms.fontsSettings.primaryFont.getValue() || 'Open Sans';
+    const secondaryFont =
+        designSystem.atoms.fontsSettings.secondaryFont.getValue() ||
+        'Open Sans';
+    const isOneOfFontsUncommon =
+        !FontWeightsUtil.isFontCommon(primaryFont) ||
+        !FontWeightsUtil.isFontCommon(secondaryFont);
 
-    const [fontWeight, setFontWeight] = useState<number>(fontWeightProperty.getValue() || 400);
-    const [typographyChange, setTypographyChange] = useState<number>(typographyChangeProperty.getValue() || 42);
-    const [fontWeightWarningTriggered, setFontWeightWarningTriggered] = useState<boolean>(false)
+    const [fontWeight, setFontWeight] = useState<number>(
+        fontWeightProperty.getValue() || 400
+    );
+    const [typographyChange, setTypographyChange] = useState<number>(
+        typographyChangeProperty.getValue() || 42
+    );
+    const [fontWeightWarningTriggered, setFontWeightWarningTriggered] =
+        useState<boolean>(false);
 
     useEffect(() => {
         if (isOneOfFontsUncommon) {
-            setFontWeightWarningTriggered(false)
-            return
+            setFontWeightWarningTriggered(false);
+            return;
         }
-        if (!FontWeightsUtil.isWeightSupported(primaryFont, fontWeight) || !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight)) {
-            setFontWeightWarningTriggered(true)
+        if (
+            !FontWeightsUtil.isWeightSupported(primaryFont, fontWeight) ||
+            !FontWeightsUtil.isWeightSupported(secondaryFont, fontWeight)
+        ) {
+            setFontWeightWarningTriggered(true);
         } else {
-            setFontWeightWarningTriggered(false)
+            setFontWeightWarningTriggered(false);
         }
-    }, [fontWeight])
+    }, [fontWeight]);
 
     async function handleFontWeightChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setFontWeight(value);
-        fontWeightProperty.setValue(value)
-        display1TypographyStyling.fontWeight.setValue(value)
-        display2TypographyStyling.fontWeight.setValue(value)
-        header1TypographyStyling.fontWeight.setValue(value)
-        header2TypographyStyling.fontWeight.setValue(value)
-        header3TypographyStyling.fontWeight.setValue(value)
-        header4TypographyStyling.fontWeight.setValue(value)
-        header5TypographyStyling.fontWeight.setValue(value)
-        header6TypographyStyling.fontWeight.setValue(value)
+        fontWeightProperty.setValue(value);
+        display1TypographyStyling.fontWeight.setValue(value);
+        display2TypographyStyling.fontWeight.setValue(value);
+        header1TypographyStyling.fontWeight.setValue(value);
+        header2TypographyStyling.fontWeight.setValue(value);
+        header3TypographyStyling.fontWeight.setValue(value);
+        header4TypographyStyling.fontWeight.setValue(value);
+        header5TypographyStyling.fontWeight.setValue(value);
+        header6TypographyStyling.fontWeight.setValue(value);
     }
     async function handleTypographyChangeChange(event: any): Promise<void> {
         const value = parseInt(event.target.value);
         setTypographyChange(value);
-        typographyChangeProperty.setValue(value)
+        typographyChangeProperty.setValue(value);
 
         // Recalculate all header sizes from the baseFont, overwriting any user-specified
-        const baseFont = designSystem.atoms.fontsSettings.baseFontSize.getValue() || 16
-        display1TypographyStyling.fontSize.setValue(baseFont * (1 + (value/100 * 9)))
-        display2TypographyStyling.fontSize.setValue(baseFont * (1 + (value/100 * 8)))
-        header1TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 6)))
-        header2TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 5)))
-        header3TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 4)))
-        header4TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 3)))
-        header5TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 2)))
-        header6TypographyStyling.fontSize.setValue(baseFont  * (1 + (value/100 * 1)))
+        const baseFont =
+            designSystem.atoms.fontsSettings.baseFontSize.getValue() || 16;
+        display1TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 9)
+        );
+        display2TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 8)
+        );
+        header1TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 6)
+        );
+        header2TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 5)
+        );
+        header3TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 4)
+        );
+        header4TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 3)
+        );
+        header5TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 2)
+        );
+        header6TypographyStyling.fontSize.setValue(
+            baseFont * (1 + (value / 100) * 1)
+        );
     }
 
-    if ( !keyDisplay1 || !keyDisplay2 || !keyHeader1 || !keyHeader2
-        || !keyHeader3 || !keyHeader4 || !keyHeader5 || !keyHeader6) return null;
+    if (
+        !keyDisplay1 ||
+        !keyDisplay2 ||
+        !keyHeader1 ||
+        !keyHeader2 ||
+        !keyHeader3 ||
+        !keyHeader4 ||
+        !keyHeader5 ||
+        !keyHeader6
+    )
+        return null;
     return (
         <div className="container">
             <HeadingSection item={headerStylesAtom} title="Typography">
-            The Header Styles Atom sets Typography settings for the 8 Header types:
+                The Header Styles Atom sets Typography settings for the 8 Header
+                types:
                 <ul>
                     <li>Display 1</li>
                     <li>Display 2</li>
@@ -125,7 +165,8 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
                     <li>Font Weight</li>
                     <li>Character Spacing</li>
                 </ul>
-                In addition, the change in size between headers can be changed, along with the font weight.
+                In addition, the change in size between headers can be changed,
+                along with the font weight.
             </HeadingSection>
             <ExampleSection>
                 None
@@ -140,17 +181,30 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
                                     <TextField
                                         id="fontWeight"
                                         type="number"
-                                        sx={{maxWidth:300}}
-                                        value={isNaN(fontWeight) ? "" : ""+fontWeight }
+                                        sx={{ maxWidth: 300 }}
+                                        value={
+                                            isNaN(fontWeight)
+                                                ? ''
+                                                : '' + fontWeight
+                                        }
                                         onChange={handleFontWeightChange}
                                     />
                                 </Grid>
                                 <Grid item xs={7}>
-                                    {!fontWeightWarningTriggered
-                                    ||
-                                    <Alert severity='warning' sx={{width: 500, marginTop: 1, padding: 1}}>
-                                        The font weight provided is not supported by at least one of the primary and secondary fonts.
-                                    </Alert>}
+                                    {!fontWeightWarningTriggered || (
+                                        <Alert
+                                            severity="warning"
+                                            sx={{
+                                                width: 500,
+                                                marginTop: 1,
+                                                padding: 1,
+                                            }}
+                                        >
+                                            The font weight provided is not
+                                            supported by at least one of the
+                                            primary and secondary fonts.
+                                        </Alert>
+                                    )}
                                 </Grid>
                             </Grid>
                         </div>
@@ -162,12 +216,12 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
                         <Slider
                             aria-label="TypographyChange"
                             value={typographyChange}
-                            sx={{maxWidth:600}}
+                            sx={{ maxWidth: 600 }}
                             onChange={handleTypographyChangeChange}
                             valueLabelDisplay="auto"
                         />
                     </div>
-                    <div className="top40"/>
+                    <div className="top40" />
                     <TextEditBox
                         textKey={keyDisplay1}
                         cssPrefix={display1CssPrefix}
@@ -182,9 +236,7 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
                     />
                     <div className="row">
                         <div className="col-12">
-                            <div className="subtitle1 quiet">
-                                Header Styles
-                            </div>
+                            <div className="subtitle1 quiet">Header Styles</div>
                         </div>
                     </div>
                     <TextEditBox
@@ -224,9 +276,8 @@ export const HeaderStylesAtom: React.FC<Props> = ({ designSystem }) => {
                         headerNo={6}
                     />
                 </SettingsSection>
-                <GeneratedCodeSection item={headerStylesAtom}/>
+                <GeneratedCodeSection item={headerStylesAtom} />
             </ExampleSection>
-
         </div>
-    )
-}
+    );
+};

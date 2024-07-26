@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -21,8 +21,12 @@ interface Props {
     darkLabel: string;
 }
 
-export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lightLabel, darkLabel }) => {
-
+export const DisplayColorPalette: React.FC<Props> = ({
+    colorPalette,
+    colors,
+    lightLabel,
+    darkLabel,
+}) => {
     const [_showDetails, _setShowDetails] = useState<boolean>(false);
     const [_expandPalette, _setExpandPalette] = useState<boolean>(false);
     const [_anchorEl, _setAnchorEl] = useState<null | HTMLElement>(null);
@@ -188,13 +192,12 @@ export const DisplayColorPalette: React.FC<Props> = ({ colorPalette, colors, lig
                     </AccordionDetails>
                 </Accordion>
             </div>
-        )
-    }
-    else {
+        );
+    } else {
         return (
             <div className="row">
                
             </div>
-        )
+        );
     }
-}
+};

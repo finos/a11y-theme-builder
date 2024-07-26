@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -7,30 +7,50 @@ import { HeadingSection } from '../content/HeadingSection';
 import { Pagination } from '@mui/material';
 import { ExampleSection } from '../content/ExampleSection';
 
-
-interface Props {
-}
+interface Props {}
 
 export const PaginationComponent: React.FC<Props> = () => {
     return (
         <div className="content">
-            <HeadingSection title='Desktop' heading='Pagination'></HeadingSection>
+            <HeadingSection
+                title="Desktop"
+                heading="Pagination"
+            ></HeadingSection>
             <ExampleSection>
                 <section>
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
                                 <div className="example">
-                                    <div className="subtitle1">Basic Pagination</div>
-                                    <Pagination count={5} showFirstButton showLastButton/>
+                                    <div className="subtitle1">
+                                        Basic Pagination
+                                    </div>
+                                    <Pagination
+                                        count={5}
+                                        showFirstButton
+                                        showLastButton
+                                    />
                                 </div>
                                 <div className="example">
-                                    <div className="subtitle1">Basic Pagination with more at the End</div>
-                                    <Pagination count={11} defaultPage={1} siblingCount={2} boundaryCount={0}/>
+                                    <div className="subtitle1">
+                                        Basic Pagination with more at the End
+                                    </div>
+                                    <Pagination
+                                        count={11}
+                                        defaultPage={1}
+                                        siblingCount={2}
+                                        boundaryCount={0}
+                                    />
                                 </div>
                                 <div className="example">
-                                    <div className="subtitle1">Basic Pagination with more in the Middle</div>
-                                    <Pagination count={11} defaultPage={1} boundaryCount={2} />
+                                    <div className="subtitle1">
+                                        Basic Pagination with more in the Middle
+                                    </div>
+                                    <Pagination
+                                        count={11}
+                                        defaultPage={1}
+                                        boundaryCount={2}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -38,5 +58,5 @@ export const PaginationComponent: React.FC<Props> = () => {
                 </section>
             </ExampleSection>
         </div>
-    )
-}
+    );
+};

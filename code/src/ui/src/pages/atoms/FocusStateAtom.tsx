@@ -1,9 +1,15 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Checkbox, FormControl, FormControlLabel, InputLabel, TextField } from '@mui/material';
+import {
+    Checkbox,
+    FormControl,
+    FormControlLabel,
+    InputLabel,
+    TextField,
+} from '@mui/material';
 import { FocusStates } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
@@ -17,7 +23,6 @@ interface Props {
 }
 
 export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
-
     const [_focusBlur, _setFocusBlur] = useState<boolean>(false);
 
     useEffect(() => {
@@ -30,26 +35,49 @@ export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
     const handleBlurChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(`handling blue change, value: ${event.target.checked}`);
         focusStates.addFocusBlur.setValue(event.target.checked);
-        _setFocusBlur(event.target.checked)
-    }
+        _setFocusBlur(event.target.checked);
+    };
 
     return (
         <div>
             <HeadingSection item={focusStates} title="Focus States">
-                <p>Settings that affect focus state for components such as textfields and cards</p>
-                <p>Focus states need to have a contrast of 3.1 or higher against the selected background.</p>
+                <p>
+                    Settings that affect focus state for components such as
+                    textfields and cards
+                </p>
+                <p>
+                    Focus states need to have a contrast of 3.1 or higher
+                    against the selected background.
+                </p>
             </HeadingSection>
             <ExampleSection>
                 <LightModeSection>
                     <div className="row">
                         <div className="col-6">
                             <div className="form-row">
-                                <InputLabel className="label-1" htmlFor="focusstate-lightmode-preview">Sample Input - Focus State</InputLabel>
-                                <TextField id="focusstate-lightmode-preview" value="Sample input Field" />
+                                <InputLabel
+                                    className="label-1"
+                                    htmlFor="focusstate-lightmode-preview"
+                                >
+                                    Sample Input - Focus State
+                                </InputLabel>
+                                <TextField
+                                    id="focusstate-lightmode-preview"
+                                    value="Sample input Field"
+                                />
                             </div>
                             <div className="form-row">
-                                <InputLabel className="label-1" htmlFor="focusstate-disabled-lightmode-preview">Sample Input Disabled</InputLabel>
-                                <TextField id="focusstate-disabled-lightmode-preview" value="Sample input Field" disabled />
+                                <InputLabel
+                                    className="label-1"
+                                    htmlFor="focusstate-disabled-lightmode-preview"
+                                >
+                                    Sample Input Disabled
+                                </InputLabel>
+                                <TextField
+                                    id="focusstate-disabled-lightmode-preview"
+                                    value="Sample input Field"
+                                    disabled
+                                />
                             </div>
                         </div>
                     </div>
@@ -58,12 +86,29 @@ export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
                     <div className="row">
                         <div className="col-6">
                             <div className="form-row">
-                                <InputLabel className="label-1" htmlFor="focusstate-darkmode-preview">Sample Input - Focus State</InputLabel>
-                                <TextField id="focusstate-darkmode-preview" value="Sample input Field" />
+                                <InputLabel
+                                    className="label-1"
+                                    htmlFor="focusstate-darkmode-preview"
+                                >
+                                    Sample Input - Focus State
+                                </InputLabel>
+                                <TextField
+                                    id="focusstate-darkmode-preview"
+                                    value="Sample input Field"
+                                />
                             </div>
                             <div className="form-row">
-                                <InputLabel className="label-1" htmlFor="focusstate-disabled-darkmode-preview">Sample Input Disabled</InputLabel>
-                                <TextField id="focusstate-disabled-darkmode-preview" value="Sample input Field" disabled />
+                                <InputLabel
+                                    className="label-1"
+                                    htmlFor="focusstate-disabled-darkmode-preview"
+                                >
+                                    Sample Input Disabled
+                                </InputLabel>
+                                <TextField
+                                    id="focusstate-disabled-darkmode-preview"
+                                    value="Sample input Field"
+                                    disabled
+                                />
                             </div>
                         </div>
                     </div>
@@ -84,7 +129,6 @@ export const FocusStateAtom: React.FC<Props> = ({ focusStates }) => {
                 </SettingsSection>
                 <GeneratedCodeSection item={focusStates} />
             </ExampleSection>
-
         </div>
-    )
-}
+    );
+};

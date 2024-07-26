@@ -1,9 +1,9 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import { Button } from '@mui/material';
-import React, { Children, useState } from 'react'
+import React from 'react';
 import './Modals.css';
 
 interface Props {
@@ -18,15 +18,19 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButto
 
     const handleSubmit = () => {
         onClose(true);
-        console.log("ModalConfirmation, calling onClose handler with value true");
-    }
+        console.log(
+            'ModalConfirmation, calling onClose handler with value true'
+        );
+    };
 
     const handleCancel = () => {
-        console.log("ModalConfirmation, calling onClose handler with value false");
+        console.log(
+            'ModalConfirmation, calling onClose handler with value false'
+        );
         onClose(false);
-    }
+    };
 
-    if (!isOpen) return null
+    if (!isOpen) return null;
     return (
         <>
             <div className="overlay" onClick={handleCancel}></div>
@@ -43,7 +47,7 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButto
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default ModalConfirmation;

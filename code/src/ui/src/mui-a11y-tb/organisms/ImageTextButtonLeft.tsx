@@ -1,9 +1,9 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
+import React from 'react';
+import { Button, Grid } from '@mui/material';
 
 interface Props {
     style?: any;
@@ -11,26 +11,52 @@ interface Props {
     className?: string;
 }
 
-export const ImageTextLeft: React.FC<Props> = ({className=""}) => {
+export const ImageTextLeft: React.FC<Props> = ({ className = '' }) => {
     return (
         <section className={className}>
-          <Grid className="v-center" container spacing={2} columns={12} margin={2}>
-            <Grid item spacing={2} className="v-center" lg={4} md={6} sm={12}>
-              <div className="inline-image" style={{ width: '100%', height: 'auto' }}>
-                  <img src="/sample.jpg" />
-              </div>
+            <Grid
+                className="v-center"
+                container
+                spacing={2}
+                columns={12}
+                margin={2}
+            >
+                <Grid
+                    item
+                    spacing={2}
+                    className="v-center"
+                    lg={4}
+                    md={6}
+                    sm={12}
+                >
+                    <div
+                        className="inline-image"
+                        style={{ width: '100%', height: 'auto' }}
+                    >
+                        <img src="/sample.jpg" alt="inline sample"/>
+                    </div>
+                </Grid>
+                <Grid
+                    item
+                    spacing={2}
+                    className="v-center"
+                    lg={8}
+                    md={6}
+                    sm={12}
+                >
+                    <h2>Image on Left</h2>
+                    <div className="body1">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut
+                            aliquip.
+                        </p>
+                        <Button>Get Started</Button>
+                    </div>
+                </Grid>
             </Grid>
-            <Grid item spacing={2} className="v-center" lg={8} md={6} sm={12}>
-              <h2>Image on Left</h2>
-              <div className="body1">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                </p>
-                <Button>Get Started</Button>
-              </div>
-            </Grid>
-
-          </Grid>
         </section>
-    )
-}
+    );
+};

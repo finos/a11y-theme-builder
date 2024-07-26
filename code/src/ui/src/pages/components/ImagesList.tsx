@@ -1,4 +1,4 @@
-/*
+/**
  * SPDX-License-Identifier: Apache-2.0
  * Copyright 2024 FINOS A11y Theme Builder contributors - see NOTICE file
  */
@@ -13,31 +13,34 @@
 import React, { useState } from 'react';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import { SettingsSection } from '../content/SettingsSection';
-import { ListComponent } from './ListComponent';
-import { Divider, Grid, ImageList, ImageListItem, ImageListItemBar, ListSubheader, IconButton } from '@mui/material';
+import {
+    ImageList,
+    ImageListItem,
+    ImageListItemBar,
+    ListSubheader,
+    IconButton,
+} from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 
-interface Props {
-}
+interface Props {}
 
 export const ImagesList: React.FC<Props> = () => {
-
-
-    const [isClickable, setIsClickable] = useState(false)
+    const [isClickable, setIsClickable] = useState(false);
     async function handleChange(event: any): Promise<void> {
         const value = event.target.value;
-        if (value === "clickable") {
-            setIsClickable(true)
-            return
+        if (value === 'clickable') {
+            setIsClickable(true);
+            return;
         }
-        setIsClickable(false)
+        setIsClickable(false);
     }
 
     return (
         <div className="content">
-            <HeadingSection title='Desktop' heading='Image-List'></HeadingSection>
+            <HeadingSection
+                title="Desktop"
+                heading="Image-List"
+            ></HeadingSection>
 
             <ExampleSection>
                 <section>
@@ -48,7 +51,9 @@ export const ImagesList: React.FC<Props> = () => {
                                 {/* START of borrowed code 1 */}
                                 <ImageList sx={{ width: 500, height: 450 }}>
                                     <ImageListItem key="Subheader" cols={2}>
-                                        <ListSubheader component="div">December</ListSubheader>
+                                        <ListSubheader component="div">
+                                            December
+                                        </ListSubheader>
                                     </ImageListItem>
                                     {itemData.map((item) => (
                                         <ImageListItem key={item.img}>
@@ -63,7 +68,9 @@ export const ImagesList: React.FC<Props> = () => {
                                                 subtitle={item.author}
                                                 actionIcon={
                                                     <IconButton
-                                                        sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                                        sx={{
+                                                            color: 'rgba(255, 255, 255, 0.54)',
+                                                        }}
                                                         aria-label={`info about ${item.title}`}
                                                     >
                                                         <InfoIcon />
@@ -95,7 +102,11 @@ export const ImagesList: React.FC<Props> = () => {
                                             />
                                             <ImageListItemBar
                                                 title={item.title}
-                                                subtitle={<span>by: {item.author}</span>}
+                                                subtitle={
+                                                    <span>
+                                                        by: {item.author}
+                                                    </span>
+                                                }
                                                 position="below"
                                             />
                                         </ImageListItem>
@@ -107,11 +118,10 @@ export const ImagesList: React.FC<Props> = () => {
                     </div>
                 </section>
             </ExampleSection>
-
         </div>
-    )
-}
-{/* START of borrowed code 3 */}
+    );
+};
+{ /* START of borrowed code 3 */ } // eslint-disable-line no-lone-blocks
 const itemData = [
     {
         img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
@@ -185,4 +195,4 @@ const itemData = [
         cols: 2,
     },
 ];
-{/* END of borrowed code 3 */}
+{ /* END of borrowed code 3 */ }  // eslint-disable-line no-lone-blocks

@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -21,7 +21,12 @@ import { StatesAtom } from '../../atoms/StatesAtom';
 import { InputBackgroundsAtom } from '../../atoms/InputBackgroundsAtom';
 import { HotlinksAtom } from '../../atoms/HotlinksAtom';
 import { FocusStateAtom } from '../../atoms/FocusStateAtom';
-import { DesignSystem, Event, EventType, Atom } from '@finos/a11y-theme-builder-sdk';
+import {
+    DesignSystem,
+    Event,
+    EventType,
+    Atom,
+} from '@finos/a11y-theme-builder-sdk';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import { ErrorHandler } from '../../../ErrorHandler';
 import { List, Collapse } from '@mui/material';
@@ -36,7 +41,7 @@ import { BuildColorPalette } from '../../atoms/BuildColorPalette';
 import { LightAndDarkModes } from '../../atoms/LightAndDarkModes';
 
 // DEMO:    Import your atom
-import { ExampleAtom } from '../../atoms/ExampleAtom';
+//import { ExampleAtom } from '../../atoms/ExampleAtom';
 
 //import { TestAtom } from '../pages/atoms/TestAtom';
 
@@ -71,10 +76,10 @@ const atomsList: { [key: string]: atomItem } = {
 
     // DEMO:    Add your atom to the atomsList
     // ExampleAtom: {value: "exampleAtom", label: "Example", atom: "Example", disabled: true},
-}
+};
 
 // Atoms that are not going to be implemented for MVP
-const notImplemented = ["subcolorThemes", "chartColors",]
+const notImplemented = ['subcolorThemes', 'chartColors'];
 
 interface Props {
     user: any;
@@ -99,17 +104,18 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
 
 
     let typographySelected = false;
-    if (pref.get("atom-typography-selected") == "true") {
+    if (pref.get('atom-typography-selected') === 'true') {
         typographySelected = true;
     }
-    const [displayTypography, setDisplayTypography] = useState<boolean>(typographySelected);
+    const [displayTypography, setDisplayTypography] =
+        useState<boolean>(typographySelected);
     useEffect(() => {
         pref.set("atom-typography-selected", "" + displayTypography)
 
     }, [displayTypography])
     const [displayBuildTheme, setDisplayBuildTheme] = useState<boolean>(false);
     let otherSelected = false;
-    if (pref.get("atom-other-selected") == "true") {
+    if (pref.get('atom-other-selected') === 'true') {
         otherSelected = true;
     }
     const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
@@ -117,8 +123,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         pref.set("atom-other-selected", "" + displayOther)
     }, [displayOther])
 
+
     let shadowSelected = false;
-    if (pref.get("atom-shadow-selected") == "true") {
+    if (pref.get('atom-shadow-selected') === 'true') {
         shadowSelected = true;
     }
     const [displayShadow, setDisplayShadow] = useState<boolean>(shadowSelected);
@@ -130,7 +137,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         let _atoms = { ...atoms };
         for (const [key, node] of Object.entries(designSystem.atoms)) {
             if (node instanceof Atom) {
-                if (notImplemented.indexOf(key) == -1) {
+                if (notImplemented.indexOf(key) === -1) {
                     if (_atoms[key]) {
                         console.log("Atom enabled:" + key + " enabled=" + node.isEnabled());
                         _atoms[key].disabled = !node.isEnabled();
@@ -148,12 +155,11 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             function (event: Event) {
                 if (event.type == EventType.NodeDisabled) {
                     enableDisableItems();
-                }
-                else if (event.type == EventType.NodeEnabled) {
+                } else if (event.type === EventType.NodeEnabled) {
                     enableDisableItems();
                 }
             }
-        )
+        );
         enableDisableItems();
         if (pref.get('step') === "1") {
             setDisplayBuildTheme(true);
@@ -172,10 +178,10 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     useEffect(() => {
         if (showAtom) {
             if (atoms[showAtom] && atoms[showAtom].disabled) {
-                setShowAtom("atoms");
+                setShowAtom('atoms');
             }
         }
-    }, [atoms])
+    }, [atoms]);
 
     useEffect(() => {
         pref.set("atom-content-selected", showAtom)
@@ -205,8 +211,8 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 disabled={disabled !== undefined ? disabled : atom.disabled}
                 onClick={() => { setShowAtom(atom.value) }}
             />
-        )
-    }
+        );
+    };
 
     return (
         <>
@@ -261,19 +267,42 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         <LeftNavItem text={"Typography"} indent={1} onClick={() => setDisplayTypography(!displayTypography)}>
                             {displayTypography ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
-                        <Collapse in={displayTypography} timeout="auto" unmountOnExit>
+                        <Collapse
+                            in={displayTypography}
+                            timeout="auto"
+                            unmountOnExit
+                        >
                             <List component="div" disablePadding>
-                                <LeftNavAtom atom={atoms.fontsSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.displayAndHeaderStyles} indent={2} />
-                                <LeftNavAtom atom={atoms.bodyStyles} indent={2} />
-                                <LeftNavAtom atom={atoms.smallTextStyles} indent={2} />
-                                <LeftNavAtom atom={atoms.statStyles} indent={2} />
+                                <LeftNavAtom
+                                    atom={atoms.fontsSettings}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.displayAndHeaderStyles}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.bodyStyles}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.smallTextStyles}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.statStyles}
+                                    indent={2}
+                                />
                             </List>
                         </Collapse>
                         <LeftNavItem text={"Shadow Atoms"} indent={1} onClick={() => setDisplayShadow(!displayShadow)}>
                             {displayShadow ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
-                        <Collapse in={displayShadow} timeout="auto" unmountOnExit>
+                        <Collapse
+                            in={displayShadow}
+                            timeout="auto"
+                            unmountOnExit
+                        >
                             <List component="div" disablePadding>
                                 <LeftNavAtom atom={atoms.elevationSettings} indent={2} />
                                 <LeftNavAtom atom={atoms.bevelSettings} indent={2} />
@@ -283,16 +312,42 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         <LeftNavItem text={"Other Atoms"} indent={1} onClick={() => setDisplayOther(!displayOther)}>
                             {displayOther ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
-                        <Collapse in={displayOther} timeout="auto" unmountOnExit>
+                        <Collapse
+                            in={displayOther}
+                            timeout="auto"
+                            unmountOnExit
+                        >
                             <List component="div" disablePadding>
-                                <LeftNavAtom atom={atoms.gridSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.minimumTarget} indent={2} />
-                                <LeftNavAtom atom={atoms.stateSettings} indent={2} />
-                                <LeftNavAtom atom={atoms.chartColors} indent={2} disabled={true} />
-                                <LeftNavAtom atom={atoms.borderSettings} indent={2} />
+                                <LeftNavAtom
+                                    atom={atoms.gridSettings}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.minimumTarget}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.stateSettings}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.chartColors}
+                                    indent={2}
+                                    disabled={true}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.borderSettings}
+                                    indent={2}
+                                />
                                 <LeftNavAtom atom={atoms.hotlinks} indent={2} />
-                                <LeftNavAtom atom={atoms.inputBackground} indent={2} />
-                                <LeftNavAtom atom={atoms.animationSettings} indent={2} />
+                                <LeftNavAtom
+                                    atom={atoms.inputBackground}
+                                    indent={2}
+                                />
+                                <LeftNavAtom
+                                    atom={atoms.animationSettings}
+                                    indent={2}
+                                />
 
                                 {
                                     // DEMO:    Add a tab for your atom
@@ -300,7 +355,6 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 }
                             </List>
                         </Collapse>
-
                     </List>
                 </div>
             </div>
@@ -331,7 +385,10 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.colorThemes.value && (
                         <ErrorHandler>
-                            <ColorThemeAtom atom={designSystem.atoms.colorThemes} colorPalette={designSystem.atoms.colorPalette}></ColorThemeAtom>
+                            <ColorThemeAtom
+                                atom={designSystem.atoms.colorThemes}
+                                colorPalette={designSystem.atoms.colorPalette}
+                            ></ColorThemeAtom>
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.subcolorThemes.value && (
@@ -349,7 +406,9 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.stateSettings.value && (
                         <ErrorHandler>
-                            <StatesAtom atom={designSystem.atoms.stateSettings} />
+                            <StatesAtom
+                                atom={designSystem.atoms.stateSettings}
+                            />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.chartColors.value && (
@@ -387,17 +446,25 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.focusStates.value && (
                         <ErrorHandler>
-                            <FocusStateAtom focusStates={designSystem.atoms.focusStates} />
+                            <FocusStateAtom
+                                focusStates={designSystem.atoms.focusStates}
+                            />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.hotlinks.value && (
                         <ErrorHandler>
-                            <HotlinksAtom hotlinks={designSystem.atoms.hotlinks} />
+                            <HotlinksAtom
+                                hotlinks={designSystem.atoms.hotlinks}
+                            />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.inputBackground.value && (
                         <ErrorHandler>
-                            <InputBackgroundsAtom inputBackground={designSystem.atoms.inputBackground} />
+                            <InputBackgroundsAtom
+                                inputBackground={
+                                    designSystem.atoms.inputBackground
+                                }
+                            />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.elevationSettings.value && (
@@ -423,9 +490,8 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                             </ErrorHandler>
                         )} */
                     }
-
                 </div>
             </div>
         </>
     );
-}
+};

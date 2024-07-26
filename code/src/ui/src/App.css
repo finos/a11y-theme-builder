@@ -1,5 +1,5 @@
-
-.html,body {
+.html,
+body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -15,7 +15,7 @@ body {
     font-weight: var(--body1FontWeight);
     font-size: calc(var(--zoom) * var(--body1FontSize));
     line-height: calc(var(--zoom) * var(--body1LineHeight));
-    letter-spacing: var(--body1LetterSpacing)
+    letter-spacing: var(--body1LetterSpacing);
 }
 
 p {
@@ -44,13 +44,13 @@ p a:hover {
 }
 
 .card {
-  padding: 16px;
-  display: flex;
-  border-radius: 16px;
-  gap: 16px;
-  background: white;
-  border: 1px solid rgba(0,0,0,.15);
-  min-height: 24px;
+    padding: 16px;
+    display: flex;
+    border-radius: 16px;
+    gap: 16px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    min-height: 24px;
 }
 
 .system-card h5 {
@@ -102,6 +102,7 @@ p a:hover {
     margin: 8px 0;
 }
 
+
 .collapsable-Container{
     margin-left: 32px;
     border: 1px;
@@ -112,6 +113,7 @@ p a:hover {
 
 }
 .darkmode .background, .darkmode.background {
+
     background: var(--dm-background) !important;
-    color: var(--dm-on-background)  !important;
+    color: var(--dm-on-background) !important;
 }

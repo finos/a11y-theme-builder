@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -7,12 +7,10 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedTextColorSwatch } from '../../../components/ComputedTextColorSwatch';
 import { ExampleSection } from '../../content/ExampleSection';
 
-const sampleText: string = "Sample Text";
-interface Props {
-}
+const sampleText: string = 'Sample Text';
+interface Props {}
 
-export const TextComponent: React.FC<Props> = ({}) => {
-
+export const TextComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Text Colors" />
@@ -20,19 +18,19 @@ export const TextComponent: React.FC<Props> = ({}) => {
                 <div className="subtitle1 top40">Dark Text</div>
                 <div className="theme-colors">
                     <ComputedTextColorSwatch
-                        colorSampleClassName={"black"}
+                        colorSampleClassName={'black'}
                         sampleText={sampleText}
                         label="Default"
                     />
                     <ComputedTextColorSwatch
-                        colorSampleClassName={"black quiet"}
-                        textSampleClassName={"quiet"}
+                        colorSampleClassName={'black quiet'}
+                        textSampleClassName={'quiet'}
                         sampleText={sampleText}
                         label="Quiet"
                     />
                     <ComputedTextColorSwatch
-                        colorSampleClassName={"black disabled"}
-                        textSampleClassName={"disabled"}
+                        colorSampleClassName={'black disabled'}
+                        textSampleClassName={'disabled'}
                         sampleText={sampleText}
                         label="Disabled"
                     />
@@ -41,21 +39,21 @@ export const TextComponent: React.FC<Props> = ({}) => {
                 <div className="theme-colors">
                     <ComputedTextColorSwatch
                         containerClassName="black"
-                        colorSampleClassName={"white"}
+                        colorSampleClassName={'white'}
                         sampleText={sampleText}
                         label="Default"
                     />
                     <ComputedTextColorSwatch
                         containerClassName="black"
-                        colorSampleClassName={"white quiet"}
-                        textSampleClassName={"quiet"}
+                        colorSampleClassName={'white quiet'}
+                        textSampleClassName={'quiet'}
                         sampleText={sampleText}
                         label="Quiet"
                     />
                     <ComputedTextColorSwatch
                         containerClassName="black"
-                        colorSampleClassName={"white disabled"}
-                        textSampleClassName={"disabled"}
+                        colorSampleClassName={'white disabled'}
+                        textSampleClassName={'disabled'}
                         sampleText={sampleText}
                         label="Disabled"
                     />
@@ -63,31 +61,31 @@ export const TextComponent: React.FC<Props> = ({}) => {
                 <div className="subtitle1 top40">State Text</div>
                 <div className="theme-colors">
                     <ComputedTextColorSwatch
-                        textSampleClassName={"info-text"}
+                        textSampleClassName={'info-text'}
                         sampleText={sampleText}
                         label="Info"
                         showHex={true}
                     />
                     <ComputedTextColorSwatch
-                        textSampleClassName={"success-text"}
+                        textSampleClassName={'success-text'}
                         sampleText={sampleText}
                         label="Success"
                         showHex={true}
                     />
                     <ComputedTextColorSwatch
-                        textSampleClassName={"warning-text"}
+                        textSampleClassName={'warning-text'}
                         sampleText={sampleText}
-                        label={"Warning"}
+                        label={'Warning'}
                         showHex={true}
                     />
                     <ComputedTextColorSwatch
-                        textSampleClassName={"danger-text"}
+                        textSampleClassName={'danger-text'}
                         sampleText={sampleText}
-                        label={"Danger"}
+                        label={'Danger'}
                         showHex={true}
                     />
                 </div>
             </ExampleSection>
         </div>
     );
-}
+};
