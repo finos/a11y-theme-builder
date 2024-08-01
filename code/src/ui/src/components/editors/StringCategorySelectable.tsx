@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { InputLabel, ListSubheader, MenuItem, Select } from '@mui/material';
 import { PropertyStringCategorySelectable } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface StringProps {
     property: PropertyStringCategorySelectable;
@@ -41,12 +42,15 @@ export const StringCategorySelectable: React.FC<StringProps> = ({
         property: PropertyStringCategorySelectable,
         label: string
     ) => {
+        const idSuffix = uuidv4();
+        const labelId = `stringSelectLabel-${idSuffix}`;
+        const selectId = `stringSelect-${idSuffix}`;
         return (
             <div>
-                <InputLabel id="stringSelectLabel">{label}</InputLabel>
+                <InputLabel id={labelId}>{label}</InputLabel>
                 <Select
-                    id="stringSelect"
-                    labelId="stringSelectLabel"
+                    id={selectId}
+                    labelId={labelId}
                     value={title}
                     onChange={handleChange}
                 >

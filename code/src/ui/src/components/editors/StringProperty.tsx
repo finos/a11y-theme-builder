@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel, TextField, InputAdornment } from '@mui/material';
 import { Property } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface NumberProps {
     property: Property<string>;
@@ -49,11 +50,15 @@ export const StringProperty: React.FC<NumberProps> = ({
 
     const _onChange = customHandleChange || handleChange;
 
+    const idSuffix = uuidv4();
+    const labelId = `stringPropertyLabel-${idSuffix}`;
+    const textFieldId = `stringPropertyTextField-${idSuffix}`;
+
     return (
         <div>
             <InputLabel
-                htmlFor="stringPropertyTextField"
-                id="stringPropertyLabel"
+                htmlFor={textFieldId}
+                id={labelId}
             >
                 {children || property.name}
                 {description && (
@@ -61,7 +66,7 @@ export const StringProperty: React.FC<NumberProps> = ({
                 )}
             </InputLabel>
             <TextField
-                id="stringPropertyTextField"
+                id={textFieldId}
                 InputProps={
                     units
                         ? {
