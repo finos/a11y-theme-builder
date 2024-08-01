@@ -4,7 +4,7 @@ echo "[Husky] Checking for ESLint errors and formatting using Prettier."
 cd code || exit
 
 # Get the list of files changed since the last push
-CHANGED_FILES=$(git diff --name-only $(git merge-base HEAD $(git rev-parse --abbrev-ref --symbolic-full-name @{u})) | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
+CHANGED_FILES=$(git diff --name-only $(git merge-base HEAD $(git rev-parse --abbrev-ref --symbolic-full-name @{u})) | sed 's/^code\///' | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
 
 # Run ESLint on changed files
 if [ -n "$CHANGED_FILES" ]; then
