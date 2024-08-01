@@ -10,7 +10,7 @@ import { Config } from './config';
 import { addAuthMiddleware } from './auth';
 import { registerThemesEndpoint } from './themesEndpoint';
 
-                      const cfg = new Config();
+const cfg = new Config();
 
 // Cross-domain middleware
 function allowCrossDomain(req: Request, res: Response, next: NextFunction) {
@@ -53,7 +53,7 @@ async function createApp(cfg: Config): Promise<express.Application> {
     registerThemesEndpoint(app);
     app.use(handleError);
     app.use(express.static(path.join(__dirname, '../src/ui/build')));
-    app.get('/*', function(req: Request, res: Response) {
+    app.get('/*', function (req: Request, res: Response) {
         res.sendFile(path.join(__dirname, '../src/ui/build', 'index.html'));
     });
     return app;
