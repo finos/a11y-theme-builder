@@ -10,7 +10,7 @@ import { Config } from './config';
 import { addAuthMiddleware } from './auth';
 import { registerThemesEndpoint } from './themesEndpoint';
 
-const cfg =     new Config();
+const cfg = new Config();
 
 // Cross-domain middleware
 function allowCrossDomain(req: Request, res: Response, next: NextFunction) {
@@ -26,7 +26,7 @@ function allowCrossDomain(req: Request, res: Response, next: NextFunction) {
 }
 
 // Error handling middleware
-    function handleError(
+function handleError(
     err: any,
     req: Request,
     res: Response,
@@ -63,7 +63,7 @@ async function main() {
     const cfg = new Config();
     const app = await createApp(cfg);
     const port = process.env.PORT || 3001;
-      app.listen(port, () => {
+    app.listen(port, () => {
         console.info(`Listening on port ${port}`);
     });
 }
