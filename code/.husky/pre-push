@@ -1,7 +1,7 @@
 echo "[Husky] Checking for ESLint errors and formatting using Prettier."
 
 # Navigate to the code directory
-cd code || exit
+cd code 
 
 # Get the list of files changed since the last push
 CHANGED_FILES=$(git diff --name-only $(git merge-base HEAD $(git rev-parse --abbrev-ref --symbolic-full-name @{u})) | sed 's/^code\///' | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
@@ -25,5 +25,14 @@ if [ -n "$CHANGED_FILES" ]; then
   git add $CHANGED_FILES
 else
   echo "No files to format."
+fi
+
+# Check if there are any staged changes
+STAGED_FILES=$(git diff --cached --name-only)
+if [ -n "$STAGED_FILES" ]; then
+  echo "Committing changes..."
+  git commit -m "[Husky] chore: ESLint errors fixed and code formatted"
+else
+  echo "No changes to commit."
 fi
 
