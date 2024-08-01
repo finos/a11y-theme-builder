@@ -17,7 +17,7 @@
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
 		"docker-rm": "docker rm a11y-theme-builder",
-		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"", 
 		"format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
 		"lint": "npx eslint .",
 		"lint:fix": "npx eslint . --fix"
