@@ -16,6 +16,7 @@ import {
     EventType,
     PropertyColorPair,
 } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 import { ColorShade } from './ColorShade';
 import './ColorPairSelect.css';
 
@@ -89,15 +90,20 @@ export const ColorPairSelect: React.FC<Props> = ({ value, label }) => {
     };
 
     if (value) {
+        const idSuffix = uuidv4();
+        const selectId = `outlined-select-${idSuffix}`
+        const labelId = `outlined-select-label-${idSuffix}`
         return (
             <div>
                 {label && (
-                    <InputLabel className="caption" htmlFor="outlined-select">
+                    <InputLabel className="caption" id={labelId} htmlFor={selectId}>
                         {label}
                     </InputLabel>
                 )}
                 <Select
                     label=""
+                    labelId={label && labelId}
+                    id={selectId}
                     onChange={handleColorChange}
                     displayEmpty={true}
                     defaultValue=""
