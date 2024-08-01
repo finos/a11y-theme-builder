@@ -10,7 +10,7 @@ import { Config } from './config';
 import { addAuthMiddleware } from './auth';
 import { registerThemesEndpoint } from './themesEndpoint';
 
-                          const cfg = new Config();
+                      const cfg = new Config();
 
 // Cross-domain middleware
 function allowCrossDomain(req: Request, res: Response, next: NextFunction) {
