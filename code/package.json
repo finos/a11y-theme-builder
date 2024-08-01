@@ -54,14 +54,7 @@
 		"eslint": "^8.57.0",
 		"eslint-plugin-header": "^3.1.1",
 		"husky": "^9.1.2",
-		"lint-staged": "^15.2.7",
 		"nodemon": "^3.1.0",
 		"prettier": "^3.3.3"
 	},
-	"lint-staged": {
-		"src/**/*.{ts,tsx}": [
-			"prettier --write",
-			"eslint --fix --max-warnings=0"
-		]
-	}
 }
