@@ -4,7 +4,6 @@
 	"description": "Accessibility Theme Builder Application",
 	"scripts": {
 		"prepare": "cd .. && husky code/.husky",
-		"pre-push": "echo \"[Husky] checking for eslint errors and formatting using prettier.\" && lint-staged",
 		"test": "ts-node src/test.ts",
 		"build": "npm install && npm run build-ui && npm run build-api",
 		"build-ui": "cd src/ui && npm run build",

@@ -1,1 +1,4 @@
-cd code && npm run pre-push
+echo \"[Husky] checking for eslint errors and formatting using prettier.\"
+cd code 
+npx lint-staged --diff=$(git log HEAD --not --remotes --pretty=format:'%h' | tail -1)
+
