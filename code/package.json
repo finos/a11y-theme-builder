@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Accessibility Theme Builder Application",
 	"scripts": {
-		"prepare": "cd .. && husky code/.husky",
+		"prepare": "cd .. && husky install",
 		"test": "ts-node src/test.ts",
 		"build": "npm install && npm run build-ui && npm run build-api",
 		"build-ui": "cd src/ui && npm run build",
@@ -17,7 +17,7 @@
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
 		"docker-rm": "docker rm a11y-theme-builder",
-		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"", 
+		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
 		"format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
 		"lint": "npx eslint .",
 		"lint:fix": "npx eslint . --fix"
@@ -56,5 +56,6 @@
 		"husky": "^9.1.2",
 		"nodemon": "^3.1.0",
 		"prettier": "^3.3.3"
-	},
+	}
 }
+
