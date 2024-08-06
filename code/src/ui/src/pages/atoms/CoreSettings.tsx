@@ -1,6 +1,6 @@
-/*
- * Copyright (c) 2023 Discover Financial Services
- * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+/**
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright 2024 FINOS A11y Theme Builder contributors - see NOTICE file
  */
 import React from 'react';
 import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
