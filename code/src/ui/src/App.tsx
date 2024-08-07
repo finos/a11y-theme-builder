@@ -1,9 +1,9 @@
-/**
+/*
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WelcomePage from './pages/WelcomePage';
 import ErrorPage from './pages/ErrorPage';
 import DesignSystemPage from './pages/DesignSystemPage';
@@ -23,9 +23,9 @@ import { ServerStorage } from './ServerStorage';
 import WebFont from 'webfontloader';
 
 if (window.location.hostname === 'localhost' && window.location.port === '3000') {
-    Http.init(window.location.origin.replace('3000', '3001'));
+        Http.init(window.location.origin.replace('3000', '3001'));
 } else {
-    Http.init(window.location.origin);
+        Http.init(window.location.origin);
 }
 
 declare module '@mui/material/Typography' {
