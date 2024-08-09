@@ -44,8 +44,8 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
         }
         selectables = selectables.sort();
         if (!selectables) return;
-        for (var j = 0; j < selectables.length; i++) {
-            const s = selectables[i].toString() + 'px';
+        for (var j = 0; j < selectables.length; j++) {
+            const s = selectables[j].toString() + 'px';
             r.push(
                 <MenuItem key={s} value={selectables[j]}>
                     {' '}
@@ -71,16 +71,16 @@ export const MinimumTargetAtom: React.FC<Props> = ({ atoms }) => {
     const renderMobileMinTargetSelectables = () => {
         var r = [];
         var selectables = [44, 48];
-        for (var i = 3; i <= 7; i++) {
-            const newVal = (atoms.gridSettings.grid.getValue() || 8) * i;
+        for (var k = 3; k <= 7; k++) {
+            const newVal = (atoms.gridSettings.grid.getValue() || 8) * k;
             if (newVal !== 44 && newVal !== 48) selectables.push(newVal);
         }
         selectables = selectables.sort();
         if (!selectables) return;
-        for (var k = 0; k < selectables.length; k++) {
-            const s = selectables[i].toString() + 'px';
+        for (var l = 0; l < selectables.length; l++) {
+            const s = selectables[l].toString() + 'px';
             r.push(
-                <MenuItem key={s} value={selectables[k]}>
+                <MenuItem key={s} value={selectables[l]}>
                     {' '}
                     {s}{' '}
                 </MenuItem>
