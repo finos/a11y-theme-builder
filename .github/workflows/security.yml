@@ -41,7 +41,7 @@ jobs:
           format: 'HTML'
           out: '${{ matrix.module-folder }}-reports'
           args: >
-            # --suppression .github/node-cve-ignore-list.xml
+            --suppression .github/node-cve-ignore-list.xml
             --nodeAuditSkipDevDependencies
             --nodePackageSkipDevDependencies
             --failOnCVSS 5
