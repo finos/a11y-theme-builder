@@ -11,12 +11,8 @@
         "@mui/material": "^5.15.15",
         "@mui/x-data-grid": "^7.1.1",
         "@mui/system": "^5.15.15",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^15.0.1",
-        "@testing-library/user-event": "^14.5.2",
         "@types/chroma-js": "2.4.4",
         "@types/file-saver": "^2.0.7",
-        "@types/jest": "^29.5.12",
         "@types/node": "^20.12.7",
         "@types/react": "18.2.75",
         "@types/react-color": "3.0.12",
@@ -108,6 +104,10 @@
     },
     "devDependencies": {
         "react-scripts": "5.0.1",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^15.0.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
         "webpack": "^5.91.0"
     }
 }
