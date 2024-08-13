@@ -195,7 +195,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({
                                 sx={{
                                     backgroundColor: `${_blockPickerColor}`,
                                     input: {
-                                        color: `${_blockPickerOnColor}`,
+                                        color: `${_blockPickerOnColor} !important`,
                                     },
                                 }}
                             />
