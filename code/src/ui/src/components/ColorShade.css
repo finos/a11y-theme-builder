@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream ======= .color-block {
+.color-block {
     display: inline-block;
     font-size: 11px;
     width: 96px;
@@ -29,6 +29,6 @@ li .Hex {
     text-align: center !important;
 }
 
->>>>>>>Stashed changes .swatch-details.active {
+.swatch-details.active {
     display: block;
 }
