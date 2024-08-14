@@ -34,7 +34,7 @@
 		"@types/jsonwebtoken": "^9.0.2",
 		"@types/node": "^20.14.15",
 		"@types/nodemailer": "^6.4.15",
-		"axios": "^1.7.3",
+		"axios": "^1.7.4",
 		"axios-debug-log": "^1.0.0",
 		"body-parser": "^1.20.2",
 		"cookie-parser": "^1.4.6",

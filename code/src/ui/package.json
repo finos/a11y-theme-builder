@@ -21,7 +21,7 @@
         "@types/react-router-dom": "5.3.3",
         "@types/uuid": "^9.0.8",
         "@types/webfontloader": "^1.6.38",
-        "axios": "^1.7.3",
+        "axios": "^1.7.4",
         "buffer": "^6.0.3",
         "chroma-js": "^2.6.0",
         "colord": "^2.9.3",
