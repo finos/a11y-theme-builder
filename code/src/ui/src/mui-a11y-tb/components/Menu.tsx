@@ -1,12 +1,15 @@
+/**
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Menu as MuiMenu, MenuProps } from '@mui/material';
 
 interface Props extends MenuProps {
-    children?: ReactNode
+    children?: ReactNode;
 }
 
-export const Menu: React.FC<Props> = ({children, ...rest}) => {
-
+export const Menu: React.FC<Props> = ({ children, ...rest }) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const refContainer = React.useRef(null);
     useEffect(() => {
@@ -17,13 +20,10 @@ export const Menu: React.FC<Props> = ({children, ...rest}) => {
 
     return (
         <div>
-            <MuiMenu
-                {...rest}
-                container={anchorEl}
-            >
+            <MuiMenu {...rest} container={anchorEl}>
                 {children}
             </MuiMenu>
-            <div ref={refContainer} ></div>
-        </div >
-    )
-}
+            <div ref={refContainer}></div>
+        </div>
+    );
+};

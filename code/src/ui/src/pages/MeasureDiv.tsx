@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -28,9 +28,15 @@ export class MeasureDiv extends React.Component {
 
     public render(): JSX.Element {
         return (
-            <div className={this.props.className} style={this.props.style} ref={(divElement) => { this.divElement = divElement }}>
+            <div
+                className={this.props.className}
+                style={this.props.style}
+                ref={(divElement) => {
+                    this.divElement = divElement;
+                }}
+            >
                 {this.props.children}
             </div>
-        )
+        );
     }
 }

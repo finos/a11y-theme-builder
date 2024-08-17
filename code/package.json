@@ -16,6 +16,8 @@
 		"docker-stop": "docker stop a11y-theme-builder",
 		"docker-start": "docker start a11y-theme-builder",
 		"docker-rm": "docker rm a11y-theme-builder",
+		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+		"format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
 		"lint": "npx eslint .",
 		"lint:fix": "npx eslint . --fix"
 	},
@@ -30,9 +32,9 @@
 		"@types/express": "^4.17.21",
 		"@types/express-session": "^1.18.0",
 		"@types/jsonwebtoken": "^9.0.2",
-		"@types/node": "^20.12.7",
-		"@types/nodemailer": "^6.4.14",
-		"axios": "^1.6.8",
+		"@types/node": "^20.14.15",
+		"@types/nodemailer": "^6.4.15",
+		"axios": "^1.7.4",
 		"axios-debug-log": "^1.0.0",
 		"body-parser": "^1.20.2",
 		"cookie-parser": "^1.4.6",
@@ -50,6 +52,7 @@
 		"@typescript-eslint/parser": "^7.8.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-header": "^3.1.1",
-		"nodemon": "^3.1.0"
+		"nodemon": "^3.1.4",
+		"prettier": "^3.3.2"
 	}
 }

@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -10,24 +10,24 @@ import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
 
-const statCssPrefix = "stat"
+const statCssPrefix = 'stat';
 
 interface Props {
     designSystem: DesignSystem;
 }
 
 export const StatStylesAtom: React.FC<Props> = ({ designSystem }) => {
+    const statStylesAtom = designSystem.atoms.statStyles;
 
-    const statStylesAtom = designSystem.atoms.statStyles
+    const statTypographyStyling = statStylesAtom.stat;
 
-    const statTypographyStyling = statStylesAtom.stat
-
-    const keyStat = statTypographyStyling.key
+    const keyStat = statTypographyStyling.key;
 
     return (
         <div className="container">
             <HeadingSection item={statStylesAtom} title="Typography">
-            The Stat Styles Atom sets Typography settings for the 1 Stat types:
+                The Stat Styles Atom sets Typography settings for the 1 Stat
+                types:
                 <ul>
                     <li>Stat</li>
                 </ul>
@@ -48,10 +48,8 @@ export const StatStylesAtom: React.FC<Props> = ({ designSystem }) => {
                         designSystem={designSystem}
                     />
                 </SettingsSection>
-                <GeneratedCodeSection item={statStylesAtom}/>
+                <GeneratedCodeSection item={statStylesAtom} />
             </ExampleSection>
-
         </div>
-    )
-
-}
+    );
+};

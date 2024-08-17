@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+/**
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
+import React from 'react';
 import { SecondaryNav } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';
@@ -14,7 +18,6 @@ interface Props {
 }
 
 export const SecondaryNavOrganism: React.FC<Props> = ({ organism }) => {
-
     const [sticky, setSticky] = React.useState(false);
     const handleChange = (event: any) => {
         setSticky(event.target.checked);
@@ -24,30 +27,43 @@ export const SecondaryNavOrganism: React.FC<Props> = ({ organism }) => {
         <div>
             <HeadingSection item={organism} title="Apply Styles" />
             <ExampleSection>
-                <NavbarExample isSecondary/>
+                <NavbarExample isSecondary />
             </ExampleSection>
             <SettingsSection>
-            <FormControlLabel
+                <FormControlLabel
                     value="top"
-                    control={<Checkbox
-                        checked={sticky}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'sticky-checkbox' }}
-                    />}
+                    control={
+                        <Checkbox
+                            checked={sticky}
+                            onChange={handleChange}
+                            inputProps={{ 'aria-label': 'sticky-checkbox' }}
+                        />
+                    }
                     label="Sticky"
                     labelPlacement="top"
                 />
                 <div className="top40">
-                    <NumberSelectable property={organism.verticalPadding} defaultValue={8} units="px" />
+                    <NumberSelectable
+                        property={organism.verticalPadding}
+                        defaultValue={8}
+                        units="px"
+                    />
                 </div>
                 <div className="top40">
-                    <NumberSelectable property={organism.horizontalTabPadding} defaultValue={8} units="px" />
+                    <NumberSelectable
+                        property={organism.horizontalTabPadding}
+                        defaultValue={8}
+                        units="px"
+                    />
                 </div>
                 <div className="top40">
-                    <StringSelectable property={organism.navText} defaultValue={"CTA LARGE"} />
+                    <StringSelectable
+                        property={organism.navText}
+                        defaultValue={'CTA LARGE'}
+                    />
                 </div>
             </SettingsSection>
-            <GeneratedCodeSection item={organism}/>
+            <GeneratedCodeSection item={organism} />
         </div>
-    )
-}
+    );
+};

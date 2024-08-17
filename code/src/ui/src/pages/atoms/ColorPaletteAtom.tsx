@@ -1,12 +1,12 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
+import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
-import { ChromePicker, ColorResult } from "react-color";
+import { ChromePicker, ColorResult } from 'react-color';
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
 import './ColorPaletteAtom.css';
 import { HeadingSection } from '../../pages/content/HeadingSection';
@@ -20,17 +20,24 @@ interface Props {
     changeTab(newTabIndex: string): void;
 }
 
-export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab}) => {
-
-    const [_defaultColor, _setDefaultColor] =  useState<string>("#ffffff");
+export const ColorPaletteAtom: React.FC<Props> = ({
+    atom,
+    defaultColor,
+    changeTab,
+}) => {
+    const [_defaultColor, _setDefaultColor] = useState<string>('#ffffff');
     const [_blockPickerColor, _setBlockPickerColor] = useState(_defaultColor);
-    const [_blockPickerOnColor, _setBlockPickerOnColor] = useState(_defaultColor);
-    const [_colorName, _setColorName] = useState("");
+    const [_blockPickerOnColor, _setBlockPickerOnColor] =
+        useState(_defaultColor);
+    const [_colorName, _setColorName] = useState('');
     const [_colors, _setColors] = useState<Color[]>([]);
-    const [_addColorErrorTriggered, _setAddColorErrorTriggered] = useState<boolean>(false)
-    const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] = useState<boolean>(false)
-    const [_addColorError, _setAddColorError] = useState<boolean>(false)
-    const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
+    const [_addColorErrorTriggered, _setAddColorErrorTriggered] =
+        useState<boolean>(false);
+    const [_addColorInputErrorTriggered, _setAddColorInputErrorTriggered] =
+        useState<boolean>(false);
+    const [_addColorError, _setAddColorError] = useState<boolean>(false);
+    const [_addColorErrorMessage, _setAddColorErrorMessage] =
+        useState<string>('');
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -38,12 +45,12 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
             reflectColorPickerChangeInUI(defaultColor);
         }
         _setColors(atom.getColors());
-    }, [])
+    }, []);
 
     const resetUI = () => {
-        _setColorName("");
+        _setColorName('');
         _setBlockPickerColor(_defaultColor);
-    }
+    };
 
     // update color picker states to which other UI
     //  on the page is bound to, include "on" color
@@ -55,14 +62,16 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
         _setBlockPickerColor(color);
         if (!_addColorInputErrorTriggered) {
             const shadeForColor = Shade.fromHex(color);
-            const shadeForOnColor = shadeForColor.getOnShade()
+            const shadeForOnColor = shadeForColor.getOnShade();
             _setBlockPickerOnColor(shadeForOnColor.hex);
         }
-    }
+    };
 
     const handleAddColor = (event: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(`add color name: ${_colorName} hex value: ${_blockPickerColor}`);
-        if (_colorName === "") {
+        console.log(
+            `add color name: ${_colorName} hex value: ${_blockPickerColor}`
+        );
+        if (_colorName === '') {
             _setAddColorErrorTriggered(true);
             return;
         }
@@ -83,19 +92,21 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
             _setAddColorErrorMessage(`${error.message}`);
             _setAddColorError(true);
         }
-    }
+    };
 
     const handleColorNameBlur = (event: FocusEvent<HTMLInputElement>) => {
-        if (event.target.value === "") {
+        if (event.target.value === '') {
             _setAddColorErrorTriggered(true);
             return;
         }
         _setAddColorErrorTriggered(false);
-        _setColorName(event.target.value)
-    }
+        _setColorName(event.target.value);
+    };
 
-    const handleColorValueInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
+    const handleColorValueInputChange = (
+        event: ChangeEvent<HTMLInputElement>
+    ) => {
+        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) === true) {
             _setAddColorInputErrorTriggered(true);
             // need to set _blockPickerColor since UI is tied to
             //  it, so it needs to update so value in field can
@@ -105,69 +116,116 @@ export const ColorPaletteAtom: React.FC<Props> = ({atom, defaultColor, changeTab
         }
         _setAddColorInputErrorTriggered(false);
         reflectColorPickerChangeInUI(event.target.value);
-    }
+    };
 
     const handleColorSelected = (color: ColorResult) => {
         console.log(`color selected, event: ${JSON.stringify(color)}`);
-        reflectColorPickerChangeInUI(color.hex)
-    }
+        reflectColorPickerChangeInUI(color.hex);
+    };
 
     const handleColorChange = (event: any) => {
         const value = event.target.value;
-        if (value.match(/^[a-zA-Z0-9\-]*$/)) {
+        if (value.match(/^[a-zA-Z0-9-]*$/)) {
             _setColorName(value);
         }
-    }
+    };
 
     return (
         <div className="container color-palette-right-content">
             <HeadingSection title="Palette" heading="Add Colors to Palette">
-                <p>Build your extended color palette.  Add as many colors as you want.</p>
-                <p>Next, you will create themes under the <a onClick={(event) => changeTab("colorThemes")}>Color Theme</a> settings.</p>
+                <p>
+                    Build your extended color palette. Add as many colors as you
+                    want.
+                </p>
+                <p>
+                    Next, you will create themes under the{' '}
+                    <a onClick={(event) => changeTab('colorThemes')}>
+                        Color Theme
+                    </a>{' '}
+                    settings.
+                </p>
             </HeadingSection>
             <ExampleSection>
-                <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
+                <DisplayColorPalette
+                    colorPalette={atom}
+                    colors={_colors}
+                    lightLabel="Light Mode Colors"
+                    darkLabel="Dark Mode Colors"
+                />
 
-              <SettingsSection>
-                  <div style={{display:"flex", gap:"var(--spacing-3)", flexWrap:"wrap"}}>
-                      <div className="input-col">
-                            <InputLabel htmlFor='colorName'>Color Name</InputLabel>
+                <SettingsSection>
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: 'var(--spacing-3)',
+                            flexWrap: 'wrap',
+                        }}
+                    >
+                        <div className="input-col">
+                            <InputLabel htmlFor="colorName">
+                                Color Name
+                            </InputLabel>
                             <TextField
-                                id='colorName'
+                                id="colorName"
                                 error={_addColorErrorTriggered}
                                 onChange={handleColorChange}
                                 onBlur={handleColorNameBlur}
-                                helperText={_addColorErrorTriggered ? "Please provide a name for your color" : ""}
+                                helperText={
+                                    _addColorErrorTriggered
+                                        ? 'Please provide a name for your color'
+                                        : ''
+                                }
                                 value={_colorName}
                             />
                         </div>
                         <div className="input-col hexValue">
-                            <InputLabel htmlFor='hexValue'>Hex Value</InputLabel>
+                            <InputLabel htmlFor="hexValue">
+                                Hex Value
+                            </InputLabel>
                             <TextField
-                                id='hexValue'
+                                id="hexValue"
                                 error={_addColorInputErrorTriggered}
                                 onChange={handleColorValueInputChange}
-                                helperText={_addColorInputErrorTriggered ? "Please provide a 6-digit hexadecimal value" : ""}
+                                helperText={
+                                    _addColorInputErrorTriggered
+                                        ? 'Please provide a 6-digit hexadecimal value'
+                                        : ''
+                                }
                                 value={_blockPickerColor}
                                 sx={{
                                     backgroundColor: `${_blockPickerColor}`,
                                     input: {
-                                        color: `${_blockPickerOnColor}`
-                                    }
+                                        color: `${_blockPickerOnColor} !important`,
+                                    },
                                 }}
                             />
-                            <ChromePicker color={_blockPickerColor} onChange={handleColorSelected} />
+                            <ChromePicker
+                                color={_blockPickerColor}
+                                onChange={handleColorSelected}
+                            />
                         </div>
 
                         <div className="input-col">
-                            <Button className="top32" onClick={handleAddColor} disabled={_addColorErrorTriggered || _addColorInputErrorTriggered}>Add Color</Button>
-                            {_addColorError && <Alert severity='error'>{_addColorErrorMessage}</Alert>}
+                            <Button
+                                className="top32"
+                                onClick={handleAddColor}
+                                disabled={
+                                    _addColorErrorTriggered ||
+                                    _addColorInputErrorTriggered
+                                }
+                            >
+                                Add Color
+                            </Button>
+                            {_addColorError && (
+                                <Alert severity="error">
+                                    {_addColorErrorMessage}
+                                </Alert>
+                            )}
                         </div>
-
-                  </div>
-              </SettingsSection>
-              <GeneratedCodeSection item={atom}/>
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={atom} />
             </ExampleSection>
         </div>
-    )
-}
+    );
+};

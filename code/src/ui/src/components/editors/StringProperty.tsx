@@ -1,10 +1,11 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
 import { InputLabel, TextField, InputAdornment } from '@mui/material';
 import { Property } from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface NumberProps {
     property: Property<string>;
@@ -14,43 +15,73 @@ export interface NumberProps {
     style?: any;
     customHandleChange?: any;
     description?: React.ReactNode;
-	onChange?: (event:any) => Promise<void>;
+    onChange?: (event: any) => Promise<void>;
 }
 
-let timeOutId:any;
+let timeOutId: any;
 
-export const StringProperty: React.FC<NumberProps> = ({ property, defaultValue, children, units, style, customHandleChange, description, onChange }) => {
-    const [value, setValue] = useState<string>(property.getValue() || property.getDefaultValue() || defaultValue || "");
+export const StringProperty: React.FC<NumberProps> = ({
+    property,
+    defaultValue,
+    children,
+    units,
+    style,
+    customHandleChange,
+    description,
+    onChange,
+}) => {
+    const [value, setValue] = useState<string>(
+        property.getValue() || property.getDefaultValue() || defaultValue || ''
+    );
     async function handleChange(event: any): Promise<void> {
         const _value = event.target.value;
         setValue(_value);
     }
-    useEffect(()=> {
-		if (timeOutId) clearTimeout(timeOutId);
+    useEffect(() => {
+        if (timeOutId) clearTimeout(timeOutId);
         timeOutId = setTimeout(() => {
-			timeOutId = null;
+            timeOutId = null;
             property.setValue(value);
-			if (onChange) {
-				onChange({target: {value: value}});
-			}
+            if (onChange) {
+                onChange({ target: { value: value } });
+            }
         }, 1000);
-    },[value]);
+    }, [value]);
 
-    const _onChange = customHandleChange || handleChange
+    const _onChange = customHandleChange || handleChange;
+
+    const idSuffix = uuidv4();
+    const labelId = `stringPropertyLabel-${idSuffix}`;
+    const textFieldId = `stringPropertyTextField-${idSuffix}`;
 
     return (
         <div>
-            <InputLabel htmlFor="stringPropertyTextField" id="stringPropertyLabel">
+            <InputLabel
+                htmlFor={textFieldId}
+                id={labelId}
+            >
                 {children || property.name}
-                {description && <div style={{fontWeight:"normal"}}>{description}</div>}
+                {description && (
+                    <div style={{ fontWeight: 'normal' }}>{description}</div>
+                )}
             </InputLabel>
-            <TextField 
-                id="stringPropertyTextField"
-                InputProps={units ? {endAdornment: <InputAdornment position="end">{units}</InputAdornment>} : {}}
-                value={value }
+            <TextField
+                id={textFieldId}
+                InputProps={
+                    units
+                        ? {
+                              endAdornment: (
+                                  <InputAdornment position="end">
+                                      {units}
+                                  </InputAdornment>
+                              ),
+                          }
+                        : {}
+                }
+                value={value}
                 onChange={_onChange}
-                sx={{width:300, ...style}}
+                sx={{ width: 300, ...style }}
             />
         </div>
-    )
-}
+    );
+};

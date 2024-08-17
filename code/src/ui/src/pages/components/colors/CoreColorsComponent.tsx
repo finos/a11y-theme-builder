@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -7,70 +7,73 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { ComputedColorSwatch } from '../../../components/ComputedColorSwatch';
 import { ExampleSection } from '../../content/ExampleSection';
 
-interface Props {
-}
+interface Props {}
 
 const swatchesObj = {
-    labels: ["Gray"],
-    shadeIds: ["050", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
-    classNameSuffix: "bg",
-}
+    labels: ['Gray'],
+    shadeIds: [
+        '050',
+        '100',
+        '200',
+        '300',
+        '400',
+        '500',
+        '600',
+        '700',
+        '800',
+        '900',
+    ],
+    classNameSuffix: 'bg',
+};
 
-export const CoreColorsComponent: React.FC<Props> = ({}) => {
-
+export const CoreColorsComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Core Colors" />
             <ExampleSection>
-              <div>
-                  <div className="subtitle1 top40">White</div>
-                  <div className="theme-colors">
-                      <ComputedColorSwatch
-                          className="white"
-                          label="White"
-                      />
-                      <ComputedColorSwatch
-                          className="white-half"
-                          label="White Half"
-                      />
-                  </div>
-                  <div className="subtitle1 top40">Black</div>
-                  <div className="theme-colors">
-                      <ComputedColorSwatch
-                          className="black"
-                          label="Black"
-                      />
-                      <ComputedColorSwatch
-                          className="black-half"
-                          label="Black Half"
-                      />
-                  </div>
-                  <div className="subtitle1 top40">Near Black</div>
-                  <div className="theme-colors">
-                      <ComputedColorSwatch
-                          className="nearblack-bg"
-                          label="Near Black"
-                      />
-                  </div>
-              </div>
-              {swatchesObj.labels.map((swatchLabel) => {
-                  return (
-                      <div>
-                          <div className="subtitle1 top40">{swatchLabel}</div>
-                          <div className="theme-colors">
-                              {swatchesObj.shadeIds.map((shadeId) => {
-                                  return (
-                                      <ComputedColorSwatch
-                                          className={`${swatchLabel.toLowerCase()}-${shadeId}-${swatchesObj.classNameSuffix}`}
-                                          label={`${swatchLabel}-${shadeId}`}
-                                      />
-                                  );
-                              })}
-                          </div>
-                      </div>
-                  );
-              })}
+                <div>
+                    <div className="subtitle1 top40">White</div>
+                    <div className="theme-colors">
+                        <ComputedColorSwatch className="white" label="White" />
+                        <ComputedColorSwatch
+                            className="white-half"
+                            label="White Half"
+                        />
+                    </div>
+                    <div className="subtitle1 top40">Black</div>
+                    <div className="theme-colors">
+                        <ComputedColorSwatch className="black" label="Black" />
+                        <ComputedColorSwatch
+                            className="black-half"
+                            label="Black Half"
+                        />
+                    </div>
+                    <div className="subtitle1 top40">Near Black</div>
+                    <div className="theme-colors">
+                        <ComputedColorSwatch
+                            className="nearblack-bg"
+                            label="Near Black"
+                        />
+                    </div>
+                </div>
+                {swatchesObj.labels.map((swatchLabel) => {
+                    return (
+                        <div>
+                            <div className="subtitle1 top40">{swatchLabel}</div>
+                            <div className="theme-colors">
+                                {swatchesObj.shadeIds.map((shadeId) => {
+                                    return (
+                                        <ComputedColorSwatch
+                                            className={`${swatchLabel.toLowerCase()}-${shadeId}-${swatchesObj.classNameSuffix}`}
+                                            label={`${swatchLabel}-${shadeId}`}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    );
+                })}
             </ExampleSection>
         </div>
     );
-}
+};

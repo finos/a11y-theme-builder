@@ -1,9 +1,17 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, InputAdornment, InputLabel, TextField, Typography } from '@mui/material';
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    InputAdornment,
+    InputLabel,
+    TextField,
+    Typography,
+} from '@mui/material';
 import { DesignSystem, Cards } from '@finos/a11y-theme-builder-sdk';
 import { NumberScaledSelectable } from '../../components/editors/NumberScaledSelectable';
 import { StringCategorySelectable } from '../../components/editors/StringCategorySelectable';
@@ -18,18 +26,26 @@ interface Props {
 }
 
 enum CardSettingsKey {
-    minWidth = "cards-molecules-min-width",
-    minHeight = "cards-molecules-min-height"
+    minWidth = 'cards-molecules-min-width',
+    minHeight = 'cards-molecules-min-height',
 }
 
 export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
 
-    const [_minWidth, _setMinWidth] = useState<number>(molecule.minWidth.getValue() || molecule.minWidth.getDefaultValue() || 80);
-    const [_minHeight, _setMinHeight] = useState<number>(molecule.minHeight.getValue() || molecule.minHeight.getDefaultValue() || 80);
+    const [_minWidth, _setMinWidth] = useState<number>(
+        molecule.minWidth.getValue() ||
+            molecule.minWidth.getDefaultValue() ||
+            80
+    );
+    const [_minHeight, _setMinHeight] = useState<number>(
+        molecule.minHeight.getValue() ||
+            molecule.minHeight.getDefaultValue() ||
+            80
+    );
 
     useEffect(() => {
-        console.log("CardsMolecule mounted");
+        console.log('CardsMolecule mounted');
     }, []);
 
     // Called when user focus leaves the minWidth or
@@ -44,7 +60,7 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
             _setMinHeight(value);
             molecule.minHeight.setValue(value);
         }
-    }
+    };
 
     return (
         <div>
@@ -56,7 +72,8 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <CardHeader title="Card Title" />
                     <CardContent>
                         <Typography variant="body2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt.
                         </Typography>
                     </CardContent>
                 </Card>
@@ -64,46 +81,85 @@ export const CardsMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                     <div className="row">
                         <div className="col-6 top16">
                             <div className="formRow">
-                                <InputLabel className="label-1">Min Width</InputLabel>
+                                <InputLabel className="label-1">
+                                    Min Width
+                                </InputLabel>
                                 <TextField
                                     id="cards-molecules-min-width"
                                     type="number"
                                     defaultValue={_minWidth}
-                                    onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
-                                    InputProps={{
-                                        endAdornment: <InputAdornment position="start">px</InputAdornment>,
+                                    onBlur={(event) => {
+                                        handleValueChange(
+                                            event.target.id,
+                                            parseInt(event.target.value)
+                                        );
                                     }}
-                                    sx={{ width: 300 }} />
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="start">
+                                                px
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                    sx={{ width: 300 }}
+                                />
                             </div>
                             <div className="formRow">
-                                <InputLabel className="label-1">Min Height</InputLabel>
+                                <InputLabel className="label-1">
+                                    Min Height
+                                </InputLabel>
                                 <TextField
                                     id="cards-molecules-min-height"
                                     type="number"
                                     defaultValue={_minHeight}
-                                    onBlur={(event) => { handleValueChange(event.target.id, parseInt(event.target.value)) }}
-                                    InputProps={{
-                                        endAdornment: <InputAdornment position="start">px</InputAdornment>,
+                                    onBlur={(event) => {
+                                        handleValueChange(
+                                            event.target.id,
+                                            parseInt(event.target.value)
+                                        );
                                     }}
-                                    sx={{ width: 300 }} />
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="start">
+                                                px
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                    sx={{ width: 300 }}
+                                />
                             </div>
                             <div className="formRow">
-                                <NumberScaledSelectable property={molecule.borderRadius} units="px" scale={grid}/>
+                                <NumberScaledSelectable
+                                    property={molecule.borderRadius}
+                                    units="px"
+                                    scale={grid}
+                                />
                             </div>
                             <div className="formRow">
-                                <NumberScaledSelectable property={molecule.padding} units="px" scale={grid}/>
+                                <NumberScaledSelectable
+                                    property={molecule.padding}
+                                    units="px"
+                                    scale={grid}
+                                />
                             </div>
                             <div className="formRow">
-                                <NumberScaledSelectable property={molecule.contentGap} units="px" scale={grid}/>
+                                <NumberScaledSelectable
+                                    property={molecule.contentGap}
+                                    units="px"
+                                    scale={grid}
+                                />
                             </div>
                             <div className="formRow">
-                                <StringCategorySelectable property={molecule.shadow} defaultValue="None" />
+                                <StringCategorySelectable
+                                    property={molecule.shadow}
+                                    defaultValue="None"
+                                />
                             </div>
                         </div>
-                      </div>
-                  </SettingsSection>
-              <GeneratedCodeSection item={molecule} />
-           </ExampleSection>
-        </div >
+                    </div>
+                </SettingsSection>
+                <GeneratedCodeSection item={molecule} />
+            </ExampleSection>
+        </div>
     );
-}
+};

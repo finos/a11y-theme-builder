@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -16,19 +16,27 @@ interface Props {
     onChange?: Function;
 }
 
-export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, rightColor, size, checked, onChange}) => {
-    const handleOnChange = (event:any) => {
-        const value = event.target.value;
+export const NavSwitch: React.FC<Props> = ({
+    leftLabel,
+    rightLabel,
+    leftColor,
+    rightColor,
+    size,
+    checked,
+    onChange,
+}) => {
+    const handleOnChange = (event: any) => {
+        //const value = event.target.value;
         if (onChange) {
             onChange();
         }
-    }
+    };
 
-    const sz = size || 1.5;
+    //const sz = size || 1.5;
     const MySwitch = styled(Switch)(({ theme }) => ({
         padding: 0,
         display: 'flex',
-    }))
+    }));
 
     return (
         <Stack direction="row" spacing={1} alignItems="center">
@@ -39,7 +47,6 @@ export const NavSwitch: React.FC<Props> = ({leftLabel, rightLabel, leftColor, ri
                 inputProps={{ 'aria-label': '' }}
             />
             {rightLabel && <Typography>{rightLabel}</Typography>}
-         </Stack>
-    )
-
-}
+        </Stack>
+    );
+};

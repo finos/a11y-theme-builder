@@ -6,18 +6,14 @@
     "dependencies": {
         "@emotion/react": "^11.11.4",
         "@emotion/styled": "^11.11.5",
-        "@finos/a11y-theme-builder-sdk": "^1.0.0",
+        "@finos/a11y-theme-builder-sdk": "^1.1.0",
         "@mui/icons-material": "^5.15.15",
         "@mui/material": "^5.15.15",
         "@mui/x-data-grid": "^7.1.1",
         "@mui/system": "^5.15.15",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^15.0.1",
-        "@testing-library/user-event": "^14.5.2",
         "@types/chroma-js": "^2.4.4",
         "@types/file-saver": "^2.0.7",
-        "@types/jest": "^29.5.12",
-        "@types/node": "^20.12.7",
+        "@types/node": "^20.14.15",
         "@types/react": "18.2.75",
         "@types/react-color": "3.0.12",
         "@types/react-dom": "18.2.24",
@@ -25,29 +21,29 @@
         "@types/react-router-dom": "5.3.3",
         "@types/uuid": "^9.0.8",
         "@types/webfontloader": "^1.6.38",
-        "axios": "^1.6.8",
+        "axios": "^1.7.4",
         "buffer": "^6.0.3",
-        "chroma-js": "^2.4.2",
+        "chroma-js": "^2.6.0",
         "colord": "^2.9.3",
         "file-saver": "^2.0.5",
         "html-react-parser": "^5.1.10",
         "react": "18.2.0",
         "react-color": "^2.19.3",
         "react-dom": "18.2.0",
-        "react-icons": "5.0.1",
-        "react-intl": "6.6.5",
-        "react-router-dom": "6.22.3",
+        "react-icons": "5.2.1",
+        "react-intl": "6.6.8",
+        "react-router-dom": "6.26.0",
         "typescript": "^4.9.3",
         "uuid": "^9.0.1",
         "webfontloader": "^1.6.28"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "start-local": "REACT_APP_STORAGE=local react-scripts start",
-        "dev-ui": "react-scripts start",
-        "build": "npm install && react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
+        "start": "craco start",
+        "start-local": "REACT_APP_STORAGE=local craco start",
+        "dev-ui": "craco start",
+        "build": "npm install && craco build",
+        "test": "craco test",
+        "eject": "craco eject",
         "storybook": "start-storybook -p 6006 -s public",
         "update-sdk": "npm update a11y-theme-builder-sdk",
         "build-storybook": "build-storybook -s public",
@@ -58,6 +54,15 @@
             "react-app",
             "react-app/jest"
         ],
+        "plugins": ["header"],
+        "rules": {
+            "header/header": [2, "block", [
+                "*",
+                {"pattern": " * Copyright \\(c\\) \\d{4} Discover Financial Services| * SPDX-License-Identifier: Apache-2.0"},
+                {"pattern": " * Licensed under Apache-2.0 License. See License.txt in the project root for license information| * Copyright \\d{4} FINOS A11y Theme Builder contributors - see NOTICE file"},
+                " "
+            ]]
+        },
         "overrides": [
             {
                 "files": [
@@ -98,7 +103,11 @@
         "webpack": "^5.91.0"
     },
     "devDependencies": {
-        "react-scripts": "5.0.1",
+        "@craco/craco": "7.1.0",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^15.0.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
         "webpack": "^5.91.0"
     }
 }

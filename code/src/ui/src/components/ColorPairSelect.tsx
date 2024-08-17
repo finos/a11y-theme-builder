@@ -1,10 +1,22 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from "react";
-import {Box, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
-import { ColorPair, Event, EventType, PropertyColorPair } from '@finos/a11y-theme-builder-sdk';
+import React, { useState, useEffect } from 'react';
+import {
+    Box,
+    InputLabel,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
+} from '@mui/material';
+import {
+    ColorPair,
+    Event,
+    EventType,
+    PropertyColorPair,
+} from '@finos/a11y-theme-builder-sdk';
+import { v4 as uuidv4 } from 'uuid';
 import { ColorShade } from './ColorShade';
 import './ColorPairSelect.css';
 
@@ -13,11 +25,12 @@ interface Props {
     label?: string;
 }
 
-export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
-
-    const [_selectableValues, _setSelectableValues] = useState<ColorPair[]>(value.getSelectableValues());
+export const ColorPairSelect: React.FC<Props> = ({ value, label }) => {
+    const [_selectableValues, _setSelectableValues] = useState<ColorPair[]>(
+        value.getSelectableValues()
+    );
     const [_disabled, _setDisabled] = useState<boolean>(!value.isEnabled());
-    const [_selectedValue, _setSelectedValue] = useState<string>("");
+    const [_selectedValue, _setSelectedValue] = useState<string>('');
 
     useEffect(() => {
         if (value) {
@@ -39,12 +52,12 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                     //  a property that it depends on changes
                     const newValue = value.getValue();
                     if (!newValue) {
-                        _setSelectedValue("");
+                        _setSelectedValue('');
                     }
                     return;
                 }
             };
-            value.setListener("colorPairSelect", colorPairListener);
+            value.setListener('colorPairSelect', colorPairListener);
         }
     }, []);
 
@@ -54,21 +67,21 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
             return;
         }
         return _selectableValues[parseInt(index)];
-    }
+    };
 
     const handleColorChange = (event: SelectChangeEvent) => {
-        // selected value is of the format 
+        // selected value is of the format
         //  "colorPair.primary.hex;colorPair.secondary.hex;index of selected ColorPair"
         if (_selectableValues) {
             const selectedValue = event.target.value;
             const values: string[] = selectedValue.split(';');
             if (values.length !== 3) {
-                console.error("unexpected selected value");
+                console.error('unexpected selected value');
                 return;
             }
             const selectedColorPair = getColorPairByIndex(values[2]);
             if (!selectedColorPair) {
-                console.error("unable to find colors");
+                console.error('unable to find colors');
                 return;
             }
             value.setValue(selectedColorPair);
@@ -77,11 +90,20 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
     };
 
     if (value) {
+        const idSuffix = uuidv4();
+        const selectId = `outlined-select-${idSuffix}`
+        const labelId = `outlined-select-label-${idSuffix}`
         return (
             <div>
-                {label && <InputLabel className="caption" htmlFor="outlined-select">{label}</InputLabel>}
+                {label && (
+                    <InputLabel className="caption" id={labelId} htmlFor={selectId}>
+                        {label}
+                    </InputLabel>
+                )}
                 <Select
                     label=""
+                    labelId={label && labelId}
+                    id={selectId}
                     onChange={handleColorChange}
                     displayEmpty={true}
                     defaultValue=""
@@ -89,35 +111,64 @@ export const ColorPairSelect: React.FC<Props> = ({value, label}) => {
                     disabled={_disabled}
                     MenuProps={{
                         anchorOrigin: {
-                            vertical: "bottom",
-                            horizontal: "left",
+                            vertical: 'bottom',
+                            horizontal: 'left',
                         },
                         transformOrigin: {
-                            vertical: "top",
-                            horizontal: "left",
+                            vertical: 'top',
+                            horizontal: 'left',
                         },
                     }}
                     renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                            <ColorShade shade={selected ? getColorPairByIndex(selected.split(';')[2])?.primary : "" || ""} />
-                            <ColorShade shade={selected ? getColorPairByIndex(selected.split(';')[2])?.secondary : "" || ""} />
+                        <Box
+                            sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}
+                        >
+                            <ColorShade
+                                shade={
+                                    selected
+                                        ? getColorPairByIndex(
+                                              selected.split(';')[2]
+                                          )?.primary
+                                        : '' || ''
+                                }
+                            />
+                            <ColorShade
+                                shade={
+                                    selected
+                                        ? getColorPairByIndex(
+                                              selected.split(';')[2]
+                                          )?.secondary
+                                        : '' || ''
+                                }
+                            />
                         </Box>
                     )}
                 >
-                    {_selectableValues && _selectableValues.map((colorPair, i) => {
-                        return (
-                            <MenuItem key={`shade${i}`} value={`${colorPair.primary.hex};${colorPair.secondary.hex};${i}`}><ColorShade key={"ColorShadePrimary"+i} shade={colorPair.primary} /><ColorShade key={"ColorShadeSecondary"+i} shade={colorPair.secondary} /><span className="color-name label-1">{colorPair.title}</span></MenuItem>
-                        );
-                    })}
+                    {_selectableValues &&
+                        _selectableValues.map((colorPair, i) => {
+                            return (
+                                <MenuItem
+                                    key={`shade${i}`}
+                                    value={`${colorPair.primary.hex};${colorPair.secondary.hex};${i}`}
+                                >
+                                    <ColorShade
+                                        key={'ColorShadePrimary' + i}
+                                        shade={colorPair.primary}
+                                    />
+                                    <ColorShade
+                                        key={'ColorShadeSecondary' + i}
+                                        shade={colorPair.secondary}
+                                    />
+                                    <span className="color-name label-1">
+                                        {colorPair.title}
+                                    </span>
+                                </MenuItem>
+                            );
+                        })}
                 </Select>
-            </div >
+            </div>
         );
-
     } else {
-
-    return (
-        <div className="row">No ColorSelect available</div>
-    );
-
-}
-}
+        return <div className="row">No ColorSelect available</div>;
+    }
+};

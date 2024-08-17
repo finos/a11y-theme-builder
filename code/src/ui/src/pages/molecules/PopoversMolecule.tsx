@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -17,24 +17,33 @@ interface Props {
     designSystem: DesignSystem;
 }
 
-export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSystem }) => {
+export const PopoversMolecule: React.FC<Props> = ({
+    popoversMolecule,
+    designSystem,
+}) => {
     const grid = designSystem.atoms.gridSettings.grid.getValue();
 
-    const [anchor, setAnchor] = useState(null)
+    const [anchor, setAnchor] = useState(null);
     const openPopover = (event: any) => {
-        setAnchor(event.currentTarget)
-    }
+        setAnchor(event.currentTarget);
+    };
     const handleClose = () => {
-        setAnchor(null)
-    }
+        setAnchor(null);
+    };
 
     let noShadow = popoversMolecule.shadow.getValue() === undefined;
-    let boxShadowString = noShadow ? "none" : "var(--" + popoversMolecule.shadow.getValue()?.toLowerCase() +") !important"
+    let boxShadowString = noShadow
+        ? 'none'
+        : 'var(--' +
+          popoversMolecule.shadow.getValue()?.toLowerCase() +
+          ') !important';
 
     return (
         <div>
             <HeadingSection item={popoversMolecule} title="Apply Styles">
-            A Popover is an element that won't be rendered until it becomes shown, at which point it will be rendered on top of other page content.
+                A Popover is an element that won't be rendered until it becomes
+                shown, at which point it will be rendered on top of other page
+                content.
             </HeadingSection>
             <ExampleSection>
                 <Button variant="contained" onClick={openPopover}>
@@ -55,9 +64,10 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                     //@TODO: determine how to move to Theme.jsx
                     PaperProps={{
                         sx: {
-                            borderRadius: "calc(var(--popoverRadius) * var(--radius-1))",
-                            boxShadow: boxShadowString
-                        }
+                            borderRadius:
+                                'calc(var(--popoverRadius) * var(--radius-1))',
+                            boxShadow: boxShadowString,
+                        },
                     }}
                 >
                     <Typography sx={{ p: 2 }}>Top Popover</Typography>
@@ -66,17 +76,24 @@ export const PopoversMolecule: React.FC<Props> = ({ popoversMolecule, designSyst
                     <div className="row">
                         <div className="col-12">
                             <div className="form-row">
-                                <NumberScaledSelectable property={popoversMolecule.borderRadius} units="px" defaultValue={8} scale={grid}/>
+                                <NumberScaledSelectable
+                                    property={popoversMolecule.borderRadius}
+                                    units="px"
+                                    defaultValue={8}
+                                    scale={grid}
+                                />
                             </div>
                             <div className="form-row">
-                                <StringCategorySelectable property={popoversMolecule.shadow} defaultValue="None" />
+                                <StringCategorySelectable
+                                    property={popoversMolecule.shadow}
+                                    defaultValue="None"
+                                />
                             </div>
                         </div>
                     </div>
                 </SettingsSection>
                 <GeneratedCodeSection item={popoversMolecule} />
             </ExampleSection>
-
         </div>
-    )
-}
+    );
+};
