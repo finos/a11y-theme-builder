@@ -186,7 +186,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
                                 Set a max Chroma level.
                             </p>
                             <p style={{ fontSize: '12px', fontWeight: '700', margin: '0px', padding: '0px', paddingBottom: '0px' }}>
-                                Learn more about <Link href='https://sites.harding.edu/gclayton/Color/Topics/001_HueValueChroma.html'>Chroma</Link>
+                                Learn more about <Link href='https://sites.harding.edu/gclayton/Color/Topics/001_HueValueChroma.html' target="_blank" rel="noopener noreferrer" >Chroma</Link>
                             </p>
                         </div>
                     </div>
