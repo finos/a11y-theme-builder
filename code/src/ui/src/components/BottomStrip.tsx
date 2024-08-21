@@ -15,10 +15,10 @@ export const BottomStrip: React.FC<BottomStripProps> = ({ onBack, onSave, onSave
     return (
         <div
             style={{
-                position: 'sticky',
+                position: 'fixed',
                 bottom: 0,
                 width: '100%',
-                maxWidth: '1200px',
+                maxWidth: '100%',
                 margin: '0 auto',
                 display: 'flex',
                 gap:"8px",

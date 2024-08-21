@@ -261,8 +261,8 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                             </List>
                         </Collapse>
 
-                        <LeftNavAtom atom={atoms.colorPalette} indent={1} />
-                        <LeftNavAtom atom={atoms.colorThemes} indent={1} />
+                        {/* <LeftNavAtom atom={atoms.colorPalette} indent={1} />
+                        <LeftNavAtom atom={atoms.colorThemes} indent={1} /> */}
                         <LeftNavAtom atom={atoms.subcolorThemes} indent={1} />
                         <LeftNavItem text={"Typography"} indent={1} onClick={() => setDisplayTypography(!displayTypography)}>
                             {displayTypography ? <ExpandLess /> : <ExpandMore />}
@@ -363,11 +363,11 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showAtom === "atoms" &&
                         <AtomicIntro changeTab={setShowAtom} />
                     }
-                    {showAtom === atoms.colorPalette.value && (
+                    {/* {showAtom === atoms.colorPalette.value && (
                         <ErrorHandler>
                             <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom} />
                         </ErrorHandler>
-                    )}
+                    )} */}
                     {showAtom === 'CoreSettings' && (
                         <ErrorHandler>
                             <CoreSettings atom={designSystem} defaultColor="#ffffff" changeTab={setShowAtom} saveDesignSystem={saveDesignSystem} />
