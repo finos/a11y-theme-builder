@@ -111,7 +111,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                 return (
                                     <div key={i}>
                                         <ModalConfirmation title={`${_currentBaseColor} Color Deleted`} isOpen={_deleteColorConfirmationModalIsOpen} onClose={() => _setDeleteColorConfirmationModalIsOpen(false)} >The {_currentBaseColor} Color has been deleted</ModalConfirmation>
-                                        <ModalConfirmation title={`Unable To Delete`} isOpen={_unableToDeleteColorModalIsOpen} onClose={() => _setUnableToDeleteColorModalIsOpen(false)} ><div>This the only color in your Design System</div> <div>You can However edit "{`${_currentBaseColor}`}"</div></ModalConfirmation>
+                                        <ModalConfirmation title={`Unable To Delete`} isOpen={_unableToDeleteColorModalIsOpen} onClose={() => _setUnableToDeleteColorModalIsOpen(false)} ><div>This the only color in your Design System</div> <div>You can, however, edit "{`${_currentBaseColor}`}"</div></ModalConfirmation>
 
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "8px", paddingTop: "4px" }}>
                                             <div className="subtitle1" style={{ fontSize: "24px" }}>{color.name}</div>
