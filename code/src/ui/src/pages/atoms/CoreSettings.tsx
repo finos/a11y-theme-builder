@@ -101,7 +101,7 @@ export const CoreSettings: React.FC<Props> = ({ atom, defaultColor, changeTab ,s
     }
 
     return (
-        <div className="container color-palette-right-content" style={{ display: "flex", flexDirection: "column" }}>
+        <div className="container color-palette-right-content" style={{ display: "flex", flexDirection: "column", marginBottom:"80px" }}>
             <HeadingSection heading="Build Theme/s">
                 <ProgressBarSection activeStep={0} ></ProgressBarSection>
             </HeadingSection>

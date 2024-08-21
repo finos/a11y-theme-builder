@@ -152,7 +152,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
     }
 
     return (
-        <div className="container color-palette-right-content">
+        <div className="container color-palette-right-content" style={{ marginBottom:"80px" }}>
             <HeadingSection heading="Build Theme/s">
                 <ProgressBarSection activeStep={1} ></ProgressBarSection>
             </HeadingSection>
