@@ -1,28 +1,41 @@
 {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module",
-      "project": "./tsconfig.json"
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
-    "plugins": [
-      "@typescript-eslint",
-      "header"
-    ],
-    "extends": [
-      "plugin:@typescript-eslint/recommended"
-    ],
+    "plugins": ["@typescript-eslint", "header"],
+    "extends": ["plugin:@typescript-eslint/recommended"],
     "rules": {
-      "header/header": [2, "block", [
-        "*",
-        {"pattern": " * Copyright \\(c\\) \\d{4} Discover Financial Services| * SPDX-License-Identifier: Apache-2.0"},
-        {"pattern": " * Licensed under Apache-2.0 License. See License.txt in the project root for license information| * Copyright \\d{4} FINOS A11y Theme Builder contributors - see NOTICE file"},
-        " "
-      ]],
-      "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-      "@typescript-eslint/no-explicit-any": "off",
-      "no-unused-vars": "off"
+        "header/header": [
+            2,
+            "block",
+            [
+                "*",
+                {
+                    "pattern": " * Copyright \\(c\\) \\d{4} Discover Financial Services| * SPDX-License-Identifier: Apache-2.0"
+                },
+                {
+                    "pattern": " * Licensed under Apache-2.0 License. See License.txt in the project root for license information| * Copyright \\d{4} FINOS A11y Theme Builder contributors - see NOTICE file"
+                },
+                " "
+            ]
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-unused-vars": "off"
     },
-    "ignorePatterns": ["dist/", "node_modules/", "build/", "package.json","package-lock.json","*.md", ".eslintrc.json"]
-  }
-  
+    "ignorePatterns": [
+        "dist/",
+        "node_modules/",
+        "build/",
+        "package.json",
+        "package-lock.json",
+        "*.md",
+        ".eslintrc.json"
+    ]
+}
