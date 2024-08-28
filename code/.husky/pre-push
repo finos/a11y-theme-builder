@@ -3,8 +3,15 @@ echo "[Husky] Checking for ESLint errors and formatting using Prettier."
 # Navigate to the code directory
 cd code 
 
-# Get the list of files changed since the last push
-CHANGED_FILES=$(git diff --name-only $(git merge-base HEAD $(git rev-parse --abbrev-ref --symbolic-full-name @{u})) | sed 's/^code\///' | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
+UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+
+if [ -n "$UPSTREAM" ]; then
+    # If upstream exists, find changed files since the common ancestor with upstream
+    CHANGED_FILES=$(git diff --name-only $(git merge-base HEAD "$UPSTREAM")..HEAD | sed 's/^code\///' | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
+else
+    # If no upstream exists, find changed files since the last push
+    CHANGED_FILES=$(git diff --name-only HEAD@{push}..HEAD | sed 's/^code\///' | grep -E '\.(js|jsx|ts|tsx|css|scss|json|md)$')
+fi
 
 # Run ESLint on changed files
 if [ -n "$CHANGED_FILES" ]; then
@@ -31,7 +38,7 @@ fi
 STAGED_FILES=$(git diff --cached --name-only)
 if [ -n "$STAGED_FILES" ]; then
   echo "Committing changes..."
-  git commit -m "[Husky] chore: ESLint errors fixed and code formatted"
+  git commit -m "[Husky] Pre-push hook checked for eslint errors and formatted the code which is committed to this repo  "
 else
   echo "No changes to commit."
 fi

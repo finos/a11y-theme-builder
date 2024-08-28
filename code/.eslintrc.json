@@ -23,6 +23,6 @@
       "@typescript-eslint/no-explicit-any": "off",
       "no-unused-vars": "off"
     },
-    "ignorePatterns": ["dist/", "node_modules/", "build/"]
+    "ignorePatterns": ["dist/", "node_modules/", "build/", "package.json","package-lock.json","*.md"]
   }
   

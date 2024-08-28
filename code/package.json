@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Accessibility Theme Builder Application",
     "scripts": {
-        "prepare": "cd .. && husky install",
+        "prepare": "cd .. && husky code/.husky",
         "test": "ts-node src/test.ts",
         "build": "npm install && npm run build-ui && npm run build-api",
         "build-ui": "cd src/ui && npm run build",
