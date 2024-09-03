@@ -467,7 +467,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row">
+                                {/* <div className="row">
                                     <Button
                                         onClick={() => {
                                             handleShowTheme();
@@ -476,10 +476,10 @@ export const CreateColorTheme: React.FC<Props> = ({
                                     >
                                         Show Theme
                                     </Button>
-                                </div>
+                                </div> */}
                             </div>
                         </SettingsSection>
-                        <GeneratedCodeSection item={atom} />
+                        {/* <GeneratedCodeSection item={atom} /> */}
                     </Grid>
                 </Grid>
                 <ModalConfirmation

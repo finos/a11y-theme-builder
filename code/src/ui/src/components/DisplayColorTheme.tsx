@@ -20,13 +20,6 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
     if (colorTheme) {
         return (
             <div className="content theme-page active" id="buildThemes">
-                <HeadingSection title="Theme" heading="Default Theme">
-                    <p>
-                        Read-only representation of the colors in the default
-                        color theme for the currently selected design system.
-                    </p>
-                </HeadingSection>
-                <ExampleSection>
                     <div style={{ display: 'flex', gap: '40px' }}>
                         <LightModeSection>
                             <h6 className="top16">Theme Colors</h6>
@@ -233,8 +226,7 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             </div>
                         </DarkModeSection>
                     </div>
-                    <GeneratedCodeSection item={atom} />
-                </ExampleSection>
+                    {/* <GeneratedCodeSection item={atom} /> */}
             </div>
         );
     } else {

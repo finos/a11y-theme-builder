@@ -9,9 +9,10 @@ interface BottomStripProps {
     onBack: () => void;
     onSave: () => void;
     onSaveAndContinue: () => void;
+    numOfColors: Number
 }
 
-export const BottomStrip: React.FC<BottomStripProps> = ({ onBack, onSave, onSaveAndContinue }) => {
+export const BottomStrip: React.FC<BottomStripProps> = ({ onBack, onSave, onSaveAndContinue, numOfColors }) => {
     return (
         <div
             style={{
@@ -33,10 +34,10 @@ export const BottomStrip: React.FC<BottomStripProps> = ({ onBack, onSave, onSave
                 Back
             </Button>
 
-            <Button variant="outlined" color="primary" onClick={onSave} style={{ marginRight: '8px' }}>
+            <Button variant="outlined"  onClick={onSave} style={{ marginRight: '8px' }} disabled={numOfColors === 0} >
                 Save
             </Button>
-            <Button variant="contained" color="secondary" onClick={onSaveAndContinue}>
+            <Button variant="contained"  onClick={onSaveAndContinue} disabled={numOfColors === 0} >
                 Save and Continue
             </Button>
 

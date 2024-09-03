@@ -42,6 +42,7 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
     const [_darkModeMaxChroma, _setDarkModeMaxChroma] = useState("40");
     const [_addDarkModeMaxChromaErrorTriggered, _setAddDarkModeMaxChromaErrorTriggered ]= useState<boolean> (false);
     const [_addLightModeMaxChromaErrorTriggered, _setAddLightModeMaxChromaErrorTriggered ]= useState<boolean> (false);
+    const [_numOfColorInPalette, _setNumOfColorInPalette ]= useState<Number>(0);
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -50,6 +51,10 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
         }
         _setColors(atom.getColors());
     }, [])
+
+    useEffect(() => {
+        _setNumOfColorInPalette(atom.getColors().length);
+    }, [atom])
 
     const resetUI = () => {
         _setColorName("");
@@ -245,8 +250,8 @@ export const BuildColorPalette: React.FC<Props> = ({ atom, defaultColor, changeT
             <DisplayColorPalette colorPalette={atom} colors={_colors} lightLabel="Light Mode Colors" darkLabel="Dark Mode Colors" />
             <BottomStrip onBack={()=>{changeTab("CoreSettings");localStorage.setItem( "step" ,"1");}} onSave={()=>{saveDesignSystem()}} onSaveAndContinue={()=>{
                 console.log("hello"); changeTab("LightAndDarkModes"); 
-                pref.set( "step" ,"3");
-                }}></BottomStrip>
+                pref.set( "step" ,"3"); 
+                }} numOfColors={_numOfColorInPalette} ></BottomStrip>
         </div>
     )
 }
