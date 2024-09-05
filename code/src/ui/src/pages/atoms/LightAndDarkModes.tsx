@@ -16,6 +16,7 @@ import { ProgressBarSection } from '../../pages/content/ProgressBarSection';
 import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
 import { ColorThemeAtom } from './ColorThemeAtom';
 import { Preferences } from '../../Preferences';
+import { ButtonGroup } from '@mui/material';
 
 
 interface Props {
@@ -29,35 +30,35 @@ interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
     value: number;
-  }
+}
 function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <div style={{ padding: '16px' }}>
-            <p>{children}</p>
-          </div>
-        )}
-      </div>
-    );
-  }
 
-  function a11yProps(index: number) {
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <div style={{ padding: '16px' }}>
+                    <p>{children}</p>
+                </div>
+            )}
+        </div>
+    );
+}
+
+function a11yProps(index: number) {
     return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
     };
-  }
-  
-export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultColor, changeTab, saveDesignSystem }) => {
+}
+
+export const LightAndDarkModes: React.FC<Props> = ({ atom, colorThemes, defaultColor, changeTab, saveDesignSystem }) => {
 
     const pref = new Preferences(atom.getDesignSystem().key);
     const [_defaultColor, _setDefaultColor] = useState<string>("#ffffff");
@@ -70,7 +71,8 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
     const [_addColorError, _setAddColorError] = useState<boolean>(false)
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
     const [_chromaLevelCheck, _setChromaLevelCheck] = useState<boolean>(true);
-    const [_tabNumber,_setTabNumber]= useState<number>(0);
+    const [_tabNumber, _setTabNumber] = useState<number>(0);
+    const [_selectedViewMode, _setSelectedViewMode] = useState<string>("Side By Side");
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -158,9 +160,8 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
             _setColorName(value);
         }
     }
-
     return (
-        <div className="container color-palette-right-content" style={{ marginBottom:"80px" }}>
+        <div className="container color-palette-right-content" style={{ marginBottom: "80px" }}>
             <HeadingSection heading="Build Theme/s">
                 <ProgressBarSection activeStep={2} ></ProgressBarSection>
             </HeadingSection>
@@ -168,12 +169,46 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
             </HeadingSection>
 
 
-            <div style={{ paddingLeft:"36px" ,width: '100%' }}>
-                <div >
-                    <Tabs value={_tabNumber} onChange={(event,value)=>{_setTabNumber(value)}} aria-label="WCAG tabs">
-                        <Tab label="WCAG AA" {...a11yProps(0)} />
-                        <Tab label="WCAG AAA" {...a11yProps(1)} />
-                    </Tabs>
+            <div style={{ paddingLeft: "36px", width: '100%' }}>
+                <div style={{ display: "flex", flex: "auto", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                        <Tabs value={_tabNumber} onChange={(event, value) => { _setTabNumber(value) }} aria-label="WCAG tabs">
+                            <Tab label="WCAG AA" {...a11yProps(0)} />
+                            <Tab label="WCAG AAA" {...a11yProps(1)} />
+                        </Tabs>
+                    </div>
+                    <div style={{ paddingRight: "80px" }}>
+                        <div style={{fontSize:"12px"}}>View</div>
+                        <div>
+                        <ButtonGroup
+                            orientation="horizontal"
+                            variant="outlined"
+                        >
+                            <Button
+                                className="small-btn"
+                                variant={_selectedViewMode === 'Light Mode' ? 'contained' : 'outlined'}
+                                onClick={() => _setSelectedViewMode('Light Mode')
+                                }
+                            >
+                                Light Mode
+                            </Button>
+                            <Button
+                                className="small-btn"
+                                variant={_selectedViewMode === 'Side By Side' ? 'contained' : 'outlined'}
+                                onClick={() => _setSelectedViewMode('Side By Side')}
+                            >
+                                Side By Side
+                            </Button>
+                            <Button
+                                className="small-btn"
+                                variant={_selectedViewMode === 'Dark Mode' ? 'contained' : 'outlined'}
+                                onClick={() => _setSelectedViewMode('Dark Mode')}
+                            >
+                                Dark Mode
+                            </Button>
+                        </ButtonGroup>
+                        </div>
+                    </div>
                 </div>
                 <TabPanel value={_tabNumber} index={0}>
                     <ColorThemeAtom atom={colorThemes} colorPalette={atom} ></ColorThemeAtom>
@@ -182,13 +217,6 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
                     Content for WCAG AAA
                 </TabPanel>
             </div>
-
-
-
-
-
-
-            
             <div
                 style={{
                     position: 'fixed',
@@ -207,10 +235,10 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom,colorThemes, defaultCo
             >
 
 
-                <Button variant="outlined" color="primary" onClick={() => {changeTab("BuildColorPalette") ;pref.set( "step" ,"2");}} style={{ marginRight: '8px' }}>
+                <Button variant="outlined" color="primary" onClick={() => { changeTab("BuildColorPalette"); pref.set("step", "2"); }} style={{ marginRight: '8px' }}>
                     BACK
                 </Button>
-                <Button variant="contained" color="secondary" onClick={() => { saveDesignSystem();}}>
+                <Button variant="contained" color="secondary" onClick={() => { saveDesignSystem(); }}>
                     SAVE
                 </Button>
 
