@@ -3,7 +3,7 @@
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { ChangeEvent, useState } from "react";
-import { InputLabel, Switch, Accordion, AccordionSummary, AccordionDetails, Typography, Box, SxProps, Button, Menu, MenuItem, IconButton } from "@mui/material";
+import { InputLabel, Switch, Accordion, AccordionSummary, AccordionDetails, Typography, Box, SxProps, Button, Menu, MenuItem, IconButton, Tabs, Tab } from "@mui/material";
 import { Color, ColorPalette } from '@finos/a11y-theme-builder-sdk';
 import { ColorShadeCss } from './ColorShadeCss';
 import { LightModeSection } from "../pages/content/LightModeSection";
@@ -20,6 +20,36 @@ interface Props {
     lightLabel: string;
     darkLabel: string;
 }
+interface TabPanelProps {
+    children?: React.ReactNode;
+    index: number;
+    value: number;
+}
+function TabPanel(props: TabPanelProps) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <div style={{ padding: '16px' }}>
+                    <p>{children}</p>
+                </div>
+            )}
+        </div>
+    );
+}
+function a11yProps(index: number) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
 
 export const DisplayColorPalette: React.FC<Props> = ({
     colorPalette,
@@ -33,9 +63,10 @@ export const DisplayColorPalette: React.FC<Props> = ({
     const [_deleteColorConfirmationModalIsOpen, _setDeleteColorConfirmationModalIsOpen] = useState<boolean>(false);
     const [_unableToDeleteColorModalIsOpen, _setUnableToDeleteColorModalIsOpen] = useState<boolean>(false);
     const [_currentBaseColor, _setCurrentBaseColor] = useState<string>("");
+    const [_tabNumber, _setTabNumber ] = useState<number>(0);
     const openMenu = Boolean(_anchorEl);
 
-    const handleMenuButtonClick = (event: any,color : string) => {
+    const handleMenuButtonClick = (event: any, color: string) => {
         _setAnchorEl(event.currentTarget);
         _setCurrentBaseColor(color);
     };
@@ -82,7 +113,10 @@ export const DisplayColorPalette: React.FC<Props> = ({
 
                     </AccordionSummary>
                     <AccordionDetails>
-
+                        <Tabs value={_tabNumber} onChange={(event, value) => { _setTabNumber(value) }} aria-label="WCAG tabs">
+                            <Tab label="WCAG AA (6)" {...a11yProps(0)} />
+                            <Tab label="WCAG AAA (6)" {...a11yProps(1)} />
+                        </Tabs>
                         {/* <div style={{ paddingLeft: "36px", width: '100%' }}>
                             <div >
                                 <Tabs value={_tabNumber} onChange={(event, value) => { _setTabNumber(value) }} aria-label="WCAG tabs">
@@ -97,6 +131,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                 Content for WCAG AAA
                             </TabPanel>
                         </div> */}
+                        <TabPanel value={_tabNumber} index={0}>
                         <div style={{ padding: "0px" }}>
 
                             {/* <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px" }}>Your Color Palette</p> */}
@@ -116,7 +151,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: "8px", paddingTop: "4px" }}>
                                             <div className="subtitle1" style={{ fontSize: "24px" }}>{color.name}</div>
                                             <div style={{ borderRadius: "4px" }}>
-                                                
+
                                                 <IconButton
 
                                                     sx={{
@@ -126,7 +161,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
                                                     }}
                                                     aria-controls={openMenu ? 'simple-menu' : undefined}
                                                     aria-haspopup="true"
-                                                    onClick={(e)=>{handleMenuButtonClick (e,color.name)}} aria-label="delete" size="large">
+                                                    onClick={(e) => { handleMenuButtonClick(e, color.name) }} aria-label="delete" size="large">
                                                     <ArrowDropDownIcon />
                                                 </IconButton>
 
@@ -193,6 +228,10 @@ export const DisplayColorPalette: React.FC<Props> = ({
 
 
                         </div>
+                        </TabPanel>
+                        <TabPanel value={_tabNumber} index={1}>
+                            Content for WCAG AAA
+                        </TabPanel>
                     </AccordionDetails>
                 </Accordion>
             </div>
@@ -200,7 +239,7 @@ export const DisplayColorPalette: React.FC<Props> = ({
     } else {
         return (
             <div className="row">
-               
+
             </div>
         );
     }
