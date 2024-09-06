@@ -72,7 +72,7 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom, colorThemes, defaultC
     const [_addColorErrorMessage, _setAddColorErrorMessage] = useState<string>("")
     const [_chromaLevelCheck, _setChromaLevelCheck] = useState<boolean>(true);
     const [_tabNumber, _setTabNumber] = useState<number>(0);
-    const [_selectedViewMode, _setSelectedViewMode] = useState<string>("Side By Side");
+    const [_selectedViewMode, _setSelectedViewMode] = useState<string>("Side by Side");
 
     useEffect(() => {
         if (defaultColor && defaultColor.length > 0) {
@@ -194,10 +194,10 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom, colorThemes, defaultC
                             </Button>
                             <Button
                                 className="small-btn"
-                                variant={_selectedViewMode === 'Side By Side' ? 'contained' : 'outlined'}
-                                onClick={() => _setSelectedViewMode('Side By Side')}
+                                variant={_selectedViewMode === 'Side by Side' ? 'contained' : 'outlined'}
+                                onClick={() => _setSelectedViewMode('Side by Side')}
                             >
-                                Side By Side
+                                Side by Side
                             </Button>
                             <Button
                                 className="small-btn"

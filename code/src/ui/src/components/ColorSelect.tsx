@@ -27,6 +27,7 @@ interface Props {
     baseColorHex?: Set<string>;
     label?: string;
     defaultValue?: string;
+    optional?:boolean;
 }
 
 class GridShade {
@@ -46,6 +47,7 @@ export const ColorSelect: React.FC<Props> = ({
     baseColorHex,
     label,
     defaultValue,
+    optional,
 }) => {
     const [_selectedValue, _setSelectedValue] = useState<string>(
         defaultValue || ''
@@ -56,6 +58,7 @@ export const ColorSelect: React.FC<Props> = ({
     const [_longestRow, _setLongestRow] = useState<number>(0);
     const [_disabled, _setDisabled] = useState<boolean>(false);
     const [_shadeLabel, _setShadeLabel] = useState<string>('');
+    const [_selectedBaseColorName, _setSelectedBaseColorName ] = useState<string>('');
 
     useEffect(() => {
         if (value) {
@@ -181,10 +184,20 @@ export const ColorSelect: React.FC<Props> = ({
         return (
             <div>
                 {label && (
-                    <InputLabel className="caption" htmlFor="outlined-select">
+                    <InputLabel  htmlFor="outlined-select" style={{fontWeight:"bold"}}>
                         {label}
                     </InputLabel>
                 )}
+                {optional? (
+                    <InputLabel className="caption" htmlFor="outlined-select">
+                    Optional
+                </InputLabel>
+                ):(
+                    <InputLabel className="caption" htmlFor="outlined-select" style={{visibility:"hidden"}}>
+                    Optional
+                </InputLabel>
+                  )
+                }
                 <Select
                     onChange={handleColorChange}
                     displayEmpty={true}
@@ -203,7 +216,7 @@ export const ColorSelect: React.FC<Props> = ({
                                         : '' || ''
                                 }
                             />
-                        </Box>
+                                                    </Box>
                     )}
                     MenuProps={{
                         anchorOrigin: {
@@ -264,6 +277,17 @@ export const ColorSelect: React.FC<Props> = ({
                             );
                         })}
                 </Select>
+                {
+                    _selectedValue!=""?(
+                    <InputLabel  className="caption" htmlFor="outlined-select" style={{paddingTop:"8px"}}>
+                        -{_shadeLabel}
+                    </InputLabel>
+                    ):(
+                        <InputLabel  htmlFor="outlined-select" style={{visibility:"hidden"}}>
+                            Not selected
+                        </InputLabel>
+                        )
+                }                
             </div>
         );
     } else {
