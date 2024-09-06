@@ -233,7 +233,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                         id="panel2-header"
                     >
                     <div className="input-col">
-                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Backgrounds</p>
+                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Buttons and Interactive Components</p>
 
                             {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
                         </div>
@@ -253,7 +253,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                         id="panel3-header"
                     >
                     <div className="input-col">
-                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Backgrounds</p>
+                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Hotlinks</p>
 
                             {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
                         </div>
@@ -272,7 +272,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                         id="panel4-header"
                     >
                     <div className="input-col">
-                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Backgrounds</p>
+                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>ThemeElements(Icons &Colored Texts)</p>
 
                             {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
                         </div>
@@ -291,7 +291,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                         id="panel5-header"
                     >
                     <div className="input-col">
-                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Backgrounds</p>
+                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Gradients</p>
 
                             {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
                         </div>
@@ -310,7 +310,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                         id="panel6-header"
                     >
                     <div className="input-col">
-                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Backgrounds</p>
+                            <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Text Gradients</p>
 
                             {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
                         </div>
