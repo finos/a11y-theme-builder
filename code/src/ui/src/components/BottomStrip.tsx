@@ -27,7 +27,7 @@ export const BottomStrip: React.FC<BottomStripProps> = ({ onBack, onSave, onSave
                 padding: '8px',
                 backgroundColor: '#fff',
                 boxShadow: '0 -2px 5px rgba(0,0,0,0.1)',
-                zIndex: 1300, // Ensure it stays on top of other content
+                zIndex: 10, // Ensure it stays on top of other content
             }}
         >
             <Button variant="text" onClick={onBack}>

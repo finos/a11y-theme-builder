@@ -152,6 +152,7 @@ export const ColorSelect: React.FC<Props> = ({
                 _selectableValues[indexOfSelectedItem].shade;
             value.setValue(newSelectedValue);
             _setSelectedValue(selectedValue);
+            _setSelectedBaseColorName(newSelectedValue.getMode().color.name);
             _setShadeLabel(_getShadeLabel(newSelectedValue));
             console.log(`Color changed by UI to ${value}`);
         }
@@ -280,7 +281,7 @@ export const ColorSelect: React.FC<Props> = ({
                 {
                     _selectedValue!=""?(
                     <InputLabel  className="caption" htmlFor="outlined-select" style={{paddingTop:"8px"}}>
-                        -{_shadeLabel}
+                        {_selectedBaseColorName}-{_shadeLabel}
                     </InputLabel>
                     ):(
                         <InputLabel  htmlFor="outlined-select" style={{visibility:"hidden"}}>
