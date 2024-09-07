@@ -36,6 +36,9 @@ import { ElevationsAtom } from '../../atoms/ElevationsAtom';
 import { GlowAtom } from '../../atoms/GlowAtom';
 import { BevelsAtom } from '../../atoms/BevelsAtom';
 import { Preferences } from '../../../Preferences';
+import { CoreSettings } from '../../atoms/CoreSettings';
+import { BuildColorPalette } from '../../atoms/BuildColorPalette';
+import { LightAndDarkModes } from '../../atoms/LightAndDarkModes';
 
 // DEMO:    Import your atom
 //import { ExampleAtom } from '../../atoms/ExampleAtom';
@@ -50,126 +53,26 @@ interface atomItem {
 }
 
 const atomsList: { [key: string]: atomItem } = {
-    colorPalette: {
-        value: 'colorPalette',
-        label: 'Color Palette',
-        atom: 'Color Palette',
-        disabled: true,
-    },
-    colorThemes: {
-        value: 'colorThemes',
-        label: 'Color Theme',
-        atom: 'Color Themes',
-        disabled: true,
-    },
-    subcolorThemes: {
-        value: 'subcolorThemes',
-        label: 'Sub Color Themes',
-        atom: 'Subcolor Themes',
-        disabled: true,
-    },
-    fontsSettings: {
-        value: 'fontsSettings',
-        label: 'Fonts Settings',
-        atom: 'Fonts Settings',
-        disabled: true,
-    },
-    displayAndHeaderStyles: {
-        value: 'displayAndHeaderStyles',
-        label: 'Display & Header Styles',
-        atom: 'Display And Header Styles',
-        disabled: true,
-    },
-    bodyStyles: {
-        value: 'bodyStyles',
-        label: 'Body Styles',
-        atom: 'Body Styles',
-        disabled: true,
-    },
-    smallTextStyles: {
-        value: 'smallTextStyles',
-        label: 'Small Text Styles',
-        atom: 'Small Tests Styles',
-        disabled: true,
-    },
-    statStyles: {
-        value: 'statStyles',
-        label: 'Stat Styles',
-        atom: 'Stat Styles',
-        disabled: true,
-    },
-    gridSettings: {
-        value: 'gridSettings',
-        label: 'Grid Settings',
-        atom: 'Grid Settings',
-        disabled: true,
-    },
-    minimumTarget: {
-        value: 'minimumTarget',
-        label: 'Minimum Target',
-        atom: 'Minimum Target',
-        disabled: true,
-    },
-    stateSettings: {
-        value: 'stateSettings',
-        label: 'State Settings',
-        atom: 'State Settings',
-        disabled: true,
-    },
-    chartColors: {
-        value: 'chartColors',
-        label: 'Chart Colors',
-        atom: 'Chart Colors',
-        disabled: true,
-    },
-    borderSettings: {
-        value: 'borderSettings',
-        label: 'Border Settings',
-        atom: 'Border Settings',
-        disabled: true,
-    },
-    focusStates: {
-        value: 'focusStates',
-        label: 'Focus States',
-        atom: 'Focus States',
-        disabled: true,
-    },
-    hotlinks: {
-        value: 'hotlinks',
-        label: 'Hotlinks',
-        atom: 'Hotlinks',
-        disabled: true,
-    },
-    inputBackground: {
-        value: 'inputBackground',
-        label: 'Input Background',
-        atom: 'Input Background',
-        disabled: true,
-    },
-    elevationSettings: {
-        value: 'elevationSettings',
-        label: 'Elevation Settings',
-        atom: 'Elevation Settings',
-        disabled: true,
-    },
-    bevelSettings: {
-        value: 'bevelSettings',
-        label: 'Bevel Settings',
-        atom: 'Bevel Settings',
-        disabled: true,
-    },
-    glowSettings: {
-        value: 'glowSettings',
-        label: 'Glow Settings',
-        atom: 'Glow Settings',
-        disabled: true,
-    },
-    animationSettings: {
-        value: 'animationSettings',
-        label: 'Animation Settings',
-        atom: 'Animation Settings',
-        disabled: true,
-    },
+    colorPalette: { value: "colorPalette", label: "Color Palette", atom: "Color Palette", disabled: true },
+    colorThemes: { value: "colorThemes", label: "Color Theme", atom: "Color Themes", disabled: true },
+    subcolorThemes: { value: "subcolorThemes", label: "Sub Color Themes", atom: "Subcolor Themes", disabled: true },
+    fontsSettings: { value: "fontsSettings", label: "Fonts Settings", atom: "Fonts Settings", disabled: true },
+    displayAndHeaderStyles: { value: "displayAndHeaderStyles", label: "Display & Header Styles", atom: "Display And Header Styles", disabled: true },
+    bodyStyles: { value: "bodyStyles", label: "Body Styles", atom: "Body Styles", disabled: true },
+    smallTextStyles: { value: "smallTextStyles", label: "Small Text Styles", atom: "Small Tests Styles", disabled: true },
+    statStyles: { value: "statStyles", label: "Stat Styles", atom: "Stat Styles", disabled: true },
+    gridSettings: { value: "gridSettings", label: "Grid Settings", atom: "Grid Settings", disabled: true },
+    minimumTarget: { value: "minimumTarget", label: "Minimum Target", atom: "Minimum Target", disabled: true },
+    stateSettings: { value: "stateSettings", label: "State Settings", atom: "State Settings", disabled: true },
+    chartColors: { value: "chartColors", label: "Chart Colors", atom: "Chart Colors", disabled: true },
+    borderSettings: { value: "borderSettings", label: "Border Settings", atom: "Border Settings", disabled: true },
+    focusStates: { value: "focusStates", label: "Focus States", atom: "Focus States", disabled: true },
+    hotlinks: { value: "hotlinks", label: "Hotlinks", atom: "Hotlinks", disabled: true },
+    inputBackground: { value: "inputBackground", label: "Input Background", atom: "Input Background", disabled: true },
+    elevationSettings: { value: "elevationSettings", label: "Elevation Settings", atom: "Elevation Settings", disabled: true },
+    bevelSettings: { value: "bevelSettings", label: "Bevel Settings", atom: "Bevel Settings", disabled: true },
+    glowSettings: { value: "glowSettings", label: "Glow Settings", atom: "Glow Settings", disabled: true },
+    animationSettings: { value: "animationSettings", label: "Animation Settings", atom: "Animation Settings", disabled: true },
 
     // DEMO:    Add your atom to the atomsList
     // ExampleAtom: {value: "exampleAtom", label: "Example", atom: "Example", disabled: true},
@@ -186,6 +89,20 @@ interface Props {
 export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
+    const saveDesignSystem = async () => {
+        console.log(`Save Design System`);
+
+        try {
+            await designSystem.store();
+            // setShowToast(true);
+            // setShowFail(false);
+        } catch (e) {
+            // setShowFail(true);
+            console.log(`Save Design System FAILED`);
+        }
+    }
+
+
     let typographySelected = false;
     if (pref.get('atom-typography-selected') === 'true') {
         typographySelected = true;
@@ -193,17 +110,19 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     const [displayTypography, setDisplayTypography] =
         useState<boolean>(typographySelected);
     useEffect(() => {
-        pref.set('atom-typography-selected', '' + displayTypography);
-    }, [displayTypography]);
+        pref.set("atom-typography-selected", "" + displayTypography)
 
+    }, [displayTypography])
+    const [displayBuildTheme, setDisplayBuildTheme] = useState<boolean>(false);
     let otherSelected = false;
     if (pref.get('atom-other-selected') === 'true') {
         otherSelected = true;
     }
     const [displayOther, setDisplayOther] = useState<boolean>(otherSelected);
     useEffect(() => {
-        pref.set('atom-other-selected', '' + displayOther);
-    }, [displayOther]);
+        pref.set("atom-other-selected", "" + displayOther)
+    }, [displayOther])
+
 
     let shadowSelected = false;
     if (pref.get('atom-shadow-selected') === 'true') {
@@ -211,8 +130,8 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     }
     const [displayShadow, setDisplayShadow] = useState<boolean>(shadowSelected);
     useEffect(() => {
-        pref.set('atom-shadow-selected', '' + displayShadow);
-    }, [displayShadow]);
+        pref.set("atom-shadow-selected", "" + displayShadow)
+    }, [displayShadow])
 
     function enableDisableItems() {
         let _atoms = { ...atoms };
@@ -220,12 +139,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             if (node instanceof Atom) {
                 if (notImplemented.indexOf(key) === -1) {
                     if (_atoms[key]) {
-                        console.log(
-                            'Atom enabled:' +
-                                key +
-                                ' enabled=' +
-                                node.isEnabled()
-                        );
+                        console.log("Atom enabled:" + key + " enabled=" + node.isEnabled());
                         _atoms[key].disabled = !node.isEnabled();
                     }
                 }
@@ -235,11 +149,11 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
     }
 
     const [atoms, setAtoms] = useState<{ [key: string]: atomItem }>(atomsList);
+    const [showAtom, setShowAtom] = useState(pref.get("step")||pref.get("atom-content-selected") || "atoms");
     useEffect(() => {
-        designSystem.setListener(
-            'AtomContent-isEditable',
+        designSystem.setListener("AtomContent-isEditable",
             function (event: Event) {
-                if (event.type === EventType.NodeDisabled) {
+                if (event.type == EventType.NodeDisabled) {
                     enableDisableItems();
                 } else if (event.type === EventType.NodeEnabled) {
                     enableDisableItems();
@@ -247,7 +161,19 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             }
         );
         enableDisableItems();
-    }, []);
+        if (pref.get('step') === "1") {
+            setDisplayBuildTheme(true);
+            setShowAtom("CoreSettings");
+        } else if (pref.get('step') === "2") {
+            setDisplayBuildTheme(true);
+            setShowAtom("BuildColorPalette");
+
+        }
+        else if (pref.get('step') === "3") {
+            setDisplayBuildTheme(true);
+            setShowAtom("LightAndDarkModes");
+        }
+    }, [])
 
     useEffect(() => {
         if (showAtom) {
@@ -257,23 +183,25 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
         }
     }, [atoms]);
 
-    const [showAtom, setShowAtom] = useState(
-        pref.get('atom-content-selected') || 'atoms'
-    );
     useEffect(() => {
-        pref.set('atom-content-selected', showAtom);
-    }, [showAtom]);
+        pref.set("atom-content-selected", showAtom)
 
-    interface LeftNavAtomProps {
-        atom: any;
-        indent?: number;
-        disabled?: boolean;
-    }
-    const LeftNavAtom: React.FC<LeftNavAtomProps> = ({
-        atom,
-        indent,
-        disabled,
-    }) => {
+        if (showAtom == 'CoreSettings') {
+            pref.set("step", `1`);
+
+        } else if (showAtom == 'BuildColorPalette') {
+            pref.set("step", `2`);
+
+        } else if (showAtom == 'LightAndDarkModes') {
+            pref.set("step", `3`);
+
+        }
+
+
+    }, [showAtom])
+
+    interface LeftNavAtomProps { atom: any, indent?: number, disabled?: boolean };
+    const LeftNavAtom: React.FC<LeftNavAtomProps> = ({ atom, indent, disabled }) => {
         return (
             <LeftNavItem
                 selected={showAtom}
@@ -281,9 +209,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                 text={atom.label}
                 indent={indent}
                 disabled={disabled !== undefined ? disabled : atom.disabled}
-                onClick={() => {
-                    setShowAtom(atom.value);
-                }}
+                onClick={() => { setShowAtom(atom.value) }}
             />
         );
     };
@@ -295,35 +221,51 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     <List
                         sx={{
                             '& ul': { padding: 0 },
-                            paddingTop: '0px',
+                            paddingTop: "0px",
                         }}
                     >
                         <LeftNavHeader>Introduction</LeftNavHeader>
-                        <LeftNavItem
-                            text={'Atoms'}
-                            value="atoms"
-                            indent={1}
-                            selected={showAtom}
-                            onClick={() => {
-                                setShowAtom('atoms');
-                            }}
-                        />
+                        <LeftNavItem text={"Atoms"} value="atoms" indent={1} selected={showAtom} onClick={() => {
+                            console.log("default theme", designSystem.atoms);
+                            return setShowAtom("atoms")
+                        }} />
                         <LeftNavHeader>Atomic Settings</LeftNavHeader>
-                        <LeftNavAtom atom={atoms.colorPalette} indent={1} />
-                        <LeftNavAtom atom={atoms.colorThemes} indent={1} />
+
+                        <LeftNavItem text={"Build Theme"} indent={1} onClick={() => setDisplayBuildTheme(!displayBuildTheme)}>
+                            {displayBuildTheme ? <ExpandLess /> : <ExpandMore />}
+                        </LeftNavItem>
+                        <Collapse in={displayBuildTheme} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <LeftNavItem
+                                    selected={showAtom}
+                                    value={'CoreSettings'}
+                                    text={'Step 1 Core Settings'}
+                                    indent={2}
+                                    onClick={() => { setShowAtom('CoreSettings') }}
+                                />
+                                <LeftNavItem
+                                    selected={showAtom}
+                                    value={'BuildColorPalette'}
+                                    text={'Step 2 Build Color Palette'}
+                                    indent={2}
+                                    onClick={() => { setShowAtom('BuildColorPalette') }}
+                                />
+                                <LeftNavItem
+                                    selected={showAtom}
+                                    value={'LightAndDarkModes'}
+                                    text={'Step 3 Light and Dark Modes'}
+                                    indent={2}
+                                    disabled={atoms.colorThemes.disabled}
+                                    onClick={() => { setShowAtom('LightAndDarkModes') }}
+                                />
+                            </List>
+                        </Collapse>
+
+                        {/* <LeftNavAtom atom={atoms.colorPalette} indent={1} />
+                        <LeftNavAtom atom={atoms.colorThemes} indent={1} /> */}
                         <LeftNavAtom atom={atoms.subcolorThemes} indent={1} />
-                        <LeftNavItem
-                            text={'Typography'}
-                            indent={1}
-                            onClick={() =>
-                                setDisplayTypography(!displayTypography)
-                            }
-                        >
-                            {displayTypography ? (
-                                <ExpandLess />
-                            ) : (
-                                <ExpandMore />
-                            )}
+                        <LeftNavItem text={"Typography"} indent={1} onClick={() => setDisplayTypography(!displayTypography)}>
+                            {displayTypography ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
                         <Collapse
                             in={displayTypography}
@@ -353,11 +295,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                                 />
                             </List>
                         </Collapse>
-                        <LeftNavItem
-                            text={'Shadow Atoms'}
-                            indent={1}
-                            onClick={() => setDisplayShadow(!displayShadow)}
-                        >
+                        <LeftNavItem text={"Shadow Atoms"} indent={1} onClick={() => setDisplayShadow(!displayShadow)}>
                             {displayShadow ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
                         <Collapse
@@ -366,25 +304,12 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                             unmountOnExit
                         >
                             <List component="div" disablePadding>
-                                <LeftNavAtom
-                                    atom={atoms.elevationSettings}
-                                    indent={2}
-                                />
-                                <LeftNavAtom
-                                    atom={atoms.bevelSettings}
-                                    indent={2}
-                                />
-                                <LeftNavAtom
-                                    atom={atoms.glowSettings}
-                                    indent={2}
-                                />
+                                <LeftNavAtom atom={atoms.elevationSettings} indent={2} />
+                                <LeftNavAtom atom={atoms.bevelSettings} indent={2} />
+                                <LeftNavAtom atom={atoms.glowSettings} indent={2} />
                             </List>
                         </Collapse>
-                        <LeftNavItem
-                            text={'Other Atoms'}
-                            indent={1}
-                            onClick={() => setDisplayOther(!displayOther)}
-                        >
+                        <LeftNavItem text={"Other Atoms"} indent={1} onClick={() => setDisplayOther(!displayOther)}>
                             {displayOther ? <ExpandLess /> : <ExpandMore />}
                         </LeftNavItem>
                         <Collapse
@@ -435,16 +360,27 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
             </div>
             <div className="design-system-editor-right-content">
                 <div className="design-system-editor-right-content-scrollable">
-                    {showAtom === 'atoms' && (
+                    {showAtom === "atoms" &&
                         <AtomicIntro changeTab={setShowAtom} />
-                    )}
-                    {showAtom === atoms.colorPalette.value && (
+                    }
+                    {/* {showAtom === atoms.colorPalette.value && (
                         <ErrorHandler>
-                            <ColorPaletteAtom
-                                atom={designSystem.atoms.colorPalette}
-                                defaultColor="#ffffff"
-                                changeTab={setShowAtom}
-                            />
+                            <ColorPaletteAtom atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom} />
+                        </ErrorHandler>
+                    )} */}
+                    {showAtom === 'CoreSettings' && (
+                        <ErrorHandler>
+                            <CoreSettings atom={designSystem} defaultColor="#ffffff" changeTab={setShowAtom} saveDesignSystem={saveDesignSystem} />
+                        </ErrorHandler>
+                    )}
+                    {showAtom === 'BuildColorPalette' && (
+                        <ErrorHandler>
+                            <BuildColorPalette atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" changeTab={setShowAtom} saveDesignSystem={saveDesignSystem} />
+                        </ErrorHandler>
+                    )}
+                    {showAtom === 'LightAndDarkModes' && (
+                        <ErrorHandler>
+                            <LightAndDarkModes atom={designSystem.atoms.colorPalette} defaultColor="#ffffff" colorThemes={designSystem.atoms.colorThemes} changeTab={setShowAtom} saveDesignSystem={saveDesignSystem} />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.colorThemes.value && (
@@ -505,9 +441,7 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                     )}
                     {showAtom === atoms.borderSettings.value && (
                         <ErrorHandler>
-                            <BordersAtom
-                                atom={designSystem.atoms.borderSettings}
-                            />
+                            <BordersAtom atom={designSystem.atoms.borderSettings} />
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.focusStates.value && (
@@ -534,37 +468,27 @@ export const AtomContent: React.FC<Props> = ({ user, designSystem }) => {
                         </ErrorHandler>
                     )}
                     {showAtom === atoms.elevationSettings.value && (
-                        <ElevationsAtom
-                            elevationSettings={
-                                designSystem.atoms.elevationSettings
-                            }
-                        />
+                        <ElevationsAtom elevationSettings={designSystem.atoms.elevationSettings} />
                     )}
                     {showAtom === atoms.bevelSettings.value && (
-                        <BevelsAtom
-                            bevelSettings={designSystem.atoms.bevelSettings}
-                        />
+                        <BevelsAtom bevelSettings={designSystem.atoms.bevelSettings} />
                     )}
                     {showAtom === atoms.glowSettings.value && (
-                        <GlowAtom
-                            glowSettings={designSystem.atoms.glowSettings}
-                        />
+                        <GlowAtom glowSettings={designSystem.atoms.glowSettings} />
                     )}
                     {showAtom === atoms.animationSettings.value && (
                         <ErrorHandler>
-                            <AnimationAtom
-                                atom={designSystem.atoms.animationSettings}
-                            />
+                            <AnimationAtom atom={designSystem.atoms.animationSettings} />
                         </ErrorHandler>
                     )}
 
                     {
                         // DEMO:    Add your atom to the content
                         /* {showAtom === atoms.minimumTarget.value && (
-                        <ErrorHandler>
-                            <ExampleAtom atom={designSystem.atoms.minimumTarget}/>
-                        </ErrorHandler>
-                    )} */
+                            <ErrorHandler>
+                                <ExampleAtom atom={designSystem.atoms.minimumTarget}/>
+                            </ErrorHandler>
+                        )} */
                     }
                 </div>
             </div>

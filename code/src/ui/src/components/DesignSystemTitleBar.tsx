@@ -85,22 +85,11 @@ export const DesignSystemTitleBar: React.FC<Props> = ({
         <>
             <div className="titleBarDiv" data-background="colored">
                 <div className="left-titlebar">
-                    <div className="tb-logo" onClick={handleLogoClick}>
-                        <svg
-                            width="48"
-                            height="48"
-                            viewBox="0 0 130 130"
-                            fill="none"
-                        >
-                            <mask
-                                id="path-1-inside-1_8016_33240"
-                                fill="var(--on-background)"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M106 41.5C106 64.4198 87.4198 83 64.5 83C59.4677 83 54.6446 82.1043 50.1815 80.4636C48.1319 75.5495 47 70.1569 47 64.5C47 41.5802 65.5802 23 88.5 23C93.5323 23 98.3554 23.8957 102.819 25.5364C104.868 30.4505 106 35.8431 106 41.5ZM64.5 81C60.0163 81 55.7108 80.2537 51.6986 78.88C49.9569 74.4262 49 69.5771 49 64.5C49 59.8562 49.8005 55.4035 51.2696 51.2696C55.4035 49.8005 59.8562 49 64.5 49C69.5771 49 74.4262 49.9569 78.88 51.6986C80.2537 55.7108 81 60.0163 81 64.5C81 69.4189 80.1018 74.1236 78.4621 78.4621C74.1236 80.1018 69.4189 81 64.5 81Z"
-                                />
+                    <div  className="tb-logo" onClick={handleLogoClick}>
+                        <svg width="40" height="40" viewBox="0 0 130 130" fill="none">
+                            <mask id="path-1-inside-1_8016_33240" fill="var(--on-background)">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M106 41.5C106 64.4198 87.4198 83 64.5 83C59.4677 83 54.6446 82.1043 50.1815 80.4636C48.1319 75.5495 47 70.1569 47 64.5C47 41.5802 65.5802 23 88.5 23C93.5323 23 98.3554 23.8957 102.819 25.5364C104.868 30.4505 106 35.8431 106 41.5ZM64.5 81C60.0163 81 55.7108 80.2537 51.6986 78.88C49.9569 74.4262 49 69.5771 49 64.5C49 59.8562 49.8005 55.4035 51.2696 51.2696C55.4035 49.8005 59.8562 49 64.5 49C69.5771 49 74.4262 49.9569 78.88 51.6986C80.2537 55.7108 81 60.0163 81 64.5C81 69.4189 80.1018 74.1236 78.4621 78.4621C74.1236 80.1018 69.4189 81 64.5 81Z"/>
+
                             </mask>
                             <path
                                 fillRule="evenodd"
@@ -358,10 +347,31 @@ export const DesignSystemTitleBar: React.FC<Props> = ({
                                 fill="var(--on-background)"
                             />
                         </svg>
-                    </div>
+                </div>
+                <div className="input-titlebar">
+                        {/* <div id="design-system-title-current-select-label" className="label">Current Design System:</div> */}
+                        <Select
+                            labelId="design-system-title-current-select-label"
+                            onChange={handleDSChange}
+                            value={designSystem.name}
+                            size="small"
+                            sx={{
+                                width: "fit-content",
+                                minWidth: "200px",
+                            }}
+                        >
+                            {designSystemNames.map((item) => {
+                                return <MenuItem key={"key" + item} value={item}>{item}</MenuItem>
+                            })}
+                            <Divider />
+                            <MenuItem value={createNewDesignSystem}>{createNewDesignSystem}</MenuItem>
+                        </Select>
+                        </div>
+
+
                 </div>
 
-                <div className="center-titlebar">
+                {/* <div className="center-titlebar">
                     <div className="input-titlebar">
                         <div
                             id="design-system-title-current-select-label"
@@ -436,7 +446,7 @@ export const DesignSystemTitleBar: React.FC<Props> = ({
                             </div>
                         </Alert>
                     </Snackbar>
-                </div>
+                </div> */}
 
                 <div className="right-titlebar">
                     <AccessibilityLayersButton designSystem={designSystem} />

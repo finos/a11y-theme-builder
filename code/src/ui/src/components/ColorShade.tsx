@@ -68,7 +68,6 @@ export const ColorShade: React.FC<Props> = ({
                         color: _shade.getOnShade().getHexOrRGBA(),
                     }}
                 >
-                    Aa
                 </div>
                 {showDetails && (
                     <div className="swatch-details active">

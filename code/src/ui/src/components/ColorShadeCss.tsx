@@ -106,19 +106,9 @@ export const ColorShadeCss: React.FC<Props> = ({
     }, []);
 
     return (
-        <div
-            className={className ?? ''}
-            style={
-                isBaseColor
-                    ? {
-                          paddingTop: '2px',
-                          paddingLeft: '4px',
-                          borderRadius: '8px',
-                          backgroundColor: 'var(--primary-quarter',
-                      }
-                    : {}
-            }
-        >
+
+        <div className={className ?? ""} style={isBaseColor ? {paddingTop:"2px",paddingLeft:"4px",borderRadius:"0px",border:"1px",borderStyle:"solid",borderColor:"#CFD3D8"} : {}}>
+
             {label && <div className="caption text-center">{label}</div>}
             {showId && <div className="subtitle1 text-center">{id}</div>}
             <div className="Hex" style={style}>

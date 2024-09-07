@@ -18,9 +18,8 @@ export const LightModeSection: React.FC<Props> = ({
 }) => {
     return (
         <div data-mode="light" style={style} className="lightholder">
-            <h4 style={{ marginTop: '10px', marginBottom: '10px' }}>
-                {title || 'Light Mode'}
-            </h4>
+            <h4 style={{marginTop: "10px", marginBottom: "10px"}}>{title || "Light Mode"}</h4>
+            <hr/>
             {children}
         </div>
     );
