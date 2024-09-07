@@ -58,6 +58,15 @@
             "react-app",
             "react-app/jest"
         ],
+        "plugins": ["header"],
+        "rules": {
+            "header/header": [2, "block", [
+                "*",
+                {"pattern": " * Copyright \\(c\\) \\d{4} Discover Financial Services| * SPDX-License-Identifier: Apache-2.0"},
+                {"pattern": " * Licensed under Apache-2.0 License. See License.txt in the project root for license information| * Copyright \\d{4} FINOS A11y Theme Builder contributors - see NOTICE file"},
+                " "
+            ]]
+        },
         "overrides": [
             {
                 "files": [

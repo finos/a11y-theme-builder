@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -21,8 +21,8 @@ import { MinimumTarget } from '@finos/a11y-theme-builder-sdk';
 
 // DEMO:    We have prebuild editor components that can be used for some property types..
 //          If you require more functionality, you must create your own within the atom.
-import { NumberSelectable } from '../../components/editors/NumberSelectable';
-import { StringProperty } from '../../components/editors/StringProperty';
+//import { NumberSelectable } from '../../components/editors/NumberSelectable';
+//import { StringProperty } from '../../components/editors/StringProperty';
 
 interface Props {
     // DEMO:    Pass the atom type we make in the SDK as a prop

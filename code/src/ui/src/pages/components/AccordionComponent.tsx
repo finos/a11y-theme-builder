@@ -1,18 +1,16 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { HeadingSection } from '../content/HeadingSection';
 import { ExampleSection } from '../content/ExampleSection';
-import { ColorModeSelector } from '../content/ColorModeSelector';
 
 interface Props {}
 
 export const AccordionComponent: React.FC<Props> = () => {
-    const [colorMode, setColorMode] = useState<string>('primary');
 
     return (
         <div>

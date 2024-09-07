@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -6,7 +6,6 @@ import React, { useState } from 'react';
 import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
-import { ExampleSection } from '../content/ExampleSection';
 import { Hero } from '../../mui-a11y-tb/components/Hero';
 import { HeroImage } from '../../mui-a11y-tb/components/HeroImage';
 import { HeroVideo } from '../../mui-a11y-tb/components/HeroVideo';
@@ -17,7 +16,7 @@ interface Props {
     colorMode?: string;
 }
 
-export const HeroExample: React.FC<Props> = ({}) => {
+export const HeroExample: React.FC<Props> = () => {
     const [colorMode, setColorMode] = useState<string>('colored');
 
     return (
@@ -196,7 +195,7 @@ export const HeroExample: React.FC<Props> = ({}) => {
                             sx={{ order: { sm: 4, md: 5, lg: 5 } }}
                         >
                             <div className="inline-image">
-                                <img src="/sample.jpg" alt="Sample Image" />
+                                <img src="/sample.jpg" alt="Inline Sample" />
                             </div>
                         </Grid>
                     </Grid>
@@ -233,6 +232,7 @@ export const HeroExample: React.FC<Props> = ({}) => {
                                     <iframe
                                         className="video"
                                         src="https://player.vimeo.com/video/285086929"
+                                        title="Hero Example inline video iframe"
                                     ></iframe>
                                 </div>
                             </div>

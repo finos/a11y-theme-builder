@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -20,8 +20,6 @@ import { FontWeightsUtil } from '../../pages/atoms/typography/FontWeightsUtil';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { ExampleSection } from '../../pages/content/ExampleSection';
 import { SettingsSection } from '../../pages/content/SettingsSection';
-
-const name = 'ModalFontEdit';
 
 const PRIMARY_PREFIX = 'Primary Font: ';
 const SECONDARY_PREFIX = 'Secondary Font: ';

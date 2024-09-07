@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -45,29 +45,29 @@ export const SystemCard: React.FC<Props> = ({
     const handleClose = async (value: string) => {
         setAnchorEl(null);
         if (value) {
-            if (value == 'load') {
+            if (value === 'load') {
                 window.location.href = '/designSystem/' + name;
-            } else if (value == 'copy') {
+            } else if (value === 'copy') {
                 setDoCopy(true);
-            } else if (value == 'rename') {
+            } else if (value === 'rename') {
                 setDoRename(true);
-            } else if (value == 'add') {
+            } else if (value === 'add') {
                 const ds = await themeBuilder?.getDesignSystem(name);
                 ds?.setIsSample(true);
                 await ds?.store();
                 refresh();
-            } else if (value == 'remove') {
+            } else if (value === 'remove') {
                 const ds = await themeBuilder?.getDesignSystem(name);
                 ds?.setIsSample(false);
                 await ds?.store();
                 refresh();
-            } else if (value == 'delete') {
+            } else if (value === 'delete') {
                 await themeBuilder?.deleteDesignSystem(name);
                 refresh();
-            } else if (value == 'view') {
+            } else if (value === 'view') {
                 const s = await themeBuilder?.storage.get(name);
                 setView(JSON.stringify(s, null, 4));
-            } else if (value == 'download') {
+            } else if (value === 'download') {
                 const s = await themeBuilder?.storage.get(name);
                 const data = JSON.stringify(s, null, 4);
                 var file = new File([data], name + '-design-system.json', {
@@ -79,14 +79,14 @@ export const SystemCard: React.FC<Props> = ({
     };
     const isDesignSystem = (name: string) => {
         for (var i in designSystems) {
-            if (designSystems[i].id == name) {
+            if (designSystems[i].id === name) {
                 return true;
             }
         }
         return false;
     };
     const onClose = async (cmd: string, dest: string) => {
-        if (cmd == 'copy') {
+        if (cmd === 'copy') {
             setDoCopy(false);
             if (dest) {
                 console.log('Copying Design System ' + name + ' to ' + dest);
@@ -94,15 +94,15 @@ export const SystemCard: React.FC<Props> = ({
                     console.log('Design system already exists');
                 } else {
                     if (themeBuilder) {
-                        const ds = await themeBuilder.getDesignSystem(name);
-                        const nds = await ds.copy(dest);
+                        //const ds = await themeBuilder.getDesignSystem(name);
+                        //const nds = await ds.copy(dest);
                     }
                     setTimeout(function () {
                         refresh();
                     }, 500);
                 }
             }
-        } else if (cmd == 'rename') {
+        } else if (cmd === 'rename') {
             setDoRename(false);
             if (dest) {
                 console.log('Rename Design System ' + name + ' to ' + dest);

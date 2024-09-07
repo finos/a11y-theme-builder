@@ -1,9 +1,9 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
+import React from 'react';
+import { Button, Grid } from '@mui/material';
 
 interface Props {
     style?: any;
@@ -38,6 +38,7 @@ export const YouTubeCentered: React.FC<Props> = ({ className = '' }) => {
                             frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
+                            title="YouTube inline video iframe"
                         ></iframe>
                     </div>
                     <h2>Title</h2>

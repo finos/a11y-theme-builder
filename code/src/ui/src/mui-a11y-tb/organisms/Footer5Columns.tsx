@@ -1,13 +1,10 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
-    Breadcrumbs,
     Button,
-    Link,
-    Typography,
     Grid,
     Divider,
 } from '@mui/material';

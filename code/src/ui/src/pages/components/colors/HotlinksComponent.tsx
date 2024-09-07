@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -10,7 +10,7 @@ import { ExampleSection } from '../../content/ExampleSection';
 const sampleText: string = 'Sample Text';
 interface Props {}
 
-export const HotlinksComponent: React.FC<Props> = ({}) => {
+export const HotlinksComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Hotlink Colors" />

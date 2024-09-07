@@ -1,8 +1,8 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
-import React, { useRef, useLayoutEffect, ReactNode } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Tab, Tabs, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,6 @@ import {
     ThemeBuilder,
     DesignSystem,
     EventValueChange,
-    Layers,
     Storage,
 } from '@finos/a11y-theme-builder-sdk';
 import { DesignSystemTitleBar } from '../components/DesignSystemTitleBar';
@@ -21,7 +20,7 @@ import { PreviewContent } from './content/preview/PreviewContent';
 import { ComponentsContent } from './content/components/ComponentsContent';
 import { CodeContent } from './content/code/CodeContent';
 import './DesignSystemPage.css';
-import { themes, setCssValue, getCssValue } from '../mui-a11y-tb/themes/Theme';
+import { themes, setCssValue } from '../mui-a11y-tb/themes/Theme';
 import { ThemeProvider } from '@mui/material';
 import { MeasureDiv } from './MeasureDiv';
 import { Preferences } from '../Preferences';
@@ -79,13 +78,13 @@ const DesignSystemPage: React.FC<Props> = ({
             setDesignSystemNames(dsn);
 
             // On page reload with MemStorage the data is blank, so must recreate design systems every time
-            if (dsn.length == 0) {
+            if (dsn.length === 0) {
                 const ds1 = await _themeBuilder.addDesignSystem('Test');
                 const ds2 = await _themeBuilder.addDesignSystem('Sample');
                 const dsn = await _themeBuilder.listDesignSystemNames();
                 setDesignSystemNames(dsn);
-                if (designSystemName == 'Test') setDesignSystem(ds1);
-                if (designSystemName == 'Sample') setDesignSystem(ds2);
+                if (designSystemName === 'Test') setDesignSystem(ds1);
+                if (designSystemName === 'Sample') setDesignSystem(ds2);
             }
             // If found
             if (dsn.indexOf(designName) > -1) {

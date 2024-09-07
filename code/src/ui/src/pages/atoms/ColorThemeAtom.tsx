@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -28,9 +28,6 @@ export const ColorThemeAtom: React.FC<Props> = ({ atom, colorPalette }) => {
         );
     };
 
-    if (_themeInitialized) {
-        return <DisplayColorTheme atom={atom} />;
-    }
     return (
         <CreateColorTheme
             atom={atom}

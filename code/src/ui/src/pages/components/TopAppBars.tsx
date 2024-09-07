@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -12,7 +12,7 @@ interface Props {
     colorMode?: string;
 }
 
-export const TopAppBars: React.FC<Props> = ({}) => {
+export const TopAppBars: React.FC<Props> = () => {
     const [colorMode, setColorMode] = useState<string>('colored');
 
     return (
