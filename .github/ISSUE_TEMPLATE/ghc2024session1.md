@@ -10,11 +10,11 @@ assignees: ''
 # Session 1
 
 # Problems
-1. Theme Builder doesn’t reference the WCAG rules required for each style & component
+1. [Theme Builder doesn’t reference the WCAG rules required for each style & component](https://github.com/finos/a11y-theme-builder/issues/1037)
 
-2. Transition between Theme Builder and Figma and code is complex
+2. [Transition between Theme Builder and Figma and code is complex](https://github.com/finos/a11y-theme-builder/issues/1038)
 
-3. Theme Builder does not offer a clear solution for users with existing coded components.
+3. [Theme Builder does not offer a clear solution for users with existing coded components](https://github.com/finos/a11y-theme-builder/issues/1039)
 
 
 *Select one problem above to work on this session. Delete the two problems that you won't focus on*
