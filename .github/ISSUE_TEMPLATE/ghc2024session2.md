@@ -7,21 +7,57 @@ assignees: ''
 
 ---
 
-<!-- Issue Content -->
-## Scratch Pad
+# Session 2
+## Instructions
+1. Follow along with the demo to create a new theme with Theme Builder
+2. Below, log any issues you come across as you create your theme
+3. If you have time, categorize the issues you found into 
+	a. New Feature 
+	b. Bug
+	c. UX/Accessibility problem
+	
+	
+## Scratch pad
+All ideas are good ideas. All issues found are good issues found!
 
-* Itemize observations or takes notes here.
+### Issues found
+1. Issue:
+2. Issue:
+3. Issue:
+4. Issue:
+5. Issue:
+6. Issue:
+7. Issue:
+8. Issue:
+9. Issue:
+10. Issue:
 
-## Categories
+## Issues by category
+### Bugs
+1. Issue:
+2. Issue:
+3. Issue:
+4. Issue:
+5. Issue:
 
-### Bugs/Issues that were found
+### New Feature
+1. Issue:
+2. Issue:
+3. Issue:
 
-* Item 1
+### UX/Accessibility problems
+1. Issue:
+2. Issue:
+3. Issue:
+4. Issue:
+5. Issue:
 
-### Suggested Improvements
 
-* Item 1
+CONGRATS! You have become an Accessibility Theme Builder contributor.
+---
 
-### Suggested Features
+Join our Slack: https://github.com/finos/a11y-theme-builder/wiki/Communication#communication-channels
 
-* Item 1
+Join our weekly calls: https://github.com/finos/a11y-theme-builder/wiki/Communication#meetings
+
+Contribute: Reach out to a maintainer and get started today!
