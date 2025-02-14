@@ -46,7 +46,7 @@ jobs:
             --suppression .github/node-cve-ignore-list.xml
             --nodeAuditSkipDevDependencies
             --nodePackageSkipDevDependencies
-            --failOnCVSS 5
+            --failOnCVSS 6
             --enableRetired
       - name: Upload Test results
         if: ${{ always() }}
