@@ -5,8 +5,6 @@ on:
   schedule:
     - cron: '0 8,18 * * 1-5'
   push:
-    branches:
-      - fix-cve-scanner
     paths:
       - '**/package.json'
       - '**/package-lock.json'
