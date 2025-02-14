@@ -64,7 +64,7 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: code
           push: false
           tags: user/app:latest
       - name: Scan for vulnerabilities
