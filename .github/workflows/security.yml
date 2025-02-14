@@ -41,7 +41,7 @@ jobs:
           project: '${{ matrix.module-folder }}'
           path: '${{ matrix.module-folder }}'
           format: 'HTML'
-          out: '${{ matrix.module-folder }}-depcheck-reports'
+          out: '${{ matrix.module-folder }}-reports'
           args: >
             --suppression .github/node-cve-ignore-list.xml
             --nodeAuditSkipDevDependencies
@@ -53,7 +53,8 @@ jobs:
         uses: actions/upload-artifact@v4.6.0
         with:
           name: Depcheck report
-          path: ${{ github.workspace }}/${{ matrix.module-folder }}-test-reports
+          path: ${{ github.workspace }}/${{ matrix.module-folder }}-reports
+          overwrite: true
   docker-scan:
     name: ${{ github.event.repository.name }}-docker-scan
     runs-on: ubuntu-latest
