@@ -28,7 +28,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4.2.0
         with:
-          node-version: 18
+          node-version: 20
       - name: Build project with NPM
         run: npm install --omit=dev
         working-directory: ${{ matrix.module-folder }}
