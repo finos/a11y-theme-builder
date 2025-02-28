@@ -17,11 +17,14 @@ jobs:
     name: ${{ github.event.repository.name }}-docker-scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker-practice/actions-setup-docker@26fccec
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
       - name: Build
-        run: docker build -f Dockerfile -t user/app:latest .
-        working-directory: code
+        uses: docker/build-push-action@v6
+        with:
+          context: code
+          push: false
+          tags: user/app:latest
       #- name: Scan for vulnerabilities
       #  uses: crazy-max/ghaction-container-scan@dfa7e54dc32045120f06d0bc8d7724860f5db0ad
       #  with:
@@ -38,7 +41,7 @@ jobs:
       digest: ${{ steps.build_publish.outputs.digest }}
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
       
       - name: Log in to Docker Hub
         uses: docker/login-action@v3.3.0
