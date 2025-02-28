@@ -6,7 +6,6 @@ on:
     branches:
       - 'main'
       - 'dev'
-      - 'fix-docker-action'
     paths:
       - 'code/src/**'
       - 'code/package.json'
