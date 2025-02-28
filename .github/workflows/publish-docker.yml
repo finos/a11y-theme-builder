@@ -52,7 +52,7 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v5.7
+        uses: docker/metadata-action@v5.6.1
         with:
           images: finos/a11y-theme-builder
           tags: |
