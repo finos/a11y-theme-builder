@@ -1,6 +1,6 @@
 {
 	"name": "@finos/a11y-theme-builder",
-	"version": "1.0.1",
+	"version": "1.3.0",
 	"description": "Accessibility Theme Builder Application",
 	"scripts": {
 		"test": "ts-node src/test.ts",
