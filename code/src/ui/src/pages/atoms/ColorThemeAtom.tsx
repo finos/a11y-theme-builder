@@ -28,9 +28,6 @@ export const ColorThemeAtom: React.FC<Props> = ({ atom, colorPalette }) => {
         );
     };
 
-    if (_themeInitialized) {
-        return <DisplayColorTheme atom={atom} />;
-    }
     return (
         <CreateColorTheme
             atom={atom}

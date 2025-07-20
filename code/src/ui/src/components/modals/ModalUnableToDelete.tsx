@@ -14,7 +14,7 @@ interface Props {
     children?: React.ReactNode;
 }
 
-const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButton, children }) => {
+const ModalUnableToDelete: React.FC<Props> = ({ title, isOpen, onClose,cancelButton, children }) => {
 
     const handleSubmit = () => {
         onClose(true);
@@ -36,12 +36,13 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButto
             <div className="overlay" onClick={handleCancel}></div>
             <div className='modal'>
                 <div className="modal-content" style={{ display: "flex", gap: "40px", flexDirection: "column" }}>
-                    <h4 style={{ margin: "0px" }}>{title}</h4>
+                    <div className='sub-heading'></div>
+                    <h4 style={{ margin: "0px" }}>{"Unable to Delete"||title}</h4>
                     <div className="modal-body">
                         {children}
                     </div>
                     <div className="modal-footer" style={{ display: "flex", gap:"var(--spacing-2)" }}>
-                        <Button onClick={handleSubmit}>Okay</Button>
+                        <Button onClick={handleSubmit}>OKAY</Button>
                         {cancelButton &&<Button className="MuiButton-outlined" onClick={handleCancel}>Cancel</Button>}
                     </div>
                 </div>
@@ -50,4 +51,4 @@ const ModalConfirmation: React.FC<Props> = ({ title, isOpen, onClose,cancelButto
     );
 };
 
-export default ModalConfirmation;
+export default ModalUnableToDelete;
