@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -9,7 +9,7 @@ import { ExampleSection } from '../../content/ExampleSection';
 
 interface Props {}
 
-export const BackgroundColorsComponent: React.FC<Props> = ({}) => {
+export const BackgroundColorsComponent: React.FC<Props> = () => {
     return (
         <div>
             <HeadingSection title="Colors" heading="Background Colors" />

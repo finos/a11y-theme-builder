@@ -1,9 +1,9 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { Alert, Button, InputLabel, TextField, Grid } from '@mui/material';
+import { Alert, Button, InputLabel, TextField } from '@mui/material';
 import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from 'react-color';
@@ -106,7 +106,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({
     const handleColorValueInputChange = (
         event: ChangeEvent<HTMLInputElement>
     ) => {
-        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
+        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) === true) {
             _setAddColorInputErrorTriggered(true);
             // need to set _blockPickerColor since UI is tied to
             //  it, so it needs to update so value in field can
@@ -125,7 +125,7 @@ export const ColorPaletteAtom: React.FC<Props> = ({
 
     const handleColorChange = (event: any) => {
         const value = event.target.value;
-        if (value.match(/^[a-zA-Z0-9\-]*$/)) {
+        if (value.match(/^[a-zA-Z0-9-]*$/)) {
             _setColorName(value);
         }
     };

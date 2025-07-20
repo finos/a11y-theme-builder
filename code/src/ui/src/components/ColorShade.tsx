@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -68,7 +68,6 @@ export const ColorShade: React.FC<Props> = ({
                         color: _shade.getOnShade().getHexOrRGBA(),
                     }}
                 >
-                    Aa
                 </div>
                 {showDetails && (
                     <div className="swatch-details active">

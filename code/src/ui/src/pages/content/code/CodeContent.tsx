@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -51,9 +51,9 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
             designSystem.setListener(
                 'CodeContent-isEditable',
                 function (event: Event) {
-                    if (event.type == EventType.NodeDisabled) {
+                    if (event.type === EventType.NodeDisabled) {
                         enableDisableItems();
-                    } else if (event.type == EventType.NodeEnabled) {
+                    } else if (event.type === EventType.NodeEnabled) {
                         enableDisableItems();
                     }
                 }
@@ -82,13 +82,13 @@ export const CodeContent: React.FC<Props> = ({ user, designSystem }) => {
         return designSystem.code.cssGenerator.getMotionSensitivityAsString();
     };
 
-    const getDyslexiaJsonCode = () => {
-        return designSystem.code.jsonGenerator.getDyslexiaAsString();
-    };
+    //const getDyslexiaJsonCode = () => {
+    //    return designSystem.code.jsonGenerator.getDyslexiaAsString();
+    //};
 
-    const getMotionSensitivityJsonCode = () => {
-        return designSystem.code.jsonGenerator.getMotionSensitivityAsString();
-    };
+    //const getMotionSensitivityJsonCode = () => {
+    //    return designSystem.code.jsonGenerator.getMotionSensitivityAsString();
+    //};
 
     const getJsonCodeDM = () => {
         const code = designSystem.code.getJSONDM();

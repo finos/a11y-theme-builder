@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -7,14 +7,6 @@ import { HeadingSection } from '../content/HeadingSection';
 import { ColorModeSelector } from '../content/ColorModeSelector';
 import { ExampleSection } from '../content/ExampleSection';
 import {
-    Box,
-    FormControl,
-    FormControlLabel,
-    InputLabel,
-    Typography,
-    FormLabel,
-    Radio,
-    RadioGroup,
     Tab,
     Tabs,
 } from '@mui/material';

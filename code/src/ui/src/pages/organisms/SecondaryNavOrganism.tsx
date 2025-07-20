@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+/**
+ * Copyright (c) 2023 Discover Financial Services
+ * Licensed under Apache-2.0 License. See License.txt in the project root for license information
+ */
+import React from 'react';
 import { SecondaryNav } from '@finos/a11y-theme-builder-sdk';
 import { GeneratedCodeSection } from '../content/GeneratedCodeSection';
 import { ExampleSection } from '../content/ExampleSection';

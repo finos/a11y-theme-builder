@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -42,7 +42,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                                 Sample Square List Image
                             </div>
                             <div className="image-sq">
-                                <img src="/sample.jpg" />
+                                <img src="/sample.jpg" alt="" />
                             </div>
                         </div>
                         <div className="example">
@@ -50,7 +50,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                                 Sample Wide List Image
                             </div>
                             <div className="image-lg">
-                                <img src="/sample.jpg" />
+                                <img src="/sample.jpg" alt="" />
                             </div>
                         </div>
                         <h4>General Images</h4>
@@ -60,7 +60,7 @@ export const ImagesMolecule: React.FC<Props> = ({ molecule, designSystem }) => {
                                 className="inline-image"
                                 style={{ width: '300px', height: '200px' }}
                             >
-                                <img src="/sample.jpg" />
+                                <img src="/sample.jpg" alt="" />
                             </div>
                         </div>
                     </div>

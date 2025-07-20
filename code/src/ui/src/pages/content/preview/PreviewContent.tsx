@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -6,13 +6,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { DesignSystem } from '@finos/a11y-theme-builder-sdk';
 import {
-    List,
-    Collapse,
-    RadioGroup,
-    Radio,
-    FormControlLabel,
-    Checkbox,
-    FormGroup,
     Grid,
     Breadcrumbs,
     Button,
@@ -21,13 +14,6 @@ import {
     Divider,
     Avatar,
 } from '@mui/material';
-import {
-    LeftNavHeader,
-    LeftNavItem,
-    LeftNavText,
-} from '../../../components/LeftNavTabs';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import { NavSwitch } from '../../../components/NavSwitch';
 import { ResponsiveAppBar } from '../../../pages/components/ResponsiveAppBar';
 import { Hero } from '../../../mui-a11y-tb/components/Hero';
@@ -45,7 +31,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
     let desktopPreviewSelected = false;
-    if (pref.get('preview-desktopPreview-selected') == 'true') {
+    if (pref.get('preview-desktopPreview-selected') === 'true') {
         desktopPreviewSelected = true;
     }
     const [displayDesktopPreview, setDisplayDesktopPreview] = useState<boolean>(
@@ -69,20 +55,11 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayMobilePreview]);
 
     const [darkMode, setDarkMode] = useState<boolean>(
-        pref.get('preview-mode-selected') == 'true' || false
+        pref.get('preview-mode-selected') === 'true' || false
     );
     useEffect(() => {
         pref.set('preview-mode-selected', '' + darkMode);
     }, [darkMode]);
-
-    const divStyle = {
-        paddingLeft: '30px',
-    };
-
-    const divLabelStyle = {
-        //textTransform: "uppercase"
-        fontWeight: 'bold',
-    };
 
     return (
         <React.Fragment>
@@ -105,7 +82,10 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     </Grid>
                 </Grid>
                 <div className="computer">
-                    <img src="/computer.png" />
+                    <img
+                        src="/computer.png"
+                        alt="A computer containing screen content that exhibits the current design system with structured content"
+                    />
                 </div>
                 <div className="screen" data-mode={darkMode ? 'dark' : 'light'}>
                     <div className="screenHolder">
@@ -173,7 +153,7 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                                                 height: 'auto',
                                             }}
                                         >
-                                            <img src="/sample.jpg" />
+                                            <img src="/sample.jpg" alt="" />
                                         </div>
                                     </Grid>
                                     <Grid

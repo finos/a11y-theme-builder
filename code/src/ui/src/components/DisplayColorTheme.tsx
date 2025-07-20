@@ -1,12 +1,9 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
 import { ColorThemes } from '@finos/a11y-theme-builder-sdk';
-import { ColorShade } from './ColorShade';
-import { ColorGradient } from './ColorGradient';
-import { ColorGradientHeader } from './ColorGradientHeader';
 import './DisplayColorTheme.css';
 import { GeneratedCodeSection } from '../pages/content/GeneratedCodeSection';
 import { ExampleSection } from '../pages/content/ExampleSection';
@@ -23,13 +20,6 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
     if (colorTheme) {
         return (
             <div className="content theme-page active" id="buildThemes">
-                <HeadingSection title="Theme" heading="Default Theme">
-                    <p>
-                        Read-only representation of the colors in the default
-                        color theme for the currently selected design system.
-                    </p>
-                </HeadingSection>
-                <ExampleSection>
                     <div style={{ display: 'flex', gap: '40px' }}>
                         <LightModeSection>
                             <h6 className="top16">Theme Colors</h6>
@@ -236,8 +226,7 @@ export const DisplayColorTheme: React.FC<Props> = ({ atom }) => {
                             </div>
                         </DarkModeSection>
                     </div>
-                    <GeneratedCodeSection item={atom} />
-                </ExampleSection>
+                    {/* <GeneratedCodeSection item={atom} /> */}
             </div>
         );
     } else {

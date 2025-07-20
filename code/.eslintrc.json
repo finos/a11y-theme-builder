@@ -15,13 +15,13 @@
     "rules": {
       "header/header": [2, "block", [
         "*",
-        " * Copyright (c) 2023 Discover Financial Services",
-        " * Licensed under Apache-2.0 License. See License.txt in the project root for license information",
+        {"pattern": " * Copyright \\(c\\) \\d{4} Discover Financial Services| * SPDX-License-Identifier: Apache-2.0"},
+        {"pattern": " * Licensed under Apache-2.0 License. See License.txt in the project root for license information| * Copyright \\d{4} FINOS A11y Theme Builder contributors - see NOTICE file"},
         " "
       ]],
       "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars-experimental": "error"
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-unused-vars": "off"
     },
     "ignorePatterns": ["dist/", "node_modules/", "build/"]
   }

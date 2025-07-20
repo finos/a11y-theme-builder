@@ -1,11 +1,8 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React, { useState } from 'react';
-import { DesignSystem, Images } from '@finos/a11y-theme-builder-sdk';
-import { Breadcrumbs, Button, Link, Typography, Grid } from '@mui/material';
-import { ExampleSection } from '../content/ExampleSection';
 import { SectionColorModeSelector } from '../content/SectionColorModeSelector';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { YouTubeLeftSmall } from '../../mui-a11y-tb/organisms/YouTubeLeftSmall';
@@ -15,10 +12,10 @@ import { YouTubeRightSmall } from '../../mui-a11y-tb/organisms/YouTubeRightSmall
 import { YouTubeRight } from '../../mui-a11y-tb/organisms/YouTubeRight';
 
 interface Props {
-    colorMode?: string;
+    //colorMode?: string;
 }
 
-export const YouTubeLayouts: React.FC<Props> = ({}) => {
+export const YouTubeLayouts: React.FC<Props> = () => {
     const [colorMode, setColorMode] = useState<string>('');
 
     return (

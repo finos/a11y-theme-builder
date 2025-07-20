@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -18,12 +18,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Http } from './Http';
-import { ThemeProvider, Theme } from '@mui/material';
 import { LocalStorage } from './LocalStorage';
 import { ServerStorage } from './ServerStorage';
 import WebFont from 'webfontloader';
 
-if (window.location.hostname == 'localhost' && window.location.port == '3000') {
+if (window.location.hostname === 'localhost' && window.location.port === '3000') {
     Http.init(window.location.origin.replace('3000', '3001'));
 } else {
     Http.init(window.location.origin);
@@ -58,7 +57,7 @@ const App: React.FC<Props> = ({ user }) => {
 
     console.log('storage=', process.env['REACT_APP_STORAGE']);
     const storage =
-        process.env['REACT_APP_STORAGE'] == 'local'
+        process.env['REACT_APP_STORAGE'] === 'local'
             ? new LocalStorage()
             : new ServerStorage();
     // const storage = new ServerStorage();

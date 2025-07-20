@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -25,13 +25,13 @@ export class ServerStorage implements Storage {
             //console.log(`set(${key}) PATCH => ${JSON.stringify(response.data)}`);
         } else {
             data.id = key;
-            const response = await this.http.post(`/api/themes`, data);
+            await this.http.post(`/api/themes`, data);
             //console.log(`set(${key}) POST => ${JSON.stringify(response.data)}`);
         }
     }
 
     public async delete(key: string) {
-        const response = await this.http.delete(`/api/themes/${key}`);
+        await this.http.delete(`/api/themes/${key}`);
         //console.log(`delete(${key}) => ${JSON.stringify(response.data)}`);
     }
 

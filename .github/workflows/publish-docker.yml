@@ -6,6 +6,7 @@ on:
     branches:
       - 'main'
       - 'dev'
+      - 'epic-820'
     paths:
       - 'code/src/**'
       - 'code/package.json'

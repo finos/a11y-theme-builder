@@ -42,6 +42,7 @@
     border: 0px solid red; /* test */
     /* overflow-y: auto; */
     overflow-y: scroll;
+    overflow-x: hidden;
     /* visibility: hidden; */
 }
 

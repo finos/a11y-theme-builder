@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -11,13 +11,13 @@ import {
     Typography,
 } from '@mui/material';
 
-export interface HeroColorModeSelector {
+export interface Props {
     colorMode: string;
     setColorMode: React.Dispatch<React.SetStateAction<string>>;
     children?: React.ReactNode;
 }
 
-export const HeroColorModeSelector: React.FC<HeroColorModeSelector> = ({
+export const HeroColorModeSelector: React.FC<Props> = ({
     colorMode,
     setColorMode,
     children,

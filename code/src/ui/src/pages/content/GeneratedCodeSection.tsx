@@ -1,12 +1,10 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 
 import React, { ReactNode, useEffect, useState } from 'react';
 import {
-    Tabs,
-    Tab,
     TableContainer,
     Table,
     TableHead,
@@ -24,9 +22,9 @@ interface Props {
 
 export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
     const [tabIndex, setTabIndex] = useState<string>('css');
-    const handleTabChange = (event: any, newTabIndex: string) => {
-        setTabIndex(newTabIndex);
-    };
+    //const handleTabChange = (event: any, newTabIndex: string) => {
+    //    setTabIndex(newTabIndex);
+    //};
 
     const name = item.name;
     const getType = () => {
@@ -75,11 +73,11 @@ export const GeneratedCodeSection: React.FC<Props> = ({ item }) => {
         paddingRight: '20px',
     };
 
-    const tabBar = {
-        backgroundColor: 'var(--transparent)',
-        color: 'var(--transparent)',
-        display: 'flex',
-    };
+    //const tabBar = {
+    //    backgroundColor: 'var(--transparent)',
+    //    color: 'var(--transparent)',
+    //    display: 'flex',
+    //};
 
     return (
         <div className="top40">

@@ -1,30 +1,18 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
 import React from 'react';
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import {
     DesignSystem,
     Event,
     EventType,
     Molecule,
-    Popovers,
 } from '@finos/a11y-theme-builder-sdk';
 import MoleculeIntro from './MoleculeIntro';
 import { ErrorHandler } from '../../../ErrorHandler';
-import {
-    List,
-    ListItemButton,
-    ListItemText,
-    ListSubheader,
-    styled,
-    Collapse,
-    Button,
-    InputLabel,
-    TextField,
-    InputAdornment,
-} from '@mui/material';
+import { List, Collapse } from '@mui/material';
 import { LeftNavHeader, LeftNavItem } from '../../../components/LeftNavTabs';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -154,7 +142,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     const pref = new Preferences(designSystem.name);
 
     let generalSelected = false;
-    if (pref.get('molecule-general-selected') == 'true') {
+    if (pref.get('molecule-general-selected') === 'true') {
         generalSelected = true;
     }
     const [displayGeneral, setDisplayGeneral] =
@@ -164,7 +152,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
     }, [displayGeneral]);
 
     let chartsSelected = false;
-    if (pref.get('molecule-charts-selected') == 'true') {
+    if (pref.get('molecule-charts-selected') === 'true') {
         generalSelected = true;
     }
     const [displayCharts, setDisplayCharts] = useState<boolean>(chartsSelected);
@@ -177,7 +165,7 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
         const isDisabled = !designSystem.molecules.isEnabled();
         for (const [key, node] of Object.entries(designSystem.molecules)) {
             if (node instanceof Molecule) {
-                if (notImplemented.indexOf(key) == -1) {
+                if (notImplemented.indexOf(key) === -1) {
                     if (_molecules[key]) {
                         _molecules[key].disabled = isDisabled;
                     }
@@ -198,9 +186,9 @@ export const MoleculeContent: React.FC<Props> = ({ user, designSystem }) => {
             designSystem.setListener(
                 'MoleculeContent-isEditable',
                 function (event: Event) {
-                    if (event.type == EventType.NodeDisabled) {
+                    if (event.type === EventType.NodeDisabled) {
                         enableDisableItems();
-                    } else if (event.type == EventType.NodeEnabled) {
+                    } else if (event.type === EventType.NodeEnabled) {
                         enableDisableItems();
                     }
                 }

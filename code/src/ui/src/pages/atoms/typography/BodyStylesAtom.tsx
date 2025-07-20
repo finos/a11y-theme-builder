@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -9,8 +9,6 @@ import { HeadingSection } from '../../content/HeadingSection';
 import { GeneratedCodeSection } from '../../content/GeneratedCodeSection';
 import { ExampleSection } from '../../content/ExampleSection';
 import { SettingsSection } from '../../content/SettingsSection';
-
-const name = 'BodyStylesAtom';
 
 const body1CssPrefix = 'body1';
 const body1BoldCssPrefix = 'body1-bold';

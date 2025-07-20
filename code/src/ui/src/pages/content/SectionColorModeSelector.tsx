@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -13,13 +13,13 @@ import {
     Divider,
 } from '@mui/material';
 
-export interface SectionColorModeSelector {
+export interface Props {
     colorMode: string;
     setColorMode: React.Dispatch<React.SetStateAction<string>>;
     children?: React.ReactNode;
 }
 
-export const SectionColorModeSelector: React.FC<SectionColorModeSelector> = ({
+export const SectionColorModeSelector: React.FC<Props> = ({
     colorMode,
     setColorMode,
     children,

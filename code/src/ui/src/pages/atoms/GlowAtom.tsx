@@ -1,4 +1,4 @@
-﻿/*
+/**
  * Copyright (c) 2023 Discover Financial Services
  * Licensed under Apache-2.0 License. See License.txt in the project root for license information
  */
@@ -55,7 +55,7 @@ export const GlowAtom: React.FC<Props> = ({ glowSettings }) => {
         useState<boolean>(false);
 
     const handleColorChange = (event: any) => {
-        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) == true) {
+        if (!/^#[0-9A-F]{6}$/i.test(event.target.value) === true) {
             _setAddColorInputErrorTriggered(true);
             setColor(event.target.value);
             return;
