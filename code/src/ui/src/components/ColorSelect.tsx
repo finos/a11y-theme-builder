@@ -217,7 +217,7 @@ export const ColorSelect: React.FC<Props> = ({
                                         : '' || ''
                                 }
                             />
-                                                    </Box>
+                        </Box>
                     )}
                     MenuProps={{
                         anchorOrigin: {

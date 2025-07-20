@@ -8,6 +8,7 @@ import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import { Color, ColorPalette, ColorThemes, Shade } from '@finos/a11y-theme-builder-sdk';
 import { ChromePicker, ColorResult } from "react-color";
 import { DisplayColorPalette } from '../../components/DisplayColorPalette';
+import { DisplayColorTheme } from '../../components/DisplayColorTheme';
 import './ColorPaletteAtom.css';
 import { HeadingSection } from '../../pages/content/HeadingSection';
 import { ExampleSection } from '../../pages/content/ExampleSection';
@@ -17,6 +18,7 @@ import { GeneratedCodeSection } from '../../pages/content/GeneratedCodeSection';
 import { ColorThemeAtom } from './ColorThemeAtom';
 import { Preferences } from '../../Preferences';
 import { ButtonGroup } from '@mui/material';
+import { color } from '@mui/system';
 
 
 interface Props {
@@ -212,6 +214,7 @@ export const LightAndDarkModes: React.FC<Props> = ({ atom, colorThemes, defaultC
                 </div>
                 <TabPanel value={_tabNumber} index={0}>
                     <ColorThemeAtom atom={colorThemes} colorPalette={atom} ></ColorThemeAtom>
+                    <DisplayColorTheme atom= {colorThemes}></DisplayColorTheme>
                 </TabPanel>
                 <TabPanel value={_tabNumber} index={1}>
                     Content for WCAG AAA

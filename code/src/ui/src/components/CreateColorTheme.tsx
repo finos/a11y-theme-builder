@@ -220,7 +220,10 @@ export const CreateColorTheme: React.FC<Props> = ({
 
                     </AccordionSummary>
                     <AccordionDetails>
-                        background details
+                        <div className="form-columns top16">
+                        {/* <ColorSelect value={_colorTheme.lightModeBackground} baseColorHex={_baseColorsHex} label="Primary"></ColorSelect> */}
+                        <ColorPairSelect value={_colorTheme.lightModeBackground} label="Primary & Secondary Background Colors"></ColorPairSelect>
+                        </div>
                     </AccordionDetails>
                     </Accordion>
                     <Accordion 
@@ -235,7 +238,7 @@ export const CreateColorTheme: React.FC<Props> = ({
                     <div className="input-col">
                             <p style={{ fontSize: "18px", fontWeight: "700", margin: "0px", padding: "0px", paddingBottom: "8px" }}>Buttons and Interactive Components</p>
 
-                            {/* <ColorPaletteSummary colorPalette={colorPalette} /> */}
+
                         </div>
 
                     </AccordionSummary>
