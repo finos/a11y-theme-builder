@@ -41,7 +41,7 @@
 		"express": "^4.21.2",
 		"express-basic-auth": "^1.2.1",
 		"express-session": "^1.18.1",
-		"form-data": "4.0.1",
+		"form-data": "4.0.4",
 		"jsonwebtoken": "^9.0.2",
 		"tingodb": "^0.6.1",
 		"ts-node": "^10.9.2",
