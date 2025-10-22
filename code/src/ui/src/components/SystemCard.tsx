@@ -95,10 +95,7 @@ export const SystemCard: React.FC<Props> = ({
                 } else {
                     if (themeBuilder) {
                         const ds = await themeBuilder.getDesignSystem(name);
-                        const nds = await ds.copy(dest);
-                        if (!nds) {
-                            console.log("failed to copy design system: ", name);
-                        }
+                        await ds.copy(dest);
                     }
                     setTimeout(function () {
                         refresh();
