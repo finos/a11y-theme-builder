@@ -94,8 +94,8 @@ export const SystemCard: React.FC<Props> = ({
                     console.log('Design system already exists');
                 } else {
                     if (themeBuilder) {
-                        //const ds = await themeBuilder.getDesignSystem(name);
-                        //const nds = await ds.copy(dest);
+                        const ds = await themeBuilder.getDesignSystem(name);
+                        await ds.copy(dest);
                     }
                     setTimeout(function () {
                         refresh();
