@@ -31,7 +31,7 @@
 		"@types/cookie-parser": "^1.4.8",
 		"@types/express": "^4.17.21",
 		"@types/express-session": "^1.18.1",
-		"@types/jsonwebtoken": "^9.0.8",
+		"@types/jsonwebtoken": "^9.0.10",
 		"@types/node": "^22.13.4",
 		"@types/nodemailer": "^6.4.17",
 		"axios": "^1.12.2",
@@ -42,7 +42,7 @@
 		"express-basic-auth": "^1.2.1",
 		"express-session": "^1.18.2",
 		"form-data": "4.0.4",
-		"jsonwebtoken": "^9.0.2",
+		"jsonwebtoken": "^9.0.3",
 		"tingodb": "^0.6.1",
 		"ts-node": "^10.9.2",
 		"typescript": "^4.9.3"
