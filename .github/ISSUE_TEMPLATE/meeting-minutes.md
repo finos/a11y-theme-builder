@@ -11,7 +11,7 @@ assignees:
 YYYYMMDD - time
 
 ## Zoom info
-- Meeting link: https://zoom.us/j/91013899295?pwd=Qnh5UVN1aUZ4ak9tODgvMVNLNUg5Zz09
+- Meeting link: https://zoom-lfx.platform.linuxfoundation.org/meeting/99354850498?password=2545922e-1c6b-41b9-a73f-16695a10c24e
 - Meeting id: 910 1389 9295
 - Password: 123225
 - Call-in: +1 929 205 6099 US (New York) (Check calendar for more options)
