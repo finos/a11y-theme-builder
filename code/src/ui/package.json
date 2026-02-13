@@ -21,7 +21,7 @@
         "@types/react-router-dom": "5.3.3",
         "@types/uuid": "^10.0.0",
         "@types/webfontloader": "^1.6.38",
-        "axios": "^1.12.2",
+        "axios": "^1.13.5",
         "buffer": "^6.0.3",
         "chroma-js": "^3.1.2",
         "colord": "^2.9.3",
@@ -108,6 +108,6 @@
         "@testing-library/react": "^16.2.0",
         "@testing-library/user-event": "^14.6.1",
         "@types/jest": "^29.5.14",
-        "webpack": "^5.94.0"
+        "webpack": "^5.105.0"
     }
 }
