@@ -47,6 +47,10 @@
 		"ts-node": "^10.9.2",
 		"typescript": "^4.9.3"
 	},
+        "overrides": {
+                "lodash": "^4.17.23",
+                "lodash-es": "^4.17.23"
+        },
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^8.24.0",
 		"@typescript-eslint/parser": "^8.24.0",
