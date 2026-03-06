@@ -87,7 +87,9 @@
         ]
     },
     "overrides": {
-        "react-refresh": "0.14.0"
+        "react-refresh": "0.14.0",
+        "lodash": "^4.17.23",
+        "lodash-es": "^4.17.23"   
     },
     "devDependencies1": {
         "@storybook/addon-actions": "^6.4.19",
