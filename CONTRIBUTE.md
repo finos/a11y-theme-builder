@@ -49,9 +49,35 @@ Before making a contribution, please take the following steps:
 
 NOTE: All contributors must have a contributor license agreement (CLA) on file with FINOS before their pull requests will be merged. Please review the FINOS [contribution requirements](https://community.finos.org/docs/governance/Software-Projects/contribution-compliance-requirements) and submit (or have your employer submit) the required CLA before submitting a pull request.
 
+### Linux Foundation Badges for Theme Builder contributors and community champions
+
+- Theme Builder [maintainers](/MAINTAINERS.md) are able to nominate community members for badges that are
+issued by the Linux Foundation.
+  - For details, descriptions and designs for these badges are provided in
+[issue #786](https://github.com/finos/a11y-theme-builder/issues/786).
+- Community members can be nominated for badges when:
+  - your first pull request has been merged for contributions to code, design, or documentation, and/or
+  - you have been active in community building efforts, including contributing to project issues tagged
+with the 'community' label and/or raising awareness and bringing new contributors to Theme Builder
+through speaking, blogging/vlogging, social media and community engagement
+- In order to receive a badge, a maintainer must add the nominee(s) to a private channel in the FINOS
+Slack for Theme Builder badge nominees.
+  - This enables a private process of collecting First Name, Last Name, desired email for digital badging,
+  and home country, state/province.
+  - *Please do not post your personal information in the private Slack channel; reach out via private
+  direct message to a maintainer to exchange the information.*
+  - This information is collected privately by the maintainer in order to submit nominees to the Linux
+  Foundation for badging.
+  - NOTE: _If you are interested in joining the FINOS Slack and collaborating with the Theme Builder
+  team on the project's public channel, please send an email to 'help@finos.org' and request an invitation._  
+- Nomintations are submitted to the Linux Foundation on or about the first working day of each month, for
+new badges earned in the previous month.
+  - Nominees added to the private badging channel in the FINOS Slack may use that channel for questions
+about badging or issues with badge receipt.
+
 ## Team members
 
-Meet and join our [Team of Contributors](https://github.com/finos/a11y-theme-builder/wiki/Maintainers-&-Contributors).
+Meet and join our [Team of Maintainers](/MAINTAINERS.md).
 
 ## Learn & listen
 <!-- Fill out Missing Project Communications -->
@@ -62,7 +88,8 @@ This section includes ways to get started with your open source project. Include
   * Link: https://github.com/finos/a11y-theme-builder/discussions
 * Slack
   * Used for questions to project maintainers or for private chat.
-  * Link: https://join.slack.com/t/finos-lf/shared_invite/zt-24pxubwxi-vKczbM0pWYnltCRoOCDpFQ
+  * To join the FINOS Slack, email 'help@finos.org' and request an invitation.
+  The public FINOS Slack channel for Theme Builder collaboration is #a11y-theme-builder.
 * Blog/Wiki
   * Link: https://github.com/finos/a11y-theme-builder/wiki
 
