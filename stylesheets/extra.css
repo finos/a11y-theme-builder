@@ -1,0 +1,8 @@
+[data-md-color-scheme="slate"] img {
+    opacity: .68;
+}
+
+.md-header__button__LiveDemo {
+    margin-left: 10px;
+    font-size: 0.65rem;
+}
