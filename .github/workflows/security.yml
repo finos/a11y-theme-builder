@@ -48,7 +48,7 @@ jobs:
             --enableRetired
       - name: Upload Test results
         if: ${{ always() }}
-        uses: actions/upload-artifact@v4.6.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: Depcheck report
           path: ${{ github.workspace }}/${{ matrix.module-folder }}-reports
