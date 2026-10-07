@@ -1845,6 +1845,24 @@ button.MuiPaginationItem-root:hover {
 .MuiAccordion-root .subtitle1 {
     margin-bottom: 0 !important;
 }
+.faq-list .MuiAccordionSummary-root:focus-visible {
+    outline: var(--focusBorder) solid var(--button);
+    outline-offset: -2px;
+}
+.faq-list .MuiAccordionSummary-expandIconWrapper {
+    color: inherit;
+    opacity: 1;
+}
+[data-animation='sensitive'] .faq-list .MuiCollapse-root,
+[data-animation='sensitive'] .faq-list .MuiAccordionSummary-expandIconWrapper {
+    transition-duration: 0ms !important;
+}
+@media (prefers-reduced-motion: reduce) {
+    .faq-list .MuiCollapse-root,
+    .faq-list .MuiAccordionSummary-expandIconWrapper {
+        transition-duration: 0ms !important;
+    }
+}
 
 /* lists */
 .list-content {
@@ -3825,6 +3843,12 @@ footer .MuiGrid-container {
     max-width: 1572px;
     z-index: 2;
     transform: scale(0.71);
+}
+.screenContent[data-preview-template='faq'] > :not(.faq-template) {
+    display: none;
+}
+.screenContent[data-preview-template='landing'] > .faq-template {
+    display: none;
 }
 /* hero*/
 .heroSamples {

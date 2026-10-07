@@ -44,6 +44,7 @@ import { FeatureLayouts } from '../../organisms/FeatureLayouts';
 import { TestimonialLayouts } from '../../organisms/TestimonialLayouts';
 import { TestimonialCardLayouts } from '../../organisms/TestimonialCardLayouts';
 import { HeroExample } from '../../organisms/HeroExample';
+import { FaqOrganism } from '../../organisms/FaqOrganism';
 
 import { Preferences } from '../../../Preferences';
 
@@ -247,6 +248,12 @@ const templateList: { [key: string]: templateItem } = {
         value: 'heroVariations',
         label: 'Heros',
         organism: 'heroVariations',
+        disabled: false,
+    },
+    faqVariations: {
+        value: 'faqVariations',
+        label: 'Frequently Asked Questions',
+        organism: 'faqVariations',
         disabled: false,
     },
 };
@@ -657,6 +664,12 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                         >
                             <List component="div" disablePadding>
                                 <LeftNavorganisms
+                                    item={organisms.faqVariations}
+                                    indent={2}
+                                />
+                            </List>
+                            <List component="div" disablePadding>
+                                <LeftNavorganisms
                                     item={organisms.heroVariations}
                                     indent={2}
                                 />
@@ -839,6 +852,11 @@ export const OrganismContent: React.FC<Props> = ({ user, designSystem }) => {
                     {showTemplate === organisms.heroVariations.value && (
                         <ErrorHandler>
                             <HeroExample />
+                        </ErrorHandler>
+                    )}
+                    {showTemplate === organisms.faqVariations.value && (
+                        <ErrorHandler>
+                            <FaqOrganism />
                         </ErrorHandler>
                     )}
                     {showTemplate === organisms.footerVariations.value && (

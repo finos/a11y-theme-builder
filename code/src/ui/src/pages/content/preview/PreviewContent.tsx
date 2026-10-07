@@ -9,6 +9,7 @@ import {
     Grid,
     Breadcrumbs,
     Button,
+    ButtonGroup,
     Link,
     Typography,
     Divider,
@@ -21,6 +22,7 @@ import { Preferences } from '../../../Preferences';
 import { ListComponent } from '../../../pages/components/ListComponent';
 import { CardSample } from '../../../pages/components/cards/CardSample';
 import { CardPricing } from '../../../pages/components/cards/CardPricing';
+import { FaqTemplate } from './FaqTemplate';
 
 interface Props {
     user: any;
@@ -57,6 +59,12 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
     const [darkMode, setDarkMode] = useState<boolean>(
         pref.get('preview-mode-selected') === 'true' || false
     );
+    const [selectedTemplate, setSelectedTemplate] = useState<'landing' | 'faq'>(
+        pref.get('preview-template-selected') === 'faq' ? 'faq' : 'landing'
+    );
+    useEffect(() => {
+        pref.set('preview-template-selected', selectedTemplate);
+    }, [selectedTemplate]);
     useEffect(() => {
         pref.set('preview-mode-selected', '' + darkMode);
     }, [darkMode]);
@@ -71,11 +79,43 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                     spacing={2}
                     columns={12}
                 >
+                    <Grid item className="preview-template-control">
+                        <span id="preview-template-label">Preview page</span>
+                        <ButtonGroup
+                            aria-labelledby="preview-template-label"
+                            size="small"
+                        >
+                            <Button
+                                aria-pressed={selectedTemplate === 'landing'}
+                                onClick={() => setSelectedTemplate('landing')}
+                                variant={
+                                    selectedTemplate === 'landing'
+                                        ? 'contained'
+                                        : 'outlined'
+                                }
+                            >
+                                Sample page
+                            </Button>
+                            <Button
+                                aria-pressed={selectedTemplate === 'faq'}
+                                onClick={() => setSelectedTemplate('faq')}
+                                variant={
+                                    selectedTemplate === 'faq'
+                                        ? 'contained'
+                                        : 'outlined'
+                                }
+                            >
+                                FAQ page
+                            </Button>
+                        </ButtonGroup>
+                    </Grid>
                     <Grid item className="v-center" lg={2} md={4} sm={6}>
                         <NavSwitch
                             leftLabel="Light"
                             rightLabel="Dark"
-                            inputProps={{ 'aria-label': '' }}
+                            inputProps={{
+                                'aria-label': 'Preview color scheme',
+                            }}
                             checked={darkMode}
                             onChange={() => setDarkMode(!darkMode)}
                         />
@@ -89,7 +129,10 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                 </div>
                 <div className="screen" data-mode={darkMode ? 'dark' : 'light'}>
                     <div className="screenHolder">
-                        <div className="screenContent">
+                        <div
+                            className="screenContent"
+                            data-preview-template={selectedTemplate}
+                        >
                             <ResponsiveAppBar color="colored" />
                             <Hero color="black">
                                 <Grid
@@ -785,11 +828,9 @@ export const PreviewContent: React.FC<Props> = ({ user, designSystem }) => {
                                     </Grid>
                                 </Grid>
                             </footer>
+                            <FaqTemplate />
                         </div>
                     </div>
-                </div>
-                <div className="comingsoon">
-                    Sample Template - more coming soon
                 </div>
             </div>
         </React.Fragment>
